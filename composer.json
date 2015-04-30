@@ -44,9 +44,10 @@
     "composer/installers": "~1.0.12",
     "vlucas/phpdotenv": "~1.0.9",
     "johnpbloch/wordpress": "4.2.1",
-    "roots/soil": "3.4.0",
-    "roots/wp-h5bp-htaccess": "2.0.0",
-    "symfony/var-dumper": "~2.6"
+    "roots/soil": "~3.4.0",
+    "roots/wp-h5bp-htaccess": "~2.0.0",
+    "symfony/var-dumper": "~2.6",
+    "wpackagist-plugin/wpmandrill": "~1.33"
   },
   "extra": {
     "installer-paths": {
