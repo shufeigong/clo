@@ -47,7 +47,10 @@
     "roots/soil": "~3.4.0",
     "roots/wp-h5bp-htaccess": "~2.0.0",
     "symfony/var-dumper": "~2.6",
-    "wpackagist-plugin/wpmandrill": "~1.33"
+    "wpackagist-plugin/wpmandrill": "~1.33",
+    "wpackagist-plugin/google-sitemap-generator": "~4.0.8",
+    "wpackagist-plugin/wp-accessibility": "~1.4",
+    "wpackagist-plugin/wp-super-cache": "~1.4"
   },
   "extra": {
     "installer-paths": {
