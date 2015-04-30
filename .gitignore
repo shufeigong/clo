@@ -10,6 +10,7 @@ web/app/uploads/*
 !web/app/mu-plugins/register-theme-directory.php
 !web/app/mu-plugins/bedrock-autoloader.php
 !web/app/mu-plugins/disable-email-in-non-production.php
+!web/app/mu-plugins/send-mandrill-email-through-subaccount.php
 
 # WordPress
 web/wp
