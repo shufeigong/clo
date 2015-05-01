@@ -37,7 +37,7 @@ namespace :deploy do
   end
 end
 
-after 'deploy:publishing', 'deploy:sync'
+after 'deploy:finished', 'deploy:sync'
 
 # The above restart task is not run by default
 # Uncomment the following line to run it on deploys if needed
