@@ -34,8 +34,8 @@ end
 namespace :deploy do
   desc 'Sync servers'
   task :sync do
-    on roles(:app), in: :sequence, wait: 5 do
-      execute('si')
+    on roles(:web), in: :sequence, wait: 5 do
+      execute('syncit')
     end
   end
 end
