@@ -37,7 +37,14 @@ namespace :deploy do
   end
 end
 
-after 'deploy:finished', 'deploy:sync'
+namespace :deploy do
+  desc 'Sync servers'
+  task :sync_again do
+    on roles(:web), in: :sequence, wait: 5 do
+      execute('syncit')
+    end
+  end
+end
 
 # The above restart task is not run by default
 # Uncomment the following line to run it on deploys if needed
@@ -68,3 +75,6 @@ end
 # Note that you need to have WP-CLI installed on your server
 # Uncomment the following line to run it on deploys if needed
 # after 'deploy:publishing', 'deploy:update_option_paths'
+
+after 'deploy:updated', 'deploy:sync'
+after 'deploy:finished', 'deploy:sync_again'
