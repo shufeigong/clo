@@ -19,6 +19,7 @@ set :log_level, :info
 #set :linked_files, fetch(:linked_files, []).push('.env', 'web/.htaccess')
 set :linked_files, fetch(:linked_files, []).push('.env')
 set :linked_dirs, fetch(:linked_dirs, []).push('web/app/uploads')
+set :linked_dirs, fetch(:linked_dirs, []).push('web/app/cache')
 
 namespace :deploy do
   desc 'Restart application'
@@ -29,6 +30,17 @@ namespace :deploy do
     end
   end
 end
+
+namespace :deploy do
+  desc 'Sync servers'
+  task :sync do
+    on roles(:app), in: :sequence, wait: 5 do
+      execute('si')
+    end
+  end
+end
+
+after 'deploy:publishing', 'deploy:sync'
 
 # The above restart task is not run by default
 # Uncomment the following line to run it on deploys if needed
