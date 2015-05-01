@@ -37,3 +37,4 @@ bin
 
 # Custom
 cache/
+wp-cache-config.php
