@@ -41,3 +41,4 @@ wp-cache-config.php
 .idea/
 web/app/themes/FoundationPress
 
+.idea/workspace.xml
