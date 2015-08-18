@@ -38,6 +38,6 @@ bin
 # Custom
 cache/
 wp-cache-config.php
-.idea
+.idea/
 web/app/themes/FoundationPress
 
