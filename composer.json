@@ -50,14 +50,17 @@
     "wpackagist-plugin/wpmandrill": "~1.33",
     "wpackagist-plugin/google-sitemap-generator": "^4.0.8",
     "wpackagist-plugin/wp-accessibility": "^1.4.0",
-    "wpackagist-plugin/wp-super-cache": "^1.4.0"
+    "wpackagist-plugin/wp-super-cache": "^1.4.0",
+    "wpackagist-plugin/wp-better-emails": "^0.2"
   },
   "extra": {
     "installer-paths": {
       "web/app/mu-plugins/{$name}/": [
         "type:wordpress-muplugin",
         "roots/soil",
-        "roots/wp-h5bp-htaccess"
+        "roots/wp-h5bp-htaccess",
+        "wpackagist-plugin/wpmandrill",
+        "wpackagist-plugin/wp-better-emails"
       ],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]

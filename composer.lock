@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "983a6340147246a349f2155a444b1d94",
+    "hash": "777e0f576bc693e19330305b54e1b0e0",
     "packages": [
         {
             "name": "composer/installers",
@@ -419,6 +419,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-accessibility/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-better-emails",
+            "version": "0.2.8",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/wp-better-emails/",
+                "reference": "tags/0.2.8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-better-emails.0.2.8.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-better-emails/"
         },
         {
             "name": "wpackagist-plugin/wp-super-cache",
