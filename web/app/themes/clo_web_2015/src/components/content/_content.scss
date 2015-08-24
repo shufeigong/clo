@@ -1,0 +1,369 @@
+.site-main {
+	position: relative;
+	min-height: 1000px;
+}
+
+.hentry {
+	padding: 48px 0;
+	position: relative;
+}
+
+.hentry.has-post-thumbnail {
+	padding: 0;
+}
+
+.hentry-wrapper + .hentry-wrapper .hentry:not(.has-post-thumbnail) {
+	border-top: 1px solid $color__border--primary;
+}
+
+.entry-thumbnail {
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+	padding: 128px 0;
+}
+.single .entry-thumbnail {
+	padding: 0;
+}
+
+.entry-thumbnail:after {
+	background-color: rgba(0, 0, 0, 0.3);
+	content: "";
+	display: block;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+.has-post-thumbnail .entry-header {
+	position: relative;
+	z-index: 2;
+}
+
+.single .has-post-thumbnail .entry-header {
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.entry-header {
+	padding: 0 24px;
+	width: 100%;
+}
+
+.entry-title {
+	font-size: 33px;
+	line-height: (42/33);
+	margin: 0;
+	text-align: center;
+}
+
+.has-post-thumbnail .entry-title,
+.has-post-thumbnail .entry-title a,
+.has-post-thumbnail .entry-meta,
+.has-post-thumbnail .entry-meta a {
+	color: #fff;
+}
+
+.entry-meta {
+	color: $color__text--secondary;
+	font-size: 13px;
+	line-height: (21/13);
+	margin-top: 12px;
+	padding: 0;
+	text-align: center;
+}
+
+.entry-meta a {
+	border-bottom: 1px solid transparent;
+	color: $color__text--secondary;
+}
+
+.entry-meta a:hover {
+	border-bottom: 1px solid $color__text--primary;
+}
+
+.entry-meta a:hover,
+.entry-meta a:focus {
+	color: $color__text--primary;
+}
+
+.entry-content,
+.entry-summary {
+	padding: 24px;
+	margin: 0 auto;
+	max-width: 620px;
+}
+
+.entry-content > :last-child,
+.entry-summary > :last-child {
+	margin-bottom: 0;
+}
+
+.entry-content,
+.entry-summary,
+.page-content,
+.comment-content {
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+	word-wrap: break-word;
+}
+
+.entry-content h1,
+.entry-summary h1,
+.page-content h1,
+.comment-content h1 {
+	font-size: 28px;
+	line-height: (36/28);
+}
+
+.entry-content h2,
+.entry-summary h2,
+.page-content h2,
+.comment-content h2 {
+	font-size: 23px;
+	line-height: (30/23);
+}
+
+.entry-content h3,
+.entry-summary h3,
+.page-content h3,
+.comment-content h3 {
+	font-size: 19px;
+	line-height: (24/19);
+}
+
+.entry-content h4,
+.entry-content h5,
+.entry-content h6,
+.entry-summary h4,
+.entry-summary h5,
+.entry-summary h6,
+.page-content h4,
+.page-content h5,
+.page-content h6,
+.comment-content h4,
+.comment-content h5,
+.comment-content h6 {
+	font-size: 16px;
+	line-height: (18/16);
+}
+
+.entry-content h5,
+.entry-summary h5,
+.page-content h5,
+.comment-content h5 {
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+.entry-content h3,
+.entry-summary h3,
+.page-content h3,
+.comment-content h3 {
+	font-weight: 400;
+}
+
+.entry-content > h1:first-child,
+.entry-content > h2:first-child,
+.entry-content > h3:first-child,
+.entry-content > h4:first-child,
+.entry-content > h5:first-child,
+.entry-content > h6:first-child,
+.entry-summary > h1:first-child,
+.entry-summary > h2:first-child,
+.entry-summary > h3:first-child,
+.entry-summary > h4:first-child,
+.entry-summary > h5:first-child,
+.entry-summary > h6:first-child,
+.page-content > h1:first-child,
+.page-content > h2:first-child,
+.page-content > h3:first-child,
+.page-content > h4:first-child,
+.page-content > h5:first-child,
+.page-content > h6:first-child,
+.comment-content > h1:first-child,
+.comment-content > h2:first-child,
+.comment-content > h3:first-child,
+.comment-content > h4:first-child,
+.comment-content > h5:first-child,
+.comment-content > h6:first-child {
+	margin-top: 0;
+}
+
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6,
+.entry-summary h1,
+.entry-summary h2,
+.entry-summary h3,
+.entry-summary h4,
+.entry-summary h5,
+.entry-summary h6,
+.page-content h1,
+.page-content h2,
+.page-content h3,
+.page-content h4,
+.page-content h5,
+.page-content h6,
+.comment-content h1,
+.comment-content h2,
+.comment-content h3,
+.comment-content h4,
+.comment-content h5,
+.comment-content h6 {
+	margin-top: 48px;
+	margin-bottom: 24px;
+}
+
+.entry-content a,
+.entry-summary a,
+.page-content a,
+.comment-content a,
+.pingback .comment-body > a {
+	border-bottom: 1px solid $color__link;
+}
+
+.entry-content a:hover,
+.entry-content a:focus,
+.entry-summary a:hover,
+.entry-summary a:focus,
+.page-content a:hover,
+.page-content a:focus,
+.comment-content a:hover,
+.comment-content a:focus,
+.pingback .comment-body > a:hover,
+.pingback .comment-body > a:focus {
+	border-bottom: 0;
+}
+
+.entry-content a img,
+.entry-summary a img,
+.page-content a img,
+.comment-content a img {
+	display: block;
+}
+
+.entry-content .more-link,
+.entry-summary .more-link:after {
+	white-space: nowrap;
+}
+
+.page-header {
+	border-bottom: 1px solid $color__border--primary;
+	padding: 12px 24px;
+}
+
+.page-title {
+	font-family: $montserrat;
+	font-size: 19px;
+	line-height: (24/19);
+}
+
+.taxonomy-description {
+	color: $color__text--secondary;
+	margin-top: 6px;
+}
+
+.taxonomy-description a {
+	border-bottom: 1px solid $color__link--hover;
+}
+
+.taxonomy-description a:hover,
+.taxonomy-description a:focus {
+	border-bottom: 0;
+}
+
+.taxonomy-description > :last-child {
+	margin-bottom: 0;
+}
+
+.page-content {
+	background-color: #fff;
+	padding: 7.6923%;
+}
+
+.page-content > :last-child {
+	margin-bottom: 0;
+}
+
+.page-links {
+	clear: both;
+	margin-bottom: 24px;
+}
+
+.page-links a,
+.page-links > span {
+	border: 1px solid $color__text--primary;
+	display: inline-block;
+	font-size: 13px;
+	height: 48px;
+	line-height: (24/13);
+	margin: 0 6px 6px 0;
+	text-align: center;
+	width: 48px;
+}
+
+.page-links a {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0.3);
+	background-color: $color__text--primary;
+	border-color: $color__text--primary;
+	color: #fff;
+}
+
+.page-links a:hover,
+.page-links a:focus {
+	background-color: $color__text--secondary;
+	border-color: transparent;
+	color: #fff;
+}
+
+.page-links > .page-links-title {
+	border: 0;
+	color: $color__text--secondary;
+	height: auto;
+	margin: 0;
+	padding-right: 12px;
+	width: auto;
+}
+
+.entry-attachment {
+	margin-bottom: 24px;
+}
+
+.type-attachment .entry-title {
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+	word-wrap: break-word;
+}
+
+.entry-caption {
+	color: $color__text--secondary;
+	font-size: 13px;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+	line-height: (24/13);
+	padding-top: 6px;;
+	word-wrap: break-word;
+}
+
+.entry-caption > :last-child {
+	margin-bottom: 0;
+}

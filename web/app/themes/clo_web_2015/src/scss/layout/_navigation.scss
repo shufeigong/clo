@@ -1,0 +1,139 @@
+//Navigation specific stylings
+
+// Main menu style
+//Adjust the position
+ul.menu {
+    list-style : none;
+    width      : 100%;
+    margin-top : 50px;
+    li {
+        display  : block;
+        float    : none;
+        position : relative;
+
+        #tobehappy {
+            // margin-left:5px;
+            margin-right : 0;
+            float        : left;
+        }
+
+        #tolove {
+            float       : left;
+            margin-left : 33px;
+        }
+
+        #tolearn {
+            float       : left;
+            margin-left : 22px;
+        }
+
+        #towork {
+            float       : left;
+            margin-left : 25px;
+        }
+
+        #tolive {
+            float       : left;
+            margin-left : 40px;
+        }
+
+        #about {
+            float       : left;
+            margin-left : 45px;
+        }
+
+        #news {
+            float       : left;
+            margin-left : 52px;
+        }
+
+        a {
+        }
+
+        .image-link {
+            display  : inline-block;
+            width    : 88%;
+            position : absolute;
+            left     : 110px;
+            height   : 30px;
+            bottom   : 0;
+
+            img {
+                position : absolute;
+                bottom   : 0;
+                width    : 100%;
+            }
+        }
+
+        .contentdiv {
+            display       : none;
+            //margin-left:10%;
+            margin-bottom : 8%;
+            //margin-right:40%;
+            width         : 63%;
+            //border:solid 1px #0075C9;
+            float         : left;
+            margin-top    : 2.5%;
+            ul li a {
+                color : #808285;
+            }
+        }
+
+        .menudiv {
+            display       : none;
+            border-top    : solid 4px #0075C9;
+            //border:solid 1px #0075C9;
+            width         : 25%;
+            float         : left;
+            margin-top    : 2.5%;
+            margin-bottom : 8%;
+            padding-left  : 1%;
+        }
+    }
+
+    .menu-item {
+        a {
+            color : #82BC00;
+            font-family : "TradeGothicBoldTwo", "Arial", "sans-serif";
+            @include font-size(1.4);
+        }
+    }
+}
+
+// Utility Menu style
+.menu-topbar-container {
+    //border:solid 1px blue;
+    margin-top : 10px;
+    ul {
+        list-style    : none;
+        // border:solid 1px green;
+
+        float         : right;
+        margin-bottom : 10px;
+        li {
+            display      : inline;
+            margin-right : 5px;
+            a {
+                @include font-size(1.1);
+                color : $color-utility-menu;
+                font-family: "TradeGothic", "Arial", "sans-serif";
+
+                &:before {
+                    content: '[ ';
+                }
+
+                &:after {
+                    content: ' ]';
+                }
+
+                &:hover {
+                    color: $color-utility-menu-hover;
+                }
+            }
+        }
+
+    }
+    //position:relative;
+}
+
+

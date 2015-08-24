@@ -1,0 +1,12 @@
+{
+    "name": "insu/clo",
+    "authors": [
+        {
+            "name": "Insu Mun",
+            "email": "insu@gotenzing.com"
+        }
+    ],
+    "require": {
+        "codeception/codeception": "*"
+    }
+}

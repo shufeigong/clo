@@ -1,0 +1,25 @@
+#searchform {
+    //border:solid 1px red;
+    //position:absolute;
+    //right:5%;
+    float         : right;
+    display       : inline-block;
+    width         : 25%;
+    //margin-top:30px;
+    margin-bottom : 10px;
+    #searchtext {
+        //border:solid 1px red;
+        margin   : 0;
+        position : relative;
+    }
+
+    #searchbutton {
+        top      : 0;
+        right    : 16px;
+        //border:solid 1px red;
+        margin   : 0;
+        position : absolute;
+        width    : 38px;
+    }
+
+}
