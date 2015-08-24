@@ -1,0 +1,104 @@
+.tenon-result .certainty, .tenon-result .priority { padding: 2px; border-radius: 2px; text-shadow: 1px 1px #000; }
+
+.tenon-result .meta { font-family: Arial, sans-serif; }
+
+.tenon-result .high {
+	font-weight: 700;
+	color: white;
+	background: red;
+}
+
+.tenon-result .medium {
+	font-weight: 700;
+	color: black;
+	background: yellow;
+	text-shadow: 1px 1px #fff;
+}
+
+.tenon-result .low {
+	color: white;
+	background: dark-green;
+}
+
+.tenon-result {
+	padding: 1em;
+	margin-bottom: 2em;
+}
+
+.tenon-result:nth-of-type(even), .tenon-report tr:nth-of-type(even) {
+	background: rgb( 240,240,240 );
+}
+
+.tenon-report td {
+	position: relative;
+	overflow: visible;
+}
+
+.no-js .codepanel { display: none; }
+
+.codepanel {
+	left: -2em;
+	position: absolute;
+	background: #e6e6e6;
+	padding: .5em;
+	z-index: 10;
+	width: 24em;
+}
+
+.codepanel code {
+	background: #e6e6e6;
+	color: #222;
+}
+
+button.close {
+	border: none;
+	background: none;
+	padding: 0;
+	margin: 0;
+	margin: 0 0 2px 2px;
+	float: right;
+	color: darkred;
+}
+
+button.close:hover, button.close:focus {
+	background: #fff;
+}
+
+.error-total {
+	text-align: center;
+	line-height: 1.2;
+	background: rgba( 0,0,0,.05 );
+	padding: .25em;
+}
+
+.error-total span {
+	display: block;
+	font-size: 4em; 
+}
+
+#am_total, #am_tested {
+	width: 4em;
+}
+
+#am_schedule {
+	width: 10em;
+}
+
+#am_report_div pre {
+	overflow: scroll;
+	background: #f3f3f3;
+}
+
+#am_report_div code {
+	background: transparent;
+}
+
+.no-js .report-settings {
+	display: none;
+}
+
+.post-type-tenon-report .misc-pub-visibility { display: none; }
+
+#access-monitor h2 .dashicons-universal-access { font-size: 1.3em; width: 1.3em; }
+
+.tenon-result code, .tenon-result pre { margin: 0!important; padding: .5em!important; }

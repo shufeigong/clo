@@ -1,7 +1,5 @@
 # Application
-web/app/plugins/*
 !web/app/plugins/.gitkeep
-web/app/mu-plugins/*
 !web/app/mu-plugins/.gitkeep
 web/app/upgrade
 web/app/uploads/*
@@ -41,3 +39,6 @@ wp-cache-config.php
 .idea/
 
 .idea/workspace.xml
+
+!web/app/themes/FoundationPress
+
