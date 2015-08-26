@@ -17,7 +17,7 @@ function pageLoad(linkSplit, basicItems)
 		    		  
 		   		   var content=response.content;
 		   		   $("#"+linkSplit.split('/').shift()).next().next().html(content);
-			   		
+		   		   grabMenu(linkSplit.split('/').shift());   //grab submenu according to itemId
 		   		    $(".entry-title").slideUp();
 			   		$(".entry-content").slideUp();
 			   		$(".dynamic-content").slideUp();
@@ -31,7 +31,7 @@ function pageLoad(linkSplit, basicItems)
 			   		$("#"+linkSplit.split('/').shift()).next().next().css("border-top", "solid 4px #0075C9"); //create top border
 			   		$("#"+linkSplit.split('/').shift()).css("color", "#0075C9"); //keep selected item's text to blue
 			   	    $("#"+linkSplit.split('/').shift()).next().children().attr("src", "/app/themes/clo_web_2015/src/img/"+linkSplit.split('/').shift()+"blue.png"); //keep selected item's image to blue
-			   		grabMenu(linkSplit.split('/').shift());   //grab submenu according to itemId
+			   		
 		   		    
 			   		$("#"+linkSplit.split('/').shift()).next().next().slideDown();  //get content down
 			   	    $("#"+linkSplit.split('/').shift()).next().next().next().slideDown(); //get submenu down
