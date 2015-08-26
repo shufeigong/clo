@@ -5,21 +5,31 @@
     float         : right;
     display       : inline-block;
     width         : 25%;
+    height        : 25px;
     //margin-top:30px;
     margin-bottom : 10px;
+    margin-right:   18px;
     #searchtext {
         //border:solid 1px red;
         margin   : 0;
+<<<<<<< HEAD
         position : relative;
+=======
+        height        : 100%;
+        //position : relative;
+>>>>>>> Fix search button
     }
 
     #searchbutton {
         top      : 0;
-        right    : 16px;
+        right    : 0px;
         //border:solid 1px red;
         margin   : 0;
         position : absolute;
-        width    : 38px;
+        width    : 25px;
+        height:   100%;
+        padding:  4px;
+        //height:90%;
     }
 
 }

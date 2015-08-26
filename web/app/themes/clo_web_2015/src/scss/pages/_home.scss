@@ -1,1 +1,39 @@
+<<<<<<< HEAD
 //Home page specific stylings
+=======
+//Home page specific stylings
+
+
+
+header
+{
+  //border:solid 1px #333;
+  margin-top:30px;
+  padding-left:9%;
+  width:60%;
+}
+.entry-content
+{
+   //border:solid 1px #333;
+   padding-left:9%;
+   padding-bottom: 3px;
+   width:60%;
+   
+}
+article{
+   position:relative;
+
+	.dynamic-content
+	{
+		//border:solid 1px #333;
+		width:30%;
+		position:absolute;
+		left:67%;
+		top:0;
+		img{
+		margin:5px;
+		}
+	}
+
+}
+>>>>>>> Fix search button
