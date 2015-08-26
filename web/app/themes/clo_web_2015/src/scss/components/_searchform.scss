@@ -1,6 +1,6 @@
 #searchform {
     //border:solid 1px red;
-    //position:absolute;
+    position:relative;
     //right:5%;
     float         : right;
     display       : inline-block;
@@ -12,12 +12,10 @@
     #searchtext {
         //border:solid 1px red;
         margin   : 0;
-<<<<<<< HEAD
-        position : relative;
-=======
+
         height        : 100%;
-        //position : relative;
->>>>>>> Fix search button
+        padding:3px;
+  
     }
 
     #searchbutton {

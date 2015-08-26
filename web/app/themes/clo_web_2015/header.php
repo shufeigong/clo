@@ -57,7 +57,7 @@
 					'link_after'      => '',
 					'items_wrap'      => '<ul id="%1$s">%3$s</ul>',
 					'depth'           => 1,
-					//  		'walker'          => new topbar_walker ()
+				    'walker'          => new topbar_walker ()
 				);
 				wp_nav_menu( $topbarinfo ); ?>
 			</div>

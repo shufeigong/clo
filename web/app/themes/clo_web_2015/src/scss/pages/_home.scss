@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-//Home page specific stylings
-=======
+
 //Home page specific stylings
 
 
@@ -18,6 +16,11 @@ header
    padding-left:9%;
    padding-bottom: 3px;
    width:60%;
+   p{
+     color: #58595B;
+     font-family : "TradeGothic", "Arial", "sans-serif";
+     @include font-size(1.2);
+   }
    
 }
 article{
@@ -36,4 +39,4 @@ article{
 	}
 
 }
->>>>>>> Fix search button
+
