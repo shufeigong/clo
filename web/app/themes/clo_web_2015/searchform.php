@@ -7,7 +7,7 @@
  * @since FoundationPress 1.0
  */
 
-do_action( 'foundationpress_before_searchform' ); ?>
+//do_action( 'foundationpress_before_searchform' ); ?>
 <form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
 	
 		<?php do_action( 'foundationpress_searchform_top' ); ?>
@@ -22,4 +22,4 @@ do_action( 'foundationpress_before_searchform' ); ?>
 		<?php do_action( 'foundationpress_searchform_after_search_button' ); ?>
 	
 </form>
-<?php do_action( 'foundationpress_after_searchform' ); ?>
+<?php //do_action( 'foundationpress_after_searchform' ); ?>

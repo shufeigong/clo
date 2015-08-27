@@ -49,10 +49,18 @@ get_header();  //wp_nav_menu?>
 			    wp_nav_menu( $defaults );
 			    ?>
 			  <div class="dynamic-content">
-			  <img alt="dynamic1" src="<?php echo get_stylesheet_directory_uri(); ?>/src/img/dynamic1.png"/>
-			  <img alt="dynamic2" src="<?php echo get_stylesheet_directory_uri(); ?>/src/img/dynamic2.png"/>
 			  
+			  <div class="dynamic1">what’s happening
+			  Consectetur adipiscing elit. Donec tincidunt eu 
+			  tellus nec volutpat. Integer tempus tempor leo 
+			  ullamcorper accumsan.</div>
 			  
+			  <div class="dynamic1">lorem ipsum dolor<hr/> 
+			  Consectetur adipiscing elit. Donec tincidunt eu 
+			  tellus nec volutpat. Integer tempus tempor leo 
+			  ullamcorper accumsan.
+			  </div>
+			
 			  </div>  
 			<footer>
 				<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>

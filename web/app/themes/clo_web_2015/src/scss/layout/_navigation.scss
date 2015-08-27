@@ -69,11 +69,12 @@ ul.menu {
             display       : none;
             width         : 52%;
             //border:solid 1px #0075C9;
+            //border-top    : solid 4px #0075C9;
             float         : left;
-            margin-top    : 1.2%;
+            margin-top    : 2.5%;
             margin-left: 4px;
             margin-bottom : 8%;
-            padding-top:  17px;
+            //padding-top:  17px;
             padding-left: 5px;
             
             p{
@@ -85,7 +86,7 @@ ul.menu {
 
         .menudiv {
             display       : none;
-            border-top    : solid 4px #0075C9;
+            //border-top    : solid 4px #0075C9;
             //border:solid 1px #0075C9;
             width         : 36%;
             float         : left;
@@ -146,4 +147,19 @@ ul.menu {
     //position:relative;
 }
 
+hr{
+height:1px;
+border-top:4px solid red;
+}
 
+.blueline{
+display:none;
+border:2px solid #0075C9;
+height:0;
+margin:0;
+width    : 88%;
+position : absolute;
+            left     : 88px;
+            top   : 13px;
+
+}

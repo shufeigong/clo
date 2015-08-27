@@ -36,6 +36,16 @@ article{
 		img{
 		margin:5px;
 		}
+		
+		.dynamic1
+		{
+		  color: #58595B;
+          font-family : "TradeGothic", "Arial", "sans-serif";
+          @include font-size(1.2);
+          margin:5px;
+          background:url(../img/dynamic3.png);
+          padding:10px 10px 10px 25px;
+		}
 	}
 
 }
