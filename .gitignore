@@ -37,7 +37,11 @@ bin
 cache/
 wp-cache-config.php
 .idea/
-
+.buildpath
 .idea/workspace.xml
+.DS_Store
+.settings/
+.project/
+
 
 

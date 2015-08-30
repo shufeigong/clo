@@ -442,15 +442,15 @@
         },
         {
             "name": "wpackagist-plugin/tinymce-advanced",
-            "version": "4.2.3",
+            "version": "4.2.3.1",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/tinymce-advanced/",
-                "reference": "tags/4.2.3"
+                "reference": "tags/4.2.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/tinymce-advanced.4.2.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/tinymce-advanced.4.2.3.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -462,15 +462,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-accessibility",
-            "version": "1.4.3",
+            "version": "1.4.4",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/wp-accessibility/",
-                "reference": "tags/1.4.3"
+                "reference": "tags/1.4.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-accessibility.1.4.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-accessibility.1.4.4.zip",
                 "reference": null,
                 "shasum": null
             },

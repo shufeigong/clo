@@ -63,8 +63,7 @@
         "type:wordpress-muplugin",
         "roots/soil",
         "roots/wp-h5bp-htaccess",
-        "wpackagist-plugin/access-monitor",
-        "wpackagist-plugin/wp-accessibility"
+        "wpackagist-plugin/access-monitor"
       ],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
