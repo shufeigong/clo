@@ -9,7 +9,7 @@ button,
 input,
 select,
 textarea {
-    @include font-size(1.6);
+    @include font-size(1.2);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-   color:#0075C9;
+   color: $color-header;
    font-family:"TradeGothic", "Arial", "sans-serif";
    @include font-size(2.7);
 }
