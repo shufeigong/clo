@@ -1,0 +1,9 @@
+[submodule "web/app/themes/Unyson"]
+	path = web/app/themes/Unyson
+	url = https://github.com/ThemeFuse/Unyson
+[submodule "web/app/themes/FoundationPress"]
+	path = web/app/themes/FoundationPress
+	url = https://github.com/Negative-Network/FoundationPress.git
+[submodule "web/app/themes/FoundationPress-child"]
+	path = web/app/themes/FoundationPress-child
+	url = https://github.com/Negative-Network/FoundationPress-child
