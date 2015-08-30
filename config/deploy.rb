@@ -71,6 +71,19 @@ namespace :deploy do
   end
 end
 
+namespace :git do
+  desc 'Copy repo to releases'
+  task create_release: :'git:update' do
+    on roles(:all) do
+      with fetch(:git_environmental_variables) do
+        within repo_path do
+          execute :git, :clone, '-b', fetch(:branch), '--recursive', '.', release_path
+        end
+      end
+    end
+  end
+end
+
 # The above update_option_paths task is not run by default
 # Note that you need to have WP-CLI installed on your server
 # Uncomment the following line to run it on deploys if needed
