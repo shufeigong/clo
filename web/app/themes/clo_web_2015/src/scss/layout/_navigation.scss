@@ -1,5 +1,22 @@
 //Navigation specific stylings
 
+.tab-bar {
+    background: none;
+    margin: 0;
+
+    .menu-icon span::after {
+        content: "";
+        display: block;
+        height: 0;
+        position: absolute;
+        top: 50%;
+        margin-top: 0;
+        left: 0;
+        box-shadow: 0 0 0 2px #82bc00,0 7px 0 2px #82bc00,0 14px 0 2px #82bc00;
+        width: 20px;
+    }
+}
+
 // Main menu style
 //Adjust the position
 ul.menu {
@@ -114,7 +131,7 @@ ul.menu {
 }
 
 // Utility Menu style
-.menu-topbar-container {
+.menu-utility-menu-container {
     //border:solid 1px blue;
     margin-top : 10px;
     ul {

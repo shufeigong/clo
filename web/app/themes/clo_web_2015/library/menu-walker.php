@@ -95,7 +95,7 @@ if (!class_exists('Foundationpress_Top_Bar_Walker')) :
     }
 
 
-class description_walker extends Walker_Nav_Menu
+class Main_Nav_walker extends Walker_Nav_Menu
 {
 
 	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
@@ -161,7 +161,7 @@ class description_walker extends Walker_Nav_Menu
 	}
 }
 
-class topbar_walker extends Walker_Nav_Menu
+class Utility_Nav_walker extends Walker_Nav_Menu
 {
 	function start_el(  &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		global $wp_query;

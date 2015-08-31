@@ -8,4 +8,4 @@
  */
 
 ?>
-<?php foundationpress_top_bar(); ?>
+<?php mainMenu(); ?>

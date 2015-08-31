@@ -23,27 +23,8 @@ get_header();  //wp_nav_menu?>
                 <div class="entry-content <?php echo is_front_page() ? 'home' : '';?>">
                     <?php the_content(); ?>
                 </div>
-                <?php
-                $defaults = array(
-                    'theme_location'  => 'head-menu',
-                    'menu'            => 'topnav',
-                    'container'       => 'div',
-                    'container_class' => '',
-                    'container_id'    => '',
-                    'menu_class'      => 'menu',
-                    'menu_id'         => '',
-                    'echo'            => true,
-                    'fallback_cb'     => 'wp_page_menu',
-                    'before'          => '',
-                    'after'           => '',
-                    'link_before'     => '',
-                    'link_after'      => '',
-                    'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                    'depth'           => 1,
-                    'walker'          => new description_walker()
-                );
-                wp_nav_menu($defaults);
-                ?>
+                <?php get_template_part('parts/main-menu'); ?>
+
                 <?php if(is_front_page()) :?>
                 <div class="news-content">
 

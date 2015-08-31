@@ -33,41 +33,28 @@
 
 <div class="off-canvas-wrap" data-offcanvas>
     <div class="inner-wrap">
-        <?php do_action('foundationpress_layout_start'); ?>
+        <nav class="tab-bar show-for-small-only">
+            <section class="right-small">
+                <a class="right-off-canvas-toggle menu-icon" ><span></span></a>
+            </section>
+        </nav>
+        <aside class="left-off-canvas-menu">
+            <?php foundationPress_mobile_off_canvas(); ?>
+        </aside>
+        <?php get_template_part('parts/off-canvas-menu'); ?>
 
-        <?php get_template_part('parts/top-bar'); ?>
-
-        <section class="container" role="document">
-            <?php do_action('foundationpress_after_header'); ?>
-            <div class="row ">
-                <div class="row header">
-                    <div class="columns large-4 medium-4 small-12">
-                        <a class="site-logo" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
-                            <img alt="Community Living Ontario Logo"
-                                 src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/clo_logo.svg" />
-                        </a>
-                    </div>
-                    <div class="columns large-8 medium-4 small-8">
-                        <?php
-                        $topbarinfo = array(
-                            'theme_location'  => '',
-                            'menu'            => 'topbar',
-                            'container'       => 'div',
-                            'container_class' => '',
-                            'container_id'    => '',
-                            'menu_class'      => 'menu',
-                            'menu_id'         => '',
-                            'echo'            => true,
-                            'fallback_cb'     => 'wp_page_menu',
-                            'before'          => '',
-                            'after'           => '',
-                            'link_before'     => '',
-                            'link_after'      => '',
-                            'items_wrap'      => '<ul id="%1$s">%3$s</ul>',
-                            'depth'           => 1,
-                            'walker'          => new topbar_walker ()
-                        );
-                        wp_nav_menu($topbarinfo); ?>
-                    </div>
-                    <?php get_search_form(); ?>
-                </div>
+<section class="container" role="document">
+<?php do_action('foundationpress_after_header'); ?>
+<div class="row ">
+    <div class="row header">
+        <div class="columns large-4 medium-4 small-12">
+            <a class="site-logo" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
+                <img alt="Community Living Ontario Logo"
+                     src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/clo_logo.svg" />
+            </a>
+        </div>
+        <div class="columns large-8 medium-4 small-8">
+            <?php get_template_part('parts/utility-menu'); ?>
+        </div>
+        <?php get_search_form(); ?>
+    </div>

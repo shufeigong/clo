@@ -1,3 +1,12 @@
+
+.move-left>.inner-wrap {
+    -webkit-transform: translate3d(-31.625rem,0,0);
+    -moz-transform: translate3d(-31.625rem,0,0);
+    -ms-transform: translate(-31.625rem,0);
+    -ms-transform: translate3d(-31.625rem,0,0);
+    -o-transform: translate3d(-31.625rem,0,0);
+    transform: translate3d(-31.625rem,0,0);
+}
 .container {
     > .row {
         max-width : 962px;
