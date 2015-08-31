@@ -15,16 +15,12 @@ get_header();  //wp_nav_menu?>
 
 <div class="row">
     <div class="medium-12" role="main">
-
         <?php do_action('foundationpress_before_content'); ?>
 
         <?php while (have_posts()) : the_post(); ?>
             <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-                <header>
-                    <h1 class="entry-title"><?php the_title(); ?></h1>
-                </header>
                 <?php do_action('foundationpress_page_before_entry_content'); ?>
-                <div class="entry-content">
+                <div class="entry-content <?php echo is_front_page() ? 'home' : '';?>">
                     <?php the_content(); ?>
                 </div>
                 <?php
@@ -48,6 +44,7 @@ get_header();  //wp_nav_menu?>
                 );
                 wp_nav_menu($defaults);
                 ?>
+                <?php if(is_front_page()) :?>
                 <div class="news-content">
 
                     <div class="news1 news-item has-video">
@@ -75,6 +72,7 @@ get_header();  //wp_nav_menu?>
                         </p>
                     </div>
                 </div>
+                <?php endif; ?>
                 <footer>
                     <?php wp_link_pages(
                         array(
