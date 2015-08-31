@@ -14,7 +14,6 @@ register_nav_menus(array(
 	'mobile-off-canvas' => 'Mobile',
 ));
 
-
 /**
  * Utility menu bar
  * http://codex.wordpress.org/Function_Reference/wp_nav_menu

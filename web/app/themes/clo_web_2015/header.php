@@ -49,8 +49,7 @@
     <div class="row header">
         <div class="columns large-4 medium-4 small-12">
             <a class="site-logo" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
-                <img alt="Community Living Ontario Logo"
-                     src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/clo_logo.svg" />
+                <img alt="Community Living Ontario Logo" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/clo_logo.svg" />
             </a>
         </div>
         <div class="columns large-8 medium-4 small-8">

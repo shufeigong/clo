@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for top bar menu
+ * Template part for main menu
  *
  * @package WordPress
  * @subpackage FoundationPress

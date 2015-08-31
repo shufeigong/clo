@@ -153,7 +153,6 @@ class Main_Nav_walker extends Walker_Nav_Menu
 		// build html
 		$output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
 
-
 		$output .= '<div class="image-link ' . strtolower(str_replace(' ', '-', apply_filters('the_title', $item->title, $item->ID))) . '" href="#" onclick="return false"><img src="/app/themes/clo_web_2015/src/img/'.strtolower(str_replace(' ', '', apply_filters('the_title', $item->title, $item->ID))) . '.svg"/></div>';
         $output.='<hr class="blueline"/>';
 		$output.='<div class="contentdiv"></div>';
