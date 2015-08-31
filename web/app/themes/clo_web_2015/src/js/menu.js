@@ -255,7 +255,7 @@ $(document).ready(function()
 	    			    	   var id=response.items[i].title.replace(/[ ]/g,"").toLowerCase();
 	    			    	   basicItems.push(id);
 	    			    	   $("#"+id).bind({mouseenter:function(){hover1(this.id);},mouseleave:function(){hover2(this.id);}}).bind("click", function(){itemClick(this.id);});
-	    			    	   $("#"+id).next().bind({mouseenter:function(){hover1($(this).prev().attr("id"));},mouseleave:function(){hover2($(this).prev().attr("id"));}}).bind("click", function(){itemClick($(this).prev().attr("id"));});
+	    			    	   //$("#"+id).next().bind({mouseenter:function(){hover1($(this).prev().attr("id"));},mouseleave:function(){hover2($(this).prev().attr("id"));}}).bind("click", function(){itemClick($(this).prev().attr("id"));});
 	    			    	   
 	    			    	  }
 	    			  }
