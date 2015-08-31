@@ -26,7 +26,7 @@ $('img[usemap]').rwdImageMaps();
 		   		   $("#"+linkSplit.split('/').shift()).nextAll(".contentdiv").html(content);
 		   		    $(".entry-title").slideUp();
 			   		$(".entry-content").slideUp();
-			   		$(".dynamic-content").slideUp();
+			   		$(".news-content").slideUp();
 			   		$("#"+linkSplit.split('/').shift()).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
 			   		$("#"+linkSplit.split('/').shift()).parent().siblings().children(".menudiv").slideUp();       //close all other pages' submenu
 			   		$("#"+linkSplit.split('/').shift()).parent().siblings().children(".blueline").css("display", "none"); //reback all other blueline none
@@ -177,7 +177,7 @@ function itemClick(itemId)
 	//$(".entry-content").css("display", "none");
 	$(".entry-title").slideUp();
 	$(".entry-content").slideUp();
-	$(".dynamic-content").slideUp();
+	$(".news-content").slideUp();
 	$("#"+itemId).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
 	$("#"+itemId).parent().siblings().children(".menudiv").slideUp();      //close all other pages' submenu
 	$("#"+itemId).parent().siblings().children(".blueline").css("display", "none"); //reback all other blueline none
@@ -202,7 +202,7 @@ function pageRefresh(itemId)
 {   
 	$(".entry-title").slideUp();
 	$(".entry-content").slideUp();
-	$(".dynamic-content").slideUp();
+	$(".news-content").slideUp();
 	$("#"+itemId).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
 	$("#"+itemId).parent().siblings().children(".menudiv").slideUp();       //close all other pages' submenu
 	$("#"+itemId).parent().siblings().children(".blueline").css("display", "none"); //reback all other blueline none
