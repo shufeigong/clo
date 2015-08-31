@@ -13,7 +13,7 @@ $('img[usemap]').rwdImageMaps();
 		      {
 			      pageRefresh(linkSplit);
 				  //$("#"+linkSplit).css("color", "#0075C9"); //keep selected item's text to blue
-				  //$("#"+linkSplit).next().children().attr("src", "/wp-content/themes/FoundationPress-child/images/"+linkSplit+"blue.png"); //keep selected item's image to blue
+				  //$("#"+linkSplit).next().children().attr("src", "/wp-content/themes/FoundationPress-child/images/"+linkSplit+"blue.svg"); //keep selected item's image to blue
 		      }
 		      else
 		      {
@@ -38,7 +38,7 @@ $('img[usemap]').rwdImageMaps();
 			   		
 			   		$("#"+linkSplit.split('/').shift()).nextAll(".blueline").css("display", "inline"); //create top blueline
 			   		$("#"+linkSplit.split('/').shift()).css("color", "#0075C9"); //keep selected item's text to blue
-			   	    $("#"+linkSplit.split('/').shift()).next().children().attr("src", "/app/themes/clo_web_2015/src/img/"+linkSplit.split('/').shift()+"blue.png"); //keep selected item's image to blue
+			   	    $("#"+linkSplit.split('/').shift()).next().children().attr("src", "/app/themes/clo_web_2015/src/img/"+linkSplit.split('/').shift()+"blue.svg"); //keep selected item's image to blue
 			   		
 		   		    
 			   		$("#"+linkSplit.split('/').shift()).nextAll(".contentdiv").slideDown();  //get content down
@@ -164,13 +164,13 @@ function signclick(id)
 function hover1(itemId)
 {
 	$("#"+itemId).css("color", "#0075C9");
-	$("#"+itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/"+itemId+"blue.png");
+	$("#"+itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/"+itemId+"blue.svg");
 }
 
 function hover2(itemId)
 {
 	$("#"+itemId).css("color", "#82BC00");
-	$("#"+itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/"+itemId+".png");
+	$("#"+itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/"+itemId+".svg");
 	
 }
 
@@ -217,7 +217,7 @@ function pageRefresh(itemId)
 	//////////clear previous mass///////////
 	$("#"+itemId).nextAll(".blueline").css("display", "inline"); //create top blueline
 	$("#"+itemId).css("color", "#0075C9"); //keep selected item's text to blue
-    $("#"+itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/"+itemId+"blue.png"); //keep selected item's image to blue
+    $("#"+itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/"+itemId+"blue.svg"); //keep selected item's image to blue
     
     grabMenu(itemId);   //grab submenu according to itemId
     grabPage(itemId);   //grab page according to itemId
