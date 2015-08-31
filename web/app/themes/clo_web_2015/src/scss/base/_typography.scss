@@ -36,6 +36,7 @@ h3 {
 
 p {
     margin-bottom : 1.5em;
+    @include font-size(1.2);
 }
 
 b, strong {

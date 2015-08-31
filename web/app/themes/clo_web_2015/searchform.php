@@ -13,7 +13,7 @@ do_action( 'foundationpress_before_searchform' ); ?>
         <?php do_action('foundationpress_searchform_top'); ?>
 
         <input id="searchtext" type="text" value="" name="s"
-               placeholder="<?php esc_attr_e('KeywordSearch', 'foundationpress'); ?>">
+               placeholder="<?php esc_attr_e('Keyword Search', 'foundationpress'); ?>">
 
         <?php do_action('foundationpress_searchform_before_search_button'); ?>
 
