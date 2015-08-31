@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+*.sass-cache*
+bower_components/
+*.log
+css/
+js/vendor
+js/foundation.js
