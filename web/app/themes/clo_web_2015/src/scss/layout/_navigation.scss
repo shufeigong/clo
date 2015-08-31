@@ -2,169 +2,347 @@
 
 // Main menu style
 //Adjust the position
-ul.menu {
-    list-style : none;
-    width      : 100%;
-    margin-top : 50px;
-    li {
-        display  : block;
-        float    : none;
-        position : relative;
+@media screen and (min-width: 1000px) {
+    
+	ul.menu {
+	    list-style : none;
+	    width      : 100%;
+	    margin-top : 50px;
+	    li {
+	        display  : block;
+	        float    : none;
+	        position : relative;
+	
+	        #tobehappy {
+	            margin-left:3px;
+	            
+	            float        : left;
+	        }
+	
+	        #tolove {
+	            float       : left;
+	            margin-left : 33px;
+	        }
+	
+	        #tolearn {
+	            float       : left;
+	            margin-left : 23px;
+	        }
+	
+	        #towork {
+	            float       : left;
+	            margin-left : 27px;
+	        }
+	
+	        #tolive {
+	            float       : left;
+	            margin-left : 36px;
+	        }
+	
+	        #about {
+	            float       : left;
+	            margin-left : 41px;
+	        }
+	
+	        #news {
+	            float       : left;
+	            margin-left : 47px;
+	        }
+	
+	        a {
+	        }
+	
+	        .image-link {
+	            display  : inline-block;
+	            width    : 88%;
+	            position : absolute;
+	            left     : 88px;
+	            height   : 30px;
+	            bottom   : 4px;
+	            //border:solid 1px red;
+	            
+	            img {
+	                position : absolute;
+	                bottom   : 0;
+	                width    : 100%;
+	                //border:solid 1px blue;
+	                
+	            }
+	        }
+	
+	        .contentdiv {
+	            display       : none;
+	            width         : 52%;
+	            //border:solid 1px #0075C9;
+	            //border-top    : solid 4px #0075C9;
+	            
+	            float         : left;
+	            //position:absolute;
+	         //margin-top    : 10px;
+	            margin-left: 4px;
+	            margin-bottom : 8%;
+	            //padding-top:  1%;
+	            padding-left: 5px;
+	            
+	            p{
+	              color: #58595B;
+	              font-family : "TradeGothic", "Arial", "sans-serif";
+	              @include font-size(1.2);
+	            }
+	        }
+	
+	        .menudiv {
+	            display       : none;
+	            //border-top    : solid 4px #0075C9;
+	            //border:solid 1px #0075C9;
+	            width         : 36%;
+	            float         : left;
+	            margin-top    : 1.2%;
+	            margin-bottom : 8%;
+	            padding-left  : 2%;
+	            padding-top: 29px;
+	            .submenu {
+	                color : #808285;
+	                font-family : "TradeGothic", "Arial", "sans-serif";
+	                @include font-size(1.2);
+	            }
+	        }
+	    }
+	
+	    .menu-item {
+	        a {
+	            color : #82BC00;
+	            font-family : "TradeGothicBoldTwo", "Arial", "sans-serif";
+	            @include font-size(1.3);
+	        }
+	    }
+	}
+	
+	// Utility Menu style
+	.menu-topbar-container {
+	    //border:solid 1px blue;
+	    margin-top : 10px;
+	    ul {
+	        list-style    : none;
+	        // border:solid 1px green;
+	
+	        float         : right;
+	        margin-bottom : 10px;
+	        li {
+	            display      : inline;
+	            margin-right : 5px;
+	            a {
+	                @include font-size(1.1);
+	                color : $color-utility-menu;
+	                font-family: "TradeGothic", "Arial", "sans-serif";
+	
+	                &:before {
+	                    content: '[ ';
+	                }
+	
+	                &:after {
+	                    content: ' ]';
+	                }
+	
+	                &:hover {
+	                    color: $color-utility-menu-hover;
+	                }
+	            }
+	        }
+	
+	    }
+	    //position:relative;
+	}
+	
+	hr{
+	height:1px;
+	border-top:4px solid red;
+	}
+	
+	.blueline{
+	display:none;
+	border:2px solid #0075C9;
+	height:0;
+	margin:0;
+	width    : 87.6%;
+	position : absolute;
+	            left     : 88px;
+	            top   : 11px;
+	
+	}
+	
+}	
+/////////////////////////////////////////835~999px
+@media screen and (min-width: 835px) and (max-width:999px) {
 
-        #tobehappy {
-            margin-left:3px;
-            
-            float        : left;
-        }
+	ul.menu {
+	    list-style : none;
+	    width      : 100%;
+	    margin-top : 50px;
+	    li {
+	        display  : block;
+	        float    : none;
+	        position : relative;
+	
+	        #tobehappy {
+	            margin-left:3px;
+	            
+	            float        : left;
+	        }
+	
+	        #tolove {
+	            float       : left;
+	            margin-left : 33px;
+	        }
+	
+	        #tolearn {
+	            float       : left;
+	            margin-left : 23px;
+	        }
+	
+	        #towork {
+	            float       : left;
+	            margin-left : 27px;
+	        }
+	
+	        #tolive {
+	            float       : left;
+	            margin-left : 36px;
+	        }
+	
+	        #about {
+	            float       : left;
+	            margin-left : 41px;
+	        }
+	
+	        #news {
+	            float       : left;
+	            margin-left : 47px;
+	        }
+	
+	        a {
+	        }
+	
+	        .image-link {
+	            display  : inline-block;
+	            width    : 88%;
+	            position : absolute;
+	            left     : 88px;
+	            height   : 30px;
+	            bottom   : 4px;
+	            //border:solid 1px red;
+	            
+	            img {
+	                position : absolute;
+	                bottom   : 0;
+	                width    : 100%;
+	                //border:solid 1px blue;
+	                
+	            }
+	        }
+	
+	        .contentdiv {
+	            display       : none;
+	            width         : 52%;
+	            //border:solid 1px #0075C9;
+	            //border-top    : solid 4px #0075C9;
+	            
+	            float         : left;
+	            //position:absolute;
+	         //margin-top    : 10px;
+	            margin-left: 4px;
+	            margin-bottom : 8%;
+	            //padding-top:  1%;
+	            padding-left: 5px;
+	            
+	            p{
+	              color: #58595B;
+	              font-family : "TradeGothic", "Arial", "sans-serif";
+	              @include font-size(1.2);
+	            }
+	        }
+	
+	        .menudiv {
+	            display       : none;
+	            //border-top    : solid 4px #0075C9;
+	            //border:solid 1px #0075C9;
+	            width         : 36%;
+	            float         : left;
+	            margin-top    : 1.2%;
+	            margin-bottom : 8%;
+	            padding-left  : 2%;
+	            padding-top: 29px;
+	            .submenu {
+	                color : #808285;
+	                font-family : "TradeGothic", "Arial", "sans-serif";
+	                @include font-size(1.2);
+	            }
+	        }
+	    }
+	
+	    .menu-item {
+	        a {
+	            color : #82BC00;
+	            font-family : "TradeGothicBoldTwo", "Arial", "sans-serif";
+	            @include font-size(1.3);
+	        }
+	    }
+	}
+	
+	// Utility Menu style
+	.menu-topbar-container {
+	    //border:solid 1px blue;
+	    margin-top : 10px;
+	    ul {
+	        list-style    : none;
+	        // border:solid 1px green;
+	
+	        float         : right;
+	        margin-bottom : 10px;
+	        li {
+	            display      : inline;
+	            margin-right : 5px;
+	            a {
+	                @include font-size(1.1);
+	                color : $color-utility-menu;
+	                font-family: "TradeGothic", "Arial", "sans-serif";
+	
+	                &:before {
+	                    content: '[ ';
+	                }
+	
+	                &:after {
+	                    content: ' ]';
+	                }
+	
+	                &:hover {
+	                    color: $color-utility-menu-hover;
+	                }
+	            }
+	        }
+	
+	    }
+	    //position:relative;
+	}
+	
+	hr{
+	height:1px;
+	border-top:4px solid red;
+	}
+	
+	.blueline{
+	display:none;
+	border:2px solid #0075C9;
+	height:0;
+	margin:0;
+	width    : 87.6%;
+	position : absolute;
+	            left     : 88px;
+	            top   : 11px;
+	
+	}
 
-        #tolove {
-            float       : left;
-            margin-left : 33px;
-        }
 
-        #tolearn {
-            float       : left;
-            margin-left : 23px;
-        }
 
-        #towork {
-            float       : left;
-            margin-left : 27px;
-        }
-
-        #tolive {
-            float       : left;
-            margin-left : 36px;
-        }
-
-        #about {
-            float       : left;
-            margin-left : 41px;
-        }
-
-        #news {
-            float       : left;
-            margin-left : 47px;
-        }
-
-        a {
-        }
-
-        .image-link {
-            display  : inline-block;
-            width    : 88%;
-            position : absolute;
-            left     : 88px;
-            height   : 30px;
-            bottom   : 4px;
-            //border:solid 1px red;
-            
-            img {
-                position : absolute;
-                bottom   : 0;
-                width    : 100%;
-                //border:solid 1px blue;
-                
-            }
-        }
-
-        .contentdiv {
-            display       : none;
-            width         : 52%;
-            //border:solid 1px #0075C9;
-            //border-top    : solid 4px #0075C9;
-            
-            float         : left;
-            //position:absolute;
-         //margin-top    : 10px;
-            margin-left: 4px;
-            margin-bottom : 8%;
-            //padding-top:  1%;
-            padding-left: 5px;
-            
-            p{
-              color: #58595B;
-              font-family : "TradeGothic", "Arial", "sans-serif";
-              @include font-size(1.2);
-            }
-        }
-
-        .menudiv {
-            display       : none;
-            //border-top    : solid 4px #0075C9;
-            //border:solid 1px #0075C9;
-            width         : 36%;
-            float         : left;
-            margin-top    : 1.2%;
-            margin-bottom : 8%;
-            padding-left  : 2%;
-            padding-top: 29px;
-            .submenu {
-                color : #808285;
-                font-family : "TradeGothic", "Arial", "sans-serif";
-                @include font-size(1.2);
-            }
-        }
-    }
-
-    .menu-item {
-        a {
-            color : #82BC00;
-            font-family : "TradeGothicBoldTwo", "Arial", "sans-serif";
-            @include font-size(1.3);
-        }
-    }
-}
-
-// Utility Menu style
-.menu-topbar-container {
-    //border:solid 1px blue;
-    margin-top : 10px;
-    ul {
-        list-style    : none;
-        // border:solid 1px green;
-
-        float         : right;
-        margin-bottom : 10px;
-        li {
-            display      : inline;
-            margin-right : 5px;
-            a {
-                @include font-size(1.1);
-                color : $color-utility-menu;
-                font-family: "TradeGothic", "Arial", "sans-serif";
-
-                &:before {
-                    content: '[ ';
-                }
-
-                &:after {
-                    content: ' ]';
-                }
-
-                &:hover {
-                    color: $color-utility-menu-hover;
-                }
-            }
-        }
-
-    }
-    //position:relative;
-}
-
-hr{
-height:1px;
-border-top:4px solid red;
-}
-
-.blueline{
-display:none;
-border:2px solid #0075C9;
-height:0;
-margin:0;
-width    : 87.6%;
-position : absolute;
-            left     : 88px;
-            top   : 11px;
 
 }
