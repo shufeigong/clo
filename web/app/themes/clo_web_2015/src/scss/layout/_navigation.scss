@@ -74,11 +74,14 @@ ul.menu {
             left     : 88px;
             height   : 30px;
             bottom   : 4px;
-
+            //border:solid 1px red;
+            
             img {
                 position : absolute;
                 bottom   : 0;
                 width    : 100%;
+                //border:solid 1px blue;
+                
             }
         }
 
@@ -176,7 +179,7 @@ display:none;
 border:2px solid #0075C9;
 height:0;
 margin:0;
-width    : 88%;
+width    : 87.6%;
 position : absolute;
             left     : 88px;
             top   : 11px;
