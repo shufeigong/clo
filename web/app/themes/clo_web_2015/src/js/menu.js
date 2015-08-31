@@ -23,7 +23,8 @@ $('img[usemap]').rwdImageMaps();
 		   		   var content=response.content;
 		   		   
 		   		   grabMenu(linkSplit.split('/').shift());   //grab submenu according to itemId
-		   		   $("#"+linkSplit.split('/').shift()).nextAll(".contentdiv").html(content);
+		   		   $("#"+linkSplit.split('/').shift()).nextAll(".contentdiv").html("<br/>");
+		   		$("#"+linkSplit.split('/').shift()).nextAll(".contentdiv").append(content);
 		   		    $(".entry-title").slideUp();
 			   		$(".entry-content").slideUp();
 			   		$(".news-content").slideUp();
@@ -61,7 +62,8 @@ function grabPage(pageId)
 		   var content=response.content;
 		   
 		
-		   $("#"+pageId).nextAll(".contentdiv").html(content);
+		   $("#"+pageId).nextAll(".contentdiv").html("<br/>");
+		   $("#"+pageId).nextAll(".contentdiv").append(content);
 		   $("#"+pageId).nextAll(".contentdiv").slideDown();  //get content down
 		   $("#"+pageId).nextAll(".menudiv").slideDown(); //get submenu down
 		 
@@ -139,7 +141,8 @@ function change(objectId, itemId)
 		   var content=response.content;
 		   
 	
-		   $("#"+itemId).nextAll(".contentdiv").html(content);
+		   $("#"+itemId).nextAll(".contentdiv").html("<br/>");
+		   $("#"+itemId).nextAll(".contentdiv").append(content);
 		   window.history.pushState(null, null, "#!"+itemId+"/"+response.slug);
 		   
 	    }).fail(function() {
