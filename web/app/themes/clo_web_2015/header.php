@@ -47,14 +47,14 @@
 <?php do_action('foundationpress_after_header'); ?>
 <div class="row ">
     <div class="row header">
-        <div class="columns large-4 medium-4 small-12">
+        <div class="columns large-4 medium-4 small-12 small-logo">
             <a class="site-logo" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">
 
 <!--                <img class="" alt="Community Living Ontario Logo" src="--><?php //echo get_stylesheet_directory_uri(); ?><!--/dist/img/clo_logo.svg" />-->
 <!--                <img class="show-for-medium-only" alt="Community Living Ontario Logo" src="--><?php //echo get_stylesheet_directory_uri(); ?><!--/dist/img/clo_logo_medium.svg" />-->
             </a>
         </div>
-        <div class="columns large-8 medium-4 small-8">
+        <div class="columns large-8 medium-4 small-8 small-utility">
             <?php get_template_part('parts/utility-menu'); ?>
         </div>
         <?php get_search_form(); ?>
