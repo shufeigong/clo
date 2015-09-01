@@ -17,4 +17,4 @@ function custom_json_api_prepare_post( $post_response, $post, $context ) {
 
     return $post_response;
 }
-add_filter( 'json_prepare_post', 'custom_json_api_prepare_post', 10, 3 );
+// add_filter( 'json_prepare_post', 'custom_json_api_prepare_post', 10, 3 );
