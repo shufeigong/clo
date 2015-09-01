@@ -170,7 +170,7 @@
 	    width    : 87.6%;
 	    position : absolute;
 	    left     : 95px;
-	    top      : 13px;
+	    top      : 14px;
 	
 	}
 }
@@ -217,41 +217,7 @@
 	        float    : none;
 	        position : relative;
 	
-	        #tobehappy {
-	            margin-left : 3px;
-	
-	            float       : left;
-	        }
-	
-	        #tolove {
-	            float       : left;
-	            margin-left : 33px;
-	        }
-	
-	        #tolearn {
-	            float       : left;
-	            margin-left : 23px;
-	        }
-	
-	        #towork {
-	            float       : left;
-	            margin-left : 27px;
-	        }
-	
-	        #tolive {
-	            float       : left;
-	            margin-left : 36px;
-	        }
-	
-	        #about {
-	            float       : left;
-	            margin-left : 41px;
-	        }
-	
-	        #news {
-	            float       : left;
-	            margin-left : 47px;
-	        }
+	        
 	
 	        a {
 	        }
@@ -309,6 +275,9 @@
 	                color       : #808285;
 	                font-family : "TradeGothic", "Arial", "sans-serif";
 	                @include font-size(1.2);
+	                float:none;
+	                width:100%;
+	                text-align:left;
 	            }
 	        }
 	    }
@@ -318,6 +287,10 @@
 	            color       : #82BC00;
 	            font-family : "TradeGothicBoldTwo", "Arial", "sans-serif";
 	            @include font-size(1.3);
+	            float       : left;
+	            text-align:right;
+	            width: 83px;
+	            border:solid 1px #333;
 	        }
 	    }
 	}
@@ -405,7 +378,7 @@
 	    width    : 87.6%;
 	    position : absolute;
 	    left     : 88px;
-	    top      : 11px;
+	    top      : 14px;
 	
 	}
 
