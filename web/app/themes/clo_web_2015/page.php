@@ -14,7 +14,7 @@
 get_header();  //wp_nav_menu?>
 
 <div class="row">
-    <div class="medium-12" role="main">
+    <div class="" role="main">
         <?php do_action('foundationpress_before_content'); ?>
 
         <?php while (have_posts()) : the_post(); ?>
@@ -27,11 +27,10 @@ get_header();  //wp_nav_menu?>
 
                 <?php if(is_front_page()) :?>
                 <div class="news-content">
-
                     <div class="news1 news-item has-video">
                         <div class="arrow"></div>
                         <div class="content-box">
-                            <h5>CEO MESSAGE</h5>
+                            <h2>CEO MESSAGE</h2>
 
                             <p>
                                 Consectetur adipiscing elit. Donec tincidunt eu tellus nec volutpat. Integer
@@ -45,7 +44,7 @@ get_header();  //wp_nav_menu?>
 
                     <div class="news2 news-item">
                         <div class="arrow"></div>
-                        <h5>BE A SUPPORTER</h5>
+                        <h2>BE A SUPPORTER</h2>
 
                         <p>
                             Consectetur adipiscing elit. Donec tincidunt eu tellus nec volutpat. Integer tempus tempor

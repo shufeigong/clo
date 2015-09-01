@@ -11,9 +11,19 @@
     }
 }
 
-
 .container {
     > .row {
         max-width : 962px;
+
+        .contentdiv {
+            padding-left: 15px;
+            h1 {
+                margin: 15px 0;
+            }
+
+            p {
+                margin-top: 15px;
+            }
+        }
     }
 }

@@ -147,7 +147,7 @@ ul.menu {
             display      : inline;
             margin-right : 5px;
             a {
-                @include font-size(1.1);
+                @include font-size(1.2);
                 color       : $color-utility-menu;
                 font-family : "TradeGothic", "Arial", "sans-serif";
 
@@ -167,6 +167,17 @@ ul.menu {
 
     }
     //position:relative;
+}
+
+.menudiv {
+    ul {
+        li {
+            a {
+                text-transform: uppercase;
+                color : $color-submenu;
+            }
+        }
+    }
 }
 
 hr {

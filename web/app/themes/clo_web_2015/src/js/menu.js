@@ -171,7 +171,6 @@ function hover2(itemId) {
 }
 
 function itemClick(itemId) {
-    console.log(itemId);
     //$(".entry-title").css("display", "none");
     //$(".entry-content").css("display", "none");
     $(".entry-title").slideUp();

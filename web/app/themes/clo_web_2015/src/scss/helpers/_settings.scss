@@ -1,3 +1,5 @@
+@import "../../../../clo_parent/bower_components/foundation/scss/foundation";
+
 // Foundation by ZURB
 // foundation.zurb.com
 // Licensed under MIT Open Source
@@ -151,10 +153,10 @@ $include-html-global-classes: $include-html-classes;
 // d. Media Query Ranges
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$small-breakpoint:  640px;
-$medium-breakpoint: 835px;
-$large-breakpoint:  1000px;
-$xlarge-breakpoint: 1440px;
+$small-breakpoint:  em-calc(640);
+$medium-breakpoint: em-calc(835);
+$large-breakpoint:  em-calc(1000);
+$xlarge-breakpoint: em-calc(1440);
 
  $small-range:   (0, $small-breakpoint);
  $medium-range:  ($small-breakpoint  + em-calc(1), $medium-breakpoint);
