@@ -12,13 +12,14 @@ do_action( 'foundationpress_before_searchform' ); ?>
 
         <?php do_action('foundationpress_searchform_top'); ?>
 
+        <label for="searchtext" class="hidden">Search box</label>
         <input id="searchtext" type="text" value="" name="s"
                placeholder="<?php esc_attr_e('Keyword Search', 'foundationpress'); ?>">
 
         <?php do_action('foundationpress_searchform_before_search_button'); ?>
 
         <input id="searchbutton" type="image" alt="Search"
-               src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/search_icon.svg" />
+               src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/search_icon.svg"/>
 
         <?php do_action('foundationpress_searchform_after_search_button'); ?>
     </form>

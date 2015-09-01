@@ -24542,22 +24542,6 @@ PostNavigation = React.createClass({displayName: "PostNavigation",
 module.exports = PostNavigation;
 
 },{"react/addons":5}],191:[function(require,module,exports){
-var React = require('react');
-var request = require('superagent');
-
-MainNav = new React.createClass(
-    {
-        render: function () {
-            return (
-                React.createElement("h1", null, "HAHA")
-            )
-        }
-    }
-);
-
-module.exports = MainNav;
-
-},{"react":177,"superagent":178}],192:[function(require,module,exports){
 /**
  * External dependencies
  */
@@ -24575,7 +24559,7 @@ React.render(
 	React.createElement(Router, null), document.getElementById( 'main' )
 );
 
-},{"./router/router.jsx":193,"react":177}],193:[function(require,module,exports){
+},{"./router/router.jsx":192,"react":177}],192:[function(require,module,exports){
 /**
  * External dependencies
  */
@@ -24587,25 +24571,24 @@ var React   = require('react'),
  * Internal dependencies
  */
 var Content = require('../content/content.jsx');
-var MainNav = require('../mainnav/mainnav.jsx');
 
 var Router = React.createClass(
     {displayName: "Router",
-        componentDidMount: function () {
+        componentWillMount: function () {
             var self = this;
             page(
                 '/', function (ctx) {
                     var data,
                         slug = ctx.params.slug,
-                        url  = "/wp-json/pages";
+                        url  = "/wp-json/menus";
                     request
                         .get(url)
                         .end(
                         function (err, res) {
+                            console.log(res);
                             data = JSON.parse(res.text);
 
                             var home = React.createElement("div", null, 
-                                React.createElement(MainNav, null), 
                                 React.createElement(Content, {data:  data, bodyClass: "index"})
                             );
                             self.setState({component: home});
@@ -24678,4 +24661,4 @@ var Router = React.createClass(
 
 module.exports = Router;
 
-},{"../content/content.jsx":181,"../mainnav/mainnav.jsx":191,"page":2,"react":177,"superagent":178}]},{},[192]);
+},{"../content/content.jsx":181,"page":2,"react":177,"superagent":178}]},{},[191]);
