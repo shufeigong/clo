@@ -6,6 +6,7 @@ function foundationpress_scripts()
 
     // Enqueue the main Stylesheet.
     wp_enqueue_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/dist/css/app.css' );
+//    wp_enqueue_style( 'foundation-stylesheet', get_template_directory_uri() . '/css/foundation.css' );
 
     // Modernizr is used for polyfills and feature detection. Must be placed in header. (Not required).
     wp_register_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js', array(), '2.8.3', false );
@@ -27,7 +28,8 @@ function foundationpress_scripts()
     wp_enqueue_script( 'foundation' );
 
 //    wp_enqueue_script('react', get_stylesheet_directory_uri() . '/dist/js/picard.js', array(), '', true);
-    wp_enqueue_script( 'rwdImage', get_stylesheet_directory_uri() . '/src/js/jquery.rwdImageMaps.min.js', array('jquery'), '1.0.0', true );
+//    wp_enqueue_script( 'rwdImage', get_stylesheet_directory_uri() . '/src/js/jquery.rwdImageMaps.min.js', array('jquery'), '1.0.0', true );
+    wp_enqueue_script( 'app', get_stylesheet_directory_uri() . '/src/js/app.js', array('jquery'), '1.0.0', true );
     wp_enqueue_script( 'myAppMenu', get_stylesheet_directory_uri() . '/src/js/menu.js', array('jquery'), '1.0.0', true );
 }
 

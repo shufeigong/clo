@@ -9,25 +9,24 @@ var React   = require('react'),
  * Internal dependencies
  */
 var Content = require('../content/content.jsx');
-var MainNav = require('../mainnav/mainnav.jsx');
 
 var Router = React.createClass(
     {
-        componentDidMount: function () {
+        componentWillMount: function () {
             var self = this;
             page(
                 '/', function (ctx) {
                     var data,
                         slug = ctx.params.slug,
-                        url  = "/wp-json/pages";
+                        url  = "/wp-json/menus";
                     request
                         .get(url)
                         .end(
                         function (err, res) {
+                            console.log(res);
                             data = JSON.parse(res.text);
 
                             var home = <div>
-                                <MainNav />
                                 <Content data={ data } bodyClass="index" />
                             </div>;
                             self.setState({component: home});

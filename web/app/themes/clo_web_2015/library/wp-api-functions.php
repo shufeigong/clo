@@ -8,8 +8,12 @@
 
 function custom_json_api_prepare_post( $post_response, $post, $context ) {
 
-    $meta = get_post_meta( $post['ID'] );
-    $post_response['meta_field_name'] = $meta;
+    $isPage = $post['type'] == 'page';
+
+    if($isPage) {
+        $post_response['sub_menu'] = get_post_meta($post['ID']);
+
+    }
 
     return $post_response;
 }
