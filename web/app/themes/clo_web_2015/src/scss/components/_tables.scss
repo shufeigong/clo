@@ -1,8 +1,43 @@
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
+	border-collapse: collapse;
+    border-spacing: 0;
+    background: #FFF;
+    border: none;
+    margin-bottom: 1.25rem;
+    table-layout: auto;
 }
 
-th {
-	font-weight: bold;
+
+
+
+
+table tbody tr td, table tbody tr th, table tfoot tr td, table tfoot tr th, table thead tr th, table tr td {
+    display: table-cell;
+    //height: 3.4rem;
+    line-height:normal;
+}
+
+table tr td, table tr th {
+    color: #222;
+    font-size: 1.5rem;
+    padding: .5625rem .625rem;
+    
+    text-align: left;
+    border:solid .5rem #fff;
+}
+table tr th{
+background: $color-header;
+font-family:$font-site-bold;
+}
+
+table tr td{
+font-family:TradeGothic-CondEighteen;
+}
+table tr.alt, table tr.even, table tr:nth-of-type(odd) {
+    background: #CCE0F3;
+}
+table tr.alt, table tr.even, table tr:nth-of-type(even) {
+    background: #fff;
 }

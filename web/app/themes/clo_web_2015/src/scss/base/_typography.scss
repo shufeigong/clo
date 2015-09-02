@@ -14,13 +14,13 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
     clear : both;
-    //color : $color-header;
+    color : $color-header;
 }
 
 h1 {
    color: $color-header;
    font-family: $font-site-default;
-   @include font-size(2.7);
+   @include font-size(2.6);
 }
 
 
@@ -32,6 +32,12 @@ h2 {
 h3 {
     @include font-size(1.5);
     font-family : $font-site-bold;
+}
+
+h4{
+    @include font-size(1.5);
+    font-family : $font-site-bold;
+    font-style: oblique;
 }
 
 p {
