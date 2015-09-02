@@ -28,6 +28,7 @@ h1 {
 h2 {
     @include font-size(1.8);
     font-family : $font-site-bold;
+    margin-top:30px;
     a{
 	color:#231F20;
     @include font-size(1.8);
@@ -50,6 +51,7 @@ h4{
 p {
     margin-bottom : 1.5em;
     @include font-size(1.2);
+    line-height:1.5;
 }
 
 b, strong {
