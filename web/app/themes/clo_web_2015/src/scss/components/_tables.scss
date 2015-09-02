@@ -15,21 +15,22 @@ table {
 
 table tbody tr td, table tbody tr th, table tfoot tr td, table tfoot tr th, table thead tr th, table tr td {
     display: table-cell;
-    //height: 3.4rem;
+    height: 3.4rem;
     line-height:normal;
 }
 
 table tr td, table tr th {
-    color: #222;
+    color: #58595B;
     font-size: 1.5rem;
     padding: .5625rem .625rem;
     
     text-align: left;
-    border:solid .5rem #fff;
+    border:solid .4rem #fff;
 }
 table tr th{
 background: $color-header;
 font-family:$font-site-bold;
+color:#fff;
 }
 
 table tr td{
