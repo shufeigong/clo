@@ -84,7 +84,11 @@ function grabMenu(itemId) {
         alert("error");
     });
 }
-
+function UpperFirstLetter(str){
+	 return str.replace(/\b\w+\b/g, function(word) {   
+		   return word.substring(0,1).toUpperCase( ) +  word.substring(1);   
+		 });   
+	}
 function displayMenu(itemId, menuUrl) {
     $.get(menuUrl, function (response) {
 
@@ -108,11 +112,11 @@ function displayMenu(itemId, menuUrl) {
             if (response.items[i].parent == itemJsonId) {
                 if (response.items[i].children.length > 0) {
                     output
-                        += '<li><a href="#" onclick="signclick(this); return false;" class="submenu" >[-]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;"  id="' + response.items[i].ID + '" class="submenu">' + response.items[i].title + '</a></li>';
+                        += '<li><a href="#" onclick="signclick(this); return false;" class="submenu" >[-]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;"  id="' + response.items[i].ID + '" class="submenu">' + response.items[i].title.toUpperCase() + '</a></li>';
                 }
                 else {
                     output
-                        += '<li><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;" style="padding-left:10%" id="' + response.items[i].ID + '" class="submenu">' + response.items[i].title + '</a></li>';
+                        += '<li><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;" style="padding-left:10%" id="' + response.items[i].ID + '" class="submenu">' + response.items[i].title.toUpperCase() + '</a></li>';
                 }
             }
         }
@@ -123,10 +127,10 @@ function displayMenu(itemId, menuUrl) {
             if (response.items[i].parent != itemJsonId && response.items[i].parent != 0) //it means this submenu is first submenus' child or grandchild
             {
                 if (response.items[i].children.length > 0) {
-                    $('#' + response.items[i].parent).parent().append('<ul><li><a href="#" onclick="signclick(this); return false;" class="submenu">[-]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;" id="' + response.items[i].ID + '" class="submenu">' + response.items[i].title + '</a></li></ul>');
+                    $('#' + response.items[i].parent).parent().append('<ul><li><a href="#" onclick="signclick(this); return false;" class="submenu">[-]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;" id="' + response.items[i].ID + '" class="submenu">' + UpperFirstLetter(response.items[i].title) + '</a></li></ul>');
                 }
                 else {
-                    $('#' + response.items[i].parent).parent().append('<ul><li><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;" style="padding-left:10%" id="' + response.items[i].ID + '" class="submenu">' + response.items[i].title + '</a></li></ul>');
+                    $('#' + response.items[i].parent).parent().append('<ul><li><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;" style="padding-left:10%" id="' + response.items[i].ID + '" class="submenu">' + UpperFirstLetter(response.items[i].title) + '</a></li></ul>');
                 }
             }
         }
