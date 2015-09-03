@@ -89,6 +89,7 @@
 	            }
 	            > ul{
 		            margin:0;
+		            a{color:#231F20;font-family:$font-site-bold;text-decoration:underline;}
 		            >li{
 		               @include font-size(1.5);
 		               &:before {content : '• ';}
@@ -102,7 +103,8 @@
 		            
 		            
 	            >ol{
-	            margin:15px 0 0 0;
+	            margin:15px 0 15px 0;
+	            a{color:#231F20;font-family:$font-site-bold;text-decoration:underline;}
 	            counter-reset:num;
 	            >li{
 	               @include font-size(1.5);
@@ -181,7 +183,7 @@
 	                }
 	
 	                &:hover {
-	                    color : $color-utility-menu-hover;
+	                    //color : $color-utility-menu-hover;
 	                }
 	            }
 	        }
@@ -202,8 +204,9 @@
 	}
 	
 	hr {
-	    height     : 1px;
-	    border-top : 4px solid red;
+	    height     : 0px;
+	    border-top: 1px solid #CCE0F3;
+	    margin-top:0;
 	}
 	
 	.blueline {
@@ -319,6 +322,7 @@
 	            }
 	          > ul{
 		            margin:0;
+		           a{color:#231F20;font-family:$font-site-bold;text-decoration:underline;}
 		            >li{
 		               @include font-size(1.4);
 		               &:before {content : '• ';}
@@ -333,6 +337,7 @@
 		            
 	            >ol{
 	            margin:15px 0 0 0;
+	            a{color:#231F20;font-family:$font-site-bold;text-decoration:underline;}
 	            counter-reset:num;
 	            >li{
 	               @include font-size(1.5);
@@ -411,7 +416,7 @@
 	                }
 	
 	                &:hover {
-	                    color: $color-utility-menu-hover;
+	                    //color: $color-utility-menu-hover;
 	                }
 	            }
 	        }
@@ -450,8 +455,9 @@
 	}
 	
 	hr {
-	    height     : 1px;
-	    border-top : 4px solid red;
+	    height     : 0px;
+	    border-top: 1px solid #CCE0F3;
+	    margin-top:0;
 	}
 	
 	.blueline {
