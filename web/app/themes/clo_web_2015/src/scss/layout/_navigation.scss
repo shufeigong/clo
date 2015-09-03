@@ -75,7 +75,18 @@
                      text-decoration:underline;
 	                }
 	            }
-	            
+	            blockquote{
+	             //border:solid 1px #333;
+	             margin:0 0 -15px 0;
+	              > P{
+	                @include font-size(1.8);
+	                font-family:$font_site-default;
+	                font-style:oblique;
+	                color:#7FB7E4;
+	                margin:0;
+	                //border:solid 1px #333;
+	             }
+	            }
 	            
 	        }
 	
@@ -265,7 +276,18 @@
                      text-decoration:underline;
 	                }
 	            }
-	            
+	            blockquote{
+	             //border:solid 1px #333;
+	             margin:0 0 -15px 0;
+	              > P{
+	                @include font-size(1.6);
+	                font-family:$font_site-default;
+	                font-style:oblique;
+	                color:#7FB7E4;
+	                margin:0;
+	                //border:solid 1px #333;
+	             }
+	            }
 	            
 	        }
 	
