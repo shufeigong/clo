@@ -87,15 +87,33 @@
 	                //border:solid 1px #333;
 	             }
 	            }
-	           #myul{list-style-type: disc;list-style-position:inside;border:solid 1px #333;
-	               li{text-align:right;}
-	           }
 	            > ul{
-	            list-style-type: disc;
-	            margin:0;
-	            //border:solid 1px #333;
-	            list-style-position:inside;
+		            margin:0;
+		            >li{
+		               @include font-size(1.5);
+		               &:before {content : '•';}
+		               >ul{
+		                  li{@include font-size(1.5);&:before {content : '- ';}}
+		               }
+		              }
+		            
+		            }
+		            
+		            
+	            >ol{
+	            margin:15px 0 0 0;
+	            counter-reset:num;
+	            >li{
+	               @include font-size(1.5);
+	               &:before{content:counter(num) '. ';counter-increment:num;}
+	               >ol{
+	                   counter-reset: list;
+	                   li{@include font-size(1.5); &:before {content: counter(list, lower-alpha) ". ";counter-increment: list;}}
+	               }
+	              }
 	            }
+	          
+	          
 	            
 	        }
 	
@@ -297,6 +315,7 @@
 	                //border:solid 1px #333;
 	             }
 	            }
+	          
 	            
 	        }
 	
