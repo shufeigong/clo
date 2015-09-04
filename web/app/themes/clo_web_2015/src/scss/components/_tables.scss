@@ -1,14 +1,14 @@
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
-	//border-collapse: collapse;
-    //border-spacing: 0;
+	border-collapse: separate;
+    //border-spacing: 5px;
     background: #FFF;
     border: none;
     margin-bottom: 1.0rem;
     margin-top: 3.0rem;
     table-layout: auto;
-    //border-bottom:5px solid #CCE0F3;
+    border-bottom:1px solid $color-header;
     
 }
 
@@ -35,7 +35,7 @@ table tr td, table tr th {
     
     text-align: left;
     //border-right:solid .4rem #fff;
-    border-right:solid 3px #fff;
+    border-right:solid 4px #fff;
     //padding:30px;
 }
 table tr th{
@@ -45,9 +45,9 @@ color:#fff;
 }
 
 table tr:last-child{
-//border-bottom:solid 4px #333;
+//border-bottom:solid 4px #fff;
 td{
-    //border-bottom:solid 3px #fff;
+    border-bottom:solid 5px #fff;
   }
 }
 
