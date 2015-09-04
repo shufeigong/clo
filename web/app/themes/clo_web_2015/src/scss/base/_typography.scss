@@ -14,29 +14,52 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
     clear : both;
-    //color : $color-header;
+    color : $color-header;
 }
 
 h1 {
    color: $color-header;
    font-family: $font-site-default;
-   @include font-size(2.7);
+   @include font-size(2.6);
+
 }
 
 
 h2 {
     @include font-size(1.8);
     font-family : $font-site-bold;
+    margin-top:30px;
+    a{
+	color:#231F20;
+    @include font-size(1.8);
+    font-family : $font-site-bold;
+    text-decoration:underline;
+    &:hover{color:#231F20;}
+    }
 }
 
 h3 {
     @include font-size(1.5);
     font-family : $font-site-bold;
+    a{
+	color:#231F20;
+    @include font-size(1.5);
+    font-family : $font-site-bold;
+    text-decoration:underline;
+    &:hover{color:#231F20;}
+    }
+}
+
+h4{
+    @include font-size(1.5);
+    font-family : $font-site-bold;
+    font-style: oblique;
 }
 
 p {
     margin-bottom : 1.5em;
     @include font-size(1.2);
+    line-height:1.5;
 }
 
 b, strong {
@@ -48,7 +71,29 @@ dfn, cite, em, i {
 }
 
 blockquote {
-    margin : 0 1.5em;
+    margin-top : 30px;
+    margin-bottom:0;
+    padding:0;
+    border:none;
+    P{
+	    @include font-size(1.8);
+	    font-family:$font_site-default;
+	    font-style:oblique;
+	    color:#7FB7E4;
+	  }
+	  cite{
+	  color: $color-header;
+	  //border:solid 1px #333;
+	  text-align:right;
+	  @include font-size(1.5);
+	  font-family : $font-site-bold;
+      font-style: oblique;
+        &:before {
+	                    content : '- ';
+	                }
+      
+	  }
+   
 }
 
 address {

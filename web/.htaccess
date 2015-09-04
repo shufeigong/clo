@@ -1,3 +1,6 @@
+<IfModule pagespeed_module>
+    ModPagespeed off
+</IfModule>
 
 # BEGIN Roots Server Config
 # This file is used to generate the .htaccess file in the root of the web directory.
