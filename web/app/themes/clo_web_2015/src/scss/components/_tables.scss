@@ -8,7 +8,7 @@ table {
     margin-bottom: 1.0rem;
     margin-top: 3.0rem;
     table-layout: auto;
-    border-bottom:5px solid #CCE0F3;
+    //border-bottom:5px solid #CCE0F3;
     
 }
 
@@ -42,6 +42,13 @@ table tr th{
 background: $color-header;
 font-family:$font-site-bold;
 color:#fff;
+}
+
+table tr:last-child{
+//border-bottom:solid 4px #333;
+td{
+    //border-bottom:solid 3px #fff;
+  }
 }
 
 table tr td{
