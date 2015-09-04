@@ -18,7 +18,7 @@ add_filter('mandrill_payload', __NAMESPACE__.'\sendEmailThroughMandrillSubaccoun
  */
 function sendEmailThroughMandrillSubaccount(array $message)
 {
-    $message['subaccount'] = getenv('MANDRILL_SUBACCOUNT');
+    $message['subaccount'] = getenv('CLO Web 2015');
 
     return $message;
 }
