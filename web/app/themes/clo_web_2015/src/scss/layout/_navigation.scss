@@ -64,7 +64,7 @@
 	            margin-bottom : 8%;
 	            //padding-top:  1%;
 	            padding-left  : 5px;
-	            a{color:#231F20;font-family : $font-site-bold;text-decoration:underline;}
+	            a{color:#231F20;font-family : $font-site-bold;text-decoration:underline;&:hover{color:$color-header;} &:active{color:#BBBDBF;}}
 	            th a{color:#fff;}
 	            p {
 	                color       : #58595B;
@@ -132,7 +132,7 @@
 	            margin-bottom : 8%;
 	            padding-left  : 2%;
 	            padding-top   : 29px;
-	            ul li a{text-transform:none;}
+	            ul li a{text-transform:none;&:hover{color:$color-header;} &:active{color:#BBBDBF;}}
 	           .submenu {
 	                color       : #808083;
 	                font-family : "TradeGothic", "Arial", "sans-serif";
@@ -298,7 +298,7 @@
 	            margin-bottom : 8%;
 	            //padding-top:  1%;
 	            padding-left  : 5px;
-	            a{color:#231F20;font-family : $font-site-bold;text-decoration:underline;}
+	            a{color:#231F20;font-family : $font-site-bold;text-decoration:underline;&:hover{color:$color-header;} &:active{color:#BBBDBF;}}
 	            th a{color:#fff;}
 	            p {
 	                color       : #58595B;
@@ -364,7 +364,7 @@
 	            margin-bottom : 8%;
 	            padding-left  : 2%;
 	            padding-top   : 29px;
-	            ul li a{text-transform:none;}
+	            ul li a{text-transform:none;&:hover{color:$color-header;} &:active{color:#BBBDBF;}}
 	            .submenu {
 	                color       : #808083;;
 	                font-family : "TradeGothic", "Arial", "sans-serif";
