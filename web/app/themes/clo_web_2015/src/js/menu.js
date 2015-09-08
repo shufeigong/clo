@@ -163,6 +163,10 @@ function signclick(id) {
         id.text = "[+]";
     }
 }
+function contentToggle(id){
+	$(id).next().slideToggle();
+}
+
 
 function hover1(itemId) {
     $("#" + itemId).css("color", "#0075C9");
@@ -311,8 +315,12 @@ function init() {
     bindEvent();
 }
 
+
+
+
 $(document).ready(function () {
     init();
+    
 });
 
 
