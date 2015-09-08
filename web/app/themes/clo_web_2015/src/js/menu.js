@@ -174,6 +174,14 @@ function hover2(itemId) {
     $("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + itemId + ".svg");
 }
 
+function active1(itemId){
+	$("#" + itemId).css("color", "#BBBDBF");
+	$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + itemId + "grey.svg");
+}
+function active2(itemId){
+	$("#" + itemId).css("color", "#0075C9");
+	$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + itemId + "blue.svg");
+}
 function itemClick(itemId) {
     //$(".entry-title").css("display", "none");
     //$(".entry-content").css("display", "none");
@@ -264,7 +272,7 @@ function createMenu(menuUrl) {
                     }
                 }).bind("click", function () {
                     itemClick(this.id);
-                });
+                }).bind("mousedown", function(){active1(this.id)}).bind("mouseup", function(){active2(this.id)});
 
                 //$("#"+id).next().bind({mouseenter:function(){hover1($(this).prev().attr("id"));},mouseleave:function(){hover2($(this).prev().attr("id"));}}).bind("click", function(){itemClick($(this).prev().attr("id"));});
 

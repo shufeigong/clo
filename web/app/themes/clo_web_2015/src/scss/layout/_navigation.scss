@@ -183,9 +183,9 @@
 	                    content : ' ]';
 	                }
 	
-	                &:hover {
-	                    //color : $color-utility-menu-hover;
-	                }
+	                &:hover {color : $color-header;}
+	                
+	                &:active{color:#BBBDBF;}
 	            }
 	        }
 	
@@ -417,9 +417,9 @@
 	                    content: ' ]';
 	                }
 	
-	                &:hover {
-	                    //color: $color-utility-menu-hover;
-	                }
+	                &:hover {color : $color-header;}
+	                
+	                &:active{color:#BBBDBF;}
 	            }
 	        }
 	
