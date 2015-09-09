@@ -39,7 +39,7 @@ class Whistles_And_Toggles extends Whistles_And_Bells {
 			/* Loop through each of the whistles and format the output. */
 			foreach ( $whistles as $whistle ) {
 
-				$output .= '<h3 class="whistle-title" onclick="contentToggle(this)">' . $whistle['title'] . '</h3>';
+				$output .= '<h3 class="whistle-title" ><a onclick="contentToggle(this)" style="text-decoration:none;">[ + ]</a>  ' . $whistle['title'] . '</h3>';
 
 				$output .= '<div class="whistle-content" style="display:none">' . $whistle['content'] . '</div>';
 			}

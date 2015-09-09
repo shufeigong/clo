@@ -164,7 +164,15 @@ function signclick(id) {
     }
 }
 function contentToggle(id){
-	$(id).next().slideToggle();
+	
+	$(id).parent().next().slideToggle();
+	if (id.text == "[ + ]") {
+        id.text = "[ - ]";
+    }
+    else {
+        id.text = "[ + ]";
+    }
+	
 }
 
 
