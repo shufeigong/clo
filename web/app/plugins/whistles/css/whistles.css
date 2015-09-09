@@ -101,6 +101,7 @@
 		//border:           1px solid #ececec;
 		border-top:         2px solid #0075c9;
 		//border-top-width: 0;
+		cursor:default;
 	}
 
 		.whistles-toggle .whistle-title:first-child, 
