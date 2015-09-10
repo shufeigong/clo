@@ -64,9 +64,10 @@ function grabPage(pageId) {
 
         $("#" + pageId).nextAll(".contentdiv").html("<br/>");
         $("#" + pageId).nextAll(".contentdiv").append(content);
-        $("#" + pageId).nextAll(".contentdiv").slideDown();  //get content down
+        $("#" + pageId).nextAll(".contentdiv").slideDown("normal",changeHeight(pageId));  //get content down
         $("#" + pageId).nextAll(".menudiv").slideDown(); //get submenu down
-
+      
+       
     }).fail(function () {
         alert("error");
     });
@@ -167,7 +168,7 @@ function contentToggle(id){
 	
 	$(id).parent().next().slideToggle();
 	if (id.text == "[ + ]") {
-        id.text = "[ - ]";
+        id.text =  "[ - ]";
     }
     else {
         id.text = "[ + ]";
@@ -228,6 +229,7 @@ function itemClick(itemId) {
     $("#" + itemId).next().mouseleave(function () {
         hover1(itemId);
     });  //keep selected item's image to blue
+  
 
 }
 function pageRefresh(itemId) {
@@ -328,7 +330,6 @@ function init() {
 
 $(document).ready(function () {
     init();
-    
 });
 
 
