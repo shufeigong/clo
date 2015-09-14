@@ -78,13 +78,14 @@ function changeHeight(itemId)
 			  	 $("#" + itemId).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv, "width":widthw, "max-width":"848px","border-top":"12px solid #fff" });  
 			  	 $("#" + itemId).nextAll(".contentdiv").css("margin-left","11%");
 			  	 $("#" + itemId).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20+2, "z-index":"100", "left":leftv+2, "width":widthw-2, "max-width":"846px"});
-			  	
+			  	 $("#"+itemId).nextAll(".menudiv").css({"position":"fixed", "left":leftv+$("#" + itemId).nextAll(".contentdiv").width()})
+			  	 
 			  	 $(window).resize( itemId, function(event){
 		    		 var leftv=$("#"+event.data).parent().offset().left+$("#"+event.data).width()+4;
 			    	 var widthw=$(window).width()*0.875*0.88;
 			    	 $("#" + event.data).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv, "width":widthw, "border-top":"12px solid #fff" });
 			    	 $("#" + event.data).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20+2, "z-index":"100", "left":leftv+2, "width":widthw-2});
-			    	 
+			    	 $("#"+itemId).nextAll(".menudiv").css({"position":"fixed", "left":leftv+$("#" + itemId).nextAll(".contentdiv").width()})
 			    	 if($(window).width()>=1000)
 		    		 {$(".header").css("width","85%");}
 		    	     else
@@ -118,6 +119,7 @@ function backHeight(itemId)
 	$("#" + itemId).parent().siblings().children(".blueline").css({"position":"absolute", "top":"12px", "left":"95px", "width":"88%", "max-width":"848px","border-top":"none"});  
 	$("#" + itemId).parent().siblings().children(".contentdiv").css("margin-left","4px");
 	$("#" + itemId).parent().siblings().children(".image-link").css({"position":"absolute", "bottom":"5px", "width":"88%", "left":"95px"});
+	$("#"+itemId).parent().siblings().children(".menudiv").css({"position":"static"})
 	////////////////recover itself////////
 	$("#" + itemId).parent().css("margin","0");
 	$("#" + itemId).parent().css({"position":"relative", "top":"auto", "bottom":"auto", "z-index":"auto","width":"auto", "max-width":"962px"});
@@ -125,7 +127,8 @@ function backHeight(itemId)
 	$("#" + itemId).parent().children(".blueline").css({"position":"absolute", "top":"12px", "left":"95px", "width":"88%", "max-width":"848px", "border-top":"none"});  
 	$("#" + itemId).parent().children(".contentdiv").css("margin-left","4px");
 	$("#" + itemId).parent().children(".image-link").css({"position":"absolute", "bottom":"5px", "width":"88%", "left":"95px"});
-	
+	$("#"+itemId).parent().children(".menudiv").css({"position":"static"})
+	////unbind resize event//////
 	$(window).unbind("resize");
 }
 
