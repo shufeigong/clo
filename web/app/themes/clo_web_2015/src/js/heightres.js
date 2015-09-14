@@ -20,12 +20,28 @@ function changeHeight(itemId)
 		{			
 		    if($(".header").height()+menuHeight+$("#" + itemId).nextAll(".contentdiv").height()>$(window).height())
 		    	{
-		    	backHeight(itemId);
-		    	 $(".header").css({"position":"fixed", "z-index":"100", "background-color":"#fff"});//make header area to be fixed
-		  		  
+		    	 backHeight(itemId);
+		    	 var leftv=$("#" + itemId).parent().offset().left+$("#" + itemId).width()+4;
+		    	 var widthw=$(window).width()*0.875*0.88;
+		    	 /////////////header///////////////
+		    	 
+		    	 if(itemId=="tobehappy")
+		    		 {
+		    		   $(".header").css({"position":"fixed", "z-index":"100", "background-color":"#fff","height":"172px"});
+		    		 }
+		    	 else{
+		    		 $(".header").css({"position":"fixed", "z-index":"100", "background-color":"#fff","height":"142px"});//make header area to be fixed
+		    		 $("#tobehappy").nextAll(".image-link").children("img").css("background-color","#fff");
+		    	      }
+		    	 //$(".header").css({"position":"fixed", "z-index":"100", "background-color":"#fff","height":"142px"});//make header area to be fixed
+		    	 
+		    	 headerHeight=142;
+		    	 //$("#tobehappy").nextAll(".image-link").children("img").css("background-color","#fff");
+		    	 
+		    	
 		  		//////////////prev all li/////////////////
 		  		 $("#" + itemId).parent().prevAll().each(function(){    //relocate prev all li according to li index
-		  			  $(this).css("top", headerHeight+50+($(this).index()+1)*20);
+		  			  $(this).css("top", headerHeight+($(this).index()+1)*20);
 		  		  });
 		  		                                                        //make prev all li to be fixed
 		  		 $("#" + itemId).parent().prevAll().css({"position":"fixed", "width":"87.4%", "z-index":"100", "background-color":"#fff"});
@@ -41,14 +57,16 @@ function changeHeight(itemId)
 		  	     $("#" + itemId).parent().nextAll().css({"position":"fixed", "width":"87.4%", "z-index":"100", "background-color":"#fff"});
 		    	
 		    	////////////current li//////////////
+		  	   
+		  	   
 		  	     var currentli= $("#" + itemId).parent().index();
 		  	    
-			  	 $("#" + itemId).parent().css("margin-top",headerHeight+currentli*20+58);
+			  	 $("#" + itemId).parent().css("margin-top",headerHeight+(currentli+1)*20);
 			  	 $("#" + itemId).parent().css("margin-bottom",(lilength-currentli)*20+2);
-			  	 $("#" + itemId).css({"position":"fixed", "top":headerHeight+currentli*20+70});  
-			  	 $("#" + itemId).nextAll("hr").css({"position":"fixed", "top":headerHeight+(currentli+1)*20+63});  
-			  	 $("#" + itemId).nextAll(".contentdiv").css("margin-left","9%");
-			  	 $("#" + itemId).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20+2});
+			  	 $("#" + itemId).css({"position":"fixed", "top":headerHeight+(currentli+1)*20,"z-index":"100"});  
+			  	 $("#" + itemId).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv, "width":widthw, "border-top":"12px solid #fff" });  
+			  	 $("#" + itemId).nextAll(".contentdiv").css("margin-left","11%");
+			  	 $("#" + itemId).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20+2, "z-index":"100", "left":leftv+2, "width":widthw-2});
 		    	}
 		    else{
 		    	backHeight(itemId);
@@ -69,25 +87,22 @@ function changeHeight(itemId)
 
 function backHeight(itemId)
 {
-	$(".header").css("position","static");
-     //////////////prev all li////////////////
+	$(".header").css({"position":"static", "height":"auto","z-index":"auto"});
+	$("#tobehappy").nextAll(".image-link").children("img").css("background-color","transparent");
+	////////////////////recover brothers///////
 	$("#" + itemId).parent().siblings().css({"position":"relative", "top":"auto", "bottom":"auto","z-index":"auto", "width":"auto"});
-	
-	 /////////////////////////next all li////////////  
-	$("#" + itemId).parent().css({"position":"relative", "top":"auto", "bottom":"auto", "z-index":"auto","width":"auto"});
-	
-	///////////////last li//////////
 	$("#" + itemId).parent().siblings().css("margin","0");
 	$("#" + itemId).parent().siblings().children(".menu-link").css({"position":"static", "top":"auto"});
-	$("#" + itemId).parent().siblings().children("hr").css({"position":"absolute", "top":"14px"});  
+	$("#" + itemId).parent().siblings().children(".blueline").css({"position":"absolute", "top":"12px", "left":"95px", "width":"88%", "border-top":"none"});  
 	$("#" + itemId).parent().siblings().children(".contentdiv").css("margin-left","4px");
-	$("#" + itemId).parent().siblings().children(".image-link").css({"position":"absolute", "bottom":"5px"});
-	
+	$("#" + itemId).parent().siblings().children(".image-link").css({"position":"absolute", "bottom":"5px", "width":"88%", "left":"95px"});
+	////////////////recover itself////////
 	$("#" + itemId).parent().css("margin","0");
+	$("#" + itemId).parent().css({"position":"relative", "top":"auto", "bottom":"auto", "z-index":"auto","width":"auto"});
 	$("#" + itemId).parent().children(".menu-link").css({"position":"static", "top":"auto"});
-	$("#" + itemId).parent().children("hr").css({"position":"absolute", "top":"14px"});  
+	$("#" + itemId).parent().children(".blueline").css({"position":"absolute", "top":"12px", "left":"95px", "width":"88%", "border-top":"none"});  
 	$("#" + itemId).parent().children(".contentdiv").css("margin-left","4px");
-	$("#" + itemId).parent().children(".image-link").css({"position":"absolute", "bottom":"5px"});
+	$("#" + itemId).parent().children(".image-link").css({"position":"absolute", "bottom":"5px", "width":"88%", "left":"95px"});
 }
 
 

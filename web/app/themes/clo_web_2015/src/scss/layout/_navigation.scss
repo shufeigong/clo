@@ -213,13 +213,13 @@
 	
 	.blueline {
 	    display  : none;
-	    border   : 2px solid #0075C9;
+	    border-bottom   : 4px solid #0075C9;
 	    height   : 0;
 	    margin   : 0;
-	    width    : 87.6%;
+	    width    : 88%;
 	    position : absolute;
 	    left     : 95px;
-	    top      : 14px;
+	    top      : 12px;
 	
 	}
 }
@@ -434,17 +434,27 @@
 	}
 	
 	.blueline{
-	display:none;
-	border:2px solid #0075C9;
-	height:0;
-	margin:0;
-	width    : 87.6%;
-	position : absolute;
-	            left     : 88px;
-	            top   : 11px;
+	//display:none;
+	//border:2px solid #0075C9;
+	//height:0;
+	//margin:0;
+	//width    : 87.6%;
+	//position : absolute;
+	  //          left     : 88px;
+	    //        top   : 11px;
 	
 	}
-
+.blueline {
+	    display  : none;
+	    border-bottom   : 4px solid #0075C9;
+	    height   : 0;
+	    margin   : 0;
+	    width    : 88%;
+	    position : absolute;
+	    left     : 95px;
+	    top      : 12px;
+	
+	}
 	
 	.menudiv {
 	    ul {
@@ -463,19 +473,7 @@
 	    margin-top:0;
 	}
 	
-	.blueline {
-	    display  : none;
-	    border   : 2px solid #0075C9;
-	    height   : 0;
-	    margin   : 0;
-	    width    : 87.6%;
-	    position : absolute;
-	    left     : 88px;
-	    top      : 14px;
-	
-	}
-
-
+  
 
 
 
