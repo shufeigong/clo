@@ -11,7 +11,7 @@ $(document).ready(function () {
 var minHeight = 200;
 var menuHeight=290;
 var headerHeight=$(".header").height();
-
+var itemId2;
 function changeHeight(itemId)
 {
   	
@@ -23,6 +23,9 @@ function changeHeight(itemId)
 		    	 backHeight(itemId);
 		    	 var leftv=$("#" + itemId).parent().offset().left+$("#" + itemId).width()+4;
 		    	 var widthw=$(window).width()*0.875*0.88;
+		    	
+		    	 
+
 		    	 /////////////header///////////////
 		    	 
 		    	 if(itemId=="tobehappy")
@@ -32,6 +35,15 @@ function changeHeight(itemId)
 		    	 else{
 		    		 $(".header").css({"position":"fixed", "z-index":"100", "background-color":"#fff","height":"142px"});//make header area to be fixed
 		    	      }
+		    	 
+		    	 if($(window).width()>=1000)
+		    		 {
+		    		   $(".header").css("width","90%");
+		    		 }
+		    	 else
+		    		 {
+		    		   $(".header").css("width","auto");
+		    		 }
 		    	 
 		    	 
 		    	 headerHeight=142;
@@ -66,6 +78,20 @@ function changeHeight(itemId)
 			  	 $("#" + itemId).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv, "width":widthw, "border-top":"12px solid #fff" });  
 			  	 $("#" + itemId).nextAll(".contentdiv").css("margin-left","11%");
 			  	 $("#" + itemId).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20+2, "z-index":"100", "left":leftv+2, "width":widthw-2});
+			  	
+			  	 $(window).resize( itemId, function(event){
+		    		 var leftv=$("#"+event.data).parent().offset().left+$("#"+event.data).width()+4;
+			    	 var widthw=$(window).width()*0.875*0.88;
+			    	 $("#" + event.data).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv, "width":widthw, "border-top":"12px solid #fff" });
+			    	 $("#" + event.data).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20+2, "z-index":"100", "left":leftv+2, "width":widthw-2});
+			    	 
+			    	 if($(window).width()>=1000)
+		    		 {$(".header").css("width","90%");}
+		    	     else
+		    		 {$(".header").css("width","auto");}
+			    	 
+		    	} );
+		    	
 		    	}
 		    else{
 		    	backHeight(itemId);
@@ -83,7 +109,7 @@ function changeHeight(itemId)
 
 function backHeight(itemId)
 {
-	$(".header").css({"position":"static", "height":"auto","z-index":"auto"});
+	$(".header").css({"position":"static", "height":"auto", "width":"auto", "z-index":"auto"});
 	
 	////////////////////recover brothers///////
 	$("#" + itemId).parent().siblings().css({"position":"relative", "top":"auto", "bottom":"auto","z-index":"auto", "width":"auto"});
@@ -102,9 +128,6 @@ function backHeight(itemId)
 }
 
 
-$(window).resize(function() {
-	  
-	
-	
-	});
+
+
 
