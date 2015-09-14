@@ -31,12 +31,11 @@ function changeHeight(itemId)
 		    		 }
 		    	 else{
 		    		 $(".header").css({"position":"fixed", "z-index":"100", "background-color":"#fff","height":"142px"});//make header area to be fixed
-		    		 $("#tobehappy").nextAll(".image-link").children("img").css("background-color","#fff");
 		    	      }
-		    	 //$(".header").css({"position":"fixed", "z-index":"100", "background-color":"#fff","height":"142px"});//make header area to be fixed
+		    	 
 		    	 
 		    	 headerHeight=142;
-		    	 //$("#tobehappy").nextAll(".image-link").children("img").css("background-color","#fff");
+		    	 
 		    	 
 		    	
 		  		//////////////prev all li/////////////////
@@ -75,10 +74,7 @@ function changeHeight(itemId)
 		}
 	
 	else{
-		//$(".header").css("position", "static");
-		//$("#" + itemId).parent().prevAll().css({"position":"static", "width":"auto"});
-		//alert("ss");
-		//$(".header").css("position","static");
+
 		backHeight(itemId);
 	}
 	
@@ -88,7 +84,7 @@ function changeHeight(itemId)
 function backHeight(itemId)
 {
 	$(".header").css({"position":"static", "height":"auto","z-index":"auto"});
-	$("#tobehappy").nextAll(".image-link").children("img").css("background-color","transparent");
+	
 	////////////////////recover brothers///////
 	$("#" + itemId).parent().siblings().css({"position":"relative", "top":"auto", "bottom":"auto","z-index":"auto", "width":"auto"});
 	$("#" + itemId).parent().siblings().css("margin","0");
@@ -106,5 +102,9 @@ function backHeight(itemId)
 }
 
 
-
+$(window).resize(function() {
+	  
+	
+	
+	});
 
