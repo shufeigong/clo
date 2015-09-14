@@ -38,7 +38,7 @@ function changeHeight(itemId)
 		    	 
 		    	 if($(window).width()>=1000)
 		    		 {
-		    		   $(".header").css("width","90%");
+		    		   $(".header").css({"width":"85%", "max-width":"962px"});
 		    		 }
 		    	 else
 		    		 {
@@ -55,7 +55,7 @@ function changeHeight(itemId)
 		  			  $(this).css("top", headerHeight+($(this).index()+1)*20);
 		  		  });
 		  		                                                        //make prev all li to be fixed
-		  		 $("#" + itemId).parent().prevAll().css({"position":"fixed", "width":"87.4%", "z-index":"100", "background-color":"#fff"});
+		  		 $("#" + itemId).parent().prevAll().css({"position":"fixed", "width":"87.4%", "max-width":"962px", "z-index":"100", "background-color":"#fff"});
 		  		
 		  		 /////////////////////////next all li////////////  
 		  	     
@@ -65,7 +65,7 @@ function changeHeight(itemId)
 	  			 $(this).css("bottom", (lilength-$(this).index())*20);
 	  		     });
 		  	                                                           //make prev next all li to be fixed
-		  	     $("#" + itemId).parent().nextAll().css({"position":"fixed", "width":"87.4%", "z-index":"100", "background-color":"#fff"});
+		  	     $("#" + itemId).parent().nextAll().css({"position":"fixed", "width":"87.4%", "max-width":"962px", "z-index":"100", "background-color":"#fff"});
 		    	
 		    	////////////current li//////////////
 		  	   
@@ -75,9 +75,9 @@ function changeHeight(itemId)
 			  	 $("#" + itemId).parent().css("margin-top",headerHeight+(currentli+1)*20);
 			  	 $("#" + itemId).parent().css("margin-bottom",(lilength-currentli)*20+2);
 			  	 $("#" + itemId).css({"position":"fixed", "top":headerHeight+(currentli+1)*20,"z-index":"100"});  
-			  	 $("#" + itemId).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv, "width":widthw, "border-top":"12px solid #fff" });  
+			  	 $("#" + itemId).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv, "width":widthw, "max-width":"848px","border-top":"12px solid #fff" });  
 			  	 $("#" + itemId).nextAll(".contentdiv").css("margin-left","11%");
-			  	 $("#" + itemId).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20+2, "z-index":"100", "left":leftv+2, "width":widthw-2});
+			  	 $("#" + itemId).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20+2, "z-index":"100", "left":leftv+2, "width":widthw-2, "max-width":"846px"});
 			  	
 			  	 $(window).resize( itemId, function(event){
 		    		 var leftv=$("#"+event.data).parent().offset().left+$("#"+event.data).width()+4;
@@ -86,7 +86,7 @@ function changeHeight(itemId)
 			    	 $("#" + event.data).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20+2, "z-index":"100", "left":leftv+2, "width":widthw-2});
 			    	 
 			    	 if($(window).width()>=1000)
-		    		 {$(".header").css("width","90%");}
+		    		 {$(".header").css("width","85%");}
 		    	     else
 		    		 {$(".header").css("width","auto");}
 			    	 
@@ -109,22 +109,24 @@ function changeHeight(itemId)
 
 function backHeight(itemId)
 {
-	$(".header").css({"position":"static", "height":"auto", "width":"auto", "z-index":"auto"});
+	$(".header").css({"position":"static", "height":"auto","z-index":"auto", "width":"auto"});
 	
 	////////////////////recover brothers///////
-	$("#" + itemId).parent().siblings().css({"position":"relative", "top":"auto", "bottom":"auto","z-index":"auto", "width":"auto"});
+	$("#" + itemId).parent().siblings().css({"position":"relative", "top":"auto", "bottom":"auto","z-index":"auto", "width":"auto", "max-width":"962px"});
 	$("#" + itemId).parent().siblings().css("margin","0");
 	$("#" + itemId).parent().siblings().children(".menu-link").css({"position":"static", "top":"auto"});
-	$("#" + itemId).parent().siblings().children(".blueline").css({"position":"absolute", "top":"12px", "left":"95px", "width":"88%", "border-top":"none"});  
+	$("#" + itemId).parent().siblings().children(".blueline").css({"position":"absolute", "top":"12px", "left":"95px", "width":"88%", "max-width":"848px","border-top":"none"});  
 	$("#" + itemId).parent().siblings().children(".contentdiv").css("margin-left","4px");
 	$("#" + itemId).parent().siblings().children(".image-link").css({"position":"absolute", "bottom":"5px", "width":"88%", "left":"95px"});
 	////////////////recover itself////////
 	$("#" + itemId).parent().css("margin","0");
-	$("#" + itemId).parent().css({"position":"relative", "top":"auto", "bottom":"auto", "z-index":"auto","width":"auto"});
+	$("#" + itemId).parent().css({"position":"relative", "top":"auto", "bottom":"auto", "z-index":"auto","width":"auto", "max-width":"962px"});
 	$("#" + itemId).parent().children(".menu-link").css({"position":"static", "top":"auto"});
-	$("#" + itemId).parent().children(".blueline").css({"position":"absolute", "top":"12px", "left":"95px", "width":"88%", "border-top":"none"});  
+	$("#" + itemId).parent().children(".blueline").css({"position":"absolute", "top":"12px", "left":"95px", "width":"88%", "max-width":"848px", "border-top":"none"});  
 	$("#" + itemId).parent().children(".contentdiv").css("margin-left","4px");
 	$("#" + itemId).parent().children(".image-link").css({"position":"absolute", "bottom":"5px", "width":"88%", "left":"95px"});
+	
+	$(window).unbind("resize");
 }
 
 
