@@ -64,7 +64,10 @@ function grabPage(pageId) {
 
         $("#" + pageId).nextAll(".contentdiv").html("<br/>");
         $("#" + pageId).nextAll(".contentdiv").append(content);
-        $("#" + pageId).nextAll(".contentdiv").slideDown("normal",changeHeight(pageId));  //get content down
+        if($(window).width()>640){$("#" + pageId).nextAll(".contentdiv").slideDown("normal",changeHeight(pageId));}
+        else{$("#" + pageId).nextAll(".contentdiv").slideDown();}
+        
+        
         $("#" + pageId).nextAll(".menudiv").slideDown(); //get submenu down
       
        

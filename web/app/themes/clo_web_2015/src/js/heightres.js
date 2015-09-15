@@ -93,18 +93,20 @@ function changeHeight(itemId)
 			    		 $("#" + event.data).nextAll(".contentdiv").css("margin-left","11%");
 			    		 $("#" + event.data).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv, "width":widthw, "border-top":"12px solid #fff" });
 				    	 $("#" + event.data).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20+2, "z-index":"100", "left":leftv+1, "width":widthw-2});
+				    	 $("#"+event.data).nextAll(".menudiv").css({"position":"fixed", "left":leftv+20+$("#" + event.data).nextAll(".contentdiv").outerWidth()})
 		    		 
 		    		 }
-		    	     else
+		    	     else if($(window).width()>640 && $(window).width()<1000)
 		    		 {
 		    	    	 $(".header").css("width","auto");
 		    	    	 $("#" + event.data).nextAll(".contentdiv").css("margin-left","14%");
 		    	    	 $("#" + event.data).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv+8, "width":widthw, "border-top":"12px solid #fff" });
 				    	 $("#" + event.data).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20, "z-index":"100", "left":leftv+8, "width":widthw});
+				    	 $("#"+event.data).nextAll(".menudiv").css({"position":"fixed", "left":leftv+20+$("#" + event.data).nextAll(".contentdiv").outerWidth()})
 		    		 }
-			    	 
+		    	     else{backHeight(itemId);} 	 
 			   
-			    	 $("#"+event.data).nextAll(".menudiv").css({"position":"fixed", "left":leftv+20+$("#" + event.data).nextAll(".contentdiv").outerWidth()})
+			    	 
 			    	 
 			    	 
 			    	 
