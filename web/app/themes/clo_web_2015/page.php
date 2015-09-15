@@ -20,11 +20,27 @@ get_header();  //wp_nav_menu?>
         <?php while (have_posts()) : the_post(); ?>
             <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
                 <?php do_action('foundationpress_page_before_entry_content'); ?>
+                 
+                 <div class="mbl-img">
+                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/src/img/mbl-img.svg"/>
+                 </div>
+                 
+                 <div class="mbx-dh">
+                 <?php if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs();?>     
+                 </div>
+                
+                
+                
                 <div class="entry-content <?php echo is_front_page() ? 'home' : '';?>">
                     <?php the_content(); ?>
                 </div>
+                
+                
+                                  
                 <?php get_template_part('parts/main-menu'); ?>
-
+               
+              
+               
                 <?php if(is_front_page()) :?>
                 <div class="news-content">
                     <div class="news1 news-item has-video">

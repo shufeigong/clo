@@ -1,21 +1,5 @@
 //Navigation specific stylings
 @media screen and (min-width: 1000px) {
-	.tab-bar {
-	    background : none;
-	    margin     : 0;
-	
-	    .menu-icon span::after {
-	        content    : "";
-	        display    : block;
-	        height     : 0;
-	        position   : absolute;
-	        top        : 50%;
-	        margin-top : 0;
-	        left       : 0;
-	        box-shadow : 0 0 0 2px #82bc00, 0 7px 0 2px #82bc00, 0 14px 0 2px #82bc00;
-	        width      : 20px;
-	    }
-	}
 	
 	// Main menu style
 	//Adjust the position
@@ -236,25 +220,7 @@
 
 /////////////////////////////////////////641~999px
 @media screen and (min-width: 641px) and (max-width:999px) {
-    
-    
-	.tab-bar {
-	    background : none;
-	    margin     : 0;
-	
-	    .menu-icon span::after {
-	        content    : "";
-	        display    : block;
-	        height     : 0;
-	        position   : absolute;
-	        top        : 50%;
-	        margin-top : 0;
-	        left       : 0;
-	        box-shadow : 0 0 0 2px #82bc00, 0 7px 0 2px #82bc00, 0 14px 0 2px #82bc00;
-	        width      : 20px;
-	    }
-	}
-	
+    	
 	// Main menu style
 	//Adjust the position
 	.menu-main-menu-container{
@@ -495,7 +461,12 @@
 	.tab-bar {
 	    background : none;
 	    margin     : 0;
-	
+	    position:relative;
+	    display:inline;
+	    .right-small{
+	    border-left:none;
+	    }
+	    
 	    .menu-icon span::after {
 	        content    : "";
 	        display    : block;

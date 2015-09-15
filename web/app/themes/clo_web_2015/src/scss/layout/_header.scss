@@ -12,7 +12,10 @@
 	
 	    }
 	}
-
+.mbx-dh, .mbl-img
+   {
+     display:none;
+   }
 
 }
 
@@ -49,6 +52,45 @@
 		    }
 	   
 	}
+.mbx-dh, .mbl-img
+   {
+     display:none;
+   }
+
+}
+
+
+@media screen and (max-width:640px) {
+
+.row .header {
+        //border:solid 3px #333;
+        width:90%;
+        position:absolute; 
+        top:0;   
+	    margin-bottom:10px;
+	    .site-logo {
+	        margin:0 0 0 10%;
+	        display    : block;
+	        //border:solid 1px red;
+	        width      : 90%;
+	        height     : 72px;
+	        background : url(../img/clo_logo.svg) no-repeat;
+	       
+	    }
+	}
+
+   .mbx-dh
+   {
+     margin-left:20px;
+     display:static;
+   }
+   
+   .mbl-img
+   {
+    margin: 0 20px;
+   }
 
 
 }
+
+
