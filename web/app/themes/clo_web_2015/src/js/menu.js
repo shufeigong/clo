@@ -182,21 +182,34 @@ function contentToggle(id){
 
 function hover1(itemId) {
     $("#" + itemId).css("color", "#0075C9");
-    $("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + itemId + "blue.svg");
+    if(itemId=='tobehappy'||itemId=='tolove'||itemId=='tolearn'||itemId=='towork'||itemId=='tolive'||itemId=='about'||itemId=='news')
+    	{$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + itemId + "blue.svg");}
+    else
+    	{$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/defaultblue.svg");}
+    
 }
 
 function hover2(itemId) {
     $("#" + itemId).css("color", "#82BC00");
-    $("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + itemId + ".svg");
+    if(itemId=='tobehappy'||itemId=='tolove'||itemId=='tolearn'||itemId=='towork'||itemId=='tolive'||itemId=='about'||itemId=='news')
+        {$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + itemId + ".svg");}
+    else
+    	{$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/default.svg");}
 }
 
 function active1(itemId){
 	$("#" + itemId).css("color", "#BBBDBF");
-	$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + itemId + "grey.svg");
+	if(itemId=='tobehappy'||itemId=='tolove'||itemId=='tolearn'||itemId=='towork'||itemId=='tolive'||itemId=='about'||itemId=='news')
+	    {$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + itemId + "grey.svg");}
+	else
+		{$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/defaultgrey.svg");}
 }
 function active2(itemId){
 	$("#" + itemId).css("color", "#0075C9");
-	$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + itemId + "blue.svg");
+	if(itemId=='tobehappy'||itemId=='tolove'||itemId=='tolearn'||itemId=='towork'||itemId=='tolive'||itemId=='about'||itemId=='news')
+	     {$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + itemId + "blue.svg");}
+	else
+		{$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/defaultblue.svg");}
 }
 function itemClick(itemId) {
     //$(".entry-title").css("display", "none");

@@ -145,7 +145,7 @@ class Main_Nav_walker extends Walker_Nav_Menu
 				$args->before,
 				$attributes,
 				$args->link_before,
-				apply_filters('the_title', $item->title, $item->ID),
+				apply_filters('the_title', strtoupper($item->title), strtoupper($item->ID)),
 				$args->link_after,
 				$args->after
 		);
@@ -153,9 +153,20 @@ class Main_Nav_walker extends Walker_Nav_Menu
 		// build html
 		$output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
 
-		$output .= '<div class="image-link ' . strtolower(str_replace(' ', '-', apply_filters('the_title', $item->title, $item->ID))) . '" onclick="return false">';
-        $output .= '<img src="/app/themes/clo_web_2015/src/img/'.strtolower(str_replace(' ', '', apply_filters('the_title', $item->title, $item->ID))) . '.svg" alt="' . apply_filters('the_title', $item->title, $item->ID) .'"/>';
-        $output .= '</div>';
+		$output .= '<div class="image-link ' . strtolower(str_replace(' ', '-', apply_filters('the_title', $item->title, $item->ID))) . '">';
+		
+		$imgid=strtolower(str_replace(' ', '', apply_filters('the_title', $item->title, $item->ID)));
+		
+		if($imgid=='tobehappy'||$imgid=='tolove'||$imgid=='tolearn'||$imgid=='towork'||$imgid=='tolive'||$imgid=='about'||$imgid=='news')
+		{
+			$output .= '<img src="/app/themes/clo_web_2015/src/img/'.strtolower(str_replace(' ', '', apply_filters('the_title', $item->title, $item->ID))) . '.svg" alt="' . apply_filters('the_title', $item->title, $item->ID) .'"/>';
+		}
+		else{
+			$output .= '<img src="/app/themes/clo_web_2015/src/img/default.svg" alt="' . apply_filters('the_title', $item->title, $item->ID) .'"/>';
+		}
+		//$output .= '<img src="/app/themes/clo_web_2015/src/img/'.strtolower(str_replace(' ', '', apply_filters('the_title', $item->title, $item->ID))) . '.svg" alt="' . apply_filters('the_title', $item->title, $item->ID) .'"/>';
+        
+		$output .= '</div>';
         $output.='<hr class="blueline"/>';
 		$output.='<div class="contentdiv"></div>';
 		$output.='<div class="menudiv"><ul></ul></div>';
