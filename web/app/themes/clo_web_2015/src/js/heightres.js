@@ -19,7 +19,7 @@ function changeHeight(itemId)
 
 		    	 /////////////header///////////////
 		    	 
-		    	 if(itemId=="tobehappy")
+		    	 if($("#"+itemId).parent().index()==0)
 		    		 {
 		    		   $(".header").css({"position":"fixed", "z-index":"100", "background-color":"#fff","height":"172px"});
 		    		 }
@@ -96,7 +96,7 @@ function changeHeight(itemId)
 				    	 $("#"+event.data).nextAll(".menudiv").css({"position":"fixed", "left":leftv+20+$("#" + event.data).nextAll(".contentdiv").outerWidth()})
 		    		 
 		    		 }
-		    	     else if($(window).width()>640 && $(window).width()<1000)
+		    	     else
 		    		 {
 		    	    	 $(".header").css("width","auto");
 		    	    	 $("#" + event.data).nextAll(".contentdiv").css("margin-left","14%");
@@ -104,7 +104,7 @@ function changeHeight(itemId)
 				    	 $("#" + event.data).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20, "z-index":"100", "left":leftv+8, "width":widthw});
 				    	 $("#"+event.data).nextAll(".menudiv").css({"position":"fixed", "left":leftv+20+$("#" + event.data).nextAll(".contentdiv").outerWidth()})
 		    		 }
-		    	     else{backHeight(itemId);} 	 
+		    	    	 
 			   
 			    	 
 			    	 
