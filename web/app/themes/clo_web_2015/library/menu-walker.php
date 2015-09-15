@@ -198,7 +198,7 @@ class Utility_Nav_walker extends Walker_Nav_Menu
 				$args->before,
 				$attributes,
 				$args->link_before,
-				apply_filters( 'the_title', $item->title, $item->ID ),
+				apply_filters( 'the_title',  strtoupper($item->title), strtoupper($item->ID) ),
 				$args->link_after,
 				$args->after
 		);
