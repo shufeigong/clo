@@ -1,12 +1,3 @@
-$(document).ready(function () {
-    
-	
-
-	
-	//alert($(".contentdiv").height());
-	
-	
-});
 
 var minHeight = 200;
 var menuHeight=290;
@@ -75,21 +66,47 @@ function changeHeight(itemId)
 			  	 $("#" + itemId).parent().css("margin-top",headerHeight+(currentli+1)*20);
 			  	 $("#" + itemId).parent().css("margin-bottom",(lilength-currentli)*20+2);
 			  	 $("#" + itemId).css({"position":"fixed", "top":headerHeight+(currentli+1)*20,"z-index":"100"});  
-			  	 $("#" + itemId).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv, "width":widthw, "max-width":"848px","border-top":"12px solid #fff" });  
-			  	 $("#" + itemId).nextAll(".contentdiv").css("margin-left","11%");
-			  	 $("#" + itemId).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20+2, "z-index":"100", "left":leftv+2, "width":widthw-2, "max-width":"846px"});
-			  	 $("#"+itemId).nextAll(".menudiv").css({"position":"fixed", "left":leftv+$("#" + itemId).nextAll(".contentdiv").width()})
+			  	 
+			  	 if($(window).width()>=1000)
+			  	 { $("#" + itemId).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv, "width":widthw, "max-width":"848px","border-top":"12px solid #fff" });  
+			  	   $("#" + itemId).nextAll(".contentdiv").css("margin-left","11%");
+			  	   $("#" + itemId).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20+2, "z-index":"100", "left":leftv+1, "width":widthw-2, "max-width":"846px"});
+			  	  }
+			  	   else
+			  	 {
+			  	    $("#" + itemId).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv+8, "width":widthw, "max-width":"848px","border-top":"12px solid #fff" });  
+				  	$("#" + itemId).nextAll(".contentdiv").css("margin-left","14%");
+				  	$("#" + itemId).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20, "z-index":"100", "left":leftv+8, "width":widthw, "max-width":"846px"});
+			  	 }
+			  	 
+			  	 
+			  	 $("#"+itemId).nextAll(".menudiv").css({"position":"fixed", "left":leftv+20+$("#" + itemId).nextAll(".contentdiv").outerWidth()});
 			  	 
 			  	 $(window).resize( itemId, function(event){
 		    		 var leftv=$("#"+event.data).parent().offset().left+$("#"+event.data).width()+4;
 			    	 var widthw=$(window).width()*0.875*0.88;
-			    	 $("#" + event.data).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv, "width":widthw, "border-top":"12px solid #fff" });
-			    	 $("#" + event.data).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20+2, "z-index":"100", "left":leftv+2, "width":widthw-2});
-			    	 $("#"+itemId).nextAll(".menudiv").css({"position":"fixed", "left":leftv+$("#" + itemId).nextAll(".contentdiv").width()})
+			    	 
+			    	 
 			    	 if($(window).width()>=1000)
-		    		 {$(".header").css("width","85%");}
+		    		 {
+			    		 $(".header").css("width","85%");
+			    		 $("#" + event.data).nextAll(".contentdiv").css("margin-left","11%");
+			    		 $("#" + event.data).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv, "width":widthw, "border-top":"12px solid #fff" });
+				    	 $("#" + event.data).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20+2, "z-index":"100", "left":leftv+1, "width":widthw-2});
+		    		 
+		    		 }
 		    	     else
-		    		 {$(".header").css("width","auto");}
+		    		 {
+		    	    	 $(".header").css("width","auto");
+		    	    	 $("#" + event.data).nextAll(".contentdiv").css("margin-left","14%");
+		    	    	 $("#" + event.data).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv+8, "width":widthw, "border-top":"12px solid #fff" });
+				    	 $("#" + event.data).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20, "z-index":"100", "left":leftv+8, "width":widthw});
+		    		 }
+			    	 
+			   
+			    	 $("#"+event.data).nextAll(".menudiv").css({"position":"fixed", "left":leftv+20+$("#" + event.data).nextAll(".contentdiv").outerWidth()})
+			    	 
+			    	 
 			    	 
 		    	} );
 		    	
