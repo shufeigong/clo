@@ -11,7 +11,7 @@
 register_nav_menus(array(
 	'main-menu' => 'Main', // Registers the menu in the WordPress admin menu editor.
 	'utility-menu' => 'Utility',
-	'mobile-off-canvas' => 'Mobile',
+	//'mobile-off-canvas' => 'Mobile',
 ));
 
 /**
@@ -39,6 +39,29 @@ if ( ! function_exists( 'utilityMenu' ) ) {
 			'walker'          => new Utility_Nav_walker()
 		));
 	}
+	
+	function utilityMenuMobile() {
+		wp_nav_menu(array(
+				'theme_location'  => '',
+				'menu'            => 'utility-menu',
+				'container'       => 'div',
+				'container_class' => 'utilityMobile-menu-container',
+				'container_id'    => '',
+				'menu_class'      => 'menu',
+				'menu_id'         => '',
+				'echo'            => true,
+				'fallback_cb'     => 'wp_page_menu',
+				'before'          => '',
+				'after'           => '',
+				'link_before'     => '',
+				'link_after'      => '',
+				'items_wrap'      => '<ul>%3$s</ul>',
+				'depth'           => 1,
+				'walker'          => new UtilityMobile_Nav_walker()
+		));
+	}
+	
+	
 }
 
 /**
@@ -65,6 +88,29 @@ if ( ! function_exists( 'mainMenu' ) ) {
 			'walker'          => new Main_Nav_walker()
 		));
 	}
+	
+	function mainMenuMobile() {
+		wp_nav_menu(array(
+				'theme_location'  => '',
+				'menu'            => 'main-menu',
+				'container'       => 'div',
+				'container_class' => 'mainMobile-menu-container',
+				'container_id'    => '',
+				'menu_class'      => 'menu',
+				'menu_id'         => '',
+				'echo'            => true,
+				'fallback_cb'     => 'wp_page_menu',
+				'before'          => '',
+				'after'           => '',
+				'link_before'     => '',
+				'link_after'      => '',
+				'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+				'depth'           => 1,
+				'walker'          => new MainMobile_Nav_walker()
+		));
+	}
+	
+	
 }
 
 /**

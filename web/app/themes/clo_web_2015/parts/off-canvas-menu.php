@@ -7,7 +7,7 @@
  * @since FoundationPress 1.0.0
  */
 ?>
-<aside class="left-off-canvas-menu" aria-hidden="true">
-    <?php mainMenu(); ?>
-    <?php utilityMenu(); ?>
+<aside class="right-off-canvas-menu" aria-hidden="true">
+    <?php mainMenuMobile();?>
+    <?php utilityMenuMobile()?>
 </aside>

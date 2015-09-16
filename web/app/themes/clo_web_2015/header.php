@@ -38,10 +38,12 @@
                 <a class="right-off-canvas-toggle menu-icon" ><span></span></a>
             </section>
         </nav>
-        <aside class="left-off-canvas-menu">
-            <?php foundationPress_mobile_off_canvas(); ?>
-        </aside>
-<!--        --><?php //get_template_part('parts/off-canvas-menu'); ?>
+
+     <?php get_template_part('parts/off-canvas-menu'); ?>
+     
+<!--        -->
+     
+ 
 
 <section class="container" role="document">
 <?php do_action('foundationpress_after_header'); ?>
