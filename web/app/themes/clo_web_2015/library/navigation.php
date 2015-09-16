@@ -104,7 +104,7 @@ if ( ! function_exists( 'mainMenu' ) ) {
 				'after'           => '',
 				'link_before'     => '',
 				'link_after'      => '',
-				'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+				'items_wrap'      => '<ul>%3$s</ul>',
 				'depth'           => 1,
 				'walker'          => new MainMobile_Nav_walker()
 		));

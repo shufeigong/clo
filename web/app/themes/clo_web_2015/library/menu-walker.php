@@ -204,7 +204,7 @@ class MainMobile_Nav_walker extends Walker_Nav_Menu
 		$class_names = esc_attr(implode(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item)));
 
 		// build html
-		$output .= $indent . '<li class="' . $depth_class_names . ' ' . $class_names . ' clearfix">';
+		$output .= $indent . '<li>';
 
 
 		// link attributes
@@ -213,7 +213,7 @@ class MainMobile_Nav_walker extends Walker_Nav_Menu
 		$attributes .= !empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
 		//$attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
 		$attributes .= ' href="#" onclick="return false"';
-		$attributes .= ! empty( $item->title)  ? ' id="'   . esc_attr( strtolower(preg_replace("/\s|　/","",$item->title))  ) .'"' : '';
+		$attributes .= ! empty( $item->title)  ? ' id="'   . esc_attr( strtolower(preg_replace("/\s|　/","",$item->title))  ) .'M"' : '';
 		//$attributes .= ! empty( $item->title)  ? ' id="'   . esc_attr( explode('/', $item->url)[count(explode('/',$item->url))-2]  ) .'"' : '';
 		//$imgid=! empty( $item->attr_title)  ? ' id="'   . esc_attr( $item->attr_title   ) .'"' : '';
 		$attributes .= ' class="menu-link ' . ($depth > 0 ? 'sub-menu-link' : 'main-menu-link') . '"';

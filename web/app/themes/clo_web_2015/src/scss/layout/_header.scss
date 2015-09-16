@@ -137,13 +137,33 @@
              
               a{
                   //font-family:$font_site-default;
-                  font-size:16px;
+                   @include font-size(1.6);
                    color:#666666;
                }
            } 
        }
    }
   
+   .mainMobile-menu-container
+   {
+     border:solid 1px #333;
+     ul{
+          border:solid 1px red;
+          list-style-type:none;
+          margin:15px;
+         li{
+            a{
+               @include font-size(1.6);
+               font-family:$font-site-bold;
+               color:#666666;
+                &:hover {color : $color-header;}
+             }
+            
+           }
+        }
+   
+   }
+
 
 
 
