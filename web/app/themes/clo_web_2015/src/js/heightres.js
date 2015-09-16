@@ -33,7 +33,7 @@ function changeHeight(itemId)
 		    		 }
 		    	 else
 		    		 {
-		    		   $(".header").css("width","auto");
+		    		   $(".header").css("width","100%");
 		    		 }
 		    	 
 		    	 
@@ -98,7 +98,7 @@ function changeHeight(itemId)
 		    		 }
 		    	     else
 		    		 {
-		    	    	 $(".header").css("width","auto");
+		    	    	 $(".header").css("width","100%");
 		    	    	 $("#" + event.data).nextAll(".contentdiv").css("margin-left","14%");
 		    	    	 $("#" + event.data).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv+8, "width":widthw, "border-top":"12px solid #fff" });
 				    	 $("#" + event.data).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20, "z-index":"100", "left":leftv+8, "width":widthw});

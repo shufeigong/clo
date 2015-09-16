@@ -463,9 +463,12 @@
 	    margin     : 0;
 	    position:relative;
 	    display:inline;
-	    .right-small{
-	    border-left:none;
-	    }
+	    
+	     .right-small{
+	         border-left:none;
+	         position:fixed;
+	         z-index:100;
+	        }
 	    
 	    .menu-icon span::after {
 	        content    : "";
@@ -477,6 +480,7 @@
 	        left       : 0;
 	        box-shadow : 0 0 0 2px #82bc00, 0 7px 0 2px #82bc00, 0 14px 0 2px #82bc00;
 	        width      : 20px;
+	        
 	    }
 	}
 	
