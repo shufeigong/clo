@@ -9,5 +9,6 @@
 ?>
 <aside class="right-off-canvas-menu" aria-hidden="true">
     <?php mainMenuMobile();?>
+    <hr/>
     <?php utilityMenuMobile()?>
 </aside>

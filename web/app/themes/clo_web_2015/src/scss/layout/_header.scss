@@ -116,13 +116,34 @@
  
    .right-off-canvas-menu
    {
-      width:100%;
+      //border:solid 1px #333;
+      width:80%;
       background-color:#DCE9F7;
+      hr{ 
+           border:solid 2px #fff;
+           margin:15px 15px 15px 15px;
+        }
    
    }
 
- 
-
+   .utilityMobile-menu-container
+   {
+     //border:solid 1px #333;
+     ul{
+         //border:solid 1px red;
+         list-style-type:none;
+         margin:15px;
+         li{
+             
+              a{
+                  //font-family:$font_site-default;
+                  font-size:16px;
+                   color:#666666;
+               }
+           } 
+       }
+   }
+  
 
 
 
