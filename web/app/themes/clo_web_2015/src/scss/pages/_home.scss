@@ -196,12 +196,10 @@ article {
 	                 font-family : $font-site-bold;
                      text-decoration:underline;
 	                }
-	  @media screen and (min-width: 1000px) {
-	     @include font-size(1.5);
-	  }
-	  @media screen and (min-width: 641px) and (max-width:999px) {
+	 
+	 
 	      @include font-size(1.4);
-	  }
+	
 	 
 	 } 
     
@@ -210,14 +208,14 @@ article {
 		            margin:0;
 		            a{color:#231F20;font-family:$font-site-bold;text-decoration:underline;}
 		            >li{
-		               @media screen and (min-width: 1000px) {@include font-size(1.5);}
-		               @media screen and (min-width: 641px) and (max-width:999px) {@include font-size(1.4);}
+		               
+		               @include font-size(1.4);
 		               &:before {content : '• ';}
 		               >ul{
 		                 list-style:none;
 		                  margin-left:32px;
-		                  li{@media screen and (min-width: 1000px) {@include font-size(1.5);}
-		               @media screen and (min-width: 641px) and (max-width:999px) {@include font-size(1.4);}&:before {content : '- ';}}
+		                  li{
+		                   @include font-size(1.4);&:before {content : '- ';}}
 		               }
 		              }
 		            
@@ -230,15 +228,15 @@ article {
 	            a{color:#231F20;font-family:$font-site-bold;text-decoration:underline;}
 	            counter-reset:num;
 	            >li{
-	               @media screen and (min-width: 1000px) {@include font-size(1.5);}
-		               @media screen and (min-width: 641px) and (max-width:999px) {@include font-size(1.4);}
+	               
+		               @include font-size(1.4);
 	               &:before{content:counter(num) '. ';counter-increment:num;}
 	               >ol{
 	                   list-style:none;
 	                   margin-left:35px;
 	                   counter-reset: list;
-	                   li{@media screen and (min-width: 1000px) {@include font-size(1.5);}
-		               @media screen and (min-width: 641px) and (max-width:999px) {@include font-size(1.4);} &:before {content: counter(list, lower-alpha) ". ";counter-increment: list;}}
+	                   li{
+		               @include font-size(1.4); &:before {content: counter(list, lower-alpha) ". ";counter-increment: list;}}
 	               }
 	              }
 	            }
