@@ -14,16 +14,16 @@ $(document).ready(function () {
         else {
             $(this).html('[+]');
         }
-    	
-    	
-    	
-    	
     });
     
     
+    $("#gohome").click(function(){location.href="/";});
     
-    
-    
+    if($(window).width()<641)
+    	{
+    	   $(".entry-content").css("padding-top", $(".mbx-dh").height()+$(".mbx-dh").offset().top-$(".header").height()+5);
+    	   $("#gohome").next().children("span:last-child").children("a").css("color","#0075c9");
+    	}
     
     
     

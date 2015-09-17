@@ -25,8 +25,25 @@ get_header();  //wp_nav_menu?>
                  <img src="<?php echo get_stylesheet_directory_uri(); ?>/src/img/mbl-img.svg"/>
                  </div>
                  
+                
                  <div class="mbx-dh">
-                 <?php if(function_exists('cmp_breadcrumbs')) cmp_breadcrumbs();?>     
+                 <?php  
+                        $menu_breadcrumb = new Menu_Breadcrumb( 'main-menu' );   // 'main' is the Menu Location
+                        
+                        $current_menu_item_object = $menu_breadcrumb->get_current_menu_item_object();
+                        if($current_menu_item_object){
+                        	
+                        	$breadcrumb_array = $menu_breadcrumb->generate_trail();
+                            $breadcrumb_markup = $menu_breadcrumb->generate_markup( $breadcrumb_array, ' > ' );
+                            echo '<p class="menu-breadcrumb"><a id="gohome">HOME</a> > ' . strtoupper($breadcrumb_markup) . '</p>';
+                        }
+                        	
+                        else
+                        {
+                        	
+                        	echo '<a id="gohome">HOME</a>';
+                        }
+                  ?>     
                  </div>
                 
                 
@@ -66,6 +83,7 @@ get_header();  //wp_nav_menu?>
                             Consectetur adipiscing elit. Donec tincidunt eu tellus nec volutpat. Integer tempus tempor
                             leo ullamcorper accumsan.
                         </p>
+                        
                     </div>
                 </div>
                 <?php endif; ?>
@@ -76,6 +94,6 @@ get_header();  //wp_nav_menu?>
 
     </div>
     <?php //get_sidebar(); ?>    
- 
+   
 </div>
 <?php get_footer(); ?>
