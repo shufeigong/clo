@@ -56,6 +56,7 @@ function cmp_breadcrumbs() {
 			echo $before . get_the_title() . $after;
 		} elseif ( is_page() && $post->post_parent ) { // 父级页面
 			$parent_id  = $post->post_parent;
+			
 			$breadcrumbs = array();
 			while ($parent_id) {
 				$page = get_page($parent_id);

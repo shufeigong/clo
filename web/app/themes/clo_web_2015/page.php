@@ -76,5 +76,6 @@ get_header();  //wp_nav_menu?>
 
     </div>
     <?php //get_sidebar(); ?>    
+ 
 </div>
 <?php get_footer(); ?>

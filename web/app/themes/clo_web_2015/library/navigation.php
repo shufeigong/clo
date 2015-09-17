@@ -96,7 +96,7 @@ if ( ! function_exists( 'mainMenu' ) ) {
 				'container'       => 'div',
 				'container_class' => 'mainMobile-menu-container',
 				'container_id'    => '',
-				'menu_class'      => 'menu',
+				'menu_class'      => 'mobileMainMenu',
 				'menu_id'         => '',
 				'echo'            => true,
 				'fallback_cb'     => 'wp_page_menu',
@@ -104,8 +104,8 @@ if ( ! function_exists( 'mainMenu' ) ) {
 				'after'           => '',
 				'link_before'     => '',
 				'link_after'      => '',
-				'items_wrap'      => '<ul>%3$s</ul>',
-				'depth'           => 1,
+				'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
+				'depth'           => 0,
 				'walker'          => new MainMobile_Nav_walker()
 		));
 	}

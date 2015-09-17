@@ -32,6 +32,7 @@ function foundationpress_scripts()
     wp_enqueue_script( 'app', get_stylesheet_directory_uri() . '/src/js/app.js', array('jquery'), '1.0.0', true );
     wp_enqueue_script( 'myheight', get_stylesheet_directory_uri() . '/src/js/heightres.js', array('jquery'), '1.0.0', true );
     wp_enqueue_script( 'myAppMenu', get_stylesheet_directory_uri() . '/src/js/menu.js', array('jquery'), '1.0.0', true );
+    wp_enqueue_script( 'myMobileMenu', get_stylesheet_directory_uri() . '/src/js/mobileMenu.js', array('jquery'), '1.0.0', true );
     
 }
 

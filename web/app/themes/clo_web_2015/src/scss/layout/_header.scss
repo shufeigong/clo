@@ -117,11 +117,11 @@
    .right-off-canvas-menu
    {
       //border:solid 1px #333;
-      width:80%;
+      width:99%;
       background-color:#DCE9F7;
       hr{ 
            border:solid 2px #fff;
-           margin:15px 15px 15px 15px;
+           margin:15px 25% 15px 15px;
         }
    
    }
@@ -139,24 +139,35 @@
                   //font-family:$font_site-default;
                    @include font-size(1.6);
                    color:#666666;
+                   background-color: none;
                }
            } 
        }
    }
-  
+
    .mainMobile-menu-container
    {
-     border:solid 1px #333;
+     //border:solid 1px #333;
+     >ul{margin:15px; >.no-children{margin-left:35px;}}
+     
      ul{
-          border:solid 1px red;
+          //border:solid 1px red;
           list-style-type:none;
-          margin:15px;
+          
          li{
+             .sub-menu{
+                        margin-left:35px; 
+                       .no-children{margin-left:20px;}
+                       .mobileSign{font-family:$font-site-bold;}
+                       a{@include font-size(1.6);font-family:$font_site-default;}
+                       }
+           
             a{
                @include font-size(1.6);
                font-family:$font-site-bold;
                color:#666666;
-                &:hover {color : $color-header;}
+               
+                
              }
             
            }

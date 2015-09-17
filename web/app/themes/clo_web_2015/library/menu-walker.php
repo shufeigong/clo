@@ -203,23 +203,39 @@ class MainMobile_Nav_walker extends Walker_Nav_Menu
 
 		$class_names = esc_attr(implode(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item)));
 
+		$children = get_posts(array('post_type' => 'nav_menu_item', 'nopaging' => true, 'numberposts' => 1, 'meta_key' => '_menu_item_menu_item_parent', 'meta_value' => $item->ID));
+		
 		// build html
-		$output .= $indent . '<li>';
+		if(!empty($children)){
+			$output .= $indent . '<li class="' . $depth_class_names . ' ' . $class_names . ' clearfix">';
+		}
+		else{
+			$output .= $indent . '<li class="' . $depth_class_names . ' ' . $class_names . ' clearfix no-children">';
+		}
+		
+		
 
 
 		// link attributes
 		$attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
 		$attributes .= !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
 		$attributes .= !empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
-		//$attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
-		$attributes .= ' href="#" onclick="return false"';
+		$attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
+		//$attributes .= ' href="#" onclick="return false"';
 		$attributes .= ! empty( $item->title)  ? ' id="'   . esc_attr( strtolower(preg_replace("/\s|　/","",$item->title))  ) .'M"' : '';
 		//$attributes .= ! empty( $item->title)  ? ' id="'   . esc_attr( explode('/', $item->url)[count(explode('/',$item->url))-2]  ) .'"' : '';
 		//$imgid=! empty( $item->attr_title)  ? ' id="'   . esc_attr( $item->attr_title   ) .'"' : '';
 		$attributes .= ' class="menu-link ' . ($depth > 0 ? 'sub-menu-link' : 'main-menu-link') . '"';
-
+		//global $wpdb;
+		//$query = $wpdb->prepare("SELECT COUNT(*) FROM $wpdb->posts WHERE post_status ='publish' AND post_type='nav_menu_item' AND post_parent=%d", $item->ID);
+		//$child_count = $wpdb->get_var($query);
+		
+		
+		
+		
+		if(!empty($children)){
 		$item_output = sprintf(
-				'%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
+				'<a class="mobileSign">[+]</a>'."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".'%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
 				$args->before,
 				$attributes,
 				$args->link_before,
@@ -227,7 +243,18 @@ class MainMobile_Nav_walker extends Walker_Nav_Menu
 				$args->link_after,
 				$args->after
 		);
-
+		}
+		else{
+			$item_output = sprintf(
+					'%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
+					$args->before,
+					$attributes,
+					$args->link_before,
+					apply_filters('the_title', strtoupper($item->title), strtoupper($item->ID)),
+					$args->link_after,
+					$args->after
+			);
+		}
 		// build html
 		$output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
 	
@@ -303,5 +330,11 @@ class UtilityMobile_Nav_walker extends Walker_Nav_Menu
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}
 }
+
+
+
+
+
+
 endif;
 ?>
