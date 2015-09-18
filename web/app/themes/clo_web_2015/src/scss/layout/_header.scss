@@ -71,6 +71,7 @@
         z-index:99; 
         background-color:#fff;
         top:0;   
+        padding-top:10px;
 	    margin-bottom:10px;
 	    .site-logo {
 	        margin:0 0 0 10%;
@@ -85,15 +86,16 @@
 
    .mbx-dh
    {
-     margin:0 30px;
-     width:100%;
+     margin:0 30px 0 30px;
+     width:95%;
      position:fixed;
      z-index:100;
      top:140px;
      //border:solid 1px red;
      background-color:#fff;
      .menu-breadcrumb{
-     margin:0;
+     margin:0 10px 0 0;
+     //border:solid 1px #333;
      }
      .menu-breadcrumb a{color:#666666;}
      
@@ -104,7 +106,7 @@
    {
     //margin: 0 50px 0 30px;
     position:fixed;
-    z-index:99;
+    z-index:98;
     background-color:#fff;
     width:100%;
     height:90px;
@@ -119,7 +121,7 @@
 
    .entry-content
    {
-     padding:0 7% 0 7%;
+     padding:0 30px 0 30px;
      //border:solid 1px #333;
    }
  

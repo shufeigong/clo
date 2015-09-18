@@ -17,12 +17,12 @@ table caption{
 text-align:left;
 color:$color-header;
 }
-table tbody{
+table tbody, table thead, table tfoot{
 padding:30px;
 }
 
 
-table tbody tr td, table tbody tr th, table tfoot tr td, table tfoot tr th, table thead tr th, table tr td {
+table tbody tr td, table tbody tr th, table tfoot tr td, table tfoot tr th, table thead tr th, table thead tr td, table tr td {
     display: table-cell;
     height: 3.4rem;
     line-height:normal;
@@ -41,8 +41,8 @@ background: $color-header;
 font-family:$font-site-bold;
 color:#fff;
 
-font-size: 1.5rem;
-    padding: .5625rem .625rem;
+font-size: 1.3rem;
+    //padding: .5625rem .625rem;
     border-right:solid 4px #fff;
     text-align: left;
 }
