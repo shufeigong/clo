@@ -14,7 +14,7 @@ do_action( 'foundationpress_before_searchform' ); ?>
 
         <label for="searchtext" class="hidden">Search box</label>
         <input id="searchtext" type="text" value="" name="s"
-               placeholder="<?php esc_attr_e('Keyword Search', 'foundationpress'); ?>">
+               placeholder="<?php if(ICL_LANGUAGE_CODE=='en')esc_attr_e('Keyword Search', 'foundationpress');else if(ICL_LANGUAGE_CODE=='fr')esc_attr_e('Recherche par mot clé', 'foundationpress') ?>">
 
         <?php do_action('foundationpress_searchform_before_search_button'); ?>
 

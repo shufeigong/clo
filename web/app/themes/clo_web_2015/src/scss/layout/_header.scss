@@ -12,6 +12,17 @@
 	        background : url(../img/clo_logo.svg) no-repeat;
 	
 	    }
+	    
+	    .site-logo-french {
+	        display    : block;
+	        margin-top : 30px;
+	        width      : 243px;
+	        height     : 72px;
+	        background : url(../img/clo_logo_french.svg) no-repeat;
+	
+	    }
+	    
+	    
 	}
 .mbx-dh, .mbl-img
    {
@@ -41,14 +52,23 @@
 		     margin-top:20px;
 		     
 		     .site-logo {
-	        display    : block;
-	        margin-left : 10px;
-	        width      : 150px;
-	        height     : 32px;
-	        background : url(../img/clo_logo_medium.svg) no-repeat;
-	        //border:solid 1px #333;
-	
-	    }
+		        display    : block;
+		        margin-left : 10px;
+		        width      : 150px;
+		        height     : 32px;
+		        background : url(../img/clo_logo_medium.svg) no-repeat;
+		        //border:solid 1px #333;
+	         }
+		    .site-logo-french {
+		        display    : block;
+		        margin-left : 10px;
+		        width      : 150px;
+		        height     : 32px;
+		        background : url(../img/clo_logo_medium_french.svg) no-repeat;
+		        //border:solid 1px #333;
+	         }
+		    
+		    
 		    
 		    }
 	   
@@ -80,6 +100,16 @@
 	        width      : 90%;
 	        height     : 72px;
 	        background : url(../img/clo_logo.svg) no-repeat;
+	       
+	    }
+	    
+	    .site-logo-french {
+	        margin:0 0 0 10%;
+	        display    : block;
+	        //border:solid 1px red;
+	        width      : 90%;
+	        height     : 72px;
+	        background : url(../img/clo_logo_french.svg) no-repeat;
 	       
 	    }
 	}
