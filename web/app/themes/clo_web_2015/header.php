@@ -15,7 +15,6 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/src/img/icons/favicon.ico"
           type="image/x-icon">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_stylesheet_directory_uri(
@@ -27,6 +26,8 @@
     <link rel="apple-touch-icon-precomposed"
           href="<?php echo get_stylesheet_directory_uri(); ?>/src/img/icons/apple-touch-icon-precomposed.png">
     <?php wp_head(); ?>
+
+
 </head>
 <body <?php body_class(); ?>>
 <?php do_action('foundationpress_after_body'); ?>

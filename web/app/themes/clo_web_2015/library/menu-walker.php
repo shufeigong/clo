@@ -133,9 +133,10 @@ class Main_Nav_walker extends Walker_Nav_Menu
 		$attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
 		$attributes .= !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
 		$attributes .= !empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
-		//$attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
-		$attributes .= ' href="#" onclick="return false"';
+		$attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
+		$attributes .= 'onclick="return false"';
 		$attributes .= ! empty( $item->title)  ? ' id="'   . esc_attr( strtolower(preg_replace("/\s|　/","",$item->title))  ) .'"' : '';
+		//$attributes .= ! empty( $item->title)  ? ' ui-sref="'   . esc_attr( strtolower(preg_replace("/\s|　/","",$item->title))  ) .'"' : '';
 		//$attributes .= ! empty( $item->title)  ? ' id="'   . esc_attr( explode('/', $item->url)[count(explode('/',$item->url))-2]  ) .'"' : '';
 		//$imgid=! empty( $item->attr_title)  ? ' id="'   . esc_attr( $item->attr_title   ) .'"' : '';
 		$attributes .= ' class="menu-link ' . ($depth > 0 ? 'sub-menu-link' : 'main-menu-link') . '"';

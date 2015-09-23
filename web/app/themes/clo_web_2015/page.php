@@ -13,7 +13,7 @@
 
 get_header();  //wp_nav_menu?>
 
-<div class="row">
+<div class="row" >
     <div class="" role="main">
         <?php do_action('foundationpress_before_content'); ?>
 
@@ -35,7 +35,7 @@ get_header();  //wp_nav_menu?>
                         	
                         	$breadcrumb_array = $menu_breadcrumb->generate_trail();
                             $breadcrumb_markup = $menu_breadcrumb->generate_markup( $breadcrumb_array, ' > ' );
-                            echo '<p class="menu-breadcrumb"><a id="gohome">HOME</a> > ' . strtoupper($breadcrumb_markup) . '</p>';
+                            echo '<p class="menu-breadcrumb"><a id="gohome">HOME</a> > ' . $breadcrumb_markup . '</p>';
                         }
                         	
                         else

@@ -40,8 +40,9 @@ table tr th, table thead tr th, table tfoot tr th{
 background: $color-header;
 font-family:$font-site-bold;
 color:#fff;
-
-font-size: 1.3rem;
+    @media screen and (min-width:641px) {font-size: 1.3rem;}
+    @media screen and (max-width:640px) {font-size: 1.2rem;}
+    font-size: 1.3rem;
     //padding: .5625rem .625rem;
     border-right:solid 4px #fff;
     text-align: left;

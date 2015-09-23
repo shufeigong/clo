@@ -25,12 +25,18 @@ $(document).ready(function () {
     	   $("#gohome").next().children("span:last-child").children("a").css("color","#0075c9");
     	}
     $(window).resize(function() {
+    	//location.reload();
     	     if($(window).width()>641)
     	    	 {
-    	    	 $(".off-canvas-wrap").removeClass("move-left"); 
-    	    	 $(".entry-content").css("padding-top", 0);
+    	    	 //location.reload();
+    	    	    $(".off-canvas-wrap").removeClass("move-left"); 
+	    	        $(".entry-content").css("padding-top", 0);
     	    	 }
-    	     else{$(".entry-content").css("padding-top", $(".mbx-dh").height()+$(".mbx-dh").offset().top-$(".header").height()+5);}
+    	     else{
+    	    	 //location.href="/";
+    	    	 //location.reload();
+    	    	    $(".entry-content").css("padding-top", $(".mbx-dh").height()+$(".mbx-dh").offset().top-$(".header").height()+5);
+    	    	 }
     	});
     
     

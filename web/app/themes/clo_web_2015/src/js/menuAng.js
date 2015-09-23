@@ -3,56 +3,71 @@ function pageLoad(linkSplit, basicItems) {
     //$('img[usemap]').rwdImageMaps();
 
     if (linkSplit != '') {
-        if ($.inArray(linkSplit, basicItems) != -1) {
-            pageRefresh(linkSplit);
-            //$("#"+linkSplit).css("color", "#0075C9"); //keep selected item's text to blue
-            //$("#"+linkSplit).next().children().attr("src", "/wp-content/themes/FoundationPress-child/images/"+linkSplit+"blue.svg"); //keep selected item's image to blue
+        if ($.inArray(linkSplit[1], basicItems) != -1&&location.hash=='') {
+            pageRefresh(linkSplit[1]);
+            }
+        else if($.inArray(linkSplit[1], basicItems) != -1 && location.hash!=''){
+        	
+        	   $.get("/wp-json/pages/" + location.hash.substr(1), function (response) {
+
+                   var content = response.content;
+
+                   grabMenu(linkSplit[1]);   //grab submenu according to itemId
+                   $("#" + linkSplit[1]).nextAll(".contentdiv").html("<br/>");
+                   $("#" + linkSplit[1]).nextAll(".contentdiv").append(content);
+                   $(".entry-title").slideUp();
+                   $(".entry-content").slideUp();
+                   $(".news-content").slideUp();
+                   $("#" + linkSplit[1]).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
+                   $("#" + linkSplit[1]).parent().siblings().children(".menudiv").slideUp();       //close all other pages' submenu
+                   $("#" + linkSplit[1]).parent().siblings().children(".blueline").css("display", "none"); //reback all other blueline none
+                   $("#" + linkSplit[1]).parent().siblings().children(".menu-link").css("color", "#82BC00"); //reback all other pages' text color
+                   $("#" + linkSplit[1]).parent().siblings().children(".image-link").children().attr("src", function () {
+                       return this.src.replace('blue', '');
+                   });//reback all other pages' image
+                   $("#" + linkSplit[1]).parent().siblings().children(".menu-link").mouseleave(function () {
+                       hover2(this.id);
+                   });//leave other items' text to green
+                   $("#" + linkSplit[1]).parent().siblings().children(".image-link").mouseleave(function () {
+                       hover2($(this).prev().attr("id"));
+                   });//leave other items' image to green
+
+                   $("#" + linkSplit[1]).nextAll(".blueline").css("display", "inline"); //create top blueline
+                   $("#" + linkSplit[1]).css("color", "#0075C9"); //keep selected item's text to blue
+                   $("#" + linkSplit[1]).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + linkSplit[1] + "blue.svg"); //keep selected item's image to blue
+
+                   $("#" + linkSplit[1]).nextAll(".contentdiv").slideDown();  //get content down
+                   $("#" + linkSplit[1]).nextAll(".menudiv").slideDown(); //get submenu down
+                   $("#" + linkSplit[1]).mouseleave(function () {
+                       hover1(linkSplit[1]);
+                   }); //keep selected item's text to blue
+                   $("#" + linkSplit[1]).next().mouseleave(function () {
+                       hover1(linkSplit[1]);
+                   });  //keep selected item's image to blue
+
+                   var idt;
+                   var n = 0;
+                   window.onresize = function() {
+                       clearTimeout(idt);
+                       idt = setTimeout(function() {
+                     	  if($(window).width()<641)
+               		  {location.href="/"+linkSplit[1];}
+                       }, 10);
+                   }
+                   
+                   
+               }).fail(function () {
+                   alert("error");
+               });
+        	
+        	
+        	
         }
-        else {
-            //pageRefresh(linkSplit.split('/').shift());
-            $.get("/wp-json/pages/" + linkSplit.split('/').pop(), function (response) {
-
-                var content = response.content;
-
-                grabMenu(linkSplit.split('/').shift());   //grab submenu according to itemId
-                $("#" + linkSplit.split('/').shift()).nextAll(".contentdiv").html("<br/>");
-                $("#" + linkSplit.split('/').shift()).nextAll(".contentdiv").append(content);
-                $(".entry-title").slideUp();
-                $(".entry-content").slideUp();
-                $(".news-content").slideUp();
-                $("#" + linkSplit.split('/').shift()).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
-                $("#" + linkSplit.split('/').shift()).parent().siblings().children(".menudiv").slideUp();       //close all other pages' submenu
-                $("#" + linkSplit.split('/').shift()).parent().siblings().children(".blueline").css("display", "none"); //reback all other blueline none
-                $("#" + linkSplit.split('/').shift()).parent().siblings().children(".menu-link").css("color", "#82BC00"); //reback all other pages' text color
-                $("#" + linkSplit.split('/').shift()).parent().siblings().children(".image-link").children().attr("src", function () {
-                    return this.src.replace('blue', '');
-                });//reback all other pages' image
-                $("#" + linkSplit.split('/').shift()).parent().siblings().children(".menu-link").mouseleave(function () {
-                    hover2(this.id);
-                });//leave other items' text to green
-                $("#" + linkSplit.split('/').shift()).parent().siblings().children(".image-link").mouseleave(function () {
-                    hover2($(this).prev().attr("id"));
-                });//leave other items' image to green
-
-                $("#" + linkSplit.split('/').shift()).nextAll(".blueline").css("display", "inline"); //create top blueline
-                $("#" + linkSplit.split('/').shift()).css("color", "#0075C9"); //keep selected item's text to blue
-                $("#" + linkSplit.split('/').shift()).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + linkSplit.split('/').shift() + "blue.svg"); //keep selected item's image to blue
-
-                $("#" + linkSplit.split('/').shift()).nextAll(".contentdiv").slideDown();  //get content down
-                $("#" + linkSplit.split('/').shift()).nextAll(".menudiv").slideDown(); //get submenu down
-                $("#" + linkSplit.split('/').shift()).mouseleave(function () {
-                    hover1(linkSplit.split('/').shift());
-                }); //keep selected item's text to blue
-                $("#" + linkSplit.split('/').shift()).next().mouseleave(function () {
-                    hover1(linkSplit.split('/').shift());
-                });  //keep selected item's image to blue
-
-            }).fail(function () {
-                alert("error");
-            });
+        
         }
+      
     }
-}
+
 function grabPage(pageId) {
     $.get("/wp-json/pages/" + pageId, function (response) {
 
@@ -60,13 +75,32 @@ function grabPage(pageId) {
 
         $("#" + pageId).nextAll(".contentdiv").html("<br/>");
         $("#" + pageId).nextAll(".contentdiv").append(content);
+        $(".entry-content-mobile").html(content);
         if($(window).width()>640){$("#" + pageId).nextAll(".contentdiv").slideDown("normal",changeHeight(pageId));}
         else{$("#" + pageId).nextAll(".contentdiv").slideDown();}
         
         
         $("#" + pageId).nextAll(".menudiv").slideDown(); //get submenu down
-      
+        
+       // $(window).resize(function() {
+        //	  if($(window).width()<641)
+        	//	  {location.reload();}
+        	//});
        
+        var idt;
+        var n = 0;
+        window.onresize = function() {
+            clearTimeout(idt);
+            idt = setTimeout(function() {
+          	  if($(window).width()<641)
+    		  {location.href="/"+pageId;}
+            }, 10);
+        }
+        
+        
+        
+        
+        
     }).fail(function () {
         alert("error");
     });
@@ -147,7 +181,7 @@ function change(objectId, itemId) {
 
         $("#" + itemId).nextAll(".contentdiv").html("<br/>");
         $("#" + itemId).nextAll(".contentdiv").append(content);
-        window.history.pushState(null, null, "#!" + itemId + "/" + response.slug);
+        window.history.pushState(null, null, "/" + itemId + "/#" + response.slug);
 
     }).fail(function () {
         alert("error");
@@ -239,7 +273,7 @@ function itemClick(itemId) {
 
     //////////clear previous mass///////////
     $("#" + itemId).nextAll(".blueline").css("display", "inline"); //create top blueline
-    window.history.pushState(null, null, "#!" + itemId);
+    window.history.pushState(null, null, "/" + itemId+"/");
 
     grabMenu(itemId);   //grab submenu according to itemId
     grabPage(itemId);   //grab page according to itemId
@@ -296,7 +330,9 @@ function pageRefresh(itemId) {
 }
 
 function createMenu(menuUrl) {
-    var linkSplit = location.hash.substr(2);
+    //var linkSplit = location.hash.substr(2);
+    var linkSplit=location.pathname.split('/');
+	//alert(linkSplit[1]);
     var basicItems = new Array();
 
     $.get(menuUrl, function (response) {
@@ -323,7 +359,7 @@ function createMenu(menuUrl) {
         pageLoad(linkSplit, basicItems);
         window.addEventListener('popstate', function (e) {
 
-            var linkSplit = location.hash.substr(2);
+            var linkSplit = location.pathname.split('/');
             if (linkSplit != '') {
                 pageLoad(linkSplit, basicItems)
             } else {
@@ -357,6 +393,7 @@ function init() {
 
 $(document).ready(function () {
     init();
+    
 });
 
 
