@@ -222,8 +222,8 @@ function contentToggle(id){
 
 function hover1(itemId) {
     $("#" + itemId).css("color", "#0075C9");
-    if(itemId=='tobehappy'||itemId=='tolove'||itemId=='tolearn'||itemId=='towork'||itemId=='tolive'||itemId=='about'||itemId=='news')
-    	{$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + itemId + "blue.svg");}
+    if($("#"+itemId).attr("order")<8)
+    	{$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/imgblue" + $("#"+itemId).attr("order") + ".svg");}
     else
     	{$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/defaultblue.svg");}
     
@@ -231,23 +231,23 @@ function hover1(itemId) {
 
 function hover2(itemId) {
     $("#" + itemId).css("color", "#82BC00");
-    if(itemId=='tobehappy'||itemId=='tolove'||itemId=='tolearn'||itemId=='towork'||itemId=='tolive'||itemId=='about'||itemId=='news')
-        {$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + itemId + ".svg");}
+    if($("#"+itemId).attr("order")<8)
+        {$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/img" + $("#"+itemId).attr("order") + ".svg");}
     else
     	{$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/default.svg");}
 }
 
 function active1(itemId){
 	$("#" + itemId).css("color", "#BBBDBF");
-	if(itemId=='tobehappy'||itemId=='tolove'||itemId=='tolearn'||itemId=='towork'||itemId=='tolive'||itemId=='about'||itemId=='news')
-	    {$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + itemId + "grey.svg");}
+	if($("#"+itemId).attr("order")<8)
+	    {$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/imggrey" + $("#"+itemId).attr("order") + ".svg");}
 	else
 		{$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/defaultgrey.svg");}
 }
 function active2(itemId){
 	$("#" + itemId).css("color", "#0075C9");
-	if(itemId=='tobehappy'||itemId=='tolove'||itemId=='tolearn'||itemId=='towork'||itemId=='tolive'||itemId=='about'||itemId=='news')
-	     {$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + itemId + "blue.svg");}
+	if($("#"+itemId).attr("order")<8)
+	     {$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/imgblue" + $("#"+itemId).attr("order") + ".svg");}
 	else
 		{$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/defaultblue.svg");}
 }
@@ -374,7 +374,10 @@ function bindEvent() {
         for (var i = 0; i < response.length; i++) {
             if (response[i].slug == 'main-menu') {
                 createMenu(response[i].meta.links.self);
-                break;
+            }
+            
+            if(response[i].slug=='main-menu-french'){
+            	createMenu(response[i].meta.links.self+'?lang=fr');
             }
         }
 

@@ -6,8 +6,10 @@
  * @subpackage FoundationPress
  * @since FoundationPress 1.0.0
  */
-
+session_start();
+$_SESSION['order']=1;
 if (!class_exists('Foundationpress_Top_Bar_Walker')) :
+
     class Foundationpress_Top_Bar_Walker extends Walker_Nav_Menu
     {
         protected $ancestorClassesAtDepths = array();
@@ -97,9 +99,10 @@ if (!class_exists('Foundationpress_Top_Bar_Walker')) :
 
 class Main_Nav_walker extends Walker_Nav_Menu
 {
-
+    
 	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
 	{
+	   //$order=1;
 		$indent = ($depth > 0 ? str_repeat("\t", $depth) : ''); // code indent
 
 		// depth dependent classes
@@ -124,11 +127,13 @@ class Main_Nav_walker extends Walker_Nav_Menu
 		}
 
 		$class_names = esc_attr(implode(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item)));
-
+ 		//echo '<pre>';
+ 		//var_dump( $args );
+ 		//echo '</pre>';
 		// build html
 		$output .= $indent . '<li class="' . $depth_class_names . ' ' . $class_names . ' clearfix">';
-
-
+		
+    
 		// link attributes
 		$attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
 		$attributes .= !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
@@ -136,6 +141,7 @@ class Main_Nav_walker extends Walker_Nav_Menu
 		$attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
 		$attributes .= 'onclick="return false"';
 		$attributes .= ! empty( $item->title)  ? ' id="'   . esc_attr( strtolower(preg_replace("/\s|　/","",$item->title))  ) .'"' : '';
+		$attributes .='order="'.$_SESSION['order'].'"';
 		//$attributes .= ! empty( $item->title)  ? ' ui-sref="'   . esc_attr( strtolower(preg_replace("/\s|　/","",$item->title))  ) .'"' : '';
 		//$attributes .= ! empty( $item->title)  ? ' id="'   . esc_attr( explode('/', $item->url)[count(explode('/',$item->url))-2]  ) .'"' : '';
 		//$imgid=! empty( $item->attr_title)  ? ' id="'   . esc_attr( $item->attr_title   ) .'"' : '';
@@ -158,9 +164,9 @@ class Main_Nav_walker extends Walker_Nav_Menu
 		
 		$imgid=strtolower(str_replace(' ', '', apply_filters('the_title', $item->title, $item->ID)));
 		
-		if($imgid=='tobehappy'||$imgid=='tolove'||$imgid=='tolearn'||$imgid=='towork'||$imgid=='tolive'||$imgid=='about'||$imgid=='news')
+		if($_SESSION['order']<8)
 		{
-			$output .= '<img src="/app/themes/clo_web_2015/src/img/'.strtolower(str_replace(' ', '', apply_filters('the_title', $item->title, $item->ID))) . '.svg" alt="' . apply_filters('the_title', $item->title, $item->ID) .'"/>';
+			$output .= '<img src="/app/themes/clo_web_2015/src/img/img'.$_SESSION['order'] . '.svg" alt="img' . $_SESSION['order'] .'"/>';
 		}
 		else{
 			$output .= '<img src="/app/themes/clo_web_2015/src/img/default.svg" alt="' . apply_filters('the_title', $item->title, $item->ID) .'"/>';
@@ -171,6 +177,7 @@ class Main_Nav_walker extends Walker_Nav_Menu
         $output.='<hr class="blueline"/>';
 		$output.='<div class="contentdiv"></div>';
 		$output.='<div class="menudiv"><ul></ul></div>';
+		$_SESSION['order']++;
 	}
 }
 
