@@ -8,6 +8,7 @@
  */
 session_start();
 $_SESSION['order']=1;
+
 if (!class_exists('Foundationpress_Top_Bar_Walker')) :
 
     class Foundationpress_Top_Bar_Walker extends Walker_Nav_Menu
@@ -128,7 +129,7 @@ class Main_Nav_walker extends Walker_Nav_Menu
 
 		$class_names = esc_attr(implode(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item)));
  		//echo '<pre>';
- 		//var_dump( $args );
+ 		//var_dump( $item );
  		//echo '</pre>';
 		// build html
 		$output .= $indent . '<li class="' . $depth_class_names . ' ' . $class_names . ' clearfix">';
@@ -140,7 +141,18 @@ class Main_Nav_walker extends Walker_Nav_Menu
 		$attributes .= !empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
 		$attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
 		$attributes .= 'onclick="return false"';
-		$attributes .= ! empty( $item->title)  ? ' id="'   . esc_attr( strtolower(preg_replace("/\s|　/","",$item->title))  ) .'"' : '';
+		//htmlentities($text, ENT_COMPAT, 'UTF-8');
+		$unwanted_array = array(    'Š'=>'S', 'š'=>'s', 'Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A', 'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E',
+				'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I', 'Ï'=>'I', 'Ñ'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O', 'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U',
+				'Ú'=>'U', 'Û'=>'U', 'Ü'=>'U', 'Ý'=>'Y', 'Þ'=>'B', 'ß'=>'Ss', 'à'=>'a', 'á'=>'a', 'â'=>'a', 'ã'=>'a', 'ä'=>'a', 'å'=>'a', 'æ'=>'a', 'ç'=>'c',
+				'è'=>'e', 'é'=>'e', 'ê'=>'e', 'ë'=>'e', 'ì'=>'i', 'í'=>'i', 'î'=>'i', 'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ò'=>'o', 'ó'=>'o', 'ô'=>'o', 'õ'=>'o',
+				'ö'=>'o', 'ø'=>'o', 'ù'=>'u', 'ú'=>'u', 'û'=>'u', 'ý'=>'y', 'þ'=>'b', 'ÿ'=>'y' );
+		
+		
+		//$attributes .= ! empty( $item->title)  ? ' id="'   . strtr(esc_attr( strtolower(preg_replace("/\s|　/","",$item->title))  ), $unwanted_array) .'"' : '';
+		$attributes.='id="'.esc_attr(explode('?',explode('/',$item->url)[3])[0]).'"';
+		
+		
 		$attributes .='order="'.$_SESSION['order'].'"';
 		//$attributes .= ! empty( $item->title)  ? ' ui-sref="'   . esc_attr( strtolower(preg_replace("/\s|　/","",$item->title))  ) .'"' : '';
 		//$attributes .= ! empty( $item->title)  ? ' id="'   . esc_attr( explode('/', $item->url)[count(explode('/',$item->url))-2]  ) .'"' : '';

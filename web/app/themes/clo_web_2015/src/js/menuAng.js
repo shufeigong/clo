@@ -34,7 +34,7 @@ function pageLoad(linkSplit, basicItems) {
 
                    $("#" + linkSplit[1]).nextAll(".blueline").css("display", "inline"); //create top blueline
                    $("#" + linkSplit[1]).css("color", "#0075C9"); //keep selected item's text to blue
-                   $("#" + linkSplit[1]).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + linkSplit[1] + "blue.svg"); //keep selected item's image to blue
+                   $("#" + linkSplit[1]).next().children().attr("src", "/app/themes/clo_web_2015/src/img/imgblue" + $("#"+linkSplit[1]).attr("order") + ".svg"); //keep selected item's image to blue
 
                    $("#" + linkSplit[1]).nextAll(".contentdiv").slideDown();  //get content down
                    $("#" + linkSplit[1]).nextAll(".menudiv").slideDown(); //get submenu down
@@ -108,11 +108,17 @@ function grabPage(pageId) {
 
 function grabMenu(itemId) {
     $.get("/wp-json/menus", function (response) {
+    	
         for (var i = 0; i < response.length; i++) {
-            if (response[i].slug == 'main-menu') {
+            if (response[i].slug == 'main-menu' && $("#"+itemId).parents(".menu-main-menu-container").length>0) {
                 displayMenu(itemId, response[i].meta.links.self);
-                break;
+                
             }
+            if(response[i].slug=='main-menu-french' && $("#"+itemId).parents(".menu-main-menu-french-container").length>0){
+            	displayMenu(itemId, response[i].meta.links.self+'?lang=fr');
+            	
+            }
+            
         }
     }).fail(function () {
         alert("error");
@@ -124,11 +130,12 @@ function UpperFirstLetter(str){
 		 });   
 	}
 function displayMenu(itemId, menuUrl) {
+
     $.get(menuUrl, function (response) {
 
         var itemJsonId;
         for (var i = 0; i < response.items.length; i++) {
-            if (response.items[i].attr == itemId) {
+            if (response.items[i].url.split('/')[3].split('?')[0] == itemId) {
                 itemJsonId = response.items[i].ID;
             }
 
@@ -314,7 +321,7 @@ function pageRefresh(itemId) {
     //////////clear previous mass///////////
     $("#" + itemId).nextAll(".blueline").css("display", "inline"); //create top blueline
     $("#" + itemId).css("color", "#0075C9"); //keep selected item's text to blue
-    $("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + itemId + "blue.svg"); //keep selected item's image to blue
+    $("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/imgblue" + $("#"+itemId).attr("order") + ".svg"); //keep selected item's image to blue
 
     grabMenu(itemId);   //grab submenu according to itemId
     grabPage(itemId);   //grab page according to itemId
@@ -338,8 +345,10 @@ function createMenu(menuUrl) {
     $.get(menuUrl, function (response) {
         for (var i = 0; i < response.items.length; i++) {
             if (response.items[i].parent == 0) {
-                var id = response.items[i].title.replace(/[ ]/g, "").toLowerCase();
-                basicItems.push(id);
+                //var id = response.items[i].title.replace(/[ ]/g, "").toLowerCase();
+            	var id = response.items[i].url.split('/')[3].split('?')[0];
+            	//alert(id);
+            	basicItems.push(id);
 
                 $("#" + id).bind({
                     mouseenter: function () {
@@ -375,7 +384,6 @@ function bindEvent() {
             if (response[i].slug == 'main-menu') {
                 createMenu(response[i].meta.links.self);
             }
-            
             if(response[i].slug=='main-menu-french'){
             	createMenu(response[i].meta.links.self+'?lang=fr');
             }
@@ -384,6 +392,7 @@ function bindEvent() {
     }).fail(function () {
         alert("error");
     });
+    
 
 }
 
