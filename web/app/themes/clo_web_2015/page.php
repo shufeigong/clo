@@ -59,33 +59,11 @@ get_header();  //wp_nav_menu?>
               
                
                 <?php if(is_front_page()) :?>
-                <div class="news-content">
-                    <div class="news1 news-item has-video">
-                        <div class="arrow"></div>
-                        <div class="content-box">
-                            <h2>CEO MESSAGE</h2>
-
-                            <p>
-                                Consectetur adipiscing elit. Donec tincidunt eu tellus nec volutpat. Integer
-                            </p>
-                        </div>
-                        <div class="video-box">
-                            <div class="play-button"><span class="arrow"></span></div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <div class="news2 news-item">
-                        <div class="arrow"></div>
-                        <h2>BE A SUPPORTER</h2>
-
-                        <p>
-                            Consectetur adipiscing elit. Donec tincidunt eu tellus nec volutpat. Integer tempus tempor
-                            leo ullamcorper accumsan.
-                        </p>
-                        
-                    </div>
-                </div>
+                 <div class="news-content">
+                     <ul>
+                       <?php echo get_field('input_box');?>
+                    </ul>
+                 </div>
                 <?php endif; ?>
             </article>
         <?php endwhile; ?>
@@ -94,6 +72,6 @@ get_header();  //wp_nav_menu?>
 
     </div>
     <?php //get_sidebar(); ?>    
-   
+  
 </div>
 <?php get_footer(); ?>

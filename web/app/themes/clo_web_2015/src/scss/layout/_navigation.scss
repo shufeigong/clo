@@ -84,7 +84,7 @@
 	             ul{
 		            margin:0;
 		            a{color:#231F20;font-family:$font-site-bold;text-decoration:underline;}
-		            >li{
+		            >li:not(.content-video-item){
 		               @include font-size(1.5);
 		               &:before {content : '• ';}
 		               >ul{
@@ -301,7 +301,7 @@
 	           ul{
 		            margin:0;
 		           a{color:#231F20;font-family:$font-site-bold;text-decoration:underline;}
-		            >li{
+		            >li:not(.content-video-item){
 		               @include font-size(1.4);
 		               &:before {content : '• ';}
 		               >ul{
@@ -564,7 +564,7 @@
 	           ul{
 		            margin:0;
 		           a{color:#231F20;font-family:$font-site-bold;text-decoration:underline;}
-		            >li{
+		            >li:not(.content-video-item){
 		               @include font-size(1.4);
 		               &:before {content : '• ';}
 		               >ul{

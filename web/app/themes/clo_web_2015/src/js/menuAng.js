@@ -34,7 +34,13 @@ function pageLoad(linkSplit, basicItems) {
 
                    $("#" + linkSplit[1]).nextAll(".blueline").css("display", "inline"); //create top blueline
                    $("#" + linkSplit[1]).css("color", "#0075C9"); //keep selected item's text to blue
-                   $("#" + linkSplit[1]).next().children().attr("src", "/app/themes/clo_web_2015/src/img/imgblue" + $("#"+linkSplit[1]).attr("order") + ".svg"); //keep selected item's image to blue
+                   
+                   if($("#" + linkSplit[1]).attr("order")<8)
+               	     {$("#" + linkSplit[1]).next().children().attr("src", "/app/themes/clo_web_2015/src/img/imgblue" + $("#" + linkSplit[1]).attr("order") + ".svg");}
+                   else
+               	     {$("#" + linkSplit[1]).next().children().attr("src", "/app/themes/clo_web_2015/src/img/defaultblue.svg");}
+                   
+                   //$("#" + linkSplit[1]).next().children().attr("src", "/app/themes/clo_web_2015/src/img/imgblue" + $("#"+linkSplit[1]).attr("order") + ".svg"); //keep selected item's image to blue
 
                    $("#" + linkSplit[1]).nextAll(".contentdiv").slideDown();  //get content down
                    $("#" + linkSplit[1]).nextAll(".menudiv").slideDown(); //get submenu down
@@ -97,7 +103,7 @@ function grabPage(pageId) {
             }, 10);
         }
         
-        
+        $('.slvj-link-lightbox').simpleLightboxVideo();
         
         
         
@@ -321,7 +327,11 @@ function pageRefresh(itemId) {
     //////////clear previous mass///////////
     $("#" + itemId).nextAll(".blueline").css("display", "inline"); //create top blueline
     $("#" + itemId).css("color", "#0075C9"); //keep selected item's text to blue
-    $("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/imgblue" + $("#"+itemId).attr("order") + ".svg"); //keep selected item's image to blue
+    
+    if($("#"+itemId).attr("order")<8)
+	 {$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/imgblue" + $("#"+itemId).attr("order") + ".svg");}
+    else
+	 {$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/defaultblue.svg");}//keep selected item's image to blue
 
     grabMenu(itemId);   //grab submenu according to itemId
     grabPage(itemId);   //grab page according to itemId
@@ -405,7 +415,7 @@ function init() {
 
 $(document).ready(function () {
     init();
-    
+    $('.slvj-link-lightbox').simpleLightboxVideo();
 });
 
 

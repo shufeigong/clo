@@ -15,8 +15,10 @@ function foundationpress_scripts()
     wp_register_script( 'fastclick', get_template_directory_uri() . '/js/vendor/fastclick.js', array(), '1.0.0', false );
 
     // CDN hosted jQuery placed in the header, as some plugins require that jQuery is loaded in the header.
-    wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js', array(), '2.1.0', false );
-
+    //wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js', array(), '2.1.0', false );
+    wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), '2.1.1', false );
+    
+    
     // If you'd like to cherry-pick the foundation components you need in your project, head over to Gruntfile.js and see lines 67-88.
     // It's a good idea to do this, performance-wise. No need to load everything if you're just going to use the grid anyway, you know :)
     wp_register_script( 'foundation', get_template_directory_uri() . '/js/foundation.js', array('jquery'), '5.5.2', true );
@@ -37,8 +39,11 @@ function foundationpress_scripts()
     //wp_enqueue_script( 'myAppMenu', get_stylesheet_directory_uri() . '/src/js/menu.js', array('jquery'), '1.0.0', true );
     wp_enqueue_script( 'myAppMenu', get_stylesheet_directory_uri() . '/src/js/menuAng.js', array('jquery'), '1.0.0', true );
     wp_enqueue_script( 'myMobileMenu', get_stylesheet_directory_uri() . '/src/js/mobileMenu.js', array('jquery'), '1.0.0', true );
-    wp_enqueue_script( 'angular', get_stylesheet_directory_uri() . '/src/js/angular.js', array(), '1.0.0', true );
-    wp_enqueue_script( 'angular-ui-router', get_stylesheet_directory_uri() . '/src/js/angular-ui-router.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'lightbox', get_stylesheet_directory_uri() . '/src/js/lightbox.min.js', array('jquery'), '1.0.0', true );
+    
+    //wp_enqueue_script( 'angular', get_stylesheet_directory_uri() . '/src/js/angular.js', array(), '1.0.0', true );
+    //wp_enqueue_script( 'angular-ui-router', get_stylesheet_directory_uri() . '/src/js/angular-ui-router.js', array(), '1.0.0', true );
+    
     
 }
 
