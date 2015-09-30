@@ -66,9 +66,14 @@ function createVideoPost($post){
 	{
 		$post->post_content=str_replace($url, '', $post->post_content);
 	}
+	
+    if(mb_strlen($post->post_content)>82){
+		$post->post_content = mb_substr($post->post_content,0,77,"UTF8")."...";
+	}
+	
 	$output .= '<p class="post-content">' . $post->post_content.'</p>
 					    </div>';//end of content-box
-		
+	
 	$output.='<div class="video-box" style="background-image: url('.get_video_thumbnail($post->ID).'); background-size:100% 100%; background-repeat:no-repeat;"><div class="play-button"><span class="arrow"></span></div></div>';//end of video box
 		
 	$output .= '<div class="clearfix"></div>
@@ -90,6 +95,10 @@ function createNoVideoPost($post){
 		$post->post_content=str_replace($url, '', $post->post_content);
 	}
 	
+	if(mb_strlen($post->post_content)>116){
+		$post->post_content = mb_substr($post->post_content,0,116,"UTF8")."...";
+	}
+	//$output.=mb_strlen($post->post_content);
 	$output.='<p class="post-content">' . $post->post_content.'</p>
 					    </div>
 					    </a></li>';
