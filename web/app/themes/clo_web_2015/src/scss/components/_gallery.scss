@@ -37,6 +37,7 @@
      width: 125px;
      //border:solid 1px #333;
      text-align:center;
+     text-decoration:underline;
      //font-family : $font_site-default;
      @include font-size(1.5);
 }
@@ -55,6 +56,11 @@
      }
      
     
+}
+
+.post-content{
+     color:#58595B;
+     @include font-size(1.2);
 }
 
 
