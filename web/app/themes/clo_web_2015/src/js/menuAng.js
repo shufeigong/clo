@@ -415,7 +415,6 @@ function init() {
 
 $(document).ready(function () {
     init();
-    $('.slvj-link-lightbox').simpleLightboxVideo();
 });
 
 

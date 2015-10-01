@@ -56,25 +56,28 @@ function eventsShortcodeHandler($atts)
 
 	$results = get_posts($args);
 	
+	$colors=array("#DCE9F7","#B5D3EF","#EFF5DC","#DDEBB9");
+	
 	$output='';
 	
 	if (count($results) > 0&&$template=='list') {
-		
+		$key=0;
 		foreach ($results as $post) : setup_postdata($post);
+		//DCE9F7 0075C9 EFF5DC 82BC00
 		
 		if(isHomepageEvents($post)&&isVideoEvents($post))
 		{
 			if(find_video($post->post_content)!=null){
-				$output.=createVideoPost($post);
+				$output.=createVideoPost($post, $colors[$key%4]);$key++;
 			}
 			else{
-				$output.=createNoVideoPost($post);
+				$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
 			}
 		
 		}
 		else if(isHomepageEvents($post)&&!isVideoEvents($post)){
 			
-			$output.=createNoVideoPost($post);
+			$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
 		}
 		
 		

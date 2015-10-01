@@ -40,7 +40,7 @@ function foundationpress_scripts()
     wp_enqueue_script( 'myAppMenu', get_stylesheet_directory_uri() . '/src/js/menuAng.js', array('jquery'), '1.0.0', true );
     wp_enqueue_script( 'myMobileMenu', get_stylesheet_directory_uri() . '/src/js/mobileMenu.js', array('jquery'), '1.0.0', true );
     wp_enqueue_script( 'lightbox', get_stylesheet_directory_uri() . '/src/js/lightbox.min.js', array('jquery'), '1.0.0', true );
-    
+    wp_enqueue_script( 'scrollPost', get_stylesheet_directory_uri() . '/src/js/scrollPost.js', array('jquery'), '1.0.0', true );
     //wp_enqueue_script( 'angular', get_stylesheet_directory_uri() . '/src/js/angular.js', array(), '1.0.0', true );
     //wp_enqueue_script( 'angular-ui-router', get_stylesheet_directory_uri() . '/src/js/angular-ui-router.js', array(), '1.0.0', true );
     

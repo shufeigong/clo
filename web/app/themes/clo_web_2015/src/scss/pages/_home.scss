@@ -28,6 +28,7 @@
 
     &.home {
         width        : 62%;
+        min-height: 224px;
     }
     
                ul{
@@ -89,7 +90,7 @@ article {
     position : relative;
     margin-top: 45px;
     .news-content {
-        //border:solid 1px red;
+        border:solid 1px red;
         width    : 30%;
         position : absolute;
         left     : 63%;
@@ -100,6 +101,7 @@ article {
         .news-item {
             margin-bottom : 10px;
             padding       : 10px 10px 15px 25px;
+            //height:155px;
             h2 {
                 font-family : "Arial", "sans-serif";
                 font-weight : bold;
@@ -153,6 +155,7 @@ article {
         .has-video {
             .content-box {
                 float : left;
+                height:77px;
                 p {
                     width          : 143px;
                     display        : inline-block;
@@ -165,17 +168,11 @@ article {
                 height     : 68px;
                 background : #808285;
                 display    : inline-block;
-                float      : right;
+                float      : left;
             }
         }
 
-        .news1 {
-            background : #dbeaf7;
-        }
-
-        .news2 {
-            background : #b4d3ef;
-        }
+        
     }
 }
 

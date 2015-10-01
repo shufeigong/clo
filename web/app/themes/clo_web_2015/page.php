@@ -52,19 +52,21 @@ get_header();  //wp_nav_menu?>
                     <?php the_content(); ?>
                 </div>
                 
-                
+                <?php if(is_front_page()) :?>
+                 <div class="news-content">
+                  <div id="rollArea" style=" position:relative; overflow:hidden;">
+                     <ul id="rollPost">
+                       <?php echo get_field('input_box');?>
+                    </ul>
+                  </div>  
+                 </div>
+                <?php endif; ?>
                                   
                 <?php get_template_part('parts/main-menu'); ?>
                
               
                
-                <?php if(is_front_page()) :?>
-                 <div class="news-content">
-                     <ul>
-                       <?php echo get_field('input_box');?>
-                    </ul>
-                 </div>
-                <?php endif; ?>
+                
             </article>
         <?php endwhile; ?>
 

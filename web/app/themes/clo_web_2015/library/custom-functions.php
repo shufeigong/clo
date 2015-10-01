@@ -33,7 +33,7 @@ function isHomepageEvents($post){
 }
 
 
-function createVideoPost($post){
+function createVideoPost($post, $color){
 	$videoInfo     = find_video($post->post_content);
 	
 	foreach($videoInfo as $video)
@@ -44,7 +44,7 @@ function createVideoPost($post){
 		break;
 	}
 	
-	$output = '<li><a class="slvj-link-lightbox" data-videoid="'.$videoId.'" data-videosite="'.$videoProvider.'"><div class="news1 news-item has-video"><div class="arrow"></div>';
+	$output = '<li><a class="slvj-link-lightbox" data-videoid="'.$videoId.'" data-videosite="'.$videoProvider.'"><div class="news-item has-video" style="background:'.$color.';"><div class="arrow"></div>';
 	
 	/*$st_time   = date(
 	 'D M d',
@@ -67,7 +67,7 @@ function createVideoPost($post){
 		$post->post_content=str_replace($url, '', $post->post_content);
 	}
 	
-    if(mb_strlen($post->post_content)>82){
+    if(mb_strlen($post->post_content)>77){
 		$post->post_content = mb_substr($post->post_content,0,77,"UTF8")."...";
 	}
 	
@@ -82,11 +82,11 @@ function createVideoPost($post){
 	return $output;
 }
 
-function createNoVideoPost($post){
-	$output= '<li><a href="' . get_permalink($post->ID) . '"><div class="news2 news-item">
+function createNoVideoPost($post, $color){
+	$output= '<li><a href="' . get_permalink($post->ID) . '"><div class="news-item has-video" style="background:'.$color.';">
                         <div class="arrow"></div>';
 		
-	$output.='<h2 class="post_title">' . strtoupper($post->post_title) . '</h2>';
+	$output.='<div class="content-box"><h2 class="post_title">' . strtoupper($post->post_title) . '</h2>';
 	
 	$urls=grab_url($post->post_content);
 	
@@ -95,13 +95,22 @@ function createNoVideoPost($post){
 		$post->post_content=str_replace($url, '', $post->post_content);
 	}
 	
-	if(mb_strlen($post->post_content)>116){
-		$post->post_content = mb_substr($post->post_content,0,116,"UTF8")."...";
+	if(mb_strlen($post->post_content)>77){
+		$post->post_content = mb_substr($post->post_content,0,77,"UTF8")."...";
 	}
+		$output.='<p class="post-content" style="width:238px;">' . $post->post_content.'</p>
+					    </div>';
+		$output.='<div class="video-box" style=" width:1px;background-size:100% 100%; background-repeat:no-repeat;"></div>';//end of video box
+		
+	
 	//$output.=mb_strlen($post->post_content);
-	$output.='<p class="post-content">' . $post->post_content.'</p>
-					    </div>
-					    </a></li>';
+	
+	
+	//$output.='<div class="video-box" style="background-size:100% 100%; background-repeat:no-repeat;visibility:hidden;"></div>';//end of video box
+	
+	$output .= '<div class="clearfix"></div>
+                        </div>
+                       </a></li>';//end of news itemreturn $output;
 	return $output;
 }
 
