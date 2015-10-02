@@ -32,6 +32,33 @@ function isHomepageEvents($post){
 		return false;
 }
 
+////
+function isVideoNews($post){
+    $returnvalue=false;
+       	
+	foreach (get_the_category($post) as $thiscat)
+	{
+	   if($thiscat->name=="video")
+	     {$returnvalue=true;break;}
+	}
+    
+	return $returnvalue;
+}
+
+function isHomepageNews($post){
+
+	$returnvalue=false;
+       	
+	foreach (get_the_category($post) as $thiscat)
+	{
+		if($thiscat->name=="homepage")
+	      {$returnvalue=true;break;}
+	}
+    
+	return $returnvalue;
+}
+
+
 
 function createVideoPost($post, $color){
 	$videoInfo     = find_video($post->post_content);

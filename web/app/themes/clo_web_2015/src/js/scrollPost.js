@@ -1,13 +1,15 @@
 $(document).ready(function () {
-	setScrollPost();	
+	setScrollPost();
+	
+	$(window).resizeEnd({delay: 500}, function(){
+		setScrollPost2();
+	});
 });
 
 
 
 
-$(window).resizeEnd({delay: 500}, function(){
-	setScrollPost2();
-});
+
 
 function setScrollPost(){
 	var singleheight = $("#rollPost").children("li").height()+10;
@@ -16,14 +18,15 @@ function setScrollPost(){
 	
 	var textDiv = document.getElementById("rollPost");
 	var textList = textDiv.getElementsByTagName("li");
+	
 	if(textList.length > 2){
-	var textDat = textDiv.innerHTML;
-	var br = textDat.toLowerCase().indexOf("</li",textDat.toLowerCase().indexOf("</li")+3);
+	  var textDat = textDiv.innerHTML;
+	  var br = textDat.toLowerCase().indexOf("</li",textDat.toLowerCase().indexOf("</li")+3);
 	//var textUp2 = textDat.substr(0,br);
-	textDiv.innerHTML = textDat+textDat+textDat.substr(0,br);
-	textDiv.style.cssText = "position:absolute; top:0";
-	var textDatH = textDiv.offsetHeight;
-	MaxRoll();
+	  textDiv.innerHTML = textDat+textDat+textDat.substr(0,br);
+	  textDiv.style.cssText = "position:absolute; top:0";
+	  var textDatH = textDiv.offsetHeight;
+	  MaxRoll();
 	}
 	var minTime,maxTime,divTop,newTop=0;
 	
