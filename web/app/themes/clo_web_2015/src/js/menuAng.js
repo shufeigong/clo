@@ -163,7 +163,7 @@ function displayMenu(itemId, menuUrl) {
                 }
                 else {
                     output
-                        += '<li><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;" style="padding-left:10%" id="' + response.items[i].ID + '" class="submenu">' + response.items[i].title.toUpperCase() + '</a></li>';
+                        += '<li style="margin-left:10%"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;"  id="' + response.items[i].ID + '" class="submenu">' + response.items[i].title.toUpperCase() + '</a></li>';
                 }
             }
         }
@@ -177,7 +177,7 @@ function displayMenu(itemId, menuUrl) {
                     $('#' + response.items[i].parent).parent().append('<ul><li><a href="#" onclick="signclick(this); return false;" class="submenu">[-]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;" id="' + response.items[i].ID + '" class="submenu">' + UpperFirstLetter(response.items[i].title) + '</a></li></ul>');
                 }
                 else {
-                    $('#' + response.items[i].parent).parent().append('<ul><li><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;" style="padding-left:10%" id="' + response.items[i].ID + '" class="submenu">' + UpperFirstLetter(response.items[i].title) + '</a></li></ul>');
+                    $('#' + response.items[i].parent).parent().append('<ul><li style="margin-left:10%"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;"  id="' + response.items[i].ID + '" class="submenu">' + UpperFirstLetter(response.items[i].title) + '</a></li></ul>');
                 }
             }
         }

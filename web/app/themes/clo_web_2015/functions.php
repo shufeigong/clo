@@ -30,4 +30,13 @@ require_once('library/custom-functions.php');
 
 require_once ('library/shortcode.php');
 
+//add_action('get_header', 'my_filter_head');
+
+//function my_filter_head() {
+//	remove_action('wp_head', '_admin_bar_bump_cb');
+//}
+
+//add_filter( 'show_admin_bar', '__return_false' );
+
+
 

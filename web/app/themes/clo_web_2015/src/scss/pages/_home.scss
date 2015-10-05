@@ -90,7 +90,7 @@ article {
     position : relative;
     margin-top: 45px;
     .news-content {
-        border:solid 1px red;
+        //border:solid 1px red;
         width    : 30%;
         position : absolute;
         left     : 63%;
@@ -154,6 +154,8 @@ article {
 
         .has-video {
             .content-box {
+                //border:solid 1px blue;
+                margin-right:5px;
                 float : left;
                 height:77px;
                 p {
@@ -169,7 +171,7 @@ article {
                 background : #808285;
                 display    : inline-block;
                 float      : left;
-                margin-left:5px;
+                
             }
         }
 
@@ -329,6 +331,7 @@ article {
         .has-video {
             .content-box {
                 float : left;
+                margin-right:5px;
                 p {
                     width          : 143px;
                     display        : inline-block;
@@ -342,7 +345,6 @@ article {
                 background : #808285;
                 display    : inline-block;
                 float      : right;
-                margin-left:5px;
             }
         }
 

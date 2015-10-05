@@ -22,7 +22,7 @@ get_header();  //wp_nav_menu?>
                 <?php do_action('foundationpress_page_before_entry_content'); ?>
                  
                  <div class="mbl-img">
-                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/src/img/mbl-img.svg"/>
+                   <img src="<?php echo get_stylesheet_directory_uri(); ?>/src/img/mbl-img.svg"/>
                  </div>
                  
                 

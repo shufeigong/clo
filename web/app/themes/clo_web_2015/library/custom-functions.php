@@ -127,7 +127,7 @@ function createNoVideoPost($post, $color){
 	}
 		$output.='<p class="post-content" style="width:238px;">' . $post->post_content.'</p>
 					    </div>';
-		$output.='<div class="video-box" style=" width:1px;background-size:100% 100%; background-repeat:no-repeat;"></div>';//end of video box
+		$output.='<div class="video-box" style=" width:1px;visibility:hidden;background-size:100% 100%; background-repeat:no-repeat;"></div>';//end of video box
 		
 	
 	//$output.=mb_strlen($post->post_content);
