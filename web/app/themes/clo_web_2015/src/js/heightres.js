@@ -9,7 +9,7 @@ function changeHeight(itemId)
 	//alert($(".header").height()+210+$("#" + itemId).nextAll(".contentdiv").height());
 	if(($(".header").height()+minHeight+menuHeight)<=$(window).height())
 		{			
-		    if($(".header").height()+menuHeight+$("#" + itemId).nextAll(".contentdiv").height()>$(window).height())
+		    if($(".header").height()+menuHeight+$("#" + itemId).nextAll(".contentdiv").height()>$(window).height()&&$("#" + itemId).nextAll(".contentdiv").height()>$("#" + itemId).nextAll(".menudiv").height())
 		    	{
 		    	 backHeight(itemId);
 		    	 var leftv=$("#" + itemId).parent().offset().left+$("#" + itemId).width()+4;
