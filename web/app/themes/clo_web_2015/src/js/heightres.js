@@ -79,9 +79,9 @@ function changeHeight(itemId)
 				  	$("#" + itemId).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20, "z-index":"100", "left":leftv+8, "width":widthw, "max-width":"846px"});
 			  	 }
 			  	 
-			  	 if($("#"+itemId).nextAll(".menudiv").height()<$("#"+itemId).nextAll(".contentdiv").height()){
+			  	 /*if($("#"+itemId).nextAll(".menudiv").height()<$("#"+itemId).nextAll(".contentdiv").height()){
 			  		$("#"+itemId).nextAll(".menudiv").css({"position":"fixed", "left":leftv+20+$("#" + itemId).nextAll(".contentdiv").outerWidth()});
-			  	 }
+			  	 }*/
 			  	 
 			  	 
 			  	 $(window).resize( itemId, function(event){
