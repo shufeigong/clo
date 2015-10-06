@@ -42,8 +42,9 @@ function pageLoad(linkSplit, basicItems) {
                    
                    //$("#" + linkSplit[1]).next().children().attr("src", "/app/themes/clo_web_2015/src/img/imgblue" + $("#"+linkSplit[1]).attr("order") + ".svg"); //keep selected item's image to blue
 
-                   $("#" + linkSplit[1]).nextAll(".contentdiv").slideDown();  //get content down
                    $("#" + linkSplit[1]).nextAll(".menudiv").slideDown(); //get submenu down
+                   $("#" + linkSplit[1]).nextAll(".contentdiv").slideDown();  //get content down
+                   changeHeight("#" + linkSplit[1]);
                    $("#" + linkSplit[1]).mouseleave(function () {
                        hover1(linkSplit[1]);
                    }); //keep selected item's text to blue
