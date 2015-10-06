@@ -195,7 +195,7 @@ function change(objectId, itemId) {
         $("#" + itemId).nextAll(".contentdiv").html("<br/>");
         $("#" + itemId).nextAll(".contentdiv").append(content);
         window.history.pushState(null, null, "/" + itemId + "/#" + response.slug);
-
+        changeHeight(itemId);
     }).fail(function () {
         alert("error");
     });
