@@ -15,3 +15,9 @@ gulp.task(
     }
 );
 
+gulp.task(
+    'animation_scripts', function () {
+        return
+    }
+);
+

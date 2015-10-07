@@ -9,7 +9,7 @@ var gulp         = require('gulp'),
 
 // Processes SASS and reloads browser.
 gulp.task(
-    'scss', function () {
+    'styles', function () {
         return gulp.src('./src/scss/*.scss')
             .pipe(plumber())
             .pipe(sass({style: 'expanded'}))

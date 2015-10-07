@@ -4,7 +4,7 @@ var gulp = require('gulp');
 // Note the second parameter, those are dependency tasks which need to be done
 // before the main function (third parameter) is called.
 gulp.task(
-    'build', ['images', 'scss', 'scripts'], function () {
+    'build', ['images', 'styles', 'scripts'], function () {
         console.log('done');
     }
 );

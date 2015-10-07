@@ -6,7 +6,7 @@ var gulp     = require('gulp'),
 // = Any images in the src/img folder are minified then copied over to the dist/img folder = //
 gulp.task(
     'images', function () {
-        return gulp.src('./src/img/*')
+        return gulp.src('./src/img/**/*')
             .pipe(
             imagemin(
                 {
