@@ -4,5 +4,6 @@ node_modules/
 bower_components/
 *.log
 vendor/
+!src/js/vendor/
 
 tests/_output/*
