@@ -11,6 +11,7 @@ gulp.task(
             imagemin(
                 {
                     progressive: true,
+                    multipass: true,
                     svgoPlugins: [{removeViewBox: false}],
                     use: [pngcrush()]
                 }
