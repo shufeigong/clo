@@ -10,26 +10,38 @@ var image3 = {
     wheel_chair: $('#menu-main-menu-1 li .image-link').find('.wheel-chair').parent()
 };
 
+var image4 = {
+    running_man: $('#menu-main-menu-1 li .image-link').find('.running-man').parent()
+};
+
 var image5 = {
     old_man: $('#menu-main-menu-1 li .image-link').find('.old-man').parent(),
+    man_with_dog: $('#menu-main-menu-1 li .image-link').find('.man-with-dog').parent(),
     small_car2: $('#menu-main-menu-1 li .image-link').find('.small-car2').parent()
 };
 
 
-doAnimation(image2.bicycle_guy, 'left');
-doAnimation(image3.small_car, 'right');
-doAnimation(image3.school_bus, 'right');
-doAnimation(image3.wheel_chair, 'right');
-doAnimation(image5.old_man, 'left');
-doAnimation(image5.small_car2, 'left');
+doAnimation(image2.bicycle_guy, 'left', false);
+doAnimation(image3.small_car, 'right', true);
+doAnimation(image3.school_bus, 'right', true);
+doAnimation(image3.wheel_chair, 'right', false);
+doAnimation(image4.running_man, 'left', false);
+doAnimation(image5.old_man, 'left', false);
+doAnimation(image5.man_with_dog, 'right', false);
+doAnimation(image5.small_car2, 'left', true);
 
 function percentToPixel(_elem, _perc) {
     return (_elem.parent().outerWidth() / 100) * parseFloat(_perc);
 }
 
-function doAnimation(element, startDirection) {
+function doAnimation(element, startDirection, isVehicle) {
     var tl = new TimelineMax({repeat: -1, repeatDelay: 1, paused: false});
-    var duration = Math.floor((Math.random() * 30) + 15);
+    var duration = 0;
+    if(isVehicle) {
+        duration = Math.floor((Math.random() * 30) + 15);
+    } else {
+        duration = Math.floor((Math.random() * 40) + 35);
+    }
 
     var startPosition = $(element).position().left;
 
