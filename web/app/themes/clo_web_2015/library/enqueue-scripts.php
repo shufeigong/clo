@@ -19,8 +19,6 @@ function foundationpress_scripts()
     // CDN hosted jQuery placed in the header, as some plugins require that jQuery is loaded in the header.
     wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), '2.1.1', false );
 
-    // If you'd like to cherry-pick the foundation components you need in your project, head over to Gruntfile.js and see lines 67-88.
-    // It's a good idea to do this, performance-wise. No need to load everything if you're just going to use the grid anyway, you know :)
     wp_register_script( 'foundation', get_template_directory_uri() . '/js/foundation.js', array('jquery'), '5.5.2', true );
 
     // Enqueue all registered scripts.
@@ -29,15 +27,9 @@ function foundationpress_scripts()
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'foundation' );
 
-//    wp_enqueue_script( 'initFoundation', get_stylesheet_directory_uri() . '/src/js/init-foundation.js', array('jquery'), '1.0.0', true );
-
     wp_enqueue_script( 'myheight', get_stylesheet_directory_uri() . '/src/js/heightres.js', array('jquery'), '1.0.0', true );
-    //wp_enqueue_script( 'myAppMenu', get_stylesheet_directory_uri() . '/src/js/menu.js', array('jquery'), '1.0.0', true );
     wp_enqueue_script( 'myAppMenu', get_stylesheet_directory_uri() . '/src/js/menu.js', array('jquery'), '1.0.0', true );
     wp_enqueue_script( 'myMobileMenu', get_stylesheet_directory_uri() . '/src/js/mobileMenu.js', array('jquery'), '1.0.0', true );
-//    wp_enqueue_script( 'lightbox', get_stylesheet_directory_uri() . '/src/js/lightbox.min.js', array('jquery'), '1.0.0', true );
-//    wp_enqueue_script( 'resizeEnd', get_stylesheet_directory_uri() . '/src/js/jQuery.resizeEnd.js', array('jquery'), '1.0.0', true );
-//    wp_enqueue_script( 'scrollPost', get_stylesheet_directory_uri() . '/src/js/scrollPost.js', array('jquery'), '1.0.0', true );
 
     wp_enqueue_script( 'vendor', get_stylesheet_directory_uri() . '/dist/js/vendor.js', array(), '1.0.0', true );
 

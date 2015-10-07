@@ -44,8 +44,6 @@ get_header();  //wp_nav_menu?>
                   ?>     
                  </div>
                 
-                
-                
                 <div class="entry-content <?php echo is_front_page() ? 'home' : '';?>">
                     <?php the_content(); ?>
                 </div>
