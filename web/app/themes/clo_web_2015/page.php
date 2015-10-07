@@ -16,13 +16,12 @@ get_header();  //wp_nav_menu?>
 <div class="row" >
     <div class="" role="main">
         <?php do_action('foundationpress_before_content'); ?>
-
         <?php while (have_posts()) : the_post(); ?>
             <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
                 <?php do_action('foundationpress_page_before_entry_content'); ?>
                  
                  <div class="mbl-img">
-                   <img src="<?php echo get_stylesheet_directory_uri(); ?>/src/img/mbl-img.svg"/>
+                   <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/mbl-img.svg"/>
                  </div>
 
                  <div class="mbx-dh">
@@ -35,10 +34,7 @@ get_header();  //wp_nav_menu?>
                         	$breadcrumb_array = $menu_breadcrumb->generate_trail();
                             $breadcrumb_markup = $menu_breadcrumb->generate_markup( $breadcrumb_array, ' > ' );
                             echo '<p class="menu-breadcrumb"><a id="gohome">HOME</a> > ' . $breadcrumb_markup . '</p>';
-                        }
-                        	
-                        else
-                        {
+                        } else {
                         	echo '<a id="gohome">HOME</a>';
                         }
                   ?>     
@@ -57,16 +53,11 @@ get_header();  //wp_nav_menu?>
                   </div>  
                  </div>
                 <?php endif; ?>
-                                  
                 <?php get_template_part('parts/main-menu'); ?>
 
             </article>
         <?php endwhile; ?>
-
         <?php do_action('foundationpress_after_content'); ?>
-
     </div>
-    <?php //get_sidebar(); ?>    
-  
 </div>
 <?php get_footer(); ?>

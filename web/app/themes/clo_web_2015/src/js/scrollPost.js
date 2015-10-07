@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // Check if current page is home
     var isHome = $('body').hasClass('home');
-    if(isHome) {
+    if (isHome) {
         setScrollPost();
 
         $(window).resizeEnd({delay: 500}, function () {
@@ -21,7 +21,6 @@ function setScrollPost() {
     if (textList.length > 2) {
         var textDat = textDiv.innerHTML;
         var br = textDat.toLowerCase().indexOf("</li", textDat.toLowerCase().indexOf("</li") + 3);
-        //var textUp2 = textDat.substr(0,br);
         textDiv.innerHTML = textDat + textDat + textDat.substr(0, br);
         textDiv.style.cssText = "position:absolute; top:0";
         var textDatH = textDiv.offsetHeight;
@@ -64,6 +63,4 @@ function setScrollPost2() {
     if (textList2.length > 2) {
         textDiv2.style.cssText = "position:absolute; top:0";
     }
-
-    //$('.slvj-link-lightbox').simpleLightboxVideo();
 }

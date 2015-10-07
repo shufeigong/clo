@@ -20,7 +20,7 @@
                 }
             }
 
-            &.is-active, &:active {
+            &.is-active {
                 .image-link {
                     #Layer_1 .st0,
                     #Layer_2 .st0,
@@ -45,7 +45,7 @@
                 }
             }
 
-            &.selected, &:hover {
+            &.selected {
                 .image-link {
                     #Layer_1 .st0 {
                         fill : #FFFFFF;
@@ -343,7 +343,7 @@
                 }
             }
 
-            &.is-active, &:active {
+            &.is-active {
                 .image-link {
                     #Layer_1 .st0,
                     #Layer_2 .st0,
@@ -368,7 +368,7 @@
                 }
             }
 
-            &.selected, &:hover {
+            &.selected {
                 .image-link {
                     #Layer_1 .st0 {
                         fill : #FFFFFF;

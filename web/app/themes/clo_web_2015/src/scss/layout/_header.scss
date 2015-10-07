@@ -1,224 +1,217 @@
 //Header specific stylings
-@media screen and (min-width: 1000px) {
-	.header {
-        width:90%;
-        max-width:962px;    
-	    margin-top : 30px;
-	    .site-logo {
-	        display    : block;
-	        margin-top : 30px;
-	        width      : 243px;
-	        height     : 72px;
-	        background : url(../img/clo_logo.svg) no-repeat;
-	
-	    }
-	    
-	    .site-logo-french {
-	        display    : block;
-	        margin-top : 30px;
-	        width      : 243px;
-	        height     : 72px;
-	        background : url(../img/clo_logo_french.svg) no-repeat;
-	
-	    }
-	    
-	    
-	}
-.mbx-dh, .mbl-img
-   {
-     display:none;
-   }
+@media screen and (min-width : 1000px) {
+    .header {
+        width      : 90%;
+        max-width  : 962px;
+        margin-top : 30px;
+        .site-logo {
+            display    : block;
+            margin-top : 30px;
+            width      : 243px;
+            height     : 72px;
+            background : url(../img/clo_logo.svg) no-repeat;
+
+        }
+
+        .site-logo-french {
+            display    : block;
+            margin-top : 30px;
+            width      : 243px;
+            height     : 72px;
+            background : url(../img/clo_logo_french.svg) no-repeat;
+
+        }
+
+    }
+    .mbx-dh, .mbl-img {
+        display : none;
+    }
 
 }
 
-@media screen and (min-width: 641px) and (max-width:999px) {
+@media screen and (min-width : 641px) and (max-width : 999px) {
 
-	.header {
-	     //border:solid 1px red;
-		    //margin-top : 10px;
-		   // margin-left:10px;
-		     .small-utility{
-		    //border:solid 1px red;
-		    width:42%;
-		    padding:0;
-		    margin:25px 0px 10px 5%;
-		    //float:right;
-		    }
-		    
-		    .small-logo{
-		    //border:solid 1px blue;
-		          padding:0; 
-		          width:210px;
-		     margin-top:20px;
-		     
-		     .site-logo {
-		        display    : block;
-		        margin-left : 10px;
-		        width      : 150px;
-		        height     : 32px;
-		        background : url(../img/clo_logo_medium.svg) no-repeat;
-		        //border:solid 1px #333;
-	         }
-		    .site-logo-french {
-		        display    : block;
-		        margin-left : 10px;
-		        width      : 150px;
-		        height     : 32px;
-		        background : url(../img/clo_logo_medium_french.svg) no-repeat;
-		        //border:solid 1px #333;
-	         }
-		    
-		    
-		    
-		    }
-	   
-	}
-.mbx-dh, .mbl-img
-   {
-     display:none;
-   }
+    .header {
+        //border:solid 1px red;
+        //margin-top : 10px;
+        // margin-left:10px;
+        .small-utility {
+            //border:solid 1px red;
+            width   : 42%;
+            padding : 0;
+            margin  : 25px 0px 10px 5%;
+            //float:right;
+        }
+
+        .small-logo {
+            //border:solid 1px blue;
+            padding    : 0;
+            width      : 210px;
+            margin-top : 20px;
+
+            .site-logo {
+                display     : block;
+                margin-left : 10px;
+                width       : 150px;
+                height      : 32px;
+                background  : url(../img/clo_logo_medium.svg) no-repeat;
+                //border:solid 1px #333;
+            }
+            .site-logo-french {
+                display     : block;
+                margin-left : 10px;
+                width       : 150px;
+                height      : 32px;
+                background  : url(../img/clo_logo_medium_french.svg) no-repeat;
+                //border:solid 1px #333;
+            }
+
+        }
+
+    }
+    .mbx-dh, .mbl-img {
+        display : none;
+    }
 
 }
 
+@media screen and (max-width : 640px) {
 
-@media screen and (max-width:640px) {
-
-.row .header {
+    .row .header {
         //border:solid 1px #333;
-        border-bottom:solid 1px #fff;
-        width:100%;
-        position:fixed;
-        z-index:99; 
-        background-color:#fff;
-        top:0;   
-        padding-top:10px;
-	    margin-bottom:10px;
-	    .site-logo {
-	        margin:0 0 0 10%;
-	        display    : block;
-	        //border:solid 1px red;
-	        width      : 90%;
-	        height     : 72px;
-	        background : url(../img/clo_logo.svg) no-repeat;
-	       
-	    }
-	    
-	    .site-logo-french {
-	        margin:0 0 0 10%;
-	        display    : block;
-	        //border:solid 1px red;
-	        width      : 90%;
-	        height     : 72px;
-	        background : url(../img/clo_logo_french.svg) no-repeat;
-	       
-	    }
-	}
+        border-bottom    : solid 1px #fff;
+        width            : 100%;
+        position         : fixed;
+        z-index          : 99;
+        background-color : #fff;
+        top              : 0;
+        padding-top      : 10px;
+        margin-bottom    : 10px;
+        .site-logo {
+            margin     : 0 0 0 10%;
+            display    : block;
+            //border:solid 1px red;
+            width      : 90%;
+            height     : 72px;
+            background : url(../img/clo_logo.svg) no-repeat;
 
-   .mbx-dh
-   {
-     margin:0 30px 0 30px;
-     width:95%;
-     position:fixed;
-     z-index:100;
-     top:141px;
-     //border:solid 1px red;
-     background-color:#fff;
-     .menu-breadcrumb{
-     margin:0 15px 0 0;
-     //border:solid 1px #333;
-     }
-     .menu-breadcrumb a{color:#666666;}
-     
-     
-   }
-   
-   .mbl-img
-   {
-    //margin: 0 50px 0 30px;
-    position:fixed;
-    z-index:98;
-    background-color:#fff;
-    width:100%;
-    height:90px;
-    //border:solid 2px #333;
-     img{
-          height:80%;
-          //border:solid 3px red;
-          margin:0 10px 0 10px;
-          width:95%;
-          }
-   }
-
-   .entry-content
-   {
-     padding:0 30px 0 30px;
-     //border:solid 1px #333;
-   }
- 
-   .right-off-canvas-menu
-   {
-      //border:solid 1px #333;
-      width:99%;
-      background-color:#DCE9F7;
-      hr{ 
-           border:solid 2px #fff;
-           margin:15px 25% 15px 15px;
         }
-   
-   }
 
-   .utilityMobile-menu-container
-   {
-     //border:solid 1px #333;
-     ul{
-         //border:solid 1px red;
-         list-style-type:none;
-         margin:15px;
-         li{
-             
-              a{
-                  //font-family:$font_site-default;
-                   @include font-size(1.6);
-                   color:#666666;
-                   background-color: none;
-               }
-           } 
-       }
-   }
+        .site-logo-french {
+            margin     : 0 0 0 10%;
+            display    : block;
+            //border:solid 1px red;
+            width      : 90%;
+            height     : 72px;
+            background : url(../img/clo_logo_french.svg) no-repeat;
 
-   .mainMobile-menu-container
-   {
-     //border:solid 1px #333;
-     >ul{margin:15px; >.no-children{margin-left:35px;}}
-     
-     ul{
-          //border:solid 1px red;
-          list-style-type:none;
-          
-         li{
-             .sub-menu{
-                        margin-left:35px; 
-                       .no-children{margin-left:20px;}
-                       .mobileSign{font-family:$font-site-bold;}
-                       a{@include font-size(1.6);font-family:$font_site-default;}
-                       }
-           
-            a{
-               @include font-size(1.6);
-               font-family:$font-site-bold;
-               color:#666666;
-               
-                
-             }
-            
-           }
         }
-   
-   }
+    }
 
+    .mbx-dh {
+        margin           : 0 30px 0 30px;
+        width            : 95%;
+        position         : fixed;
+        z-index          : 100;
+        top              : 141px;
+        //border:solid 1px red;
+        background-color : #fff;
+        .menu-breadcrumb {
+            margin : 0 15px 0 0;
+            //border:solid 1px #333;
+        }
+        .menu-breadcrumb a {
+            color : #666666;
+        }
 
+    }
 
+    .mbl-img {
+        //margin: 0 50px 0 30px;
+        position         : fixed;
+        z-index          : 98;
+        background-color : #fff;
+        width            : 100%;
+        height           : 90px;
+        //border:solid 2px #333;
+        img {
+            height : 80%;
+            //border:solid 3px red;
+            margin : 0 10px 0 10px;
+            width  : 95%;
+        }
+    }
 
+    .entry-content {
+        padding : 0 30px 0 30px;
+        //border:solid 1px #333;
+    }
+
+    .right-off-canvas-menu {
+        //border:solid 1px #333;
+        width            : 99%;
+        background-color : #DCE9F7;
+        hr {
+            border : solid 2px #fff;
+            margin : 15px 25% 15px 15px;
+        }
+
+    }
+
+    .utilityMobile-menu-container {
+        //border:solid 1px #333;
+        ul {
+            //border:solid 1px red;
+            list-style-type : none;
+            margin          : 15px;
+            li {
+
+                a {
+                    //font-family:$font_site-default;
+                    @include font-size(1.6);
+                    color            : #666666;
+                    background-color : none;
+                }
+            }
+        }
+    }
+
+    .mainMobile-menu-container {
+        //border:solid 1px #333;
+        > ul {
+            margin : 15px;
+            > .no-children {
+                margin-left : 35px;
+            }
+        }
+
+        ul {
+            //border:solid 1px red;
+            list-style-type : none;
+
+            li {
+                .sub-menu {
+                    margin-left : 35px;
+                    .no-children {
+                        margin-left : 20px;
+                    }
+                    .mobileSign {
+                        font-family : $font-site-bold;
+                    }
+                    a {
+                        @include font-size(1.6);
+                        font-family : $font_site-default;
+                    }
+                }
+
+                a {
+                    @include font-size(1.6);
+                    font-family : $font-site-bold;
+                    color       : #666666;
+                }
+            }
+        }
+    }
 }
 
 
