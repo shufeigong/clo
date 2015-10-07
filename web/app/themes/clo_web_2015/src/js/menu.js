@@ -1,51 +1,36 @@
 function pageLoad(linkSplit, basicItems) {
-    //var linkSplit = location.hash.substr(2);
-    //$('img[usemap]').rwdImageMaps();
-
     if (linkSplit != '') {
-        if ($.inArray(linkSplit, basicItems) != -1) {
-            pageRefresh(linkSplit);
-            //$("#"+linkSplit).css("color", "#0075C9"); //keep selected item's text to blue
-            //$("#"+linkSplit).next().children().attr("src", "/wp-content/themes/FoundationPress-child/images/"+linkSplit+"blue.svg"); //keep selected item's image to blue
+        if ($.inArray(linkSplit[1], basicItems) != -1 && location.hash == '') {
+            pageRefresh(linkSplit[1]);
         }
-        else {
-            //pageRefresh(linkSplit.split('/').shift());
-            $.get("/wp-json/pages/" + linkSplit.split('/').pop(), function (response) {
+        else if ($.inArray(linkSplit[1], basicItems) != -1 && location.hash != '') {
+
+            $.get("/wp-json/pages/" + location.hash.substr(1), function (response) {
 
                 var content = response.content;
 
-                grabMenu(linkSplit.split('/').shift());   //grab submenu according to itemId
-                $("#" + linkSplit.split('/').shift()).nextAll(".contentdiv").html("<br/>");
-                $("#" + linkSplit.split('/').shift()).nextAll(".contentdiv").append(content);
+                grabMenu(linkSplit[1]);   //grab submenu according to itemId
+                $("#" + linkSplit[1]).nextAll(".contentdiv").html("<br/>");
+                $("#" + linkSplit[1]).nextAll(".contentdiv").append(content);
                 $(".entry-title").slideUp();
                 $(".entry-content").slideUp();
                 $(".news-content").slideUp();
-                $("#" + linkSplit.split('/').shift()).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
-                $("#" + linkSplit.split('/').shift()).parent().siblings().children(".menudiv").slideUp();       //close all other pages' submenu
-                $("#" + linkSplit.split('/').shift()).parent().siblings().children(".blueline").css("display", "none"); //reback all other blueline none
-                $("#" + linkSplit.split('/').shift()).parent().siblings().children(".menu-link").css("color", "#82BC00"); //reback all other pages' text color
-                $("#" + linkSplit.split('/').shift()).parent().siblings().children(".image-link").children().attr("src", function () {
-                    return this.src.replace('blue', '');
-                });//reback all other pages' image
-                $("#" + linkSplit.split('/').shift()).parent().siblings().children(".menu-link").mouseleave(function () {
-                    hover2(this.id);
-                });//leave other items' text to green
-                $("#" + linkSplit.split('/').shift()).parent().siblings().children(".image-link").mouseleave(function () {
-                    hover2($(this).prev().attr("id"));
-                });//leave other items' image to green
+                $("#" + linkSplit[1]).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
+                $("#" + linkSplit[1]).parent().siblings().children(".menudiv").slideUp();       //close all other pages' submenu
+                $("#" + linkSplit[1]).nextAll(".contentdiv").slideDown();  //get content down
+                $("#" + linkSplit[1]).nextAll(".menudiv").slideDown(); //get submenu down
 
-                $("#" + linkSplit.split('/').shift()).nextAll(".blueline").css("display", "inline"); //create top blueline
-                $("#" + linkSplit.split('/').shift()).css("color", "#0075C9"); //keep selected item's text to blue
-                $("#" + linkSplit.split('/').shift()).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + linkSplit.split('/').shift() + "blue.svg"); //keep selected item's image to blue
 
-                $("#" + linkSplit.split('/').shift()).nextAll(".contentdiv").slideDown();  //get content down
-                $("#" + linkSplit.split('/').shift()).nextAll(".menudiv").slideDown(); //get submenu down
-                $("#" + linkSplit.split('/').shift()).mouseleave(function () {
-                    hover1(linkSplit.split('/').shift());
-                }); //keep selected item's text to blue
-                $("#" + linkSplit.split('/').shift()).next().mouseleave(function () {
-                    hover1(linkSplit.split('/').shift());
-                });  //keep selected item's image to blue
+                var idt;
+                var n = 0;
+                window.onresize = function () {
+                    clearTimeout(idt);
+                    idt = setTimeout(function () {
+                        if ($(window).width() < 641) {
+                            location.href = "/" + linkSplit[1];
+                        }
+                    }, 10);
+                }
 
             }).fail(function () {
                 alert("error");
@@ -53,6 +38,7 @@ function pageLoad(linkSplit, basicItems) {
         }
     }
 }
+
 function grabPage(pageId) {
     $.get("/wp-json/pages/" + pageId, function (response) {
 
@@ -60,13 +46,32 @@ function grabPage(pageId) {
 
         $("#" + pageId).nextAll(".contentdiv").html("<br/>");
         $("#" + pageId).nextAll(".contentdiv").append(content);
-        if($(window).width()>640){$("#" + pageId).nextAll(".contentdiv").slideDown("normal",changeHeight(pageId));}
-        else{$("#" + pageId).nextAll(".contentdiv").slideDown();}
-        
-        
+        $(".entry-content-mobile").html(content);
+        if ($(window).width() > 640) {
+            $("#" + pageId).nextAll(".contentdiv").slideDown("normal", changeHeight(pageId));
+        }
+        else {
+            $("#" + pageId).nextAll(".contentdiv").slideDown();
+        }
+
         $("#" + pageId).nextAll(".menudiv").slideDown(); //get submenu down
-      
-       
+
+        $("#" + pageId).parents('ul').find('li.selected').removeClass('selected');
+        $("#" + pageId).parent().addClass('selected');
+
+        var idt;
+        var n = 0;
+        window.onresize = function () {
+            clearTimeout(idt);
+            idt = setTimeout(function () {
+                if ($(window).width() < 641) {
+                    location.href = "/" + pageId;
+                }
+            }, 10);
+        };
+
+        $('.slvj-link-lightbox').simpleLightboxVideo();
+
     }).fail(function () {
         alert("error");
     });
@@ -74,27 +79,34 @@ function grabPage(pageId) {
 
 function grabMenu(itemId) {
     $.get("/wp-json/menus", function (response) {
+
         for (var i = 0; i < response.length; i++) {
-            if (response[i].slug == 'main-menu') {
+            if (response[i].slug == 'main-menu' && $("#" + itemId).parents(".menu-main-menu-container").length > 0) {
                 displayMenu(itemId, response[i].meta.links.self);
-                break;
+
             }
+            if (response[i].slug == 'main-menu-french' && $("#" + itemId).parents(".menu-main-menu-french-container").length > 0) {
+                displayMenu(itemId, response[i].meta.links.self + '?lang=fr');
+
+            }
+
         }
     }).fail(function () {
         alert("error");
     });
 }
-function UpperFirstLetter(str){
-	 return str.replace(/\b\w+\b/g, function(word) {   
-		   return word.substring(0,1).toUpperCase( ) +  word.substring(1);   
-		 });   
-	}
+function UpperFirstLetter(str) {
+    return str.replace(/\b\w+\b/g, function (word) {
+        return word.substring(0, 1).toUpperCase() + word.substring(1);
+    });
+}
 function displayMenu(itemId, menuUrl) {
+
     $.get(menuUrl, function (response) {
 
         var itemJsonId;
         for (var i = 0; i < response.items.length; i++) {
-            if (response.items[i].attr == itemId) {
+            if (response.items[i].url.split('/')[3].split('?')[0] == itemId) {
                 itemJsonId = response.items[i].ID;
             }
 
@@ -112,11 +124,11 @@ function displayMenu(itemId, menuUrl) {
             if (response.items[i].parent == itemJsonId) {
                 if (response.items[i].children.length > 0) {
                     output
-                        += '<li><a href="#" onclick="signclick(this); return false;" class="submenu" >[-]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;"  id="' + response.items[i].ID + '" class="submenu">' + response.items[i].title.toUpperCase() + '</a></li>';
+                        += '<li style="line-height:0.8; margin-bottom:15px;"><a href="#" onclick="signclick(this); return false;" class="submenu" >[-]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;"  id="' + response.items[i].ID + '" class="submenu" style="margin-bottom:15px">' + response.items[i].title.toUpperCase() + '</a></li>';
                 }
                 else {
                     output
-                        += '<li><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;" style="padding-left:10%" id="' + response.items[i].ID + '" class="submenu">' + response.items[i].title.toUpperCase() + '</a></li>';
+                        += '<li style="margin-left:10%;line-height:0.8;margin-bottom:15px;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;"  id="' + response.items[i].ID + '" class="submenu">' + response.items[i].title.toUpperCase() + '</a></li>';
                 }
             }
         }
@@ -127,10 +139,10 @@ function displayMenu(itemId, menuUrl) {
             if (response.items[i].parent != itemJsonId && response.items[i].parent != 0) //it means this submenu is first submenus' child or grandchild
             {
                 if (response.items[i].children.length > 0) {
-                    $('#' + response.items[i].parent).parent().append('<ul><li><a href="#" onclick="signclick(this); return false;" class="submenu">[-]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;" id="' + response.items[i].ID + '" class="submenu">' + UpperFirstLetter(response.items[i].title) + '</a></li></ul>');
+                    $('#' + response.items[i].parent).parent().append('<ul style="margin-top:15px;"><li style="line-height:0.8;"><a href="#" onclick="signclick(this); return false;" class="submenu">[-]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;" id="' + response.items[i].ID + '" class="submenu" margin-bottom:15px;>' + UpperFirstLetter(response.items[i].title) + '</a></li></ul>');
                 }
                 else {
-                    $('#' + response.items[i].parent).parent().append('<ul><li><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;" style="padding-left:10%" id="' + response.items[i].ID + '" class="submenu">' + UpperFirstLetter(response.items[i].title) + '</a></li></ul>');
+                    $('#' + response.items[i].parent).parent().append('<ul style="margin-top:15px;"><li style="margin-left:10%;line-height:0.8;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;"  id="' + response.items[i].ID + '" class="submenu">' + UpperFirstLetter(response.items[i].title) + '</a></li></ul>');
                 }
             }
         }
@@ -147,7 +159,7 @@ function change(objectId, itemId) {
 
         $("#" + itemId).nextAll(".contentdiv").html("<br/>");
         $("#" + itemId).nextAll(".contentdiv").append(content);
-        window.history.pushState(null, null, "#!" + itemId + "/" + response.slug);
+        window.history.pushState(null, null, "/" + itemId + "/#" + response.slug);
 
     }).fail(function () {
         alert("error");
@@ -163,167 +175,81 @@ function signclick(id) {
         id.text = "[+]";
     }
 }
-function contentToggle(id){
-	var linkSplit = location.hash.substr(2);
-	if (linkSplit != ''){
-		$(id).parent().next().slideToggle();
-		if (id.text == "[ + ]") {
-	        id.text =  "[ - ]";
-	    }
-	    else {
-	        id.text = "[ + ]";
-	    }
-	}else{
-		if (id.text == "[ + ]") {
-	        id.text =  "[ - ]";
-	    }
-	    else {
-	        id.text = "[ + ]";
-	    }
-	}
-	
-	
+function contentToggle(id) {
+    var linkSplit = location.hash.substr(2);
+    if (linkSplit != '') {
+        $(id).parent().next().slideToggle();
+        if (id.text == "[ + ]") {
+            id.text = "[ - ]";
+        }
+        else {
+            id.text = "[ + ]";
+        }
+    } else {
+        if (id.text == "[ + ]") {
+            id.text = "[ - ]";
+        }
+        else {
+            id.text = "[ + ]";
+        }
+    }
 }
 
-
-function hover1(itemId) {
-    $("#" + itemId).css("color", "#0075C9");
-    if(itemId=='tobehappy'||itemId=='tolove'||itemId=='tolearn'||itemId=='towork'||itemId=='tolive'||itemId=='about'||itemId=='news')
-    	{$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + itemId + "blue.svg");}
-    else
-    	{$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/defaultblue.svg");}
-    
-}
-
-function hover2(itemId) {
-    $("#" + itemId).css("color", "#82BC00");
-    if(itemId=='tobehappy'||itemId=='tolove'||itemId=='tolearn'||itemId=='towork'||itemId=='tolive'||itemId=='about'||itemId=='news')
-        {$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + itemId + ".svg");}
-    else
-    	{$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/default.svg");}
-}
-
-function active1(itemId){
-	$("#" + itemId).css("color", "#BBBDBF");
-	if(itemId=='tobehappy'||itemId=='tolove'||itemId=='tolearn'||itemId=='towork'||itemId=='tolive'||itemId=='about'||itemId=='news')
-	    {$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + itemId + "grey.svg");}
-	else
-		{$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/defaultgrey.svg");}
-}
-function active2(itemId){
-	$("#" + itemId).css("color", "#0075C9");
-	if(itemId=='tobehappy'||itemId=='tolove'||itemId=='tolearn'||itemId=='towork'||itemId=='tolive'||itemId=='about'||itemId=='news')
-	     {$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + itemId + "blue.svg");}
-	else
-		{$("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/defaultblue.svg");}
-}
 function itemClick(itemId) {
-    //$(".entry-title").css("display", "none");
-    //$(".entry-content").css("display", "none");
     $(".entry-title").slideUp();
     $(".entry-content").slideUp();
     $(".news-content").slideUp();
+
     $("#" + itemId).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
     $("#" + itemId).parent().siblings().children(".menudiv").slideUp();      //close all other pages' submenu
-    $("#" + itemId).parent().siblings().children(".blueline").css("display", "none"); //reback all other blueline none
-    $("#" + itemId).parent().siblings().children(".menu-link").css("color", "#82BC00"); //reback all other pages' text color
-    $("#" + itemId).parent().siblings().children(".image-link").children().attr("src", function () {
-        return this.src.replace('blue', '');
-    });//reback all other pages' image
-    $("#" + itemId).parent().siblings().children(".menu-link").mouseleave(function () {
-        hover2(this.id);
-    });//leave other items' text to green
-    $("#" + itemId).parent().siblings().children(".image-link").mouseleave(function () {
-        hover2($(this).prev().attr("id"));
-    });//leave other items' image to green
 
     //////////clear previous mass///////////
-    $("#" + itemId).nextAll(".blueline").css("display", "inline"); //create top blueline
-    window.history.pushState(null, null, "#!" + itemId);
+    window.history.pushState(null, null, "/" + itemId + "/");
 
     grabMenu(itemId);   //grab submenu according to itemId
     grabPage(itemId);   //grab page according to itemId
-    //$("#"+itemId).next().next().slideDown();  //get content down
-    //$("#"+itemId).next().next().next().slideDown(); //get submenu down
-    $("#" + itemId).mouseleave(function () {
-        hover1(itemId);
-    }); //keep selected item's text to blue
-    $("#" + itemId).next().mouseleave(function () {
-        hover1(itemId);
-    });  //keep selected item's image to blue
-  
 
 }
 function pageRefresh(itemId) {
-    if($(window).width()>641)
-    	{
-	    	$(".entry-title").slideUp();
-	        $(".entry-content").slideUp();
-	        $(".news-content").slideUp();
-    	}
-	
-    
+    if ($(window).width() > 641) {
+        $(".entry-title").slideUp();
+        $(".entry-content").slideUp();
+        $(".news-content").slideUp();
+    }
+
     $("#" + itemId).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
     $("#" + itemId).parent().siblings().children(".menudiv").slideUp();       //close all other pages' submenu
-    $("#" + itemId).parent().siblings().children(".blueline").css("display", "none"); //reback all other blueline none
-    $("#" + itemId).parent().siblings().children(".menu-link").css("color", "#82BC00"); //reback all other pages' text color
-    $("#" + itemId).parent().siblings().children(".image-link").children().attr("src", function () {
-        return this.src.replace('blue', '');
-    });//reback all other pages' image
-    $("#" + itemId).parent().siblings().children(".menu-link").mouseleave(function () {
-        hover2(this.id);
-    });//leave other items' text to green
-    $("#" + itemId).parent().siblings().children(".image-link").mouseleave(function () {
-        hover2($(this).prev().attr("id"));
-    });//leave other items' image to green
-
-    //////////clear previous mass///////////
-    $("#" + itemId).nextAll(".blueline").css("display", "inline"); //create top blueline
-    $("#" + itemId).css("color", "#0075C9"); //keep selected item's text to blue
-    $("#" + itemId).next().children().attr("src", "/app/themes/clo_web_2015/src/img/" + itemId + "blue.svg"); //keep selected item's image to blue
 
     grabMenu(itemId);   //grab submenu according to itemId
     grabPage(itemId);   //grab page according to itemId
-
-    //$("#"+itemId).next().next().slideDown();  //get content down
-    //$("#"+itemId).next().next().next().slideDown(); //get submenu down
-    $("#" + itemId).mouseleave(function () {
-        hover1(itemId);
-    }); //keep selected item's text to blue
-    $("#" + itemId).next().mouseleave(function () {
-        hover1(itemId);
-    });  //keep selected item's image to blue
 }
 
 function createMenu(menuUrl) {
-    var linkSplit = location.hash.substr(2);
+    var linkSplit = location.pathname.split('/');
     var basicItems = new Array();
 
     $.get(menuUrl, function (response) {
         for (var i = 0; i < response.items.length; i++) {
             if (response.items[i].parent == 0) {
-                var id = response.items[i].title.replace(/[ ]/g, "").toLowerCase();
+                var id = response.items[i].url.split('/')[3].split('?')[0];
                 basicItems.push(id);
 
                 $("#" + id).bind({
                     mouseenter: function () {
-                        hover1(this.id);
                     }, mouseleave: function () {
-                        hover2(this.id);
                     }
                 }).bind("click", function () {
                     itemClick(this.id);
-                }).bind("mousedown", function(){active1(this.id)}).bind("mouseup", function(){active2(this.id)});
-
-                //$("#"+id).next().bind({mouseenter:function(){hover1($(this).prev().attr("id"));},mouseleave:function(){hover2($(this).prev().attr("id"));}}).bind("click", function(){itemClick($(this).prev().attr("id"));});
-
+                }).bind("mousedown", function () {
+                }).bind("mouseup", function () {
+                });
             }
         }
 
         pageLoad(linkSplit, basicItems);
         window.addEventListener('popstate', function (e) {
 
-            var linkSplit = location.hash.substr(2);
+            var linkSplit = location.pathname.split('/');
             if (linkSplit != '') {
                 pageLoad(linkSplit, basicItems)
             } else {
@@ -338,22 +264,20 @@ function bindEvent() {
         for (var i = 0; i < response.length; i++) {
             if (response[i].slug == 'main-menu') {
                 createMenu(response[i].meta.links.self);
-                break;
+            }
+            if (response[i].slug == 'main-menu-french') {
+                createMenu(response[i].meta.links.self + '?lang=fr');
             }
         }
 
     }).fail(function () {
         alert("error");
     });
-
 }
 
 function init() {
     bindEvent();
 }
-
-
-
 
 $(document).ready(function () {
     init();
