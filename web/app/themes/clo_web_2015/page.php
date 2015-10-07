@@ -24,8 +24,7 @@ get_header();  //wp_nav_menu?>
                  <div class="mbl-img">
                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/src/img/mbl-img.svg"/>
                  </div>
-                 
-                
+
                  <div class="mbx-dh">
                  <?php  
                         $menu_breadcrumb = new Menu_Breadcrumb( 'main-menu' );   // 'main' is the Menu Location
@@ -40,7 +39,6 @@ get_header();  //wp_nav_menu?>
                         	
                         else
                         {
-                        	
                         	echo '<a id="gohome">HOME</a>';
                         }
                   ?>     
@@ -63,10 +61,7 @@ get_header();  //wp_nav_menu?>
                 <?php endif; ?>
                                   
                 <?php get_template_part('parts/main-menu'); ?>
-               
-              
-               
-                
+
             </article>
         <?php endwhile; ?>
 
