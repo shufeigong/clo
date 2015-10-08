@@ -17,9 +17,11 @@ function pageLoad(linkSplit, basicItems) {
                 $(".news-content").slideUp();
                 $("#" + linkSplit[1]).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
                 $("#" + linkSplit[1]).parent().siblings().children(".menudiv").slideUp();       //close all other pages' submenu
-                $("#" + linkSplit[1]).nextAll(".contentdiv").slideDown();  //get content down
                 $("#" + linkSplit[1]).nextAll(".menudiv").slideDown(); //get submenu down
-
+                $("#" + linkSplit[1]).nextAll(".contentdiv").slideDown("normal",changeHeight(linkSplit[1]));  //get content down
+                
+                $("#" + linkSplit[1]).parents('ul').find('li.selected').removeClass('selected');
+                $("#" + linkSplit[1]).parent().addClass('selected');
 
                 var idt;
                 var n = 0;
@@ -160,7 +162,7 @@ function change(objectId, itemId) {
         $("#" + itemId).nextAll(".contentdiv").html("<br/>");
         $("#" + itemId).nextAll(".contentdiv").append(content);
         window.history.pushState(null, null, "/" + itemId + "/#" + response.slug);
-
+        changeHeight(itemId);
     }).fail(function () {
         alert("error");
     });
