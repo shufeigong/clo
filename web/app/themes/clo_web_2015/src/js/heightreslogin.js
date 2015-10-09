@@ -64,7 +64,7 @@ function setfixed(itemId)
 		//////////////prev all li/////////////////
 	     
 		 $("#" + itemId).parent().prevAll().each(function(){    //relocate prev all li according to li index
-			  $(this).css("top", headerHeight+($(this).index()+1)*20);
+			  $(this).css("top", headerHeight+($(this).index()+3)*20);
 		  });
 		                                                        //make prev all li to be fixed
 		 $("#" + itemId).parent().prevAll().css({"position":"fixed", "width":"87.4%", "max-width":"962px", "z-index":"100", "background-color":"#fff"});
@@ -86,16 +86,16 @@ function setfixed(itemId)
 	    
  	 $("#" + itemId).parent().css("margin-top",headerHeight+(currentli+1)*20);
  	 $("#" + itemId).parent().css("margin-bottom",(lilength-currentli)*20+2);
- 	 $("#" + itemId).css({"position":"fixed", "top":headerHeight+(currentli+1)*20,"z-index":"100"});  
+ 	 $("#" + itemId).css({"position":"fixed", "top":headerHeight+(currentli+3)*20,"z-index":"100"});  
  	 
  	 if($(window).width()>=1000)
- 	 { $("#" + itemId).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv, "width":widthw, "max-width":"848px","border-top":"12px solid #fff" });  
+ 	 { $("#" + itemId).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+3)*20, "z-index":"100", "left":leftv, "width":widthw, "max-width":"848px","border-top":"12px solid #fff" });  
  	   $("#" + itemId).nextAll(".contentdiv").css("margin-left","11%");
  	   $("#" + itemId).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20+2, "z-index":"100", "left":leftv+1, "width":widthw-2, "max-width":"846px"});
  	  }
  	   else
  	 {
- 	    $("#" + itemId).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv+8, "width":widthw, "max-width":"848px","border-top":"12px solid #fff" });  
+ 	    $("#" + itemId).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+3)*20, "z-index":"100", "left":leftv+8, "width":widthw, "max-width":"848px","border-top":"12px solid #fff" });  
 	  	$("#" + itemId).nextAll(".contentdiv").css("margin-left","14%");
 	  	$("#" + itemId).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20, "z-index":"100", "left":leftv+8, "width":widthw, "max-width":"846px"});
  	 }
@@ -114,7 +114,7 @@ function setfixed(itemId)
 		 {
    		 $(".header").css("width","85%");
    		 $("#" + event.data).nextAll(".contentdiv").css("margin-left","11%");
-   		 $("#" + event.data).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv, "width":widthw, "border-top":"12px solid #fff" });
+   		 $("#" + event.data).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+3)*20, "z-index":"100", "left":leftv, "width":widthw, "border-top":"12px solid #fff" });
 	    	 $("#" + event.data).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20+2, "z-index":"100", "left":leftv+1, "width":widthw-2});
 	    	 //$("#"+event.data).nextAll(".menudiv").css({"position":"fixed", "left":leftv+20+$("#" + event.data).nextAll(".contentdiv").outerWidth()})
 		 
@@ -123,7 +123,7 @@ function setfixed(itemId)
 		 {
 	    	 $(".header").css("width","100%");
 	    	 $("#" + event.data).nextAll(".contentdiv").css("margin-left","14%");
-	    	 $("#" + event.data).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv+8, "width":widthw, "border-top":"12px solid #fff" });
+	    	 $("#" + event.data).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+3)*20, "z-index":"100", "left":leftv+8, "width":widthw, "border-top":"12px solid #fff" });
 	    	 $("#" + event.data).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20, "z-index":"100", "left":leftv+8, "width":widthw});
 	    	 //$("#"+event.data).nextAll(".menudiv").css({"position":"fixed", "left":leftv+20+$("#" + event.data).nextAll(".contentdiv").outerWidth()})
 		 }
@@ -164,7 +164,7 @@ function setfixedFr(itemId)
 	
 		//////////////prev all li/////////////////
 		 $("#" + itemId).parent().prevAll().each(function(){    //relocate prev all li according to li index
-			  $(this).css("top", headerHeight+($(this).index()+1)*20);
+			  $(this).css("top", headerHeight+($(this).index()+3)*20);
 		  });
 		                                                        //make prev all li to be fixed
 		 $("#" + itemId).parent().prevAll().css({"position":"fixed", "width":"93.4%", "max-width":"962px", "z-index":"100", "background-color":"#fff"});
@@ -186,16 +186,16 @@ function setfixedFr(itemId)
 	    
  	 $("#" + itemId).parent().css("margin-top",headerHeight+(currentli+1)*20);
  	 $("#" + itemId).parent().css("margin-bottom",(lilength-currentli)*20+2);
- 	 $("#" + itemId).css({"position":"fixed", "top":headerHeight+(currentli+1)*20,"z-index":"100"});  
+ 	 $("#" + itemId).css({"position":"fixed", "top":headerHeight+(currentli+3)*20,"z-index":"100"});  
  	 
  	 if($(window).width()>=1000)
- 	 { $("#" + itemId).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv+2, "width":widthw, "max-width":"762px","border-top":"12px solid #fff" });  
+ 	 { $("#" + itemId).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+3)*20, "z-index":"100", "left":leftv+2, "width":widthw, "max-width":"762px","border-top":"12px solid #fff" });  
  	   $("#" + itemId).nextAll(".contentdiv").css("margin-left","16%");
  	   $("#" + itemId).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20+2, "z-index":"100", "left":leftv+3, "width":widthw-2, "max-width":"760px"});
  	  }
  	   else
  	 {
- 	    $("#" + itemId).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv+10, "width":widthw, "max-width":"762px","border-top":"12px solid #fff" });  
+ 	    $("#" + itemId).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+3)*20, "z-index":"100", "left":leftv+10, "width":widthw, "max-width":"762px","border-top":"12px solid #fff" });  
 	  	$("#" + itemId).nextAll(".contentdiv").css("margin-left","23%");
 	  	$("#" + itemId).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20, "z-index":"100", "left":leftv+10, "width":widthw, "max-width":"760px"});
  	 }
@@ -214,7 +214,7 @@ function setfixedFr(itemId)
 		 {
    		 $(".header").css("width","85%");
    		 $("#" + event.data).nextAll(".contentdiv").css("margin-left","16%");
-   		 $("#" + event.data).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv+2, "width":widthw, "border-top":"12px solid #fff" });
+   		 $("#" + event.data).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+3)*20, "z-index":"100", "left":leftv+2, "width":widthw, "border-top":"12px solid #fff" });
 	     $("#" + event.data).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20+2, "z-index":"100", "left":leftv+3, "width":widthw-2});
 	    	 //$("#"+event.data).nextAll(".menudiv").css({"position":"fixed", "left":leftv+20+$("#" + event.data).nextAll(".contentdiv").outerWidth()})
 		 
@@ -223,7 +223,7 @@ function setfixedFr(itemId)
 		 {
 	    	 $(".header").css("width","100%");
 	    	 $("#" + event.data).nextAll(".contentdiv").css("margin-left","23%");
-	    	 $("#" + event.data).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+1)*20, "z-index":"100", "left":leftv+10, "width":widthw, "border-top":"12px solid #fff" });
+	    	 $("#" + event.data).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+3)*20, "z-index":"100", "left":leftv+10, "width":widthw, "border-top":"12px solid #fff" });
 	    	 $("#" + event.data).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20, "z-index":"100", "left":leftv+10, "width":widthw});
 	    	 //$("#"+event.data).nextAll(".menudiv").css({"position":"fixed", "left":leftv+20+$("#" + event.data).nextAll(".contentdiv").outerWidth()})
 		 }
