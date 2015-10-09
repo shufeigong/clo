@@ -15,29 +15,22 @@ $(document).ready(function () {
             $(this).html('[+]');
         }
     });
-    
-    
+   
+       
     $("#gohome").click(function(){location.href="/";});
     
     if($(window).width()<641)
     	{
-    	   $(".entry-content").css("padding-top", $(".mbx-dh").height()+$(".mbx-dh").offset().top-$(".header").height()+5);
+    	   //$(".entry-content").css("padding-top", $(".mbx-dh").height()+$(".mbx-dh").offset().top-$(".header").height()+5);
     	   $("#gohome").next().children("span:last-child").children("a").css("color","#0075c9");
     	}
     $(window).resize(function() {
     	//location.reload();
     	     if($(window).width()>641)
     	    	 {
-    	    	 //location.reload();
-    	    	    $(".off-canvas-wrap").removeClass("move-left"); 
-	    	        $(".entry-content").css("padding-top", 0);
+                    $(".off-canvas-wrap").removeClass("move-left"); 
     	    	 }
-    	     else{
-    	    	 //location.href="/";
-    	    	 //location.reload();
-    	    	    $(".entry-content").css("padding-top", $(".mbx-dh").height()+$(".mbx-dh").offset().top-$(".header").height()+5);
-    	    	 }
-    	});
+    	     });
     
     
 });

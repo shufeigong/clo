@@ -12,9 +12,9 @@ function pageLoad(linkSplit, basicItems) {
                 grabMenu(linkSplit[1]);   //grab submenu according to itemId
                 $("#" + linkSplit[1]).nextAll(".contentdiv").html("<br/>");
                 $("#" + linkSplit[1]).nextAll(".contentdiv").append(content);
-                $(".entry-title").slideUp();
-                $(".entry-content").slideUp();
-                $(".news-content").slideUp();
+                $(".entry-title").css("display","none");
+                $(".entry-content").css("display","none");
+                $(".news-content").css("display","none");
                 $("#" + linkSplit[1]).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
                 $("#" + linkSplit[1]).parent().siblings().children(".menudiv").slideUp();       //close all other pages' submenu
                 $("#" + linkSplit[1]).nextAll(".menudiv").slideDown(); //get submenu down
@@ -214,9 +214,9 @@ function itemClick(itemId) {
 }
 function pageRefresh(itemId) {
     if ($(window).width() > 641) {
-        $(".entry-title").slideUp();
-        $(".entry-content").slideUp();
-        $(".news-content").slideUp();
+        $(".entry-title").css("display","none");
+        $(".entry-content").css("display","none");
+        $(".news-content").css("display","none");
     }
 
     $("#" + itemId).parent().siblings().children(".contentdiv").slideUp();    //close all other pages

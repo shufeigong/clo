@@ -33,18 +33,27 @@
 
 <div class="off-canvas-wrap" data-offcanvas>
     <div class="inner-wrap">
-        <nav class="tab-bar show-for-small-only">
-            <section class="right-small">
-                <a class="right-off-canvas-toggle menu-icon" ><span></span></a>
-            </section>
-        </nav>
-
+       
      <?php get_template_part('parts/off-canvas-menu'); ?>
 
 <section class="container" role="document">
 <?php do_action('foundationpress_after_header'); ?>
 <div class="row ">
-    <div class="row header">
+
+     <?php if(is_user_logged_in()):?>
+    <div class="row header login">
+     <?php else:?>
+    <div class="row header non-login">
+     <?php endif;?>
+     
+       <?php //get_template_part('parts/off-canvas-menu'); ?>
+	        
+	        <nav class="tab-bar show-for-small-only">
+	            <section class="right-small">
+	                <a class="right-off-canvas-toggle menu-icon" ><span></span></a>
+	            </section>
+	        </nav>
+    
         <div class="columns large-4 medium-4 small-12 small-logo">
         <?php if(ICL_LANGUAGE_CODE=='en'): ?>
             <a class="site-logo" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"></a>
@@ -56,4 +65,25 @@
             <?php get_template_part('parts/utility-menu'); ?>
         </div>
         <?php get_search_form(); ?>
+        
+        
+	         <div class="mbl-img">
+	             <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/mbl-img.svg"/>
+	         </div>
+
+             <div class="mbx-dh">
+                 <?php  
+                        $menu_breadcrumb = new Menu_Breadcrumb( 'main-menu' );   // 'main' is the Menu Location
+                        
+                        $current_menu_item_object = $menu_breadcrumb->get_current_menu_item_object();
+                        if($current_menu_item_object){
+                        	
+                        	$breadcrumb_array = $menu_breadcrumb->generate_trail();
+                            $breadcrumb_markup = $menu_breadcrumb->generate_markup( $breadcrumb_array, ' > ' );
+                            echo '<p class="menu-breadcrumb"><a id="gohome">HOME</a> > ' . $breadcrumb_markup . '</p>';
+                        } else {
+                        	echo '<a id="gohome">HOME</a>';
+                        }
+                  ?>     
+             </div>
     </div>

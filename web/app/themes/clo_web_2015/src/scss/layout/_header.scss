@@ -77,16 +77,34 @@
 
 @media screen and (max-width : 640px) {
 
+    .login{
+       position:fixed;
+       padding-top:40px;
+       top:0;
+      }
+      
+     .move-left{
+     .login{padding-top:0px;}
+     }
+     
+    .non-login{
+       position:fixed;
+    }
+  
+    .mobile-entry-margin{
+      margin-top:190px;
+    }
+
     .row .header {
         //border:solid 1px #333;
         border-bottom    : solid 1px #fff;
         width            : 100%;
-        position         : fixed;
+        //position         : fixed;
         z-index          : 99;
         background-color : #fff;
-        top              : 0;
-        padding-top      : 10px;
-        margin-bottom    : 10px;
+        //top              : 0;
+        //padding-top      : 10px;
+        //margin-bottom    : 10px;
         .site-logo {
             margin     : 0 0 0 10%;
             display    : block;
@@ -111,9 +129,9 @@
     .mbx-dh {
         margin           : 0 30px 0 30px;
         width            : 95%;
-        position         : fixed;
+        //position         : fixed;
         z-index          : 100;
-        top              : 141px;
+        //top              : 141px;
         //border:solid 1px red;
         background-color : #fff;
         .menu-breadcrumb {
@@ -128,14 +146,14 @@
 
     .mbl-img {
         //margin: 0 50px 0 30px;
-        position         : fixed;
+        //position         : fixed;
         z-index          : 98;
         background-color : #fff;
         width            : 100%;
-        height           : 90px;
+        //height           : 90px;
         //border:solid 2px #333;
         img {
-            height : 80%;
+            height : 70px;
             //border:solid 3px red;
             margin : 0 10px 0 10px;
             width  : 95%;
