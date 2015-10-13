@@ -30,7 +30,7 @@ function setScrollPost() {
 
     function MinRoll() {
         newTop++;
-        if (newTop <= divTop + 2 * singleheight) {
+        if (newTop <= divTop + (1 * singleheight)) {
             textDiv.style.top = "-" + newTop + "px";
         } else {
             clearInterval(minTime);
@@ -40,7 +40,7 @@ function setScrollPost() {
 
     function MaxRoll() {
         divTop = Math.abs(parseInt(textDiv.style.top));
-        if (divTop >= 0 && divTop < textDatH - 2 * singleheight) {
+        if (divTop >= 0 && divTop < textDatH - (1 * singleheight)) {
             minTime = setInterval(MinRoll, 1);
         } else {
             textDiv.style.top = 0;
