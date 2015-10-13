@@ -67,11 +67,11 @@
         <?php get_search_form(); ?>
         
         
-	         <div class="mbl-img">
+	         <div class="columns large-4 medium-4 small-12 mbl-img">
 	             <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/mbl-img.svg"/>
 	         </div>
 
-             <div class="mbx-dh">
+             <div class="columns large-4 medium-4 small-12 mbx-dh">
                  <?php  
                         $menu_breadcrumb = new Menu_Breadcrumb( 'main-menu' );   // 'main' is the Menu Location
                         
