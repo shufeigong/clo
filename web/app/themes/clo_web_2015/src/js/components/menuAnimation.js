@@ -2,23 +2,23 @@
 var path = require('path');
 
 var image2 = {
-    bicycle_guy: $('#menu-main-menu-1 li .image-link').find('.bicycle-guy').parent()
+    bicycle_guy: $('.animation-menu li .image-link').find('.bicycle-guy').parent()
 };
 
 var image3 = {
-    small_car: $('#menu-main-menu-1 li .image-link').find('.small-car').parent(),
-    school_bus: $('#menu-main-menu-1 li .image-link').find('.school-bus').parent(),
-    wheel_chair: $('#menu-main-menu-1 li .image-link').find('.wheel-chair').parent()
+    small_car: $('.animation-menu li .image-link').find('.small-car').parent(),
+    school_bus: $('.animation-menu li .image-link').find('.school-bus').parent(),
+    wheel_chair: $('.animation-menu li .image-link').find('.wheel-chair').parent()
 };
 
 var image4 = {
-    running_man: $('#menu-main-menu-1 li .image-link').find('.running-man').parent()
+    running_man: $('.animation-menu li .image-link').find('.running-man').parent()
 };
 
 var image5 = {
-    old_man: $('#menu-main-menu-1 li .image-link').find('.old-man').parent(),
-    man_with_dog: $('#menu-main-menu-1 li .image-link').find('.man-with-dog').parent(),
-    small_car2: $('#menu-main-menu-1 li .image-link').find('.small-car2').parent()
+    old_man: $('.animation-menu li .image-link').find('.old-man').parent(),
+    man_with_dog: $('.animation-menu li .image-link').find('.man-with-dog').parent(),
+    small_car2: $('.animation-menu li .image-link').find('.small-car2').parent()
 };
 
 doAnimation(image2.bicycle_guy, 'left', false);
@@ -33,45 +33,45 @@ doAnimation(image5.small_car2, 'left', true);
 
 var items = [
     {
-        element: $('#menu-main-menu-1 li .image-link').find('.bicycle-guy').parent(),
+        element: $('.animation-menu li .image-link').find('.bicycle-guy').parent(),
         direction: 'left',
         isVehicle: false
     },
     {
-        element: $('#menu-main-menu-1 li .image-link').find('.small-car').parent(),
+        element: $('.animation-menu li .image-link').find('.small-car').parent(),
         direction: 'right',
         isVehicle: true
 
     },
     {
-        element: $('#menu-main-menu-1 li .image-link').find('.school-bus').parent(),
+        element: $('.animation-menu li .image-link').find('.school-bus').parent(),
         direction: 'right',
         isVehicle: true
 
     },
     {
-        element: $('#menu-main-menu-1 li .image-link').find('.wheel-chair').parent(),
+        element: $('.animation-menu li .image-link').find('.wheel-chair').parent(),
         direction: 'right',
         isVehicle: false
 
     },
     {
-        element: $('#menu-main-menu-1 li .image-link').find('.running-man').parent(),
+        element: $('.animation-menu li .image-link').find('.running-man').parent(),
         direction: 'left',
         isVehicle: false
     },
     {
-        element: $('#menu-main-menu-1 li .image-link').find('.old-man').parent(),
+        element: $('.animation-menu li .image-link').find('.old-man').parent(),
         direction: 'left',
         isVehicle: false
     },
     {
-        element: $('#menu-main-menu-1 li .image-link').find('.man-with-dog').parent(),
+        element: $('.animation-menu li .image-link').find('.man-with-dog').parent(),
         direction: 'right',
         isVehicle: false
     },
     {
-        element: $('#menu-main-menu-1 li .image-link').find('.small-car2').parent(),
+        element: $('.animation-menu li .image-link').find('.small-car2').parent(),
         direction: 'left',
         isVehicle: true
     }
@@ -139,7 +139,7 @@ function doAnimationV2(elements) {
     tl.restart();
 }
 
-$('#menu-main-menu-1 li a').click(function () {
+$('.animation-menu li a').click(function () {
     $(this).parents('ul').find('li.selected').removeClass('selected');
     $(this).parent().addClass('selected');
 });
