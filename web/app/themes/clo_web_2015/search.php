@@ -6,6 +6,7 @@
  * @subpackage FoundationPress
  * @since FoundationPress 1.0
  */
+if($_REQUEST['s']==''){header("location:/");}
 
 get_header(); ?>
 
