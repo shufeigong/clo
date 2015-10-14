@@ -61,7 +61,7 @@ function grabPage(pageId) {
 
         $("#" + pageId).parents('ul').find('li.selected').removeClass('selected');
         $("#" + pageId).parent().addClass('selected');
-
+        
         var idt;
         var n = 0;
         window.onresize = function () {
@@ -69,6 +69,13 @@ function grabPage(pageId) {
             idt = setTimeout(function () {
                 if ($(window).width() < 641) {
                     location.href = "/" + pageId;
+                    $.get("/setSession.php?open=0").fail(function () {
+                        alert("error");
+                    });
+                }else{
+                	$.get("/setSession.php?open=1").fail(function () {
+                        alert("error");
+                    });
                 }
             }, 10);
         };
@@ -204,8 +211,9 @@ function itemClick(itemId) {
     $(".entry-title").slideUp();
     $(".entry-content").slideUp();
     $(".news-content").slideUp();
-    
-
+    $.get("/setSession.php?open=1").fail(function () {
+        alert("error");
+    });
     
     $("#" + itemId).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
     $("#" + itemId).parent().siblings().children(".menudiv").slideUp();      //close all other pages' submenu
@@ -215,6 +223,8 @@ function itemClick(itemId) {
 
     grabMenu(itemId);   //grab submenu according to itemId
     grabPage(itemId);   //grab page according to itemId
+    
+    
 
 }
 function pageRefresh(itemId) {
@@ -288,8 +298,10 @@ function init() {
 
 $(document).ready(function () {
     init();
-    //$.cookie('the_cookie',false);
-    //$.cookie('the_cookie', "", { expires: -1 });
+    
+    $(".header").click(function(){$.get("/setSession.php?open=0").fail(function () {
+        alert("error");
+    });});
 });
 
 
