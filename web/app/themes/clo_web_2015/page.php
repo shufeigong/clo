@@ -23,7 +23,7 @@ get_header();  //wp_nav_menu?>
                 <div class="entry-content <?php echo is_front_page() ? 'home' : '';?>">
                     <?php the_content();?>
                 </div>
-                <?php }?>
+                
             
                 
                 <?php if(is_front_page()) :?>
@@ -35,6 +35,7 @@ get_header();  //wp_nav_menu?>
                   </div>  
                  </div>
                 <?php endif; ?>
+                <?php }?>
                 <?php get_template_part('parts/main-menu');?>
 
             </article>

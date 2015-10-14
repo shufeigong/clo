@@ -228,11 +228,11 @@ function itemClick(itemId) {
 
 }
 function pageRefresh(itemId) {
-    if ($(window).width() > 641) {
-        $(".entry-title").css("display","none");
-        $(".entry-content").css("display","none");
-        $(".news-content").css("display","none");
-    }
+   // if ($(window).width() > 641) {
+   //     $(".entry-title").css("display","none");
+   //     $(".entry-content").css("display","none");
+   //     $(".news-content").css("display","none");
+    //}
 
     $("#" + itemId).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
     $("#" + itemId).parent().siblings().children(".menudiv").slideUp();       //close all other pages' submenu
@@ -302,6 +302,7 @@ $(document).ready(function () {
     $(".header").click(function(){$.get("/setSession.php?open=0").fail(function () {
         alert("error");
     });});
+    
 });
 
 
