@@ -97,6 +97,10 @@ function grabMenu(itemId) {
     }).fail(function () {
         alert("error");
     });
+    
+    $.get("web-2015/web/app/themes/clo_web_2015/page.php?open=1", function() {});
+    
+    
 }
 function UpperFirstLetter(str) {
     return str.replace(/\b\w+\b/g, function (word) {
@@ -127,11 +131,11 @@ function displayMenu(itemId, menuUrl) {
             if (response.items[i].parent == itemJsonId) {
                 if (response.items[i].children.length > 0) {
                     output
-                        += '<li style="line-height:0.8; margin-bottom:15px;"><a href="#" onclick="signclick(this); return false;" class="submenu" style="width:10%;float:left;">[+]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;"  id="' + response.items[i].ID + '" class="submenu" style="margin-bottom:15px; width:90%;float:left;">' + response.items[i].title.toUpperCase() + '</a></li>';
+                        += '<li style="line-height:0.8; margin-bottom:15px;"><div style="width:10%;float:left;"><a href="#" onclick="signclick(this); return false;" class="submenu">[+]</a></div><div style="margin-bottom:15px; width:90%;float:left;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;"  id="' + response.items[i].ID + '" class="submenu" >' + response.items[i].title.toUpperCase() + '</a></div></li>';
                 }
                 else {
                     output
-                        += '<li style="margin-left:10%;line-height:0.8;margin-bottom:15px;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;"  id="' + response.items[i].ID + '" class="submenu" >' + response.items[i].title.toUpperCase() + '</a></li>';
+                        += '<li style="margin-left:10%;line-height:0.8;margin-bottom:15px;"><div><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;"  id="' + response.items[i].ID + '" class="submenu" >' + response.items[i].title.toUpperCase() + '</a></div></li>';
                 }
             }
         }
@@ -142,10 +146,10 @@ function displayMenu(itemId, menuUrl) {
             if (response.items[i].parent != itemJsonId && response.items[i].parent != 0) //it means this submenu is first submenus' child or grandchild
             {
                 if (response.items[i].children.length > 0) {
-                    $('#' + response.items[i].parent).parent().append('<ul style="margin-top:15px;display:none;"><li style="line-height:0.8;"><a href="#" onclick="signclick(this); return false;" class="submenu" style="width:10%;float:left;">[+]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;" id="' + response.items[i].ID + '" class="submenu" style="margin-bottom:15px;width:90%;float:left;">' + UpperFirstLetter(response.items[i].title) + '</a></li></ul>');
+                    $('#' + response.items[i].parent).parent().parent().append('<ul style="margin-top:15px;display:none;"><li style="line-height:0.8;"><div style="width:10%;float:left;"><a href="#" onclick="signclick(this); return false;" class="submenu">[+]</a></div><div style="margin-bottom:15px;width:90%;float:left;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;" id="' + response.items[i].ID + '" class="submenu" >' + UpperFirstLetter(response.items[i].title) + '</a></div></li></ul>');
                 }
                 else {
-                    $('#' + response.items[i].parent).parent().append('<ul style="margin-top:15px;display:none;"><li style="margin-left:10%;line-height:0.8;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;"  id="' + response.items[i].ID + '" class="submenu">' + UpperFirstLetter(response.items[i].title) + '</a></li></ul>');
+                    $('#' + response.items[i].parent).parent().parent().append('<ul style="margin-top:15px;display:none;"><li style="margin-left:10%;line-height:0.8;"><div style="float:left;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;"  id="' + response.items[i].ID + '" class="submenu">' + UpperFirstLetter(response.items[i].title) + '</a></div></li></ul>');
                 }
             }
         }
@@ -170,7 +174,7 @@ function change(objectId, itemId) {
 
 }
 function signclick(id) {
-    $(id).nextAll("ul").slideToggle();
+    $(id).parent().nextAll("ul").slideToggle();
     if (id.text == "[+]") {
         id.text = "[-]";
     }
@@ -202,7 +206,9 @@ function itemClick(itemId) {
     $(".entry-title").slideUp();
     $(".entry-content").slideUp();
     $(".news-content").slideUp();
-    //$.cookie('the_cookie',true);
+    
+
+    
     $("#" + itemId).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
     $("#" + itemId).parent().siblings().children(".menudiv").slideUp();      //close all other pages' submenu
 
