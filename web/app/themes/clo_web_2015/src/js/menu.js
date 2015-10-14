@@ -174,12 +174,13 @@ function change(objectId, itemId) {
 
 }
 function signclick(id) {
-    $(id).nextAll("ul").slideToggle();
     if (id.text == "[+]") {
         id.text = "[-]";
+        $(id).nextAll("ul").css("display","block");
     }
     else {
         id.text = "[+]";
+        $(id).nextAll("ul").css("display","none");
     }
 }
 function contentToggle(id) {

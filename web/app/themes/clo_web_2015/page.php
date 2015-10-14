@@ -22,7 +22,7 @@ get_header();  //wp_nav_menu?>
               
       
                 <div class="entry-content <?php echo is_front_page() ? 'home' : '';?>">
-                    <?php the_content();echo $_COOKIE['open'];?>
+                    <?php the_content();?>
                 </div>
         
             
