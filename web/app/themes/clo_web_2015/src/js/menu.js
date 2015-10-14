@@ -98,9 +98,6 @@ function grabMenu(itemId) {
         alert("error");
     });
     
-    $.get("web-2015/web/app/themes/clo_web_2015/page.php?open=1", function() {});
-    
-    
 }
 function UpperFirstLetter(str) {
     return str.replace(/\b\w+\b/g, function (word) {
