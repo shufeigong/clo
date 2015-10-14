@@ -74,16 +74,25 @@
              <div class="columns large-4 medium-4 small-12 mbx-dh">
                  <?php  
                         $menu_breadcrumb = new Menu_Breadcrumb( 'main-menu' );   // 'main' is the Menu Location
+                        $menu_breadcrumb2 = new Menu_Breadcrumb( 'utility-menu' );   // 'main' is the Menu Location
                         
                         $current_menu_item_object = $menu_breadcrumb->get_current_menu_item_object();
+                        $current_menu_item_object2 = $menu_breadcrumb2->get_current_menu_item_object();
                         if($current_menu_item_object){
-                        	
                         	$breadcrumb_array = $menu_breadcrumb->generate_trail();
                             $breadcrumb_markup = $menu_breadcrumb->generate_markup( $breadcrumb_array, ' > ' );
                             echo '<p class="menu-breadcrumb"><a id="gohome">HOME</a> > ' . $breadcrumb_markup . '</p>';
-                        } else {
+                        } else if($current_menu_item_object2){
+                        	$breadcrumb_array = $menu_breadcrumb2->generate_trail();
+                        	$breadcrumb_markup = $menu_breadcrumb2->generate_markup( $breadcrumb_array, ' > ' );
+                        	echo '<p class="menu-breadcrumb"><a id="gohome">HOME</a> > ' . $breadcrumb_markup . '</p>';
+                        	
+                        }else {
+                        
                         	echo '<a id="gohome">HOME</a>';
                         }
+                        
+                        
                   ?>     
              </div>
     </div>

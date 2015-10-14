@@ -1,4 +1,5 @@
 function pageLoad(linkSplit, basicItems) {
+	//$.cookie('the_cookie', "", { expires: -1 });
     if (linkSplit != '') {
         if ($.inArray(linkSplit[1], basicItems) != -1 && location.hash == '') {
             pageRefresh(linkSplit[1]);
@@ -201,7 +202,7 @@ function itemClick(itemId) {
     $(".entry-title").slideUp();
     $(".entry-content").slideUp();
     $(".news-content").slideUp();
-
+    //$.cookie('the_cookie',true);
     $("#" + itemId).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
     $("#" + itemId).parent().siblings().children(".menudiv").slideUp();      //close all other pages' submenu
 
@@ -283,7 +284,8 @@ function init() {
 
 $(document).ready(function () {
     init();
-
+    //$.cookie('the_cookie',false);
+    //$.cookie('the_cookie', "", { expires: -1 });
 });
 
 
