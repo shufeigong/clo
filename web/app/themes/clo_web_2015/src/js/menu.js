@@ -293,10 +293,10 @@ function init() {
 $(document).ready(function () {
     init();
     
-    $(".header").click(function(){$.get("/setSession.php?open=0").fail(function () {
+   /* $(".header").click(function(){$.get("/setSession.php?open=0").fail(function () {
         alert("error");
     });});
-    
+    */
    /* $(window).on('beforeunload', function(event) {
     		return "hello";
     });*/
