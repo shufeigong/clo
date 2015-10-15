@@ -9,6 +9,13 @@
  * @since FoundationPress 1.0.0
  */
 
+if(!defined('PAGE1_PHP_LOADED'))
+{
+	//unset ($_SESSION['open']);
+}
+
+define('PAGE1_PHP_LOADED', true);
+
 ?>
 <!doctype html>
 <html  <?php language_attributes(); ?> >
@@ -28,7 +35,7 @@
 
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> onunload="CloseOpen(event)">
 <?php do_action('foundationpress_after_body'); ?>
 
 <div class="off-canvas-wrap" data-offcanvas>

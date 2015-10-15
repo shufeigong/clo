@@ -19,7 +19,7 @@ get_header();  //wp_nav_menu?>
             <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
                 <?php do_action('foundationpress_page_before_entry_content'); ?>
               
-                <?php if(!isset($_SESSION['open'])||$_SESSION['open']==0){?>
+                <?php //if(!isset($_SESSION['open'])||$_SESSION['open']==0){?>
                 <div class="entry-content <?php echo is_front_page() ? 'home' : '';?>">
                     <?php the_content();?>
                 </div>
@@ -35,7 +35,7 @@ get_header();  //wp_nav_menu?>
                   </div>  
                  </div>
                 <?php endif; ?>
-                <?php }?>
+                <?php //}?>
                 <?php get_template_part('parts/main-menu');?>
 
             </article>

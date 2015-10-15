@@ -69,13 +69,7 @@ function grabPage(pageId) {
             idt = setTimeout(function () {
                 if ($(window).width() < 641) {
                     location.href = "/" + pageId;
-                    $.get("/setSession.php?open=0").fail(function () {
-                        alert("error");
-                    });
-                }else{
-                	$.get("/setSession.php?open=1").fail(function () {
-                        alert("error");
-                    });
+                    
                 }
             }, 10);
         };
@@ -211,9 +205,9 @@ function itemClick(itemId) {
     $(".entry-title").slideUp();
     $(".entry-content").slideUp();
     $(".news-content").slideUp();
-    $.get("/setSession.php?open=1").fail(function () {
-        alert("error");
-    });
+   // $.get("/setSession.php?open=1").fail(function () {
+   //     alert("error");
+   // });
     
     $("#" + itemId).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
     $("#" + itemId).parent().siblings().children(".menudiv").slideUp();      //close all other pages' submenu
@@ -228,11 +222,11 @@ function itemClick(itemId) {
 
 }
 function pageRefresh(itemId) {
-   // if ($(window).width() > 641) {
-   //     $(".entry-title").css("display","none");
-   //     $(".entry-content").css("display","none");
-   //     $(".news-content").css("display","none");
-    //}
+    if ($(window).width() > 641) {
+        $(".entry-title").css("display","none");
+        $(".entry-content").css("display","none");
+        $(".news-content").css("display","none");
+    }
 
     $("#" + itemId).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
     $("#" + itemId).parent().siblings().children(".menudiv").slideUp();       //close all other pages' submenu
@@ -302,6 +296,10 @@ $(document).ready(function () {
     $(".header").click(function(){$.get("/setSession.php?open=0").fail(function () {
         alert("error");
     });});
+    
+   /* $(window).on('beforeunload', function(event) {
+    		return "hello";
+    });*/
     
 });
 
