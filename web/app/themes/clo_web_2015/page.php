@@ -19,15 +19,14 @@ get_header();  //wp_nav_menu?>
             <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
                 <?php do_action('foundationpress_page_before_entry_content'); ?>
               
-                <?php //if(!isset($_SESSION['open'])||$_SESSION['open']==0){?>
+                <?php //if(is_front_page()):?>
                 <div class="entry-content <?php echo is_front_page() ? 'home' : '';?>">
-                    <?php the_content();?>
+                    <?php //the_content();?>
                 </div>
-                
-            
+                <?php //endif;?>
                 
                 <?php if(is_front_page()) :?>
-                 <div class="news-content">
+                 <div class="news-content" style="visibility: hidden;">
                   <div id="rollArea" style=" position:relative; overflow:hidden;">
                      <ul id="rollPost">
                        <?php echo get_field('input_box');?>
@@ -35,7 +34,9 @@ get_header();  //wp_nav_menu?>
                   </div>  
                  </div>
                 <?php endif; ?>
-                <?php //}?>
+                
+               
+                
                 <?php get_template_part('parts/main-menu');?>
 
             </article>
