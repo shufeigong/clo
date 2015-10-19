@@ -28,7 +28,7 @@
                     #Layer_4 .st0,
                     #Layer_5 .st0,
                     #Layer_6 .st0,
-                    #Layer_7 .st0
+                    #Layer_7 .st0,
                     #Layer_default .st0 {
                         fill : #FFFFFF;
                     }
@@ -38,7 +38,7 @@
                     #Layer_4 .st1,
                     #Layer_5 .st1,
                     #Layer_6 .st1,
-                    #Layer_7 .st1
+                    #Layer_7 .st1,
                     #Layer_default .st1 {
                         fill : #BBBDBF;
                     }
@@ -56,7 +56,7 @@
                     #Layer_4 .st0,
                     #Layer_5 .st0,
                     #Layer_6 .st0,
-                    #Layer_7 .st0
+                    #Layer_7 .st0,
                     #Layer_default .st0 {
                         fill : #0075C9;
                     }
@@ -66,7 +66,7 @@
                     #Layer_4 .st1,
                     #Layer_5 .st1,
                     #Layer_6 .st1,
-                    #Layer_7 .st1
+                    #Layer_7 .st1,
                     #Layer_default .st1 {
                         fill : #C2DAF1;
                     }
@@ -228,15 +228,15 @@
                 ul li a {
                     text-transform : none;
                 }
-
+                
+                >ul{>li{ul{display:none;}}}
+                
                 .submenu {
                     color       : #808083;
                     font-family : "TradeGothic", "Arial", "sans-serif";
                     @include font-size(1.5);
-                    &:hover {
-                        color : $color-header;
-                    }
-                    //&:active{color:#BBBDBF;}
+                    &:hover{color : $color-header;}
+                    &:active{color:#BBBDBF;}
                 }
             }
         }
@@ -351,7 +351,7 @@
                     #Layer_4 .st0,
                     #Layer_5 .st0,
                     #Layer_6 .st0,
-                    #Layer_7 .st0
+                    #Layer_7 .st0,
                     #Layer_default .st0 {
                         fill : #FFFFFF;
                     }
@@ -361,7 +361,7 @@
                     #Layer_4 .st1,
                     #Layer_5 .st1,
                     #Layer_6 .st1,
-                    #Layer_7 .st1
+                    #Layer_7 .st1,
                     #Layer_default .st1 {
                         fill : #BBBDBF;
                     }
@@ -379,7 +379,7 @@
                     #Layer_4 .st0,
                     #Layer_5 .st0,
                     #Layer_6 .st0,
-                    #Layer_7 .st0
+                    #Layer_7 .st0,
                     #Layer_default .st0 {
                         fill : #0075C9;
                     }
@@ -389,7 +389,7 @@
                     #Layer_4 .st1,
                     #Layer_5 .st1,
                     #Layer_6 .st1,
-                    #Layer_7 .st1
+                    #Layer_7 .st1,
                     #Layer_default .st1 {
                         fill : #C2DAF1;
                     }
@@ -548,6 +548,8 @@
                         color : #BBBDBF;
                     }
                 }
+                
+                >ul{>li{ul{display:none;}}}
                 .submenu {
                     color       : #808083;;
                     font-family : "TradeGothic", "Arial", "sans-serif";

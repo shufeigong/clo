@@ -19,6 +19,11 @@ function pageLoad(linkSplit, basicItems) {
                 var content = response.content;
 
                 grabMenu(linkSplit[1]);   //grab submenu according to itemId
+                
+                //$([slug=location.hash.substr(1)]).nextAll("ul").css("display","block");
+                //$("[slug=sub-about-page2]").nextAll("ul").css("display","block");
+                //alert($("[slug=sub-about-page2]").html());
+                
                 $("#" + linkSplit[1]).nextAll(".contentdiv").html("<br/>");
                 $("#" + linkSplit[1]).nextAll(".contentdiv").append(content);
                 $(".entry-title").css("display","none");
@@ -31,7 +36,8 @@ function pageLoad(linkSplit, basicItems) {
                 
                 $("#" + linkSplit[1]).parents('ul').find('li.selected').removeClass('selected');
                 $("#" + linkSplit[1]).parent().addClass('selected');
-
+                 
+                
                 var idt;
                 var n = 0;
                 window.onresize = function () {
@@ -152,11 +158,11 @@ function displayMenu(itemId, menuUrl) {
             if (response.items[i].parent == itemJsonId) {
                 if (response.items[i].children.length > 0) {
                     output
-                        += '<li style="line-height:0.9; margin-bottom:15px;"><a href="#" onclick="signclick(this); return false;" class="submenu" style="width:10%;float:left;">[+]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;"  id="' + response.items[i].ID + '" class="submenu" style="margin-bottom:15px; width:90%;float:left;">' + response.items[i].title.toUpperCase() + '</a></li>';
+                        += '<li style="line-height:0.9; margin-bottom:15px;"><a href="#" onclick="signclick(this); return false;" class="submenu" style="width:10%;float:left;">[+]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', this); return false;"  id="' + response.items[i].ID + '" class="submenu" style="margin-bottom:15px; width:90%;float:left;" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title.toUpperCase() + '</a></li>';
                 }
                 else {
                     output
-                        += '<li style="margin-left:10%;line-height:0.9;margin-bottom:15px;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;"  id="' + response.items[i].ID + '" class="submenu" >' + response.items[i].title.toUpperCase() + '</a></li>';
+                        += '<li style="margin-left:10%;line-height:0.9;margin-bottom:15px;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', this); return false;"  id="' + response.items[i].ID + '" class="submenu" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title.toUpperCase() + '</a></li>';
                 }
             }
         }
@@ -167,26 +173,46 @@ function displayMenu(itemId, menuUrl) {
             if (response.items[i].parent != itemJsonId && response.items[i].parent != 0) //it means this submenu is first submenus' child or grandchild
             {
                 if (response.items[i].children.length > 0) {
-                    $('#' + response.items[i].parent).parent().append('<ul style="margin-top:15px;display:none;"><li style="line-height:0.9;"><a href="#" onclick="signclick(this); return false;" class="submenu" style="width:10%;float:left;">[+]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;" id="' + response.items[i].ID + '" class="submenu" style="margin-bottom:15px;width:90%;float:left;">' + UpperFirstLetter(response.items[i].title) + '</a></li></ul>');
+                    $('#' + response.items[i].parent).parent().append('<ul style="margin-top:15px;" slug=""><li style="line-height:0.9;"><a href="#" onclick="signclick(this); return false;" class="submenu" style="width:10%;float:left;">[+]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', this); return false;" id="' + response.items[i].ID + '" class="submenu" style="margin-bottom:15px;width:90%;float:left;" slug="'+response.items[i].url.split('/')[3]+'">' + UpperFirstLetter(response.items[i].title) + '</a></li></ul>');
                 }
                 else {
-                    $('#' + response.items[i].parent).parent().append('<ul style="margin-top:15px;display:none;"><li style="margin-left:10%;line-height:0.9;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\'); return false;"  id="' + response.items[i].ID + '" class="submenu">' + UpperFirstLetter(response.items[i].title) + '</a></li></ul>');
+                    $('#' + response.items[i].parent).parent().append('<ul style="margin-top:15px;" slug=""><li style="margin-left:10%;line-height:0.9;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', this); return false;"  id="' + response.items[i].ID + '" class="submenu" slug="'+response.items[i].url.split('/')[3]+'">' + UpperFirstLetter(response.items[i].title) + '</a></li></ul>');
                 }
             }
         }
-
+        if(location.hash.substr(1)!=""){
+        	$("[slug="+location.hash.substr(1)+"]").nextAll("ul").css("display","block");
+       
+        	$("[slug="+location.hash.substr(1)+"]").prev().html("[-]");
+        	$("[slug="+location.hash.substr(1)+"]").css("color","#0075c9");
+        	
+        	$("[slug="+location.hash.substr(1)+"]").parents("ul[slug]").css("display","block");
+        	
+        	$("[slug="+location.hash.substr(1)+"]").parents("ul[slug]").prev().prev().html("[-]");
+        	
+        	}
+        
+        //alert($("[slug=sub-about-page2]").html());
     }).fail(function () {
         alert("error");
     });
 }
 
-function change(objectId, itemId) {
+function change(objectId, itemId, thisid) {
     $.get("/wp-json/pages/" + objectId, function (response) {
 
         var content = response.content;
 
         $("#" + itemId).nextAll(".contentdiv").html("<br/>");
         $("#" + itemId).nextAll(".contentdiv").append(content);
+        
+        $(thisid).prev().html("[-]");
+        
+        $(".menudiv").find("a").css("color","");
+        $(thisid).css("color","#0075c9");//#808083;
+        
+        $(thisid).nextAll("ul").css("display","block");
+        
         window.history.pushState(null, null, "/" + itemId + "/#" + response.slug);
         changeHeight(itemId);
     }).fail(function () {
@@ -194,6 +220,7 @@ function change(objectId, itemId) {
     });
 
 }
+
 function signclick(id) {
     if (id.text == "[+]") {
         id.text = "[-]";
@@ -204,6 +231,7 @@ function signclick(id) {
         $(id).nextAll("ul").css("display","none");
     }
 }
+
 function contentToggle(id) {
     var linkSplit = location.hash.substr(2);
     if (linkSplit != '') {
