@@ -184,11 +184,12 @@ function displayMenu(itemId, menuUrl) {
         	$("[slug="+location.hash.substr(1)+"]").nextAll("ul").css("display","block");
        
         	$("[slug="+location.hash.substr(1)+"]").prev().html("[-]");
+        	
         	$("[slug="+location.hash.substr(1)+"]").css("color","#0075c9");
         	
         	$("[slug="+location.hash.substr(1)+"]").parents("ul[slug]").css("display","block");
         	
-        	$("[slug="+location.hash.substr(1)+"]").parents("ul[slug]").prev().prev().html("[-]");
+        	//$("[slug="+location.hash.substr(1)+"]").parents("ul[slug]").children("li").children("a:first").html("[-]");
         	
         	}
         
