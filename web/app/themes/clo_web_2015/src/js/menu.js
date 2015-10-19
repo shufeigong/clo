@@ -189,7 +189,8 @@ function displayMenu(itemId, menuUrl) {
         	
         	$("[slug="+location.hash.substr(1)+"]").parents("ul[slug]").css("display","block");
         	$("[slug="+location.hash.substr(1)+"]").parents("ul[slug]").siblings("ul").css("display","block");
-        	//$("[slug="+location.hash.substr(1)+"]").parents("ul[slug]").children("li").children("a:first").html("[-]");
+        	
+        	$("[slug="+location.hash.substr(1)+"]").parents("ul[slug]").parent("li").children("a:first").html("[-]");
         	
         	}
         
