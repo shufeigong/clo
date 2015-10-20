@@ -87,7 +87,7 @@ function grabPage(pageId) {
         else {
             $("#" + pageId).nextAll(".contentdiv").slideDown();
         }
-
+        //alert($("#" + pageId).parent().offset().left);
         $("#" + pageId).nextAll(".menudiv").slideDown(); //get submenu down
 
         $("#" + pageId).parents('ul').find('li.selected').removeClass('selected');
@@ -266,7 +266,7 @@ function itemClick(itemId) {
     //$.get("/setSession.php?open=1").fail(function () {
     //    alert("error");
     //});
-    
+    //alert($("#" + itemId).parent().offset().left);
     $("#" + itemId).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
     $("#" + itemId).parent().siblings().children(".menudiv").slideUp();      //close all other pages' submenu
 

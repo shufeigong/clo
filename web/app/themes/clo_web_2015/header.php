@@ -8,14 +8,6 @@
  * @subpackage FoundationPress
  * @since FoundationPress 1.0.0
  */
-
-if(!defined('PAGE1_PHP_LOADED'))
-{
-	//unset ($_SESSION['open']);
-}
-
-define('PAGE1_PHP_LOADED', true);
-
 ?>
 <!doctype html>
 <html  <?php language_attributes(); ?> >
@@ -45,7 +37,7 @@ define('PAGE1_PHP_LOADED', true);
 
 <section class="container" role="document">
 <?php do_action('foundationpress_after_header'); ?>
-<div class="row ">
+<div class="row">
 
      <?php if(is_user_logged_in()):?>
     <div class="row header login">
@@ -53,7 +45,7 @@ define('PAGE1_PHP_LOADED', true);
     <div class="row header non-login">
      <?php endif;?>
      
-       <?php //get_template_part('parts/off-canvas-menu'); ?>
+       
 	        
 	        <nav class="tab-bar show-for-small-only">
 	            <section class="right-small">
