@@ -13,26 +13,27 @@ function pageLoad(linkSplit, basicItems) {
         	pageRefresh(linkSplit[1]);
         }
         else if ($.inArray(linkSplit[1], basicItems) != -1 && location.hash != '') {
-
+        	$("#" + linkSplit[1]).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
+            $("#" + linkSplit[1]).parent().siblings().children(".menudiv").slideUp();       //close all other pages' submenu
+            grabMenu(linkSplit[1]);
+        	
             $.get("/wp-json/pages/" + location.hash.substr(1), function (response) {
 
                 var content = response.content;
 
-                grabMenu(linkSplit[1]);   //grab submenu according to itemId
-                
-                //$([slug=location.hash.substr(1)]).nextAll("ul").css("display","block");
-                //$("[slug=sub-about-page2]").nextAll("ul").css("display","block");
-                //alert($("[slug=sub-about-page2]").html());
+                //grabMenu(linkSplit[1]);   //grab submenu according to itemId
                 
                 $("#" + linkSplit[1]).nextAll(".contentdiv").html("<br/>");
                 $("#" + linkSplit[1]).nextAll(".contentdiv").append(content);
-                $(".entry-title").css("display","none");
-                $(".entry-content").css("display","none");
-                $(".news-content").css("display","none");
-                $("#" + linkSplit[1]).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
-                $("#" + linkSplit[1]).parent().siblings().children(".menudiv").slideUp();       //close all other pages' submenu
-                $("#" + linkSplit[1]).nextAll(".menudiv").slideDown(); //get submenu down
+                $(".entry-content-mobile").html(content);
+                //$(".entry-title").css("display","none");
+                //$(".entry-content").css("display","none");
+                //$(".news-content").css("display","none");
+               //$("#" + linkSplit[1]).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
+               //$("#" + linkSplit[1]).parent().siblings().children(".menudiv").slideUp();       //close all other pages' submenu
+                
                 $("#" + linkSplit[1]).nextAll(".contentdiv").slideDown("normal",changeHeight(linkSplit[1]));  //get content down
+                $("#" + linkSplit[1]).nextAll(".menudiv").slideDown(); //get submenu down
                 
                 $("#" + linkSplit[1]).parents('ul').find('li.selected').removeClass('selected');
                 $("#" + linkSplit[1]).parent().addClass('selected');
@@ -48,7 +49,8 @@ function pageLoad(linkSplit, basicItems) {
                         }
                     }, 10);
                 }
-
+               $('.slvj-link-lightbox').simpleLightboxVideo();
+                
             }).fail(function () {
                 alert("error");
             });
@@ -189,8 +191,11 @@ function displayMenu(itemId, menuUrl) {
         	
         	$("[slug="+location.hash.substr(1)+"]").parents("ul[slug]").css("display","block");
         	$("[slug="+location.hash.substr(1)+"]").parents("ul[slug]").siblings("ul").css("display","block");
+        
+        	$("[slug="+location.hash.substr(1)+"]").parents("ul[slug]").each(function(){
+        		$(this).parent("li").children("a:first").html("[-]");});
         	
-        	$("[slug="+location.hash.substr(1)+"]").parents("ul[slug]").parent("li").children("a:first").html("[-]");
+        	//parent("li").children("a:first").html("[-]");
         	
         	}
         
