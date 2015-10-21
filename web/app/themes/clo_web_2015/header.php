@@ -55,9 +55,9 @@
     
         <div class="columns large-4 medium-4 small-12 small-logo">
         <?php if(ICL_LANGUAGE_CODE=='en'): ?>
-            <a class="site-logo" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"></a>
+            <a class="site-logo" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" style="text-indent:100%;white-space:nowrap;overflow:hidden;">logo</a>
         <?php elseif(ICL_LANGUAGE_CODE=='fr'): ?>
-            <a class="site-logo-french" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"></a>
+            <a class="site-logo-french" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" style="text-indent:100%;white-space:nowrap;overflow:hidden;">frenchlogo</a>
          <?php endif;?>   
         </div>
         <div class="columns large-8 medium-4 small-8 small-utility">
