@@ -17,7 +17,13 @@ $(document).ready(function () {
     });
    
        
-    $("#gohome").click(function(){location.href="/";});
+    $("#gohome").click(function(){
+    	if($(this).html()=="HOME")
+    	   location.href="/";
+    	else
+    	   location.href="/?lang=fr";
+    
+    });
     
     if($(window).width()<641)
     	{
