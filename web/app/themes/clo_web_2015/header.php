@@ -14,6 +14,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:image" content="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/CLO_Website_Pull.jpg" />
+    
     <link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/icons/favicon.ico"
           type="image/x-icon">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_stylesheet_directory_uri(
@@ -29,6 +31,8 @@
 </head>
 <body <?php body_class(); ?>>
 <?php do_action('foundationpress_after_body'); ?>
+<a href="#entry-content" id="skipto" style="position:absolute;width:10px;left: 30px; top: 30px; border: 1px solid #357;text-indent:100%;white-space:nowrap;overflow:hidden;">Skip to content</a>
+
 
 <div class="off-canvas-wrap" data-offcanvas>
     <div class="inner-wrap">
