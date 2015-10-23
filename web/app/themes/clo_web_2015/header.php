@@ -31,7 +31,7 @@
 </head>
 <body <?php body_class(); ?>>
 <?php do_action('foundationpress_after_body'); ?>
-<a href="#entry-content" id="skipto" style="position:absolute;width:10px;left: 30px; top: 30px; border: 1px solid #357;text-indent:100%;white-space:nowrap;overflow:hidden;">Skip to content</a>
+
 
 
 <div class="off-canvas-wrap" data-offcanvas>
