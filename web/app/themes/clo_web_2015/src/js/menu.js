@@ -3,16 +3,18 @@ function pageLoad(linkSplit, basicItems) {
 	
     if (linkSplit != '') {
         if ($.inArray(linkSplit[1], basicItems) != -1 && location.hash == '') {
-        	//alert( basicItems);
+        	
         	if($(window).width() < 641){
         		$.get("/wp-json/pages/"+linkSplit[1], function(response){
             		var content =response.content;
             		$(".entry-content").html(content);
             	});
         	}
+        	
         	pageRefresh(linkSplit[1]);
         }
-        else if ($.inArray(linkSplit[1], basicItems) != -1 && location.hash != '') {
+        else if ($.inArray(linkSplit[1], basicItems) != -1 && location.hash != ''&& location.hash!='#entry-content') {
+        	//alert(location.hash);
         	$("#" + linkSplit[1]).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
             $("#" + linkSplit[1]).parent().siblings().children(".menudiv").slideUp();       //close all other pages' submenu
             grabMenu(linkSplit[1]);
@@ -131,11 +133,14 @@ function grabMenu(itemId) {
     });
     
 }
+
 function UpperFirstLetter(str) {
     return str.replace(/\b\w+\b/g, function (word) {
         return word.substring(0, 1).toUpperCase() + word.substring(1);
     });
 }
+
+
 function displayMenu(itemId, menuUrl) {
 
     $.get(menuUrl, function (response) {
@@ -175,10 +180,10 @@ function displayMenu(itemId, menuUrl) {
             if (response.items[i].parent != itemJsonId && response.items[i].parent != 0) //it means this submenu is first submenus' child or grandchild
             {
                 if (response.items[i].children.length > 0) {
-                    $('#' + response.items[i].parent).parent().append('<ul style="margin-top:15px;" slug=""><li style="line-height:1;"><a href="#" onclick="signclick(this); return false;" class="submenu" style="width:10%;float:left;">[+]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', this); return false;" id="' + response.items[i].ID + '" class="submenu" style="margin-bottom:15px;width:90%;float:left;" slug="'+response.items[i].url.split('/')[3]+'">' + UpperFirstLetter(response.items[i].title) + '</a></li></ul>');
+                    $('#' + response.items[i].parent).parent().append('<ul style="margin-top:15px;" slug=""><li style="line-height:1;"><a href="#" onclick="signclick(this); return false;" class="submenu" style="width:10%;float:left;">[+]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', this); return false;" id="' + response.items[i].ID + '" class="submenu" style="margin-bottom:15px;width:90%;float:left;text-transform:capitalize;" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title+ '</a></li></ul>');
                 }
                 else {
-                    $('#' + response.items[i].parent).parent().append('<ul style="margin-top:15px;" slug=""><li style="margin-left:10%;line-height:1;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', this); return false;"  id="' + response.items[i].ID + '" class="submenu" slug="'+response.items[i].url.split('/')[3]+'">' + UpperFirstLetter(response.items[i].title) + '</a></li></ul>');
+                    $('#' + response.items[i].parent).parent().append('<ul style="margin-top:15px;" slug=""><li style="margin-left:10%;line-height:1;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', this); return false;"  id="' + response.items[i].ID + '" class="submenu"  style="text-transform:capitalize;" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title + '</a></li></ul>');
                 }
             }
         }
@@ -326,6 +331,8 @@ function createMenu(menuUrl) {
                 location.reload();
             }
         });
+    }).fail(function () {
+        alert("error");
     });
 }
 
@@ -351,15 +358,6 @@ function init() {
 
 $(document).ready(function () {
     init();
-    
-   // $(".header").click(function(){$.get("/setSession.php?open=0").fail(function () {
-    //    alert("error");
-    //});});
-    
-   /* $(window).on('beforeunload', function(event) {
-    		return "hello";
-    });*/
-    
 });
 
 
