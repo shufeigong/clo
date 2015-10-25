@@ -14,7 +14,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:image" content="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/CLO_Website_Pull.jpg" />
+    
     
     <link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/icons/favicon.ico"
           type="image/x-icon">
@@ -26,8 +26,9 @@
           href="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/icons/apple-touch-icon-72x72-precomposed.png">
     <link rel="apple-touch-icon-precomposed"
           href="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/icons/apple-touch-icon-precomposed.png">
-
+    <meta property="og:image" content="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/CLO_Website_Pull.jpg" />
     <?php wp_head(); ?>
+    
 </head>
 <body <?php body_class(); ?>>
 <?php do_action('foundationpress_after_body'); ?>
