@@ -28,7 +28,7 @@
           href="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/icons/apple-touch-icon-precomposed.png">
     
     <?php wp_head(); ?>
-    <meta property="og:image" content="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/CLO_Website_Pull.jpg" />
+    <meta property="og:image" content="http://clo-web-2015.gotenzing.com/app/uploads/2015/10/CLO_Website_Pull.jpg" />
 </head>
 <body <?php body_class(); ?>>
 <?php do_action('foundationpress_after_body'); ?>
