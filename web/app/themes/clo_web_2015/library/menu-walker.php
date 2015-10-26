@@ -468,7 +468,7 @@ class MainMobile_Nav_walker extends Walker_Nav_Menu
 		
 		if(!empty($children)){
 		$item_output = sprintf(
-				'<a class="mobileSign">[+]</a>'."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".'%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
+				'<a class="mobileSign" href="#" onclick="return false;">[+]</a>'."&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".'%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
 				$args->before,
 				$attributes,
 				$args->link_before,
