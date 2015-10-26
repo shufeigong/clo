@@ -2,7 +2,7 @@ function pageLoad(linkSplit, basicItems) {
 	//$.cookie('the_cookie', "", { expires: -1 });
 	
     if (linkSplit != '') {
-        if ($.inArray(linkSplit[1], basicItems) != -1 && location.hash == '') {
+        if ($.inArray(linkSplit[1], basicItems) != -1 && (location.hash == ''||location.hash=='#main-content')) {
         	
         	if($(window).width() < 641){
         		$.get("/wp-json/pages/"+linkSplit[1], function(response){
@@ -13,7 +13,7 @@ function pageLoad(linkSplit, basicItems) {
         	
         	pageRefresh(linkSplit[1]);
         }
-        else if ($.inArray(linkSplit[1], basicItems) != -1 && location.hash != ''&& location.hash!='#entry-content') {
+        else if ($.inArray(linkSplit[1], basicItems) != -1 && location.hash != ''&& location.hash!='#main-content') {
         	//alert(location.hash);
         	$("#" + linkSplit[1]).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
             $("#" + linkSplit[1]).parent().siblings().children(".menudiv").slideUp();       //close all other pages' submenu
@@ -358,6 +358,7 @@ function init() {
 
 $(document).ready(function () {
     init();
+    $("#skiplinks").children("a").click(function(){return false;});
 });
 
 

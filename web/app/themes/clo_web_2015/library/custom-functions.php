@@ -71,7 +71,7 @@ function createVideoPost($post, $color){
 		break;
 	}
 	
-	$output = '<li><a class="slvj-link-lightbox" data-videoid="'.$videoId.'" data-videosite="'.$videoProvider.'"><div class="news-item has-video" style="background:'.$color.';"><div class="arrow"></div>';
+	$output = '<li><a href="#" class="slvj-link-lightbox" data-videoid="'.$videoId.'" data-videosite="'.$videoProvider.'"><div class="news-item has-video" style="background:'.$color.';"><div class="arrow"></div>';
 	
 	/*$st_time   = date(
 	 'D M d',

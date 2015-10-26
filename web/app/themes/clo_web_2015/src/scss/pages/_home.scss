@@ -1,5 +1,13 @@
 //Home page specific stylings
 @media screen and (min-width : 641px) {
+#main-content{
+	&:focus {
+	    outline:0;
+	}
+}
+
+
+
     .entry-content {
         //border:solid 1px #333;
         padding-left  : 104px;

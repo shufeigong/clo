@@ -33,8 +33,6 @@
 <body <?php body_class(); ?>>
 <?php do_action('foundationpress_after_body'); ?>
 
-
-
 <div class="off-canvas-wrap" data-offcanvas>
     <div class="inner-wrap">
        

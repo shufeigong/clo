@@ -10,7 +10,7 @@ if($_REQUEST['s']==''){header("location:/");}
 
 get_header(); ?>
 
-<div class="row">
+<div class="row" id="main-content">
 	<div class="small-12 columns" role="main">
 
 		<?php do_action( 'foundationpress_before_content' ); ?>
