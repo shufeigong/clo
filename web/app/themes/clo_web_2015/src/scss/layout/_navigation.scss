@@ -162,6 +162,8 @@
                 }
                 ul {
                     margin : 0;
+                    //list-style-type:disc;
+                    //list-style-position: inside;
                     a {
                         color           : #231F20;
                         font-family     : $font-site-bold;
@@ -171,6 +173,7 @@
                         @include font-size(1.5);
                         &:before {
                             content : '• ';
+                            margin-left:-12px;
                         }
                         > ul {
                             margin-left : 32px;
@@ -178,6 +181,7 @@
                                 @include font-size(1.5);
                                 &:before {
                                     content : '- ';
+                                    margin-left:-12px;
                                 }
                             }
                         }
@@ -198,6 +202,7 @@
                         &:before {
                             content           : counter(num) '. ';
                             counter-increment : num;
+                            margin-left:-15px;
                         }
                         > ol {
                             margin-left   : 35px;
@@ -207,6 +212,7 @@
                                 &:before {
                                     content           : counter(list, lower-alpha) ". ";
                                     counter-increment : list;
+                                    margin-left:-15px;
                                 }
                             }
                         }
@@ -485,6 +491,7 @@
                         @include font-size(1.4);
                         &:before {
                             content : '• ';
+                            margin-left:-12px;
                         }
                         > ul {
                             margin-left : 32px;
@@ -492,6 +499,7 @@
                                 @include font-size(1.4);
                                 &:before {
                                     content : '- ';
+                                    margin-left:-12px;
                                 }
                             }
                         }
@@ -512,6 +520,7 @@
                         &:before {
                             content           : counter(num) '. ';
                             counter-increment : num;
+                            margin-left:-15px;
                         }
                         > ol {
                             margin-left   : 35px;
@@ -521,6 +530,7 @@
                                 &:before {
                                     content           : counter(list, lower-alpha) ". ";
                                     counter-increment : list;
+                                    margin-left:-15px;
                                 }
                             }
                         }
@@ -774,6 +784,7 @@
                         @include font-size(1.4);
                         &:before {
                             content : '• ';
+                            margin-left:-12px;
                         }
                         > ul {
                             margin-left : 32px;
@@ -781,6 +792,7 @@
                                 @include font-size(1.4);
                                 &:before {
                                     content : '- ';
+                                    margin-left:-12px;
                                 }
                             }
                         }
@@ -801,6 +813,7 @@
                         &:before {
                             content           : counter(num) '. ';
                             counter-increment : num;
+                            margin-left:-15px;
                         }
                         > ol {
                             margin-left   : 35px;
@@ -810,6 +823,7 @@
                                 &:before {
                                     content           : counter(list, lower-alpha) ". ";
                                     counter-increment : list;
+                                    margin-left:-15px;
                                 }
                             }
                         }

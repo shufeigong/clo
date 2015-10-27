@@ -1,10 +1,11 @@
 //Home page specific stylings
+
 @media screen and (min-width : 641px) {
-#main-content{
-	&:focus {
-	    outline:0;
+	#main-content{
+		&:focus {
+		    outline:0;
+		}
 	}
-}
 
 
 
@@ -72,6 +73,7 @@
                 }
                 &:before {
                     content : '• ';
+                    margin-left:-12px;
                 }
                 > ul {
                     list-style  : none;
@@ -85,6 +87,7 @@
                         }
                         &:before {
                             content : '- ';
+                            margin-left:-12px;
                         }
                     }
                 }
@@ -111,6 +114,7 @@
                 &:before {
                     content           : counter(num) '. ';
                     counter-increment : num;
+                    margin-left:-15px;
                 }
                 > ol {
                     list-style    : none;
@@ -126,6 +130,7 @@
                         &:before {
                             content           : counter(list, lower-alpha) ". ";
                             counter-increment : list;
+                            margin-left:-15px;
                         }
                     }
                 }
@@ -296,6 +301,7 @@
                 @include font-size(1.4);
                 &:before {
                     content : '• ';
+                    margin-left:-12px;
                 }
                 > ul {
                     list-style  : none;
@@ -304,6 +310,7 @@
                         @include font-size(1.4);
                         &:before {
                             content : '- ';
+                            margin-left:-12px;
                         }
                     }
                 }
@@ -326,6 +333,7 @@
                 &:before {
                     content           : counter(num) '. ';
                     counter-increment : num;
+                    margin-left:-15px;
                 }
                 > ol {
                     list-style    : none;
@@ -336,6 +344,7 @@
                         &:before {
                             content           : counter(list, lower-alpha) ". ";
                             counter-increment : list;
+                            margin-left:-15px;
                         }
                     }
                 }
