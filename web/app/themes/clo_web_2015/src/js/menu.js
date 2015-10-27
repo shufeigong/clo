@@ -65,12 +65,25 @@ function pageLoad(linkSplit, basicItems) {
         	//alert("hello");
         }
         else if(linkSplit[1]==''){
-        	$.get("/wp-json/pages/home", function(response){
-        		var content =response.content;
-        		$(".entry-content").html(content);
-        		$(".news-content").css("visibility","visible");
-        	});
-        	//accueil
+        	if($(".menu-main-menu-container").length>0)
+        		{
+	        		$.get("/wp-json/pages/home", function(response){
+	            		var content =response.content;
+	            		$(".entry-content").html(content);
+	            		$(".news-content").css("visibility","visible");
+	            	});
+        		}
+        	else{
+        		//accueil
+            	$.get("/wp-json/pages/accueil", function(response){
+            		var content =response.content;
+            		$(".entry-content").html(content);
+            		$(".news-content").css("visibility","visible");
+            	});
+        	}
+        	
+        	
+        	
         }
     }
 }
