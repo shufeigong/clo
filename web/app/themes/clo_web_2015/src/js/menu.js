@@ -245,8 +245,8 @@ function signclick(id) {
 }
 
 function contentToggle(id) {
-    var linkSplit = location.hash.substr(2);
-    if (linkSplit != '') {
+    //var linkSplit = location.hash.substr(2);
+    //if (linkSplit != '') {
         $(id).parent().next().slideToggle();
         if (id.text == "[ + ]") {
             id.text = "[ - ]";
@@ -254,14 +254,14 @@ function contentToggle(id) {
         else {
             id.text = "[ + ]";
         }
-    } else {
-        if (id.text == "[ + ]") {
-            id.text = "[ - ]";
-        }
-        else {
-            id.text = "[ + ]";
-        }
-    }
+   // } else {
+    //    if (id.text == "[ + ]") {
+          //  id.text = "[ - ]";
+    //    }
+     //   else {
+     //       id.text = "[ + ]";
+     //   }
+    //}
 }
 
 function itemClick(itemId) {
