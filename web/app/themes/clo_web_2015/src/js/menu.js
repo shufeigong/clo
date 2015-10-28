@@ -251,7 +251,7 @@ function signclick(id) {
     if (id.text == "[+]") {
         id.text = "[–]";
         //$(id).nextAll("ul").css("display","block");
-        //$(id).nextAll("ul").css("visibility","visible");
+        //$(id).nextAll("ul").css("visibility","visible");[+] [–]
         $(id).nextAll("ul").fadeToggle("slow");
     }
     else {
