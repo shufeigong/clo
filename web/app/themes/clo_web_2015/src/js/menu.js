@@ -203,7 +203,7 @@ function displayMenu(itemId, menuUrl) {
         if(location.hash.substr(1)!=""){
         	$("[slug="+location.hash.substr(1)+"]").nextAll("ul").css("display","block");
        
-        	$("[slug="+location.hash.substr(1)+"]").prev().html("[-]");
+        	$("[slug="+location.hash.substr(1)+"]").prev().html("[–]");
         	
         	$("[slug="+location.hash.substr(1)+"]").css("color","#0075c9");
         	
@@ -211,7 +211,7 @@ function displayMenu(itemId, menuUrl) {
         	$("[slug="+location.hash.substr(1)+"]").parents("ul[slug]").siblings("ul").css("display","block");
         
         	$("[slug="+location.hash.substr(1)+"]").parents("ul[slug]").each(function(){
-        		$(this).parent("li").children("a:first").html("[-]");});
+        		$(this).parent("li").children("a:first").html("[–]");});
         	
         	//parent("li").children("a:first").html("[-]");
         	
@@ -231,7 +231,7 @@ function change(objectId, itemId, thisid) {
         $("#" + itemId).nextAll(".contentdiv").html("<br/>");
         $("#" + itemId).nextAll(".contentdiv").append(content);
         
-        $(thisid).prev().html("[-]");
+        $(thisid).prev().html("[–]");
         
         $(".menudiv").find("a").css("color","");
         $(thisid).css("color","#0075c9");//#808083;
@@ -249,13 +249,13 @@ function change(objectId, itemId, thisid) {
 
 function signclick(id) {
     if (id.text == "[+]") {
-        id.text = "[-]";
+        id.text = "[–]";
         //$(id).nextAll("ul").css("display","block");
         //$(id).nextAll("ul").css("visibility","visible");
         $(id).nextAll("ul").fadeToggle("slow");
     }
     else {
-        id.text = "[+]";
+        id.text = "[+]"; 
         //$(id).nextAll("ul").css("display","none");
         //$(id).nextAll("ul").css("visibility","hidden");
         $(id).nextAll("ul").fadeToggle("slow");
