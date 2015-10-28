@@ -39,13 +39,13 @@ function setfixed(itemId)
 
 	 /////////////header///////////////
 	 
-	 if($("#"+itemId).parent().index()==0)
-		 {
+	 //if($("#"+itemId).parent().index()==0)
+	//	 {
 		   $(".header").css({"position":"fixed", "z-index":"100", "background-color":"#fff","height":"172px"});
-		 }
-	 else{
-		 $(".header").css({"position":"fixed", "z-index":"100", "background-color":"#fff","height":"142px"});//make header area to be fixed
-	      }
+	//	 }
+	// else{
+	//	 $(".header").css({"position":"fixed", "z-index":"100", "background-color":"#fff","height":"142px"});//make header area to be fixed
+	  //    }
 	 
 	 if($(window).width()>=1000)
 		 {
@@ -140,13 +140,13 @@ function setfixedFr(itemId)
 
 	 /////////////header///////////////
 	 
-	 if($("#"+itemId).parent().index()==0)
-		 {
+	 //if($("#"+itemId).parent().index()==0)
+	//	 {
 		   $(".header").css({"position":"fixed", "z-index":"100", "background-color":"#fff","height":"172px"});
-		 }
-	 else{
-		 $(".header").css({"position":"fixed", "z-index":"100", "background-color":"#fff","height":"142px"});//make header area to be fixed
-	      }
+	//	 }
+	// else{
+	//	 $(".header").css({"position":"fixed", "z-index":"100", "background-color":"#fff","height":"142px"});//make header area to be fixed
+	//      }
 	 
 	 if($(window).width()>=1000)
 		 {
