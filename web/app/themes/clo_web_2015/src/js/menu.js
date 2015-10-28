@@ -236,7 +236,8 @@ function change(objectId, itemId, thisid) {
         $(".menudiv").find("a").css("color","");
         $(thisid).css("color","#0075c9");//#808083;
         
-        $(thisid).nextAll("ul").css("display","block");
+        //$(thisid).nextAll("ul").css("display","block");
+        $(thisid).nextAll("ul").fadeIn();
         
         window.history.pushState(null, null, "/" + itemId + "/#" + response.slug);
         changeHeight(itemId);
@@ -249,11 +250,15 @@ function change(objectId, itemId, thisid) {
 function signclick(id) {
     if (id.text == "[+]") {
         id.text = "[-]";
-        $(id).nextAll("ul").css("display","block");
+        //$(id).nextAll("ul").css("display","block");
+        //$(id).nextAll("ul").css("visibility","visible");
+        $(id).nextAll("ul").fadeToggle();
     }
     else {
         id.text = "[+]";
-        $(id).nextAll("ul").css("display","none");
+        //$(id).nextAll("ul").css("display","none");
+        //$(id).nextAll("ul").css("visibility","hidden");
+        $(id).nextAll("ul").fadeToggle();
     }
 }
 
