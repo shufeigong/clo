@@ -9,7 +9,7 @@ $(document).ready(function () {
     	$(this).nextAll(".sub-menu").slideToggle();
          
     	if ($(this).text() == "[+]") {
-            $(this).html('[-] ');
+            $(this).html('[–]');
         }
         else {
             $(this).html('[+]');
