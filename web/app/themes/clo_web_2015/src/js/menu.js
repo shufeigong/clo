@@ -178,7 +178,7 @@ function displayMenu(itemId, menuUrl) {
             if (response.items[i].parent == itemJsonId) {
                 if (response.items[i].children.length > 0) {
                     output
-                        += '<li style="line-height:1;"><a href="#" onclick="signclick(this); return false;" class="submenu" style="width:10%;float:left;">[+]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', this); return false;"  id="' + response.items[i].ID + '" class="submenu" style="width:90%;display:inline-block;" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title.toUpperCase() + '</a></li>';
+                        += '<li style="line-height:1; margin-bottom:15px;"><a href="#" onclick="signclick(this); return false;" class="submenu" style="width:10%;float:left;">[+]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', this); return false;"  id="' + response.items[i].ID + '" class="submenu" style="width:90%;display:inline-block;" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title.toUpperCase() + '</a></li>';
                 }
                 else {
                     output
