@@ -178,7 +178,7 @@ function displayMenu(itemId, menuUrl) {
             if (response.items[i].parent == itemJsonId) {
                 if (response.items[i].children.length > 0) {
                     output
-                        += '<li style="line-height:1; margin-bottom:15px;"><a href="#" onclick="signclick(this); return false;" class="submenu" style="width:10%;float:left;">[+]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', this); return false;"  id="' + response.items[i].ID + '" class="submenu" style="margin-bottom:15px; width:90%;float:left;" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title.toUpperCase() + '</a></li>';
+                        += '<li style="line-height:1; margin-bottom:15px;"><a href="#" onclick="signclick(this); return false;" class="submenu" style="width:10%;float:left;">[+]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', this); return false;"  id="' + response.items[i].ID + '" class="submenu" style="margin-bottom:15px; width:90%;display:inline-block;" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title.toUpperCase() + '</a></li>';
                 }
                 else {
                     output
@@ -193,10 +193,10 @@ function displayMenu(itemId, menuUrl) {
             if (response.items[i].parent != itemJsonId && response.items[i].parent != 0) //it means this submenu is first submenus' child or grandchild
             {
                 if (response.items[i].children.length > 0) {
-                    $('#' + response.items[i].parent).parent().append('<ul style="margin-top:15px;" slug=""><li style="line-height:1;"><a href="#" onclick="signclick(this); return false;" class="submenu" style="width:10%;float:left;">[+]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', this); return false;" id="' + response.items[i].ID + '" class="submenu" style="margin-bottom:15px;width:90%;float:left;text-transform:capitalize;" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title+ '</a></li></ul>');
+                    $('#' + response.items[i].parent).parent().append('<ul slug=""><li style="line-height:1;"><a href="#" onclick="signclick(this); return false;" class="submenu" style="width:10%;float:left;">[+]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', this); return false;" id="' + response.items[i].ID + '" class="submenu" style="margin-bottom:15px;width:90%;display:inline-block;text-transform:capitalize;" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title+ '</a></li></ul>');
                 }
                 else {
-                    $('#' + response.items[i].parent).parent().append('<ul style="margin-top:15px;" slug=""><li style="margin-left:10%;line-height:1;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', this); return false;"  id="' + response.items[i].ID + '" class="submenu"  style="text-transform:capitalize;" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title + '</a></li></ul>');
+                    $('#' + response.items[i].parent).parent().append('<ul slug=""><li style="margin-left:10%;line-height:1;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', this); return false;"  id="' + response.items[i].ID + '" class="submenu"  style="text-transform:capitalize;" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title + '</a></li></ul>');
                 }
             }
         }
@@ -237,7 +237,7 @@ function change(objectId, itemId, thisid) {
         $(thisid).css("color","#0075c9");//#808083;
         
         //$(thisid).nextAll("ul").css("display","block");
-        $(thisid).nextAll("ul").fadeIn("slow");
+        $(thisid).nextAll("ul").slideDown();
         
         window.history.pushState(null, null, "/" + itemId + "/#" + response.slug);
         changeHeight(itemId);
@@ -252,13 +252,13 @@ function signclick(id) {
         id.text = "[–]";
         //$(id).nextAll("ul").css("display","block");
         //$(id).nextAll("ul").css("visibility","visible");[+] [–]
-        $(id).nextAll("ul").fadeToggle("slow");
+        $(id).nextAll("ul").slideToggle("slow");
     }
     else {
         id.text = "[+]"; 
         //$(id).nextAll("ul").css("display","none");
         //$(id).nextAll("ul").css("visibility","hidden");
-        $(id).nextAll("ul").fadeToggle("slow");
+        $(id).nextAll("ul").slideToggle("slow");
     }
 }
 

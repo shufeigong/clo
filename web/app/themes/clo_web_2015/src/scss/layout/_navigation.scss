@@ -235,7 +235,7 @@
                     text-transform : none;
                 }
                 
-                >ul{>li:first-child{border-top:solid 1px #fff;} >li{ul{display:none;}}}
+                >ul{>li{ul{display:none;}}}
                 
                 .submenu {
                     color       : #808083;
@@ -559,7 +559,7 @@
                     }
                 }
                 
-                >ul{>li:first-child{border-top:solid 1px #fff;} >li{ul{display:none;}}}
+                >ul{ >li{ul{display:none;}}}
                 .submenu {
                     color       : #808083;;
                     font-family : "TradeGothic", "Arial", "sans-serif";
