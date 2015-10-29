@@ -248,5 +248,21 @@
         }
     }
 }
+//////////under 400px and assume 320px is minimum width we consider
+@media screen and (max-width : 399px){
+   .row .header{
+    height:165px;
+   }
 
+   .mbl-img img{
+     height:35px;
+   }
+   
+   .mobile-entry-margin{
+      margin-top:165px;
+    }
+    body{
+    min-width:320px;
+    }
+}
 
