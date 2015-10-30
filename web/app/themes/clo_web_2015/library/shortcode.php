@@ -223,5 +223,26 @@ function newsShortcodeHandler($atts)
 
 add_shortcode('news', 'newsShortcodeHandler');
 
+/////Timeline////////////
+function timeLineShortcodeHandler($atts)
+{
+	$atts =
+	shortcode_atts(
+			[
+					'title'      => 'My TimeLine',
+			],
+			$atts
+	);
+
+	$title     = $atts['title'];
+	
+	$output="<a>".$title."</a>";
+
+	return $output;
+
+}
+
+add_shortcode('timeline', 'timeLineShortcodeHandler');
+
 
 ?>
