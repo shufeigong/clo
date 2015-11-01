@@ -67,7 +67,8 @@ define('DISABLE_WP_CRON', true);
 define('DISALLOW_FILE_EDIT', true);
 define('WP_CACHE', true);
 define('WPCACHEHOME', WP_CONTENT_DIR.'/plugins/wp-super-cache/');
-
+set_time_limit( 60 );
+define('WP_MEMORY_LIMIT', '96M');
 /**
  * Bootstrap WordPress
  */
