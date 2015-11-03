@@ -1,8 +1,7 @@
 function pageLoad(linkSplit, basicItems) {
-	//$.cookie('the_cookie', "", { expires: -1 });
 	
     if (linkSplit != '') {
-        if ($.inArray(linkSplit[1], basicItems) != -1 && (location.hash == ''||location.hash=='#main-content')) {
+        if ($.inArray(linkSplit[1], basicItems) != -1 && (location.hash == ''||location.hash=='#main-content')) {//basic item, hash is empty or main-content
         	
         	if($(window).width() < 641){
         		$.get("/wp-json/pages/"+linkSplit[1], function(response){
@@ -13,8 +12,8 @@ function pageLoad(linkSplit, basicItems) {
         	
         	pageRefresh(linkSplit[1]);
         }
-        else if ($.inArray(linkSplit[1], basicItems) != -1 && location.hash != ''&& location.hash!='#main-content') {
-        	//alert(location.hash);
+        else if ($.inArray(linkSplit[1], basicItems) != -1 && location.hash != ''&& location.hash!='#main-content') {//not basic item, is subitem in side menu
+        	
         	$("#" + linkSplit[1]).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
             $("#" + linkSplit[1]).parent().siblings().children(".menudiv").slideUp();       //close all other pages' submenu
             grabMenu(linkSplit[1]);
@@ -22,17 +21,11 @@ function pageLoad(linkSplit, basicItems) {
             $.get("/wp-json/pages/" + location.hash.substr(1), function (response) {
 
                 var content = response.content;
-
-                //grabMenu(linkSplit[1]);   //grab submenu according to itemId
                 
-                $("#" + linkSplit[1]).nextAll(".contentdiv").html("<br/>");
-                $("#" + linkSplit[1]).nextAll(".contentdiv").append(content);
+                $("#" + linkSplit[1]).nextAll(".contentdiv").children(".textdiv").html(content);
+                
                 $(".entry-content-mobile").html(content);
-                //$(".entry-title").css("display","none");
-                //$(".entry-content").css("display","none");
-                //$(".news-content").css("display","none");
-               //$("#" + linkSplit[1]).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
-               //$("#" + linkSplit[1]).parent().siblings().children(".menudiv").slideUp();       //close all other pages' submenu
+                
                 
                 $("#" + linkSplit[1]).nextAll(".contentdiv").slideDown("normal",changeHeight(linkSplit[1]));  //get content down
                 $("#" + linkSplit[1]).nextAll(".menudiv").slideDown(); //get submenu down
@@ -57,14 +50,14 @@ function pageLoad(linkSplit, basicItems) {
                 alert("error");
             });
         }
-        else if(linkSplit[1]!='' && $.inArray(linkSplit[1], basicItems) == -1 && location.hash == ''){
+        else if(linkSplit[1]!='' && $.inArray(linkSplit[1], basicItems) == -1 && location.hash == ''){//utility menu item
         	$.get("/wp-json/pages/"+linkSplit[1], function(response){
         		var content =response.content;
         		$(".entry-content").html(content);
         	});
-        	//alert("hello");
+        	
         }
-        else if(linkSplit[1]==''){
+        else if(linkSplit[1]==''){//home page, no /
         	if($(".menu-main-menu-container").length>0)
         		{
 	        		$.get("/wp-json/pages/home", function(response){
@@ -93,8 +86,11 @@ function grabPage(pageId) {
 
         var content = response.content;
 
-        $("#" + pageId).nextAll(".contentdiv").html("<br/>");
-        $("#" + pageId).nextAll(".contentdiv").append(content);
+        //$("#" + pageId).nextAll(".contentdiv").html("<br/>");
+        $("#" + pageId).nextAll(".contentdiv").children(".breaddiv").html('<div class="basic"><a href="#" onclick="itemClick(\''+pageId+'\'); return false;" class="breaditem" >'+response.title+'</a></div><div class="rest"></div>');//create the first level breadcrumb menu
+        $("#" + pageId).nextAll(".contentdiv").children(".textdiv").html(content);
+        
+        //$("#" + pageId).nextAll(".contentdiv").append(content);
         $(".entry-content-mobile").html(content);
         if ($(window).width() > 640) {
             $("#" + pageId).nextAll(".contentdiv").slideDown("normal", changeHeight(pageId));
@@ -102,7 +98,7 @@ function grabPage(pageId) {
         else {
             $("#" + pageId).nextAll(".contentdiv").slideDown();
         }
-        //alert($("#" + pageId).parent().offset().left);
+       
         $("#" + pageId).nextAll(".menudiv").slideDown(); //get submenu down
 
         $("#" + pageId).parents('ul').find('li.selected').removeClass('selected');
@@ -147,13 +143,6 @@ function grabMenu(itemId) {
     
 }
 
-function UpperFirstLetter(str) {
-    return str.replace(/\b\w+\b/g, function (word) {
-        return word.substring(0, 1).toUpperCase() + word.substring(1);
-    });
-}
-
-
 function displayMenu(itemId, menuUrl) {
 
     $.get(menuUrl, function (response) {
@@ -178,11 +167,11 @@ function displayMenu(itemId, menuUrl) {
             if (response.items[i].parent == itemJsonId) {
                 if (response.items[i].children.length > 0) {
                     output
-                        += '<li style="line-height:1; margin-bottom:15px;"><a href="#" onclick="signclick(this); return false;" class="submenu" style="width:10%;float:left;">[+]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', this); return false;"  id="' + response.items[i].ID + '" class="submenu" style="width:90%;display:inline-block;" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title.toUpperCase() + '</a></li>';
+                        += '<li style="line-height:1; margin-bottom:15px;"><a href="#" onclick="signclick(this); return false;" class="submenu" style="width:10%;float:left;">[+]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', '+response.items[i].ID+'); return false;"  id="' + response.items[i].ID + '" class="submenu" style="width:90%;display:inline-block;" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title.toUpperCase() + '</a></li>';
                 }
                 else {
                     output
-                        += '<li style="margin-left:10%;line-height:1;margin-bottom:15px;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', this); return false;"  id="' + response.items[i].ID + '" class="submenu" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title.toUpperCase() + '</a></li>';
+                        += '<li style="margin-left:10%;line-height:1;margin-bottom:15px;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', '+response.items[i].ID+'); return false;"  id="' + response.items[i].ID + '" class="submenu" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title.toUpperCase() + '</a></li>';
                 }
             }
         }
@@ -193,10 +182,10 @@ function displayMenu(itemId, menuUrl) {
             if (response.items[i].parent != itemJsonId && response.items[i].parent != 0) //it means this submenu is first submenus' child or grandchild
             {
                 if (response.items[i].children.length > 0) {
-                    $('#' + response.items[i].parent).parent().append('<ul style="margin-top:15px;" slug=""><li style="line-height:1;"><a href="#" onclick="signclick(this); return false;" class="submenu" style="width:10%;float:left;">[+]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', this); return false;" id="' + response.items[i].ID + '" class="submenu" style="width:90%;display:inline-block;text-transform:capitalize;" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title+ '</a></li></ul>');
+                    $('#' + response.items[i].parent).parent().append('<ul style="margin-top:15px;" slug="0"><li style="line-height:1;"><a href="#" onclick="signclick(this); return false;" class="submenu" style="width:10%;float:left;">[+]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', '+response.items[i].ID+'); return false;" id="' + response.items[i].ID + '" class="submenu" style="width:90%;display:inline-block;text-transform:capitalize;" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title+ '</a></li></ul>');
                 }
                 else {
-                    $('#' + response.items[i].parent).parent().append('<ul style="margin-top:15px;" slug=""><li style="margin-left:10%;line-height:1;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', this); return false;"  id="' + response.items[i].ID + '" class="submenu"  style="text-transform:capitalize;" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title + '</a></li></ul>');
+                    $('#' + response.items[i].parent).parent().append('<ul style="margin-top:15px;" slug="0"><li style="margin-left:10%;line-height:1;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', '+response.items[i].ID+'); return false;"  id="' + response.items[i].ID + '" class="submenu"  style="text-transform:capitalize;" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title + '</a></li></ul>');
                 }
             }
         }
@@ -213,11 +202,26 @@ function displayMenu(itemId, menuUrl) {
         	$("[slug="+location.hash.substr(1)+"]").parents("ul[slug]").each(function(){
         		$(this).parent("li").children("a:first").html("[–]");});
         	
-        	//parent("li").children("a:first").html("[-]");
+      ///////create breadcrumb
+        	$("#" + itemId).nextAll(".contentdiv").children(".breaddiv").html('<div class="basic"><a href="#" onclick="itemClick(\''+itemId+'\'); return false;" class="breaditem">'+$("#"+itemId).html()+'</a></div><div class="rest"></div>');//create the first level basic layer breadcrumb menu
+        	var bread="";//create rest
+            var parentItems = new Array();
+            var parentClicks = new Array();
+            
+            $("[slug="+location.hash.substr(1)+"]").parentsUntil(".menudiv","li").each(function(){parentClicks.push($(this).children("a[slug]").attr("onclick"));});//record ancestor's onclick events
+            $("[slug="+location.hash.substr(1)+"]").parentsUntil(".menudiv","li").each(function(){parentItems.push($(this).children("a[slug]").html());}); //record ancestor's text 
+            
+            for(var i=parentItems.length-1; i>=0; i--)
+            	bread+='><a href="#" onclick="'+parentClicks[i]+'" class="breaditem">'+parentItems[i]+'</a>';
+            
+            $("#" + itemId).nextAll(".contentdiv").children(".breaddiv").children(".rest").html(bread);
+    /////////////
+        	
+      
         	
         	}
         
-        //alert($("[slug=sub-about-page2]").html());
+       // alert($(itemId).nextAll("menudiv").children("ul").children("li").children("ul").attr("slug"));
     }).fail(function () {
         alert("error");
     });
@@ -228,43 +232,52 @@ function change(objectId, itemId, thisid) {
 
         var content = response.content;
 
-        $("#" + itemId).nextAll(".contentdiv").html("<br/>");
-        $("#" + itemId).nextAll(".contentdiv").append(content);
+        //$("#" + itemId).nextAll(".contentdiv").html("<br/>");
+        //$("#" + itemId).nextAll(".contentdiv").append(content);
+        var bread="";
+        var parentItems = new Array();
+        var parentClicks = new Array();
         
-        $(thisid).prev().html("[–]");
+        $("#"+thisid).parentsUntil(".menudiv","li").each(function(){parentClicks.push($(this).children("a[slug]").attr("onclick"));});
+        $("#"+thisid).parentsUntil(".menudiv","li").each(function(){parentItems.push($(this).children("a[slug]").html());});
+        
+        for(var i=parentItems.length-1; i>=0; i--)
+        	bread+='><a href="#" onclick="'+parentClicks[i]+'" class="breaditem">'+parentItems[i]+'</a>';
+        
+        $("#" + itemId).nextAll(".contentdiv").children(".breaddiv").children(".rest").html(bread);
+       
+        $("#" + itemId).nextAll(".contentdiv").children(".textdiv").html(content);
+        
+        $("#"+thisid).prev().html("[–]");
         
         $(".menudiv").find("a").css("color","");
-        $(thisid).css("color","#0075c9");//#808083;
+        $("#"+thisid).css("color","#0075c9");
         
-        //$(thisid).nextAll("ul").css("display","block");
-        $(thisid).nextAll("ul").slideDown();
+
+        $("#"+thisid).nextAll("ul").slideDown();
         
         window.history.pushState(null, null, "/" + itemId + "/#" + response.slug);
         changeHeight(itemId);
     }).fail(function () {
         alert("error");
     });
-
 }
 
 function signclick(id) {
     if (id.text == "[+]") {
         id.text = "[–]";
-        //$(id).nextAll("ul").css("display","block");
-        //$(id).nextAll("ul").css("visibility","visible");[+] [–]
+        
         $(id).nextAll("ul").slideToggle("slow");
     }
     else {
         id.text = "[+]"; 
-        //$(id).nextAll("ul").css("display","none");
-        //$(id).nextAll("ul").css("visibility","hidden");
+        
         $(id).nextAll("ul").slideToggle("slow");
     }
 }
 
 function contentToggle(id) {
-    //var linkSplit = location.hash.substr(2);
-    //if (linkSplit != '') {
+   
         $(id).parent().next().slideToggle();
         if (id.text == "[ + ]") {
             id.text = "[ - ]";
@@ -272,24 +285,14 @@ function contentToggle(id) {
         else {
             id.text = "[ + ]";
         }
-   // } else {
-    //    if (id.text == "[ + ]") {
-          //  id.text = "[ - ]";
-    //    }
-     //   else {
-     //       id.text = "[ + ]";
-     //   }
-    //}
+   
 }
 
 function itemClick(itemId) {
     $(".entry-title").slideUp();
     $(".entry-content").slideUp();
     $(".news-content").slideUp();
-    //$.get("/setSession.php?open=1").fail(function () {
-    //    alert("error");
-    //});
-    //alert($("#" + itemId).parent().offset().left);
+    
     $("#" + itemId).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
     $("#" + itemId).parent().siblings().children(".menudiv").slideUp();      //close all other pages' submenu
 
@@ -377,6 +380,7 @@ function init() {
 $(document).ready(function () {
     init();
     $("#skiplinks").children("a").click(function(){return false;});
+    
 });
 
 

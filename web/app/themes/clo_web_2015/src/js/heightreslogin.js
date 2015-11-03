@@ -87,7 +87,8 @@ function setfixed(itemId)
  	 $("#" + itemId).parent().css("margin-top",headerHeight+(currentli+1)*20);
  	 $("#" + itemId).parent().css("margin-bottom",(lilength-currentli)*20+2);
  	 $("#" + itemId).css({"position":"fixed", "top":headerHeight+(currentli+3)*20,"z-index":"100"});  
- 	 
+ 	 $("#" + itemId).parent().children(".contentdiv").children(".breaddiv").css("margin-top","40px");
+ 	
  	 if($(window).width()>=1000)
  	 { $("#" + itemId).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+3)*20, "z-index":"100", "left":leftv, "width":widthw, "max-width":"848px","border-top":"12px solid #fff" });  
  	   $("#" + itemId).nextAll(".contentdiv").css("margin-left","11%");
@@ -187,6 +188,7 @@ function setfixedFr(itemId)
  	 $("#" + itemId).parent().css("margin-top",headerHeight+(currentli+1)*20);
  	 $("#" + itemId).parent().css("margin-bottom",(lilength-currentli)*20+2);
  	 $("#" + itemId).css({"position":"fixed", "top":headerHeight+(currentli+3)*20,"z-index":"100"});  
+ 	 $("#" + itemId).parent().children(".contentdiv").children(".breaddiv").css("margin-top","40px");
  	 
  	 if($(window).width()>=1000)
  	 { $("#" + itemId).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+3)*20, "z-index":"100", "left":leftv+2, "width":widthw, "max-width":"762px","border-top":"12px solid #fff" });  
@@ -251,6 +253,7 @@ function backHeight(itemId)
 	$("#" + itemId).parent().children(".menu-link").css({"position":"static", "top":"auto"});
 	$("#" + itemId).parent().children(".blueline").css({"position":"absolute", "top":"12px", "left":"95px", "width":"88%", "max-width":"848px", "border-top":"none"});  
 	$("#" + itemId).parent().children(".contentdiv").css("margin-left","4px");
+	$("#" + itemId).parent().children(".contentdiv").children(".breaddiv").css("margin-top","32px");
 	$("#" + itemId).parent().children(".image-link").css({"position":"absolute", "bottom":"5px", "width":"88%", "left":"95px"});
 	$("#"+itemId).parent().children(".menudiv").css({"position":"static"})
 	////unbind resize event//////
@@ -275,6 +278,7 @@ function backHeightFr(itemId)
 	$("#" + itemId).parent().children(".menu-link").css({"position":"static", "top":"auto"});
 	$("#" + itemId).parent().children(".blueline").css({"position":"absolute", "top":"12px", "left":"150px", "width":"79%", "max-width":"848px", "border-top":"none"});  
 	$("#" + itemId).parent().children(".contentdiv").css("margin-left","4px");
+	$("#" + itemId).parent().children(".contentdiv").children(".breaddiv").css("margin-top","32px");
 	$("#" + itemId).parent().children(".image-link").css({"position":"absolute", "bottom":"5px", "width":"79%", "left":"150px"});
 	$("#"+itemId).parent().children(".menudiv").css({"position":"static"})
 	////unbind resize event//////
