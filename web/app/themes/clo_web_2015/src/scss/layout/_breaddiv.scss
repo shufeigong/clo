@@ -1,0 +1,39 @@
+@media screen and (min-width: 640px){
+	.contentdiv{
+	.breaddiv{
+	       //border:solid 1px #333; 
+	       margin-top:32px;
+	       
+	      .breaditem{
+	          color           : #231F20;
+	          margin-right: 5px;
+	          @include font-size(1.0);
+	          text-decoration : none;
+	          text-transform:uppercase;
+	          font-family : $font_site-default;
+	          &:hover {
+                        color : $color-header;
+                    }
+                    &:active {
+                        color : #BBBDBF;
+                    }
+	       }
+	       
+	       
+	       
+	   .basic{
+	    display:inline-block;      
+	   }
+	   
+	   .rest{
+	     display:inline-block;
+	     .breaditem{
+	       margin-left:5px;
+	       &:last-child{color : $color-header;}
+	     }    
+	   }    
+	       
+	}
+ }	
+ 	
+}

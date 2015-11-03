@@ -11,7 +11,7 @@
             float    : none;
             position : relative;
 
-            &.selected {
+            &.selected{
                 a {
                     color : #0075C9;
                 }
@@ -341,7 +341,7 @@
             position : relative;
 
             &.selected {
-                a {
+                a:not(.breaditem) {
                     color : #0075C9;
                 }
                 .blueline {
@@ -444,7 +444,7 @@
                 margin-bottom : 8%;
                 //padding-top:  1%;
                 padding-left  : 5px;
-                a {
+                a{
                     color           : #231F20;
                     font-family     : $font-site-bold;
                     text-decoration : underline;
