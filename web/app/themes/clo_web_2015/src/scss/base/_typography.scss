@@ -30,6 +30,7 @@ h2 {
     @include font-size(1.8);
     font-family : $font-site-bold;
     margin: 21.6px 0;
+    text-transform: uppercase;
     a{
 	color:#231F20;
     @include font-size(1.8);
