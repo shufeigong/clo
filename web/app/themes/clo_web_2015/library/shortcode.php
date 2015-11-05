@@ -236,7 +236,21 @@ function timeLineShortcodeHandler($atts)
 
 	$title     = $atts['title'];
 	
-	$output="<a>".$title."</a>";
+	$output='<a class="btn_show">ShowTimeline</a>
+				
+			   <div id="timeline" style="display:none;">
+		              <ul>
+			           <li><a class="1945">1945</a></li>
+			           <li><a class="1950">1950</a></li> 
+			           <li><a class="1955">1955</a></li> 
+			           <li><a class="1960">1960</a></li> 
+			           <li><a class="1965">1965</a></li>
+			           <li><a class="1965">1970</a></li>
+			           <li><a class="1975">1975</a></li> 
+			           <li><a class="1980">1980</a></li> 
+			           <li><a class="1985">1985</a></li> 
+                     <ul>
+		        </div>';
 
 	return $output;
 

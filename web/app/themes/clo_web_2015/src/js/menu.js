@@ -22,7 +22,10 @@ function pageLoad(linkSplit, basicItems) {
 
                 var content = response.content;
                 
-                $("#" + linkSplit[1]).nextAll(".contentdiv").children(".textdiv").html(content);
+                //$("#" + linkSplit[1]).nextAll(".contentdiv").children(".textdiv").html(content);
+                
+                $("#" + linkSplit[1]).nextAll(".contentdiv").html("<br/>");
+                $("#" + linkSplit[1]).nextAll(".contentdiv").append(content);
                 
                 $(".entry-content-mobile").html(content);
                 
@@ -54,6 +57,7 @@ function pageLoad(linkSplit, basicItems) {
         	$.get("/wp-json/pages/"+linkSplit[1], function(response){
         		var content =response.content;
         		$(".entry-content").html(content);
+        		$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
         	});
         	
         }
@@ -64,6 +68,7 @@ function pageLoad(linkSplit, basicItems) {
 	            		var content =response.content;
 	            		$(".entry-content").html(content);
 	            		$(".news-content").css("visibility","visible");
+	            		$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
 	            	});
         		}
         	else{
@@ -72,6 +77,7 @@ function pageLoad(linkSplit, basicItems) {
             		var content =response.content;
             		$(".entry-content").html(content);
             		$(".news-content").css("visibility","visible");
+            		$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
             	});
         	}
         	
@@ -86,11 +92,11 @@ function grabPage(pageId) {
 
         var content = response.content;
 
-        //$("#" + pageId).nextAll(".contentdiv").html("<br/>");
-        $("#" + pageId).nextAll(".contentdiv").children(".breaddiv").html('<div class="basic"><a href="#" onclick="itemClick(\''+pageId+'\'); return false;" class="breaditem" >'+response.title+'</a></div><div class="rest"></div>');//create the first level breadcrumb menu
-        $("#" + pageId).nextAll(".contentdiv").children(".textdiv").html(content);
+        $("#" + pageId).nextAll(".contentdiv").html("<br/>");
+        //$("#" + pageId).nextAll(".contentdiv").children(".breaddiv").html('<div class="basic"><a href="#" onclick="itemClick(\''+pageId+'\'); return false;" class="breaditem" >'+response.title+'</a></div><div class="rest"></div>');//create the first level breadcrumb menu
+        //$("#" + pageId).nextAll(".contentdiv").children(".textdiv").html(content);
         
-        //$("#" + pageId).nextAll(".contentdiv").append(content);
+        $("#" + pageId).nextAll(".contentdiv").append(content);
         $(".entry-content-mobile").html(content);
         if ($(window).width() > 640) {
             $("#" + pageId).nextAll(".contentdiv").slideDown("normal", changeHeight(pageId));
@@ -118,6 +124,11 @@ function grabPage(pageId) {
 
         $('.slvj-link-lightbox').simpleLightboxVideo();
 
+        
+        $.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
+       
+ 
+        
     }).fail(function () {
         alert("error");
     });
@@ -203,18 +214,18 @@ function displayMenu(itemId, menuUrl) {
         		$(this).parent("li").children("a:first").html("[–]");});
         	
       ///////create breadcrumb
-        	$("#" + itemId).nextAll(".contentdiv").children(".breaddiv").html('<div class="basic"><a href="#" onclick="itemClick(\''+itemId+'\'); return false;" class="breaditem">'+$("#"+itemId).html()+'</a></div><div class="rest"></div>');//create the first level basic layer breadcrumb menu
-        	var bread="";//create rest
-            var parentItems = new Array();
-            var parentClicks = new Array();
+        	//$("#" + itemId).nextAll(".contentdiv").children(".breaddiv").html('<div class="basic"><a href="#" onclick="itemClick(\''+itemId+'\'); return false;" class="breaditem">'+$("#"+itemId).html()+'</a></div><div class="rest"></div>');//create the first level basic layer breadcrumb menu
+        	//var bread="";//create rest
+            //var parentItems = new Array();
+            //var parentClicks = new Array();
             
-            $("[slug="+location.hash.substr(1)+"]").parentsUntil(".menudiv","li").each(function(){parentClicks.push($(this).children("a[slug]").attr("onclick"));});//record ancestor's onclick events
-            $("[slug="+location.hash.substr(1)+"]").parentsUntil(".menudiv","li").each(function(){parentItems.push($(this).children("a[slug]").html());}); //record ancestor's text 
+            //$("[slug="+location.hash.substr(1)+"]").parentsUntil(".menudiv","li").each(function(){parentClicks.push($(this).children("a[slug]").attr("onclick"));});//record ancestor's onclick events
+            //$("[slug="+location.hash.substr(1)+"]").parentsUntil(".menudiv","li").each(function(){parentItems.push($(this).children("a[slug]").html());}); //record ancestor's text 
             
-            for(var i=parentItems.length-1; i>=0; i--)
-            	bread+='><a href="#" onclick="'+parentClicks[i]+'" class="breaditem">'+parentItems[i]+'</a>';
+            //for(var i=parentItems.length-1; i>=0; i--)
+            //	bread+='><a href="#" onclick="'+parentClicks[i]+'" class="breaditem">'+parentItems[i]+'</a>';
             
-            $("#" + itemId).nextAll(".contentdiv").children(".breaddiv").children(".rest").html(bread);
+            //$("#" + itemId).nextAll(".contentdiv").children(".breaddiv").children(".rest").html(bread);
     /////////////
         	
       
@@ -232,21 +243,21 @@ function change(objectId, itemId, thisid) {
 
         var content = response.content;
 
-        //$("#" + itemId).nextAll(".contentdiv").html("<br/>");
-        //$("#" + itemId).nextAll(".contentdiv").append(content);
-        var bread="";
-        var parentItems = new Array();
-        var parentClicks = new Array();
+        $("#" + itemId).nextAll(".contentdiv").html("<br/>");
+        $("#" + itemId).nextAll(".contentdiv").append(content);
+        //var bread="";
+        //var parentItems = new Array();
+        //var parentClicks = new Array();
         
-        $("#"+thisid).parentsUntil(".menudiv","li").each(function(){parentClicks.push($(this).children("a[slug]").attr("onclick"));});
-        $("#"+thisid).parentsUntil(".menudiv","li").each(function(){parentItems.push($(this).children("a[slug]").html());});
+        //$("#"+thisid).parentsUntil(".menudiv","li").each(function(){parentClicks.push($(this).children("a[slug]").attr("onclick"));});
+        //$("#"+thisid).parentsUntil(".menudiv","li").each(function(){parentItems.push($(this).children("a[slug]").html());});
         
-        for(var i=parentItems.length-1; i>=0; i--)
-        	bread+='><a href="#" onclick="'+parentClicks[i]+'" class="breaditem">'+parentItems[i]+'</a>';
+        //for(var i=parentItems.length-1; i>=0; i--)
+        //	bread+='><a href="#" onclick="'+parentClicks[i]+'" class="breaditem">'+parentItems[i]+'</a>';
         
-        $("#" + itemId).nextAll(".contentdiv").children(".breaddiv").children(".rest").html(bread);
+        //$("#" + itemId).nextAll(".contentdiv").children(".breaddiv").children(".rest").html(bread);
        
-        $("#" + itemId).nextAll(".contentdiv").children(".textdiv").html(content);
+        //$("#" + itemId).nextAll(".contentdiv").children(".textdiv").html(content);
         
         $("#"+thisid).prev().html("[–]");
         
@@ -257,6 +268,7 @@ function change(objectId, itemId, thisid) {
         $("#"+thisid).nextAll("ul").slideDown();
         
         window.history.pushState(null, null, "/" + itemId + "/#" + response.slug);
+        $.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
         changeHeight(itemId);
     }).fail(function () {
         alert("error");
@@ -380,7 +392,7 @@ function init() {
 $(document).ready(function () {
     init();
     $("#skiplinks").children("a").click(function(){return false;});
-    
+
 });
 
 
