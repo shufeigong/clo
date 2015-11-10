@@ -61,7 +61,8 @@ function pageLoad(linkSplit, basicItems) {
         		var content =response.content;
         		$(".entry-content").html(content);
         		//$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
-        		timeline();
+        		if($(".btn_show").length>0){timeline();} 
+        		
         	});
         	
         }
@@ -74,7 +75,7 @@ function pageLoad(linkSplit, basicItems) {
 	            		$(".news-content").css("visibility","visible");
 	            		//$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
 	            	    
-	            		timeline();
+	            		if($(".btn_show").length>0){timeline()};
 	            	    
 	            		
 	            	});
@@ -86,7 +87,7 @@ function pageLoad(linkSplit, basicItems) {
             		$(".entry-content").html(content);
             		$(".news-content").css("visibility","visible");
             		//$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
-            		timeline();
+            		if($(".btn_show").length>0){timeline()};
             	});
         	}
         	
@@ -135,7 +136,7 @@ function grabPage(pageId) {
 
         
         //$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
-        timeline();
+        if($(".btn_show").length>0){timeline()};
  
         
     }).fail(function () {
@@ -279,7 +280,7 @@ function change(objectId, itemId, thisid) {
         
         window.history.pushState(null, null, "/" + itemId + "/#" + response.slug);
         //$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
-        timeline();
+        if($(".btn_show").length>0){timeline()};
         
         //changeHeight(itemId);
         
