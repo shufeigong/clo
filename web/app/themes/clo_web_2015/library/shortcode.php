@@ -236,7 +236,71 @@ function timeLineShortcodeHandler($atts)
 
 	$title     = $atts['title'];
 	
-	$output="<a>".$title."</a>";
+	$args = [
+			'post_type'      => "timeline", /* Change with your custom post type name */
+			'posts_per_page' => -1,
+			'orderby'        => 'meta_value',
+			'order'          => 'ASC',
+			
+			'meta_query'     => [
+					[
+						'key'     => 'EventDate',
+					]
+			]
+	];
+	
+	$results = get_posts($args);
+	
+	if (count($results) > 0) {
+		
+		$timelinecontent="";
+		$uniqueyear=1944;
+		foreach ($results as $post) : setup_postdata($post);
+		
+		if($post->EventDate!=$uniqueyear){
+			$timelinecontent.='<div yearid="'.$post->EventDate.'" class="oneyear">
+				                    <div class="yeartitle">'.$post->EventDate.'</div>
+				               		<div class="yearcontent">'.$post->post_content.'</div>
+				               </div>';
+			$uniqueyear=$post->EventDate;
+		}else{
+			$timelinecontent.='<div class="oneyear">
+				                    <div class="yeartitle">'.$post->EventDate.'</div>
+				               		<div class="yearcontent">'.$post->post_content.'</div>
+				               </div>';
+		}
+		
+		
+		//$timelinecontent.='<div></div>'.$post->EventDate.$post->post_content;
+		endforeach;wp_reset_postdata();
+	}
+	
+	
+	$currentyear=date("Y");
+	
+	$yearlist="";
+	
+	for($lineyear=1945; $lineyear<$currentyear; $lineyear+=5)
+	{
+		$yearlist.='<li><div class="timemark"></div><a class="'.$lineyear.'">'.$lineyear.'</a><div class="timearrow"></div></li>';
+	}
+	
+	$yearlist.='<li><div class="timemark" style="border-left:none;"></div><a class="'.$currentyear.'" style="color:#6D6F71">Now</a><div class="timearrow"></div></li>';
+	
+	$output='<a class="btn_show">'.$title.'</a>
+				
+			   <div id="timeline" style="display:none;">
+		            <div class="timelinebox">
+				        <div class="yearlinebox">  
+			              <ul>
+				           '.$yearlist.'
+	                      </ul>
+				        </div>   		
+			           	<div class="bluebox">	
+				          '.$timelinecontent.'
+				        </div>
+			        </div>
+		        </div>';
 
 	return $output;
 

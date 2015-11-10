@@ -403,7 +403,8 @@ class Main_Nav_walker extends Walker_Nav_Menu
         
 		$output .= '</div>';
         $output.='<hr class="blueline"/>';
-		$output.='<div class="contentdiv"><div class="breaddiv"></div><div class="textdiv"></div></div>';
+        $output.='<div class="contentdiv"></div>';
+		//$output.='<div class="contentdiv"><div class="breaddiv"></div><div class="textdiv"></div></div>';
 		$output.='<div class="menudiv"><ul></ul></div>';
 		$_SESSION['order']++;
 	}
