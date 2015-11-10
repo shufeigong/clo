@@ -251,9 +251,10 @@ function change(objectId, itemId, thisid) {
     $.get("/wp-json/pages/" + objectId, function (response) {
 
         var content = response.content;
-
+        
         $("#" + itemId).nextAll(".contentdiv").html("<br/>");
         $("#" + itemId).nextAll(".contentdiv").append(content);
+        $("#" + itemId).nextAll(".contentdiv").slideDown("normal",changeHeight(itemId));  //get content down
         //var bread="";
         //var parentItems = new Array();
         //var parentClicks = new Array();
@@ -273,14 +274,14 @@ function change(objectId, itemId, thisid) {
         $(".menudiv").find("a").css("color","");
         $("#"+thisid).css("color","#0075c9");
         
-
+  
         $("#"+thisid).nextAll("ul").slideDown();
         
         window.history.pushState(null, null, "/" + itemId + "/#" + response.slug);
         //$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
         timeline();
         
-        changeHeight(itemId);
+        //changeHeight(itemId);
         
         
     }).fail(function () {
