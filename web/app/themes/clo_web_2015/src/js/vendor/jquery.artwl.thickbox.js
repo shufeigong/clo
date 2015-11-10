@@ -12,8 +12,8 @@
                                   <a id="artwl_close" href="javascript:void(0);" title="Close"></a>\
                                   <div id="artwl_showbox">\
                                       <div id="artwl_title">\
-                                          <h2>\
-                                              Title</h2>\
+                                          <h1>\
+                                              Title</h1>\
                                       </div>\
                                       <div id="artwl_message">\
                                           Content2<br />\
@@ -25,7 +25,7 @@
                 $("body").append(mask + boxcontain);
                 //$("head").append("<style type='text/css'>" + cssCode + "</style>");
                 if(options.title!=""){
-                    $("#artwl_title").html(options.title);
+                    $("#artwl_title h1").html(options.title);
                 }
                 if(options.content!=""){
                     $("#artwl_message").html(options.content);

@@ -25,7 +25,7 @@
     height:98%;
 }
 #artwl_showbox {
-    padding: 10px;
+    padding: 10px 40px 40px 40px;
     background: #FFF;
     //border-radius: 5px;
     margin: 20px;
@@ -35,8 +35,11 @@
 }
 #artwl_title {
     position: relative;
-    height: 27px;
-    border-bottom: 1px solid #999;
+    //height: 27px;
+    h1{
+       margin:15px 0;
+    }
+    margin-bottom:20px;
 }
 #artwl_close {
     position: absolute;
@@ -55,9 +58,135 @@
     padding: 10px 0px;
     overflow: hidden;
     line-height: 19px;
+    //position:relative;
+    
+    .timelinebox{
+      //border:solid 1px #333;
+      max-width:1200px;
+         .yearlinebox{
+           width:5%;
+           float:left;
+          }
+          
+    .bluebox{
+      //width:95%;
+      margin-left:71px;
+      background-color:#DCE9F7;
+      height:400px;
+      position:relative;
+      //float:left;
+      overflow-y:scroll;
+      padding-left:20px;
+      padding-top:20px;
+      
+        .oneyear{
+               margin-bottom:10px;  
+               .yeartitle{
+	               //border:solid 1px red; 
+	               float:left; 
+	               //width:5%;
+	               margin-right:5px;
+	               @include font-size(1.5);
+	               font-family: $font-site-bold;
+	               color : #0075C9;
+               }
+         
+               .yearcontent{
+                   //border:solid 1px green; 
+                   display:inline-block;
+                   width:80%;
+                   margin-left:15px;
+                   @include font-size(1.5);
+                   color:#595A5C;
+                   ul{
+                       list-style-type:none;
+                       li{ &:before{content:'• ';margin-left:-12px;}}
+                   }
+                   
+               }
+               
+               
+          }
+      
+      }
+    
+    
+    
+    }
+    
+    
+    ul{ 
+         //border:solid 1px #333;
+         //width:5%;
+        li{
+            
+		    position: relative;
+            margin-left:4px;
+            padding-left:10px;
+            @include font-size(1.5);
+            
+            //margin-bottom:10px;
+            &:before {
+                       //content : '––';
+                     }
+                     
+             .timemark{
+                        border-top:1px solid #6D6F71;
+                        border-left:1px solid #6D6F71;
+				        //border-bottom:4px solid #fff;
+				        //border-right:4px solid #ff4500;
+				        //line-height:0px;
+				        position:absolute;
+				        left:-4px;
+				        top:12px;
+				        width:10px;
+				        height:24px;
+                       }        
+                     
+             .timearrow{
+					    border-top: 15px solid #fff;
+					    border-bottom: 15px solid #fff;
+					    border-right: 15px solid #DCE9F7;
+					    position:absolute;
+					    left:52px;
+					    top:-3px;
+                        visibility:hidden;    
+                     }
+                     
+            a{
+               @include font-size(1.5);
+               font-family     : $font-site-bold;
+               color : #82BC00;
+               &:hover, &:focus {
+                    color : #0075C9;
+                }
+
+                &:active {
+                    color : #C2DAF1;
+                }
+             }
+       
+            .timeselected{
+              color : #0075C9;
+              &:hover, &:focus {color : #0075C9;}
+              &:active {color : #0075C9;}
+            }
+       
+       
+         }
+    }
 }
 
+@media screen and (max-width : 640px) {
+       
+       #artwl_message .timelinebox .bluebox .oneyear .yeartitle {
+                           float:none;    
+                           margin-left:15px;
+             }
+       
 
+
+}
 
 
 

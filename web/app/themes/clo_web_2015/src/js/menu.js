@@ -48,7 +48,10 @@ function pageLoad(linkSplit, basicItems) {
                     }, 10);
                 }
                $('.slvj-link-lightbox').simpleLightboxVideo();
-                
+               $.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
+       	       timeline(); 
+               
+               
             }).fail(function () {
                 alert("error");
             });
@@ -58,6 +61,7 @@ function pageLoad(linkSplit, basicItems) {
         		var content =response.content;
         		$(".entry-content").html(content);
         		$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
+        		timeline();
         	});
         	
         }
@@ -69,6 +73,10 @@ function pageLoad(linkSplit, basicItems) {
 	            		$(".entry-content").html(content);
 	            		$(".news-content").css("visibility","visible");
 	            		$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
+	            	    
+	            		timeline();
+	            	    
+	            		
 	            	});
         		}
         	else{
@@ -78,6 +86,7 @@ function pageLoad(linkSplit, basicItems) {
             		$(".entry-content").html(content);
             		$(".news-content").css("visibility","visible");
             		$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
+            		timeline();
             	});
         	}
         	
@@ -126,7 +135,7 @@ function grabPage(pageId) {
 
         
         $.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
-       
+        timeline();
  
         
     }).fail(function () {
@@ -268,8 +277,13 @@ function change(objectId, itemId, thisid) {
         $("#"+thisid).nextAll("ul").slideDown();
         
         window.history.pushState(null, null, "/" + itemId + "/#" + response.slug);
-        $.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
+        //$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
+        //timeline();
+        
         changeHeight(itemId);
+        $.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
+        timeline();
+        
     }).fail(function () {
         alert("error");
     });
@@ -392,7 +406,80 @@ function init() {
 $(document).ready(function () {
     init();
     $("#skiplinks").children("a").click(function(){return false;});
+    //timeline();
 
 });
+/////////////////Timeline//////////////////////
+
+function timeline()
+{
+	/////click event/////////
+	
+	$(".btn_show").click(function(){
+		
+		$(".yearlinebox li a").each(function(){
+			var el = $(this).attr('class').substr(0, 4);
+			if($("#artwl_message div[yearid="+el+"]").length>0){
+				
+				$(this).attr('topv',$("#artwl_message div[yearid="+el+"]").position().top);
+			}
+			
+		});
+		
+	});
+
+	var isclick=false;
+	
+	$(".yearlinebox li a").click(function() {
+		isclick=true;
+		var el = $(this).attr('class').substr(0, 4);
+		
+		if($("#artwl_message div[yearid="+el+"]").length>0){	
+			$('#artwl_showbox .bluebox').animate({
+	         	scrollTop: $(this).attr('topv')
+	     	}, 300, function(){isclick=false;});
+			
+			$(this).addClass("timeselected").next().css("visibility","visible").parent().siblings().children(".timearrow").css("visibility","hidden").prev().removeClass("timeselected");
+		}
+		
+ 	});
+   ////////scroll event//////
+	
+	$('#artwl_showbox .bluebox').scroll(function(){
+		
+    	var scroH = parseInt($(this).scrollTop());
+    	
+	    	$(".yearlinebox li a[topv]").each(function(){
+	    		if(scroH>=parseInt($(this).attr("topv")) && isclick==false){ 
+	        		$(this).addClass("timeselected").next().css("visibility","visible").parent().siblings().children(".timearrow").css("visibility","hidden").prev().removeClass("timeselected");
+	    		}
+	    	});
+			
+		});
+	
+	////////resize window////
+	$(window).resize(function(){
+		$(".yearlinebox li a").each(function(){
+			var el = $(this).attr('class').substr(0, 4);
+			if($("#artwl_message div[yearid="+el+"]").length>0){
+				
+				$(this).attr('topv',$("#artwl_message div[yearid="+el+"]").position().top);
+			}
+					
+		});
+		  
+		});
+}
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -25,6 +25,7 @@ get_header();  //wp_nav_menu?>
                 </div>
                 
                 
+                
                 <?php if(is_front_page()) :?>
                  <div class="news-content" style="visibility: hidden;">
                   <div id="rollArea" style=" position:relative; overflow:hidden;">
@@ -33,10 +34,10 @@ get_header();  //wp_nav_menu?>
                     </ul>
                   </div>  
                  </div>
-                <?php endif; ?>
+                <?php endif; //the_content();?>
                 
                
-                
+               
                 <?php get_template_part('parts/main-menu');?>
 
             </article>
