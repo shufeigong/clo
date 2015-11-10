@@ -118,6 +118,7 @@
     ul{ 
          //border:solid 1px #333;
          //width:5%;
+        li:first-child .timearrow{top:0;}
         li{
             
 		    position: relative;
@@ -140,7 +141,7 @@
 				        left:-4px;
 				        top:12px;
 				        width:10px;
-				        height:24px;
+				        height:25px;
                        }        
                      
              .timearrow{
@@ -152,6 +153,8 @@
 					    top:-3px;
                         visibility:hidden;    
                      }
+                     
+                     
                      
             a{
                @include font-size(1.5);
