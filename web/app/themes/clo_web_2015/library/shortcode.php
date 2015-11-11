@@ -9,8 +9,8 @@ function eventsShortcodeHandler($atts)
 					'post_type'      => ['incsub_event'],
 					'orderby'        => 'meta_value',
 					'order'          => 'DESC',
-					'posts_per_page' => 8,
-					'template'       =>'list',
+					'posts_per_page' => -1,
+					'template'       =>'block',
 					
 			],
 			$atts
@@ -60,7 +60,7 @@ function eventsShortcodeHandler($atts)
 	
 	$output='';
 	
-	if (count($results) > 0&&$template=='list') {
+	if (count($results) > 0&&$template=='block') {
 		$key=0;
 		foreach ($results as $post) : setup_postdata($post);
 		//DCE9F7 0075C9 EFF5DC 82BC00
@@ -121,8 +121,8 @@ function newsShortcodeHandler($atts)
 					'post_type'      => ['news'],
 					'orderby'        => 'meta_value',
 					'order'          => 'DESC',
-					'posts_per_page' => 8,
-					'template'       =>'list',
+					'posts_per_page' => -1,
+					'template'       =>'block',
 						
 			],
 			$atts
@@ -172,7 +172,7 @@ function newsShortcodeHandler($atts)
 
 	$output='';
     //var_dump($results);
-	if (count($results) > 0&&$template=='list') {
+	if (count($results) > 0 && $template=='block') {
 		$key=0;
 		foreach ($results as $post) : setup_postdata($post);
 		//DCE9F7 0075C9 EFF5DC 82BC00
@@ -196,7 +196,7 @@ function newsShortcodeHandler($atts)
 		endforeach;
 		wp_reset_postdata();
 
-	}else if(count($results) > 0&&$template=='video-gallery'){
+	}else if(count($results) > 0 && $template=='video-gallery'){
 		$output.='<ul class="content-videolist">';
 		foreach ($results as $post) : setup_postdata($post);
 		if(isVideoNews($post)){
@@ -307,6 +307,136 @@ function timeLineShortcodeHandler($atts)
 }
 
 add_shortcode('timeline', 'timeLineShortcodeHandler');
+
+///////////shortcode for post_list/////
+function postlistShortcodeHandler($atts)
+{
+	$atts
+            = shortcode_atts(
+            [
+                'post_type'      => ['news', 'incsub_event'],
+                'orderby'        => 'date',
+				'order'          => 'DESC',
+				'posts_per_page' => -1,
+				'template'       =>'block',
+                
+            ],
+            $atts
+        );
+	
+	$postType     = is_string($atts['post_type']) ? array_map('trim', explode(',', $atts['post_type']))
+	: $atts['post_type'];
+	//$postType     = $atts['post_type'];
+
+	
+	$orderBy      = $atts['orderby'];
+	$order        = $atts['order'];
+	$postsPerPage = $atts['posts_per_page'];
+	$template     = $atts['template'];
+	
+	$args = [
+			'post_type'      => $postType, /* Change with your custom post type name */
+			'orderby'        => $orderBy,
+			'order'          => $order,
+			'posts_per_page' => $postsPerPage,
+			'post_status'    => 'publish',
+	];
+	
+	
+	
+	
+	$results = get_posts($args);
+	
+	$colors=array("#DCE9F7","#B5D3EF","#EFF5DC","#DDEBB9");
+	
+	$output='';
+	if (count($results) > 0 && $template=='block') {
+		$key=0;
+		
+		foreach ($results as $post) : setup_postdata($post);
+		//DCE9F7 0075C9 EFF5DC 82BC00
+	    if($post->post_type=="news"){
+	    	if(isHomepageNews($post)&&isVideoNews($post))
+	    	{
+	    		if(find_video($post->post_content)!=null){
+	    			$output.=createVideoPost($post, $colors[$key%4]);$key++;
+	    		}
+	    		else{
+	    			$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
+	    		}
+	    	
+	    	}
+	    	else if(isHomepageNews($post)&&!isVideoNews($post)){
+	    	
+	    		$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
+	    	}
+	    }
+		else if($post->post_type=="incsub_event")
+		{
+			if(isHomepageEvents($post)&&isVideoEvents($post))
+			{
+				if(find_video($post->post_content)!=null){
+					$output.=createVideoPost($post, $colors[$key%4]);$key++;
+				}
+				else{
+					$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
+				}
+			
+			}
+			else if(isHomepageEvents($post)&&!isVideoEvents($post)){
+					
+				$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
+			}
+		}
+	   
+	
+		endforeach;
+		wp_reset_postdata();
+	
+	}else if(count($results) > 0 && $template=='video-gallery'){
+		$output.='<ul class="content-videolist">';
+		foreach ($results as $post) : setup_postdata($post);
+		
+		if($post->post_type=="news"){
+			if(isVideoNews($post)){
+				if(find_video($post->post_content)!=null){
+					$output.=createVideoGallery($post);
+				}
+				else{
+					$output.=createNoVideoGallery($post);
+				}
+			}
+		}
+		else if($post->post_type=="incsub_event"){
+			if(isVideoEvents($post)){
+				if(find_video($post->post_content)!=null){
+					$output.=createVideoGallery($post);
+				}
+				else{
+					$output.=createNoVideoGallery($post);
+				}
+			}
+			
+			
+			
+		}
+	
+
+		
+		endforeach;
+		wp_reset_postdata();
+		$output.='</ul>';
+	}else {
+		$output .= '<div id="events-wrap" class="block-wrap events-wrap">';
+		$output .= '<p>No Upcoming News or events Found.'.count($results).'</p>';
+		$output .= '</div>';
+	}
+	
+	return $output;
+	
+}
+
+add_shortcode('post_list', 'postlistShortcodeHandler');
 
 
 ?>
