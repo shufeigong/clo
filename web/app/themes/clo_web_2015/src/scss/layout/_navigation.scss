@@ -259,6 +259,9 @@
 
             float         : right;
             margin-bottom : 10px;
+            
+            li:first-child{a {color:#82BC00;font-family:$font-site-bold;}}
+            
             li {
                 display      : inline;
                 margin-right : 5px;
@@ -266,7 +269,9 @@
                     //border:solid 1px #333;
                     text-transform:capitalize;
                     @include font-size(1.1);
+                    //color:#82BC00;
                     color       : $color-utility-menu;
+                    
                     font-family : "TradeGothic", "Arial", "sans-serif";
 
                     &:before {
