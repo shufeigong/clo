@@ -352,7 +352,7 @@ function postlistShortcodeHandler($atts)
 	
 	$output='';
 	$key=0;
-	if (count($results) > 0 && $template=='block') {// for animated block
+	if (count($results) > 0&&$template=="block") {// for animated block
 		
 		foreach ($results as $post) : setup_postdata($post);
 		//DCE9F7 0075C9 EFF5DC 82BC00
@@ -394,7 +394,7 @@ function postlistShortcodeHandler($atts)
 		endforeach;
 		wp_reset_postdata();
 	
-	}else if(count($results) > 0 && $template=='video-gallery'){ //for video-gallery in web pages   
+	}else if(count($results) > 0 && $template=="video-gallery"){ //for video-gallery in web pages   
 		$output.='<ul class="content-videolist">';
 		foreach ($results as $post) : setup_postdata($post);
 		
@@ -424,7 +424,7 @@ function postlistShortcodeHandler($atts)
 		endforeach;
 		wp_reset_postdata();
 		$output.='</ul>';
-	}else if(count($results) > 0 && $template=='list'){
+	}else if(count($results) > 0 && $template=="list"){
 		$output.='<ul>';
 		
 		foreach ($results as $post) : setup_postdata($post);
