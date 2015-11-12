@@ -308,6 +308,7 @@ function timeLineShortcodeHandler($atts)
 
 add_shortcode('timeline', 'timeLineShortcodeHandler');
 
+
 ///////////shortcode for post_list/////
 function postlistShortcodeHandler($atts)
 {
@@ -350,12 +351,12 @@ function postlistShortcodeHandler($atts)
 	$colors=array("#DCE9F7","#B5D3EF","#EFF5DC","#DDEBB9");
 	
 	$output='';
-	if (count($results) > 0 && $template=='block') {
-		$key=0;
+	$key=0;
+	if (count($results) > 0 && $template=='block') {// for animated block
 		
 		foreach ($results as $post) : setup_postdata($post);
 		//DCE9F7 0075C9 EFF5DC 82BC00
-	    if($post->post_type=="news"){
+	    if($post->post_type=="news"||$post->post_type=="blog"){             // for animated block news and blog
 	    	if(isHomepageNews($post)&&isVideoNews($post))
 	    	{
 	    		if(find_video($post->post_content)!=null){
@@ -371,7 +372,7 @@ function postlistShortcodeHandler($atts)
 	    		$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
 	    	}
 	    }
-		else if($post->post_type=="incsub_event")
+		else if($post->post_type=="incsub_event")    // for animated block event   
 		{
 			if(isHomepageEvents($post)&&isVideoEvents($post))
 			{
@@ -393,11 +394,11 @@ function postlistShortcodeHandler($atts)
 		endforeach;
 		wp_reset_postdata();
 	
-	}else if(count($results) > 0 && $template=='video-gallery'){
+	}else if(count($results) > 0 && $template=='video-gallery'){ //for video-gallery in web pages   
 		$output.='<ul class="content-videolist">';
 		foreach ($results as $post) : setup_postdata($post);
 		
-		if($post->post_type=="news"){
+		if($post->post_type=="news"||$post->post_type=="blog"){ //for video-gallery news and block in web pages
 			if(isVideoNews($post)){
 				if(find_video($post->post_content)!=null){
 					$output.=createVideoGallery($post);
@@ -407,7 +408,7 @@ function postlistShortcodeHandler($atts)
 				}
 			}
 		}
-		else if($post->post_type=="incsub_event"){
+		else if($post->post_type=="incsub_event"){    //for video-gallery event in web pages
 			if(isVideoEvents($post)){
 				if(find_video($post->post_content)!=null){
 					$output.=createVideoGallery($post);
@@ -420,15 +421,22 @@ function postlistShortcodeHandler($atts)
 			
 			
 		}
-	
-
-		
 		endforeach;
 		wp_reset_postdata();
 		$output.='</ul>';
-	}else {
+	}else if(count($results) > 0 && $template=='list'){
+		$output.='<ul>';
+		
+		foreach ($results as $post) : setup_postdata($post);
+		     $output.='<li><a href="' . get_permalink($post->ID) . '">'.$post->post_title.'</a></li>';
+		endforeach;
+		
+		wp_reset_postdata();
+		$output.='</ul>';
+	}
+	else{
 		$output .= '<div id="events-wrap" class="block-wrap events-wrap">';
-		$output .= '<p>No Upcoming News or events Found.'.count($results).'</p>';
+		$output .= '<p>No Upcoming News or events Found.'.$template.count($results).'</p>';
 		$output .= '</div>';
 	}
 	

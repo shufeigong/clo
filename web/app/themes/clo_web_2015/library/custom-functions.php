@@ -11,7 +11,7 @@ function grab_url($text) {
     
     return $matches[0];
 }
-
+////function for judging video or homepage events
 function isVideoEvents($post){
 	
 	$query = new WP_Query( array( 'eab_events_category' => 'video' ));
@@ -32,7 +32,7 @@ function isHomepageEvents($post){
 		return false;
 }
 
-////
+////function for judge video or homepage news
 function isVideoNews($post){
     $returnvalue=false;
        	
@@ -59,7 +59,7 @@ function isHomepageNews($post){
 }
 
 
-
+///function for create video animated block 
 function createVideoPost($post, $color){
 	$videoInfo     = find_video($post->post_content);
 	
@@ -109,6 +109,7 @@ function createVideoPost($post, $color){
 	return $output;
 }
 
+///function for creating no video animated block
 function createNoVideoPost($post, $color){
 	$output= '<li><a href="' . get_permalink($post->ID) . '"><div class="news-item has-video" style="background:'.$color.';">
                         <div class="arrow"></div>';
@@ -141,6 +142,7 @@ function createNoVideoPost($post, $color){
 	return $output;
 }
 
+///function for creating video gallery
 function createVideoGallery($post){
 	$videoInfo     = find_video($post->post_content);
 	
@@ -160,6 +162,7 @@ function createVideoGallery($post){
 	
 }
 
+///function for creating no video gallery
 function createNoVideoGallery($post){
 	$output = '<li class="content-video-item"><a href="' . get_permalink($post->ID) . '" class="content-video-link" style="text-decoration:none;">';
 	$output.='<div class="content-video-box">Video Not Found</div>';

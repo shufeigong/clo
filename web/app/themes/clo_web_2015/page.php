@@ -31,7 +31,7 @@ get_header();  //wp_nav_menu?>
                   <div id="rollArea" style=" position:relative; overflow:hidden;">
                      <ul id="rollPost">
                        <?php echo get_field('input_box');?>
-                    </ul>
+                     </ul>
                   </div>  
                  </div>
                 <?php endif; //the_content();?>
