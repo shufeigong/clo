@@ -263,6 +263,8 @@
                 display      : inline;
                 margin-right : 5px;
                 a {
+                    //border:solid 1px #333;
+                    text-transform:capitalize;
                     @include font-size(1.1);
                     color       : $color-utility-menu;
                     font-family : "TradeGothic", "Arial", "sans-serif";
