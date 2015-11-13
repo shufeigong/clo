@@ -49,7 +49,7 @@ if ( ! function_exists( 'utilityMenu' ) ) {
 				'container_id'    => '',
 				'menu_class'      => 'menu',
 				'menu_id'         => '',
-				'echo'            => true,
+				'echo'            => false,
 				'fallback_cb'     => 'wp_page_menu',
 				'before'          => '',
 				'after'           => '',
@@ -68,7 +68,7 @@ if ( ! function_exists( 'utilityMenu' ) ) {
  * Main menu bar
  */
 if ( ! function_exists( 'mainMenu' ) ) {
-	function mainMenu() {
+	function mainMenu() {  //main menu in normal web page
 		wp_nav_menu(array(
 			'theme_location'  => '',
 			'menu'            => 'main-menu',
@@ -89,7 +89,7 @@ if ( ! function_exists( 'mainMenu' ) ) {
 		));
 	}
 	
-	function mainMenuMobile() {
+	function mainMenuMobile() {  //main menu in mobile side canvas
 		wp_nav_menu(array(
 				'theme_location'  => '',
 				'menu'            => 'main-menu',
@@ -109,6 +109,29 @@ if ( ! function_exists( 'mainMenu' ) ) {
 				'walker'          => new MainMobile_Nav_walker()
 		));
 	}
+	
+	function mainMenuSiteMap() {  //main menu for site map shortcode
+		return wp_nav_menu(array(
+				'theme_location'  => '',
+				'menu'            => 'main-menu',
+				'container'       => 'div',
+				'container_class' => 'mainSiteMap-menu-container',
+				'container_id'    => '',
+				'menu_class'      => 'MainMenuSiteMap',
+				'menu_id'         => '',
+				'echo'            => false,
+				'fallback_cb'     => 'wp_page_menu',
+				'before'          => '',
+				'after'           => '',
+				'link_before'     => '',
+				'link_after'      => '',
+				'items_wrap'      => '<ul class="%2$s">%3$s</ul>',
+				'depth'           => 0,
+				'walker'          => new MainSiteMap_Nav_walker()
+		));
+	}
+	
+	
 	
 	
 }

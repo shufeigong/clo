@@ -436,7 +436,7 @@ function postlistShortcodeHandler($atts)
 	}
 	else{
 		$output .= '<div id="events-wrap" class="block-wrap events-wrap">';
-		$output .= '<p>No Upcoming News or events Found.'.$template.count($results).'</p>';
+		$output .= '<p>No Upcoming News or events Found.</p>';
 		$output .= '</div>';
 	}
 	
@@ -446,5 +446,15 @@ function postlistShortcodeHandler($atts)
 
 add_shortcode('post_list', 'postlistShortcodeHandler');
 
+///////////////////////siteMap shortcode///////////
+
+
+function sitemapShortcodeHandler()
+{
+	$output=mainMenuSiteMap();
+	return $output;
+}
+
+add_shortcode('sitemap', 'sitemapShortcodeHandler');
 
 ?>

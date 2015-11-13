@@ -172,5 +172,9 @@ function createNoVideoGallery($post){
 	return $output;
 }
 
+//////function for sitmap///
+//call the menu and use our custom walker
+
+
 
 ?>

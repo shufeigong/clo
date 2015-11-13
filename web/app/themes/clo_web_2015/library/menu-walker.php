@@ -96,8 +96,8 @@ if (!class_exists('Foundationpress_Top_Bar_Walker')) :
         }
     }
 
-
-class Main_Nav_walker extends Walker_Nav_Menu
+///////////////////menu walder for main menu////////////////
+class Main_Nav_walker extends Walker_Nav_Menu //menu walker for main menu in  normal web page
 {
     
 	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
@@ -410,7 +410,7 @@ class Main_Nav_walker extends Walker_Nav_Menu
 	}
 }
 
-class MainMobile_Nav_walker extends Walker_Nav_Menu
+class MainMobile_Nav_walker extends Walker_Nav_Menu //menu walker for main mobile menu 
 {
 
 	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
@@ -495,7 +495,84 @@ class MainMobile_Nav_walker extends Walker_Nav_Menu
 	}
 }
 
-class Utility_Nav_walker extends Walker_Nav_Menu
+class MainSiteMap_Nav_walker extends Walker_Nav_Menu //menu walker for main menu site map
+{
+
+	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
+	{
+		$indent = ($depth > 0 ? str_repeat("\t", $depth) : ''); // code indent
+
+		// depth dependent classes
+		$depth_classes     = array(
+				'menu-item-depth-' . $depth
+		);
+		$depth_class_names = esc_attr(implode(' ', $depth_classes));
+
+		// passed classes
+		$classes = empty($item->classes) ? array() : (array)$item->classes;
+		// Ensure we don't add parent/ancestor styles to an item if they'e already been added to another item.
+		// This applies only to parent / ancestor items.
+		if (in_array('current-menu-parent', $classes) || in_array('current-menu-ancestor', $classes)) {
+			if (isset($this->ancestorClassesAtDepths[$depth])) {
+				$key = array_search('current-menu-parent', $classes);
+				unset($classes[$key]);
+				$key = array_search('current-menu-ancestor', $classes);
+				unset($classes[$key]);
+			}
+
+			$this->ancestorClassesAtDepths[$depth] = true;
+		}
+
+		$class_names = esc_attr(implode(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item)));
+
+		$children = get_posts(array('post_type' => 'nav_menu_item', 'nopaging' => true, 'numberposts' => 1, 'meta_key' => '_menu_item_menu_item_parent', 'meta_value' => $item->ID));
+
+		// build html
+		if(!empty($children)){
+			$output .= $indent . '<li class="' . $depth_class_names . ' ' . $class_names . ' clearfix">';
+		}
+		else{
+			$output .= $indent . '<li class="' . $depth_class_names . ' ' . $class_names . ' clearfix no-children">';
+		}
+
+		// link attributes
+		//$attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
+		$attributes = !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
+		$attributes .= !empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
+		//$attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
+		//$attributes .= ' href="#" onclick="return false"';
+		//$attributes .= ! empty( $item->title)  ? ' id="'   . esc_attr( strtolower(preg_replace("/\s|　/","",$item->title))  ) .'M"' : '';
+		//$attributes .= ! empty( $item->title)  ? ' id="'   . esc_attr( explode('/', $item->url)[count(explode('/',$item->url))-2]  ) .'"' : '';
+		//$imgid=! empty( $item->attr_title)  ? ' id="'   . esc_attr( $item->attr_title   ) .'"' : '';
+		$attributes .= ' class="menu-link ' . ($depth > 0 ? 'sub-menu-link' : 'main-menu-link') . '"';
+		//global $wpdb;
+		//$query = $wpdb->prepare("SELECT COUNT(*) FROM $wpdb->posts WHERE post_status ='publish' AND post_type='nav_menu_item' AND post_parent=%d", $item->ID);
+		//$child_count = $wpdb->get_var($query);
+
+
+
+
+		
+		$item_output = sprintf(
+				'%1$s<div%2$s>%3$s%4$s%5$s</div>%6$s',
+				$args->before,
+				$attributes,
+				$args->link_before,
+				apply_filters('the_title', $item->title, strtoupper($item->ID)),
+				$args->link_after,
+				$args->after
+		);
+	
+		
+		// build html
+		$output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+
+	}
+}
+
+
+//////////////////walker for utility menu///////////////////////
+class Utility_Nav_walker extends Walker_Nav_Menu  //menu walder for utility menu in normal web page
 {
 	function start_el(  &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		global $wp_query;
@@ -530,7 +607,7 @@ class Utility_Nav_walker extends Walker_Nav_Menu
 	}
 }
 
-class UtilityMobile_Nav_walker extends Walker_Nav_Menu
+class UtilityMobile_Nav_walker extends Walker_Nav_Menu //menu walker for utility menu in mobile web page
 {
 	function start_el(  &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		global $wp_query;
