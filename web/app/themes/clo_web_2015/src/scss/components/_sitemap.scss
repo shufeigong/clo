@@ -7,8 +7,10 @@
 		            >div:first-child{width:49%;float:left;padding-right:25px;}
 		            >div:last-child{width:49%;display:inline-block;min-height:300px;padding-right:25px;}
 		             .menu-item-depth-0{
+		                 margin-bottom:15px;
 		                 >div{
 		                       padding:10px;
+		                       text-transform:uppercase;
 		                       @include font-size(1.5);
 	                           font-family: $font-site-bold;
 	                           background-color:#C2DAF1;
@@ -25,7 +27,7 @@
 		                  }
 		                  >ul{margin-left:10px;
 		                      .menu-item-depth-2{
-		                       >div{text-transform:capitalize;color:#929497;&:before {content : '-';margin-left:-10px;}}
+		                       >div{text-transform:capitalize;color:#929497;&:before {content : '- ';margin-left:-10px;}}
 		                      }
 		                  }
 		             }
