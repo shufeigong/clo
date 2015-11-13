@@ -8,6 +8,7 @@
  */
 session_start();
 $_SESSION['order']=1;
+$_SESSION['orderSiteMap']=1;
 
 if (!class_exists('Foundationpress_Top_Bar_Walker')) :
 
@@ -529,10 +530,15 @@ class MainSiteMap_Nav_walker extends Walker_Nav_Menu //menu walker for main menu
 
 		// build html
 		if(!empty($children)){
-			$output .= $indent . '<li class="' . $depth_class_names . ' ' . $class_names . ' clearfix">';
+			if($_SESSION['orderSiteMap']==1&&$depth==0){$output .= $indent . '<div><li class="' . $depth_class_names . ' ' . $class_names . ' clearfix">';$_SESSION['orderSiteMap']++;}
+			else if($_SESSION['orderSiteMap']==3&&$depth==0){$output .= $indent . '<div><li class="' . $depth_class_names . ' ' . $class_names . ' clearfix">';$_SESSION['orderSiteMap']++;}
+			else{$output .= $indent . '<li class="' . $depth_class_names . ' ' . $class_names . ' clearfix">';if($depth==0){$_SESSION['orderSiteMap']++;}}
 		}
 		else{
-			$output .= $indent . '<li class="' . $depth_class_names . ' ' . $class_names . ' clearfix no-children">';
+			if($_SESSION['orderSiteMap']==1&&$depth==0){$output .= $indent . '<div><li class="' . $depth_class_names . ' ' . $class_names . ' clearfix no-children">';$_SESSION['orderSiteMap']++;}
+			else if($_SESSION['orderSiteMap']==3&&$depth==0){$output .= $indent . '<div><li class="' . $depth_class_names . ' ' . $class_names . ' clearfix no-children">';$_SESSION['orderSiteMap']++;}
+			else{$output .= $indent . '<li class="' . $depth_class_names . ' ' . $class_names . ' clearfix no-children">';if($depth==0){$_SESSION['orderSiteMap']++;}};
+			
 		}
 
 		// link attributes
@@ -568,6 +574,19 @@ class MainSiteMap_Nav_walker extends Walker_Nav_Menu //menu walker for main menu
 		$output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
 
 	}
+	
+function end_el( &$output, $page, $depth = 0, $args = array() ) {
+		                
+		if($_SESSION['orderSiteMap']==3&&$depth==0){
+		          $output .= "</li></div>";
+		}
+		else{
+			$output .= "</li>";
+		}
+		  
+
+     }
+	
 }
 
 

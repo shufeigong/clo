@@ -1,20 +1,21 @@
 
 @media screen and (min-width: 641px){
-	.entry-content{
+
 	    .mainSiteMap-menu-container{
 		
-		       >ul{
+		    
+		     >ul{
 		             margin:0;
-		             //list-style-type:disc;
-		             >li{
-		                border:solid 1px #333;
-		                //float:left;
+		            >div:first-child{width:49%;float:left;}
+		            >div:last-child{width:49%;display:inline-block;min-height:300px;}
+		             li{
+		                
 		                &:before {display:none;}
-		                    ul{li{&:before{display:none;}}}
+		                    ul{margin-left:10px;li{&:before{display:none;}}}
 		                }
-		           }
+		       }
 		
 		}
 	
-	}
+	
 }
