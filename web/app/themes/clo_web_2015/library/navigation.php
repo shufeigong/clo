@@ -49,7 +49,7 @@ if ( ! function_exists( 'utilityMenu' ) ) {
 				'container_id'    => '',
 				'menu_class'      => 'menu',
 				'menu_id'         => '',
-				'echo'            => false,
+				'echo'            => true,
 				'fallback_cb'     => 'wp_page_menu',
 				'before'          => '',
 				'after'           => '',
