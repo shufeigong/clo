@@ -1,13 +1,22 @@
 
-@media screen and (min-width: 641px){
-
-	    .mainSiteMap-menu-container{
+ .mainSiteMap-menu-container{
 		
 		    
 		     >ul{
-		             margin:0;
+		            
 		            >div:first-child{width:49%;float:left;}
 		            >div:last-child{width:49%;display:inline-block;min-height:300px;}
+		             .menu-item-depth-0{
+		                 >div{
+		                       //border:solid 1px #333;
+		                       @include font-size(1.5);
+	                           font-family: $font-site-bold;
+	                           background-color:#C2DAF1;
+		                     }
+		             }
+		             
+		             
+		             
 		             li{
 		                
 		                &:before {display:none;}
@@ -18,4 +27,3 @@
 		}
 	
 	
-}
