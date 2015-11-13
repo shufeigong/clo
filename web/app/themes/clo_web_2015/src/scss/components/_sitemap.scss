@@ -1,21 +1,34 @@
-
+.entry-content{
  .mainSiteMap-menu-container{
 		
 		    
 		     >ul{
 		            
-		            >div:first-child{width:49%;float:left;}
-		            >div:last-child{width:49%;display:inline-block;min-height:300px;}
+		            >div:first-child{width:49%;float:left;padding-right:25px;}
+		            >div:last-child{width:49%;display:inline-block;min-height:300px;padding-right:25px;}
 		             .menu-item-depth-0{
 		                 >div{
-		                       //border:solid 1px #333;
+		                       padding:10px;
 		                       @include font-size(1.5);
 	                           font-family: $font-site-bold;
 	                           background-color:#C2DAF1;
 		                     }
 		             }
 		             
-		             
+		             .menu-item-depth-1{
+		                  
+		                  >div{
+		                      text-transform:uppercase;
+		                      line-height:1.15;
+		                      margin:5px 0 5px 0;
+		                      &:before {content : '• ';margin-left:-10px;}
+		                  }
+		                  >ul{margin-left:10px;
+		                      .menu-item-depth-2{
+		                       >div{text-transform:capitalize;color:#929497;&:before {content : '-';margin-left:-10px;}}
+		                      }
+		                  }
+		             }
 		             
 		             li{
 		                
@@ -26,4 +39,4 @@
 		
 		}
 	
-	
+	}

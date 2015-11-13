@@ -589,6 +589,9 @@
             padding    : 0;
             //float         : right;
             //margin-bottom : 10px;
+            
+            li:first-child{a {color:#82BC00;font-family:$font-site-bold;text-transform:uppercase;}}
+            
             li {
                 display      : inline;
                 margin-right : 0;
@@ -596,7 +599,7 @@
                     @include font-size(1.0);
                     color       : $color-utility-menu;
                     font-family : "TradeGothic", "Arial", "sans-serif";
-
+                    text-transform:capitalize;
                     &:before {
                         content : '[ ';
                     }
