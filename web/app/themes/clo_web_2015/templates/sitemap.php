@@ -13,6 +13,7 @@ get_header();  //wp_nav_menu?>
               
               
                 <div class="entry-content2">
+                    <?php the_content();?>
                     <?php get_template_part('parts/sitemap');?>
                 </div>
                 
