@@ -9,7 +9,7 @@
 
 
 
-    .entry-content {
+    .entry-content, .entry-content2 {
         //border:solid 1px #333;
         padding-left  : 104px;
         margin-bottom : 100px;
@@ -251,7 +251,7 @@
 ///////////~640////////
 @media screen and (max-width : 640px) {
 
-    .entry-content {
+    .entry-content, .entry-content2{
         //border:solid 1px #333;
         //padding-left   : 104px;
         //margin-bottom: 100px;

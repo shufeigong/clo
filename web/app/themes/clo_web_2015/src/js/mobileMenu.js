@@ -1,6 +1,8 @@
 $(document).ready(function () {
-    $(".sub-menu").css("display","none");
-    
+	
+     $(".mobileMainMenu .sub-menu").css("display","none");
+
+	
     $(".mobileMainMenu").find("a").mouseenter(function(){$(this).css("color","#0075c9");});
     $(".mobileMainMenu").find("a").mouseleave(function(){$(this).css("color","#666666");});
     

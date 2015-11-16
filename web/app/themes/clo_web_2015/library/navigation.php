@@ -119,7 +119,7 @@ if ( ! function_exists( 'mainMenu' ) ) {
 				'container_id'    => '',
 				'menu_class'      => 'MainMenuSiteMap',
 				'menu_id'         => '',
-				'echo'            => false,
+				'echo'            => true,
 				'fallback_cb'     => 'wp_page_menu',
 				'before'          => '',
 				'after'           => '',

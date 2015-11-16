@@ -317,7 +317,7 @@ function contentToggle(id) {
 
 function itemClick(itemId) {
     $(".entry-title").slideUp();
-    $(".entry-content").slideUp();
+    $(".entry-content,.entry-content2").slideUp();
     $(".news-content").slideUp();
     
     $("#" + itemId).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
