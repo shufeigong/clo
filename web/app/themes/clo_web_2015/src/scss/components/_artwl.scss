@@ -118,7 +118,7 @@
     ul{ 
          //border:solid 1px #333;
          //width:5%;
-        li:first-child .timearrow{top:0;}
+        li:first-child .timearrow{top:0;visibility:visible;}
         li{
             
 		    position: relative;
