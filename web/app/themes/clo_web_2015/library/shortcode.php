@@ -254,15 +254,16 @@ function timeLineShortcodeHandler($atts)
 	if (count($results) > 0) {
 		
 		$timelinecontent="";
-		$uniqueyear=1944;
+		$uniqueyear=1945;
 		foreach ($results as $post) : setup_postdata($post);
 		
-		if($post->EventDate!=$uniqueyear){
-			$timelinecontent.='<div yearid="'.$post->EventDate.'" class="oneyear">
+		if($post->EventDate>=$uniqueyear){
+			$timelinecontent.='<div yearid="'.$uniqueyear.'" class="oneyear">
 				                    <div class="yeartitle">'.$post->EventDate.'</div>
 				               		<div class="yearcontent">'.$post->post_content.'</div>
 				               </div>';
-			$uniqueyear=$post->EventDate;
+			//$uniqueyear=$post->EventDate;
+			$uniqueyear+=5;
 		}else{
 			$timelinecontent.='<div class="oneyear">
 				                    <div class="yeartitle">'.$post->EventDate.'</div>
