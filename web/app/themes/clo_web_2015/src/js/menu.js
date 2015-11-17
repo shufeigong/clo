@@ -444,7 +444,7 @@ function timeline()
 		}
 		else{
 			isclick=false;
-			$(this).addClass("timeselected").next().css("visibility","visible").parent().siblings().children(".timearrow").css("visibility","hidden").prev().removeClass("timeselected");
+			//$(this).addClass("timeselected").next().css("visibility","visible").parent().siblings().children(".timearrow").css("visibility","hidden").prev().removeClass("timeselected");
 		}
 		
  	});

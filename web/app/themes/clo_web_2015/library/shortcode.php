@@ -248,36 +248,43 @@ function timeLineShortcodeHandler($atts)
 					]
 			]
 	];
-	
+	$currentyear=date("Y");
 	$results = get_posts($args);
 	
 	if (count($results) > 0) {
 		
 		$timelinecontent="";
 		$uniqueyear=1945;
+		$counter=0;
 		foreach ($results as $post) : setup_postdata($post);
-		
-		if($post->EventDate>=$uniqueyear){
+		++$counter;
+		if($post->EventDate>=$uniqueyear && $counter!=count($results)){
 			$timelinecontent.='<div yearid="'.$uniqueyear.'" class="oneyear">
 				                    <div class="yeartitle">'.$post->EventDate.'</div>
 				               		<div class="yearcontent">'.$post->post_content.'</div>
 				               </div>';
 			//$uniqueyear=$post->EventDate;
 			$uniqueyear+=5;
-		}else{
+		}else if($post->EventDate<$uniqueyear && $counter!=count($results)){
 			$timelinecontent.='<div class="oneyear">
 				                    <div class="yeartitle">'.$post->EventDate.'</div>
 				               		<div class="yearcontent">'.$post->post_content.'</div>
 				               </div>';
 		}
 		
+		if($counter==count($results)){
+			$timelinecontent.='<div yearid="'.$currentyear.'" class="oneyear">
+				                    <div class="yeartitle">'.$post->EventDate.'</div>
+				               		<div class="yearcontent">'.$post->post_content.'</div>
+				               </div>';
+		}
 		
 		//$timelinecontent.='<div></div>'.$post->EventDate.$post->post_content;
 		endforeach;wp_reset_postdata();
 	}
 	
 	
-	$currentyear=date("Y");
+	
 	
 	$yearlist="";
 	
