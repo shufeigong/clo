@@ -444,7 +444,6 @@ function timeline()
 		}
 		else{
 			isclick=false;
-			//$(this).addClass("timeselected").next().css("visibility","visible").parent().siblings().children(".timearrow").css("visibility","hidden").prev().removeClass("timeselected");
 		}
 		
  	});
@@ -464,6 +463,9 @@ function timeline()
 	
 	////////resize window////
 	$(window).resize(function(){
+		$('#artwl_showbox .bluebox').scrollTop(0);
+		$(".yearlinebox li .1945").addClass("timeselected").next().css("visibility","visible").parent().siblings().children(".timearrow").css("visibility","hidden").prev().removeClass("timeselected");
+		
 		$(".yearlinebox li a").each(function(){
 			var el = $(this).attr('class').substr(0, 4);
 			if($("#artwl_message div[yearid="+el+"]").length>0){
