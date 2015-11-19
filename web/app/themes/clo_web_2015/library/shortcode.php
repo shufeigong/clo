@@ -248,6 +248,8 @@ function timeLineShortcodeHandler($atts)
 					]
 			]
 	];
+	
+		
 	$currentyear=date("Y");
 	$results = get_posts($args);
 	
@@ -283,9 +285,6 @@ function timeLineShortcodeHandler($atts)
 		endforeach;wp_reset_postdata();
 	}
 	
-	
-	
-	
 	$yearlist="";
 	
 	for($lineyear=1945; $lineyear<$currentyear; $lineyear+=5)
@@ -314,8 +313,100 @@ function timeLineShortcodeHandler($atts)
 
 }
 
-add_shortcode('timeline', 'timeLineShortcodeHandler');
+function timeLineShortcodeHandlerFr($atts)
+{
+	$atts =
+	shortcode_atts(
+			[
+					'title'      => 'My TimeLine',
+			],
+			$atts
+	);
 
+	$title     = $atts['title'];
+
+	$args = [
+			'post_type'      => "timeline", /* Change with your custom post type name */
+			'posts_per_page' => -1,
+			'orderby'        => 'meta_value',
+			'order'          => 'ASC',
+				
+			'meta_query'     => [
+					[
+							'key'     => 'EventDateFr',
+					]
+			]
+	];
+
+	$currentyear=date("Y");
+	$results = get_posts($args);
+
+	if (count($results) > 0) {
+
+		$timelinecontent="";
+		$uniqueyear=1945;
+		$counter=0;
+		foreach ($results as $post) : setup_postdata($post);
+		++$counter;
+		if($post->EventDateFr>=$uniqueyear && $counter!=count($results)){
+			$timelinecontent.='<div yearid="'.$uniqueyear.'" class="oneyear">
+				                    <div class="yeartitle">'.$post->EventDateFr.'</div>
+				               		<div class="yearcontent">'.$post->post_content.'</div>
+				               </div>';
+			//$uniqueyear=$post->EventDate;
+			$uniqueyear+=5;
+		}else if($post->EventDateFr<$uniqueyear && $counter!=count($results)){
+			$timelinecontent.='<div class="oneyear">
+				                    <div class="yeartitle">'.$post->EventDateFr.'</div>
+				               		<div class="yearcontent">'.$post->post_content.'</div>
+				               </div>';
+		}
+
+		if($counter==count($results)){
+			$timelinecontent.='<div yearid="'.$currentyear.'" class="oneyear">
+				                    <div class="yeartitle">'.$post->EventDateFr.'</div>
+				               		<div class="yearcontent">'.$post->post_content.'</div>
+				               </div>';
+		}
+
+		//$timelinecontent.='<div></div>'.$post->EventDate.$post->post_content;
+		endforeach;wp_reset_postdata();
+	}
+
+
+
+
+	$yearlist="";
+
+	for($lineyear=1945; $lineyear<$currentyear; $lineyear+=5)
+	{
+		$yearlist.='<li><div class="timemark"></div><a class="'.$lineyear.'">'.$lineyear.'</a><div class="timearrow"></div></li>';
+	}
+
+	$yearlist.='<li><div class="timemark" style="border-left:none;"></div><a class="'.$currentyear.'" style="color:#6D6F71">Now</a><div class="timearrow"></div></li>';
+
+	$output='<a class="btn_show">'.$title.'</a>
+
+			   <div id="timeline" style="display:none;">
+		            <div class="timelinebox">
+				        <div class="yearlinebox">
+			              <ul>
+				           '.$yearlist.'
+	                      </ul>
+				        </div>
+			           	<div class="bluebox">
+				          '.$timelinecontent.'
+				        </div>
+			        </div>
+		        </div>';
+
+	return $output;
+
+}
+
+
+add_shortcode('timeline', 'timeLineShortcodeHandler');
+add_shortcode('timelinefr', 'timeLineShortcodeHandlerFr');
 
 ///////////shortcode for post_list/////
 function postlistShortcodeHandler($atts)
