@@ -62,7 +62,7 @@ add_action( 'admin_post_cm_actid_save_hook', 'process_cm_actid' );
 
 function process_cm_actid()
 {
-	if ( !current_user_can( 'manage_options' ) )
+	if ( !current_user_can( 'set_campaign_monitor' ) )
    {
       wp_die( 'You are not allowed to be on this page.' );
    }
