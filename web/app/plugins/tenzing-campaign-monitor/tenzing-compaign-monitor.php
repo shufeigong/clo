@@ -55,7 +55,7 @@ if( is_admin() ) {
 
 ////////////////////////////////////////////////
 function display_cm_menu() {
-	add_options_page('Set Campaign Monitor', 'Campaign Monitor Menu', 'administrator','display_cm', 'display_cm_html_page');
+	add_options_page('Set Campaign Monitor', 'Campaign Monitor Menu', 'set_campaign_monitor','display_cm', 'display_cm_html_page');
 }
 
 add_action( 'admin_post_cm_actid_save_hook', 'process_cm_actid' );
