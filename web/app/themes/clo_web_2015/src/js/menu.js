@@ -49,7 +49,7 @@ function pageLoad(linkSplit, basicItems) {
                 }
                $('.slvj-link-lightbox').simpleLightboxVideo();
                
-       	       timeline(); 
+               if($(".btn_show").length>0){timeline();} 
                
                
             }).fail(function () {
@@ -62,7 +62,7 @@ function pageLoad(linkSplit, basicItems) {
         		$(".entry-content").html(content);
         		//$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
         		if($(".btn_show").length>0){timeline();} 
-        		
+        		campaignMonitor();
         	});
         	
         }
@@ -76,7 +76,8 @@ function pageLoad(linkSplit, basicItems) {
 	            		//$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
 	            	    
 	            		if($(".btn_show").length>0){timeline()};
-	            	    
+	            		campaignMonitor();
+	       
 	            		
 	            	});
         		}
@@ -88,6 +89,7 @@ function pageLoad(linkSplit, basicItems) {
             		$(".news-content").css("visibility","visible");
             		//$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
             		if($(".btn_show").length>0){timeline()};
+            		campaignMonitor();
             	});
         	}
         	
@@ -137,7 +139,7 @@ function grabPage(pageId) {
         
         //$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
         if($(".btn_show").length>0){timeline()};
- 
+        campaignMonitor();
         
     }).fail(function () {
         alert("error");
@@ -281,7 +283,7 @@ function change(objectId, itemId, thisid) {
         window.history.pushState(null, null, "/" + itemId + "/#" + response.slug);
         //$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
         if($(".btn_show").length>0){timeline()};
-        
+        campaignMonitor();
         //changeHeight(itemId);
         
         
@@ -407,7 +409,6 @@ function init() {
 $(document).ready(function () {
     init();
     $("#skiplinks").children("a").click(function(){return false;});
-    //timeline();
 
 });
 /////////////////Timeline//////////////////////
@@ -478,8 +479,15 @@ function timeline()
 		});
 }
 
-
-
+////////////Campaign Monitor Pop///////
+function campaignMonitor()
+{
+	$('a.campaign').click(function(e) {
+	    e.preventDefault(); 
+	    var url= "/app/plugins/tenzing-campaign-monitor/campaignRetriever.php" + "?" + "campaignURL=" + $(this).data('url'); //
+	    var myWindow = window.open(url, "MsgWindow", "width=650, height=800");
+	});
+}
 
 
 
