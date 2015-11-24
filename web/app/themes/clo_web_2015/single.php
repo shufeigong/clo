@@ -32,21 +32,23 @@ get_header(); ?>
 					</div>
 				</div>
 			<?php endif; ?>
+			
 
 			<?php the_content();?>
 			
 			</div>
 			
-			<?php get_template_part('parts/main-menu');?>
+			<?php get_template_part('parts/social-list');?>
 			<footer>
 				<?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ), 'after' => '</p></nav>' ) ); ?>
 				<p><?php the_tags(); ?></p>
 			</footer>
+			
 			<?php do_action( 'foundationpress_post_before_comments' ); ?>
 			<?php comments_template(); ?>
 			<?php do_action( 'foundationpress_post_after_comments' ); ?>
-			
-			
+			<?php get_template_part('parts/main-menu');?>
+	
 		</article>
 	<?php endwhile;?>
 	<?php do_action( 'foundationpress_after_content' ); ?>

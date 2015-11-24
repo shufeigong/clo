@@ -1,0 +1,85 @@
+#respond{
+  //border:solid 1px #333;
+  h3{
+    //border:solid 1px #000;
+    @include font-size(2.1);
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif;
+    font-weight: normal;
+    color:#000;
+    line-height: 1;
+  }
+  
+  #allowed_tags{display:none;}
+  
+	  .comment-notes{
+	    //border:solid 1px red;
+	    color:#000;
+	    font-family: Arial, Helvetica, sans-serif;
+	  }
+  
+      label{
+       @include font-size(1.5);
+       color:#000;
+	   font-family: Arial, Helvetica, sans-serif;
+	   display: inline;
+      }
+  
+     .five{
+       display:inline;
+       width:220px;
+     }
+     
+     .commentbutton{
+       -webkit-appearance: push-button;
+		-webkit-rtl-ordering: logical;
+		-webkit-user-select: none;
+		background-color: rgb(192, 192, 192);
+		border-bottom-color: rgb(0, 0, 0);
+		border-bottom-style: none;
+		border-bottom-width: 0px;
+		border-image-outset: 0px;
+		border-image-repeat: stretch;
+		border-image-slice: 100%;
+		border-image-source: none;
+		border-image-width: 1;
+		border-left-color: rgb(0, 0, 0);
+		border-left-style: none;
+		border-left-width: 0px;
+		border-right-color: rgb(0, 0, 0);
+		border-right-style: none;
+		border-right-width: 0px;
+		border-top-color: rgb(0, 0, 0);
+		border-top-style: none;
+		border-top-width: 0px;
+		color: rgb(0, 0, 0);
+		cursor: default;
+		display: inline-block;
+		font-family: BlinkMacSystemFont;
+		font-size: 11px;
+		font-stretch: normal;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: normal;
+		height: 18px;
+		letter-spacing: normal;
+		line-height: normal;
+		margin-bottom: 0px;
+		margin-left: 0px;
+		margin-right: 0px;
+		margin-top: 0px;
+		padding-bottom: 3px;
+		padding-left: 8px;
+		padding-right: 8px;
+		padding-top: 2px;
+		text-align: center;
+		text-indent: 0px;
+		text-rendering: auto;
+		text-shadow: none;
+		text-transform: none;
+		width: 91.1875px;
+		word-spacing: 0px;
+		writing-mode: lr-tb;
+		-webkit-writing-mode: horizontal-tb;
+		//background-color:#fff;
+     }
+}
