@@ -24,7 +24,7 @@ get_header();  //wp_nav_menu?>
                     <?php //the_content();?>
                 </div>
                 
-                
+                <?php get_template_part('parts/social-list');?>
                 
                 <?php if(is_front_page()) :?>
                  <div class="news-content" style="visibility: hidden;">

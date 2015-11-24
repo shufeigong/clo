@@ -409,6 +409,8 @@ function init() {
 $(document).ready(function () {
     init();
     $("#skiplinks").children("a").click(function(){return false;});
+    
+    window.onload = externallinks;
 
 });
 /////////////////Timeline//////////////////////
@@ -489,8 +491,17 @@ function campaignMonitor()
 	});
 }
 
-
-
+/////////externalliks for social list////////
+function externallinks() { 
+	if (!document.getElementsByTagName) return; 
+	var anchors = document.getElementsByTagName("a"); 
+	for (var i=0; i<anchors.length; i++) { 
+	    var anchor = anchors[i]; 
+	   if (anchor.getAttribute("href") && 
+	        anchor.getAttribute("rel") == "external") 
+	      anchor.target = "_blank"; 
+	} 
+	} 
 
 
 
