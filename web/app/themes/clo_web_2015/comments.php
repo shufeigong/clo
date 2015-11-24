@@ -79,7 +79,7 @@ if ( comments_open() ) :
 		<?php if ( is_user_logged_in() ) : ?>
 		<p><?php printf( __( 'Logged in as <a href="%s/wp-admin/profile.php">%s</a>.', 'foundationpress' ), get_option( 'siteurl' ), $user_identity ); ?> <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php __( 'Log out of this account', 'foundationpress' ); ?>"><?php _e( 'Log out &raquo;', 'foundationpress' ); ?></a></p>
 		<?php else : ?>
-		
+		<?php do_action( 'wordpress_social_login' ); ?>
 		<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>
 		<p>
 			<label for="author">
