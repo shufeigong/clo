@@ -17,7 +17,7 @@ get_header();  //wp_nav_menu?>
                     <?php get_template_part('parts/sitemap');?>
                 </div>
                 
-                
+                <?php get_template_part('parts/social-list');?>
                 
                 
                 
