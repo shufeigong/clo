@@ -23,9 +23,29 @@ function isVideoEvents($post){
 	
 }
 
+function isVideofrEvents($post){
+
+	$query = new WP_Query( array( 'eab_events_category' => 'videofr' ));
+	if(in_array($post, $query->posts))
+		return true;
+	else
+		return false;
+
+
+}
+
 function isHomepageEvents($post){
 
 	$query = new WP_Query( array( 'eab_events_category' => 'homepage' ));
+	if(in_array($post, $query->posts))
+		return true;
+	else
+		return false;
+}
+
+function isHomepagefrEvents($post){
+
+	$query = new WP_Query( array( 'eab_events_category' => 'homepagefr' ));
 	if(in_array($post, $query->posts))
 		return true;
 	else
@@ -45,6 +65,18 @@ function isVideoNews($post){
 	return $returnvalue;
 }
 
+function isVideofrNews($post){
+	$returnvalue=false;
+
+	foreach (get_the_category($post) as $thiscat)
+	{
+		if($thiscat->name=="videofr")
+		{$returnvalue=true;break;}
+	}
+
+	return $returnvalue;
+}
+
 function isHomepageNews($post){
 
 	$returnvalue=false;
@@ -58,6 +90,18 @@ function isHomepageNews($post){
 	return $returnvalue;
 }
 
+function isHomepagefrNews($post){
+
+	$returnvalue=false;
+
+	foreach (get_the_category($post) as $thiscat)
+	{
+		if($thiscat->name=="homepagefr")
+		{$returnvalue=true;break;}
+	}
+
+	return $returnvalue;
+}
 
 ///function for create video animated block 
 function createVideoPost($post, $color){

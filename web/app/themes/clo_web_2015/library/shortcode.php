@@ -494,126 +494,247 @@ function postlistShortcodeHandler($atts)
 				'order'          => 'DESC',
 				'posts_per_page' => -1,
 				'template'       =>'block',
+            	'lang'           =>'en',
                 
             ],
             $atts
         );
 	
-	$postType     = is_string($atts['post_type']) ? array_map('trim', explode(',', $atts['post_type']))
-	: $atts['post_type'];
-	//$postType     = $atts['post_type'];
-
+	if($atts['lang']=='en'): ////////////////////////English version postlist////////
 	
-	$orderBy      = $atts['orderby'];
-	$order        = $atts['order'];
-	$postsPerPage = $atts['posts_per_page'];
-	$template     = $atts['template'];
+		$postType     = is_string($atts['post_type']) ? array_map('trim', explode(',', $atts['post_type']))
+		: $atts['post_type'];
+		//$postType     = $atts['post_type'];
 	
-	$args = [
-			'post_type'      => $postType, /* Change with your custom post type name */
-			'orderby'        => $orderBy,
-			'order'          => $order,
-			'posts_per_page' => $postsPerPage,
-			'post_status'    => 'publish',
-	];
-	
-	
-	
-	
-	$results = get_posts($args);
-	
-	$colors=array("#DCE9F7","#B5D3EF","#EFF5DC","#DDEBB9");
-	
-	$output='';
-	$key=0;
-	if (count($results) > 0&&$template=="block") {// for animated block
 		
-		foreach ($results as $post) : setup_postdata($post);
-		//DCE9F7 0075C9 EFF5DC 82BC00
-	    if($post->post_type=="news"||$post->post_type=="blog"){             // for animated block news and blog
-	    	if(isHomepageNews($post)&&isVideoNews($post))
-	    	{
-	    		if(find_video($post->post_content)!=null){
-	    			$output.=createVideoPost($post, $colors[$key%4]);$key++;
-	    		}
-	    		else{
-	    			$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
-	    		}
-	    	
-	    	}
-	    	else if(isHomepageNews($post)&&!isVideoNews($post)){
-	    	
-	    		$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
-	    	}
-	    }
-		else if($post->post_type=="incsub_event")    // for animated block event   
-		{
-			if(isHomepageEvents($post)&&isVideoEvents($post))
+		$orderBy      = $atts['orderby'];
+		$order        = $atts['order'];
+		$postsPerPage = $atts['posts_per_page'];
+		$template     = $atts['template'];
+		
+		$args = [
+				'post_type'      => $postType, /* Change with your custom post type name */
+				'orderby'        => $orderBy,
+				'order'          => $order,
+				'posts_per_page' => $postsPerPage,
+				'post_status'    => 'publish',
+		];
+		
+		
+		
+		
+		$results = get_posts($args);
+		
+		$colors=array("#DCE9F7","#B5D3EF","#EFF5DC","#DDEBB9");
+		
+		$output='';
+		$key=0;
+		if (count($results) > 0&&$template=="block") {// for animated block
+			
+			foreach ($results as $post) : setup_postdata($post);
+			//DCE9F7 0075C9 EFF5DC 82BC00
+		    if($post->post_type=="news"||$post->post_type=="blog"){             // for animated block news and blog
+		    	if(isHomepageNews($post)&&isVideoNews($post))
+		    	{
+		    		if(find_video($post->post_content)!=null){
+		    			$output.=createVideoPost($post, $colors[$key%4]);$key++;
+		    		}
+		    		else{
+		    			$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
+		    		}
+		    	
+		    	}
+		    	else if(isHomepageNews($post)&&!isVideoNews($post)){
+		    	
+		    		$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
+		    	}
+		    }
+			else if($post->post_type=="incsub_event")    // for animated block event   
 			{
-				if(find_video($post->post_content)!=null){
-					$output.=createVideoPost($post, $colors[$key%4]);$key++;
+				if(isHomepageEvents($post)&&isVideoEvents($post))
+				{
+					if(find_video($post->post_content)!=null){
+						$output.=createVideoPost($post, $colors[$key%4]);$key++;
+					}
+					else{
+						$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
+					}
+				
 				}
-				else{
+				else if(isHomepageEvents($post)&&!isVideoEvents($post)){
+						
 					$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
 				}
-			
 			}
-			else if(isHomepageEvents($post)&&!isVideoEvents($post)){
-					
-				$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
-			}
-		}
-	   
-	
-		endforeach;
-		wp_reset_postdata();
-	
-	}else if(count($results) > 0 && $template=="video-gallery"){ //for video-gallery in web pages   
-		$output.='<ul class="content-videolist">';
-		foreach ($results as $post) : setup_postdata($post);
+		   
 		
-		if($post->post_type=="news"||$post->post_type=="blog"){ //for video-gallery news and block in web pages
-			if(isVideoNews($post)){
-				if(find_video($post->post_content)!=null){
-					$output.=createVideoGallery($post);
-				}
-				else{
-					$output.=createNoVideoGallery($post);
+			endforeach;
+			wp_reset_postdata();
+		
+		}else if(count($results) > 0 && $template=="video-gallery"){ //for video-gallery in web pages   
+			$output.='<ul class="content-videolist">';
+			foreach ($results as $post) : setup_postdata($post);
+			
+			if($post->post_type=="news"||$post->post_type=="blog"){ //for video-gallery news and block in web pages
+				if(isVideoNews($post)){
+					if(find_video($post->post_content)!=null){
+						$output.=createVideoGallery($post);
+					}
+					else{
+						$output.=createNoVideoGallery($post);
+					}
 				}
 			}
-		}
-		else if($post->post_type=="incsub_event"){    //for video-gallery event in web pages
-			if(isVideoEvents($post)){
-				if(find_video($post->post_content)!=null){
-					$output.=createVideoGallery($post);
+			else if($post->post_type=="incsub_event"){    //for video-gallery event in web pages
+				if(isVideoEvents($post)){
+					if(find_video($post->post_content)!=null){
+						$output.=createVideoGallery($post);
+					}
+					else{
+						$output.=createNoVideoGallery($post);
+					}
 				}
-				else{
-					$output.=createNoVideoGallery($post);
-				}
+				
+				
+				
 			}
+			endforeach;
+			wp_reset_postdata();
+			$output.='</ul>';
+		}else if(count($results) > 0 && $template=="list"){
+			$output.='<ul>';
 			
+			foreach ($results as $post) : setup_postdata($post);
+			     $output.='<li><a href="' . get_permalink($post->ID) . '">'.$post->post_title.'</a></li>';
+			endforeach;
 			
-			
+			wp_reset_postdata();
+			$output.='</ul>';
 		}
-		endforeach;
-		wp_reset_postdata();
-		$output.='</ul>';
-	}else if(count($results) > 0 && $template=="list"){
-		$output.='<ul>';
-		
-		foreach ($results as $post) : setup_postdata($post);
-		     $output.='<li><a href="' . get_permalink($post->ID) . '">'.$post->post_title.'</a></li>';
-		endforeach;
-		
-		wp_reset_postdata();
-		$output.='</ul>';
-	}
-	else{
-		$output .= '<div id="events-wrap" class="block-wrap events-wrap">';
-		$output .= '<p>No Upcoming News or events Found.</p>';
-		$output .= '</div>';
-	}
+		else{
+			$output .= '<div id="events-wrap" class="block-wrap events-wrap">';
+			$output .= '<p>No Upcoming News or events Found.</p>';
+			$output .= '</div>';
+		}
+	elseif($atts['lang']=='fr')://////////French version postlist//////////
 	
+		//$output='french version postlist';
+		$postType     = is_string($atts['post_type']) ? array_map('trim', explode(',', $atts['post_type']))
+		: $atts['post_type'];
+		//$postType     = $atts['post_type'];
+		
+		
+		$orderBy      = $atts['orderby'];
+		$order        = $atts['order'];
+		$postsPerPage = $atts['posts_per_page'];
+		$template     = $atts['template'];
+		
+		$args = [
+				'post_type'      => $postType, /* Change with your custom post type name */
+				'orderby'        => $orderBy,
+				'order'          => $order,
+				'posts_per_page' => $postsPerPage,
+				'post_status'    => 'publish',
+		];
+		
+		
+		
+		
+		$results = get_posts($args);
+		
+		$colors=array("#DCE9F7","#B5D3EF","#EFF5DC","#DDEBB9");
+		
+		$output='';
+		$key=0;
+		if (count($results) > 0&&$template=="block") {// for animated block
+				
+			foreach ($results as $post) : setup_postdata($post);
+			//DCE9F7 0075C9 EFF5DC 82BC00
+			if($post->post_type=="news"||$post->post_type=="blog"){             // for animated block news and blog
+				if(isHomepagefrNews($post)&&isVideofrNews($post))
+				{
+					if(find_video($post->post_content)!=null){
+						$output.=createVideoPost($post, $colors[$key%4]);$key++;
+					}
+					else{
+						$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
+					}
+				  
+				}
+				else if(isHomepagefrNews($post)&&!isVideofrNews($post)){
+				  
+					$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
+				}
+			}
+			else if($post->post_type=="incsub_event")    // for animated block event
+			{
+				if(isHomepagefrEvents($post)&&isVideofrEvents($post))
+				{
+					if(find_video($post->post_content)!=null){
+						$output.=createVideoPost($post, $colors[$key%4]);$key++;
+					}
+					else{
+						$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
+					}
+		
+				}
+				else if(isHomepageEvents($post)&&!isVideoEvents($post)){
+		
+					$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
+				}
+			}
+			 
+		
+			endforeach;
+			wp_reset_postdata();
+		
+		}else if(count($results) > 0 && $template=="video-gallery"){ //for video-gallery in web pages
+			$output.='<ul class="content-videolist">';
+			foreach ($results as $post) : setup_postdata($post);
+				
+			if($post->post_type=="news"||$post->post_type=="blog"){ //for video-gallery news and blog in web pages
+				if(isVideofrNews($post)){
+					if(find_video($post->post_content)!=null){
+						$output.=createVideoGallery($post);
+					}
+					else{
+						$output.=createNoVideoGallery($post);
+					}
+				}
+			}
+			else if($post->post_type=="incsub_event"){    //for video-gallery event in web pages
+				if(isVideofrEvents($post)){
+					if(find_video($post->post_content)!=null){
+						$output.=createVideoGallery($post);
+					}
+					else{
+						$output.=createNoVideoGallery($post);
+					}
+				}
+		
+		
+		
+			}
+			endforeach;
+			wp_reset_postdata();
+			$output.='</ul>';
+		}else if(count($results) > 0 && $template=="list"){
+			$output.='<ul>';
+				
+			foreach ($results as $post) : setup_postdata($post);
+			$output.='<li><a href="' . get_permalink($post->ID) . '">'.$post->post_title.'</a></li>';
+			endforeach;
+				
+			wp_reset_postdata();
+			$output.='</ul>';
+		}
+		else{
+			$output .= '<div id="events-wrap" class="block-wrap events-wrap">';
+			$output .= '<p>No Upcoming News or events Found.</p>';
+			$output .= '</div>';
+		}
+	
+	endif;
 	return $output;
 	
 }
