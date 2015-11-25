@@ -174,6 +174,11 @@ class campaignItemClass{   //define campaignItemClass
 		return  $this->itemType;
 	}
 	
+	function getItemDate()
+	{
+		return  $this->itemDate;
+	}
+	
 	function displayPerItem()
 	{
 		$output="";
@@ -217,10 +222,43 @@ class campaignHandlerClass{   //define campaignHandlerClass to display one item 
  		return $output;
  	}
  	
+ 	function displayAllItems($itemTypes, $number_posts)
+ 	{
+ 		$output="<ul>";
+ 		$haveItems=false;
+ 		$count=0;
+ 		
+ 		if($number_posts>0){
+ 			foreach($this->campaignItemArray as $campaignItemObject)
+ 			{
+ 				if(in_array($campaignItemObject->getItemType(), $itemTypes)){
+ 					$haveItems=true;
+ 					++$count;
+ 					if($count>$number_posts){break;}
+ 					$output.=$campaignItemObject->displayPerItem();
+ 						
+ 				}
+ 			}
+ 		}else{
+ 			foreach($this->campaignItemArray as $campaignItemObject)
+ 			{
+ 				if(in_array($campaignItemObject->getItemType(), $itemTypes)){$haveItems=true;$output.=$campaignItemObject->displayPerItem();}
+ 			}
+ 		}
+ 		
+ 		
+ 		if($haveItems==false){ $output.='<li>No Newsletter found for the types you select!</li>';}
+ 		$output.="</ul>";
+ 		
+ 		return $output;
+ 	}
+ 	
+ 	
+ 	
  	
 }
 
-function campaign_Monitor_GetData()
+function campaign_Monitor_GetData($order)
 {
 	if(file_exists(plugin_dir_path(__FILE__).'cm.txt')){
 		$file=file_get_contents(plugin_dir_path(__FILE__).'cm.txt');
@@ -234,7 +272,9 @@ function campaign_Monitor_GetData()
 		{
 			$campaignItemArray[]=parseFilelineToObject($filelines[$i]);
 		}
-	
+	    
+		
+		 if($order=='DESC'){usort($campaignItemArray, 'descDate');}else if($order=='ASC'){usort($campaignItemArray, 'ascDate');}
 		return $campaignItemArray;
 	}else{
 		
@@ -243,6 +283,15 @@ function campaign_Monitor_GetData()
 	}
 }
 
+
+function descDate($a, $b) {
+	return -(strtotime($a->getItemDate()) - strtotime($b->getItemDate()));
+}
+
+
+function ascDate($a, $b) {
+	return strtotime($a->getItemDate()) - strtotime($b->getItemDate());
+}
 
 function parseFilelineToObject($fileline)
 {
@@ -294,7 +343,12 @@ function campaign_Monitor_CreateHTML($atts)
 	$atts
 	= shortcode_atts(
 			[
-					'newsletter_name'      => ['update friday', 'communiqu', 'memo', 'quarterly report'],
+					'newsletter_name'      => ['update friday', 'communiqu', 'memo', 'quarterly report', 'other'],
+					'orderby'        => 'date',
+					'order'          => 'DESC',
+					'number_posts' => -1,
+					'template'       =>'list',
+					'is_pop_up_window' => 'true',
 			],
 			$atts
 	);
@@ -302,14 +356,19 @@ function campaign_Monitor_CreateHTML($atts)
 	$itemTypes     = is_string($atts['newsletter_name']) ? array_map('trim', explode(',', strtolower($atts['newsletter_name'])))
 	: $atts['newsletter_name'];
 	
+	$orderBy      = $atts['orderby'];
+	$order        = $atts['order'];
+	$number_posts = $atts['number_posts'];
+	$template     = $atts['template'];
+	
 	$output="";
 	
-	$campaignItemArray=campaign_Monitor_GetData();
+	$campaignItemArray=campaign_Monitor_GetData($order);
 	
 	if(count($campaignItemArray)>0){
 	    $campaignHandlerObject=new campaignHandlerClass($campaignItemArray);
 	
-	    $output.=$campaignHandlerObject->displayGroupItem($itemTypes);
+	    $output.=$campaignHandlerObject->displayAllItems($itemTypes, $number_posts);
 
 	}else{
 		$output.='<h2>No Newsletters found under this url:<a href="'.get_option('cm_actid').'">'.get_option('cm_actid').'</a></h2>';
