@@ -678,7 +678,7 @@ function postlistShortcodeHandler($atts)
 					}
 		
 				}
-				else if(isHomepageEvents($post)&&!isVideoEvents($post)){
+				else if(isHomepagefrEvents($post)&&!isVideofrEvents($post)){
 		
 					$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
 				}
