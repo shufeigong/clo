@@ -1,26 +1,19 @@
 #respond{
   //border:solid 1px #333;
-  h3{
-    //border:solid 1px #000;
-    @include font-size(2.1);
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif;
-    font-weight: normal;
-    color:#000;
-    line-height: 1;
-  }
+  
   
   #allowed_tags{display:none;}
   
 	  .comment-notes{
 	    //border:solid 1px red;
-	    color:#000;
-	    font-family: Arial, Helvetica, sans-serif;
+	    //color:#000;
+	    //font-family: Arial, Helvetica, sans-serif;
 	  }
   
       label{
        @include font-size(1.5);
-       color:#000;
-	   font-family: Arial, Helvetica, sans-serif;
+       //color:#000;
+	   //font-family: Arial, Helvetica, sans-serif;
 	   display: inline;
       }
   
