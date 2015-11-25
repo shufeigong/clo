@@ -9,7 +9,7 @@ function eventsShortcodeHandler($atts)
 					'post_type'      => ['incsub_event'],
 					'orderby'        => 'meta_value',
 					'order'          => 'DESC',
-					'posts_per_page' => -1,
+					'number_posts' => -1,
 					'template'       =>'block',
 					
 			],
@@ -21,7 +21,7 @@ function eventsShortcodeHandler($atts)
 	$postType     = $atts['post_type'];
 	$orderBy      = $atts['orderby'];
 	$order        = $atts['order'];
-	$postsPerPage = $atts['posts_per_page'];
+	$postsPerPage = $atts['number_posts'];
 	$template     = $atts['template'];
 	//$catName      = $atts['cat_name'];
 
@@ -121,7 +121,7 @@ function newsShortcodeHandler($atts)
 					'post_type'      => ['news'],
 					'orderby'        => 'meta_value',
 					'order'          => 'DESC',
-					'posts_per_page' => -1,
+					'number_posts' => -1,
 					'template'       =>'block',
 						
 			],
@@ -133,7 +133,7 @@ function newsShortcodeHandler($atts)
 	$postType     = $atts['post_type'];
 	$orderBy      = $atts['orderby'];
 	$order        = $atts['order'];
-	$postsPerPage = $atts['posts_per_page'];
+	$postsPerPage = $atts['number_posts'];
 	$template     = $atts['template'];
 	//$catName      = $atts['cat_name'];
 
@@ -492,7 +492,7 @@ function postlistShortcodeHandler($atts)
                 'post_type'      => ['news', 'incsub_event'],
                 'orderby'        => 'date',
 				'order'          => 'DESC',
-				'posts_per_page' => -1,
+				'number_posts' => -1,
 				'template'       =>'block',
             	'lang'           =>'en',
                 
@@ -509,7 +509,7 @@ function postlistShortcodeHandler($atts)
 		
 		$orderBy      = $atts['orderby'];
 		$order        = $atts['order'];
-		$postsPerPage = $atts['posts_per_page'];
+		$postsPerPage = $atts['number_posts'];
 		$template     = $atts['template'];
 		
 		$args = [
@@ -626,7 +626,7 @@ function postlistShortcodeHandler($atts)
 		
 		$orderBy      = $atts['orderby'];
 		$order        = $atts['order'];
-		$postsPerPage = $atts['posts_per_page'];
+		$postsPerPage = $atts['number_posts'];
 		$template     = $atts['template'];
 		
 		$args = [
