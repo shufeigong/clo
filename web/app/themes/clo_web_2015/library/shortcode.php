@@ -509,7 +509,7 @@ function postlistShortcodeHandler($atts)
 		
 		$orderBy      = $atts['orderby'];
 		$order        = $atts['order'];
-		$postsPerPage = $atts['number_posts'];
+		$postsPerPage = $atts['number_posts']==-1? -1: $atts['number_posts']+4;
 		$template     = $atts['template'];
 		
 		$args = [
@@ -626,7 +626,7 @@ function postlistShortcodeHandler($atts)
 		
 		$orderBy      = $atts['orderby'];
 		$order        = $atts['order'];
-		$postsPerPage = $atts['number_posts'];
+		$postsPerPage = $atts['number_posts']==-1? -1: $atts['number_posts']+4;
 		$template     = $atts['template'];
 		
 		$args = [
