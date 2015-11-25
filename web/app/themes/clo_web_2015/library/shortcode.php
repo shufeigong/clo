@@ -230,25 +230,39 @@ function timeLineShortcodeHandler($atts)
 	shortcode_atts(
 			[
 					'title'      => 'My TimeLine',
+					'lang'       => 'en',
 			],
 			$atts
 	);
 
 	$title     = $atts['title'];
-	
-	$args = [
-			'post_type'      => "timeline", /* Change with your custom post type name */
-			'posts_per_page' => -1,
-			'orderby'        => 'meta_value',
-			'order'          => 'ASC',
-			
-			'meta_query'     => [
-					[
-						'key'     => 'EventDate',
-					]
-			]
-	];
-	
+	if($atts['lang']=='en'):
+		$args = [
+				'post_type'      => "timeline", /* Change with your custom post type name */
+				'posts_per_page' => -1,
+				'orderby'        => 'meta_value',
+				'order'          => 'ASC',
+				
+				'meta_query'     => [
+						[
+							'key'     => 'EventDate',
+						]
+				]
+		];
+	elseif($atts['lang']=='fr'):
+		$args = [
+				'post_type'      => "timeline", /* Change with your custom post type name */
+				'posts_per_page' => -1,
+				'orderby'        => 'meta_value',
+				'order'          => 'ASC',
+					
+				'meta_query'     => [
+						[
+								'key'     => 'EventDateFr',
+						]
+				]
+		];
+		endif;
 		
 	$currentyear=date("Y");
 	$results = get_posts($args);
