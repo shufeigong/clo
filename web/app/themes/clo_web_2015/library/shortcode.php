@@ -752,4 +752,6 @@ function sitemapShortcodeHandler()
 
 add_shortcode('sitemap', 'sitemapShortcodeHandler');
 
+
+
 ?>

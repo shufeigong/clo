@@ -155,34 +155,38 @@ function campaign_Monitor_LoadData()
 class campaignItemClass{   //define campaignItemClass
 	private $itemUrl;                 //Define member variables
 	private $itemContent;
-	private $itemContentDate;
+	//private $itemContentDate;
 	private $itemDate;
-	private $itemType;
+	//private $itemType;
 
 
-	function __construct($itemUrl, $itemContent, $itemContentDate, $itemDate, $itemType)
+	function __construct($itemUrl, $itemContent, $itemDate)
 	{
 		$this->itemUrl=$itemUrl;
 		$this->itemContent=$itemContent;
-		$this->itemContentDate=$itemContentDate;
+		//$this->itemContentDate=$itemContentDate;
 		$this->itemDate=$itemDate;
-		$this->itemType=$itemType;
+		//$this->itemType=$itemType;
 	}
 	
-	function getItemType()
-	{
-		return  $this->itemType;
-	}
+	
 	
 	function getItemDate()
 	{
 		return  $this->itemDate;
 	}
 	
+	
+	function getItemContent()
+	{
+		return $this->itemContent;
+	}
+	
+	
 	function displayPerItem()
 	{
 		$output="";
-		$output.='<li><span class="date">'.$this->itemDate.'</span> <span class="title"><a href="'.$this->itemUrl.
+		$output.='<li><span class="date">'.date("d M Y",strtotime($this->itemDate)).'</span> <span class="title"><a href="'.$this->itemUrl.
 		'" class="campaign" data-url="'.$this->itemUrl.'" target="campaign">'.$this->itemContent.'</a></span></li>';
 	    return $output;		
 	}
@@ -191,7 +195,7 @@ class campaignItemClass{   //define campaignItemClass
 	{
 		$output="";
 		$url = WP_PLUGIN_URL . '/' . str_replace( basename( __FILE__ ), "", plugin_basename( __FILE__ ) );
-		$output.='<li><span class="date">'.$this->itemDate.'</span> <span class="title"><a href="'.$url.'campaignRetriever.php?campaignURL='.$this->itemUrl.
+		$output.='<li><span class="date">'.date("d M Y",strtotime($this->itemDate)).'</span> <span class="title"><a href="'.$url.'campaignRetriever.php?campaignURL='.$this->itemUrl.
 		'">'.$this->itemContent.'</a></span></li>';
 		return $output;
 	}
@@ -209,44 +213,44 @@ class campaignHandlerClass{   //define campaignHandlerClass to display one item 
  		$this->campaignItemArray=$campaignItemArray;
  	}
  	
- 	function displayGroupItem($itemTypes)
+ 	function displayAllItem($number_posts, $is_pop_up_window)
  	{
- 		$output="";
+ 		$output='<div class="cm"><ul>';
+ 		$count=0; 			
  		
- 		foreach ($itemTypes as $itemType)
- 		{
- 			$output.='<h2>'.$itemType.'</h2>
-                      <div class="'.preg_replace('/[\s　]/', '_', $itemType).'"><ul>';
- 			
- 			$haveType=false;
- 			
+ 		if($number_posts>0){
+ 			foreach ($this->campaignItemArray as $campaignItemObject)
+ 			{ 
+ 				++$count;
+ 				if($count>$number_posts){break;}
+ 			    $output.=($is_pop_up_window=="true")?$campaignItemObject->displayPerItem():$campaignItemObject->displayNoPop();
+ 			}
+ 		}else{
  			foreach ($this->campaignItemArray as $campaignItemObject)
  			{
- 				if($itemType==$campaignItemObject->getItemType()) {$haveType=true;$output.=$campaignItemObject->displayPerItem();}
+ 				$output.=($is_pop_up_window=="true")?$campaignItemObject->displayPerItem():$campaignItemObject->displayNoPop();
  			}
+ 		}	
  			
- 			if($haveType==false){ $output.='<li>No Newsletter found for this type!</li>';}
- 			
- 			$output.='</ul></div>';
- 		}
+ 		$output.='</ul></div>';
+ 		
  		
  		return $output;
  	}
  	
- 	function displayAllItems($itemTypes, $number_posts, $is_pop_up_window)
+ 	function displayMatchItems($newsletter_name, $number_posts, $is_pop_up_window)
  	{
- 		$output="<ul>";
+ 		$output='<div class="cm"><ul>';
  		$haveItems=false;
  		$count=0;
  		
  		if($number_posts>0){
  			foreach($this->campaignItemArray as $campaignItemObject)
  			{
- 				if(in_array($campaignItemObject->getItemType(), $itemTypes)){
+ 				if($this->judgeMatch($newsletter_name, $campaignItemObject->getItemContent())){
  					$haveItems=true;
  					++$count;
  					if($count>$number_posts){break;}
- 					//$output.=$campaignItemObject->displayPerItem();
  					$output.=($is_pop_up_window=="true")?$campaignItemObject->displayPerItem():$campaignItemObject->displayNoPop();
  						
  				}
@@ -254,21 +258,35 @@ class campaignHandlerClass{   //define campaignHandlerClass to display one item 
  		}else{
  			foreach($this->campaignItemArray as $campaignItemObject)
  			{
- 				if(in_array($campaignItemObject->getItemType(), $itemTypes)){$haveItems=true;$output.=($is_pop_up_window=="true")?$campaignItemObject->displayPerItem():$campaignItemObject->displayNoPop();}
+ 				if($this->judgeMatch($newsletter_name, $campaignItemObject->getItemContent())){$haveItems=true;$output.=($is_pop_up_window=="true")?$campaignItemObject->displayPerItem():$campaignItemObject->displayNoPop();}
  			}
  		}
  		
  		
- 		if($haveItems==false){ $output.='<li>No Newsletter found for the types you select!</li>';}
- 		$output.="</ul>";
+ 		if($haveItems==false){ $output.='<li>No Newsletter found according to you search!</li>';}
+ 		$output.='</ul></div>';
  		
  		return $output;
  	}
  	
+ 	function judgeMatch($newsletter_name, $itemContent)
+ 	{
+ 		$isMatch=false;
+ 		foreach ($newsletter_name as $one_name)
+ 		{
+ 			if(stripos($itemContent, $one_name)!==false){$isMatch=true;}
+ 		}
+ 	
+ 		return $isMatch;
+ 	}
  	
  	
  	
 }
+
+
+
+
 
 function campaign_Monitor_GetData($order)
 {
@@ -309,9 +327,7 @@ function parseFilelineToObject($fileline)
 {
 	$itemUrl;                 //Define member variables
 	$itemContent;
-	$itemContentDate;
 	$itemDate;
-	$itemType;
 
 	$lineSplit=explode("</a>, ", $fileline);
 
@@ -319,30 +335,16 @@ function parseFilelineToObject($fileline)
 	{
 		$str=$lineSplit[0];
 		$delimiter="|||";
-		$str=str_replace(array('<a href="', '">', ': ', '</a> '), $delimiter, $str);
+		$str=str_replace(array('<a href="', '">', '</a> '), $delimiter, $str);
 
 		$strList=explode($delimiter, $str);
 		if(count($strList)>1){$itemUrl=$strList[1];}else{$itemUrl="";}
 		if(count($strList)>2){$itemContent=$strList[2];}else{$itemContent="";}
-		if(count($strList)>3){$itemContentDate=$strList[3];}else{$itemContentDate="";}
 	}
 
 	$itemDate = (count($lineSplit) > 1)? $lineSplit[1] : "";
 
-	
-	if(strpos(strtolower($itemContent),"update friday")!==false){
-		$itemType="update friday";
-	}else if(strpos(strtolower($itemContent),"communiqu")!==false){
-		$itemType="communiqu";
-	}else if(strpos(strtolower($itemContent),"memo")!==false){
-		$itemType="memo";
-	}else if(strpos(strtolower($itemContent),"quarterly report")!==false){
-		$itemType="quarterly report";
-	}else{
-		$itemType="other";
-	}
-
-	$campaignItemObject= new campaignItemClass($itemUrl, $itemContent, $itemContentDate, $itemDate, $itemType);
+	$campaignItemObject= new campaignItemClass($itemUrl, $itemContent, $itemDate);
 
 	return $campaignItemObject;
 
@@ -355,7 +357,7 @@ function campaign_Monitor_CreateHTML($atts)
 	$atts
 	= shortcode_atts(
 			[
-					'newsletter_name'      => ['update friday', 'communiqu', 'memo', 'quarterly report', 'other'],
+					'newsletter_name'      => '',
 					'orderby'        => 'date',
 					'order'          => 'DESC',
 					'number_posts' => -1,
@@ -365,8 +367,13 @@ function campaign_Monitor_CreateHTML($atts)
 			$atts
 	);
 	
-	$itemTypes     = is_string($atts['newsletter_name']) ? array_map('trim', explode(',', strtolower($atts['newsletter_name'])))
-	: $atts['newsletter_name'];
+	
+	if(preg_replace("/\s|　/","",$atts['newsletter_name'])!=''){
+			$newsletter_name     = is_string($atts['newsletter_name']) ? array_map('trim', explode(',', strtolower($atts['newsletter_name'])))
+			: $atts['newsletter_name'];
+	}else{
+		$newsletter_name='';
+	}
 	
 	$orderBy      = $atts['orderby'];
 	$order        = $atts['order'];
@@ -381,7 +388,7 @@ function campaign_Monitor_CreateHTML($atts)
 	if(count($campaignItemArray)>0){
 	    $campaignHandlerObject=new campaignHandlerClass($campaignItemArray);
 	
-	    $output.=$campaignHandlerObject->displayAllItems($itemTypes, $number_posts, $is_pop_up_window);
+	    $output.=($newsletter_name=='')?$campaignHandlerObject->displayAllItem($number_posts, $is_pop_up_window):$campaignHandlerObject->displayMatchItems($newsletter_name, $number_posts, $is_pop_up_window);
 
 	}else{
 		$output.='<h2>No Newsletters found under this url:<a href="'.get_option('cm_actid').'">'.get_option('cm_actid').'</a></h2>';
