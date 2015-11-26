@@ -398,6 +398,6 @@ function campaign_Monitor_CreateHTML($atts)
 	
 }
 
-add_shortcode('campaignMonitor', 'campaign_Monitor_CreateHTML');
+add_shortcode('campaign_monitor', 'campaign_Monitor_CreateHTML');
 
 ?>
