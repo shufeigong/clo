@@ -187,6 +187,17 @@ class campaignItemClass{   //define campaignItemClass
 	    return $output;		
 	}
 	
+	function displayNoPop()
+	{
+		$output="";
+		$url = WP_PLUGIN_URL . '/' . str_replace( basename( __FILE__ ), "", plugin_basename( __FILE__ ) );
+		$output.='<li><span class="date">'.$this->itemDate.'</span> <span class="title"><a href="'.$url.'campaignRetriever.php?campaignURL='.$this->itemUrl.
+		'">'.$this->itemContent.'</a></span></li>';
+		return $output;
+	}
+	
+	
+	
 }
 
 
@@ -222,7 +233,7 @@ class campaignHandlerClass{   //define campaignHandlerClass to display one item 
  		return $output;
  	}
  	
- 	function displayAllItems($itemTypes, $number_posts)
+ 	function displayAllItems($itemTypes, $number_posts, $is_pop_up_window)
  	{
  		$output="<ul>";
  		$haveItems=false;
@@ -235,14 +246,15 @@ class campaignHandlerClass{   //define campaignHandlerClass to display one item 
  					$haveItems=true;
  					++$count;
  					if($count>$number_posts){break;}
- 					$output.=$campaignItemObject->displayPerItem();
+ 					//$output.=$campaignItemObject->displayPerItem();
+ 					$output.=($is_pop_up_window=="true")?$campaignItemObject->displayPerItem():$campaignItemObject->displayNoPop();
  						
  				}
  			}
  		}else{
  			foreach($this->campaignItemArray as $campaignItemObject)
  			{
- 				if(in_array($campaignItemObject->getItemType(), $itemTypes)){$haveItems=true;$output.=$campaignItemObject->displayPerItem();}
+ 				if(in_array($campaignItemObject->getItemType(), $itemTypes)){$haveItems=true;$output.=($is_pop_up_window=="true")?$campaignItemObject->displayPerItem():$campaignItemObject->displayNoPop();}
  			}
  		}
  		
@@ -360,6 +372,7 @@ function campaign_Monitor_CreateHTML($atts)
 	$order        = $atts['order'];
 	$number_posts = $atts['number_posts'];
 	$template     = $atts['template'];
+	$is_pop_up_window = $atts['is_pop_up_window'];
 	
 	$output="";
 	
@@ -368,7 +381,7 @@ function campaign_Monitor_CreateHTML($atts)
 	if(count($campaignItemArray)>0){
 	    $campaignHandlerObject=new campaignHandlerClass($campaignItemArray);
 	
-	    $output.=$campaignHandlerObject->displayAllItems($itemTypes, $number_posts);
+	    $output.=$campaignHandlerObject->displayAllItems($itemTypes, $number_posts, $is_pop_up_window);
 
 	}else{
 		$output.='<h2>No Newsletters found under this url:<a href="'.get_option('cm_actid').'">'.get_option('cm_actid').'</a></h2>';
