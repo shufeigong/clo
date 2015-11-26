@@ -43,6 +43,8 @@ h2 {
 h3 {
     @include font-size(1.5);
     font-family : $font-site-bold;
+    margin-top:15px;
+    margin-bottom:15px;
     a{
 	color:#231F20;
     @include font-size(1.5);
@@ -53,6 +55,8 @@ h3 {
 }
 
 h4{
+    margin-top:15px;
+    margin-bottom:15px;
     @include font-size(1.5);
     font-family : $font-site-bold-oblique;
     font-style: oblique;
