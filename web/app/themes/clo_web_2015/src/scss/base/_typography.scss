@@ -54,8 +54,9 @@ h3 {
 
 h4{
     @include font-size(1.5);
-    font-family : $font-site-bold;
+    font-family : $font-site-bold-oblique;
     font-style: oblique;
+    font-weight:bold;
 }
 
 p {
