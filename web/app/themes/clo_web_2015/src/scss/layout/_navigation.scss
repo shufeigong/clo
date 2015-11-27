@@ -170,6 +170,7 @@
                         text-decoration : underline;
                     }
                     > li:not(.content-video-item) {
+                        margin-left:5px;
                         @include font-size(1.5);
                         &:before {
                             content : '• ';
@@ -198,6 +199,7 @@
                     }
                     counter-reset : num;
                     > li {
+                        margin-left:5px;
                         @include font-size(1.5);
                         &:before {
                             content           : counter(num) '. ';
@@ -495,6 +497,7 @@
                         text-decoration : underline;
                     }
                     > li:not(.content-video-item) {
+                        margin-left:5px;
                         @include font-size(1.4);
                         &:before {
                             content : '• ';
@@ -523,6 +526,7 @@
                     }
                     counter-reset : num;
                     > li {
+                        margin-left:5px;
                         @include font-size(1.5);
                         &:before {
                             content           : counter(num) '. ';
