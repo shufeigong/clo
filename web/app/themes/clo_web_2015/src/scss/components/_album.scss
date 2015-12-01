@@ -78,7 +78,7 @@
         margin-left:10px;
         border:solid 1px blue;
         .leftArrow{width:30px; height:70px; position:absolute; top:35%;}
-        .imgShow{width:400px; height:300px; background-color:#808285; position:absolute; left:35px;}
+        .imgShow{width:85%; height:340px; background-color:#808285; position:absolute; left:35px; }
         .imgCaption{position:absolute; left:35px; top:340px; color:#ffffff;}
         .rightArrow{width:30px; height:70px; position:absolute; top:35%; left:94%;}
       }
@@ -118,15 +118,44 @@
        
       .albumGrid {
         margin-bottom:10px;
-      } 
-
-
+      }
+      
+      #album_message .albumBox .imgShowBox .rightArrow {right:1%;} 
+ 
+    
 }
+
+@media screen and (max-width : 640px) {
+
+   #album_showbox{padding:5px;}
+
+   #album_boxcontain {
+	    width:95%;
+	    height:80%;
+	    left:2.5%;
+	    top:8%;
+      }
+   
+   #album_message .albumBox .imgShowBox{
+       width:100%;
+       margin-left:0px;
+       .leftArrow{width:20px; height:70px; position:absolute; top:35%;}
+       .imgShow{width:85%; height:340px; background-color:#808285; position:absolute; left:20px; }
+       //.imgCaption{position:absolute; left:35px; top:340px; color:#ffffff;}
+       .rightArrow{width:20px;}
+       
+   }
+}
+
+
+
 
 @media screen and (max-height : 480px) {
        
        #album_boxcontain {
         position:absolute;
        }
+       
+       
 }
 
