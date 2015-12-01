@@ -77,7 +77,7 @@ function pageLoad(linkSplit, basicItems) {
 	            	    
 	            		if($(".btn_show").length>0){timeline()};
 	            		campaignMonitor();
-	       
+	            		album();
 	            		
 	            	});
         		}
@@ -140,7 +140,7 @@ function grabPage(pageId) {
         //$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
         if($(".btn_show").length>0){timeline()};
         campaignMonitor();
-        
+        album();
     }).fail(function () {
         alert("error");
     });
@@ -481,6 +481,68 @@ function timeline()
 		});
 }
 
+////album/////
+function album()
+{
+	$.album_bind({ showbtnid: "album_show"});
+}
+
+
+function gridClick(thisGrid)
+{
+	var newSrc=$(thisGrid).children().attr("src");
+	var newAlt=$(thisGrid).children().attr("alt");
+	var newCap=$(thisGrid).children().attr("cap");
+	$(thisGrid).parents("table").find("a").each(function(){$(this).removeClass("imgSelected")});
+	$(thisGrid).addClass("imgSelected");
+	$(thisGrid).parents(".albumGrid").nextAll(".imgShowBox").children(".imgShow").children().attr({"src":newSrc, "alt":newAlt});
+	$(thisGrid).parents(".albumGrid").nextAll(".imgShowBox").children(".imgCaption").html(newCap);
+}
+
+function leftArrowClick(thisArrow)
+{
+	var currentIndex=parseInt($("#album_message").find("table").find(".imgSelected").attr("gridindex"));
+	
+	if(currentIndex>0){
+		var prevIndex = currentIndex-1;
+		
+		$("#album_message").find("table").find("a").each(function(){$(this).removeClass("imgSelected")});
+		
+		$("#album_message").find("table").find("a[gridindex="+prevIndex+"]").addClass("imgSelected");
+		
+		var newSrc=$("#album_message").find("table").find("a[gridindex="+prevIndex+"]").children().attr("src");
+		var newAlt=$("#album_message").find("table").find("a[gridindex="+prevIndex+"]").children().attr("alt");
+		var newCap=$("#album_message").find("table").find("a[gridindex="+prevIndex+"]").children().attr("cap");
+		
+		
+		$(thisArrow).nextAll(".imgShow").children().attr({"src":newSrc, "alt":newAlt});
+		$(thisArrow).nextAll(".imgCaption").html(newCap);
+	}
+}
+
+function rightArrowClick(thisArrow)
+{
+	var currentIndex=parseInt($("#album_message").find("table").find(".imgSelected").attr("gridindex"));
+	
+	var nextIndex = currentIndex+1;
+	
+	if($("#album_message").find("table").find("a[gridindex="+nextIndex+"]").length>0){
+		
+        $("#album_message").find("table").find("a").each(function(){$(this).removeClass("imgSelected")});
+		
+		$("#album_message").find("table").find("a[gridindex="+nextIndex+"]").addClass("imgSelected");
+		
+		var newSrc=$("#album_message").find("table").find("a[gridindex="+nextIndex+"]").children().attr("src");
+		var newAlt=$("#album_message").find("table").find("a[gridindex="+nextIndex+"]").children().attr("alt");
+		var newCap=$("#album_message").find("table").find("a[gridindex="+nextIndex+"]").children().attr("cap");
+		
+		
+		$(thisArrow).prevAll(".imgShow").children().attr({"src":newSrc, "alt":newAlt});
+		$(thisArrow).prevAll(".imgCaption").html(newCap);
+		
+	}
+	
+}
 ////////////Campaign Monitor Pop///////
 function campaignMonitor()
 {

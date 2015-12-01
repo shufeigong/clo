@@ -1,0 +1,246 @@
+//html, body, h1, h2, h3, h4, h5 {
+//    margin: 0px;
+//    padding: 0px;
+//}
+#album_mask {
+    background-color: #000;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    filter: alpha(opacity= 50);
+    display: none;
+    z-index:130
+}
+#album_boxcontain {
+    margin: 0 auto;
+    position: fixed;
+    //z-index: 2;
+    z-index: 131;
+    line-height: 28px;
+    display: none;
+    width:74%;
+    height:80%;
+}
+#album_showbox {
+    padding: 10px 40px 40px 40px;
+    background: #231F20;
+    //border-radius: 5px;
+    margin: 20px;
+    min-width: 80%;
+    min-height: 80%;
+    z-index:131;
+}
+#album_title {
+    position: relative;
+    //height: 27px;
+    h1{
+       margin:15px 0;
+    }
+    margin-bottom:20px;
+}
+#album_close {
+    position: absolute;
+    cursor: pointer;
+    outline: none;
+    top: 0;
+    right: 0;
+    z-index: 132;
+    width: 42px;
+    height: 42px;
+    overflow: hidden;
+    background-image: url(../img/feedback-close.png);
+    _background: none;
+}
+#album_message {
+    padding: 10px 0px;
+    overflow: hidden;
+    line-height: 19px;
+    //position:relative;
+    
+    .albumBox{
+      max-width:670px;
+      border:solid 1px red;
+      //max-width:720px;
+      //height:470px;
+      //min-height:400px;
+      .albumGrid{width:160px;float:left;}
+      
+      .imgShowBox{
+        display:inline-block;
+        position:relative;
+        height:400px;
+        width:72%;
+        margin-left:10px;
+        border:solid 1px blue;
+        .leftArrow{width:30px; height:70px; position:absolute; top:35%;}
+        .imgShow{width:85%; height:340px; background-color:#808285; position:absolute; left:35px;}
+        .imgCaption{position:absolute; left:35px; top:340px; color:#ffffff;}
+        .rightArrow{width:30px; height:70px; position:absolute; top:35%; left:94%;}
+      }
+      
+    }
+    
+    table{
+      background:none;
+      border:none;
+      width:auto;
+      margin:0;
+       tr{
+           background-color:#808285;
+           border:none;
+           td{
+               border-right: solid 3px #231F20;
+               border-bottom: solid 3px #231F20;
+               padding:0;
+               width:40px;
+               .imgSelected{opacity:0.1;}
+                 img{width:100%; height:100%;}
+              }
+          
+       
+       }
+    
+    
+    }
+    
+    
+    
+    
+    
+    .timelinebox{
+      //border:solid 1px #333;
+      max-width:1200px;
+         .yearlinebox{
+           width:5%;
+           float:left;
+          }
+          
+    .bluebox{
+      //width:95%;
+      margin-left:71px;
+      background-color:#DCE9F7;
+      height:470px;
+      min-height:400px;
+      position:relative;
+      //float:left;
+      overflow-y:scroll;
+      padding-left:20px;
+      padding-top:20px;
+      
+        .oneyear{
+               margin-bottom:10px;  
+               .yeartitle{
+	               //border:solid 1px red; 
+	               float:left; 
+	               //width:5%;
+	               margin-right:5px;
+	               @include font-size(1.5);
+	               font-family: $font-site-bold;
+	               color : #0075C9;
+               }
+         
+               .yearcontent{
+                   //border:solid 1px green; 
+                   display:inline-block;
+                   width:80%;
+                   margin-left:15px;
+                   @include font-size(1.5);
+                   color:#595A5C;
+                   ul{
+                       list-style-type:none;
+                       li{ &:before{content:'• ';margin-left:-12px;}}
+                   }
+                   
+               }
+               
+               
+          }
+      
+      }
+    
+    
+    
+    }
+    
+    
+    ul{ 
+         //border:solid 1px #333;
+         //width:5%;
+        li:first-child .timearrow{top:0;visibility:visible;}
+        li{
+            
+		    position: relative;
+            margin-left:4px;
+            padding-left:10px;
+            @include font-size(1.5);
+            
+            //margin-bottom:10px;
+            &:before {
+                       //content : '––';
+                     }
+                     
+             .timemark{
+                        border-top:1px solid #6D6F71;
+                        border-left:1px solid #6D6F71;
+				        //border-bottom:4px solid #fff;
+				        //border-right:4px solid #ff4500;
+				        //line-height:0px;
+				        position:absolute;
+				        left:-4px;
+				        top:12px;
+				        width:10px;
+				        height:25px;
+                       }        
+                     
+             .timearrow{
+					    border-top: 15px solid #fff;
+					    border-bottom: 15px solid #fff;
+					    border-right: 15px solid #DCE9F7;
+					    position:absolute;
+					    left:52px;
+					    top:-3px;
+                        visibility:hidden;    
+                     }
+                     
+                     
+                     
+            a{
+               @include font-size(1.5);
+               font-family     : $font-site-bold;
+               color : #82BC00;
+               &:hover, &:focus {
+                    color : #0075C9;
+                }
+
+                &:active {
+                    color : #C2DAF1;
+                }
+             }
+       
+            .timeselected{
+              color : #0075C9;
+              &:hover, &:focus {color : #0075C9;}
+              &:active {color : #0075C9;}
+            }
+       
+       
+         }
+    }
+}
+
+@media screen and (max-width : 640px) {
+       
+       #album_message .timelinebox .bluebox .oneyear .yeartitle {
+                           float:none;    
+                           margin-left:15px;
+             }
+       
+
+
+}
+
+
+

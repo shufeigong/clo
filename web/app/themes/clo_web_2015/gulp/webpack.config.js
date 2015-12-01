@@ -10,7 +10,7 @@ module.exports = {
     devtool: 'eval',
     entry: {
         app: './src/js/app.js',
-        vendor: ["resizeEnd", "lightBox", "artwl", "TweenMax"]
+        vendor: ["resizeEnd", "lightBox", "artwl", "album","TweenMax"]
     },
     output: {
         path: path.resolve(__dirname, "dist/js"),
@@ -33,6 +33,7 @@ module.exports = {
             "resizeEnd": "./src/js/vendor/jquery.resizeEnd.js",
             "lightBox": "./src/js/vendor/lightbox.min.js",
             "artwl": "./src/js/vendor/jquery.artwl.thickbox.js",
+            "album": "./src/js/vendor/jquery.album.thickbox.js",
             "TweenMax": './bower_components/gsap/src/minified/TweenMax.min.js'
         }
     },
