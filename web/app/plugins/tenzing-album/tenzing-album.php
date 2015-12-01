@@ -140,8 +140,9 @@ class imgHandlerClass{
 
 ///define parseImgtToObject function//////
 function parseImgToObject($img)
-{
-	$imgUrl =  !empty(wp_get_attachment_url( $img->ID)) ? wp_get_attachment_url( $img->ID):"";
+{   
+	//$imgUrl =  !empty(wp_get_attachment_url( $img->ID)) ? wp_get_attachment_url( $img->ID):"";
+	$imgUrl = wp_get_attachment_url($img->ID);
 	$imgAlt =  !empty(get_post_meta($img->ID, '_wp_attachment_image_alt', true)) ? get_post_meta($img->ID, '_wp_attachment_image_alt', true):"";  
 	$imgCaption = !empty($img->post_excerpt) ? $img->post_excerpt:"";
 	$imgTitle = !empty($img->post_title) ? $img->post_title:"";
