@@ -23,6 +23,8 @@
     display: none;
     width:74%;
     height:80%;
+    left:13%;
+    top:15%;
 }
 #album_showbox {
     padding: 10px 40px 40px 40px;
@@ -76,7 +78,7 @@
         margin-left:10px;
         border:solid 1px blue;
         .leftArrow{width:30px; height:70px; position:absolute; top:35%;}
-        .imgShow{width:85%; height:340px; background-color:#808285; position:absolute; left:35px;}
+        .imgShow{width:400px; height:300px; background-color:#808285; position:absolute; left:35px;}
         .imgCaption{position:absolute; left:35px; top:340px; color:#ffffff;}
         .rightArrow{width:30px; height:70px; position:absolute; top:35%; left:94%;}
       }
@@ -99,148 +101,32 @@
                .imgSelected{opacity:0.1;}
                  img{width:100%; height:100%;}
               }
-          
+          }
+     }
+    
+ 
+}
+
+@media screen and (max-width : 999px) {
        
-       }
-    
-    
-    }
-    
-    
-    
-    
-    
-    .timelinebox{
-      //border:solid 1px #333;
-      max-width:1200px;
-         .yearlinebox{
-           width:5%;
-           float:left;
-          }
-          
-    .bluebox{
-      //width:95%;
-      margin-left:71px;
-      background-color:#DCE9F7;
-      height:470px;
-      min-height:400px;
-      position:relative;
-      //float:left;
-      overflow-y:scroll;
-      padding-left:20px;
-      padding-top:20px;
-      
-        .oneyear{
-               margin-bottom:10px;  
-               .yeartitle{
-	               //border:solid 1px red; 
-	               float:left; 
-	               //width:5%;
-	               margin-right:5px;
-	               @include font-size(1.5);
-	               font-family: $font-site-bold;
-	               color : #0075C9;
-               }
-         
-               .yearcontent{
-                   //border:solid 1px green; 
-                   display:inline-block;
-                   width:80%;
-                   margin-left:15px;
-                   @include font-size(1.5);
-                   color:#595A5C;
-                   ul{
-                       list-style-type:none;
-                       li{ &:before{content:'• ';margin-left:-12px;}}
-                   }
-                   
-               }
-               
-               
-          }
-      
+       #album_boxcontain {
+	    width:85%;
+	    height:80%;
+	    left:7.5%;
+	    top:8%;
       }
-    
-    
-    
-    }
-    
-    
-    ul{ 
-         //border:solid 1px #333;
-         //width:5%;
-        li:first-child .timearrow{top:0;visibility:visible;}
-        li{
-            
-		    position: relative;
-            margin-left:4px;
-            padding-left:10px;
-            @include font-size(1.5);
-            
-            //margin-bottom:10px;
-            &:before {
-                       //content : '––';
-                     }
-                     
-             .timemark{
-                        border-top:1px solid #6D6F71;
-                        border-left:1px solid #6D6F71;
-				        //border-bottom:4px solid #fff;
-				        //border-right:4px solid #ff4500;
-				        //line-height:0px;
-				        position:absolute;
-				        left:-4px;
-				        top:12px;
-				        width:10px;
-				        height:25px;
-                       }        
-                     
-             .timearrow{
-					    border-top: 15px solid #fff;
-					    border-bottom: 15px solid #fff;
-					    border-right: 15px solid #DCE9F7;
-					    position:absolute;
-					    left:52px;
-					    top:-3px;
-                        visibility:hidden;    
-                     }
-                     
-                     
-                     
-            a{
-               @include font-size(1.5);
-               font-family     : $font-site-bold;
-               color : #82BC00;
-               &:hover, &:focus {
-                    color : #0075C9;
-                }
-
-                &:active {
-                    color : #C2DAF1;
-                }
-             }
        
-            .timeselected{
-              color : #0075C9;
-              &:hover, &:focus {color : #0075C9;}
-              &:active {color : #0075C9;}
-            }
-       
-       
-         }
-    }
-}
-
-@media screen and (max-width : 640px) {
-       
-       #album_message .timelinebox .bluebox .oneyear .yeartitle {
-                           float:none;    
-                           margin-left:15px;
-             }
-       
+      .albumGrid {
+        margin-bottom:10px;
+      } 
 
 
 }
 
-
+@media screen and (max-height : 480px) {
+       
+       #album_boxcontain {
+        position:absolute;
+       }
+}
 

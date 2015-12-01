@@ -10,7 +10,7 @@ module.exports = {
     devtool: 'eval',
     entry: {
         app: './src/js/app.js',
-        vendor: ["resizeEnd", "lightBox", "artwl", "album","TweenMax"]
+        vendor: ["resizeEnd", "lightBox", "artwl", "album", "imagesloaded", "imagefill", "TweenMax"]
     },
     output: {
         path: path.resolve(__dirname, "dist/js"),
@@ -34,6 +34,8 @@ module.exports = {
             "lightBox": "./src/js/vendor/lightbox.min.js",
             "artwl": "./src/js/vendor/jquery.artwl.thickbox.js",
             "album": "./src/js/vendor/jquery.album.thickbox.js",
+            "imagesloaded": "./src/js/vendor/imagesloaded.js",
+            "imagefill": "./src/js/vendor/jquery-imagefill.js",
             "TweenMax": './bower_components/gsap/src/minified/TweenMax.min.js'
         }
     },

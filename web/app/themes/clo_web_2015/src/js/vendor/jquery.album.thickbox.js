@@ -23,9 +23,11 @@
             $("."+options.showbtnid).click(function () {
                 
                 $("#album_message").html($("#"+$(this).attr("albumid")).html());
+                
+                //$("#album_message").find(".imgShow").imagefill();
                 $("#album_mask").show();
                 
-                $("#album_boxcontain").css("top", "15%").css("left", "13%").show();
+                $("#album_boxcontain").show();
             });
             $("#album_close").click(function () {
                 $("#album_mask").hide();

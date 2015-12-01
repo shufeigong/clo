@@ -105,7 +105,7 @@ class imgHandlerClass{
 				        <div class="albumGrid">'.$this->createAlbumGrid().'</div>
 			           	<div class="imgShowBox"> 
 			             	 <a class="leftArrow" href="#" onclick="leftArrowClick(this); return false;"><img src="'.get_stylesheet_directory_uri().'/dist/img/leftArrow.svg" style="height:100%; width:100%;"/></a>
-				             <div class="imgShow"><img src="'.$this->imgObjectArray[0]->imgUrl.'" style="width:100%;height:100%;"/></div>	
+				             <div class="imgShow"><img src="'.$this->imgObjectArray[0]->imgUrl.'" alt="'.$this->imgObjectArray[0]->imgAlt.'"/></div>	
 				             <div class="imgCaption">'.$this->imgObjectArray[0]->imgCaption.'</div>
 				             <a class="rightArrow" href="#" onclick="rightArrowClick(this); return false;"><img src="'.get_stylesheet_directory_uri().'/dist/img/rightArrow.svg" style="height:100%; width:100%;"/></a>
 		             	</div>

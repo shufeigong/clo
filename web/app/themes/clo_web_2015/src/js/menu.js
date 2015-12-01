@@ -485,17 +485,20 @@ function timeline()
 function album()
 {
 	$.album_bind({ showbtnid: "album_show"});
+	//$(".imgShow").imagefill();
 }
 
 
 function gridClick(thisGrid)
 {
+	//$('.imgShow').imagefill(); 
 	var newSrc=$(thisGrid).children().attr("src");
 	var newAlt=$(thisGrid).children().attr("alt");
 	var newCap=$(thisGrid).children().attr("cap");
 	$(thisGrid).parents("table").find("a").each(function(){$(this).removeClass("imgSelected")});
 	$(thisGrid).addClass("imgSelected");
 	$(thisGrid).parents(".albumGrid").nextAll(".imgShowBox").children(".imgShow").children().attr({"src":newSrc, "alt":newAlt});
+	//$(thisGrid).parents(".albumGrid").nextAll(".imgShowBox").children(".imgShow").imagefill();
 	$(thisGrid).parents(".albumGrid").nextAll(".imgShowBox").children(".imgCaption").html(newCap);
 }
 
