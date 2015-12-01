@@ -2,6 +2,12 @@
 //    margin: 0px;
 //    padding: 0px;
 //}
+
+.albumTrigger{
+  float:left;
+  margin-right:25px;
+}
+
 #album_mask {
     background-color: #000;
     position: fixed;
@@ -64,7 +70,7 @@
     
     .albumBox{
       max-width:670px;
-      border:solid 1px red;
+      //border:solid 1px red;
       //max-width:720px;
       //height:470px;
       //min-height:400px;
@@ -76,9 +82,12 @@
         height:400px;
         width:72%;
         margin-left:10px;
-        border:solid 1px blue;
+        //border:solid 1px blue;
         .leftArrow{width:30px; height:70px; position:absolute; top:35%;}
-        .imgShow{width:85%; height:340px; background-color:#808285; position:absolute; left:35px; }
+        .imgShow{width:85%; height:340px; background-color:#808285; position:absolute; left:35px;  display:flex;
+                 justify-content:center;
+                 align-items:center;
+                 overflow:hidden;img{flex-shrink:0;}}
         .imgCaption{position:absolute; left:35px; top:340px; color:#ffffff;}
         .rightArrow{width:30px; height:70px; position:absolute; top:35%; left:94%;}
       }

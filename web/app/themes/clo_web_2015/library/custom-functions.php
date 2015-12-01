@@ -200,7 +200,6 @@ function createVideoGallery($post){
 	$output = '<li class="content-video-item"><a href="#" class="slvj-link-lightbox" data-videoid="'.$videoId.'" data-videosite="'.$videoProvider.'">';
 	$output.='<div class="content-video-box" style="background-image: url('.get_video_thumbnail($post->ID).'); background-size:100% 100%; background-repeat:no-repeat;"><div class="content-play-button"><span class="content-arrow"></span></div></div>';		       
 	$output.='<div class="content-video-title">'.$post->post_title.'</div>';
-	
 	$output .= '</a></li>';//end of news item
 	return $output;
 	
