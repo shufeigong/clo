@@ -138,8 +138,8 @@ function createVideoPost($post, $color){
 		$post->post_content=str_replace($url, '', $post->post_content);
 	}
 	
-    if(mb_strlen($post->post_content)>77){
-		$post->post_content = mb_substr($post->post_content,0,77,"UTF8")."...";
+    if(mb_strlen($post->post_content)>70){
+		$post->post_content = mb_substr($post->post_content,0,70,"UTF8")."...";
 	}
 	
 	$output .= '<p class="post-content">' . $post->post_content.'</p>
