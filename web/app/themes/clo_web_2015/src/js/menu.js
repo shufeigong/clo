@@ -495,8 +495,8 @@ function gridClick(thisGrid)
 	var newSrc=$(thisGrid).children().attr("src");
 	var newAlt=$(thisGrid).children().attr("alt");
 	var newCap=$(thisGrid).children().attr("cap");
-	$(thisGrid).parents("table").find("a").each(function(){$(this).removeClass("imgSelected")});
-	$(thisGrid).addClass("imgSelected");
+	$(thisGrid).parents("table").find("td").each(function(){$(this).removeClass("tdSelected")});
+	$(thisGrid).parent().addClass("tdSelected");
 	$(thisGrid).parents(".albumGrid").nextAll(".imgShowBox").children(".imgShow").children().attr({"src":newSrc, "alt":newAlt});
 	//$(thisGrid).parents(".albumGrid").nextAll(".imgShowBox").children(".imgShow").imagefill();
 	$(thisGrid).parents(".albumGrid").nextAll(".imgShowBox").children(".imgCaption").html(newCap);
@@ -504,14 +504,14 @@ function gridClick(thisGrid)
 
 function leftArrowClick(thisArrow)
 {
-	var currentIndex=parseInt($("#album_message").find("table").find(".imgSelected").attr("gridindex"));
+	var currentIndex=parseInt($("#album_message").find("table").find(".tdSelected").children().attr("gridindex"));
 	
 	if(currentIndex>0){
 		var prevIndex = currentIndex-1;
 		
-		$("#album_message").find("table").find("a").each(function(){$(this).removeClass("imgSelected")});
+		$("#album_message").find("table").find("td").each(function(){$(this).removeClass("tdSelected")});
 		
-		$("#album_message").find("table").find("a[gridindex="+prevIndex+"]").addClass("imgSelected");
+		$("#album_message").find("table").find("a[gridindex="+prevIndex+"]").parent().addClass("tdSelected");
 		
 		var newSrc=$("#album_message").find("table").find("a[gridindex="+prevIndex+"]").children().attr("src");
 		var newAlt=$("#album_message").find("table").find("a[gridindex="+prevIndex+"]").children().attr("alt");
@@ -525,15 +525,15 @@ function leftArrowClick(thisArrow)
 
 function rightArrowClick(thisArrow)
 {
-	var currentIndex=parseInt($("#album_message").find("table").find(".imgSelected").attr("gridindex"));
+	var currentIndex=parseInt($("#album_message").find("table").find(".tdSelected").children().attr("gridindex"));
 	
 	var nextIndex = currentIndex+1;
 	
 	if($("#album_message").find("table").find("a[gridindex="+nextIndex+"]").length>0){
 		
-        $("#album_message").find("table").find("a").each(function(){$(this).removeClass("imgSelected")});
+        $("#album_message").find("table").find("td").each(function(){$(this).removeClass("tdSelected")});
 		
-		$("#album_message").find("table").find("a[gridindex="+nextIndex+"]").addClass("imgSelected");
+		$("#album_message").find("table").find("a[gridindex="+nextIndex+"]").parent().addClass("tdSelected");
 		
 		var newSrc=$("#album_message").find("table").find("a[gridindex="+nextIndex+"]").children().attr("src");
 		var newAlt=$("#album_message").find("table").find("a[gridindex="+nextIndex+"]").children().attr("alt");

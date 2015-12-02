@@ -83,13 +83,13 @@
         width:72%;
         margin-left:10px;
         //border:solid 1px blue;
-        .leftArrow{width:30px; height:70px; position:absolute; top:35%;}
+        .leftArrow{width:30px; height:70px; position:absolute; top:35%; &:hover{.albumst0{fill:#0075c9;}} .albumst0{opacity:0.5;fill:#FFFFFF;enable-background:new;height:100%; weight:100%;}}
         .imgShow{width:85%; height:340px; background-color:#808285; position:absolute; left:35px;  display:flex;
                  justify-content:center;
                  align-items:center;
                  overflow:hidden;img{flex-shrink:0;}}
         .imgCaption{position:absolute; left:35px; top:340px; color:#ffffff;}
-        .rightArrow{width:30px; height:70px; position:absolute; top:35%; left:94%;}
+        .rightArrow{width:30px; height:70px; position:absolute; top:35%; left:93%; &:hover{.albumst0{fill:#0075c9;}} .albumst0{opacity:0.5;fill:#FFFFFF;enable-background:new;height:100%; weight:100%;}}
       }
       
     }
@@ -102,13 +102,20 @@
        tr{
            background-color:#808285;
            border:none;
+           .tdSelected{border-color:#82BC00;&:hover{border-color:#82BC00;}}
            td{
-               border-right: solid 3px #231F20;
-               border-bottom: solid 3px #231F20;
+               //border-right: solid 3px #231F20;
+               //border-bottom: solid 3px #231F20;
+               border:solid 2px #231F20;
                padding:0;
                width:40px;
-               .imgSelected{opacity:0.1;}
-                 img{width:100%; height:100%;}
+               &:hover{border-color:$color-header;}
+               a{display:flex;
+                 justify-content:center;
+                 align-items:center;
+                 overflow:hidden;}
+               //.imgSelected{opacity:0.1;}
+                 img{flex-shrink:0;}
               }
           }
      }
@@ -129,10 +136,15 @@
         margin-bottom:10px;
       }
       
-      #album_message .albumBox .imgShowBox .rightArrow {right:1%;} 
+      //#album_message .albumBox .imgShowBox .rightArrow {right:1%;} 
  
     
 }
+
+@media screen and (min-width:641px) and (max-width : 810px) {
+#album_message .albumBox .imgShowBox .rightArrow {left:98%;} 
+}
+
 
 @media screen and (max-width : 640px) {
 

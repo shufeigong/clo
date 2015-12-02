@@ -91,7 +91,7 @@ class imgHandlerClass{
 	{
 		$output="";
 		$output.='<div class="albumTrigger"><a class="album_show" albumid="'.$this->albumId.'">';
-		$output.='<div class="content-video-box" style="background-image: url('.$this->imgObjectArray[0]->imgUrl.'); background-size:100% 100%; background-repeat:no-repeat;"></div>';
+		$output.='<div class="content-video-box" style="background-image: url('.$this->imgObjectArray[0]->imgUrl.'); background-size:cover; background-position:center; background-repeat:no-repeat;"></div>';
 		$output.='<div class="content-video-title">'.$this->albumName.'</div>';
 		$output.='</a></div>';
 		return $output;
@@ -104,10 +104,30 @@ class imgHandlerClass{
 		              <div class="albumBox">  
 				        <div class="albumGrid">'.$this->createAlbumGrid().'</div>
 			           	<div class="imgShowBox"> 
-			             	 <a class="leftArrow" href="#" onclick="leftArrowClick(this); return false;"><img src="'.get_stylesheet_directory_uri().'/dist/img/leftArrow.svg" style="height:100%; width:100%;"/></a>
+			             	 <a class="leftArrow" href="#" onclick="leftArrowClick(this); return false;"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					                            viewBox="0 0 26 67" style="enable-background:new 0 0 26 67;" xml:space="preserve">
+				                                <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+				                                <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c067 79.157747, 2015/03/30-23:40:42        ">
+				                                <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+				                                <rdf:Description rdf:about=""/>
+                                                </rdf:RDF>
+												</x:xmpmeta>
+												<?xpacket end="w"?></metadata>
+												<polygon class="albumst0" points="7.7,33.7 25.7,0 18.1,0 0,33.7 18.1,67.5 25.7,67.5 "/>
+                               </svg></a>
 				             <div class="imgShow"><img src="'.$this->imgObjectArray[0]->imgUrl.'" alt="'.$this->imgObjectArray[0]->imgAlt.'"/></div>	
 				             <div class="imgCaption">'.$this->imgObjectArray[0]->imgCaption.'</div>
-				             <a class="rightArrow" href="#" onclick="rightArrowClick(this); return false;"><img src="'.get_stylesheet_directory_uri().'/dist/img/rightArrow.svg" style="height:100%; width:100%;"/></a>
+				             <a class="rightArrow" href="#" onclick="rightArrowClick(this); return false;"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	                                                                                                       viewBox="0 0 26 67" style="enable-background:new 0 0 26 67;" xml:space="preserve">
+												<metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+												<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c067 79.157747, 2015/03/30-23:40:42        ">
+												   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+												      <rdf:Description rdf:about=""/>
+												   </rdf:RDF>
+												</x:xmpmeta>                    
+												<?xpacket end="w"?></metadata>
+												<polygon class="albumst0" points="18.1,33.7 0,67.5 7.7,67.5 25.7,33.7 7.7,0 0,0 "/>
+                             </svg></a>
 		             	</div>
 				      </div>
 		         </div>';
@@ -123,7 +143,7 @@ class imgHandlerClass{
 		for($i=0; $i<count($this->imgObjectArray); $i++)
 		{
 			if($i%4==0){$output.='<tr>';}
-			if($i==0){$output.='<td>'.$this->imgObjectArray[$i]->createSelectedGridItem($i).'</td>';}else{$output.='<td>'.$this->imgObjectArray[$i]->createGridItem($i).'</td>';}
+			if($i==0){$output.='<td class="tdSelected">'.$this->imgObjectArray[$i]->createGridItem($i).'</td>';}else{$output.='<td>'.$this->imgObjectArray[$i]->createGridItem($i).'</td>';}
 			if($i%4==3||$i==count($this->imgObjectArray)-1){$output.='</tr>';}
 		}
 		
