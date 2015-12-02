@@ -155,7 +155,7 @@ function createVideoPost($post, $color){
 
 ///function for creating no video animated block
 function createNoVideoPost($post, $color){
-	$output= '<li><a href="' . get_permalink($post->ID) . '"><div class="news-item has-video" style="background:'.$color.';">
+	$output= '<li><a href="' . get_permalink($post->ID) . '"><div class="news-item no-video" style="background:'.$color.';">
                         <div class="arrow"></div>';
 		
 	$output.='<div class="content-box"><h2 class="post_title">' . strtoupper($post->post_title) . '</h2>';
@@ -170,9 +170,9 @@ function createNoVideoPost($post, $color){
 	if(mb_strlen($post->post_content)>77){
 		$post->post_content = mb_substr($post->post_content,0,77,"UTF8")."...";
 	}
-		$output.='<p class="post-content" style="width:238px;">' . $post->post_content.'</p>
+		$output.='<p class="post-content">' . $post->post_content.'</p>
 					    </div>';
-		$output.='<div class="video-box" style=" width:1px;visibility:hidden;background-size:100% 100%; background-repeat:no-repeat;"></div>';//end of video box
+		//$output.='<div class="video-box" style=" width:1px;visibility:hidden;background-size:100% 100%; background-repeat:no-repeat;"></div>';//end of video box
 		
 	
 	//$output.=mb_strlen($post->post_content);
