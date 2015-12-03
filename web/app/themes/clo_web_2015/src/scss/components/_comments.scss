@@ -46,37 +46,39 @@
 		border-top-color: rgb(0, 0, 0);
 		border-top-style: none;
 		border-top-width: 0px;
-		color: rgb(0, 0, 0);
-		cursor: default;
+		color: #58595B;
+		//cursor: default;
 		display: inline-block;
 		font-family: BlinkMacSystemFont;
-		font-size: 11px;
+		@include font-size(1.4);
 		font-stretch: normal;
 		font-style: normal;
 		font-variant: normal;
 		font-weight: normal;
-		height: 18px;
+		height: 25px;
 		letter-spacing: normal;
 		line-height: normal;
 		margin-bottom: 0px;
 		margin-left: 0px;
 		margin-right: 0px;
 		margin-top: 0px;
-		padding-bottom: 3px;
-		padding-left: 8px;
-		padding-right: 8px;
-		padding-top: 2px;
+		padding:5px 8px;
+		//padding-bottom: 3px;
+		//padding-left: 8px;
+		//padding-right: 8px;
+		//padding-top: 2px;
 		text-align: center;
 		text-indent: 0px;
 		text-rendering: auto;
 		text-shadow: none;
 		text-transform: none;
-		width: 91.1875px;
+		width: auto;
 		word-spacing: 0px;
 		writing-mode: lr-tb;
 		-webkit-writing-mode: horizontal-tb;
 		transition: background-color 300ms ease-out;
-		//background-color:#fff;
+		outline:0px;
+		&:focus{background-color: $color-header;color:#ffffff;}
 		&:hover{background-color: $color-header;color:#ffffff;}
      }
 }
