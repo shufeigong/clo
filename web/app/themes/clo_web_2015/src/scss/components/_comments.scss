@@ -75,6 +75,8 @@
 		word-spacing: 0px;
 		writing-mode: lr-tb;
 		-webkit-writing-mode: horizontal-tb;
+		transition: background-color 300ms ease-out;
 		//background-color:#fff;
+		&:hover{background-color: $color-header;color:#ffffff;}
      }
 }

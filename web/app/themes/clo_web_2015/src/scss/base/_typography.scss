@@ -14,6 +14,15 @@ textarea {
 .entry-content .subscribe, .entry-content2 .subscribe{@include font-size(1.2); font-family:$font_site-default;}
 ul.menu li .contentdiv .subscribe{@include font-size(1.2); font-family:$font_site-default;}
 
+
+label{
+      @include font-size(1.5);
+      display: inline;
+      color: #58595B;
+      }
+
+
+
 h1, h2, h3, h4, h5, h6 {
     clear : both;
     color : $color-header;
