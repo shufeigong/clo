@@ -11,10 +11,13 @@ select,
 textarea {
     @include font-size(1.2);
 }
+.entry-content .subscribe, .entry-content2 .subscribe{@include font-size(1.2); font-family:$font_site-default;margin-left:15px;}
+ul.menu li .contentdiv .subscribe{@include font-size(1.2); font-family:$font_site-default;margin-left:15px;}
 
 h1, h2, h3, h4, h5, h6 {
     clear : both;
     color : $color-header;
+     //.subscribe{font-size:12px; font-family:$font_site-default;}
 }
 
 h1 {
@@ -45,6 +48,7 @@ h3 {
     font-family : $font-site-bold;
     margin-top:15px;
     margin-bottom:15px;
+    //.subscribe{@include font-size(1.2); font-family:$font_site-default; border:solid 1px #333;}
     a{
 	color:#231F20;
     @include font-size(1.5);
