@@ -47,9 +47,11 @@ function pageLoad(linkSplit, basicItems) {
                         }
                     }, 10);
                 }
-               $('.slvj-link-lightbox').simpleLightboxVideo();
-               
-               if($(".btn_show").length>0){timeline();} 
+                
+                $('.slvj-link-lightbox').simpleLightboxVideo();
+        		if($(".btn_show").length>0){timeline()};
+        		campaignMonitor();
+        		album();
                
                
             }).fail(function () {
@@ -60,9 +62,11 @@ function pageLoad(linkSplit, basicItems) {
         	$.get("/wp-json/pages/"+linkSplit[1], function(response){
         		var content =response.content;
         		$(".entry-content").html(content);
-        		//$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
-        		if($(".btn_show").length>0){timeline();} 
+        		
+        		$('.slvj-link-lightbox').simpleLightboxVideo();
+        		if($(".btn_show").length>0){timeline()};
         		campaignMonitor();
+        		album();
         	});
         	
         }
@@ -73,8 +77,8 @@ function pageLoad(linkSplit, basicItems) {
 	            		var content =response.content;
 	            		$(".entry-content").html(content);
 	            		$(".news-content").css("visibility","visible");
-	            		//$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
-	            	    
+	            		
+	            		$('.slvj-link-lightbox').simpleLightboxVideo();
 	            		if($(".btn_show").length>0){timeline()};
 	            		campaignMonitor();
 	            		album();
@@ -87,9 +91,11 @@ function pageLoad(linkSplit, basicItems) {
             		var content =response.content;
             		$(".entry-content").html(content);
             		$(".news-content").css("visibility","visible");
-            		//$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
+            		
+            		$('.slvj-link-lightbox').simpleLightboxVideo();
             		if($(".btn_show").length>0){timeline()};
             		campaignMonitor();
+            		album();
             	});
         	}
         	
@@ -135,9 +141,6 @@ function grabPage(pageId) {
         };
 
         $('.slvj-link-lightbox').simpleLightboxVideo();
-
-        
-        //$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
         if($(".btn_show").length>0){timeline()};
         campaignMonitor();
         album();
@@ -281,10 +284,11 @@ function change(objectId, itemId, thisid) {
         $("#"+thisid).nextAll("ul").slideDown();
         
         window.history.pushState(null, null, "/" + itemId + "/#" + response.slug);
-        //$.artwl_bind({ showbtnid: "btn_show", title: "Community Living Ontario: Milestones", content: $("#timeline").html() });
-        if($(".btn_show").length>0){timeline()};
-        campaignMonitor();
-        //changeHeight(itemId);
+        
+        $('.slvj-link-lightbox').simpleLightboxVideo();
+		if($(".btn_show").length>0){timeline()};
+		campaignMonitor();
+		album();
         
         
     }).fail(function () {
