@@ -5,7 +5,7 @@ $(document).ready(function () {
         setScrollPost();
 
         $(window).resizeEnd({delay: 500}, function () {
-            setScrollPost2();
+            //setScrollPost2();
         });
     }
 });
