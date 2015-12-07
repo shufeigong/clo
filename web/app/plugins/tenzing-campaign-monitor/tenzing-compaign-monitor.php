@@ -27,12 +27,70 @@ function tz_campaign_monitor_install()
 	{
 		add_option("cm_actid", "http://eblast.gotenzing.com/t/r/p/iriutl/0/1/0/1/0/", '', 'yes');
 	}
+	
+	date_default_timezone_set('America/Toronto');
+	
+	$campaignItemArray=campaign_Monitor_GetData('DESC');
+	
+	foreach($campaignItemArray as $campaignItemObject)
+	{
+		$cm_post = array(
+				'post_title' => $campaignItemObject->getSitemapUrl(),
+				'post_type' =>'campaign',
+				'post_status' => 'publish',
+		);
+	
+		wp_insert_post( $cm_post );
+	}
+	
 }
 
 
+
+add_action('init', function() {
+
+	register_post_type( 'campaign',
+			array(
+					'labels' => array(
+							'name' => __( 'campaign' ),
+							'singular_name' => __( 'campaign' ),
+							'parent_item_colon'=>''
+					),
+					'public'=>true,
+					'publicly_queryable' => true,
+					'query_var' => true,
+					'exclude_from_search' => false,
+					'show_ui' => false,
+					//'menu_position' => 23,
+					'supports' => array(
+							'title'
+					),
+					//'taxonomies' => array('post_tag'),
+					'show_in_nav_menus' => false,
+					'rewrite' => array('pages' => false, 'slug'=>'app/plugins/tenzing-campaign-monitor/campaignRetriever.php?campaignURL=http://eblast.gotenzing.com/t/ViewEmailArchive/r', 'with_frot'=>false),
+					'hierarchical'=>true,
+					'capability_type'=>'post',
+					'has_archive' => true
+			)
+	);
+
+});
+
+	
 function tz_campaign_monitor_remove() {
-	/* 删除 wp_options 表中的对应记录 */
+	//delete wp_options 
 	delete_option('cm_actid');
+	
+	//delete all cm posts
+	$args = ['post_type'      => 'campaign', /* Change with your custom post type name */
+			 'posts_per_page' => -1,
+	        ];
+	$results = get_posts($args);
+    foreach ($results as $post) :  setup_postdata($post);
+	   wp_delete_post( $post->ID, true );
+	endforeach;
+	wp_reset_postdata();
+	
 }
 
 if(isset($_GET['m']) && $_GET['m']== '1')
@@ -144,6 +202,31 @@ function campaign_Monitor_LoadData()
 		$cm_actid = get_option( 'cm_actid' );
 		$str=file_get_contents($cm_actid);
 		file_put_contents(plugin_dir_path(__FILE__).'cm.txt', $str);
+		
+		//delete all cm posts
+		$args = ['post_type'      => 'campaign', /* Change with your custom post type name */
+				'posts_per_page' => -1,
+		];
+		$results = get_posts($args);
+		foreach ($results as $post) :  setup_postdata($post);
+		wp_delete_post( $post->ID, true );
+		endforeach;
+		wp_reset_postdata();
+		
+		
+		$campaignItemArray=campaign_Monitor_GetData('DESC');
+		
+		foreach($campaignItemArray as $campaignItemObject)
+		{
+			$cm_post = array(
+					'post_title' => $campaignItemObject->getSitemapUrl(),
+					'post_type' =>'campaign',
+					'post_status' => 'publish',
+			        );
+		
+			wp_insert_post( $cm_post );
+		}
+		
 	}
 	
 }
@@ -155,18 +238,15 @@ function campaign_Monitor_LoadData()
 class campaignItemClass{   //define campaignItemClass
 	private $itemUrl;                 //Define member variables
 	private $itemContent;
-	//private $itemContentDate;
 	private $itemDate;
-	//private $itemType;
-
-
-	function __construct($itemUrl, $itemContent, $itemDate)
+	private $sitemapUrl;
+	
+	function __construct($itemUrl, $itemContent, $itemDate, $sitemapUrl)
 	{
 		$this->itemUrl=$itemUrl;
 		$this->itemContent=$itemContent;
-		//$this->itemContentDate=$itemContentDate;
 		$this->itemDate=$itemDate;
-		//$this->itemType=$itemType;
+		$this->sitemapUrl=$sitemapUrl;
 	}
 	
 	
@@ -182,6 +262,10 @@ class campaignItemClass{   //define campaignItemClass
 		return $this->itemContent;
 	}
 	
+	function getSitemapUrl()
+	{
+		return $this->sitemapUrl;
+	}
 	
 	function displayPerItem()
 	{
@@ -328,7 +412,8 @@ function parseFilelineToObject($fileline)
 	$itemUrl;                 //Define member variables
 	$itemContent;
 	$itemDate;
-
+    $sitemapUrl;
+	
 	$lineSplit=explode("</a>, ", $fileline);
 
 	if(count($lineSplit)>0)
@@ -338,13 +423,17 @@ function parseFilelineToObject($fileline)
 		$str=str_replace(array('<a href="', '">', '</a> '), $delimiter, $str);
 
 		$strList=explode($delimiter, $str);
-		if(count($strList)>1){$itemUrl=$strList[1];}else{$itemUrl="";}
+		if(count($strList)>1){
+			$itemUrl=$strList[1];
+		    $urlList=explode('r/', $itemUrl);
+		    $sitemapUrl=$urlList[1];
+		}else{$itemUrl="";}
 		if(count($strList)>2){$itemContent=$strList[2];}else{$itemContent="";}
 	}
 
 	$itemDate = (count($lineSplit) > 1)? $lineSplit[1] : "";
 
-	$campaignItemObject= new campaignItemClass($itemUrl, $itemContent, $itemDate);
+	$campaignItemObject= new campaignItemClass($itemUrl, $itemContent, $itemDate, $sitemapUrl);
 
 	return $campaignItemObject;
 
