@@ -21,6 +21,12 @@ var image5 = {
     small_car2: $('.animation-menu li .image-link').find('.small-car2').parent()
 };
 
+image2.bicycle_guy.css({"stroke":"#ffffff", "stroke-width":"0.5px", "stroke-miterlimit":"10"});
+image3.wheel_chair.css({"stroke":"#ffffff", "stroke-width":"0.5px", "stroke-miterlimit":"10"});
+image4.running_man.css({"stroke":"#ffffff", "stroke-width":"0.5px", "stroke-miterlimit":"10"});
+image5.old_man.css({"stroke":"#ffffff", "stroke-width":"0.5px", "stroke-miterlimit":"10"});
+image5.man_with_dog.css({"stroke":"#ffffff", "stroke-width":"0.5px", "stroke-miterlimit":"10"});
+
 doAnimation(image2.bicycle_guy, 'left', false);
 doAnimation(image3.small_car, 'right', true);
 doAnimation(image3.school_bus, 'right', true);
