@@ -70,10 +70,7 @@
     
     .albumBox{
       max-width:670px;
-      //border:solid 1px red;
-      //max-width:720px;
-      //height:470px;
-      //min-height:400px;
+      margin:0 auto;
       .albumGrid{width:160px;float:left;}
       
       .imgShowBox{
@@ -122,6 +119,19 @@
     
  
 }
+
+@media screen and (min-width : 1210px){
+       
+    #album_message .albumBox .imgShowBox .imgShow{
+       width:100%;
+    }
+    
+    #album_message .albumBox .imgShowBox .rightArrow{
+      left:108%;
+    }
+    
+}
+
 
 @media screen and (max-width : 999px) {
        
