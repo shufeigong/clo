@@ -259,7 +259,8 @@ function change(objectId, itemId, thisid) {
         var content = response.content;
         
         $("#" + itemId).nextAll(".contentdiv").html("<br/>");
-        $("#" + itemId).nextAll(".contentdiv").append(content);
+        $("#" + itemId).nextAll(".contentdiv").append(content).slideUp("slow");
+        //$("#" + itemId).nextAll(".contentdiv").slideUp();
         $("#" + itemId).nextAll(".contentdiv").slideDown("normal",changeHeight(itemId));  //get content down
         //var bread="";
         //var parentItems = new Array();

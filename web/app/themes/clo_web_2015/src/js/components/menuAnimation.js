@@ -2,34 +2,41 @@
 var path = require('path');
 
 var image2 = {
-    bicycle_guy: $('.animation-menu li .image-link').find('.bicycle-guy').parent()
+    bicycle_guy: $('.animation-menu li .image-link').find('.bicycle-guy, .bicycle-guy2').parent(),
+    //bicycle_guy2: $('.animation-menu li .image-link').find('.bicycle-guy2').parent(),
 };
 
 var image3 = {
     small_car: $('.animation-menu li .image-link').find('.small-car').parent(),
     school_bus: $('.animation-menu li .image-link').find('.school-bus').parent(),
-    wheel_chair: $('.animation-menu li .image-link').find('.wheel-chair').parent(),
-    double_students: $('.animation-menu li .image-link').find('.double-students').parent()
+    wheel_chair: $('.animation-menu li .image-link').find('.wheel-chair, .wheel-chair2').parent(),
+    double_students: $('.animation-menu li .image-link').find('.double-students, .double-students2').parent()
 };
 
 var image4 = {
-    running_man: $('.animation-menu li .image-link').find('.running-man').parent()
+    running_man: $('.animation-menu li .image-link').find('.running-man, .running-man2').parent()
 };
 
 var image5 = {
-    old_man: $('.animation-menu li .image-link').find('.old-man').parent(),
-    man_with_dog: $('.animation-menu li .image-link').find('.man-with-dog').parent(),
+    old_man: $('.animation-menu li .image-link').find('.old-man, .old-man2').parent(),
+    man_with_dog: $('.animation-menu li .image-link').find('.man-with-dog, .man-with-dog2').parent(),
     small_car2: $('.animation-menu li .image-link').find('.small-car2').parent()
 };
 
-image2.bicycle_guy.css({"stroke":"#ffffff", "stroke-width":"0.5px", "stroke-miterlimit":"10"});
-image3.wheel_chair.css({"stroke":"#ffffff", "stroke-width":"0.5px", "stroke-miterlimit":"10"});
-image3.double_students.css({"stroke":"#ffffff", "stroke-width":"0.5px", "stroke-miterlimit":"10"});
-image4.running_man.css({"stroke":"#ffffff", "stroke-width":"0.5px", "stroke-miterlimit":"10"});
-image5.old_man.css({"stroke":"#ffffff", "stroke-width":"0.5px", "stroke-miterlimit":"10"});
-image5.man_with_dog.css({"stroke":"#ffffff", "stroke-width":"0.5px", "stroke-miterlimit":"10"});
+$('.animation-menu li .image-link').find('.bicycle-guy').parent().css({"stroke":"#ffffff", "stroke-width":"2px","stroke-miterlimit":"10"});
+
+$('.animation-menu li .image-link').find('.wheel-chair').parent().css({"stroke":"#ffffff", "stroke-width":"2px","stroke-miterlimit":"10"});
+
+$('.animation-menu li .image-link').find('.double-students').parent().css({"stroke":"#ffffff", "stroke-width":"2px","stroke-miterlimit":"10"});
+
+$('.animation-menu li .image-link').find('.running-man').parent().css({"stroke":"#ffffff", "stroke-width":"2px","stroke-miterlimit":"10"});
+
+$('.animation-menu li .image-link').find('.old-man').parent().css({"stroke":"#ffffff", "stroke-width":"2px","stroke-miterlimit":"10"});
+
+$('.animation-menu li .image-link').find('.man-with-dog').parent().css({"stroke":"#ffffff", "stroke-width":"2px","stroke-miterlimit":"10"});
 
 doAnimation(image2.bicycle_guy, 'left', false);
+//doAnimation(image2.bicycle_guy2, 'left', false);
 doAnimation(image3.small_car, 'right', true);
 doAnimation(image3.school_bus, 'right', true);
 doAnimation(image3.wheel_chair, 'right', false);
