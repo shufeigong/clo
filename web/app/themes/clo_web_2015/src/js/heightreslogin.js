@@ -77,8 +77,11 @@ function setfixed(itemId)
 		 $(this).css("bottom", (lilength-$(this).index())*20);
 	     });
 	                                                           //make prev next all li to be fixed
-	     $("#" + itemId).parent().nextAll().css({"position":"fixed", "width":"87.4%", "max-width":"962px", "z-index":"100", "background-color":"#fff"});
-	
+	     setTimeout(function(){
+	    	 $("#" + itemId).parent().nextAll().css({"position":"fixed", "width":"87.4%", "max-width":"962px", "z-index":"100", "background-color":"#fff"});
+	     }, 150);
+	     //$("#" + itemId).parent().nextAll().css({"position":"fixed", "width":"87.4%", "max-width":"962px", "z-index":"100", "background-color":"#fff"});
+	     
 	////////////current li//////////////
 	   
 	   
