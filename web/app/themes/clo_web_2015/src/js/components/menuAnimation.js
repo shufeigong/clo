@@ -8,7 +8,8 @@ var image2 = {
 var image3 = {
     small_car: $('.animation-menu li .image-link').find('.small-car').parent(),
     school_bus: $('.animation-menu li .image-link').find('.school-bus').parent(),
-    wheel_chair: $('.animation-menu li .image-link').find('.wheel-chair').parent()
+    wheel_chair: $('.animation-menu li .image-link').find('.wheel-chair').parent(),
+    double_students: $('.animation-menu li .image-link').find('.double-students').parent()
 };
 
 var image4 = {
@@ -23,6 +24,7 @@ var image5 = {
 
 image2.bicycle_guy.css({"stroke":"#ffffff", "stroke-width":"0.5px", "stroke-miterlimit":"10"});
 image3.wheel_chair.css({"stroke":"#ffffff", "stroke-width":"0.5px", "stroke-miterlimit":"10"});
+image3.double_students.css({"stroke":"#ffffff", "stroke-width":"0.5px", "stroke-miterlimit":"10"});
 image4.running_man.css({"stroke":"#ffffff", "stroke-width":"0.5px", "stroke-miterlimit":"10"});
 image5.old_man.css({"stroke":"#ffffff", "stroke-width":"0.5px", "stroke-miterlimit":"10"});
 image5.man_with_dog.css({"stroke":"#ffffff", "stroke-width":"0.5px", "stroke-miterlimit":"10"});
@@ -31,6 +33,7 @@ doAnimation(image2.bicycle_guy, 'left', false);
 doAnimation(image3.small_car, 'right', true);
 doAnimation(image3.school_bus, 'right', true);
 doAnimation(image3.wheel_chair, 'right', false);
+doAnimation(image3.double_students, 'left', false);
 doAnimation(image4.running_man, 'left', false);
 doAnimation(image5.old_man, 'left', false);
 doAnimation(image5.man_with_dog, 'right', false);
