@@ -12,7 +12,9 @@ function changeHeight(itemId)
 		    if($(".header").height()+menuHeight+$("#" + itemId).nextAll(".contentdiv").height()>$(window).height())
 		    	{
 		    	if($(".menu-main-menu-french-container").length >0) {backHeightFr(itemId);setfixedFr(itemId);}
-		    	else{backHeight(itemId);setfixed(itemId);}
+		    	else{backHeight(itemId);
+		    	setfixed(itemId);
+		    	}
 		    	
 		    	}
 		    else{
@@ -77,9 +79,12 @@ function setfixed(itemId)
 		 $(this).css("bottom", (lilength-$(this).index())*20);
 	     });
 	                                                           //make prev next all li to be fixed
+	     
+	     //$("#" + itemId).parent().nextAll().css({"width":"87.4%", "max-width":"962px", "z-index":"100", "background-color":"#fff"});
 	     setTimeout(function(){
+	    	 $("#" + itemId).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20+2, "z-index":"100", "left":leftv+1, "width":widthw-2, "max-width":"846px"});
 	    	 $("#" + itemId).parent().nextAll().css({"position":"fixed", "width":"87.4%", "max-width":"962px", "z-index":"100", "background-color":"#fff"});
-	     }, 150);
+	     }, 250);
 	     //$("#" + itemId).parent().nextAll().css({"position":"fixed", "width":"87.4%", "max-width":"962px", "z-index":"100", "background-color":"#fff"});
 	     
 	////////////current li//////////////
@@ -95,7 +100,8 @@ function setfixed(itemId)
  	 if($(window).width()>=1000)
  	 { $("#" + itemId).nextAll(".blueline").css({"position":"fixed", "top":headerHeight+(currentli+3)*20, "z-index":"100", "left":leftv, "width":widthw, "max-width":"848px","border-top":"12px solid #fff" });  
  	   $("#" + itemId).nextAll(".contentdiv").css("margin-left","11%");
- 	   $("#" + itemId).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20+2, "z-index":"100", "left":leftv+1, "width":widthw-2, "max-width":"846px"});
+ 	   //$("#" + itemId).nextAll(".image-link").css({"bottom":(lilength-currentli)*20+2, "z-index":"100", "left":leftv+1, "width":widthw-2, "max-width":"846px"});
+ 	   //$("#" + itemId).nextAll(".image-link").css({"position":"fixed", "bottom":(lilength-currentli)*20+2, "z-index":"100", "left":leftv+1, "width":widthw-2, "max-width":"846px"});
  	  }
  	   else
  	 {
