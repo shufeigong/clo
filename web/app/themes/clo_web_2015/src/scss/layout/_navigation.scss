@@ -110,20 +110,30 @@
 
                 }
             }
-
+             .overarea{
+                display:none;
+                border:solid 1px #333;
+                margin-top:2%;
+                margin-bottom:1%;
+                margin-left:11%;
+                width:87%;
+                //height:350px;
+                //overflow-y:scroll;
+             }
             .contentdiv {
-                display       : none;
+                //display       : none;
+                display:inline-block;
                 width         : 52%;
-                //border:solid 1px #0075C9;
+                border:solid 1px #0075C9;
                 //border-top    : solid 4px #0075C9;
 
-                float         : left;
+                //float         : left;
                 //position:absolute;
                 //margin-top    : 10px;
-                margin-left   : 4px;
-                margin-bottom : 8%;
+                //margin-left   : 4px;
+                margin-bottom : 7%;
                 //padding-top:  1%;
-                padding-left  : 5px;
+                //padding-left  : 5px;
                 a {
                     color           : #231F20;
                     font-family     : $font-site-bold;
@@ -224,12 +234,14 @@
             }
 
             .menudiv {
-                display       : none;
+                //display       : none;
                 //border-top    : solid 4px #0075C9;
                 //border:solid 1px #0075C9;
+                display:inline-block;
                 width         : 36%;
-                float         : left;
-                margin-top    : 1.2%;
+                //float         : left;
+                float :right;
+                //margin-top    : 1.2%;
                 margin-bottom : 8%;
                 padding-left  : 2%;
                 padding-top   : 29px;
@@ -439,20 +451,32 @@
 
                 }
             }
-
+            
+            .overarea{
+                display:none;
+                border:solid 1px #333;
+                margin-top:2%;
+                margin-bottom:1%;
+                margin-left:11%;
+                width:87%;
+                //height:350px;
+                //overflow-y:scroll;
+             }
+            
             .contentdiv {
-                display       : none;
+                //display       : none;
+                display: inline-block;
                 width         : 52%;
-                //border:solid 1px #0075C9;
+                border:solid 1px #0075C9;
                 //border-top    : solid 4px #0075C9;
 
-                float         : left;
+                //float         : left;
                 //position:absolute;
                 //margin-top    : 10px;
-                margin-left   : 4px;
-                margin-bottom : 8%;
+                //margin-left   : 4px;
+                margin-bottom : 7%;
                 //padding-top:  1%;
-                padding-left  : 5px;
+                //padding-left  : 5px;
                 a{
                     color           : #231F20;
                     font-family     : $font-site-bold;
@@ -551,12 +575,14 @@
             }
 
             .menudiv {
-                display       : none;
+                //display       : none;
                 //border-top    : solid 4px #0075C9;
                 //border:solid 1px #0075C9;
+                display: inline-block;
                 width         : 34%;
-                float         : left;
-                margin-top    : 1.2%;
+                //float         : left;
+                //margin-top    : 1.2%;
+                float:right;
                 margin-bottom : 8%;
                 padding-left  : 2%;
                 padding-top   : 29px;
@@ -649,7 +675,7 @@
         margin        : 0;
         width         : 88%;
         position      : absolute;
-        left          : 95px;
+        left          : 88px;
         top           : 12px;
 
     }

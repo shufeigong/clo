@@ -16,7 +16,7 @@
         max-width : 962px;
 
         .contentdiv {
-            padding-left : 15px;
+            //padding-left : 15px;
 
             > p {
                 margin-top : 15px;
@@ -34,8 +34,8 @@
 }
 
 html {
-overflow: -moz-scrollbars-vertical; 
-overflow-y: scroll;
+//overflow: -moz-scrollbars-vertical; 
+//overflow-y: scroll;
 }
 /////////////////////
 @media screen and (min-width : 1000px) {
