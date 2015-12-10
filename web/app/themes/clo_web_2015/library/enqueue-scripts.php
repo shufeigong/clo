@@ -21,7 +21,7 @@ function foundationpress_scripts()
 //    wp_enqueue_style( 'foundation-stylesheet', get_template_directory_uri() . '/css/foundation.css' );
 
     if(chk_ie_browser()){
-    	wp_enqueue_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/dist/css/iestyle.css' );
+    	wp_enqueue_style( 'ie-stylesheet', get_stylesheet_directory_uri() . '/dist/css/iestyle.css' );
     }
     
     // Modernizr is used for polyfills and feature detection. Must be placed in header. (Not required).
