@@ -35,7 +35,7 @@ function pageLoad(linkSplit, basicItems) {
                     //$("#" + linkSplit[1]).nextAll(".contentdiv").slideDown("normal",changeHeight(linkSplit[1]));  //get content down
                     //$("#" + linkSplit[1]).nextAll(".menudiv").slideDown(); //get submenu down
 
-                    $("#" + linkSplit[1]).nextAll(".overarea").slideDown(); //get submenu down 
+                    $("#" + linkSplit[1]).nextAll(".overarea").slideDown("normal",changeHeight(linkSplit[1])); //get submenu down 
                     $("#" + linkSplit[1]).parents('ul').find('li.selected').removeClass('selected');
                     $("#" + linkSplit[1]).parent().addClass('selected');
 
@@ -272,7 +272,7 @@ function change(objectId, itemId, thisid) {
 
             //$("#" + itemId).nextAll(".contentdiv").html("<br/>");
             $("#" + itemId).nextAll(".overarea").children(".contentdiv").html(content);
-            $("#" + itemId).nextAll(".overarea").slideDown("normal");  //get content down
+            $("#" + itemId).nextAll(".overarea").slideDown("normal", changeHeight(itemId));//get content down
             //var bread="";
             //var parentItems = new Array();
             //var parentClicks = new Array();
