@@ -10,7 +10,9 @@ function foundationpress_scripts()
     wp_enqueue_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/dist/css/app.css' );
 //    wp_enqueue_style( 'foundation-stylesheet', get_template_directory_uri() . '/css/foundation.css' );
     
-    if (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false) {
+    $userAgent = parse_user_agent();
+    
+    if ($userAgent['browser'] == 'MSIE') {
     	wp_enqueue_style( 'ie-stylesheet', get_stylesheet_directory_uri() . '/dist/css/iestyle.css' );
     }
    
