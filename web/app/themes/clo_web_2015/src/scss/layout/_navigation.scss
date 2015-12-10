@@ -1,5 +1,28 @@
 //Navigation specific stylings
 @media screen and (min-width : 1000px) {
+
+    .menu-main-menu-container{.overarea{
+                display:none;
+                border:solid 1px #333;
+                margin-top:2%;
+                margin-bottom:1%;
+                margin-left:11%;
+                width:87%;
+                //height:350px;
+                //overflow-y:scroll;
+             }}
+
+    .menu-main-menu-french-container{.overarea{
+                display:none;
+                border:solid 1px #333;
+                margin-top:2%;
+                margin-bottom:1%;
+                margin-left:17%;
+                width:78%;
+                //height:350px;
+                //overflow-y:scroll;
+             }}
+
     // Main menu style
     //Adjust the position
     ul.menu {
@@ -110,16 +133,9 @@
 
                 }
             }
-             .overarea{
-                display:none;
-                border:solid 1px #333;
-                margin-top:2%;
-                margin-bottom:1%;
-                margin-left:11%;
-                width:87%;
-                //height:350px;
-                //overflow-y:scroll;
-             }
+             
+             
+             
             .contentdiv {
                 //display       : none;
                 display:inline-block;
