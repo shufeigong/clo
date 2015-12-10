@@ -1,14 +1,4 @@
 <?php
-function chk_ie_browser() {
-	$userbrowser = $_SERVER['HTTP_USER_AGENT'];
-	if ( preg_match( '/MSIE/i', $userbrowser ) ) {
-		$usingie = true;
-	} else {
-		$usingie = false;
-	}
-	return $usingie;
-}
-
 
 function foundationpress_scripts()
 {
@@ -19,11 +9,10 @@ function foundationpress_scripts()
     // Enqueue the main Stylesheet.
     wp_enqueue_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/dist/css/app.css' );
 //    wp_enqueue_style( 'foundation-stylesheet', get_template_directory_uri() . '/css/foundation.css' );
-
-    //if(chk_ie_browser()){
-    //	wp_enqueue_style( 'ie-stylesheet', get_stylesheet_directory_uri() . '/dist/css/iestyle.css' );
-    //}
-    
+    $msie = strpos($_SERVER["HTTP_USER_AGENT"], 'MSIE') ? true : false;
+    if ($msie){
+    	wp_enqueue_style( 'ie-stylesheet', get_stylesheet_directory_uri() . '/dist/css/iestyle.css' );
+    }
     // Modernizr is used for polyfills and feature detection. Must be placed in header. (Not required).
     wp_register_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js', array(), '2.8.3', false );
 
