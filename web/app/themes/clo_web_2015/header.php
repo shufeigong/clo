@@ -28,6 +28,11 @@
           href="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/icons/apple-touch-icon-precomposed.png">
     
     <?php wp_head(); ?>
+    <!--[if IE]> 
+     <link rel="stylesheet id=ie-stylesheet"
+          href="<?php echo get_stylesheet_directory_uri(); ?>/dist/css/iestyle.css">
+    
+     <![endif]-->
     <meta property="og:image" content="http://clo-web-2015.gotenzing.com/app/uploads/2015/10/CLO_Website_Pull.jpg" />
 </head>
 <body <?php body_class(); ?>>
