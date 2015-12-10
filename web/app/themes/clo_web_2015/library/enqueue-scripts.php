@@ -1,4 +1,5 @@
 <?php
+
 function foundationpress_scripts()
 {
     // Deregister the jquery version bundled with WordPress.
@@ -8,7 +9,12 @@ function foundationpress_scripts()
     // Enqueue the main Stylesheet.
     wp_enqueue_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/dist/css/app.css' );
 //    wp_enqueue_style( 'foundation-stylesheet', get_template_directory_uri() . '/css/foundation.css' );
-
+    
+    if (strpos($_SERVER['HTTP_USER_AGENT'], 'Trident/7.0; rv:11.0') !== false) {
+    	wp_enqueue_style( 'ie-stylesheet', get_stylesheet_directory_uri() . '/dist/css/iestyle.css' );
+    }
+   
+    
     // Modernizr is used for polyfills and feature detection. Must be placed in header. (Not required).
     wp_register_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js', array(), '2.8.3', false );
 

@@ -1,36 +1,51 @@
 
 var minHeight = 200;
-var menuHeight=290;
+//var menuHeight=290;
 var headerHeight=$(".header").height();
 var itemId2;
 function changeHeight(itemId)
 {
-  	
+  	//alert($(".header").height());
 	//alert($(".header").height()+210+$("#" + itemId).nextAll(".contentdiv").height());
+	var menuHeight=22*$("#" + itemId).parent().siblings().length+22;
+	//alert(menuHeight);
+	backOver(itemId);
 	if(($(".header").height()+minHeight+menuHeight)<=$(window).height())
 		{			
-		    if($(".header").height()+menuHeight+$("#" + itemId).nextAll(".contentdiv").height()>$(window).height())
+		    if($(".header").height()+menuHeight+parseInt($("#" + itemId).nextAll(".overarea").css("height"))>$(window).height())
 		    	{
-		    	if($(".menu-main-menu-french-container").length >0) {backHeightFr(itemId);setfixedFr(itemId);}
-		    	else{backHeight(itemId);
-		    	setfixed(itemId);
-		    	}
-		    	
+		    	   //alert(parseInt($("#" + itemId).nextAll(".overarea").css("height")));
+		    	   //backOver();
+		    	   setOver(menuHeight, itemId); 
 		    	}
 		    else{
-		    	if($(".menu-main-menu-french-container").length >0) {backHeightFr(itemId);}
-		    	else{backHeight(itemId);}
-		    }
-		     
+		    	  //backOver();
+		    	}
+		    
+		
 		}
+		    
 	
 	else{
-		if($(".menu-main-menu-french-container").length >0) {backHeightFr(itemId);}
-    	else{backHeight(itemId);}
+		//backOver();
 	}
 	
  
 }
+
+function backOver(itemId)
+{
+	$("#" + itemId).parent().siblings().children(".overarea").css({"height":"auto", "overflow-y":"visible"});
+}
+
+
+
+function setOver(menuHeight,itemId)
+{
+	var overheight=$(window).height()-menuHeight-$(".header").height()-80;
+	$("#" + itemId).nextAll(".overarea").css({"height":overheight+"px","overflow-y":"scroll"});
+}
+
 
 function setfixed(itemId)
 {

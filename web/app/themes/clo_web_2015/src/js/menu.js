@@ -14,9 +14,10 @@ function pageLoad(linkSplit, basicItems) {
         }
         else if ($.inArray(linkSplit[1], basicItems) != -1 && location.hash != ''&& location.hash!='#main-content') {//not basic item, is subitem in side menu
         	
-        	$("#" + linkSplit[1]).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
-            $("#" + linkSplit[1]).parent().siblings().children(".menudiv").slideUp();       //close all other pages' submenu
-            grabSubMenu(linkSplit[1]);
+        	//$("#" + linkSplit[1]).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
+            //$("#" + linkSplit[1]).parent().siblings().children(".menudiv").slideUp();       //close all other pages' submenu
+        	$("#" + linkSplit[1]).parent().siblings().children(".overarea").slideUp();
+        	grabSubMenu(linkSplit[1]);
         	
             $.get("/wp-json/pages/" + location.hash.substr(1), function (response) {
             })
@@ -25,15 +26,16 @@ function pageLoad(linkSplit, basicItems) {
 
                     //$("#" + linkSplit[1]).nextAll(".contentdiv").children(".textdiv").html(content);
 
-                    $("#" + linkSplit[1]).nextAll(".contentdiv").html("<br/>");
-                    $("#" + linkSplit[1]).nextAll(".contentdiv").append(content);
+                    //$("#" + linkSplit[1]).nextAll(".contentdiv").html("<br/>");
+                    $("#" + linkSplit[1]).nextAll(".overarea").children(".contentdiv").html(content);
 
                     $(".entry-content-mobile").html(content);
 
 
-                    $("#" + linkSplit[1]).nextAll(".contentdiv").slideDown("normal",changeHeight(linkSplit[1]));  //get content down
-                    $("#" + linkSplit[1]).nextAll(".menudiv").slideDown(); //get submenu down
+                    //$("#" + linkSplit[1]).nextAll(".contentdiv").slideDown("normal",changeHeight(linkSplit[1]));  //get content down
+                    //$("#" + linkSplit[1]).nextAll(".menudiv").slideDown(); //get submenu down
 
+                    $("#" + linkSplit[1]).nextAll(".overarea").slideDown("normal",changeHeight(linkSplit[1])); //get submenu down 
                     $("#" + linkSplit[1]).parents('ul').find('li.selected').removeClass('selected');
                     $("#" + linkSplit[1]).parent().addClass('selected');
 
@@ -113,20 +115,21 @@ function grabPage(pageId) {
         .always(function(response) {
             var content = response.content;
 
-            $("#" + pageId).nextAll(".contentdiv").html("<br/>");
+            //$("#" + pageId).nextAll(".overarea").children(".contentdiv").html("<br/>");
             //$("#" + pageId).nextAll(".contentdiv").children(".breaddiv").html('<div class="basic"><a href="#" onclick="itemClick(\''+pageId+'\'); return false;" class="breaditem" >'+response.title+'</a></div><div class="rest"></div>');//create the first level breadcrumb menu
             //$("#" + pageId).nextAll(".contentdiv").children(".textdiv").html(content);
 
-            $("#" + pageId).nextAll(".contentdiv").append(content);
+            $("#" + pageId).nextAll(".overarea").children(".contentdiv").html(content);
             $(".entry-content-mobile").html(content);
             if ($(window).width() > 640) {
-                $("#" + pageId).nextAll(".contentdiv").slideDown("normal", changeHeight(pageId));
+                //$("#" + pageId).nextAll(".contentdiv").slideDown("normal", changeHeight(pageId));
+            	$("#" + pageId).nextAll(".overarea").slideDown("normal", changeHeight(pageId));
             }
             else {
-                $("#" + pageId).nextAll(".contentdiv").slideDown();
+                //$("#" + pageId).nextAll(".contentdiv").slideDown();
             }
 
-            $("#" + pageId).nextAll(".menudiv").slideDown(); //get submenu down
+            //$("#" + pageId).nextAll(".menudiv").slideDown(); //get submenu down
 
             $("#" + pageId).parents('ul').find('li.selected').removeClass('selected');
             $("#" + pageId).parent().addClass('selected');
@@ -208,7 +211,7 @@ function displayMenu(itemId, menuUrl) {
                     }
                 }
             }
-            $("#" + itemId).nextAll(".menudiv").children().html(output);
+            $("#" + itemId).nextAll(".overarea").children(".menudiv").children().html(output);
 
             for (var i = 0; i < response.items.length; i++) {
 
@@ -267,9 +270,9 @@ function change(objectId, itemId, thisid) {
         .done(function(response) {
             var content = response.content;
 
-            $("#" + itemId).nextAll(".contentdiv").html("<br/>");
-            $("#" + itemId).nextAll(".contentdiv").append(content);
-            $("#" + itemId).nextAll(".contentdiv").slideDown("normal",changeHeight(itemId));  //get content down
+            //$("#" + itemId).nextAll(".contentdiv").html("<br/>");
+            $("#" + itemId).nextAll(".overarea").children(".contentdiv").html(content);
+            $("#" + itemId).nextAll(".overarea").slideDown("normal", changeHeight(itemId));//get content down
             //var bread="";
             //var parentItems = new Array();
             //var parentClicks = new Array();
@@ -334,8 +337,9 @@ function itemClick(itemId) {
     $(".entry-content,.entry-content2,.entry-content2 form").slideUp();
     $(".news-content").slideUp();
     
-    $("#" + itemId).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
-    $("#" + itemId).parent().siblings().children(".menudiv").slideUp();      //close all other pages' submenu
+    $("#" + itemId).parent().siblings().children(".overarea").slideUp();    //close all other pages
+    //$("#" + itemId).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
+    //$("#" + itemId).parent().siblings().children(".menudiv").slideUp();      //close all other pages' submenu
 
     //////////clear previous mass///////////
     window.history.pushState(null, null, "/" + itemId + "/");
