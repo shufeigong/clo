@@ -1,7 +1,20 @@
 //Navigation specific stylings
 @media screen and (min-width : 1000px) {
 
-    .menu-main-menu-container{.overarea{
+    .menu-main-menu-container{
+    
+      ::-webkit-scrollbar {
+       -webkit-appearance: none;
+       width: 7px;
+       }
+
+     ::-webkit-scrollbar-thumb {
+       border-radius: 4px;
+       background-color: rgba(0,0,0,.5);
+       -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+      }
+    
+    .overarea{
                 display:none;
                 border:solid 1px #333;
                 margin-top:2%;
@@ -10,9 +23,23 @@
                 width:87%;
                 //height:350px;
                 //overflow-y:scroll;
+                
+
              }}
 
-    .menu-main-menu-french-container{.overarea{
+    .menu-main-menu-french-container{
+       ::-webkit-scrollbar {
+       -webkit-appearance: none;
+       width: 7px;
+       }
+
+     ::-webkit-scrollbar-thumb {
+       border-radius: 4px;
+       background-color: rgba(0,0,0,.5);
+       -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+      }
+       
+       .overarea{
                 display:none;
                 border:solid 1px #333;
                 margin-top:2%;
@@ -359,7 +386,19 @@
 /////////////////////////////////////////641~999px
 @media screen and (min-width : 641px) and (max-width : 999px) {
 
- .menu-main-menu-container{.overarea{
+ .menu-main-menu-container{
+       ::-webkit-scrollbar {
+       -webkit-appearance: none;
+       width: 7px;
+       }
+
+     ::-webkit-scrollbar-thumb {
+       border-radius: 4px;
+       background-color: rgba(0,0,0,.5);
+       -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+      }
+       
+       .overarea{
                 display:none;
                 border:solid 1px #333;
                 margin-top:2%;
@@ -370,7 +409,19 @@
                 //overflow-y:scroll;
              }}
 
-    .menu-main-menu-french-container{.overarea{
+    .menu-main-menu-french-container{
+           ::-webkit-scrollbar {
+       -webkit-appearance: none;
+       width: 7px;
+       }
+
+     ::-webkit-scrollbar-thumb {
+       border-radius: 4px;
+       background-color: rgba(0,0,0,.5);
+       -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+      }
+    
+          .overarea{
                 display:none;
                 border:solid 1px #333;
                 margin-top:2%;

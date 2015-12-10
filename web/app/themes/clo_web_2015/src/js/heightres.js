@@ -1,4 +1,3 @@
-
 var minHeight = 200;
 //var menuHeight=290;
 var headerHeight=$(".header").height();
@@ -9,18 +8,16 @@ function changeHeight(itemId)
 	//alert($(".header").height()+210+$("#" + itemId).nextAll(".contentdiv").height());
 	var menuHeight=22*$("#" + itemId).parent().siblings().length+22;
 	//alert(menuHeight);
-	backOver();
+	backOver(itemId);
 	if(($(".header").height()+minHeight+menuHeight)<=$(window).height())
 		{			
 		    if($(".header").height()+menuHeight+parseInt($("#" + itemId).nextAll(".overarea").css("height"))>$(window).height())
 		    	{
 		    	   //alert(parseInt($("#" + itemId).nextAll(".overarea").css("height")));
 		    	   //backOver();
-		    	   //alert("a");
-		    	   setOver(menuHeight); 
+		    	   setOver(menuHeight, itemId); 
 		    	}
 		    else{
-		    	  //alert("b");
 		    	  //backOver();
 		    	}
 		    
@@ -29,23 +26,25 @@ function changeHeight(itemId)
 		    
 	
 	else{
-		//alert("c");
 		//backOver();
 	}
 	
  
 }
 
-function backOver()
+function backOver(itemId)
 {
-	$(".overarea").css({"height":"auto", "overflow-y":"visible"});
+	$("#" + itemId).parent().siblings().children(".overarea").css({"height":"auto", "overflow-y":"visible"});
 }
 
-function setOver(menuHeight)
+
+
+function setOver(menuHeight,itemId)
 {
 	var overheight=$(window).height()-menuHeight-$(".header").height()-80;
-	$(".overarea").css({"height":overheight+"px", "overflow":"-moz-scrollbars-vertical","overflow-y":"scroll"});
+	$("#" + itemId).nextAll(".overarea").css({"height":overheight+"px","overflow-y":"scroll"});
 }
+
 function setfixed(itemId)
 {
 	var leftv=$("#" + itemId).parent().offset().left+$("#" + itemId).width()+4;
