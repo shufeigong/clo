@@ -32,7 +32,14 @@
 </head>
 <body <?php body_class(); ?>>
 <?php do_action('foundationpress_after_body'); ?>
+<?php
 
+$userAgent = parse_user_agent();
+
+if ($userAgent['browser'] == 'MSIE' && (int)$userAgent['version'] < 11) {
+    echo '<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/?locale=en/">upgrade your browser</a> to improve your experience.</p>';
+
+} ?>
 <div class="off-canvas-wrap" data-offcanvas>
     <div class="inner-wrap">
        
@@ -47,9 +54,7 @@
      <?php else:?>
     <div class="row header non-login">
      <?php endif;?>
-     
-       
-	        
+
 	        <nav class="tab-bar show-for-small-only">
 	            <section class="right-small">
 	                <a class="right-off-canvas-toggle menu-icon" ><span></span></a>

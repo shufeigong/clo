@@ -55,7 +55,8 @@
     "wpackagist-plugin/wp-better-emails": "^0.2",
     "wpackagist-plugin/tinymce-advanced": "^4.1.9",
     "yoast/wordpress-seo": "^2.3",
-    "wpackagist-plugin/pods": "^2.5.4"
+    "wpackagist-plugin/pods": "^2.5.4",
+    "donatj/phpuseragentparser": "^0.5.0"
   },
   "extra": {
     "installer-paths": {
