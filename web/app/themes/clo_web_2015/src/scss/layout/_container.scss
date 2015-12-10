@@ -37,7 +37,12 @@ html {
 //overflow: -moz-scrollbars-vertical; 
 //overflow-y: scroll;
 }
-
+img[src*=".svg"] {
+    width: 100%; 
+  }
+svg{
+   width:100%;
+}
 /////////////////////
 @media screen and (min-width : 1000px) {
 
