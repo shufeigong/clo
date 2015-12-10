@@ -260,7 +260,7 @@
                 //margin-top    : 1.2%;
                 margin-bottom : 8%;
                 padding-left  : 2%;
-                padding-top   : 29px;
+                padding-top   : 20px;
                 ul li a {
                     text-transform : none;
                 }
@@ -358,6 +358,28 @@
 
 /////////////////////////////////////////641~999px
 @media screen and (min-width : 641px) and (max-width : 999px) {
+
+ .menu-main-menu-container{.overarea{
+                display:none;
+                border:solid 1px #333;
+                margin-top:2%;
+                margin-bottom:1%;
+                margin-left:12%;
+                width:87%;
+                //height:350px;
+                //overflow-y:scroll;
+             }}
+
+    .menu-main-menu-french-container{.overarea{
+                display:none;
+                border:solid 1px #333;
+                margin-top:2%;
+                margin-bottom:1%;
+                margin-left:20%;
+                width:78%;
+                //height:350px;
+                //overflow-y:scroll;
+             }}
 
     // Main menu style
     //Adjust the position
@@ -468,16 +490,6 @@
                 }
             }
             
-            .overarea{
-                display:none;
-                border:solid 1px #333;
-                margin-top:2%;
-                margin-bottom:1%;
-                margin-left:11%;
-                width:87%;
-                //height:350px;
-                //overflow-y:scroll;
-             }
             
             .contentdiv {
                 //display       : none;
