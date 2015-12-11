@@ -1,5 +1,100 @@
-svg{
-height:74px;
+ @media screen and (min-width : 1000px) {
+ 
+	 .menu-main-menu-container{
+	     .image-link{
+	        #Layer_1
+	       {
+	         max-width:74px;
+	         width:250%;
+	        }
+	     
+	    //#Layer_2 
+	    //#Layer_3 
+	    //#Layer_4 
+	    //#Layer_5 
+	    //#Layer_6 
+	    //#Layer_7 
+	    //#Layer_default
+	    
+	      }
+	  }
+ 
+ }
+
+@media screen and (min-width : 900px) and (max-width:999) {
+
+ .menu-main-menu-container{
+	     .image-link{
+	        #Layer_1{width:245%;}
+	     
+	    //#Layer_2 
+	    //#Layer_3 
+	    //#Layer_4 
+	    //#Layer_5 
+	    //#Layer_6 
+	    //#Layer_7 
+	    //#Layer_default
+	    
+	      }
+	  }
+
+}
+
+@media screen and (min-width : 800px) and (max-width:899) {
+     .menu-main-menu-container{
+	     .image-link{
+	        #Layer_1{width:225%;}
+	     
+	    //#Layer_2 
+	    //#Layer_3 
+	    //#Layer_4 
+	    //#Layer_5 
+	    //#Layer_6 
+	    //#Layer_7 
+	    //#Layer_default
+	    
+	      }
+	  }
+
+
+
+}
+
+@media screen and (min-width : 700px) and (max-width:799) {
+      .menu-main-menu-container{
+	     .image-link{
+	        #Layer_1{width:200%;}
+	     
+	    //#Layer_2 
+	    //#Layer_3 
+	    //#Layer_4 
+	    //#Layer_5 
+	    //#Layer_6 
+	    //#Layer_7 
+	    //#Layer_default
+	    
+	      }
+	  }
+
+
+}
+
+@media screen and (min-width : 641px) and (max-width:799) {
+      .menu-main-menu-container{
+	     .image-link{
+	        #Layer_1{width:180%;}
+	     
+	    //#Layer_2 
+	    //#Layer_3 
+	    //#Layer_4 
+	    //#Layer_5 
+	    //#Layer_6 
+	    //#Layer_7 
+	    //#Layer_default
+	    
+	      }
+	  }
+ 
 
 }
 
