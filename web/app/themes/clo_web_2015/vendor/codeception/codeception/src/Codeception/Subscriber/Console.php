@@ -8,7 +8,7 @@ use Codeception\Event\TestEvent;
 use Codeception\Events;
 use Codeception\Lib\Console\Message;
 use Codeception\Lib\Console\Output;
-use Codeception\Lib\Deprecation;
+use Codeception\Lib\Notification;
 use Codeception\Lib\Suite;
 use Codeception\Step;
 use Codeception\Step\Comment;
@@ -248,9 +248,9 @@ class Console implements EventSubscriberInterface
     public function afterSuite(SuiteEvent $e)
     {
         $this->message()->width(array_sum($this->columns), '-')->writeln();
-        $deprecationMessages = Deprecation::all();
+        $deprecationMessages = Notification::all();
         foreach ($deprecationMessages as $message) {
-            $this->output->deprecate($message);
+            $this->output->notification($message);
         }
     }
 
@@ -465,7 +465,7 @@ class Console implements EventSubscriberInterface
                 $test = $test->testAt(0);
                 $output_length = $test instanceof TestCase
                     ? strlen($test->getFeature()) + strlen($test->getFileName())
-                    : $test->toString();
+                    : strlen($test->toString());
 
                 $this->columns[0] = max(
                     $this->columns[0],

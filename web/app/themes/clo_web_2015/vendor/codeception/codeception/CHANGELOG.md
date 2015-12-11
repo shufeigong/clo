@@ -1,5 +1,61 @@
 # Changelog
 
+#### 2.1.4
+
+* [PhpBrowser][Frameworks] Added `_getResponseContent` hidden method. By @Naktibalda
+* [PhpBrowser][Frameworks] Added `moveBack` method. By @Naktibalda
+* [WebDriver][PhpBrowser][Frameworks] Added `seeInSource`, `dontSeeInSource` methods to check raw HTML instead of stripped text in `see`/`dontSee`. By @zbateson in #2465
+* [WebDriver] print Selenium WebDriver logs on failure or manually with `debugWebDriverLogs` in debug mode. Config option `debug_log_entries` added. See #2471 By @MasonM and @DavertMik.
+* [ZF2] grabs service from container without reinitializing it. Fixes #2519 where Doctrine2 gets different instances of the entity manager everytime grabServiceFromContainer is called. By @dranzd
+* [REST] fixed usage of JsonArray and `json_last_error_msg` function on PHP 5.4. See #2535. By @Naktibalda
+* [REST] `seeResponseIsJsonType` can now validate emails with `string:email` definition. By @DavertMik
+* [REST] `seeResponseIsJsonType`: `string|null` as well as `null|string` can be used to match null type. #2522 #2500 By @vslovik
+* [REST] REST methods can be used to inspect result of the last request made by PhpBrowser or framework module. see #2507. By @Naktibalda
+* [Silex] Doctrine provider added. Doctrine2 module can be connected to Silex app with `depends: Silex` in config. By @arduanov #2503
+* [Laravel5] Removed `expectEvents` and added `seeEventTriggered` and `dontSeeEventTriggered`. By @janhenkgerritsen
+* [Laravel5] Fixed fatal error in `seeCurrentRouteIs` and `seeCurrentActionIs` methods. See #2517. By @janhenkgerritsen
+* [Laravel5] Improved the error messages for several methods. See #2476. By @janhenkgerritsen
+* [Laravel5] Improved form error methods. See #2432. By @janhenkgerritsen
+* [Laravel5] Added wrapper methods for Laravel 5 model factories. See #2442. By @janhenkgerritsen
+* [Phalcon] Added `amOnRoute` and `seeCurrentRouteIs` methods by @sergeyklay
+* [Phalcon] Added `seeSessionHasValues` by @sergeyklay
+* [Phalcon] Added `getApplication()` method by @sergeyklay
+* [Symfony2] Sets `xdebug.max_nesting_level` to 200 only if it is lower. Fixes error hiding #2462 by @mhightower
+* [Db] Save the search path when importing Postgres dumps #2441 by @EspadaV8
+* [Yii2] Fixed problems with transaction rollbacks when using the `cleanup` flag. See #2488. By @ivokund
+* [Yii2] Clean up previously uploaded files between tests by @tibee
+* Actor classes generation improved by @codemedic #2453
+* Added support for nested helper by @luka-zitnik #2494
+* Make `generate:suite` respect bootstrap setting in #2512. By @dmitrivereshchagin
+
+#### 2.1.3
+
+* [REST] **Added matching data types** by with new methods `seeResponseMatchesJsonType` and `dontSeeResponseMatchesJsonType`. See #2391
+* [PhpBrowser][Frameworks] added `_request` and `_loadPage` hidden API methods for performing arbitrary requests.
+* [PhpBrowser][Frameworks] Fixed `seeInField`, `dontSeeInField` for disabled fields #2378. See #2414.
+* Environment files can now be located in subfolders of `tests/_env` by @Zifius
+* [Symfony2] Fixed issue when accessing profiler when no request has been performed #652.
+* [Symfony2] Added `amOnRoute` and `seeCurrentRouteIs` methods  by @raistlin
+* [ZF2] Added `amOnRoute` and `seeCurrentRouteIs` methods module, by @Naktibalda
+* Fixed issue with trailing slashes in `seeCurrentUrlEquals` and `dontSeeCurrentUrlEquals` methods #2324. By @janhenkgerritsen
+* Warning is displayed once using unconfigured environment.
+* Fixed loading environment configurations for Cept files by @splinter89
+* Fixed bootstrap with namespaces to inject namespaced actor classes properly.
+* [PhpBrowser][Frameworks] added hidden `_request()` method to send requests to backend from Helper classes.
+* [Laravel5] Added `disableEvents()`, `enableEvents()` and `expectEvents()` methods. By @janhenkgerritsen
+* [Laravel5] Added `dontSeeFormErrors()` method. By @janhenkgerritsen
+* [Db] Deleted Oracle driver (it existed by mistake, the real driver is Oci). By @Naktibalda
+* [Db] Implemented getPrimaryKey method for Sqlite, Mysql, Postgresql, Oracle and MsSql. By @Naktibalda
+* [Db] Implemented support for composite primary keys and tables without primary keys. By @Naktibalda
+* Fixed the scalarizeArray to be aware of NULL fields #2264. By @fbidu
+* [Soap] Fixed SOAP module #2296. By @relaxart
+* Fixed a bug where blank lines in a groups file would run every test in the project #2297. By @imjoehaines
+* [WebDriver] seeNumberOfElements should only count visible elements #2303. By @sascha-egerer
+* [PhpBrowser][Frameworks] Verbose output for all HTTP requests. By @Naktibalda
+* [PhpBrowser][Frameworks] Throw `Codeception\Exception\ExternalUrlException` when framework module tries to open an external URL #2328. By @Naktibalda
+* [PhpBrowser][Frameworks] Added `switchToIframe` method. By @Naktibalda
+* [Dbh] module deprecated
+
 #### 2.1.2
 
 * **Updated to PHPUnit 4.8**
