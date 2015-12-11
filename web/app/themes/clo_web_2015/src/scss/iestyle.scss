@@ -1,11 +1,6 @@
 @import "helpers/variables";
 @import "helpers/mixins";
 
-svg {
-    height : 74px;
-
-}
-
 html {
     body {
         /* ==========================================================================
@@ -30,8 +25,7 @@ html {
             #Layer_3{height:56px;}
             #Layer_4{height:65px;}
             #Layer_5{height:42px;}
-            //#Layer_6
-            //#Layer_7
+            #Layer_6, #Layer_7{height:18px;}
             //#Layer_default
 
         }
@@ -49,8 +43,7 @@ html {
             #Layer_3{height:185%;}
             #Layer_4{height:215%;}
             #Layer_5{height:140%;}
-            //#Layer_6
-            //#Layer_7
+            #Layer_6, #Layer_7{height:18px;}
             //#Layer_default
 
         }
@@ -67,8 +60,7 @@ html {
             #Layer_3{height:170%;}
             #Layer_4{height:199%;}
             #Layer_5{height:128%;}
-            //#Layer_6
-            //#Layer_7
+            #Layer_6, #Layer_7{height:18px;}
             //#Layer_default
 
         }
@@ -84,8 +76,7 @@ html {
             #Layer_3{height:155%;}
             #Layer_4{height:178%;}
             #Layer_5{height:115%;}
-            //#Layer_6
-            //#Layer_7
+            #Layer_6, #Layer_7{height:17px;}
             //#Layer_default
 
         }
@@ -101,8 +92,7 @@ html {
             #Layer_3{height:140%;}
             #Layer_4{height:155%;}
             #Layer_5{height:105%;}
-            //#Layer_6
-            //#Layer_7
+            #Layer_6, #Layer_7{height:15px;}
             //#Layer_default
 
         }
@@ -110,6 +100,8 @@ html {
 }
 
 
+
+/////////////////////////////////////////////////////////////
 // Only for IE9
 .ie9 {
     //Home page specific stylings
