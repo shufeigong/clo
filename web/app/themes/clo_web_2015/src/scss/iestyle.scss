@@ -47,14 +47,26 @@ html {
 
     .menu-main-menu-container{
         .image-link{
-            #Layer_1{height:218%;}
+            #Layer_1{height:245%;}
 
+            #Layer_2{height:163%;}
+            #Layer_3{height:185%;}
+            #Layer_4{height:215%;}
+            #Layer_5{height:140%;}
+            #Layer_6, #Layer_7, .Layer_default{height:18px;}
+           
+        }
+    }
+    
+     .menu-main-menu-french-container{
+        .image-link{
+            #Layer_1{height:218%;}
             #Layer_2{height:146%;}
             #Layer_3{height:164%;}
             #Layer_4{height:192%;}
             #Layer_5{height:123%;}
             #Layer_6, #Layer_7, .Layer_default{height:16px;}
-           
+
         }
     }
 
@@ -73,6 +85,18 @@ html {
             
         }
     }
+    
+    .menu-main-menu-french-container{
+        .image-link{
+            #Layer_1{height:201%;}
+            #Layer_2{height:135%;}
+            #Layer_3{height:152%;}
+            #Layer_4{height:178%;}
+            #Layer_5{height:115%;}
+            #Layer_6, #Layer_7, .Layer_default{height:15px;}
+
+        }
+    }
 }
 
 @media screen and (min-width : 700px) and (max-width:799px) {
@@ -85,6 +109,18 @@ html {
             #Layer_4{height:178%;}
             #Layer_5{height:115%;}
             #Layer_6, #Layer_7, .Layer_default{height:17px;}
+
+        }
+    }
+    
+    .menu-main-menu-french-container{
+        .image-link{
+            #Layer_1{height:180%;}
+            #Layer_2{height:120%;}
+            #Layer_3{height:140%;}
+            #Layer_4{height:160%;}
+            #Layer_5{height:102%;}
+            #Layer_6, #Layer_7, .Layer_default{height:13px;}
 
         }
     }
