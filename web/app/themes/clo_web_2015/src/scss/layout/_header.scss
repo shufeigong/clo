@@ -5,20 +5,21 @@
         max-width  : 962px;
         margin-top : 30px;
         .site-logo {
-            display    : block;
-            margin-top : 30px;
-            width      : 243px;
-            height     : 72px;
-            background : url(../img/clo_logo.svg) no-repeat;
-
+            background  : url(../img/clo_logo.svg) no-repeat;
+            display     : block;
+            margin-top  : 30px;
+            width       : 243px;
+            height      : 72px;
+            text-indent : -99999px;
         }
 
         .site-logo-french {
-            display    : block;
-            margin-top : 30px;
-            width      : 243px;
-            height     : 72px;
-            background : url(../img/clo_logo_french.svg) no-repeat;
+            display     : block;
+            margin-top  : 30px;
+            width       : 243px;
+            height      : 72px;
+            background  : url(../img/clo_logo_french.svg) no-repeat;
+            text-indent : -99999px;
 
         }
 
@@ -30,7 +31,6 @@
 }
 
 @media screen and (min-width : 641px) and (max-width : 999px) {
-
     .header {
         //border:solid 1px red;
         //margin-top : 10px;
@@ -77,29 +77,31 @@
 
 @media screen and (max-width : 640px) {
 
-    .login{
-       position:fixed;
-       padding-top:40px;
-       top:0;
-      }
-      
-     .move-left{
-     .login{padding-top:0px;}
-     }
-     
-    .non-login{
-       position:fixed;
+    .login {
+        position    : fixed;
+        padding-top : 40px;
+        top         : 0;
     }
-  
-    .mobile-entry-margin{
-      margin-top:210px;
+
+    .move-left {
+        .login {
+            padding-top : 0px;
+        }
+    }
+
+    .non-login {
+        position : fixed;
+    }
+
+    .mobile-entry-margin {
+        margin-top : 210px;
     }
 
     .row .header {
         //border:solid 1px #333;
         border-bottom    : solid 1px #fff;
         width            : 100%;
-        height:190px;
+        height           : 190px;
         //position         : fixed;
         z-index          : 99;
         background-color : #fff;
@@ -134,12 +136,12 @@
         //z-index          : 100;
         //top              : 141px;
         //border:solid 1px red;
-        padding:0 30px;
+        padding          : 0 30px;
         background-color : #fff;
         .menu-breadcrumb {
             //margin : 0 15px 0 0;
             //border:solid 1px #333;
-            margin:0px;
+            margin : 0px;
         }
         .menu-breadcrumb a {
             color : #666666;
@@ -201,37 +203,57 @@
         //border:solid 1px #333;
         > ul {
             margin : 15px;
-            a{text-transform:uppercase;}
+            a {
+                text-transform : uppercase;
+            }
             > .no-children {
                 margin-left : 35px;
             }
-            >li{>ul{>li{>ul{a{text-transform:capitalize;}}}}}
+            > li {
+                > ul {
+                    > li {
+                        > ul {
+                            a {
+                                text-transform : capitalize;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         ul {
             //border:solid 1px red;
             list-style-type : none;
-            .menu-item-has-children{
-               >.menu-link{display:inline-block;width:80%;}   
+            .menu-item-has-children {
+                > .menu-link {
+                    display : inline-block;
+                    width   : 80%;
+                }
             }
             .mobileSign {
-                        font-family : $font-site-bold;
-                        float:left;
-                        width:20px;
-                        margin-right:15px;
-                    }
+                font-family  : $font-site-bold;
+                float        : left;
+                width        : 20px;
+                margin-right : 15px;
+            }
             li {
                 .sub-menu {
-                li{line-height:1;margin-bottom:10px;margin-top:10px;width:80%;}
+                    li {
+                        line-height   : 1;
+                        margin-bottom : 10px;
+                        margin-top    : 10px;
+                        width         : 80%;
+                    }
                     margin-left : 35px;
                     .no-children {
                         margin-left : 35px;
                     }
                     .mobileSign {
-                        font-family : $font-site-bold;
-                        float:left;
-                        width:20px;
-                        margin-right:15px;
+                        font-family  : $font-site-bold;
+                        float        : left;
+                        width        : 20px;
+                        margin-right : 15px;
                     }
                     a {
                         @include font-size(1.6);
@@ -248,24 +270,25 @@
         }
     }
 }
-//////////under 400px and assume 320px is minimum width we consider
-@media screen and (max-width : 399px){
-   .row .header{
-    height:165px;
-   }
 
-   .mbl-img img{
-     height:35px;
-   }
-   
-   .mobile-entry-margin{
-      margin-top:165px;
+//////////under 400px and assume 320px is minimum width we consider
+@media screen and (max-width : 399px) {
+    .row .header {
+        height : 165px;
     }
-    body{
-    min-width:320px;
+
+    .mbl-img img {
+        height : 35px;
     }
-    .move-left{
-    min-width:350px;
+
+    .mobile-entry-margin {
+        margin-top : 165px;
+    }
+    body {
+        min-width : 320px;
+    }
+    .move-left {
+        min-width : 350px;
     }
 }
 
