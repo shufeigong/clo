@@ -10,7 +10,10 @@
  */
 ?>
 <!doctype html>
-<html  <?php language_attributes(); ?> >
+<!--[if IE 9 ]>
+<html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html <?php language_attributes(); ?> ><!--<![endif]-->
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -63,17 +66,19 @@ if ($userAgent['browser'] == 'MSIE' && (int)$userAgent['version'] < 11) {
     
         <div class="columns large-4 medium-4 small-12 small-logo">
         <?php if(ICL_LANGUAGE_CODE=='en'): ?>
-            <a class="site-logo" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" style="text-indent:100%;white-space:nowrap;overflow:hidden;">logo</a>
+            <a class="site-logo" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" style="text-indent:100%;white-space:nowrap;overflow:hidden;">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/clo_logo.svg" alt="Website Logo"/>
+            </a>
         <?php elseif(ICL_LANGUAGE_CODE=='fr'): ?>
-            <a class="site-logo-french" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" style="text-indent:100%;white-space:nowrap;overflow:hidden;">frenchlogo</a>
+            <a class="site-logo-french" href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>" style="text-indent:100%;white-space:nowrap;overflow:hidden;">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/clo_logo_french.svg" alt="Website Logo French version"/>
+            </a>
          <?php endif;?>   
         </div>
         <div class="columns large-8 medium-4 small-8 small-utility">
             <?php get_template_part('parts/utility-menu'); ?>
         </div>
         <?php get_search_form(); ?>
-        
-        
 	         <div class="columns large-4 medium-4 small-12 mbl-img">
 	             <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/mbl-img.svg" alt="mbl-img"/>
 	         </div>
