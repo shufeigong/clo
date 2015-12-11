@@ -1,4 +1,18 @@
 //Navigation specific stylings
+
+// Tooltip style
+.tooltip.tip-right {
+
+}
+
+.has-tip {
+    border-bottom: none !important;
+}
+
+.has-tip.tip-right {
+    float: left !important;
+}
+
 @media screen and (min-width : 1000px) {
     .menu-main-menu-container {
 

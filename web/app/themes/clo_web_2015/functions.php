@@ -30,6 +30,8 @@ require_once('library/custom-functions.php');
 
 require_once ('library/shortcode.php');
 
+require_once ('library/menu-custom-fields.php');
+
 add_action('admin_menu','remove_default_post_type');
 
 function remove_default_post_type() {

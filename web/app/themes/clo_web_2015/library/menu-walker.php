@@ -133,8 +133,7 @@ class Main_Nav_walker extends Walker_Nav_Menu //menu walker for main menu in  no
  		//echo '</pre>';
 		// build html
 		$output .= $indent . '<li class="' . $depth_class_names . ' ' . $class_names . ' clearfix">';
-		
-    
+
 		// link attributes
 		//$attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
 		$attributes = !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
@@ -151,9 +150,23 @@ class Main_Nav_walker extends Walker_Nav_Menu //menu walker for main menu in  no
 		//$attributes .= ! empty( $item->title)  ? ' ui-sref="'   . esc_attr( strtolower(preg_replace("/\s|　/","",$item->title))  ) .'"' : '';
 		//$attributes .= ! empty( $item->title)  ? ' id="'   . esc_attr( explode('/', $item->url)[count(explode('/',$item->url))-2]  ) .'"' : '';
 		//$imgid=! empty( $item->attr_title)  ? ' id="'   . esc_attr( $item->attr_title   ) .'"' : '';
-		$attributes .= ' class="menu-link ' . ($depth > 0 ? 'sub-menu-link' : 'main-menu-link') . '"';
+		$tooltipContent = get_post_meta($item->ID, '_menu_item_tooltip', true);
 
-		$item_output = sprintf(
+		if(!empty($tooltipContent)) {
+			$attributes .= ' class="has-tip tip-right radius menu-link ' . ($depth > 0 ? 'sub-menu-link' : 'main-menu-link') . '"';
+			$item_output = sprintf(
+				'%1$s<a data-tooltip%2$s aria-haspopup="true" title="' . $tooltipContent . '">%3$s%4$s%5$s</a>%6$s',
+				$args->before,
+				$attributes,
+				$args->link_before,
+				apply_filters('the_title', strtoupper($item->title), strtoupper($item->ID)),
+				$args->link_after,
+				$args->after
+			);
+		} else {
+			$attributes .= ' class="menu-link ' . ($depth > 0 ? 'sub-menu-link' : 'main-menu-link') . '"';
+
+			$item_output = sprintf(
 				'%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
 				$args->before,
 				$attributes,
@@ -161,7 +174,8 @@ class Main_Nav_walker extends Walker_Nav_Menu //menu walker for main menu in  no
 				apply_filters('the_title', strtoupper($item->title), strtoupper($item->ID)),
 				$args->link_after,
 				$args->after
-		);
+			);
+		}
 
 		// build html
 		$output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
