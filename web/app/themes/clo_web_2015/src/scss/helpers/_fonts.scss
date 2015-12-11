@@ -19,3 +19,14 @@
     font-weight: normal;
     font-style:  normal;
 }
+
+@font-face {
+    font-family: 'TradeGothicOblique';
+    src:         url('../../assets/fonts/TradeGotObl.eot');
+    src:         url('../../assets/fonts/TradeGotObl.eot?#iefix') format('embedded-opentype'),
+    url('../../assets/fonts/TradeGotObl.woff') format('woff'),
+    url('../../assets/fonts/TradeGotObl.ttf') format('truetype'),
+    url('../../assets/fonts/TradeGotObl.svg#TradeGothic') format('svg');
+    font-weight: normal;
+    font-style:  normal;
+}

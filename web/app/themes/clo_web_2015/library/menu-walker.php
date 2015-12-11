@@ -153,7 +153,7 @@ class Main_Nav_walker extends Walker_Nav_Menu //menu walker for main menu in  no
 		$tooltipContent = get_post_meta($item->ID, '_menu_item_tooltip', true);
 
 		if(!empty($tooltipContent)) {
-			$attributes .= ' class="has-tip tip-right radius menu-link ' . ($depth > 0 ? 'sub-menu-link' : 'main-menu-link') . '"';
+			$attributes .= ' class="has-tip tip-right menu-link ' . ($depth > 0 ? 'sub-menu-link' : 'main-menu-link') . '"';
 			$item_output = sprintf(
 				'%1$s<a data-tooltip%2$s aria-haspopup="true" title="' . $tooltipContent . '">%3$s%4$s%5$s</a>%6$s',
 				$args->before,

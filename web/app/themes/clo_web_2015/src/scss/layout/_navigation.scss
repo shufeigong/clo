@@ -2,7 +2,14 @@
 
 // Tooltip style
 .tooltip.tip-right {
-
+    background: #e3eec5;
+    font-size: 10px;
+    font-family : "TradeGothicOblique", "Arial", "sans-serif";
+    color : #58595b;
+    padding : 5px;
+    .nub {
+        border-color: transparent #e3eec5 transparent transparent;
+    }
 }
 
 .has-tip {
