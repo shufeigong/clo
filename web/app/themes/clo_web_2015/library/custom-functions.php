@@ -218,6 +218,16 @@ function createNoVideoGallery($post){
 //////function for sitmap///
 //call the menu and use our custom walker
 
+function admin_bar_fix() {
+	if(!is_admin() && is_admin_bar_showing()) {
+		remove_action('wp_head', '_admin_bar_bump_cb');
+		$output  = '<style type="text/css">'."\n\t";
+		$output .= 'body.admin-bar { padding-top: 28px; }'."\n";
+		$output .= '</style>'."\n";
+		echo $output;
+	}
+}
+add_action('wp_head', 'admin_bar_fix', 5);
 
 
 ?>
