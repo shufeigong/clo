@@ -22,7 +22,8 @@ gulp.task(
         // Recompile sass into CSS whenever we update any of the source files
         watch(
             './src/scss/**/*.scss', function () {
-                gulp.start('scss');
+                gulp.start('styles');
+                gulp.start('iestyle');
             }
         );
 

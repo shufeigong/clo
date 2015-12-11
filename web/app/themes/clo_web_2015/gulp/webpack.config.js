@@ -6,7 +6,7 @@ var bower_dir = path.resolve(__dirname, '../bower_components');
 module.exports = {
     cache: true,
     debug: true,
-    watch: true,
+    watch: false,
     devtool: 'eval',
     entry: {
         app: './src/js/app.js',
