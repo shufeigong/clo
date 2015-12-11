@@ -7,6 +7,7 @@ use Codeception\Configuration;
 use Codeception\TestCase;
 use Codeception\Lib\Interfaces\ActiveRecord;
 use Codeception\Lib\Interfaces\PartedModule;
+use Codeception\Lib\Interfaces\SupportsDomainRouting;
 use Codeception\Lib\Connector\Yii2 as Yii2Connector;
 use yii\db\ActiveRecordInterface;
 use Yii;
@@ -41,7 +42,7 @@ use Yii;
  * Stability: **stable**
  *
  */
-class Yii2 extends Framework implements ActiveRecord, PartedModule
+class Yii2 extends Framework implements ActiveRecord, PartedModule, SupportsDomainRouting
 {
     /**
      * Application config file must be set.
@@ -67,11 +68,14 @@ class Yii2 extends Framework implements ActiveRecord, PartedModule
     {
         $this->client = new Yii2Connector();
         $this->client->configFile = Configuration::projectDir().$this->config['configFile'];
-        $mainConfig = Configuration::config()['config'];
-        if (isset($mainConfig['test_entry_url'])){
-            $this->client->setServerParameter('HTTPS', parse_url($mainConfig['test_entry_url'], PHP_URL_SCHEME)  === 'https');
+        $mainConfig = Configuration::config();
+        if (isset($mainConfig['config']) && isset($mainConfig['config']['test_entry_url'])){
+            $this->client->setServerParameter(
+                'HTTPS',
+                parse_url($mainConfig['config']['test_entry_url'], PHP_URL_SCHEME) === 'https'
+            );
         }
-        $this->app = $this->client->startApp();
+        $this->app = $this->client->getApplication();
 
         if ($this->config['cleanup'] && isset($this->app->db)) {
             $this->transaction = $this->app->db->beginTransaction();
@@ -89,6 +93,8 @@ class Yii2 extends Framework implements ActiveRecord, PartedModule
         if ($this->transaction && $this->config['cleanup']) {
             $this->transaction->rollback();
         }
+        
+        \yii\web\UploadedFile::reset();
 
         if (Yii::$app) {
             Yii::$app->session->destroy();
@@ -208,15 +214,15 @@ class Yii2 extends Framework implements ActiveRecord, PartedModule
 
     /**
      * Converting $page to valid Yii 2 URL
-     * 
+     *
      * Allows input like:
-     * 
+     *
      * ```php
      * $I->amOnPage(['site/view','page'=>'about']);
      * $I->amOnPage('index-test.php?site/index');
      * $I->amOnPage('http://localhost/index-test.php?site/index');
      * ```
-     * 
+     *
      * @param $page string|array parameter for \yii\web\UrlManager::createUrl()
      */
     public function amOnPage($page)

@@ -471,7 +471,7 @@ class Main_Nav_walker extends Walker_Nav_Menu //menu walker for main menu in  no
 		}
 		else {
 //			$output .= '<img src="/app/themes/clo_web_2015/src/img/default.svg" alt="' . apply_filters('the_title', $item->title, $item->ID) .'"/>';
-			$output .= '<svg style="position: absolute; bottom: 0;" id="Layer_default" xmlns="http://www.w3.org/2000/svg" viewBox="0 12 783 18"><style>#Layer_6 .st0{fill:#82BC00;}</style><path class="st0" d="M-11.7 26.9H798V30H-11.7z"/></svg>';
+			$output .= '<svg style="position: absolute; bottom: 0;" class="Layer_default" xmlns="http://www.w3.org/2000/svg" viewBox="0 12 783 18"><style>#Layer_6 .st0{fill:#82BC00;}</style><path class="st0" d="M-11.7 26.9H798V30H-11.7z"/></svg>';
 		}
 		//$output .= '<img src="/app/themes/clo_web_2015/src/img/'.strtolower(str_replace(' ', '', apply_filters('the_title', $item->title, $item->ID))) . '.svg" alt="' . apply_filters('the_title', $item->title, $item->ID) .'"/>';
         
