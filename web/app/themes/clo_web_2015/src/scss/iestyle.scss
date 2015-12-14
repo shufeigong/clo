@@ -15,6 +15,24 @@ html {
     }
 }
 
+#album_message .albumBox .albumGrid {
+ table{
+         tr{
+            
+            td{
+                
+                a{
+                   img{heigth:20px; height:36px;}
+                 }            
+              }
+           }
+
+      }
+} 
+
+
+
+///////////////////////////////////////////////////////
 @media screen and (min-width : 1000px) {
 
     .menu-main-menu-container{
