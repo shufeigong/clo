@@ -152,7 +152,7 @@ class Main_Nav_walker extends Walker_Nav_Menu //menu walker for main menu in  no
 		//$imgid=! empty( $item->attr_title)  ? ' id="'   . esc_attr( $item->attr_title   ) .'"' : '';
 		$tooltipContent = get_post_meta($item->ID, '_menu_item_tooltip', true);
 
-		if(!empty($tooltipContent)) {
+		if(!empty($tooltipContent) && $depth == 0) {
 			$attributes .= ' class="has-tip tip-right menu-link ' . ($depth > 0 ? 'sub-menu-link' : 'main-menu-link') . '"';
 			$item_output = sprintf(
 				'%1$s<a data-tooltip%2$s aria-haspopup="true" title="' . $tooltipContent . '">%3$s%4$s%5$s</a>%6$s',
@@ -523,7 +523,7 @@ class MainMobile_Nav_walker extends Walker_Nav_Menu //menu walker for main mobil
 		else{
 			$output .= $indent . '<li class="' . $depth_class_names . ' ' . $class_names . ' clearfix no-children">';
 		}
-		
+
 		// link attributes
 		//$attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
 		$attributes = !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
@@ -537,10 +537,7 @@ class MainMobile_Nav_walker extends Walker_Nav_Menu //menu walker for main mobil
 		//global $wpdb;
 		//$query = $wpdb->prepare("SELECT COUNT(*) FROM $wpdb->posts WHERE post_status ='publish' AND post_type='nav_menu_item' AND post_parent=%d", $item->ID);
 		//$child_count = $wpdb->get_var($query);
-		
-		
-		
-		
+
 		if(!empty($children)){
 		$item_output = sprintf(
 				'<a class="mobileSign" href="#" onclick="return false;">[+]</a>%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
@@ -563,9 +560,15 @@ class MainMobile_Nav_walker extends Walker_Nav_Menu //menu walker for main mobil
 					$args->after
 			);
 		}
+
 		// build html
 		$output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
-	
+
+		$tooltipContent = get_post_meta($item->ID, '_menu_item_tooltip', true);
+		if(!empty($tooltipContent) && $depth == 0) {
+			$output .= '<span class="tooltip-content show-for-small-only">' . $tooltipContent . '</span>';
+		}
+
 	}
 }
 

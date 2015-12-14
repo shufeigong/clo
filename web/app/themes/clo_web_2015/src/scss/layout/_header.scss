@@ -173,6 +173,7 @@
     .right-off-canvas-menu {
         //border:solid 1px #333;
         width            : 99%;
+        max-width: 320px;
         background-color : #DCE9F7;
         hr {
             border : solid 2px #fff;
@@ -206,6 +207,16 @@
             a {
                 text-transform : uppercase;
             }
+
+            .tooltip-content {
+                font-size: 12px;
+                font-family : "TradeGothicOblique", "Arial", "sans-serif";
+                color : #58595b;
+                margin-left: 34px;
+                line-height: 1.3;
+                margin-bottom: 5px;
+            }
+
             > .no-children {
                 margin-left : 35px;
             }
