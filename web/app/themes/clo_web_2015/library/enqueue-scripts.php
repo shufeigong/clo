@@ -18,6 +18,10 @@ function foundationpress_scripts()
     if ($userAgent['browser'] == 'Firefox') {//style sheet support Firefox
     	wp_enqueue_style('firefox-stylesheet', get_stylesheet_directory_uri() . '/dist/css/firefoxstyle.css');
     }
+    
+    if ($userAgent['browser'] == 'Safari') {//style sheet support safari
+    	wp_enqueue_style('firefox-stylesheet', get_stylesheet_directory_uri() . '/dist/css/safaristyle.css');
+    }
 
     
     // Since IE9 doesn't support pushState, we need a polyfill for that
