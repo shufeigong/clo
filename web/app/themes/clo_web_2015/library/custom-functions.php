@@ -236,8 +236,11 @@ function createButtonPost($post, $color){
 	$output= '<li><a href="' . get_permalink($post->ID) . '"><div class="news-item no-video" style="background:'.$color.';">
                         <div class="arrow"></div>';
 	
+	
 	if(mb_strlen($post->post_title)>6){
 		$post->post_title = strtoupper(mb_substr($post->post_title,0,6,"UTF8")).'<div class="apos">...</div>';
+	}else{
+		$post->post_title = strtoupper($post->post_title);
 	}
 
 	$output.='<div class="content-box"><div class="button_title">' . $post->post_title. '</div>';
