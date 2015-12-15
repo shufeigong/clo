@@ -237,10 +237,10 @@ function createButtonPost($post, $color){
                         <div class="arrow"></div>';
 	
 	if(mb_strlen($post->post_title)>6){
-		$post->post_title = mb_substr($post->post_title,0,6,"UTF8")."...";
+		$post->post_title = strtoupper(mb_substr($post->post_title,0,6,"UTF8")).'<div class="apos">...</div>';
 	}
 
-	$output.='<div class="content-box"><div class="button_title">' . strtoupper($post->post_title) . '</div>';
+	$output.='<div class="content-box"><div class="button_title">' . $post->post_title. '</div>';
 
 	$urls=grab_url($post->post_content);
 

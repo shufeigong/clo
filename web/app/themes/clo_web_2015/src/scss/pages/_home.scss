@@ -184,8 +184,9 @@
                      font-family : "Arial", "sans-serif";
                      font-weight : bold;
                      color       : #7d868c;
-                     margin-left:10px;
+                     margin-left:12px;
                      @include font-size(5.0);
+                     .apos{float:right;@include font-size(2.0);margin-top:35px;}
                 }
                 .arrow {
                     position     : absolute;
@@ -457,7 +458,8 @@
                      font-family : "Arial", "sans-serif";
                      font-weight : bold;
                      color       : #7d868c;
-                     @include font-size(3.5);
+                     @include font-size(4.5);
+                     .apos{float:right;@include font-size(2.0);margin-top:34px;}
                 }
                 .arrow {
                     position     : absolute;
@@ -695,7 +697,8 @@
                      font-weight : bold;
                      color       : #7d868c;
                      @include font-size(5.0);
-                     margin-left:5px;
+                     margin-left:12px;
+                     .apos{float:right;@include font-size(2.0);margin-top:35px;}
                 }
                 .arrow {
                     position     : absolute;
