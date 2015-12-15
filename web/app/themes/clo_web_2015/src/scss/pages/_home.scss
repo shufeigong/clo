@@ -179,7 +179,12 @@
                     margin-top  : 8px;
                     margin-bottom:8px;
                 }
-
+                .button_title{
+                     font-family : "Arial", "sans-serif";
+                     font-weight : bold;
+                     color       : #7d868c;
+                     @include font-size(4.5);
+                }
                 .arrow {
                     position     : absolute;
                     left         : 0;
@@ -445,7 +450,12 @@
                     margin-top  : 8px;
                     margin-bottom:8px;
                 }
-
+                .button_title{
+                     font-family : "Arial", "sans-serif";
+                     font-weight : bold;
+                     color       : #7d868c;
+                     @include font-size(3.5);
+                }
                 .arrow {
                     position     : absolute;
                     left         : 0;
@@ -676,7 +686,12 @@
                     margin-top  : 8px;
                     margin-bottom:8px;
                 }
-
+                .button_title{
+                     font-family : "Arial", "sans-serif";
+                     font-weight : bold;
+                     color       : #7d868c;
+                     @include font-size(4.5);
+                }
                 .arrow {
                     position     : absolute;
                     left         : 0;

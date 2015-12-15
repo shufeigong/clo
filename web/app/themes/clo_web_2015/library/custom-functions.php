@@ -11,7 +11,7 @@ function grab_url($text) {
     
     return $matches[0];
 }
-////function for judging video or homepage events
+////function for judging video, homepage or button events
 function isVideoEvents($post){
 	
 	$query = new WP_Query( array( 'eab_events_category' => 'video' ));
@@ -52,7 +52,23 @@ function isHomepagefrEvents($post){
 		return false;
 }
 
-////function for judge video or homepage news
+function isButtonEvents($post){
+	$query = new WP_Query( array( 'eab_events_category' => 'button' ));
+	if(in_array($post, $query->posts))
+		return true;
+	else
+		return false;
+}
+
+function isButtonfrEvents($post){
+	$query = new WP_Query( array( 'eab_events_category' => 'buttonfr' ));
+	if(in_array($post, $query->posts))
+		return true;
+	else
+		return false;
+}
+
+////function for judge video, homepage or button news and other normal posts including blog news and page.
 function isVideoNews($post){
     $returnvalue=false;
        	
@@ -102,6 +118,35 @@ function isHomepagefrNews($post){
 
 	return $returnvalue;
 }
+
+function isButtonPosts($post){
+
+	$returnvalue=false;
+
+	foreach (get_the_category($post) as $thiscat)
+	{
+		if($thiscat->name=="button")
+		{$returnvalue=true;break;}
+	}
+
+	return $returnvalue;
+}
+
+function isButtonfrPosts($post){
+
+	$returnvalue=false;
+
+	foreach (get_the_category($post) as $thiscat)
+	{
+		if($thiscat->name=="buttonfr")
+		{$returnvalue=true;break;}
+	}
+
+	return $returnvalue;
+}
+
+
+
 
 ///function for create video animated block 
 function createVideoPost($post, $color){
@@ -185,6 +230,38 @@ function createNoVideoPost($post, $color){
                        </a></li>';//end of news itemreturn $output;
 	return $output;
 }
+
+///function for creating button animated block
+function createButtonPost($post, $color){
+	$output= '<li><a href="' . get_permalink($post->ID) . '"><div class="news-item no-video" style="background:'.$color.';">
+                        <div class="arrow"></div>';
+	
+	if(mb_strlen($post->post_title)>6){
+		$post->post_title = mb_substr($post->post_title,0,6,"UTF8")."...";
+	}
+
+	$output.='<div class="content-box"><div class="button_title">' . strtoupper($post->post_title) . '</div>';
+
+	$urls=grab_url($post->post_content);
+
+	
+	$output.='<p class="post-content"></p>
+					    </div>';
+	//$output.='<div class="video-box" style=" width:1px;visibility:hidden;background-size:100% 100%; background-repeat:no-repeat;"></div>';//end of video box
+
+
+	//$output.=mb_strlen($post->post_content);
+
+
+	//$output.='<div class="video-box" style="background-size:100% 100%; background-repeat:no-repeat;visibility:hidden;"></div>';//end of video box
+
+	$output .= '<div class="clearfix"></div>
+                        </div>
+                       </a></li>';//end of news itemreturn $output;
+	return $output;
+}
+
+
 
 ///function for creating video gallery
 function createVideoGallery($post){
