@@ -172,9 +172,13 @@ function createVideoPost($post, $color){
 	strtotime($post->incsub_event_end == '' ? $post->due_date : $post->incsub_event_end)
 	);*/
 		
-	
+	if(mb_strlen($post->post_title)>20){
+		$post->post_title = strtoupper(mb_substr($post->post_title,0,20,"UTF8")).'...';
+	}else{
+		$post->post_title = strtoupper($post->post_title);
+	}
 		
-	$output .= '<div class="content-box"><h2 class="post_title">' . strtoupper($post->post_title) . '</h2>';
+	$output .= '<div class="content-box"><h2 class="post_title">' . $post->post_title. '</h2>';
 		
 	$urls=grab_url($post->post_content);
 		
@@ -183,9 +187,12 @@ function createVideoPost($post, $color){
 		$post->post_content=str_replace($url, '', $post->post_content);
 	}
 	
+	$post->post_content = strip_tags($post->post_content);
+	
     if(mb_strlen($post->post_content)>70){
 		$post->post_content = mb_substr($post->post_content,0,70,"UTF8")."...";
 	}
+	
 	
 	$output .= '<p class="post-content">' . $post->post_content.'</p>
 					    </div>';//end of content-box
@@ -202,8 +209,14 @@ function createVideoPost($post, $color){
 function createNoVideoPost($post, $color){
 	$output= '<li><a href="' . get_permalink($post->ID) . '"><div class="news-item no-video" style="background:'.$color.';">
                         <div class="arrow"></div>';
+	
+	if(mb_strlen($post->post_title)>20){
+		$post->post_title = strtoupper(mb_substr($post->post_title,0,20,"UTF8")).'...';
+	}else{
+		$post->post_title = strtoupper($post->post_title);
+	}
 		
-	$output.='<div class="content-box"><h2 class="post_title">' . strtoupper($post->post_title) . '</h2>';
+	$output.='<div class="content-box"><h2 class="post_title">' . $post->post_title . '</h2>';
 	
 	$urls=grab_url($post->post_content);
 	
@@ -211,6 +224,8 @@ function createNoVideoPost($post, $color){
 	{
 		$post->post_content=str_replace($url, '', $post->post_content);
 	}
+	
+	$post->post_content = strip_tags($post->post_content);
 	
 	if(mb_strlen($post->post_content)>77){
 		$post->post_content = mb_substr($post->post_content,0,77,"UTF8")."...";
