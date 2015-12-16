@@ -172,8 +172,8 @@ function createVideoPost($post, $color){
 	strtotime($post->incsub_event_end == '' ? $post->due_date : $post->incsub_event_end)
 	);*/
 		
-	if(mb_strlen($post->post_title)>20){
-		$post->post_title = strtoupper(mb_substr($post->post_title,0,20,"UTF8")).'...';
+	if(mb_strlen($post->post_title)>10){
+		$post->post_title = strtoupper(mb_substr($post->post_title,0,10,"UTF8")).'...';
 	}else{
 		$post->post_title = strtoupper($post->post_title);
 	}
@@ -197,7 +197,7 @@ function createVideoPost($post, $color){
 	$output .= '<p class="post-content">' . $post->post_content.'</p>
 					    </div>';//end of content-box
 	
-	$output.='<div class="video-box" style="background-image: url('.get_video_thumbnail($post->ID).'); background-size:100% 100%; background-repeat:no-repeat;"><div class="play-button"><span class="arrow"></span></div></div>';//end of video box
+	$output.='<div class="video-box" style="background-image: url('.get_video_thumbnail($post->ID).'); background-size:cover; background-repeat:no-repeat;"><div class="play-button"><span class="arrow"></span></div></div>';//end of video box
 		
 	$output .= '<div class="clearfix"></div>
                         </div>
@@ -293,7 +293,7 @@ function createVideoGallery($post){
 	}
 	
 	$output = '<li class="content-video-item"><a href="#" class="slvj-link-lightbox" data-videoid="'.$videoId.'" data-videosite="'.$videoProvider.'">';
-	$output.='<div class="content-video-box" style="background-image: url('.get_video_thumbnail($post->ID).'); background-size:100% 100%; background-repeat:no-repeat;"><div class="content-play-button"><span class="content-arrow"></span></div></div>';		       
+	$output.='<div class="content-video-box" style="background-image: url('.get_video_thumbnail($post->ID).'); background-size:cover; background-repeat:no-repeat;"><div class="content-play-button"><span class="content-arrow"></span></div></div>';		       
 	$output.='<div class="content-video-title">'.$post->post_title.'</div>';
 	$output .= '</a></li>';//end of news item
 	return $output;
