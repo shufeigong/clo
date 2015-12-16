@@ -60,7 +60,7 @@ function pageLoad(linkSplit, basicItems) {
                 alert("error");
             });
         }
-        else if(linkSplit[1]!='' && $.inArray(linkSplit[1], basicItems) == -1 && location.hash == ''){//utility menu item
+        else if(linkSplit[1]!='' && $.inArray(linkSplit[1], basicItems) == -1 && location.hash == '' && $("article").hasClass("page")){//utility menu item or other pages, but exclude post type
         	$.get("/wp-json/pages/"+linkSplit[1], function(response){
         	})
             .always(function(response) {
