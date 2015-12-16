@@ -172,8 +172,8 @@ function createVideoPost($post, $color){
 	strtotime($post->incsub_event_end == '' ? $post->due_date : $post->incsub_event_end)
 	);*/
 		
-	if(mb_strlen($post->post_title)>10){
-		$post->post_title = strtoupper(mb_substr($post->post_title,0,10,"UTF8")).'...';
+	if(mb_strlen($post->post_title)>15){
+		$post->post_title = strtoupper(mb_substr($post->post_title,0,15,"UTF8")).'...';
 	}else{
 		$post->post_title = strtoupper($post->post_title);
 	}
