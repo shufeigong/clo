@@ -160,7 +160,7 @@ function createVideoPost($post, $color){
 		break;
 	}
 	
-	$output = '<li><a href="#" class="slvj-link-lightbox" data-videoid="'.$videoId.'" data-videosite="'.$videoProvider.'"><div class="news-item has-video" style="background:'.$color.';"><div class="arrow"></div>';
+	$output = '<li><a href="#" class="slvj-link-lightbox" data-videoid="'.$videoId.'" data-videosite="'.$videoProvider.'" tabindex="-1"><div class="news-item has-video" style="background:'.$color.';"><div class="arrow"></div>';
 	
 	/*$st_time   = date(
 	 'D M d',
@@ -207,7 +207,7 @@ function createVideoPost($post, $color){
 
 ///function for creating no video animated block
 function createNoVideoPost($post, $color){
-	$output= '<li><a href="' . get_permalink($post->ID) . '"><div class="news-item no-video" style="background:'.$color.';">
+	$output= '<li><a href="' . get_permalink($post->ID) . '" tabindex="-1"><div class="news-item no-video" style="background:'.$color.';">
                         <div class="arrow"></div>';
 	
 	if(mb_strlen($post->post_title)>20){
