@@ -20,6 +20,8 @@
   "devDependencies": {},
   "dependencies": {
     "gsap": "~1.18.0",
-    "store2": "store#~2.3.0"
+    "store2": "store#~2.3.0",
+    "fetch": "~0.10.1",
+    "es6-promise": "~3.0.2"
   }
 }

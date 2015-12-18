@@ -51,10 +51,12 @@ function foundationpress_scripts()
     wp_enqueue_script('modernizr');
     wp_enqueue_script('fastclick');
     wp_enqueue_script('jquery');
-    wp_enqueue_script('foundation');
+//    wp_enqueue_script('foundation');
+
+    wp_enqueue_script('foundation', get_stylesheet_directory_uri() . '/dist/js/foundation.js', array(), '5.5.2', true);
+
 
     wp_enqueue_script('vendor', get_stylesheet_directory_uri() . '/dist/js/vendor.js', array(), '1.0.0', true);
-
     if (!is_user_logged_in()) {
         wp_enqueue_script(
             'myheight',
