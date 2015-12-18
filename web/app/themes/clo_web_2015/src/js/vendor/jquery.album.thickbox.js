@@ -9,7 +9,7 @@
                 },options);
             var mask = '<div id="album_mask"></div>';
             var boxcontain = '<div id="album_boxcontain">\
-                                  <a id="album_close" href="javascript:void(0);" title="Close"></a>\
+                                  <a id="album_close" href="#" onclick="return false;" title="Close"></a>\
                                   <div id="album_showbox">\
                                       <div id="album_message">\
                                           AlbumContent2<br />\
@@ -23,15 +23,14 @@
             $("."+options.showbtnid).click(function () {
                 
                 $("#album_message").html($("#"+$(this).attr("albumid")).html());
-                
-                //$("#album_message").find(".imgShow").imagefill();
                 $("#album_mask").show();
-                
                 $("#album_boxcontain").show();
+                $(".row").find("a").attr("tabindex","-1");
             });
             $("#album_close").click(function () {
                 $("#album_mask").hide();
                 $("#album_boxcontain").hide();
+                $(".row").find("a").removeAttr("tabindex");
             });
           
             

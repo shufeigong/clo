@@ -36,6 +36,7 @@
                 var width = $("#artwl_boxcontain").width();
                 $("#artwl_mask").show();
                 $("#artwl_boxcontain").css("top", "5%").css("left", "1%").show();
+                $(".row").find("a").attr("tabindex","-1");
                 /*if ($.browser.msie && $.browser.version.substr(0, 1) < 7) {
                     width = $(window).width() > 600 ? 600 : $(window).width() - 40;
                     $("#artwl_boxcontain").css("width", width + "px").css("top", ($(window).height() - height) / 2).css("left", ($(window).width() - width) / 2).show();
@@ -46,6 +47,7 @@
             $("#artwl_close").click(function () {
                 $("#artwl_mask").hide();
                 $("#artwl_boxcontain").hide();
+                $(".row").find("a").removeAttr("tabindex");
             });
         },
         artwl_close:function(options){
