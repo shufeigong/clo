@@ -292,7 +292,7 @@ function timeLineShortcodeHandler($atts)
 		$yearlist.='<li><div class="timemark"></div><a href="#" onclick="return false;"class="'.$lineyear.'">'.$lineyear.'</a><div class="timearrow"></div></li>';
 	}
 	
-	$yearlist.='<li><div class="timemark" style="border-left:none;"></div><a class="'.$currentyear.'" style="color:#6D6F71">Now</a><div class="timearrow"></div></li>';
+	$yearlist.='<li><div class="timemark" style="border-left:none;"></div><a href="#" onclick="return false;" class="'.$currentyear.'" style="color:#6D6F71">Now</a><div class="timearrow"></div></li>';
 	
 	$output='<a href="#" onclick="return false;" class="btn_show">'.$title.'</a>
 				
@@ -366,7 +366,7 @@ function timeLineShortcodeHandler($atts)
 		$yearlist.='<li><div class="timemark"></div><a href="#" onclick="return false;" class="'.$lineyear.'">'.$lineyear.'</a><div class="timearrow"></div></li>';
 	}
 	
-	$yearlist.='<li><div class="timemark" style="border-left:none;"></div><a class="'.$currentyear.'" style="color:#6D6F71">Now</a><div class="timearrow"></div></li>';
+	$yearlist.='<li><div class="timemark" style="border-left:none;"></div><a href="#" onclick="return false;" class="'.$currentyear.'" style="color:#6D6F71">Now</a><div class="timearrow"></div></li>';
 	
 	$output='<a href="#" onclick="return false;" class="btn_show">'.$title.'</a>
 	
