@@ -34,6 +34,7 @@ function changeHeight(itemId)
 
 function backOver(itemId)
 {
+	$("#" + itemId).parent().children(".overarea").css({"height":"auto", "overflow-y":"visible"});
 	$("#" + itemId).parent().siblings().children(".overarea").css({"height":"auto", "overflow-y":"visible"});
 	$("body").css("overflow-y","visible");
 }
