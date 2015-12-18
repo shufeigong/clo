@@ -9,7 +9,7 @@
                 },options);
             var mask = '<div id="artwl_mask"></div>';
             var boxcontain = '<div id="artwl_boxcontain">\
-                                  <a id="artwl_close" href="javascript:void(0);" title="Close"></a>\
+                                  <a id="artwl_close" href="#" onclick="return false;" title="Close"></a>\
                                   <div id="artwl_showbox">\
                                       <div id="artwl_title">\
                                           <h1>\
