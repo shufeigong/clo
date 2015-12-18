@@ -36,7 +36,9 @@ module.exports = {
             "album": "./src/js/vendor/jquery.album.thickbox.js",
             "imagesloaded": "./src/js/vendor/imagesloaded.js",
             "imagefill": "./src/js/vendor/jquery-imagefill.js",
-            "TweenMax": './bower_components/gsap/src/minified/TweenMax.min.js'
+            "TweenMax": './bower_components/gsap/src/minified/TweenMax.min.js',
+            "fetch": './bower_components//fetch/fetch.js',
+            "es6-promise": './bower_components/es6-promise/promise.min.js'
         }
     },
     plugins: [
