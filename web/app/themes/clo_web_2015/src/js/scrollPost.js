@@ -70,6 +70,7 @@ $(document).ready(function () {
 	            });
 	            if(o.hoverPause) {
 	                $(o.btnPrev).hover(function(){stopAuto();}, function(){startAuto();});
+	                //$(o.btnPrev).children("a").focus(function(){stopAuto();alert("sss");}); $(o.btnPrev).children("a").blur(function(){startAuto();});
 	            }
 	        }
 
@@ -111,6 +112,7 @@ $(document).ready(function () {
 	        if(o.auto) {
 	            if(o.hoverPause) {
 	                div.hover(function(){stopAuto();}, function(){startAuto();});
+	                div.find("a").focus(function(){stopAuto();}); //div.find("a").blur(function(){startAuto();});
 	            }
 	            startAuto();
 	        };

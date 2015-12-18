@@ -509,14 +509,14 @@ function postlistShortcodeHandler($atts)
 		
 		$orderBy      = $atts['orderby'];
 		$order        = $atts['order'];
-		$postsPerPage = $atts['number_posts']==-1? -1: $atts['number_posts']+4;
+		$postsPerPage = $atts['number_posts']==-1? -1: $atts['number_posts'];
 		$template     = $atts['template'];
 		
 		$args = [
 				'post_type'      => $postType, /* Change with your custom post type name */
 				'orderby'        => $orderBy,
 				'order'          => $order,
-				'posts_per_page' => $postsPerPage,
+				'numberposts' => $postsPerPage,
 				'post_status'    => 'publish',
 		];
 		
@@ -533,8 +533,8 @@ function postlistShortcodeHandler($atts)
 			
 			foreach ($results as $post) : setup_postdata($post);
 			//DCE9F7 0075C9 EFF5DC 82BC00
-		    if($post->post_type=="news"||$post->post_type=="blog"){             // for animated block news and blog
-		    	if(isHomepageNews($post)&&isVideoNews($post))
+		    if($post->post_type=="news"||$post->post_type=="blog"||$post->post_type=="page"){    // for animated block news and blog
+		    	if(isHomepageNews($post)&&isVideoNews($post)&&!isButtonPosts($post))
 		    	{
 		    		if(find_video($post->post_content)!=null){
 		    			$output.=createVideoPost($post, $colors[$key%4]);$key++;
@@ -544,14 +544,18 @@ function postlistShortcodeHandler($atts)
 		    		}
 		    	
 		    	}
-		    	else if(isHomepageNews($post)&&!isVideoNews($post)){
+		    	else if(isHomepageNews($post)&&!isVideoNews($post)&&!isButtonPosts($post)){
 		    	
 		    		$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
+		    	}
+		    	else if(isHomepageNews($post)&&isButtonPosts($post))
+		    	{
+		    		$output.=createButtonPost($post, $colors[$key%4]); $key++;
 		    	}
 		    }
 			else if($post->post_type=="incsub_event")    // for animated block event   
 			{
-				if(isHomepageEvents($post)&&isVideoEvents($post))
+				if(isHomepageEvents($post)&&isVideoEvents($post)&&!isButtonEvents($post))
 				{
 					if(find_video($post->post_content)!=null){
 						$output.=createVideoPost($post, $colors[$key%4]);$key++;
@@ -561,9 +565,12 @@ function postlistShortcodeHandler($atts)
 					}
 				
 				}
-				else if(isHomepageEvents($post)&&!isVideoEvents($post)){
+				else if(isHomepageEvents($post)&&!isVideoEvents($post)&&!isButtonEvents($post)){
 						
 					$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
+				}
+				else if(isHomepageEvents($post)&&isButtonEvents($post)){
+					$output.=createButtonPost($post, $colors[$key%4]); $key++;
 				}
 			}
 		   
@@ -626,14 +633,14 @@ function postlistShortcodeHandler($atts)
 		
 		$orderBy      = $atts['orderby'];
 		$order        = $atts['order'];
-		$postsPerPage = $atts['number_posts']==-1? -1: $atts['number_posts']+4;
+		$postsPerPage = $atts['number_posts']==-1? -1: $atts['number_posts'];
 		$template     = $atts['template'];
 		
 		$args = [
 				'post_type'      => $postType, /* Change with your custom post type name */
 				'orderby'        => $orderBy,
 				'order'          => $order,
-				'posts_per_page' => $postsPerPage,
+				'number_posts' => $postsPerPage,
 				'post_status'    => 'publish',
 		];
 		
@@ -650,8 +657,8 @@ function postlistShortcodeHandler($atts)
 				
 			foreach ($results as $post) : setup_postdata($post);
 			//DCE9F7 0075C9 EFF5DC 82BC00
-			if($post->post_type=="news"||$post->post_type=="blog"){             // for animated block news and blog
-				if(isHomepagefrNews($post)&&isVideofrNews($post))
+			if($post->post_type=="news"||$post->post_type=="blog"||$post->post_type=="page"){             // for animated block news and blog
+				if(isHomepagefrNews($post)&&isVideofrNews($post)&&!isButtonfrPosts($post))
 				{
 					if(find_video($post->post_content)!=null){
 						$output.=createVideoPost($post, $colors[$key%4]);$key++;
@@ -661,14 +668,17 @@ function postlistShortcodeHandler($atts)
 					}
 				  
 				}
-				else if(isHomepagefrNews($post)&&!isVideofrNews($post)){
+				else if(isHomepagefrNews($post)&&!isVideofrNews($post)&&!isButtonfrPosts($post)){
 				  
 					$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
+				}
+				else if(isHomepagefrNews($post)&&isButtonfrPosts($post)){
+					$output.=createButtonPost($post, $colors[$key%4]); $key++;
 				}
 			}
 			else if($post->post_type=="incsub_event")    // for animated block event
 			{
-				if(isHomepagefrEvents($post)&&isVideofrEvents($post))
+				if(isHomepagefrEvents($post)&&isVideofrEvents($post)&&!isButtonfrEvents($post))
 				{
 					if(find_video($post->post_content)!=null){
 						$output.=createVideoPost($post, $colors[$key%4]);$key++;
@@ -678,9 +688,12 @@ function postlistShortcodeHandler($atts)
 					}
 		
 				}
-				else if(isHomepagefrEvents($post)&&!isVideofrEvents($post)){
+				else if(isHomepagefrEvents($post)&&!isVideofrEvents($post)&&!isButtonfrEvents($post)){
 		
 					$output.=createNoVideoPost($post, $colors[$key%4]); $key++;
+				}
+				else if(isHomepagefrEvents($post)&&isButtonfrEvents($post)){
+					$output.=createButtonPost($post, $colors[$key%4]); $key++;
 				}
 			}
 			 

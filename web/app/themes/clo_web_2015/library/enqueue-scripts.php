@@ -11,10 +11,19 @@ function foundationpress_scripts()
 
     $userAgent = parse_user_agent();
 
-    if ($userAgent['browser'] == 'MSIE') {
+    if ($userAgent['browser'] == 'MSIE') {//style sheet support MSIE
         wp_enqueue_style('ie-stylesheet', get_stylesheet_directory_uri() . '/dist/css/iestyle.css');
     }
+    
+    if ($userAgent['browser'] == 'Firefox') {//style sheet support Firefox
+    	wp_enqueue_style('firefox-stylesheet', get_stylesheet_directory_uri() . '/dist/css/firefoxstyle.css');
+    }
+    
+    if ($userAgent['browser'] == 'Safari') {//style sheet support safari
+    	wp_enqueue_style('firefox-stylesheet', get_stylesheet_directory_uri() . '/dist/css/safaristyle.css');
+    }
 
+    
     // Since IE9 doesn't support pushState, we need a polyfill for that
     if ($userAgent['browser'] == 'MSIE' && $userAgent['version'] == 9) {
         wp_enqueue_script('ie-history', get_stylesheet_directory_uri() . '/src/js/vendor/history.js');

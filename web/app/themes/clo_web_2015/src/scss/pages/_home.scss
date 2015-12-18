@@ -165,11 +165,13 @@
 
             ul {
                 list-style : none;
+                li{a{outline:0px;&:focus{h2{color:$color-header;}.button_title{color:$color-header;}}}}
             }
 
             .news-item {
                 margin-bottom : 10px;
                 padding       : 10px 10px 15px 25px;
+                &:hover{h2{color:$color-header;}.button_title{color:$color-header;}}
                 //height:155px;
                 h2 {
                     font-family : "Arial", "sans-serif";
@@ -179,7 +181,14 @@
                     margin-top  : 8px;
                     margin-bottom:8px;
                 }
-
+                .button_title{
+                     font-family : "Arial", "sans-serif";
+                     font-weight : bold;
+                     color       : #7d868c;
+                     margin-left:12px;
+                     @include font-size(5.0);
+                     .apos{float:right;@include font-size(2.0);margin-top:35px;}
+                }
                 .arrow {
                     position     : absolute;
                     left         : 0;
@@ -436,6 +445,7 @@
             .news-item {
                 margin-bottom : 10px;
                 padding       : 10px 10px 15px 25px;
+                &:hover{h2{color:$color-header;}.button_title{color:$color-header;}}
                 //height:155px;
                 h2 {
                     font-family : "Arial", "sans-serif";
@@ -445,7 +455,13 @@
                     margin-top  : 8px;
                     margin-bottom:8px;
                 }
-
+                .button_title{
+                     font-family : "Arial", "sans-serif";
+                     font-weight : bold;
+                     color       : #7d868c;
+                     @include font-size(4.5);
+                     .apos{float:right;@include font-size(2.0);margin-top:34px;}
+                }
                 .arrow {
                     position     : absolute;
                     left         : 0;
@@ -653,6 +669,7 @@
         //border:solid 1px #333;
         //position : relative;
         //margin-top : 45px;
+        .home{margin-bottom:15px;}
         .news-content {
             //border:solid 1px red;
             padding : 0 20px 0 25px;
@@ -668,6 +685,7 @@
             .news-item {
                 margin-bottom : 10px;
                 padding       : 10px 10px 15px 25px;
+                &:hover{h2{color:$color-header;}.button_title{color:$color-header;}}
                 h2 {
                     font-family : "Arial", "sans-serif";
                     font-weight : bold;
@@ -676,7 +694,14 @@
                     margin-top  : 8px;
                     margin-bottom:8px;
                 }
-
+                .button_title{
+                     font-family : "Arial", "sans-serif";
+                     font-weight : bold;
+                     color       : #7d868c;
+                     @include font-size(5.0);
+                     margin-left:12px;
+                     .apos{float:right;@include font-size(2.0);margin-top:35px;}
+                }
                 .arrow {
                     position     : absolute;
                     left         : 0;
