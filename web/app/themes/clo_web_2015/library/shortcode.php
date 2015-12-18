@@ -289,12 +289,12 @@ function timeLineShortcodeHandler($atts)
 	
 	for($lineyear=1945; $lineyear<$currentyear; $lineyear+=5)
 	{
-		$yearlist.='<li><div class="timemark"></div><a class="'.$lineyear.'">'.$lineyear.'</a><div class="timearrow"></div></li>';
+		$yearlist.='<li><div class="timemark"></div><a href="#" onclick="return false;"class="'.$lineyear.'">'.$lineyear.'</a><div class="timearrow"></div></li>';
 	}
 	
-	$yearlist.='<li><div class="timemark" style="border-left:none;"></div><a class="'.$currentyear.'" style="color:#6D6F71">Now</a><div class="timearrow"></div></li>';
+	$yearlist.='<li><div class="timemark" style="border-left:none;"></div><a href="#" onclick="return false;" class="'.$currentyear.'" style="color:#6D6F71">Now</a><div class="timearrow"></div></li>';
 	
-	$output='<a class="btn_show">'.$title.'</a>
+	$output='<a href="#" onclick="return false;" class="btn_show">'.$title.'</a>
 				
 			   <div id="timeline" style="display:none;">
 		            <div class="timelinebox">
@@ -363,12 +363,12 @@ function timeLineShortcodeHandler($atts)
 	
 	for($lineyear=1945; $lineyear<$currentyear; $lineyear+=5)
 	{
-		$yearlist.='<li><div class="timemark"></div><a class="'.$lineyear.'">'.$lineyear.'</a><div class="timearrow"></div></li>';
+		$yearlist.='<li><div class="timemark"></div><a href="#" onclick="return false;" class="'.$lineyear.'">'.$lineyear.'</a><div class="timearrow"></div></li>';
 	}
 	
-	$yearlist.='<li><div class="timemark" style="border-left:none;"></div><a class="'.$currentyear.'" style="color:#6D6F71">Now</a><div class="timearrow"></div></li>';
+	$yearlist.='<li><div class="timemark" style="border-left:none;"></div><a href="#" onclick="return false;" class="'.$currentyear.'" style="color:#6D6F71">Now</a><div class="timearrow"></div></li>';
 	
-	$output='<a class="btn_show">'.$title.'</a>
+	$output='<a href="#" onclick="return false;" class="btn_show">'.$title.'</a>
 	
 			   <div id="timeline" style="display:none;">
 		            <div class="timelinebox">
@@ -455,12 +455,12 @@ function timeLineShortcodeHandlerFr($atts)
 
 	for($lineyear=1945; $lineyear<$currentyear; $lineyear+=5)
 	{
-		$yearlist.='<li><div class="timemark"></div><a class="'.$lineyear.'">'.$lineyear.'</a><div class="timearrow"></div></li>';
+		$yearlist.='<li><div class="timemark"></div><a href="#" class="'.$lineyear.'">'.$lineyear.'</a><div class="timearrow"></div></li>';
 	}
 
 	$yearlist.='<li><div class="timemark" style="border-left:none;"></div><a class="'.$currentyear.'" style="color:#6D6F71">Now</a><div class="timearrow"></div></li>';
 
-	$output='<a class="btn_show">'.$title.'</a>
+	$output='<a href="#" class="btn_show">'.$title.'</a>
 
 			   <div id="timeline" style="display:none;">
 		            <div class="timelinebox">
