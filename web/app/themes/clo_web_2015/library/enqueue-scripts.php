@@ -37,15 +37,15 @@ function foundationpress_scripts()
 
 
     // CDN hosted jQuery placed in the header, as some plugins require that jQuery is loaded in the header.
-    wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), '2.1.1', true);
+    wp_register_script('jquery', '//cdn.jsdelivr.net/jquery/2.1.1/jquery.min.js', array(), '2.1.1', true);
 
-    wp_register_script(
-        'foundation',
-        get_template_directory_uri() . '/js/foundation.js',
-        array('jquery'),
-        '5.5.2',
-        true
-    );
+//    wp_register_script(
+//        'foundation',
+//        get_template_directory_uri() . '/js/foundation.js',
+//        array('jquery'),
+//        '5.5.2',
+//        true
+//    );
 
     // Enqueue all registered scripts.
     wp_enqueue_script('modernizr');
