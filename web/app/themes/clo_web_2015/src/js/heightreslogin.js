@@ -36,6 +36,7 @@ function changeHeight(itemId)
 function backOver(itemId)
 {
 	$("#" + itemId).parent().siblings().children(".overarea").css({"height":"auto", "overflow-y":"visible"});
+	$("body").css("overflow-y","visible");
 }
 
 
@@ -44,6 +45,7 @@ function setOver(menuHeight,itemId)
 {
 	var overheight=$(window).height()-menuHeight-$(".header").height()-80;
 	$("#" + itemId).nextAll(".overarea").css({"height":overheight+"px","overflow-y":"scroll"});
+	$("body").css("overflow-y","hidden");
 }
 
 
