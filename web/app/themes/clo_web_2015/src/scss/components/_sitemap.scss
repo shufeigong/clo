@@ -8,26 +8,38 @@
 		            >div:last-child{width:49%;display:inline-block;min-height:300px;padding-right:25px;}
 		             .menu-item-depth-0{
 		                 margin-bottom:15px;
-		                 >div{
+		                 >a{
 		                       padding:10px;
 		                       text-transform:uppercase;
+		                       text-decoration:none;
+		                       color: #58595b;
 		                       @include font-size(1.5);
 	                           font-family: $font-site-bold;
 	                           background-color:#C2DAF1;
+	                           display:block;
+	                           &:hover {color : $color-header;}
+                               &:active {color : #BBBDBF;}
+	                       
 		                     }
 		             }
 		             
 		             .menu-item-depth-1{
 		                  
-		                  >div{
+		                  >a{
 		                      text-transform:uppercase;
+		                      text-decoration:none;
+		                      font-family:$font_site-default;
+		                      color: #58595b;
 		                      line-height:1.15;
 		                      margin:5px 0 5px 0;
+		                      display:block;
 		                      &:before {content : '• ';margin-left:-10px;}
+		                      &:hover {color : $color-header;}
+                              &:active {color : #BBBDBF;}
 		                  }
 		                  >ul{margin-left:10px;
 		                      .menu-item-depth-2{
-		                       >div{text-transform:capitalize;color:#929497;&:before {content : '- ';margin-left:-10px;}}
+		                       a{text-transform:capitalize;display:block;color:#929497;font-family:$font_site-default;text-decoration:none;&:before {content : '- ';margin-left:-10px;}&:hover {color : $color-header;}&:active {color : #BBBDBF;}}
 		                      }
 		                  }
 		             }

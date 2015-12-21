@@ -621,7 +621,7 @@ if (!class_exists('Foundationpress_Top_Bar_Walker')) :
 			//$attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
 			$attributes = !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
 			$attributes .= !empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
-			//$attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
+			$attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
 			//$attributes .= ' href="#" onclick="return false"';
 			//$attributes .= ! empty( $item->title)  ? ' id="'   . esc_attr( strtolower(preg_replace("/\s|　/","",$item->title))  ) .'M"' : '';
 			//$attributes .= ! empty( $item->title)  ? ' id="'   . esc_attr( explode('/', $item->url)[count(explode('/',$item->url))-2]  ) .'"' : '';
@@ -636,7 +636,7 @@ if (!class_exists('Foundationpress_Top_Bar_Walker')) :
 
 
 			$item_output = sprintf(
-				'%1$s<div%2$s>%3$s%4$s%5$s</div>%6$s',
+				'%1$s<a%2$s>%3$s%4$s%5$s</a>%6$s',
 				$args->before,
 				$attributes,
 				$args->link_before,
