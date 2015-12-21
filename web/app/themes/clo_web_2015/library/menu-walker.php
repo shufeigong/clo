@@ -614,7 +614,7 @@ if (!class_exists('Foundationpress_Top_Bar_Walker')) :
 			}
 			else{
 				if($_SESSION['orderSiteMap']==1&&$depth==0){$output .= $indent . '<div><li class="' . $depth_class_names . ' ' . $class_names . ' clearfix no-children">';$_SESSION['orderSiteMap']++;}
-				else if($_SESSION['orderSiteMap']==3&&$depth==0){$output .= $indent . '<div><li class="' . $depth_class_names . ' ' . $class_names . ' clearfix no-children">';$_SESSION['orderSiteMap']++;}
+				else if($_SESSION['orderSiteMap']==4&&$depth==0){$output .= $indent . '<div><li class="' . $depth_class_names . ' ' . $class_names . ' clearfix no-children">';$_SESSION['orderSiteMap']++;}
 				else{$output .= $indent . '<li class="' . $depth_class_names . ' ' . $class_names . ' clearfix no-children">';if($depth==0){$_SESSION['orderSiteMap']++;}};
 
 			}
@@ -661,7 +661,7 @@ if (!class_exists('Foundationpress_Top_Bar_Walker')) :
 
 		function end_el( &$output, $page, $depth = 0, $args = array() ) {
 
-			if($_SESSION['orderSiteMap']==3&&$depth==0){
+			if($_SESSION['orderSiteMap']==4&&$depth==0){
 				$output .= "</li></div>";
 			}
 			else{
