@@ -82,7 +82,7 @@ if ($userAgent['browser'] == 'MSIE' && (int)$userAgent['version'] < 11) {
 	         <div class="columns large-4 medium-4 small-12 mbl-img">
 	             <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/mbl-img.svg" alt="mbl-img"/>
 	         </div>
-<?php //$userAgent = parse_user_agent(); echo $userAgent['browser'].'////'.$userAgent['version'];?>
+<?php //$userAgent = parse_user_agent(); echo $userAgent['browser'].'////'.$userAgent['version'][0];?>
              <div class="columns large-4 medium-4 small-12 mbx-dh">
                  <?php  
                         $menu_breadcrumb = new Menu_Breadcrumb( 'main-menu' );   // 'main' is the Menu Location

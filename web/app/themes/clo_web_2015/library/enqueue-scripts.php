@@ -20,7 +20,10 @@ function foundationpress_scripts()
     }
     
     if ($userAgent['browser'] == 'Safari') {//style sheet support safari
-    	wp_enqueue_style('firefox-stylesheet', get_stylesheet_directory_uri() . '/dist/css/safaristyle.css');
+    	wp_enqueue_style('safari-stylesheet', get_stylesheet_directory_uri() . '/dist/css/safaristyle.css');
+    	if((int)$userAgent['version'][0] < 9){
+    		wp_enqueue_style('safari9-stylesheet', get_stylesheet_directory_uri() . '/dist/css/safari9style.css');
+    	}
     }
 
     
