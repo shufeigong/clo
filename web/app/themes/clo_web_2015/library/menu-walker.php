@@ -609,7 +609,7 @@ if (!class_exists('Foundationpress_Top_Bar_Walker')) :
 			// build html
 			if(!empty($children)){
 				if($_SESSION['orderSiteMap']==1&&$depth==0){$output .= $indent . '<div><li class="' . $depth_class_names . ' ' . $class_names . ' clearfix">';$_SESSION['orderSiteMap']++;}
-				else if($_SESSION['orderSiteMap']==3&&$depth==0){$output .= $indent . '<div><li class="' . $depth_class_names . ' ' . $class_names . ' clearfix">';$_SESSION['orderSiteMap']++;}
+				else if($_SESSION['orderSiteMap']==4&&$depth==0){$output .= $indent . '<div><li class="' . $depth_class_names . ' ' . $class_names . ' clearfix">';$_SESSION['orderSiteMap']++;}
 				else{$output .= $indent . '<li class="' . $depth_class_names . ' ' . $class_names . ' clearfix">';if($depth==0){$_SESSION['orderSiteMap']++;}}
 			}
 			else{
