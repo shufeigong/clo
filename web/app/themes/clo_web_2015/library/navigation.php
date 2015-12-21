@@ -110,7 +110,7 @@ if ( ! function_exists( 'mainMenu' ) ) {
 		));
 	}
 	
-	function mainMenuSiteMap() {  //main menu for site map shortcode
+	function mainMenuSiteMap() {  //main menu for site map template
 		return wp_nav_menu(array(
 				'theme_location'  => '',
 				'menu'            => 'main-menu',
@@ -131,7 +131,26 @@ if ( ! function_exists( 'mainMenu' ) ) {
 		));
 	}
 	
-	
+	function mainMenuSiteMapMobile() {  //main menu for site map mobile template
+		return wp_nav_menu(array(
+				'theme_location'  => '',
+				'menu'            => 'main-menu',
+				'container'       => 'div',
+				'container_class' => 'mainSiteMapMobile-menu-container',
+				'container_id'    => '',
+				'menu_class'      => 'MainMenuSiteMapMobile',
+				'menu_id'         => '',
+				'echo'            => true,
+				'fallback_cb'     => 'wp_page_menu',
+				'before'          => '',
+				'after'           => '',
+				'link_before'     => '',
+				'link_after'      => '',
+				'items_wrap'      => '<ul class="%2$s" style="margin:0;">%3$s</ul>',
+				'depth'           => 0,
+				'walker'          => new MainSiteMapMobile_Nav_walker()
+		));
+	}
 	
 	
 }

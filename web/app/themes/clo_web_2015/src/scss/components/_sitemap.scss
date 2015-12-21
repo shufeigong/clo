@@ -1,5 +1,5 @@
 .entry-content2{
- .mainSiteMap-menu-container{
+ .mainSiteMap-menu-container,.mainSiteMapMobile-menu-container{
 		
 		    
 		     >ul{
@@ -54,9 +54,20 @@
 		}
 	
 	}
+	
+@media screen and (min-width : 641px) {
+    .entry-content2{
+       .mainSiteMapMobile-menu-container{display:none;}
+       
+       
+   }   
+}
+	
 @media screen and (max-width : 640px) {
    .entry-content2{
-       .mainSiteMap-menu-container{
+       .mainSiteMap-menu-container{display:none;}
+       
+       .mainSiteMapMobile-menu-container{
              >ul{
                   >div:first-child{float:none; width:auto;}
                   >div:last-child{display:block;width:auto;}

@@ -1,1 +1,2 @@
-<?php mainMenuSiteMap();?>
+<?php mainMenuSiteMap();
+mainMenuSiteMapMobile();?>
