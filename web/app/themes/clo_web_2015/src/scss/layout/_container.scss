@@ -45,6 +45,26 @@ svg{
 }
 
 .has-tip{font-weight:normal;}
+
+
+.pagination-centered{
+    //border:solid 1px #333;
+    margin-bottom:15px;
+    ul.pagination{
+        list-style-type:none;
+        line-height:16px;
+        li.current{a{background-color:$color-header;}}
+        li{
+            @include font-size(1.5);
+            line-height:24px;
+            a{
+              &:hover{background-color:$color-header;color:#ffffff;}
+             }
+           }
+    }
+}
+#event-bread-crumbs{display:none;}
+
 /////////////////////
 @media screen and (min-width : 1000px) {
 
