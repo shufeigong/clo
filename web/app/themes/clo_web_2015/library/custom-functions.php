@@ -248,7 +248,7 @@ function createNoVideoPost($post, $color){
 
 ///function for creating button animated block
 function createButtonPost($post, $color){
-	$output= '<li><a href="' . get_permalink($post->ID) . '"><div class="news-item no-video" style="background:'.$color.';">
+	$output= '<li><a href="' . get_permalink($post->ID) . '" tabindex="-1"><div class="news-item no-video" style="background:'.$color.';">
                         <div class="arrow"></div>';
 	
 	
