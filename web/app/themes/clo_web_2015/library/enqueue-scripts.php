@@ -11,7 +11,7 @@ function foundationpress_scripts()
 
     $userAgent = parse_user_agent();
 
-    if ($userAgent['browser'] == 'MSIE') {//style sheet support MSIE
+    if ($userAgent['browser'] == 'MSIE'||$userAgent['browser'] == 'Edge') {//style sheet support MSIE
         wp_enqueue_style('ie-stylesheet', get_stylesheet_directory_uri() . '/dist/css/iestyle.css');
     }
     
