@@ -55,6 +55,7 @@ function pageLoad(linkSplit, basicItems) {
                     if($(".btn_show").length>0){timeline()};
                     campaignMonitor();
                     album();
+                    locationMap();
                 })
                 .fail(function () {
                 alert("error");
@@ -71,6 +72,7 @@ function pageLoad(linkSplit, basicItems) {
                     if($(".btn_show").length>0){timeline()};
                     campaignMonitor();
                     album();
+                    locationMap();
                 });
         }
         else if(linkSplit[1]==''){//home page, no /
@@ -87,6 +89,7 @@ function pageLoad(linkSplit, basicItems) {
                             if($(".btn_show").length>0){timeline()};
                             campaignMonitor();
                             album();
+                            locationMap();
 
                         });
         		}
@@ -103,6 +106,7 @@ function pageLoad(linkSplit, basicItems) {
                         if($(".btn_show").length>0){timeline()};
                         campaignMonitor();
                         album();
+                        locationMap();
                     });
         	}
         }
@@ -150,6 +154,7 @@ function grabPage(pageId) {
             if($(".btn_show").length>0){timeline()};
             campaignMonitor();
             album();
+            locationMap();
         })
         .fail(function () {
         alert("error");
@@ -301,6 +306,7 @@ function change(objectId, itemId, thisid) {
             if($(".btn_show").length>0){timeline()};
             campaignMonitor();
             album();
+            locationMap();
         })
         .fail(function () {
         alert("error");
@@ -577,6 +583,23 @@ function campaignMonitor()
 	    var myWindow = window.open(url, "MsgWindow", "width=650, height=800, scrollbars=yes");
 	});
 }
+
+////////Location Map Pop///////
+function locationMap(){
+	$('.location_map').click(function(e) {
+	    e.preventDefault(); 
+	    var url= "/locationmap"; //
+	    var myWindow = window.open(url, "MsgWindow", "width=650, height=800, scrollbars=yes");
+	});
+	
+}
+function mapToggle(thislocation){
+	$(thislocation).parents(".results_row_left_column").next().slideToggle();
+	if($(thislocation).html()=="[+]")
+		{$(thislocation).html("[–]");}
+	else{$(thislocation).html("[+]");}
+}
+
 
 /////////externalliks for social list////////
 function externallinks() { 

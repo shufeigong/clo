@@ -1,0 +1,443 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Store Locator Plus : Enhanced Search v4.2.03\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-11-18 20:31+0100\n"
+"Last-Translator: Piani Sweden AB <info@piani.se>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.6.10\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"Language: sv_SE\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ csa-slp-es
+#: include/class.admin.php:102
+msgid "Address"
+msgstr "Adress"
+
+# @ csa-slp-es
+#: include/class.admin.php:103
+msgid "Instructions to place in the address input."
+msgstr "Instruktioner som står i adressfältet"
+
+# @ csa-slp-es
+#: include/class.admin.php:107 include/class.admin.php:180
+msgid "Name"
+msgstr "Namn"
+
+# @ csa-slp-es
+#: include/class.admin.php:108
+msgid "Instructions to place in the name input."
+msgstr "Instruktioner som står i namnfältet."
+
+# @ csa-slp-es
+#: include/class.admin.php:117
+msgid "Search Placeholders"
+msgstr "Sökfältsinstruktioner"
+
+# @ csa-slp-es
+#: include/class.admin.php:118
+msgid ""
+"Placeholders are text instructions that appear inside an input box before "
+"data is entered."
+msgstr ""
+"Sökfältsinstruktioner är text som visas i sökfälten innan något skrivits in."
+
+# @ csa-slp-es
+#: include/class.admin.php:137
+msgid "Program Interface"
+msgstr "Programutseende"
+
+# @ csa-slp-es
+#: include/class.admin.php:152
+msgid "Allow Address In URL"
+msgstr "Tillåt adress i URL"
+
+# @ csa-slp-es
+#: include/class.admin.php:154
+msgid "If checked an address can be pre-loaded via a URL string ?address=blah."
+msgstr ""
+"Om denna är markerad kan en adress förladdas via en URL sträng  ?"
+"address=blah."
+
+# @ csa-slp-es
+#: include/class.admin.php:156
+msgid ""
+"This will disable the Pro Pack location sensor whenever the address is used "
+"in the URL."
+msgstr ""
+"Detta stänger av Pro Pack funktionen för platsavkännare när en adress "
+"används i URL."
+
+# @ csa-slp-es
+#: include/class.admin.php:172
+msgid "Find Button"
+msgstr "Hitta knappen"
+
+# @ csa-slp-es
+#: include/class.admin.php:173
+msgid "The label on the find button, if text mode is selected."
+msgstr "Texten på Hitta knappen om textfunktionen är vald (ej bildknapp)."
+
+# @ csa-slp-es
+#: include/class.admin.php:175
+msgid "Find Locations"
+msgstr "Hitta platser"
+
+# @ csa-slp-es
+#: include/class.admin.php:181
+msgid "The label that precedes the name input box."
+msgstr "Texten som står innan sökrutan för namn."
+
+# @ csa-slp-es
+#: include/class.admin.php:190
+msgid "City Selector Label"
+msgstr "Stad"
+
+# @ csa-slp-es
+#: include/class.admin.php:191
+msgid "The label that precedes the city selector."
+msgstr "Texten som står innan sökrutan för stad."
+
+# @ csa-slp-es
+#: include/class.admin.php:198
+msgid "City Selector First Entry"
+msgstr "Stad första rad"
+
+# @ csa-slp-es
+#: include/class.admin.php:199
+msgid "The first entry on the search by city selector."
+msgstr "Texten på första raden vid sökning av stad med rullgardinsmeny."
+
+# @ csa-slp-es
+#: include/class.admin.php:201 include/class.userinterface.php:442
+msgid "--Search By City--"
+msgstr "--Sök stad--"
+
+# @ csa-slp-es
+#: include/class.admin.php:208
+msgid "State Selector Label"
+msgstr "Län"
+
+# @ csa-slp-es
+#: include/class.admin.php:209
+msgid "The label that precedes the state selector."
+msgstr "Texten som står innan sökrutan för län."
+
+# @ csa-slp-es
+#: include/class.admin.php:216
+msgid "State Selector First Entry"
+msgstr "Län första rad"
+
+# @ csa-slp-es
+#: include/class.admin.php:217
+msgid "The first entry on the search by state selector."
+msgstr "Texten på första raden vid sökning av län med rullgardinsmeny."
+
+# @ csa-slp-es
+#: include/class.admin.php:219 include/class.userinterface.php:569
+msgid "--Search By State--"
+msgstr "--Län--"
+
+# @ csa-slp-es
+#: include/class.admin.php:226
+msgid "Country Selector Label"
+msgstr "Land"
+
+# @ csa-slp-es
+#: include/class.admin.php:227
+msgid "The label that precedes the country selector."
+msgstr "Texten som står innan sökrutan för land."
+
+# @ csa-slp-es
+#: include/class.admin.php:234
+msgid "Country Selector First Entry"
+msgstr "Land första rad"
+
+# @ csa-slp-es
+#: include/class.admin.php:235
+msgid "The first entry on the search by country selector."
+msgstr "Texten på första raden vid sökning av land med rullgardinsmeny."
+
+# @ csa-slp-es
+#: include/class.admin.php:237 include/class.userinterface.php:513
+msgid "--Search By Country--"
+msgstr "--Land--"
+
+# @ csa-slp-es
+#: include/class.admin.php:257
+msgid "Hide Address Entry"
+msgstr "Göm adressfältet"
+
+# @ csa-slp-es
+#: include/class.admin.php:258
+msgid "Hide the address input box on the locator search form."
+msgstr "Göm fältet för sökning av adress från sökfunktionen."
+
+# @ csa-slp-es
+#: include/class.admin.php:265
+msgid "Hide Search Form"
+msgstr "Göm sökformuläret"
+
+# @ csa-slp-es
+#: include/class.admin.php:266
+msgid ""
+"Hide the user input on the search page, regardless of the SLP theme used."
+msgstr "Göm hela sökformuläret oavsett vilket SLPLUS tema som används."
+
+# @ csa-slp-es
+#: include/class.admin.php:273
+msgid "Hide Radius Selections"
+msgstr "Göm radie-valet"
+
+# @ csa-slp-es
+#: include/class.admin.php:274
+msgid "Hide the radius selection drop down."
+msgstr "Göm rullgardinsfältet för val av radie i sökfunktionen."
+
+# @ csa-slp-es
+#: include/class.admin.php:279
+msgid "Show Search By Name"
+msgstr "Visa sök namn"
+
+# @ csa-slp-es
+#: include/class.admin.php:280
+msgid "Shows the name search entry box to the user."
+msgstr "Visar fältet för att söka platser med hjälp av deras namn."
+
+# @ csa-slp-es
+#: include/class.admin.php:289
+msgid "Radius Behavior"
+msgstr "Radie-funktion"
+
+# @ csa-slp-es
+#: include/class.admin.php:291 include/class.admin.php:320
+msgid "Show the city selector on the search form."
+msgstr "Visa fältet för sökning av stad."
+
+# @ csa-slp-es
+#: include/class.admin.php:292 include/class.admin.php:321
+#: include/class.admin.php:353 include/class.admin.php:386
+#, php-format
+msgid ""
+"View the <a href=\"%s\" target=\"csa\">documentation</a> for more info. "
+msgstr ""
+"Läs mer i <a href=\"%s\" target=\"csa\">dokumentationen</a> för mer "
+"information. "
+
+# @ csa-slp-es
+#: include/class.admin.php:293
+msgid ""
+"If you want the option to search by address OR by city on the same form, "
+"select: Use radius only with address. If you choose not to use radius, you "
+"consider also hiding the radius selector."
+msgstr ""
+"Om du vill använda funktionen att söka efter adress ELLER efter stad på "
+"samma sökformulär välj: \\\"Använd endast radie med adress\\\". Om du väljer "
+"att inte använda radie kan du även dölja radien-väljaren helt."
+
+# @ csa-slp-es
+#: include/class.admin.php:298
+msgid "Do not use"
+msgstr "Använd inte"
+
+# @ csa-slp-es
+#: include/class.admin.php:302
+msgid "Use only when address is entered"
+msgstr "Använd endast om en adress är ifylld"
+
+# @ csa-slp-es
+#: include/class.admin.php:306
+msgid "Always use"
+msgstr "Använd alltid"
+
+# @ csa-slp-es
+#: include/class.admin.php:318
+msgid "City Selector"
+msgstr "Stadssökning"
+
+# @ csa-slp-es
+#: include/class.admin.php:322
+msgid "Consider setting do not use radius when using discrete search mode."
+msgstr "Överväg att inte använd radie-val när du använder diskret sökläge."
+
+# @ csa-slp-es
+#: include/class.admin.php:327 include/class.admin.php:359
+#: include/class.admin.php:392
+msgid "Hidden"
+msgstr "Gömd"
+
+# @ csa-slp-es
+#: include/class.admin.php:331 include/class.admin.php:363
+#: include/class.admin.php:396
+msgid "Dropdown, Address Input"
+msgstr "Rullgardin med alternativ"
+
+# @ csa-slp-es
+#: include/class.admin.php:335 include/class.admin.php:367
+#: include/class.admin.php:400
+msgid "Dropdown, Discrete Filter"
+msgstr "Rullgardin, Diskret sökning"
+
+# @ csa-slp-es
+#: include/class.admin.php:339 include/class.admin.php:371
+#: include/class.admin.php:404
+msgid "Dropdown, Discrete + Address Input"
+msgstr "Rullgardin, Diskret + Adressfält"
+
+# @ csa-slp-es
+#: include/class.admin.php:350
+msgid "Country Selector"
+msgstr "Landssökning"
+
+# @ csa-slp-es
+#: include/class.admin.php:352
+msgid "Show the country selector on the search form."
+msgstr "Visa fältet för sökning av land."
+
+# @ csa-slp-es
+#: include/class.admin.php:354 include/class.admin.php:387
+msgid "Consider setting ignore radius when using discrete search mode."
+msgstr "Överväg att ignorera radie när du använder diskret sökläge."
+
+# @ csa-slp-es
+#: include/class.admin.php:383
+msgid "State Selector"
+msgstr "Länsökning"
+
+# @ csa-slp-es
+#: include/class.admin.php:385
+msgid "Show the state selector on the search form."
+msgstr "Visa fältet för sökning av län."
+
+# @ csa-slp-es
+#: include/class.admin.php:416
+msgid "Search Address Nearest"
+msgstr "Sök adress närmast"
+
+# @ csa-slp-es
+#: include/class.admin.php:418
+msgid ""
+"Worldwide is the default search, letting Google make the best guess which "
+"addres the user wants."
+msgstr ""
+"Hela världen är standardsökning, den låter Google göra den bästa gissningen "
+"av vilken adress användaren menar."
+
+# @ csa-slp-es
+#: include/class.admin.php:419
+msgid ""
+"Current Map will find the best matching address nearest the current area "
+"shown on the map."
+msgstr ""
+"Aktuell karta söker efter den bästa matchningen av adress närmast den "
+"aktuella kartan."
+
+# @ csa-slp-es
+#: include/class.admin.php:423
+msgid "Worldwide"
+msgstr "Hela världen"
+
+# @ csa-slp-es
+#: include/class.admin.php:427
+msgid "Current Map"
+msgstr "Aktuell karta"
+
+# @ csa-slp-es
+#: include/class.admin.php:436
+msgid "Search Layout"
+msgstr "Sökformulär"
+
+# @ csa-slp-es
+#: include/class.admin.php:437
+msgid "Enter your custom search form layout. "
+msgstr "Skriv in din egen layout för sökformuläret."
+
+# @ csa-slp-es
+#: include/class.admin.php:440
+#, php-format
+msgid "Uses HTML plus %s shortcodes."
+msgstr "Använd HTML plus %s kortkoder."
+
+# @ csa-slp-es
+#: include/class.admin.php:442
+msgid "Set it to blank to reset to the default layout. "
+msgstr "Lämna blankt för att återställa till standardlayouten."
+
+# @ csa-slp-es
+#: include/class.admin.php:443
+msgid "Overrides all other search form settings."
+msgstr "Skriver över alla andra inställningar för sökformuläret."
+
+# @ csa-slp-es
+#: include/class.admin.php:452
+msgid "Append This To Searches"
+msgstr "Lägg till söktext"
+
+# @ csa-slp-es
+#: include/class.admin.php:453
+msgid ""
+"Anything you enter in this box will automatically be appended to the address "
+"a user types into the locator search form address box on your site. "
+msgstr ""
+"Allt du skriver i rutan kommer automatiskt att läggas till den adress en "
+"användare skriver in i adressfältet på sökformuläret på din webbplats."
+
+# @ csa-slp-es
+#: include/class.userinterface.php:277
+msgid "Name of Store"
+msgstr "Namn på plats"
+
+# @ csa-slp-es
+#. translators: plugin header field 'Name'
+#: slp-enhanced-search.php:0
+msgid "Store Locator Plus : Enhanced Search"
+msgstr ""
+
+# @ csa-slp-es
+#. translators: plugin header field 'PluginURI'
+#: slp-enhanced-search.php:0
+msgid "http://www.charlestonsw.com/product/slp4-enhanced-search/"
+msgstr ""
+
+# @ csa-slp-es
+#. translators: plugin header field 'Description'
+#: slp-enhanced-search.php:0
+msgid ""
+"A premium add-on pack for Store Locator Plus that adds enhanced search "
+"features to the plugin."
+msgstr ""
+"Ett premie tilläggspaket för Store Locator Plus som lägger till förbättrade "
+"funktioner för sökformuläret i panelen."
+
+# @ csa-slp-es
+#. translators: plugin header field 'Author'
+#: slp-enhanced-search.php:0
+msgid "Charleston Software Associates"
+msgstr ""
+
+# @ csa-slp-es
+#. translators: plugin header field 'AuthorURI'
+#: slp-enhanced-search.php:0
+msgid "http://charlestonsw.com/"
+msgstr ""
+
+# @ csa-slp-es
+#. translators: plugin header field 'Version'
+#: slp-enhanced-search.php:0
+msgid "4.2.03"
+msgstr ""
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:116
+msgid "Enhanced Search"
+msgstr ""

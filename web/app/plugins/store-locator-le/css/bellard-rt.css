@@ -1,0 +1,372 @@
+/** file: bellard-rt.css
+ ** label: Bellard RT
+ ** description: Side-by-Side boxes with simple colors on white.  Requires Google Fonts.  Slightly more narrow than Bellard.  Styled for RT-17 Theme.  Uses default layout.
+ ** add-ons: slp-pro,slp-enhanced-map,slp-enhanced-results,slp-enhanced-search,slp-tagalong,slp-premier
+ ** Pro Pack Locator Layout: <div id="sl_div">[slp_search][slp_map][slp_results]</div>
+ ** Enhanced Map Bubble Layout: <div id="sl_info_bubble" class="[slp_location featured]"><span id="slp_bubble_name"><strong>[slp_location name  suffix  br]</strong></span><span id="slp_bubble_address">[slp_location address       suffix  br]</span><span id="slp_bubble_address2">[slp_location address2      suffix  br]</span><span id="slp_bubble_city">[slp_location city          suffix  comma]</span><span id="slp_bubble_state">[slp_location state suffix    space]</span><span id="slp_bubble_zip">[slp_location zip suffix  br]</span><span id="slp_bubble_country"><span id="slp_bubble_country">[slp_location country       suffix  br]</span></span><span id="slp_bubble_directions">[html br ifset directions][slp_option label_directions wrap directions]</span><span id="slp_bubble_website">[html br ifset url][slp_location url           wrap    website][slp_option label_website ifset url][html closing_anchor ifset url][html br ifset url]</span><span id="slp_bubble_email">[slp_location email         wrap    mailto ][slp_option label_email ifset email][html closing_anchor ifset email][html br ifset email]</span><span id="slp_bubble_phone">[html br ifset phone]<span class="location_detail_label">[slp_option   label_phone   ifset   phone]</span>[slp_location phone         suffix    br]</span><span id="slp_bubble_fax"><span class="location_detail_label">[slp_option   label_fax     ifset   fax  ]</span>[slp_location fax           suffix    br]<span><span id="slp_bubble_description"><span id="slp_bubble_description">[html br ifset description][slp_location description raw]</span>[html br ifset description]</span><span id="slp_bubble_hours">[html br ifset hours]<span class="location_detail_label">[slp_option   label_hours   ifset   hours]</span><span class="location_detail_hours">[slp_location hours         suffix    br]</span></span><span id="slp_bubble_img">[html br ifset img][slp_location image         wrap    img]</span><span id="slp_tags">[slp_location tags]</span><span class="bubble_footnote">[slp_option bubble_footnote]</span></div>
+ ** Enhanced Results Results Layout: <div id="slp_results_[slp_location id]" class="results_entry  [slp_location featured]"><div class="results_row_left_column"   id="slp_left_cell_[slp_location id]"   ><span class="location_name">[slp_location name]</span><span class="location_distance">[slp_location distance_1] [slp_location distance_unit]</span></div><div class="results_row_center_column" id="slp_center_cell_[slp_location id]" ><span class="slp_result_address slp_result_street">[slp_location address]</span><span class="slp_result_address slp_result_street2">[slp_location address2]</span><span class="slp_result_address slp_result_citystatezip">[slp_location city_state_zip]</span><span class="slp_result_address slp_result_country">[slp_location country]</span><span class="slp_result_address slp_result_phone">[slp_location phone]</span><span class="slp_result_address slp_result_fax">[slp_location fax]</span></div><div class="results_row_right_column"  id="slp_right_cell_[slp_location id]"  ><span class="slp_result_contact slp_result_website">[slp_location web_link]</span><span class="slp_result_contact slp_result_email">[slp_location email_link]</span><span class="slp_result_contact slp_result_directions"><a href="http://[slp_location map_domain]/maps?saddr=[slp_location search_address]&daddr=[slp_location location_address]" target="_blank" class="storelocatorlink">[slp_location directions_text]</a></span><span class="slp_result_contact slp_result_hours">[slp_location hours]</span>[slp_location iconarray wrap="fullspan"]</div></div>
+ ** Enhanced Search Search Layout: <div id="address_search">[slp_search_element input_with_label="name"][slp_search_element input_with_label="address"][slp_search_element dropdown_with_label="city"][slp_search_element dropdown_with_label="state"][slp_search_element dropdown_with_label="country"][slp_search_element selector_with_label="tag"][slp_search_element dropdown_with_label="category"]<div class="search_item">[slp_search_element dropdown_with_label="radius"][slp_search_element button="submit"]</div></div>
+ ** Results Header:
+ **/
+.onoffswitch-block {
+  display: inline-block;
+  float: right;
+  margin-right: 8px; }
+
+.onoffswitch-pretext {
+  display: inline-block;
+  padding-right: 12px;
+  vertical-align: super; }
+
+.onoffswitch {
+  display: inline-block;
+  position: relative;
+  width: 56px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; }
+
+.onoffswitch-checkbox {
+  display: none; }
+
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #999999;
+  border-radius: 20px; }
+
+.onoffswitch-inner {
+  width: 200%;
+  margin-left: -100%;
+  -moz-transition: margin 0.3s ease-in 0s;
+  -webkit-transition: margin 0.3s ease-in 0s;
+  -o-transition: margin 0.3s ease-in 0s;
+  transition: margin 0.3s ease-in 0s; }
+
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+  float: left;
+  width: 50%;
+  height: 17px;
+  padding: 0;
+  line-height: 17px;
+  font-size: 10px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.onoffswitch-inner:before {
+  content: "ON";
+  padding-left: 8px;
+  background-color: #2FCCFF;
+  color: #FFFFFF; }
+
+.onoffswitch-inner:after {
+  content: "OFF";
+  padding-right: 8px;
+  background-color: #EEEEEE;
+  color: #999999;
+  text-align: right; }
+
+.onoffswitch-switch {
+  width: 8px;
+  margin: 4.5px;
+  background: #FFFFFF;
+  border: 2px solid #999999;
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 35px;
+  -moz-transition: all 0.3s ease-in 0s;
+  -webkit-transition: all 0.3s ease-in 0s;
+  -o-transition: all 0.3s ease-in 0s;
+  transition: all 0.3s ease-in 0s; }
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0; }
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0px; }
+
+/***********************
+ * Search Form
+ ***********************/
+#search_table {
+  border: none;
+  margin: 0px;
+  padding: 0px; }
+
+#search_form_table_row {
+  display: inline;
+  /* Keep the map right up to the bottom of the search form. */ }
+
+#search_table td {
+  border: none; }
+
+div#addy_in_state {
+  display: inline-block;
+  margin-right: 8px;
+  position: relative;
+  width: 315px; }
+
+div#addy_in_state LABEL {
+  display: none; }
+
+#addressInputState {
+  border: solid 1px #DDDDDD;
+  background-color: #FFFFFF;
+  background-image: -webkit-linear-gradient(#FFFF, #FFFF, #FFFF);
+  color: #8F8F8F;
+  display: inline-block;
+  font-family: "Arial", sans-serif;
+  font-size: 12px;
+  height: 31px;
+  position: absolute;
+  top: -22px;
+  width: 315px;
+  white-space: nowrap;
+  -webkit-appearance: button; }
+
+div#addy_in_address {
+  color: #8F8F8F;
+  display: inline-block;
+  font-family: "Arial", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  height: 40px;
+  margin-right: 15px;
+  width: 431px; }
+
+#addressInput {
+  width: 421px; }
+
+div#radius_in_submit {
+  display: inline-block; }
+
+#addressSubmit,
+#addressSubmit:hover {
+  background-color: #00D6F2;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00D6F2', endColorstr='#00D6F2');
+  /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#00D6F2), to(#00D6F2));
+  /* for webkit browsers */
+  background: -moz-linear-gradient(top, #00D6F2, #00D6F2);
+  /* for firefox 3.6+ */
+  border: medium none;
+  color: #FFFFFF;
+  cursor: pointer;
+  font: "Arial", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  width: 145px; }
+
+/**** Map Box
+ **
+ ** Since we only use these div IDs when a static image is present
+ ** we start with the image shown and map hidden.  JQuery will flip
+ ** this for us.
+ **
+ **/
+div#map {
+  border-top: solid 1px #CCCCCC;
+  border-left: solid 1px #CCCCCC;
+  border-right: solid 1px #CCCCCC;
+  width: auto; }
+
+/* Hide the default Google bubble shadow */
+div#map img[src='http://maps.gstatic.com/mapfiles/iws3.png'] {
+  display: none; }
+
+/* Don't let WordPress Mangle Map Images */
+div#map img {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  max-width: none;
+  opacity: 1.0;
+  visibility: visible; }
+
+/* Fix IE10 Rules */
+div#map .gm-style-cc > div {
+  word-wrap: normal; }
+
+#map_table {
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  width: 100%; }
+
+#map_table td {
+  border: none; }
+
+div#slp_tagline {
+  text-align: right;
+  padding-right: 3px;
+  width: 100%; }
+
+#map_table_row {
+  width: 100%; }
+
+#map_table_cell {
+  width: 100%; }
+
+div.entry-content div#sl_div #map_table IMG {
+  max-width: none;
+  box-shadow: none;
+  border-radius: 0px;
+  border: none;
+  padding: 0px;
+  margin: 0px; }
+
+/***********************
+ * Results Table
+ ***********************/
+#results_table td {
+  border: none; }
+
+#results_table tr {
+  height: 400px; }
+
+#map_sidebar_td {
+  margin: 0px;
+  padding: 0px; }
+
+div#map_sidebar {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 315px; }
+
+div.results_entry {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  width: 300px; }
+
+div.results_entry table.searchResultsTable {
+  display: inline-block;
+  position: relative;
+  width: 100%; }
+
+#results_table .results_row_left_column {
+  width: 315px;
+  height: 55px;
+  margin: 0px;
+  padding: 0px 3px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  border: none;
+  text-align: left;
+  color: #888; }
+
+#results_table .results_row_center_column {
+  width: 315px;
+  height: 90px;
+  margin: 0px;
+  padding: 0px 3px;
+  position: absolute;
+  left: 0px;
+  top: 90px;
+  border: none;
+  text-align: left; }
+
+#results_table .results_row_right_column {
+  width: 315px;
+  height: 50px;
+  margin: 0px;
+  padding: 0px 3px;
+  position: absolute;
+  left: 0px;
+  top: 230px;
+  border: none;
+  text-align: left; }
+
+span.location_name {
+  color: #00D6F4;
+  display: block;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 34px;
+  max-width: 290px;
+  overflow: hidden;
+  white-space: nowrap; }
+
+span.location_distance {
+  color: #636363;
+  display: block;
+  font-family: "News Cycle", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: -24px; }
+
+span.slp_result_address {
+  color: #636363;
+  font-family: "News Cycle", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  display: block;
+  width: 100%; }
+
+span.slp_result_contact {
+  color: #636363;
+  font-family: "News Cycle", sans-serif;
+  font-size: 12px;
+  font-weight: 400; }
+
+span.slp_result_website {
+  display: inline-block;
+  width: 110px; }
+
+span.slp_result_directions {
+  display: inline-block;
+  width: 160px; }
+
+div.slp_hours {
+  margin-top: 20px;
+  white-space: normal;
+  width: 300px; }
+
+/* Tagalong result icons */
+.results_line.location_iconarray > a {
+  display: inline-block;
+  height: auto;
+  width: auto; }
+
+#tagalong_category_selector {
+  display: block;
+  height: 2em;
+  width: 100%; }
+
+#tagalong_category_selector .category_selector.parent {
+  display: block;
+  float: left; }
+
+#tagalong_category_selector .category_selector.child {
+  display: none;
+  float: left; }
+
+#tagalong_legend {
+  border: none;
+  padding: 12px; }
+
+#tagalong_legend .legend_text {
+  display: inline-block;
+  margin-left: 6px;
+  margin-right: 20px;
+  vertical-align: middle; }
+
+#tagalong_legend .tagalong_legend_icon {
+  display: inline-block;
+  margin-bottom: 12px;
+  min-width: 190px; }
+
+/*# sourceMappingURL=bellard-rt.css.map */

@@ -1,0 +1,704 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Store Locator Plus : Pro Pack v4.1.06\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/store-locator-le\n"
+"POT-Creation-Date: 2013-06-17 15:52+0100\n"
+"PO-Revision-Date: 2014-08-27 06:15:36+0000\n"
+"Last-Translator: De B.A.A.T. <De_BAAT@de-baat.nl>\n"
+"Language-Team: De B.A.A.T. <www.de-baat.nl>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Textdomain-Support: yes"
+
+#: reporting.php:304
+#@ csa-slp-pro
+msgid "Address"
+msgstr "Adres"
+
+#: reporting.php:352
+#@ csa-slp-pro
+msgid "City"
+msgstr "Plaats"
+
+#: include/class.admin.location.filters.php:162
+#: reporting.php:353
+#@ csa-slp-pro
+msgid "State"
+msgstr "Provincie"
+
+#: include/class.admin.location.filters.php:134
+#: reporting.php:354
+#@ csa-slp-pro
+msgid "Zip"
+msgstr "Postcode"
+
+#. translators: plugin header field 'Author'
+#: slp-pro.php:0
+#@ csa-slp-pro
+msgid "Charleston Software Associates"
+msgstr "Charleston Software Associates"
+
+#: reporting.php:118
+#: reporting.php:131
+#: reporting.php:152
+#: reporting.php:169
+#: reporting.php:184
+#@ csa-slp-pro
+msgid "Report Parameters"
+msgstr "Rapport Parameters"
+
+#: reporting.php:119
+#@ csa-slp-pro
+msgid "Use these settings to select which data to report on."
+msgstr "Gebruik deze instellingen om te selecteren welke data gerapporteerd moet worden."
+
+#: reporting.php:132
+#@ csa-slp-pro
+msgid "Start Date: "
+msgstr "Start datum: "
+
+#: reporting.php:153
+#@ csa-slp-pro
+msgid "End Date: "
+msgstr "Eind Datum: "
+
+#: reporting.php:170
+#@ csa-slp-pro
+msgid "How many detail records? "
+msgstr "Hoeveel detail records? "
+
+#: reporting.php:176
+#@ csa-slp-pro
+msgid "Determines how many detail records are reported. More records take longer to report. (Default: 10, recommended maximum: 500)"
+msgstr "Bepaalt hoeveel detail records gerapporteerd worden. Meer records tonen duurt langer. (Default: 10, aanbevolen maximum: 500)"
+
+#: reporting.php:94
+#: reporting.php:191
+#@ csa-slp-pro
+msgid "Run Report"
+msgstr "Run Rapportage"
+
+#: reporting.php:265
+#, php-format
+#@ csa-slp-pro
+msgid "Total searches: <strong>%s</strong>"
+msgstr "Totaal zoekopdrachten: <strong>%s</strong> "
+
+#: reporting.php:266
+#, php-format
+#@ csa-slp-pro
+msgid "Total results: <strong>%s</strong>"
+msgstr "Totaal resultaten: <strong>%s</strong> "
+
+#: reporting.php:302
+#, php-format
+#@ csa-slp-pro
+msgid "Top %s Addresses Searched"
+msgstr "Top %s Adressen Gezocht"
+
+#: reporting.php:305
+#: reporting.php:356
+#@ csa-slp-pro
+msgid "Total"
+msgstr "Totaal"
+
+#: reporting.php:314
+#@ csa-slp-pro
+msgid "topsearches"
+msgstr "topzoekopdrachten"
+
+#: reporting.php:349
+#, php-format
+#@ csa-slp-pro
+msgid "Top %s Results Returned"
+msgstr "Top %s Resultaten Getoond"
+
+#: reporting.php:351
+#@ csa-slp-pro
+msgid "Store"
+msgstr "Store"
+
+#: include/class.admin.php:551
+#: include/class.admin.php:572
+#: reporting.php:355
+#@ csa-slp-pro
+msgid "Tags"
+msgstr "Tags"
+
+#: reporting.php:369
+#@ csa-slp-pro
+msgid "topresults"
+msgstr "topresultaten"
+
+#: reporting.php:376
+#@ csa-slp-pro
+msgid "Export To CSV"
+msgstr "Exporteer Naar CSV"
+
+#: reporting.php:378
+#@ csa-slp-pro
+msgid "Export all records"
+msgstr "Exporteer alle records"
+
+#: reporting.php:382
+#@ csa-slp-pro
+msgid "Top Searches"
+msgstr "Top Zoekopdrachten"
+
+#: reporting.php:383
+#@ csa-slp-pro
+msgid "Top Results"
+msgstr "Top Resultaten"
+
+#. translators: plugin header field 'Name'
+#: slp-pro.php:0
+#@ csa-slp-pro
+msgid "Store Locator Plus : Pro Pack"
+msgstr "Store Locator Plus : Pro Pack"
+
+#. translators: plugin header field 'PluginURI'
+#: slp-pro.php:0
+#@ csa-slp-pro
+msgid "http://www.charlestonsw.com/product/store-locator-plus/"
+msgstr "http://www.charlestonsw.com/product/store-locator-plus/"
+
+#. translators: plugin header field 'Description'
+#: slp-pro.php:0
+#@ csa-slp-pro
+msgid "A premium add-on pack for Store Locator Plus that provides more admin power tools for wrangling locations."
+msgstr "Een premium add-on pakket voor Store Locator Plus die meer admin tools biedt."
+
+#. translators: plugin header field 'AuthorURI'
+#: slp-pro.php:0
+#@ csa-slp-pro
+msgid "http://charlestonsw.com/"
+msgstr "http://charlestonsw.com/"
+
+#: slp-pro.php:210
+#@ csa-slp-pro
+msgid "Pro Pack"
+msgstr "Pro Pack"
+
+#: include/class.admin.php:743
+#@ csa-slp-pro
+msgid "Show Tags In Output"
+msgstr "Toon Tags In Output"
+
+#: include/class.admin.php:754
+#@ csa-slp-pro
+msgid "Use Email Form"
+msgstr "Gebruik Email Formulier"
+
+#: include/class.admin.php:755
+#@ csa-slp-pro
+msgid "Use email form instead of mailto: link when showing email addresses."
+msgstr "Gebruik email formulier in plaats van een mailto: link als een email adres getoond moet worden."
+
+#: include/class.admin.php:226
+#@ csa-slp-pro
+msgid "Use location sensor"
+msgstr "Gebruik locatie sensor"
+
+#: slp-pro.php:489
+#@ csa-slp-pro
+msgid "Reports"
+msgstr "Rapporten"
+
+#: include/class.csvimport.locations.php:119
+#@ csa-slp-pro
+msgid "Bulk Upload"
+msgstr "Bulk Upload"
+
+#: include/class.csvimport.locations.php:154
+#, php-format
+#@ csa-slp-pro
+msgid "See the %s for more details on the import format."
+msgstr "Zie %s voor meer informatie over het import formaat."
+
+#: include/class.csvimport.locations.php:156
+#@ csa-slp-pro
+msgid "online documentation"
+msgstr "online documentatie"
+
+#: include/class.csvimport.locations.php:171
+#@ csa-slp-pro
+msgid "Skip First Line"
+msgstr "Sla Eerste Regel Over"
+
+#: include/class.csvimport.locations.php:172
+#@ csa-slp-pro
+msgid "Skip the first line of the import file."
+msgstr "Sla de eerste regel uit het invoerbestand over."
+
+#: include/class.csvimport.locations.php:141
+#@ csa-slp-pro
+msgid "Upload Locations"
+msgstr "Upload Locaties"
+
+#: include/class.csvimport.locations.php:105
+#, php-format
+#@ csa-slp-pro
+msgid "Got %d expected less than %d."
+msgstr "Kreeg %d verwachtte minder dan %d."
+
+#: include/class.admin.php:592
+#@ csa-slp-pro
+msgid "Tags (separate with commas)"
+msgstr "Tags (gescheiden door komma's)"
+
+#: include/class.admin.php:806
+#@ csa-slp-pro
+msgid "Search form label to prefix the tag selector."
+msgstr "Zoekformulier label prefix voor de tag selectie."
+
+#: include/class.admin.php:824
+#@ csa-slp-pro
+msgid "The first entry on the search by tag pulldown."
+msgstr "De eerste keuze van de zoek op tag pulldown."
+
+#: slp-pro.php:829
+#: slp-pro.php:835
+#@ csa-slp-pro
+msgid "Cheatin' huh!"
+msgstr "Valsspelen hè!"
+
+#: include/class.admin.php:681
+#@ csa-slp-pro
+msgid "Show Uncoded"
+msgstr "Toon Nietgecodeerden"
+
+#: include/class.admin.php:947
+#@ csa-slp-pro
+msgid "Enables tracking of searches and returned results.  The added overhead can increase how long it takes to return location search results."
+msgstr "Schakelt het bijhouden van zoekopdrachten en gevonden resultaten in. De extra overhead kan invloed hebben op hoe lang het duurt voordat de zoekresultaten getoond worden."
+
+#: include/class.admin.php:927
+#@ csa-slp-pro
+msgid "Custom CSS"
+msgstr "Aangepast CSS"
+
+#: include/class.admin.php:931
+#@ csa-slp-pro
+msgid "Enter your custom CSS, preferably for SLPLUS styling only but it can be used for any page element as this will go in your page header."
+msgstr "Geef je persoonlijke CSS, bij voorkeur voor SLPLUS styles maar het kan gebruikt worden voor ieder element op de pagina omdat deze code in je pagina header komt."
+
+#: include/class.csvimport.locations.php:184
+#@ csa-slp-pro
+msgid "First Line Has Field Name"
+msgstr "Eerste Regel Heeft Veld Naam"
+
+#: include/class.csvimport.locations.php:187
+#@ csa-slp-pro
+msgid "Check this if the first line contains the field names."
+msgstr "Vink dit aan als de eerste regel de veldnamen bevat."
+
+#: include/class.csvimport.locations.php:188
+#, php-format
+#@ csa-slp-pro
+msgid "Text must match the <a href=\"%s\">approved field name list</a>."
+msgstr "Tekst moet overeenkomen met de <a href=\"%s\">goedgekeurde veldnamenlijst</a>."
+
+#: include/class.csvimport.locations.php:104
+#@ csa-slp-pro
+msgid "CSV Records has too many fields."
+msgstr "CSV Records hebben te veel velden."
+
+#: reporting.php:396
+#@ csa-slp-pro
+msgid "Search Report"
+msgstr "Zoek Rapport"
+
+#: include/class.admin.php:650
+#@ csa-slp-pro
+msgid "Geocode"
+msgstr "Geocode"
+
+#: include/class.admin.php:654
+#@ csa-slp-pro
+msgid "Tag"
+msgstr "Tag"
+
+#: include/class.admin.php:658
+#@ csa-slp-pro
+msgid "Enter your comma-separated tags:"
+msgstr "Geef je komma-gescheiden tags:"
+
+#: include/class.admin.php:663
+#@ csa-slp-pro
+msgid "Remove Tags"
+msgstr "Verwijder Tags"
+
+#: include/class.admin.php:614
+#: include/class.csvimport.locations.php:118
+#@ csa-slp-pro
+msgid "Import"
+msgstr "Importeer"
+
+#: include/class.admin.php:230
+#@ csa-slp-pro
+msgid "This turns on the location sensor (GPS) to set the default search address. "
+msgstr "Dit schakelt de locatie sensor (GPS) in om het start zoekadres te bepalen. "
+
+#: include/class.admin.php:231
+#@ csa-slp-pro
+msgid "This can be slow to load and customers are prompted whether or not to allow location sensing."
+msgstr "Dit kan het laden vertragen en bezoekers wordt gevraagd al dan niet het gebruik van de locatie sensor toe te staan."
+
+#: include/class.admin.php:257
+#@ csa-slp-pro
+msgid "Locator Layout"
+msgstr "Locator Layout"
+
+#: include/class.admin.php:258
+#@ csa-slp-pro
+msgid "Enter your custom page layout for the Store Locator Plus page. Set it to blank to reset to the default layout."
+msgstr "Geef je persoonlijke pagina layout voor de Store Locator Plus pagina. Maak leeg om te resetten naar de standaard layout."
+
+#: include/class.admin.php:921
+#@ csa-slp-pro
+msgid "Look and Feel"
+msgstr "Kijk en Voel"
+
+#: include/class.admin.php:938
+#@ csa-slp-pro
+msgid "Reporting"
+msgstr "Rapportage"
+
+#: include/class.admin.php:942
+#@ csa-slp-pro
+msgid "Report Settings"
+msgstr "Rapportage Instellingen"
+
+#: include/class.admin.php:943
+#@ csa-slp-pro
+msgid "Enable Reporting"
+msgstr "Inschakelen Rapportage"
+
+#: include/class.admin.php:958
+#@ csa-slp-pro
+msgid "Tools"
+msgstr "Gereedschappen"
+
+#: include/class.admin.php:965
+#@ csa-slp-pro
+msgid "Where is..."
+msgstr "Waar is..."
+
+#: include/class.admin.php:970
+#@ csa-slp-pro
+msgid "locate"
+msgstr "lokaliseer"
+
+#: include/class.admin.php:975
+#@ csa-slp-pro
+msgid "Enter an address and click locate to find the lat/long."
+msgstr "Geef een adres en klik lokaliseer om de lat/long te vinden."
+
+#: reporting.php:90
+#@ csa-slp-pro
+msgid " - Reporting"
+msgstr " - Rapporteren"
+
+#: include/class.admin.php:615
+#@ csa-slp-pro
+msgid "Export"
+msgstr "Exporteer"
+
+#: include/class.admin.php:926
+#@ csa-slp-pro
+msgid "CSS Manipulation"
+msgstr "CSS Manipulatie"
+
+#: include/class.csvimport.locations.php:201
+#@ csa-slp-pro
+msgid "Skip Geocoding"
+msgstr "Skip Geocoding"
+
+#: include/class.csvimport.locations.php:203
+#@ csa-slp-pro
+msgid "Do not check with the Geocoding service to get latitude/longitude.  Locations without a latitude/longitude will NOT appear on map base searches."
+msgstr "Check niet met de Geocoding service om de latitude/longitude te zetten. Locaties zonder latitude/longitude zullen NIET getoond worden op kaart gebaseerde zoekopdrachten."
+
+#: reporting.php:437
+#@ csa-slp-pro
+msgid "No data recorded yet. "
+msgstr "Nog geen data opgeslagen. "
+
+#: reporting.php:438
+#@ csa-slp-pro
+msgid "Chart will be available after a Store Locator Plus search has been performed."
+msgstr "Grafiek is pas beschikbaar nadat een Store Locator Plus zoekopdracht is uitgevoerd."
+
+#: include/class.admin.php:170
+#: include/class.admin.php:179
+#@ csa-slp-pro
+msgid "Locations"
+msgstr "Locaties"
+
+#: include/class.admin.php:181
+#@ csa-slp-pro
+msgid "Highlight Uncoded Locations"
+msgstr "Highlight Niet-gecodeerde Locaties"
+
+#: include/class.admin.php:186
+#@ csa-slp-pro
+msgid "Highlight the uncoded locations in the Manage Locations panel."
+msgstr "Highlight de niet-gecodeerde locaties in het Beheer Locaties panel."
+
+#: include/class.admin.php:216
+#: include/class.admin.php:224
+#@ csa-slp-pro
+msgid "JavaScript"
+msgstr "JavaScript"
+
+#: include/class.admin.php:980
+#@ csa-slp-pro
+msgid "Helpful Tools"
+msgstr "Handige Gereedschappen"
+
+#: include/class.csvimport.locations.php:216
+#@ csa-slp-pro
+msgid "Duplicates Handling"
+msgstr "Duplicaten Behandeling"
+
+#: include/class.csvimport.locations.php:218
+#@ csa-slp-pro
+msgid "How should duplicates be handled? "
+msgstr "Hoe zouden duplicaten behandeld moeten worden? "
+
+#: include/class.csvimport.locations.php:219
+#@ csa-slp-pro
+msgid "Duplicates are records that match on name and complete address with country. "
+msgstr "Duplicaten zijn records die matchen op naam en compleet adres met land. "
+
+#: include/class.csvimport.locations.php:220
+#@ csa-slp-pro
+msgid "Add (default) will add new records when duplicates are encountered. "
+msgstr "Toevoegen (default) voegt een nieuw record toe als duplicaten gevonden zijn. "
+
+#: include/class.csvimport.locations.php:221
+#@ csa-slp-pro
+msgid "Skip will not process duplicate records. "
+msgstr "Overslaan zal de duplicaat records niet verwerken. "
+
+#: include/class.csvimport.locations.php:222
+#@ csa-slp-pro
+msgid "Update will update duplicate records. "
+msgstr "Bijwerken zal de duplicaat records bijwerken. "
+
+#: include/class.csvimport.locations.php:223
+#@ csa-slp-pro
+msgid "To update name and address fields the CSV must have the ID column with the ID of the existing location."
+msgstr "Om de naam en adres velden bij te werken, moet de CSV een ID kolom hebben met het ID van de bestaande locatie."
+
+#: include/class.csvimport.locations.php:228
+#@ csa-slp-pro
+msgid "Add"
+msgstr "Toevoegen"
+
+#: include/class.csvimport.locations.php:232
+#@ csa-slp-pro
+msgid "Skip"
+msgstr "Overslaan"
+
+#: include/class.csvimport.locations.php:236
+#@ csa-slp-pro
+msgid "Update"
+msgstr "Bijwerken"
+
+#: include/class.csvimport.locations.php:265
+#@ csa-slp-pro
+msgid " new locations added."
+msgstr " nieuwe locaties toegevoegd."
+
+#: include/class.csvimport.locations.php:266
+#@ csa-slp-pro
+msgid " pre-existing locations skipped."
+msgstr " reeds bestaande locaties overgeslagen."
+
+#: include/class.csvimport.locations.php:267
+#@ csa-slp-pro
+msgid " locations did not need to be updated."
+msgstr " locaties hoefden niet te worden bijgewerkt."
+
+#: include/class.csvimport.locations.php:268
+#@ csa-slp-pro
+msgid " locations were skipped due to duplicate name and address information."
+msgstr " locaties zijn overgeslagen vanwege dubbele naam en adres informatie."
+
+#: include/class.csvimport.locations.php:269
+#@ csa-slp-pro
+msgid " locations were updated."
+msgstr " locaties zijn bijgewerkt."
+
+#: include/class.admin.php:744
+#@ csa-slp-pro
+msgid "How should tags be output in the results below the map and the info bubble?"
+msgstr "Hoe moeten tags worden getoond in de resultaten onder de kaart en de info ballon?"
+
+#: include/class.admin.php:774
+#@ csa-slp-pro
+msgid "Search Form Tag Input"
+msgstr "Zoek Formulier Tag Invoer"
+
+#: include/class.admin.php:775
+#@ csa-slp-pro
+msgid "Select the type of tag input that you would like to see on the search form."
+msgstr "Selecteer het type tag invoer dat je op het zoekformulier zou willen zien."
+
+#: include/class.admin.php:781
+#@ csa-slp-pro
+msgid "None"
+msgstr "Geen"
+
+#: include/class.admin.php:785
+#@ csa-slp-pro
+msgid "Hidden"
+msgstr "Verborgen"
+
+#: include/class.admin.php:789
+#@ csa-slp-pro
+msgid "Drop Down"
+msgstr "Drop Down"
+
+#: include/class.admin.php:793
+#@ csa-slp-pro
+msgid "Radio Button"
+msgstr "Radio Button"
+
+#: include/class.admin.php:797
+#@ csa-slp-pro
+msgid "Text Input"
+msgstr "Tekst Invoer"
+
+#: include/class.admin.php:805
+#@ csa-slp-pro
+msgid "Tags Label"
+msgstr "Tags Label"
+
+#: include/class.admin.php:810
+#@ csa-slp-pro
+msgid "Default Tag Selections"
+msgstr "Default Tag Selecties"
+
+#: include/class.admin.php:811
+#@ csa-slp-pro
+msgid "For Hidden or Text tag input enter a default value to be used in the field, if any. "
+msgstr "Geef een default waarde die gebruikt moet worden voor Verborgen of Tekst tag invoer, indien nodig. "
+
+#: include/class.admin.php:812
+#@ csa-slp-pro
+msgid "For Drop Down tag input enter a comma (,) separated list of tags to show in the search pulldown, mark the default selection with parenthesis (). "
+msgstr "Geef een komma (,) gescheiden lijst met tags om in de zoek lijst te tonen voor de Drop Down tag invoer, markeer de default selectie met haakjes (). "
+
+#: include/class.admin.php:813
+#@ csa-slp-pro
+msgid "This is a default setting that can be overriden on each page within the shortcode."
+msgstr "Dit is een default instelling die op iedere pagina kan worden vervangen binnen de shortcode."
+
+#: include/class.admin.php:817
+#@ csa-slp-pro
+msgid "Add \"any\" To Drop Down"
+msgstr "Voeg \"elke\" Toe aan de Drop Down"
+
+#: include/class.admin.php:818
+#@ csa-slp-pro
+msgid "Add an \"any\" selection on the tag drop down list thus allowing the user to show all locations in the area, not just those matching a selected tag."
+msgstr "Voeg een \"elke\" selectie toe aan de tag drop down lijst om de gebruiker de mogelijkheid te bieden alle locaties in het gebied te tonen, niet alleen die die matchen met een geselecteerde tag."
+
+#: include/class.admin.php:822
+#@ csa-slp-pro
+msgid "\"Any\" Tag Text"
+msgstr "\"Elke\" Tag Tekst"
+
+#: include/class.admin.php:823
+#@ csa-slp-pro
+msgid "What should the \"any\" tag say? "
+msgstr "Wat moet de \"elke\" tag zijn? "
+
+#: include/class.admin.php:828
+#@ csa-slp-pro
+msgid "Tag Autosubmit"
+msgstr "Tag Automatische Invoer"
+
+#: include/class.admin.php:829
+#@ csa-slp-pro
+msgid "Force the form to auto-submit when the tag is selected with a radio button."
+msgstr "Forceer het formulier automatisch te versturen als de tag is geselecteerd met een radio button."
+
+#: slp-pro.php:596
+#@ csa-slp-pro
+msgid "Any"
+msgstr "Elke"
+
+#: include/class.admin.location.filters.php:79
+#@ csa-slp-pro
+msgid "Location Filter: "
+msgstr "Locatie Filter: "
+
+#: include/class.admin.location.filters.php:120
+#@ csa-slp-pro
+msgid "and"
+msgstr "en"
+
+#: include/class.admin.location.filters.php:121
+#@ csa-slp-pro
+msgid "or"
+msgstr "of"
+
+#: include/class.admin.location.filters.php:132
+#@ csa-slp-pro
+msgid "Store Name My Place or My* or *Place"
+msgstr "Store Naam Mijn Plaats of Mijn* of *Plaats"
+
+#: include/class.admin.location.filters.php:132
+#@ csa-slp-pro
+msgid "Name"
+msgstr "Naam"
+
+#: include/class.admin.location.filters.php:134
+#@ csa-slp-pro
+msgid "Zip Code 29464 or 294* or *464"
+msgstr "Postcode 1234AB of 123* of *4AB"
+
+#: include/class.admin.location.filters.php:156
+#@ csa-slp-pro
+msgid "Country"
+msgstr "Land"
+
+#: include/class.admin.location.filters.php:157
+#@ csa-slp-pro
+msgid "All Countries"
+msgstr "Alle Landen"
+
+#: include/class.admin.location.filters.php:163
+#@ csa-slp-pro
+msgid "All States"
+msgstr "Alle Provincies"
+
+#: include/class.admin.php:646
+#@ csa-slp-pro
+msgid "Export All To CSV"
+msgstr "Exporteer Alles Naar CSV"
+
+#: include/class.admin.php:685
+#@ csa-slp-pro
+msgid "With These Properties"
+msgstr "Met Deze Eigenschappen"
+
+#. translators: plugin header field 'Version'
+#: slp-pro.php:0
+#@ csa-slp-pro
+msgid "4.1.06"
+msgstr "4.1.06"
+

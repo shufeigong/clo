@@ -1,0 +1,230 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Store Locator Plus : Enhanced Map v4.0.004\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-11 11:43+0100\n"
+"PO-Revision-Date: 2013-09-11 11:43+0100\n"
+"Last-Translator: Francois Serrault <f.serrault@gmail.com>\n"
+"Language-Team: De B.A.A.T. <de_baat@de-baat.nl>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:149 slp-enhanced-map.php:300 slp-enhanced-map.php:536
+#: slp-enhanced-map.php:575
+msgid "Enhanced Map"
+msgstr "Carte étendue"
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:304
+msgid "Center Map At"
+msgstr "Centrer la carte sur"
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:305
+msgid "Enter an address to serve as the initial focus for the map. "
+msgstr "Entrez une adresse qui servira de position initiale sur la carte. "
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:306
+msgid "Can be set per-page with center_map_at=\"address\" shortcode. "
+msgstr "Peut être défini par page avec raccourci center_map_at=\"address\". "
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:307
+msgid ""
+"Force JavaScript setting must be off when using the shortcode attribute. "
+msgstr ""
+"Le paramètre Forcer Javascript doit être sur non pour utiliser le raccourci."
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:308
+msgid "Default is the center of the country."
+msgstr "Par défaut le centre du pays."
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:314
+msgid "Do Not Auto-zoom"
+msgstr "Ne pas activer le zoom automatique"
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:315
+msgid ""
+"Use only the \"zoom level\" setting when rendering the initial map for "
+"immediately show locations. "
+msgstr ""
+"Utiliser seulement le paramètre \"niveau de zoom\"  quand on affiche la "
+"carte initiale pour montrer directement les Points de Vente."
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:316
+msgid "Do not automatically zoom the map to show all iniital locations."
+msgstr ""
+"Ne pas zoomer automatiquement sur la carte pour montrer tous les Points de "
+"Vente."
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:324
+msgid "Show Map Inset Box"
+msgstr "Montrer l'encart carte"
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:325
+msgid "When checked the map inset is shown."
+msgstr "Quand sélectionné la l'encart carte est montré."
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:330
+msgid "Disable Scroll Wheel"
+msgstr "Désactivé la molette de défilement."
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:331
+msgid "Disable the scrollwheel zoom on the maps interface."
+msgstr "Désactivé le zoom avec la molette de défilement sur la carte."
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:335
+msgid "Hide map 3d control"
+msgstr "Cacher le controle 3D sur la carte"
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:336
+msgid "Turn the large map 3D control off."
+msgstr "Désactiver le controle 3D sur la grande carte."
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:340
+msgid "Hide map scale"
+msgstr "Masquer l'echelle de la carte"
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:341
+msgid "Turn the map scale off."
+msgstr "Désactiver l'échelle de la carte"
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:345
+msgid "Hide map type"
+msgstr "Cacher le type de carte"
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:346
+msgid "Turn the map type selector off."
+msgstr "Désactiver le choix de carte."
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:481 slp-enhanced-map.php:599
+msgid "Map"
+msgstr "Carte"
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:544
+msgid "Map Marker"
+msgstr "Icône carte"
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:578
+msgid "Hide Immediate Home Marker"
+msgstr "Cacher l'icône Maison"
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:579
+msgid ""
+"Do not include the home map marker for the initial map loading with "
+"immediately show locations enabled."
+msgstr ""
+"Ne pas inclure l'icône Maison pour le premier chargement de la Carte avec "
+"option Montrer Les Point de Vente activée."
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:586
+msgid "Hide The Map"
+msgstr "Cacher la Carte"
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:587
+msgid "Do not show the map on the page."
+msgstr "Ne pas montrer la Carte sur la page."
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:591
+msgid "Add Map Toggle On UI"
+msgstr "Ajouter switch Carte sur l'interface"
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:592
+msgid "Add a map on/off toggle to the user interface."
+msgstr "Ajouter un On/Off Carte sur l'interface utilisateur."
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:596
+msgid "Toggle Label"
+msgstr "Label switch"
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:597
+msgid "The text that appears before the display map on/off toggle."
+msgstr "Texte qui apparait avant l'affichage du switch On/Off de la Carte "
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:603
+msgid "Starting Image"
+msgstr "Image de départ"
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:604
+msgid ""
+"If set, this image will be displayed until a search is performed.  Enter the "
+"full URL for the image."
+msgstr ""
+"Si activé, cette image sera affichée tant qu'une recherche ne sera pas "
+"effectuée. Entrez l'adresse complète de l'image."
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:609
+msgid "Map Layout"
+msgstr "Rendu Carte"
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:610
+msgid "Enter your custom map area layout for the Store Locator Plus page. "
+msgstr "Entrez votre propre rendu carte pour la page Store Locator Plus."
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:611
+msgid ""
+"Must have the [slp_mapcontent] shortcode to where you want Google to put the "
+"map. "
+msgstr ""
+"Vous devez mettre le raccourci [slp_mapcontent] à l'endroit que vous "
+"souhaitez pour que Google affiche la carte."
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:612
+msgid "[slp_maptagline] puts the Store Locator Plus tagline in place. "
+msgstr "[slp_maptagline] met le tag Store Locator Plus en place."
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:613 slp-enhanced-map.php:623
+msgid "Set it to blank to reset to the default layout."
+msgstr "Le mettre sur vide pour remettre à zéro le rendu."
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:621
+msgid "Bubble Layout"
+msgstr "Info Bulle"
+
+# @ csa-slp-em
+#: slp-enhanced-map.php:622
+msgid "Enter your custom info buble layout. "
+msgstr "Entrez votre info personnalisée pour l'info bulle."

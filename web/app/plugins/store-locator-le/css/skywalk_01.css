@@ -1,0 +1,324 @@
+/** file: skywalk_01.css
+ ** label: Sky Walk Rev 01
+ ** description: Map on top.  Location filters and results underneath.  Results have column headers. Recommended settings: Enhanced Search - set search box title, set country selector label to blank. Premier - set search box subtitle, set results headers 1 to 4, enable Do Not Wrap Result In Div.  Supports Premier Bubble Footnotes.
+ ** add-ons: slp-pro,slp-enhanced-map,slp-enhanced-results,slp-enhanced-search,slp-tagalong,slp-premier
+ ** Pro Pack Locator Layout: <div id="slp_map_holder">[slp_map]</div><div id="sl_div">[slp_search][slp_results]</div>
+ ** Enhanced Search Search Layout: <div id="address_search"><div class="title_box">[slp_option name="search_box_title"][slp_option name="search_box_subtitle"]</div><div class="selector_box">[slp_search_element dropdown_with_label="category"][slp_search_element dropdown_with_label="country"]</div></div>
+ ** Enhanced Results Results Layout: <tr id="slp_results_wrapper_[slp_location id]" class="results_entry  [slp_location featured]"><td class="column_1"   id="column_1_[slp_location id]"><span class="location_name">[slp_location name]</span><span class="location_distance">[slp_location distance_1] [slp_location distance_unit]</span></td><td class="column_2" id="column_2_[slp_location id]" ><span class="slp_result_address slp_result_street">[slp_location address]</span><span class="slp_result_address slp_result_street2">[slp_location address2]</span><span class="slp_result_address slp_result_citystatezip">[slp_location city_state_zip]</span><span class="slp_result_address slp_result_country">[slp_location country]</span></td><td class="column_3"  id="column_3_[slp_location id]"><span class="slp_result_address slp_result_phone"><span class="data_label">[slp_option label_phone ifset="phone"]</span>[slp_location phone]</span><span class="slp_result_contact slp_result_email"><span class="data_label">[slp_option label_email ifset="email"]</span>[slp_location email_link]</span><span class="slp_result_contact slp_result_website"><span class="data_label">[slp_option label_website ifset="url"]</span>[slp_location url_link]</span></td><td class="column_4"  id="column_3_[slp_location id]">[slp_location name="category_list"]</td></tr>
+ ** Enhanced Map Bubble Layout: <div id="sl_info_bubble" class="[slp_location featured]"><span id="slp_bubble_name"><strong>[slp_location name  suffix  br]</strong></span><span id="slp_bubble_address">[slp_location address       suffix  br]</span><span id="slp_bubble_address2">[slp_location address2      suffix  br]</span><span id="slp_bubble_city">[slp_location city          suffix  comma]</span><span id="slp_bubble_state">[slp_location state suffix    space]</span><span id="slp_bubble_zip">[slp_location zip suffix  br]</span><span id="slp_bubble_country"><span id="slp_bubble_country">[slp_location country       suffix  br]</span></span><span id="slp_bubble_directions">[html br ifset directions][slp_option label_directions wrap directions]</span><span id="slp_bubble_website">[html br ifset url][slp_location url           wrap    website][slp_option label_website ifset url][html closing_anchor ifset url][html br ifset url]</span><span id="slp_bubble_email">[slp_location email         wrap    mailto ][slp_option label_email ifset email][html closing_anchor ifset email][html br ifset email]</span><span id="slp_bubble_phone">[html br ifset phone]<span class="location_detail_label">[slp_option   label_phone   ifset   phone]</span>[slp_location phone         suffix    br]</span><span id="slp_bubble_fax"><span class="location_detail_label">[slp_option   label_fax     ifset   fax  ]</span>[slp_location fax           suffix    br]<span><span id="slp_bubble_description"><span id="slp_bubble_description">[html br ifset description][slp_location description raw]</span>[html br ifset description]</span><span id="slp_bubble_hours">[html br ifset hours]<span class="location_detail_label">[slp_option   label_hours   ifset   hours]</span><span class="location_detail_hours">[slp_location hours         suffix    br]</span></span><span id="slp_bubble_img">[html br ifset img][slp_location image         wrap    img]</span><span id="slp_tags">[slp_location tags]</span><span class="bubble_footnote">[slp_option bubble_footnote]</span></div>
+ ** Results Header: <table class="slp_results_table"><thead><tr><th>[slp_option name="results_header_1"]</th><th>[slp_option name="results_header_2"]</th><th>[slp_option name="results_header_3"]</th><th>[slp_option name="results_header_4"]</th></tr></thead><tbody   id='add_locations_here'></tbody></table>
+ **
+ ** Sass Source: ./assets/stylesheets/skywalk_01.scss
+ **/
+/********************************
+ * Rules specific to this plugin style.
+ */
+/********************************
+ * SCSS Included Default Rules
+ */
+.onoffswitch-block {
+  display: inline-block;
+  float: right;
+  margin-right: 8px; }
+
+.onoffswitch-pretext {
+  display: inline-block;
+  padding-right: 12px;
+  vertical-align: super; }
+
+.onoffswitch {
+  display: inline-block;
+  position: relative;
+  width: 56px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; }
+
+.onoffswitch-checkbox {
+  display: none; }
+
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #999999;
+  border-radius: 20px; }
+
+.onoffswitch-inner {
+  width: 200%;
+  margin-left: -100%;
+  -moz-transition: margin 0.3s ease-in 0s;
+  -webkit-transition: margin 0.3s ease-in 0s;
+  -o-transition: margin 0.3s ease-in 0s;
+  transition: margin 0.3s ease-in 0s; }
+
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+  float: left;
+  width: 50%;
+  height: 17px;
+  padding: 0;
+  line-height: 17px;
+  font-size: 10px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.onoffswitch-inner:before {
+  content: "ON";
+  padding-left: 8px;
+  background-color: #2FCCFF;
+  color: #FFFFFF; }
+
+.onoffswitch-inner:after {
+  content: "OFF";
+  padding-right: 8px;
+  background-color: #EEEEEE;
+  color: #999999;
+  text-align: right; }
+
+.onoffswitch-switch {
+  width: 8px;
+  margin: 4.5px;
+  background: #FFFFFF;
+  border: 2px solid #999999;
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 35px;
+  -moz-transition: all 0.3s ease-in 0s;
+  -webkit-transition: all 0.3s ease-in 0s;
+  -o-transition: all 0.3s ease-in 0s;
+  transition: all 0.3s ease-in 0s; }
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0; }
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0px; }
+
+/* A div that looks like a button. */
+.like-a-button {
+  background: #FFF;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#DDDDDD');
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#DDD));
+  background: -moz-linear-gradient(top, #FFF, #DDD);
+  text-decoration: none;
+  border: 1px solid #BBBBBB;
+  margin: 0;
+  padding: 3px 12px;
+  text-align: center;
+  width: auto;
+  cursor: pointer;
+  color: #333;
+  display: inline-block;
+  line-height: 1em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -khtml-border-radius: 3px; }
+
+.like-a-button:hover {
+  background: #DDD;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DDDDDD', endColorstr='#FFFFFF');
+  background: -webkit-gradient(linear, left top, left bottom, from(#DDD), to(#FFF));
+  background: -moz-linear-gradient(top, #DDD, #FFF); }
+
+.like-a-button A {
+  text-decoration: none; }
+
+#sl_info_bubble .location_detail_hours {
+  white-space: pre-wrap; }
+
+.slp_result_contact.slp_result_hours {
+  white-space: pre-wrap; }
+
+div#map img {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  max-width: none;
+  opacity: 1.0; }
+
+/* Fix IE11 Rules from Bad WP Themes */
+div#map div {
+  overflow: visible; }
+
+/* Fix IE10 Rules */
+div#map .gm-style-cc > div {
+  word-wrap: normal; }
+
+/* Hide the default Google bubble shadow */
+div#map img[src='http://maps.gstatic.com/mapfiles/iws3.png'] {
+  display: none; }
+
+#map_box_image {
+  display: block; }
+
+div.gm-style-iw div#sl_info_bubble {
+  min-width: 12em; }
+
+#map_box_map {
+  display: none; }
+
+div#slp_tagline {
+  background-color: #AABBDD;
+  font-size: 11px;
+  font-family: Arial, sans-serif;
+  opacity: 0.45;
+  filter: alpha(opacity=45);
+  margin-bottom: 3px;
+  padding-right: 3px;
+  text-align: right;
+  width: 100%; }
+
+#search_by_tag span {
+  margin-right: 0.4em; }
+
+#search_by_tag span input[type="radio"] {
+  margin: 0 0.2em 0 1em;
+  width: 1em;
+  vertical-align: sub; }
+
+#tagalong_category_selector .category_selector.parent {
+  display: block;
+  float: left; }
+#tagalong_category_selector .category_selector.child {
+  display: none;
+  float: left;
+  margin-left: 0.2em; }
+
+#tagalong_cascade_dropdowns {
+  display: inline-block;
+  position: relative;
+  vertical-align: top; }
+
+#searchForm div.tagalong_category_selector {
+  display: inline;
+  white-space: nowrap;
+  padding-right: 1%; }
+  #searchForm div.tagalong_category_selector:first-child {
+    margin-left: 0; }
+    #searchForm div.tagalong_category_selector:first-child LABEL {
+      display: inline-block;
+      min-width: 21%; }
+    #searchForm div.tagalong_category_selector:first-child SELECT {
+      display: inline; }
+  #searchForm div.tagalong_category_selector span.ui-selectmenu-button {
+    width: 100% !important; }
+
+#tagalong_legend {
+  border: none;
+  padding: 0.75em;
+  text-align: inherit; }
+  #tagalong_legend .legend_text {
+    display: inline-block;
+    margin-left: 0.25em;
+    margin-right: 1em;
+    max-width: none;
+    padding-top: 0;
+    text-align: left;
+    vertical-align: middle; }
+  #tagalong_legend .tagalong_legend_icon {
+    display: inline-block;
+    margin-bottom: 0.75em;
+    min-width: 11.875em; }
+
+.results_line.location_iconarray > a {
+  display: inline-block;
+  height: auto;
+  width: auto; }
+
+ul.ui-autocomplete.ui-front.ui-widget {
+  color: gray;
+  background-color: white;
+  border: solid 1px #C0C0C0;
+  border-radius: 3px;
+  padding: 0.2em;
+  display: inline-block;
+  height: inherit; }
+  ul.ui-autocomplete.ui-front.ui-widget li {
+    list-style: none; }
+
+/**
+ * Floating Map Holder
+ */
+#slp_map_holder {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40em;
+  z-index: 2; }
+  #slp_map_holder #map.slp_map {
+    width: 100%;
+    height: 100%; }
+
+/**
+ * Inside SLPLUS Shortcode
+ */
+#sl_div {
+  font-family: "Open Sans";
+  font-size: 1.17em;
+  color: #111111;
+  margin-top: 24em;
+  /**
+   * Search Layout
+   */
+  /**
+   * Results Layout
+   */ }
+  #sl_div SELECT {
+    background-color: #EBEBEB;
+    color: #666666;
+    font-size: 1em;
+    padding: 0.17em; }
+  #sl_div #address_search .title_box {
+    display: block;
+    margin-bottom: 1em;
+    margin-top: 2em; }
+    #sl_div #address_search .title_box span {
+      display: block; }
+      #sl_div #address_search .title_box span#slp_option_slp-enhanced-search_search_box_title {
+        font-size: 1.5em;
+        font-weight: bold;
+        padding: 10px 0;
+        text-transform: uppercase; }
+  #sl_div #address_search .selector_box {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: 2em; }
+    #sl_div #address_search .selector_box DIV {
+      display: table-cell;
+      padding-right: 2em;
+      width: 2%; }
+      #sl_div #address_search .selector_box DIV:last-of-type {
+        padding-right: 0; }
+      #sl_div #address_search .selector_box DIV .ui-selectmenu-button {
+        width: 100% !important;
+        position: inherit; }
+  #sl_div #map_sidebar .slp_results_table thead th {
+    background-color: #EBEBEB; }
+  #sl_div #map_sidebar td {
+    vertical-align: top; }
+    #sl_div #map_sidebar td span {
+      display: block; }
+      #sl_div #map_sidebar td span.location_name {
+        color: #F59100;
+        font-weight: bold; }
+      #sl_div #map_sidebar td span.data_label {
+        font-weight: bold;
+        display: inline-block;
+        padding-right: 0.25em; }
+      #sl_div #map_sidebar td span.slp_result_email, #sl_div #map_sidebar td span.slp_result_website {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+        #sl_div #map_sidebar td span.slp_result_email a, #sl_div #map_sidebar td span.slp_result_website a {
+          position: relative; }
+
+/*# sourceMappingURL=skywalk_01.css.map */

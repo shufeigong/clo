@@ -1,0 +1,807 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Store Locator Plus : Pro Pack v4.2.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-11-17 09:05+0100\n"
+"Last-Translator: Piani Sweden AB <info@piani.se>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.6.10\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"Language: sv_SE\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ csa-slp-pro
+#: include/class.admin.location.filters.php:79
+msgid "Location Filter: "
+msgstr "Platsfilter: "
+
+# @ csa-slp-pro
+#: include/class.admin.location.filters.php:122
+msgid "and"
+msgstr "och"
+
+# @ csa-slp-pro
+#: include/class.admin.location.filters.php:123
+msgid "or"
+msgstr "eller"
+
+# @ csa-slp-pro
+#: include/class.admin.location.filters.php:134
+msgid "Store Name My Place or My* or *Place"
+msgstr "Platsnamn Min plats eller Min* eller *Plats"
+
+# @ csa-slp-pro
+#: include/class.admin.location.filters.php:134
+msgid "Name"
+msgstr "Namn"
+
+# @ csa-slp-pro
+#: include/class.admin.location.filters.php:136
+msgid "Zip Code 29464 or 294* or *464"
+msgstr "Postnr 29464 eller 294* eller *464"
+
+# @ csa-slp-pro
+#: include/class.admin.location.filters.php:136
+#: include/class.admin.reports.php:307
+msgid "Zip"
+msgstr "Postnummer"
+
+# @ csa-slp-pro
+#: include/class.admin.location.filters.php:158
+msgid "Country"
+msgstr "Land"
+
+# @ csa-slp-pro
+#: include/class.admin.location.filters.php:159
+msgid "All Countries"
+msgstr "Alla länder"
+
+# @ csa-slp-pro
+#: include/class.admin.location.filters.php:164
+#: include/class.admin.reports.php:306
+msgid "State"
+msgstr "Län"
+
+# @ csa-slp-pro
+#: include/class.admin.location.filters.php:165
+msgid "All States"
+msgstr "Alla län"
+
+# @ csa-slp-pro
+#: include/class.admin.php:189
+msgid "No data recorded yet. "
+msgstr "Inga platser finns ännu. "
+
+# @ csa-slp-pro
+#: include/class.admin.php:191
+msgid ""
+"Chart will be available after a Store Locator Plus search has been performed."
+msgstr ""
+"Diagramet kommer att finnas efter en Store Locator Plus sökningen har gjorts."
+
+# @ csa-slp-pro
+#: include/class.admin.php:235 include/class.admin.php:244
+msgid "Locations"
+msgstr "Platser"
+
+# @ csa-slp-pro
+#: include/class.admin.php:245
+msgid "Highlight Uncoded"
+msgstr "Markera okodade"
+
+# @ csa-slp-pro
+#: include/class.admin.php:251
+msgid "Highlight the uncoded locations in the Manage Locations panel."
+msgstr "Markera okodade platser på -Hantera platser- panelen"
+
+# @ csa-slp-pro
+#: include/class.admin.php:281 include/class.admin.php:289
+msgid "JavaScript"
+msgstr "JavaScript"
+
+# @ csa-slp-pro
+#: include/class.admin.php:291
+msgid "Use location sensor"
+msgstr "Använd plats-sensor"
+
+# @ csa-slp-pro
+#: include/class.admin.php:295
+msgid ""
+"This turns on the location sensor (GPS) to set the default search address. "
+msgstr ""
+"Detta slår på platssensorn (GPS) för att ställa in standard adress vid "
+"sökning. "
+
+# @ csa-slp-pro
+#: include/class.admin.php:296
+msgid ""
+"This can be slow to load and customers are prompted whether or not to allow "
+"location sensing."
+msgstr ""
+"Detta kan ta lång tid att ladda och besökarna frågas om att tillåta "
+"platsavkänning eller ej."
+
+# @ csa-slp-pro
+#: include/class.admin.php:323
+msgid "Locator Layout"
+msgstr "Platslayout"
+
+# @ csa-slp-pro
+#: include/class.admin.php:324
+msgid ""
+"Enter your custom page layout for the Store Locator Plus page. Set it to "
+"blank to reset to the default layout."
+msgstr ""
+"Skriv in din egen sidlayout för Store Locator Plus sidan. Välj blank för att "
+"återställa till standardlayout."
+
+# @ csa-slp-pro
+#: include/class.admin.php:329
+msgid "CSS Manipulation"
+msgstr "CSS justeringar"
+
+# @ csa-slp-pro
+#: include/class.admin.php:330
+msgid "Custom CSS"
+msgstr "Egen CSS"
+
+# @ csa-slp-pro
+#: include/class.admin.php:335
+msgid ""
+"Enter your custom CSS, preferably for SLPLUS styling only but it can be used "
+"for any page element as this will go in your page header."
+msgstr ""
+"Skriv din egen CSS, helst för SLPLUS kodning, men det kan användas för alla "
+"sidfunktioner som fungerar med med ditt temas  sidhuvud."
+
+# @ csa-slp-pro
+#: include/class.admin.php:645 include/class.admin.php:666
+#: include/class.admin.reports.php:308
+msgid "Tags"
+msgstr "Sökord"
+
+# @ csa-slp-pro
+#: include/class.admin.php:686
+msgid "Tags (separate with commas)"
+msgstr "Sökord (avdelade med komma)"
+
+# @ csa-slp-pro
+#: include/class.admin.php:708 include/class.csvimport.locations.php:325
+msgid "Import"
+msgstr "Importera"
+
+# @ csa-slp-pro
+#: include/class.admin.php:709
+msgid "Export"
+msgstr "Exportera"
+
+# @ csa-slp-pro
+#: include/class.admin.php:740
+msgid "Export All To CSV"
+msgstr "Exportera alla till CSV"
+
+# @ csa-slp-pro
+#: include/class.admin.php:744
+msgid "Geocode"
+msgstr "GEOkoda"
+
+# @ csa-slp-pro
+#: include/class.admin.php:748
+msgid "Tag"
+msgstr "Sökord"
+
+# @ csa-slp-pro
+#: include/class.admin.php:752
+msgid "Enter your comma-separated tags:"
+msgstr "Skriv in kommaseparerade sökord:"
+
+# @ csa-slp-pro
+#: include/class.admin.php:757
+msgid "Remove Tags"
+msgstr "Ta bort sökord"
+
+# @ csa-slp-pro
+#: include/class.admin.php:776
+msgid "Show Uncoded"
+msgstr "Visa okodat"
+
+# @ csa-slp-pro
+#: include/class.admin.php:780
+msgid "With These Properties"
+msgstr "Med dessa inställningar"
+
+# @ csa-slp-pro
+#: include/class.admin.php:838
+msgid "Show Tags In Output"
+msgstr "Visa sökord i resultat"
+
+# @ csa-slp-pro
+#: include/class.admin.php:839
+msgid ""
+"How should tags be output in the results below the map and the info bubble?"
+msgstr ""
+"Hur ska sökord visas i resutlaten nedanför kartan och i "
+"informationsbubblorna?"
+
+# @ csa-slp-pro
+#: include/class.admin.php:849
+msgid "Use Email Form"
+msgstr "Använd e-mail formuläret"
+
+# @ csa-slp-pro
+#: include/class.admin.php:850
+msgid "Use email form instead of mailto: link when showing email addresses."
+msgstr ""
+"Använd e-mail formuläret istället för mailto: länk när e-mail adresser visas."
+
+# @ csa-slp-pro
+#: include/class.admin.php:869
+msgid "Search Form Tag Input"
+msgstr "Sökformulär för sökord"
+
+# @ csa-slp-pro
+#: include/class.admin.php:870
+msgid ""
+"Select the type of tag input that you would like to see on the search form."
+msgstr "Välj den typ av sökordsinmatning som du vill visa på sökformuläret."
+
+# @ csa-slp-pro
+#: include/class.admin.php:876
+msgid "None"
+msgstr "Ingen"
+
+# @ csa-slp-pro
+#: include/class.admin.php:880
+msgid "Hidden"
+msgstr "Dold"
+
+# @ csa-slp-pro
+#: include/class.admin.php:884
+msgid "Drop Down"
+msgstr "Drop-down"
+
+# @ csa-slp-pro
+#: include/class.admin.php:888
+msgid "Radio Button"
+msgstr "Radio knapp"
+
+# @ csa-slp-pro
+#: include/class.admin.php:892
+msgid "Text Input"
+msgstr "Textinmatning"
+
+# @ csa-slp-pro
+#: include/class.admin.php:900
+msgid "Tags Label"
+msgstr "Sökordsetikett"
+
+# @ csa-slp-pro
+#: include/class.admin.php:901
+msgid "Search form label to prefix the tag selector."
+msgstr "Sökformulärsetikett som prefix till sökordsväljaren."
+
+# @ csa-slp-pro
+#: include/class.admin.php:905
+msgid "Default Tag Selections"
+msgstr "Standard sökordsval"
+
+# @ csa-slp-pro
+#: include/class.admin.php:906
+msgid ""
+"For Hidden or Text tag input enter a default value to be used in the field, "
+"if any. "
+msgstr ""
+"För dolda eller text sökord ange ett standardvärde som används i fältet om "
+"\"alla\" används. "
+
+# @ csa-slp-pro
+#: include/class.admin.php:907
+msgid ""
+"For Drop Down tag input enter a comma (,) separated list of tags to show in "
+"the search pulldown, mark the default selection with parenthesis (). "
+msgstr ""
+"För rullgardinssökord skriv en kommaseparerad (,) lista med sökord för att "
+"visa i sökformulärets rullgardinsmeny, markera standardvalet med parentes "
+"(). "
+
+# @ csa-slp-pro
+#: include/class.admin.php:908
+msgid ""
+"This is a default setting that can be overriden on each page within the "
+"shortcode."
+msgstr ""
+"Detta är en standardinställning som kan skrivas över på varje sida inom "
+"kortkoden."
+
+# @ csa-slp-pro
+#: include/class.admin.php:912
+msgid "Add \"any\" To Drop Down"
+msgstr "Lägg till \"alla\" till dop-down"
+
+# @ csa-slp-pro
+#: include/class.admin.php:913
+msgid ""
+"Add an \"any\" selection on the tag drop down list thus allowing the user to "
+"show all locations in the area, not just those matching a selected tag."
+msgstr ""
+"Lägg till ett \"alla\" val på rullgardinslistan för sökord som gör att "
+"användaren kan visa alla orter i området, inte bara de som matchar ett valt "
+"sökord."
+
+# @ csa-slp-pro
+#: include/class.admin.php:917
+msgid "\"Any\" Tag Text"
+msgstr "\"Alla\" Menytext"
+
+# @ csa-slp-pro
+#: include/class.admin.php:918
+msgid "What should the \"any\" tag say? "
+msgstr "Vad ska \"alla\" menytexten för sökord vara? "
+
+# @ csa-slp-pro
+#: include/class.admin.php:919
+msgid "The first entry on the search by tag pulldown."
+msgstr "Den första posten på formuläret med sökords rullgardinsmeny."
+
+# @ csa-slp-pro
+#: include/class.admin.php:923
+msgid "Tag Autosubmit"
+msgstr "Sökord Autoskicka"
+
+# @ csa-slp-pro
+#: include/class.admin.php:924
+msgid ""
+"Force the form to auto-submit when the tag is selected with a radio button."
+msgstr "Tvinga formuläret att autoskicka när sökordet väljs med knappen."
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:94
+msgid " - Reporting"
+msgstr " - Rapport"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:98
+msgid "Save Settings"
+msgstr "Spara inställningar"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:136
+msgid "Report Summary"
+msgstr "Rapportsummering"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:169 slp-pro.php:388
+msgid "Reports"
+msgstr "Rapporter"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:190
+msgid "Export To CSV"
+msgstr "Exportera till CSV"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:199
+msgid "Export all records"
+msgstr "Exportera alla platser"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:203
+msgid "Top Searches"
+msgstr "Toppsökningar"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:204
+msgid "Top Results"
+msgstr "Toppresultat"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:217
+msgid "Report Parameters"
+msgstr "Rapportparametrar"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:225
+msgid "Start Date"
+msgstr "Startdatum"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:231
+msgid "Only show data on or after this date.  YYYY-MM-DD."
+msgstr "Visa endast uppgifter från och med detta datum. ÅÅÅÅ-MM-DD."
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:241
+msgid "End Date"
+msgstr "Slutdatum"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:247
+msgid "Only show data on or before this date.  YYYY-MM-DD hh:mm:ss."
+msgstr "Visa endast uppgifter på eller före detta datum. ÅÅÅÅ-MM-DD tt:mm:ss."
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:262
+msgid "Report Limit"
+msgstr "Rapportgräns"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:268
+msgid ""
+"Limit the report to this many detail records.  Default: 10.  Recommended "
+"maximum: 500."
+msgstr ""
+"Begränsa rapporten till så många detaljposter. Standard: 10. Rekommenderad "
+"maximal: 500."
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:283
+#, php-format
+msgid "Total searches: <strong>%s</strong>"
+msgstr "Totalt sökningar: <strong>%s</strong>"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:284
+#, php-format
+msgid "Total results: <strong>%s</strong>"
+msgstr "Totalt resultat: <strong>%s</strong>"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:285
+#, php-format
+msgid "Days with activity: <strong>%s</strong>"
+msgstr "Dagar med aktivitet: <strong>%s</strong>"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:300 include/class.admin.reports.php:302
+#, php-format
+msgid "Top %s Results Returned"
+msgstr "Topp %s Resultat Svarade"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:304
+msgid "Store"
+msgstr "Plats"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:305
+msgid "City"
+msgstr "Stad"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:309 include/class.admin.reports.php:351
+msgid "Total"
+msgstr "Totalt"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:335
+msgid "topresults"
+msgstr "toppresultat"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:346 include/class.admin.reports.php:348
+#, php-format
+msgid "Top %s Addresses Searched"
+msgstr "Topp %s Adresser sökta"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:350
+msgid "Address"
+msgstr "Adress"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:373
+msgid "topsearches"
+msgstr "toppsökningar"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:383 include/class.admin.reports.php:407
+msgid "Settings"
+msgstr "Inställningar"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:392
+msgid "Enable reporting to start recording location search data. "
+msgstr "Aktivera rapporter för att börja spara platsers sökdata. "
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:393
+msgid "Once enabled the report section will appear on this tab."
+msgstr "När du har aktiverat rapporter kommer den att visas på den här fliken."
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:412
+msgid "Enable Reporting"
+msgstr "Aktivera rapporter"
+
+# @ csa-slp-pro
+#: include/class.admin.reports.php:418
+msgid ""
+"Enables tracking of searches and returned results.  The added overhead can "
+"increase how long it takes to return location search results."
+msgstr ""
+"Möjliggör spårning av sökningar och svarade resultat. Detta kan öka hur lång "
+"tid det tar att göra sökningar och via sökresultat på sidan för platser."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:124
+msgid "CSV Records has too many fields."
+msgstr "CSV datan innehåller för många fält."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:125
+#, php-format
+msgid "Got %d expected less than %d."
+msgstr "Fick %d förväntade mindre än %d."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:273
+msgid "Upload Locations"
+msgstr "Ladda upp platser"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:246
+#, php-format
+msgid "See the %s for more details on the import format."
+msgstr "Se %s för mer detaljer om importformatet."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:248
+msgid "online documentation"
+msgstr "onlinedokumentation"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:147
+msgid "Skip First Line"
+msgstr "Hoppa över första raden"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:148
+msgid "Skip the first line of the import file."
+msgstr "Hoppa över första raden i importfilen."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:160
+msgid "First Line Has Field Name"
+msgstr "Första raden innehåller fältnamn"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:163
+msgid "Check this if the first line contains the field names."
+msgstr "Markera här om den första raden innehåller fältnamn"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:164
+#, php-format
+msgid "Text must match the <a href=\"%s\">approved field name list</a>."
+msgstr "Texten måste följa <a href=\"%s\">godkända fältnamn</a>."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:177
+msgid "Skip Geocoding"
+msgstr "Gör ingen Geokodning"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:179
+msgid ""
+"Do not check with the Geocoding service to get latitude/longitude.  "
+"Locations without a latitude/longitude will NOT appear on map base searches."
+msgstr ""
+"Kör inte med Geokodningfunktionen för att få latitud/longitud. Platser utan "
+"latitud/longitud visas INTE på kartans startsökningar."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:210
+msgid "Duplicates Handling"
+msgstr "Dubletthantering"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:212
+msgid "How should duplicates be handled? "
+msgstr "Hur ska dubletter hanteras? "
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:213
+msgid ""
+"Duplicates are records that match on name and complete address with country. "
+msgstr "Dubletter är platser som matchar på namn och adress i samma land. "
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:214
+msgid "Add (default) will add new records when duplicates are encountered. "
+msgstr ""
+"Lägg till (standard) kommer att lägga till nya platser även när dubbletter "
+"påträffas. "
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:215
+msgid "Skip will not process duplicate records. "
+msgstr ""
+"Hoppa över kommer INTE att lägga till nya platser när dubbletter påträffas. "
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:216
+msgid "Update will update duplicate records. "
+msgstr "Uppdatera kommer att uppdatera dubletter. "
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:217
+msgid ""
+"To update name and address fields the CSV must have the ID column with the "
+"ID of the existing location."
+msgstr ""
+"För att uppdatera namn- och adressfält måste CSV-filen ha ID-kolumn med rätt "
+"ID för den befintliga platsen."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:222
+msgid "Add"
+msgstr "Lägg till"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:226
+msgid "Skip"
+msgstr "Hoppa över"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:230
+msgid "Update"
+msgstr "Uppdatera"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:364
+msgid " new locations added."
+msgstr "nya platser tillagda"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:365
+msgid " pre-existing locations skipped."
+msgstr "hoppat över redan befintliga platser"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:366
+msgid " locations did not need to be updated."
+msgstr "platser behövde inte bli uppdaterade"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:367
+msgid " locations were skipped due to duplicate name and address information."
+msgstr "platser hoppades över på grund av samma namn och adress i fälten."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:368
+msgid " locations were updated."
+msgstr "platserna har uppdaterats."
+
+# @ csa-slp-pro
+#: include/class.userinterface.php:94
+msgid "Any"
+msgstr "Alla"
+
+# @ csa-slp-pro
+#. translators: plugin header field 'Name'
+#: slp-pro.php:0
+msgid "Store Locator Plus : Pro Pack"
+msgstr ""
+
+# @ csa-slp-pro
+#. translators: plugin header field 'PluginURI'
+#: slp-pro.php:0
+msgid "http://www.charlestonsw.com/product/store-locator-plus/"
+msgstr ""
+
+# @ csa-slp-pro
+#. translators: plugin header field 'Description'
+#: slp-pro.php:0
+msgid ""
+"A premium add-on pack for Store Locator Plus that provides more admin power "
+"tools for wrangling locations."
+msgstr ""
+"Ett premie tilläggspaket för Store Locator Plus som lägger till förbättrade "
+"administratörsfunktioner i panelen."
+
+# @ csa-slp-pro
+#. translators: plugin header field 'Author'
+#: slp-pro.php:0
+msgid "Charleston Software Associates"
+msgstr ""
+
+# @ csa-slp-pro
+#. translators: plugin header field 'AuthorURI'
+#: slp-pro.php:0
+msgid "http://charlestonsw.com/"
+msgstr ""
+
+# @ csa-slp-pro
+#: slp-pro.php:117
+msgid "Pro Pack"
+msgstr ""
+
+# @ csa-slp-pro
+#: slp-pro.php:279 slp-pro.php:285
+msgid "Cheatin' huh!"
+msgstr "Fuskar du?!"
+
+# @ csa-slp-pro
+#: include/class.cron.php:54
+msgid "process started"
+msgstr "process startad"
+
+# @ csa-slp-pro
+#: include/class.cron.php:77
+msgid "csv import failed, local file name not set"
+msgstr "csv import misslyckades, plats-filenamn inte angett"
+
+# @ csa-slp-pro
+#: include/class.cron.php:82
+msgid "csv import failed, local file name blank"
+msgstr "csv import misslyckades, plats-filnamn är blankt"
+
+# @ csa-slp-pro
+#: include/class.cron.php:86
+msgid "starting csv import"
+msgstr "startar csv import"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:136
+msgid "File Settings"
+msgstr "Filinställningar"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:193
+msgid "Background Processing"
+msgstr "Körs i bakgrunden"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:195
+msgid "When checked the import will run as a WordPress cron job.  "
+msgstr "När detta är valt körs importen som ett Wordpress cron jobb. "
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:196
+msgid "WP cron executes on the next visit to your website.  "
+msgstr "WP cron startar vid nästa besök till webbplatsen. "
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:197
+msgid "This frees up the admin UI for other work while locations are loaded."
+msgstr "Detta frigör admin UI för annat arbete medan platser laddas."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:261
+msgid "Upload CSV File"
+msgstr "Ladda upp CSV fil"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:286
+msgid "File Import"
+msgstr "URL Filimport"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:294
+msgid "CSV File URL"
+msgstr "URL till CSV-fil"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:300
+msgid "Enter a full URL for a CSV file you wish to import"
+msgstr "Ange en fullständig URL för den CSV-fil som du vill importera"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:314
+msgid "Import Locations"
+msgstr "Ladda upp platser"
+
+# @ csa-slp-pro
+#. translators: plugin header field 'Version'
+#: slp-pro.php:0
+msgid "4.2.01"
+msgstr ""

@@ -1,0 +1,1187 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Name.
+msgid "Maps by Store Locator Plus"
+msgstr ""
+
+#. Short description.
+msgid "Add a location finder or directory to your site in minutes. Extensive premium add-on library available!"
+msgstr ""
+
+#. Screenshot description.
+msgid "Big Map SLP Theme (stylesheet) on Big Map WordPress Theme"
+msgstr ""
+
+#. Screenshot description.
+msgid "Manage Locations with <a href=\"http://www.storelocatorplus.com/product/slp4-pro/\">Pro Pack</a> and Store Pages"
+msgstr ""
+
+#. Screenshot description.
+msgid "Search Settings with <a href=\"http://www.storelocatorplus.com/product/slp4-pro/\">Pro Pack</a> and Enhanced Search"
+msgstr ""
+
+#. Screenshot description.
+msgid "Map Settings with <a href=\"http://www.storelocatorplus.com/product/slp4-pro/\">Pro Pack</a> and Enhanced Map"
+msgstr ""
+
+#. Screenshot description.
+msgid "Result Settings with Enhanced Results"
+msgstr ""
+
+#. Screenshot description.
+msgid "Search and Result Reports with <a href=\"http://www.storelocatorplus.com/product/slp4-pro/\">Pro Pack</a>"
+msgstr ""
+
+#. Screenshot description.
+msgid "SEO via Store Pages"
+msgstr ""
+
+#. Screenshot description.
+msgid "Add Locations with <a href=\"http://www.storelocatorplus.com/product/slp4-pro/\">Pro Pack</a> Bulk Import"
+msgstr ""
+
+#. Screenshot description.
+msgid "Directions from results link"
+msgstr ""
+
+#. Found in description header.
+msgid "Details"
+msgstr ""
+
+#. Found in description header.
+msgid "Features"
+msgstr ""
+
+#. Found in description header.
+msgid "Add-Ons"
+msgstr ""
+
+#. Found in description header.
+msgid "Support"
+msgstr ""
+
+#. Found in description header.
+msgid "Special Requests"
+msgstr ""
+
+#. Found in description header.
+msgid "Upgrades and Patches"
+msgstr ""
+
+#. Found in description header.
+msgid "My Philosophy"
+msgstr ""
+
+#. Found in description header.
+msgid "Rate This Plugin"
+msgstr ""
+
+#. Found in description list item.
+msgid "Very active support via the <a href=\"http://www.storelocatorplus.com/forums/\">free support forum</a>."
+msgstr ""
+
+#. Found in description list item.
+msgid "Regularly updated <a href=\"http://www.storelocatorplus.com/support/documentation/store-locator-plus/\">online documentation</a>."
+msgstr ""
+
+#. Found in description list item.
+msgid "Multiple <a href=\"http://www.storelocatorplus.com/product-category/slp4-products/\">premium add-ons available</a>."
+msgstr ""
+
+#. Found in description list item.
+msgid "You can use it for a <a href=\"http://www.storelocatorplus.com/support/documentation/store-locator-plus/user-experience/map/countries-and-languages/\">variety of countries</a>, as supported by Google Maps."
+msgstr ""
+
+#. Found in description list item.
+msgid "Supports <a href=\"http://www.storelocatorplus.com/support/documentation/store-locator-plus/user-experience/map/countries-and-languages/\">international languages</a> and character sets and is <a href=\"http://wpml.org/plugin/store-locator/\">WPML compatible</a>."
+msgstr ""
+
+#. Found in description list item.
+msgid "Allows you to use <a href=\"http://www.storelocatorplus.com/support/documentation/store-locator-plus/\">unique map markers</a> or your own custom map markers."
+msgstr ""
+
+#. Found in description list item.
+msgid "Change default map settings via the admin panel including:"
+msgstr ""
+
+#. Found in description list item.
+msgid "Map type (terrain, satellite, street, etc.)"
+msgstr ""
+
+#. Found in description list item.
+msgid "Inset map show/hide"
+msgstr ""
+
+#. Found in description list item.
+msgid "Starting zoom level"
+msgstr ""
+
+#. Found in description list item.
+msgid "You can use miles or kilometers"
+msgstr ""
+
+#. Found in description list item.
+msgid "Pulldown list of cities and/or countries on search form can be toggled on/off."
+msgstr ""
+
+#. Found in description list item.
+msgid "Location search tracking and reporting, find out what your visitors are looking for."
+msgstr ""
+
+#. Found in description list item.
+msgid "Location Sensor support."
+msgstr ""
+
+#. Found in description list item.
+msgid "Bulk Data Import."
+msgstr ""
+
+#. Found in description list item.
+msgid "Bulk Data Export."
+msgstr ""
+
+#. Found in description list item.
+msgid "Re-geocode locations in bulk."
+msgstr ""
+
+#. Found in description list item.
+msgid "Layout control to customize the order and wrapping HTML of the search form, map, and results."
+msgstr ""
+
+#. Found in description list item.
+msgid "Custom CSS via a simple admin panel entry box."
+msgstr ""
+
+#. Found in description list item.
+msgid "Location search reporting."
+msgstr ""
+
+#. Found in description list item.
+msgid "Location tags."
+msgstr ""
+
+#. Found in description list item.
+msgid "Provides a custom interface to the WordPress category manager to attach categories to locations."
+msgstr ""
+
+#. Found in description list item.
+msgid "Assign map markers and icons to locations."
+msgstr ""
+
+#. Found in description list item.
+msgid "Assign multiple categories to a single location."
+msgstr ""
+
+#. Found in description list item.
+msgid "Add a icon legend to the user interface."
+msgstr ""
+
+#. Found in description list item.
+msgid "Faster category filtering and searching than Pro Pack tags."
+msgstr ""
+
+#. Found in description list item.
+msgid "Adds a dozen extra contact specific data fields for each location."
+msgstr ""
+
+#. Found in description list item.
+msgid "Adds a shortcode for creating a dynamic list of location cities, states, countries, or other location property."
+msgstr ""
+
+#. Found in description list item.
+msgid "City/State/Country list can link directly to the locator page with automatic search results showing the locations."
+msgstr ""
+
+#. Found in description list item.
+msgid "Custom tailor the map info bubble custom HTML/shortcode admin entry."
+msgstr ""
+
+#. Found in description list item.
+msgid "Center the starting map at any location in the world."
+msgstr ""
+
+#. Found in description list item.
+msgid "Turn the map display on or off or let the user decide with a slider switch."
+msgstr ""
+
+#. Found in description list item.
+msgid "Modify the built-in Google Map controls."
+msgstr ""
+
+#. Found in description list item.
+msgid "Custom tailor the results output with a custom HTML/shortcode admin entry."
+msgstr ""
+
+#. Found in description list item.
+msgid "Change sort order on the the results."
+msgstr ""
+
+#. Found in description list item.
+msgid "Works with other add-on packs, like Tagalong, to show per-location icons."
+msgstr ""
+
+#. Found in description list item.
+msgid "Modify location field labels."
+msgstr ""
+
+#. Found in description list item.
+msgid "Custom tailor the search form with a HTML/shortcode admin entry."
+msgstr ""
+
+#. Found in description list item.
+msgid "Turn the search interface on/off."
+msgstr ""
+
+#. Found in description list item.
+msgid "Works with other add-on packs to display category drop downs, tag drop downs, and other search features."
+msgstr ""
+
+#. Found in description list item.
+msgid "Adds a half-dozen new fields to the basic location data."
+msgstr ""
+
+#. Found in description list item.
+msgid "Introduction text, Year Established, County, District, Region, Territory"
+msgstr ""
+
+#. Found in description list item.
+msgid "Create pages for each location with the click of a button."
+msgstr ""
+
+#. Found in description list item.
+msgid "Each page can be edited as an individual post."
+msgstr ""
+
+#. Found in description list item.
+msgid "Pages support their own comments, featured image, page style, and other standard WordPress page template features."
+msgstr ""
+
+#. Found in description list item.
+msgid "Provides a user capabilities interface to grant/deny access to SLP location management on a user-by-user basis."
+msgstr ""
+
+#. Found in description list item.
+msgid "Site administrators have access to the full management interface."
+msgstr ""
+
+#. Found in description list item.
+msgid "Users granted location management capabilities can add, edit, and delete locations they own from their WordPress login."
+msgstr ""
+
+#. Found in description list item.
+msgid "Put location search in your widget-enabled areas."
+msgstr ""
+
+#. Found in description list item.
+msgid "Direct users to the default map page, or show results right in the widget area."
+msgstr ""
+
+#. Found in description paragraph.
+msgid ""
+"Store Locator Plus is a location mapping and directory system with  over 10,000 active installations.\n"
+"Learn more at the <a href=\"http://www.storelocatorplus.com/\">Store Locator Plus website</a>.\n"
+"The website offers more <a href=\"http://www.storelocatorplus.com/support/documentation/store-locator-plus/store-locator-plus-screen-shots/\">screen shots</a>, <a href=\"http://www.storelocatorplus.com/support/documentation/technical-documentation/\">technical documentation</a>, and <a href=\"http://www.charlestonsw.com/support/documentation/store-locator-plus/release-notes/release-notes-4-0/\">full release notes</a>, and a very active <a href=\"http://www.charlestonsw.com/forums/\">user forum</a>."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "For the latest updates and news follow me on <a href=\"https://twitter.com/charlestonsoft/\">Twitter</a>."
+msgstr ""
+
+#. Found in description paragraph.
+msgid ""
+"Store Locator Plus is an advanced system for managing multiple physical locations via a fully integrated WordPress solution.\n"
+"Whether you have ten locations or ten-thousand, you manage them right from within your WordPress admin panel.\n"
+"There is no special programming or extra setup required.\n"
+"Simply enter your locations, create a page or edit an existing page and put the SLPLUS short code on it.\n"
+"The Store Locator Plus search form and map will \"magically\" appear."
+msgstr ""
+
+#. Found in description paragraph.
+msgid ""
+"The base plugin, <a href=\"http://wordpress.org/extend/plugins/store-locator-le\">available for free from the WordPress Plugin Directory</a> has all the features you need\n"
+"to create a comprehensive store locator interface on your website.\n"
+"Set up an interactive Google map for your customers with a <a href=\"http://www.storelocatorplus.com/support/documentation/store-locator-plus/getting-started/shortcodes/\">single shortcode</a>."
+msgstr ""
+
+#. Found in description paragraph.
+msgid ""
+"Advanced customization is available via the settings interface in the admin panel.\n"
+"Set the map size to best fit your site.\n"
+"Change map types (terrain, satellite, standard views).\n"
+"Add details like a store description, hours, a website address, an email address.\n"
+"Re-label entry fields and results fields."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "[youtube http://www.youtube.com/watch?v=v1IIIMre-CQ]"
+msgstr ""
+
+#. Found in description paragraph.
+msgid ""
+"The Store Locator Plus plugin is used by some of the biggest international brands as well as a number of smaller chains.\n"
+"It has been used to created interactive store finder maps, service directories, and as a product finder.\n"
+"Visit the <a href=\"http://www.storelocatorplus.com/support/documentation/store-locator-plus/slp-customers/\">SLP Customers page</a> to see a sample of some of the people that are using the plugin today."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<a href=\"http://www.storelocatorplus.com/\">Add-on packages</a> are available to extend the capabilities of this plugin."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Get It All</strong> with a <a href=\"http://www.storelocatorplus.com/product/premier-subscription/\">Premier Subscription</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid ""
+"This optional subscription service is a great way to support the plugin.\n"
+" The subscription is not required; your base plugin as well as any add-on packs will always remain fully functional.\n"
+" The Premier Subscription gives subscribers access to Premier-Member-only sections of the site including a \"always first\" support forum where questions are answered within 1 business day and follow on direct email is provided for more complex questions or issues.\n"
+" Premier Members have access to the live chat Slack channel for Store Locator Plus.\n"
+" Premier Members have an \"everything offered\" downloads page which includes all production plugins and add-on packs as well as early access to pre-release products.\n"
+" Subscription pricing is locked in at the original price when signing up even as the features and services grow.\n"
+" Premier subscriptions include the <a href=\"http://www.storelocatorplus.com/product/premier-plugin/\">Premier Plugin</a> with new features added on a regular basis."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Enterprise Location Management and Reporting</strong> via <a href=\"http://www.storelocatorplus.com/product/slp4-pro/\">Pro Pack</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Categorize Your Locations</strong> via <a href=\"http://www.storelocatorplus.com/product/slp4-tagalong/\">Tagalong</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Contacts Data</strong> via <a href=\"http://www.storelocatorplus.com/product/slp4-contact-extender/\">Contact Extender</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Instant Location Directories</strong> via <a href=\"http://www.storelocatorplus.com/product/directory-builder/\">Directory Builder</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Extended Map Interface Controls</strong> via <a href=\"http://www.storelocatorplus.com/product/slp4-enhanced-map/\">Enhanced Map</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Customize The Location Results</strong> with <a href=\"http://www.storelocatorplus.com/product/slp4-enhanced-results/\">Enhanced Results</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Customize The Search Form</strong> with <a href=\"http://www.storelocatorplus.com/product/slp4-enhanced-search/\">Enhanced Search</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Extended Location Data</strong> via <a href=\"http://www.storelocatorplus.com/product/location-extender/\">Location Extender</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>SEO Friendly Location Pages</strong> with <a href=\"http://www.storelocatorplus.com/product/slp4-store-pages/\">Store Pages</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Allow Users To Manage Locations</strong> with <a href=\"http://www.storelocatorplus.com/product/slp4-user-managed-locations/\">User Managed Locations</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Location Sidebar Widgets</strong> with the <a href=\"http://www.storelocatorplus.com/product/store-locator-plus-widget-pack/\">Widget Pack</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Create Your Own Add-On</strong>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid ""
+"If you are a plugin developer you will be interested in the new \"Roll Your Own\" program where you can create SLP based add-ons of your own.\n"
+"SLP version 4.2 makes it even easier with a series of base classes which handle a majority of the base plugin integration and interface elements.\n"
+"Create something great and list it on the CSA site!   Revenue sharing offered for premium add-on packs."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Support for the plugin can be found in the <a href=\"http://www.storelocatorplus.com/forums/\">Forums</a>.  If you have an urgent issue or want one-on-one support you can <a href=\"http://www.storelocatorplus.com/product/product-support\">purchase premium support</a>."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "You can also view the <a href=\"http://www.storelocatorplus.com/support/documentation\">Product Documentation</a> for more information about the plugin including <a href=\"http://www.storelocatorplus.com/support/documentation/technical-documentation/store-locator-plus/troubleshooting/known-conflicts/\">known conflicts</a> with themes and plugins."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "I accept feature requests for all plugins. The most requested features will make it into the next version if time permits."
+msgstr ""
+
+#. Found in description paragraph.
+msgid ""
+"If you need something NOW, or are looking for something beyond a basic \"tweak\" of the plugin, please check out the\n"
+"<a href=\"http://www.storelocatorplus.com/product/customization/\">Customization Service</a>."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "I try to release at least one upgrade/patch every month."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "The main product will always remain fully functional and free."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "If you'd like to have some of the latest \"bells &amp; whistles\" purchasing a premium add-on is a great way to help support product development."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "I strive to create code that runs efficiently and without bugs. Well-written plugins are few and far between. While there are plenty of plugins that look nice, many of those plugins, including the \"cool shiny ones\" have hidden problems. Over 90% of the plugins available on the WordPress plugin directory generate dozens, if not hundreds, of warnings and errors when you turn off the \"hide all the problems\" settings."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "These hidden problems impact memory usage, fill up disk space, and reduce performance. While you may not see the errors on your WordPress site, they are still being tracked. The more errors, the more disk I/O, the slower the app."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "During my 20 years of software development, I have found that leaving \"innocuous\" warnings in place tends to lead to trouble further down the road. Warnings today often become errors tomorrow. Many programming languages, PHP included, continue to tighten security and close loopholes that are typically found living near warning messages. Some warnings are telling you to \"change this now, it will be gone tomorrow\". Eventually tomorrow will come."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "While my plugins may not be the prettiest on the block, I do try to make sure that all the hidden stuff you don't see is designed as well as it can be. My code is not perfect, but when I find a bug I try to fix it fast.  If I create a bug I try to fix it even faster."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "I like to write plugins that last. I hope you appreciate my work."
+msgstr ""
+
+#. Found in description paragraph.
+msgid ""
+"Please <a href=\"http://wordpress.org/extend/plugins/store-locator-le/\">rate this plugin</a>!\n"
+"Rating the plugin, hopefully with 5 stars, helps increase the exposure on WordPress, which generates more downloads and purchases of add-ons.\n"
+"The more add-ons I sell the easier it is to put food on the table and give me more time to code cool new features.\n"
+"No ratings, no food, more hours working as the Walmart Greeter, less coolness in the plugins."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Give me a chance to address your concerns if this plugin doesn't earn 5 stars by <a href=\"http://www.storelocatorplus.com/mindset/contact-us/\">contacting me</a> directly or by posting in the <a href=\"http://www.storelocatorplus.com/forums/\">support forum</a> at the CSA website."
+msgstr ""
+
+#. Found in installation header.
+msgid "Requirements"
+msgstr ""
+
+#. Found in installation header.
+msgid "Main Plugin"
+msgstr ""
+
+#. Found in installation header.
+msgid "Icons"
+msgstr ""
+
+#. Found in installation header.
+msgid "Custom Styling"
+msgstr ""
+
+#. Found in installation header.
+msgid "Special Thanks"
+msgstr ""
+
+#. Found in installation list item.
+msgid "WordPress: 3.8"
+msgstr ""
+
+#. Found in installation list item.
+msgid "jQuery: 1.7 (same as WordPress 3.3)"
+msgstr ""
+
+#. Found in installation list item.
+msgid "PHP 5.2.4 (same as WordPress 3.2)"
+msgstr ""
+
+#. Found in installation list item.
+msgid "MySQL 5.0.15 (same as WordPress 3.2)"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Search for \"Store Locator Plus\" via Plugins/Add New on your WordPress admin panel."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Click install."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Add your locations through the 'Add Locations' page in the Store Locator admin panel"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Create or edit a page and add the <a href=\"http://www.storelocatorplus.com/support/documentation/store-locator-plus/getting-started/shortcodes/\">[SLPLUS] shortcode</a>."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Chinese (zh_CN) by iSurge"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Chinese (zh_TW) by iSurge"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Dutch (nl_NL) by <a href=\"http://www.de-baat.nl/\">Jan de Baat</a>"
+msgstr ""
+
+#. Found in installation list item.
+msgid "French (fr_FR) by <a href=\"http://www.visitonweb.com/\">Dimitri Lekien</a>"
+msgstr ""
+
+#. Found in installation list item.
+msgid "German (de_DE)"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Italian (it_IT) by Matteo Colangeli"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Japanese (ja) by <a href=\"http://l4jp.com\">Karen Ellrick</a>"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Latvian (lt_LT) by Paulius Bakutis"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Portuguese (pt_BR) by Carlos Utiama"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Serbian (sr_RS) by <a href=\"http://firstsiteguide.com\">Ogi Djuraskovic</a>"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Spanish (es_ES) by <a href=\"http://firstsiteguide.com\">Ogi Djuraskovic</a>"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Map markers by <a href=\"http://mapicons.nicolasmollet.com/\">Nicolas Mollet</a>"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Icons by <a href=\"http://www.icons-land.com/\">Icons-Land</a> via Icon Finder."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Logos and other site graphics by <a href=\"http://www.massivecreativeinc.com\">Massive Creative</a>."
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "The system ships with a dozen default icons in the <code>/wp-content/plugins/store-locator-le/images/icons</code> directory. Add your own custom icons in that directory and they will be auto-detected."
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "To prevent custom icons from being over-written they will be copies to the '/wp-content/uploads/sl-uploads/custom-icons/' directory.  If you place your icons in that directory they will be detected on the icon selection screens."
+msgstr ""
+
+#. Found in installation paragraph.
+msgid ""
+"Users that want to customize the look and feel of the search form, map, and search results can do so using the built-in Theme System.<br />\n"
+"Copy an existing CSS file, change the file name and update the CSS header, upload to the server and you can activate your new theme or any of the built-in defaults by selecting it from the auto-generated pulldown menu."
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "<a href=\"http://www.storelocatorplus.com/product/slp4-pro/\">Pro Pack</a> users can also add CSS rules via the Pro Pack CSS Rules entry on the admin panel."
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "<em>Translations</em>"
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "<em>Graphics</em>"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Reinstate the info bubble hooks allowing Enhanced Map to hide the info bubble on click."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Add Plugin Styles preview images for some of the advanced themes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Provide a trigger when showing admin interface subpanels for improved admin UI experience with add-on packs."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: New Beside Myself Again Plugin Style.   Map on left, search and results on right.   Works best with The Experience Package of add-ons."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Added support for the new map info bubble footnote setting provided by the Premier add-on."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Center Map Fallback now gets proper lat/lng when a specific address is used for center map at and the center lat/lng is set to blank."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Make the Center Map At the default address when loading the map page via Widget references."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change: Any user that has the update_plugins capability will allow the premium add-on packs to be updated.  Prior to 4.3.21 this feature required and admin to have the manage_slp capability."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change: Older Plugin Styles have been moved to the css/legacy directory including above_and_beyond_nyloboard_01, beside_the_point_2012, default_2014, default_old, default, and twentyfifteen_rev_02.  All are superceded with newer versions."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Google Geocoding fallback has been added for the starting map center point when Google services are offline."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: The Experience/View setting descriptions now use translated strings for things like 'Locator Layout'."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Use language translations on the Info / Plugin Environment labels."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Code simplification removing inline debugging."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Update extended data from various add-on packs when importing records via CSV file."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Do not show SLP menu in admin bar unless they have the manage_slp_admin capability."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: When updating an existing location and the address does not change, make sure that lat/long is retained. Especially useful for <a href=\"http://www.storelocatorplus.com/product/slp4-pro/\">Pro Pack</a> CSV imports."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Reset the extended data join when a new location is added for the first time that includes an extended data field.  Fixes manage locations showing extended data after a CSV import."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Plugin Environment tab gettext() for language translation."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Load the proper default language settings for data-driven default strings for 'instructions', 'invalid_query_message', 'label_directions', 'label_fax', 'label_email', 'label_hours', 'label_image', 'label_phone', 'label_website'."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Rename the language files to match the Translate.WordPress.Org standard of 'store-locator-le'."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change: All Swedish (sv_SE) and Dutch (nl_NL) translations now come from <a href=\"https://translate.wordpress.org/projects/wp-plugins/store-locator-le\">Translate.WordPress.Org</a>."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Add support for renaming extended data field slugs to improve EDM add-on interface."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Restore default email label with link in results."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Stop fatal map loop when Google's geocoding service goes offline."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Google Geocoding support for Google Maps API Server Key.  They key was being ignored on geocoding requests."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Add option to use <a href=\"https://console.developers.google.com\">Google Developer Console</a> API Keys which enables pay-as-you-go services for higher geocoding limits."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change: All maps API references route through maps.googleapis.com/maps/api/js which is the Google recommended API URL, not the map domain."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Fix the zoom_tweak adjustment."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Incorrect hyperlink in view/experience inline help."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: SCSS include error in blank_mapfix plugin style."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Add Twenty Fifteen Rev 03 plugin style with updated Tagalong category selector styling."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Allow negative zoom_tweak values, zooming map in tighter than the dropped markers."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Allow a zero zoom level."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Make the Experience/View layout preview boxes resizeable."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Provide mechanism for add-on packs with checkboxes on different tabs, like Pages, to save properly."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Use SLPLUS_PLUGINDIR as base path for includes. This allows SLP to live in directories other than ./plugins/store-locator-le/."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Call the SLP update methods whether a plugin is auto-updated, manually updated, or installed and activated for the first time."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Save and restore of custom plugin styles in CSS directory with all update methods."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Checkboxes being reset on admin experience page when saving settings on <a href=\"http://www.storelocatorplus.com/product/slp4-tagalong/\">Tagalong</a> tab."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Add the jQuery UI Vader theme as a new option for drop down styling in add-on packs like <a href=\"http://www.storelocatorplus.com/product/premier-plugin/\">Premier Plugin</a>."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Add slp_map class to the map div and change the inline style to reference div#map.slp_map, allowing the map to appear outside the div#sl_div for more flexible UI styling."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Add taxonomy drop down styling for single parent interface type from <a href=\"http://www.storelocatorplus.com/product/premier-plugin/\">Premier</a> + <a href=\"http://www.storelocatorplus.com/product/slp4-tagalong/\">Tagalong</a>."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Allow SLP to load even inside a hidden HTML design element such as a modal popup."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Catch data extension issues for sites that did not perform a clean upgrade and are getting \"trying to get property of non-object\" in class.data.php."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Clean Simple White plugin style to address the info bubble rogue \"x\" after closing."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Better testing for PHP set timeout restrictions."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Remove a chunk of unused JavaScript code we've been carrying around in slp.js for a while."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Auto-disable advanced JavaScript/jQuery features if a site using SLP is forcing jQuery to a version &lt; 1.7 which is included in WP Core 3.3."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix the rogue map info bubble 'x'."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Handle systems with locked down set_php_timeout()."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: slp.js slp_option processing with various HTML elements."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change: Make some of the label options available to the JS processor."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change: [slp_location web_link] is no longer wrapped in an HTML NOBR tag allowing for greater control via CSS rules versus DOM structure."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Add new results output option [slp_location url_link] to output a website link that shows the url as entered in the database linked to the website or store-page via a well-formed URL."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Some add-on pack checkbox settings were being reset when editing locations."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Fix the reversed order of location results."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "CHANGE -- Update textdomain to 'store-locator-le' to utilize the forthcoming <a href=\"http:://translate.wordpress.org\">Translate Plugin Feature</a> for WordPress.  This may require re-translating strings for some WPML installs."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: <a href=\"//www.storelocatorplus.com/product/premier-subscription/)\">Premier</a> and <a href=\"http://www.storelocatorplus.com/product/slp4-enhanced-search/\">Enhanced Search</a> add-on packs can now use [slp_option name=\"\"] to output the value of an option in the search or results layout settings."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Add a JavaScript filter 'wrap_location_results' to allow add-on packs to change the location results layout and prevent them from being wrapped in a div."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Advanced Plugin Style files support Premier 'Results Header' settings."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: State and Country selectors now auto-trim the state or country data to account for rogue leading/trailing spaces."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Default to add locations form if no locations are shown."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Speed up plugin style loading time on user interface."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Clean up \"Beside And Below Genesis\" plugin style."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Directions Info Bubble"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: blank setting for map height and width units."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Using \"auto\" in map height/width sets the corresponding units value to blank."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Results click to bring up marker info bubble.  Now using jQuery on click method to catch all children elements as well as the main results listing."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Auto-apply plugin style changes to layout."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: All Results Layout shortcodes including slp_location|slp_option|html now support double modifiers comprising of the following: ifset=\"&lt;field|option&gt;\",suffix=\"&lt;br|comma|comma_space|space&gt;\",wrap=\"&lt;directions|img|mailto|website|fullspan&gt;\",format=\"&lt;decimal1|decimal2|sanitize|text&gt;\",raw"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Added span with id on slp_option outputs in shortcodes processor for layouts."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Directions link."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Experience / View Layout changes."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Multiple modifiers on results output strings for things like [slp_location web_link raw wrap=\"fullspan\"] on some advanced plugin styles."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change: drop datatables kit from js directory, not needed for production."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Add ability to add-on packs to change map options via the JavaScript hook-and-filter system."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Address the admin \"white screen\" on some installs that are running older/outdated SLP add-on packs."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Clean up the floating action box on the manage locations tab."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Activation error \"headers already sent\" on new installs."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Address T_PAAMAYIM_NEKUDOTAYIM (double colon) warning in base_class.admin.php"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Add Store Locator Plus to the admin bar under the site menu."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Admin pages that render settings no longer execute a database I/O call with get_option() for every single setting.  60+ fewer data fetch calls when rendering the User Experience tab."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: 250 lines of legacy admin interface code removed. Replaced with deprecated notices for SLP 1.0 to 3.x users."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Admin interface has been updated to reflect the WordPress Dashboard style."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Admin interface has been refined with better responsive design."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Underlying admin settings interfaces have been refactored to reduce memory footprint on all SLP settings pages."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: More robust settings upgrade system for users migrating from older to newer releases."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Settings upgrade system is not loaded into memory for new installs.   Improves performance and memory consumption on initial installation/activation."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: How To Use page is now fully gettext compatible.  Tranlators wanted.  Free premium plugins in return for translations."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Better WPML integration through the admin panel settings and info."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Updated with explicit WPML version 3.2+ support.  Upgrading to WPML3.2+ is recommended."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Ehnancement: Default label options register with WPML on first invocation of SLP plugin."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Manage Locations interface auto-hides empty locations columns."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Manage Locations always shows which column is the sort-order column even on the default page (sort by location name)."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Add an admin JavaScript processor with localized script variables to the add-on framework, paving the way for advanced admin UI elements."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Added image label setting for admin UI on locations manage/add interface."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Results layouts can now contain marker array data by using dot-notation such as [slp_location data.sl_url] to display the un-munged content of the sl_url field."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: In addition to the managed location data fields, the AJAX response now passes back marker[data] with raw location data in a field_name=&gt;value format.  maker[data][sl_url] will fetch the sl_url data. (Enhanced Results is required to manipulate the results layout string)."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Extended data is now passed back in the marker exdata array in a name=&gt;value format.   marker[data][exdata][rank].   Output with [slp_location exdata.rank], for example. (extended data is provided via various add-on packs)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Tagalong categories (IDs not names) can now be accessed via the marker[categories] array.   This is an array of all the categories IDs assigned to each location. (requires Tagalong add-on)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Tagalong category names is returned as a concatenated string in the marker[category_names] field.  (requires Tagalong add-on)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Hours field is now a text field (allows &gt; 255 characters)."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Cache the SLP Info tab for 24 hours to increase performance when accessing admin tabs multiple times on the same day."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Manage Locations hides extended data fields on add/edit screen when the add-on that provides the fields is deactivated."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Manage Locations add/edit screen has collapsible field groups for easier editing."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Manage Locations has a new drag-and-drop interface for hiding location columns on the manage locations screen."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "<p>Enhancement: AJAX handler now processes wp_die() instead of die() on termination to better follow WordPress best practices.</p>"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "<p>Change: Manage Locations only has a single view, the expanded view mode.</p>"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change: Manage Locations details expander has been removed."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change: Find button images are no longer supported. Use CSS styling to modify the standard text button if you want custom image buttons or downgrade to SLP 4.2.67."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change: Move UX / Results / Website Label to a serialized option, remove it from the JavaScript parser as it is now handled on the AJAX Handler backend."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change: Remove custom zoom_level settings, make it a standard serialized option."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change: refactor much of the slp.js namespace and classes to follow current JavaScript best practices.  Eliminate class/object overhead on some simple function-only references."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "<p>Change: No longer checks for , and deactivates, Super Extendo add-on pack.  If you are using that add-on pack you should not be.  Bad things happen.</p>"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "<p>Fix: Apostrophe in manage locations search.</p>"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: Missing admin page stying on some add-on pack pages after saving options."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: The extended data field handler for the manage locations page fixing issues when extended data features would randomly disappear."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "<p>Fix: slplus shortcode theme attributes changes CSS style for the locator page.  Does not change page layout for advanced layouts.</p>"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "<p>Note: Some add-on packs will need to be upgraded to their latest 4.3 release to work properly with SLP 4.3.</p>"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Visit the <a href=\"http://www.storelocatorplus.com/support/documentation/store-locator-plus/release-notes/\">Store Locator Plus Release Notes page</a> for the full change log."
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Enhancement: AJAX handler now processes wp_die() instead of die() on termination to better follow WordPress best practices."
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Change: Manage Locations only has a single view, the expanded view mode."
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Change: No longer checks for , and deactivates, Super Extendo add-on pack.  If you are using that add-on pack you should not be.  Bad things happen."
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Fix: Apostrophe in manage locations search."
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Fix: slplus shortcode theme attributes changes CSS style for the locator page.  Does not change page layout for advanced layouts."
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Note: Some add-on packs will need to be upgraded to their latest 4.3 release to work properly with SLP 4.3."
+msgstr ""
+
+#. Found in faq header.
+msgid "What is included in the plugin?"
+msgstr ""
+
+#. Found in faq header.
+msgid "How do I report a bug?"
+msgstr ""
+
+#. Found in faq header.
+msgid "What are the add-ons?"
+msgstr ""
+
+#. Found in faq header.
+msgid "What are the terms of the license?"
+msgstr ""
+
+#. Found in faq header.
+msgid "How can I translate the plugin into my language?"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid ""
+"The plugin includes all the functions and features necessary to add multiple locations to a store finder tool on your website.\n"
+"List 1 location or 1,000, customize the search interface and results form, and more.\n"
+"All basic functionality needed for a fully functional plugin is included.\n"
+"Basic upgrades are free and available directly from the WordPress plugin repository."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid ""
+"Post in the <a href=\"http://www.storelocatorplus.com/forums/\">support forum</a>.\n"
+"You can also <a href=\"http://www.storelocatorplus.com/product/product-support\">contact me</a> to request premium support if you need immediate assistance."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid ""
+"In response to feature requests from customers, I created a series of add-on packages for Store Locator Plus.\n"
+"These features extend the functionality of the plugin beyond the basic service and features and can be purchased ala-carte.\n"
+"This gives those customers who want more out of the plugin the extra features they desire while keeping the main plugin as\n"
+"efficient as possible for everyone else.   It also provides a great way to support future development while getting a\n"
+"\"little something extra\" when contributing to the development of the product."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid ""
+"All plugins are true add-on packs.  They are non-destructive OPTIONAL additions to the base plugin.\n"
+"They do not require the base plugin to be uninstalled or re-installed.\n"
+"Installing an add-on pack will not change location data or modify base plugin settings."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid ""
+"The license is GPL.  You get the code, feel free to modify it as you\n"
+"wish. I prefer that customers pay because they like what I do and\n"
+"want to support the effort that brings useful software to market.  Learn more\n"
+"on the <a href=\"http://www.storelocatorplus.com/products/general-eula/\">License Terms page</a>."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Store Locator Plus is now part of the WordPress Translate system."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "You can translate this readme file and the text strings in the main Store Locator Plus plugin by selecting the Stable sub-projects at <a href=\"https://translate.wordpress.org/projects/wp-plugins/store-locator-le\">Translate.WordPress.Org</a>."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid ""
+"Once a language reaches 100% translated at the <a href=\"https://translate.wordpress.org/projects/wp-plugins/store-locator-le\">Translating WordPress</a> site, that specific language file can be removed from the distribution.\n"
+"This makes the distribution smaller and thus takes less space on every install.\n"
+"For sites that utilize one of the languages listed, the WordPress Core engine will fetch the Store Locator Plus language files from the <a href=\"https://translate.wordpress.org/projects/wp-plugins/store-locator-le\">Translating WordPress</a> site."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid ""
+"For the Store Locator Plus add-on packs, those language files are still distributed with each add-on pack.\n"
+"Help translate a premium add-on pack and send the .po and .mo files to support@storelocatorplus.com.\n"
+"For each complete translation file you send we will add a new premium add-on pack to your account.\n"
+"Upon request I will also put a link to your site in the \"special thanks\" section."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid ""
+"Store Locator Plus has built-in interfaces for WPML compatibility.\n"
+"We are continually working to improve our support for multi-lingual sites.\n"
+"If you have comments or suggestions about language support, please email us at support@storelocatorplus.com."
+msgstr ""

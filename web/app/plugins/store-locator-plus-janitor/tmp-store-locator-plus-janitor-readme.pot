@@ -1,0 +1,245 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Name.
+msgid "Store Locator Plus : Janitor"
+msgstr ""
+
+#. Short description.
+msgid "A free add-on to assist with extra maintenance during major upgrades or porting to new systems for the Store Locator Plus plugin."
+msgstr ""
+
+#. Found in description header.
+msgid "Options Clean Up"
+msgstr ""
+
+#. Found in description header.
+msgid "Description Decoding"
+msgstr ""
+
+#. Found in description header.
+msgid "Related Links"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p><a href=\"http://www.storelocatorplus.com/product/premier-subscription/\">Premier</a></p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p><a href=\"http://www.storelocatorplus.com/product/slp4-contact-extender/\">Contact Extender</a></p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "[Directory Builder] (http://www.storelocatorplus.com/product/directory-builder/)"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://www.storelocatorplus.com/product/slp4-enhanced-map/\">Enhanced Map</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://www.storelocatorplus.com/product/slp4-enhanced-results/\">Enhanced Results</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://www.storelocatorplus.com/product/slp4-enhanced-search/\">Enhanced Search</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://www.storelocatorplus.com/product/event-location-manager/\">Event Location Manager</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://www.storelocatorplus.com/product/multi-map/\">Multi Map</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://www.storelocatorplus.com/product/slp4-pro/\">Pro Pack</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://www.storelocatorplus.com/product/slp4-social-media-extender/\">Social Media Extender</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://www.storelocatorplus.com/product/slp4-tagalong/\">Tagalong</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://www.storelocatorplus.com/product/slp4-user-managed-locations/\">User Managed Locations</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://www.storelocatorplus.com/product/slp4-widgets/\">Widget Pack</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://www.storelocatorplus.com/\">Store Locator Plus</a>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<a href=\"http://profiles.wordpress.org/charlestonsw/\">Other CSA Plugins</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid ""
+"A free add-on pack for the <a href=\"http://www.storelocatorplus.com/\">Store Locator Plus</a> location mapping system plugin.\n"
+"This add-on assists in cleaning up the Store Locator Plus settings including clearing out all pre-existing settings that may \n"
+"interfere with upgrading or installing on a new server after restoring a WordPress backup.   Allows Store Locator Plus add-ons \n"
+"to behave as if the plugin activation is happening on a new install."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Delete all <a href=\"http://www.storelocatorplus.com/\">Store Locator Plus</a> settings from the WordPress options table while retaining location data."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Current add-on packs are also supported:"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<a href=\"http://www.storelocatorplus.com/product/premier-subscription/\">Premier</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<a href=\"http://www.storelocatorplus.com/product/slp4-contact-extender/\">Contact Extender</a>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid ""
+"Prior versions of Store Locator Plus may have encoded HTML while storing the data in the location descriptions.\n"
+"A one-time-use tool will repair the location descriptions, converting the HTML encoded data to standard HTML\n"
+"notation.   If you are seeing text such as &lt;br/&gt; instead of &lt;br/&gt; in your description data, you need this tool."
+msgstr ""
+
+#. Found in installation header.
+msgid "Requirements"
+msgstr ""
+
+#. Found in installation header.
+msgid "Install After SLP"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Store Locator Plus: 4.3.13"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Wordpress: 3.8"
+msgstr ""
+
+#. Found in installation list item.
+msgid "PHP: 5.2"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Go fetch and install Store Locator Plus version 4.0 or higher."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Purchase this plugin from CSA to get the latest .zip file."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Go to plugins/add new."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Select upload."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Upload the zip file."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change: More efficient code-loading sequence with Store Locator Plus."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Verified to work with WP 4.3.1."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update to allow Janitor to run regardless of location of SLP install directory."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change: Requires SLP 4.3.08"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Better handling for PHP execution time limits."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Added <a href=\"http://www.storelocatorplus.com/product/premier-subscription/\">Premier plugin</a> settings."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Add hooks and filters to allow add-on packs to mark some settings as important so they can be saved/restored during reset settings."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change: requires SLP 4.3.00"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change: Remove some legacy SLP settings."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Tested with WordPress 4.3.00"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Automatically lists any SLP 4.2 plugins that are currently active with the settings management interface."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Added MultiMap settings to the permanent settings list."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Change: Requires SLP 4.2.63."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: Updated to use lighter memory footprint via SLP 4.2 addon framework."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: delete option on multisite."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Update to work with SLP 4.2.59"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Mark some upcoming defunct ER settings."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added <a href=\"http://www.storelocatorplus.com/product/slp4-social-media-extender/\">Social Media Extender</a> settings."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Mark Defunct settings in <a href=\"http://www.storelocatorplus.com/product/slp4-enhanced-results/\">SLPER</a>."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "<a href=\"http://www.storelocatorplus.com/product/store-locator-plus/\">SLP 4.2.48</a> compatible with delete icon update."
+msgstr ""
+
+#. Found in faq header.
+msgid "What are the terms of the license?"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid ""
+"The license is GPL.  You get the code, feel free to modify it as you\n"
+"wish.  I prefer customers pay me because they like what I do and\n"
+"want to support my efforts to bring useful software to market.  Learn more\n"
+"on the <a href=\"http://www.storelocatorplus.com/products/general-eula/\">SLP License Terms</a>."
+msgstr ""

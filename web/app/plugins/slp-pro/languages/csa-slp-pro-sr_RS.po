@@ -1,0 +1,715 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Store Locator Plus : Pro Pack v4.1.00\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-07-23 09:37+0100\n"
+"Last-Translator: Borisa Djuraskovic <borisad@webhostinghub.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"Language: de_DE\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ csa-slp-pro
+#: include/class.csvexport.locations.php:69
+msgid "Bulk Export"
+msgstr "Grupni izvoz"
+
+# @ csa-slp-pro
+#: include/class.csvexport.locations.php:73
+msgid "Export the location data to a CSV file."
+msgstr "Izvezi podatke o lokaciji u CSV datoteku"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:104
+msgid "CSV Records has too many fields."
+msgstr "CSV zapisi imaju previše polja"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:105
+#, php-format
+msgid "Got %d expected less than %d."
+msgstr "Ima %d  očekivanih manje nego %d "
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:118 slp-pro.php:998
+msgid "Import"
+msgstr "Uvoz"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:119
+msgid "Bulk Upload"
+msgstr "Grupno otpremanje"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:141
+msgid "Upload Locations"
+msgstr "Otpremi lokacije"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:154
+#, php-format
+msgid "See the %s for more details on the import format."
+msgstr "Vidite %s za detalje o formatu uvoza"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:156
+msgid "online documentation"
+msgstr "online dokumentacija"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:171
+msgid "Skip First Line"
+msgstr "Preskoči prvi red"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:172
+msgid "Skip the first line of the import file."
+msgstr "Preskoči prvi red uvezene datoteke"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:184
+msgid "First Line Has Field Name"
+msgstr "Prvi red sadži naziv polja"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:187
+msgid "Check this if the first line contains the field names."
+msgstr "Štiklirajte ovo ako prvi red sadrži nazive polja."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:188
+#, php-format
+msgid "Text must match the <a href=\"%s\">approved field name list</a>."
+msgstr ""
+"Tekst mora da se podudara sa <a href=\"%s\">odobrenom listom naziva polja</"
+"a>."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:201
+msgid "Skip Geocoding"
+msgstr "Preskoči geokodiranje"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:203
+msgid ""
+"Do not check with the Geocoding service to get latitude/longitude.  "
+"Locations without a latitude/longitude will NOT appear on map base searches."
+msgstr ""
+"Nemojte štiklirati službu geokodiranja da biste dobili širinu/dužinu. "
+"Lokacije bez širine/dužine NEĆE se pojavljivati na osnovnim pretragama mape. "
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:216
+msgid "Duplicates Handling"
+msgstr "Upravljanje duplikatima"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:218
+msgid "How should duplicates be handled? "
+msgstr "Kako treba upravljati duplikatima?"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:219
+msgid ""
+"Duplicates are records that match on name and complete address with country. "
+msgstr ""
+"Duplikati su zapisi čija se imena podudaraju po imenu u po kompletnoj adresi "
+"u jednoj državi."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:220
+msgid "Add (default) will add new records when duplicates are encountered. "
+msgstr ""
+"Opcija “Dodaj” (podrazumevano) dodaće nove zapise kad se otkriju duplikati."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:221
+msgid "Skip will not process duplicate records. "
+msgstr "Opcija “Preskoči” sprečiće obradu dupliciranja zapisa. "
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:222
+msgid "Update will update duplicate records. "
+msgstr "Opcija “Ažuriraj” će ažurirati duplikate zapisa."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:223
+msgid ""
+"To update name and address fields the CSV must have the ID column with the "
+"ID of the existing location."
+msgstr ""
+"Da biste ažurirali polja sa nazivima i adresama, CSV mora imati ID kolone sa "
+"ID-jem postojeće lokacije."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:228
+msgid "Add"
+msgstr "Dodaj"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:232
+msgid "Skip"
+msgstr "Preskoči"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:236
+msgid "Update"
+msgstr "Ažuriraj"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:265
+msgid " new locations added."
+msgstr "nove lokacije su dodate"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:266
+msgid " pre-existing locations skipped."
+msgstr "prethodne lokacije preskočene"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:267
+msgid " locations did not need to be updated."
+msgstr "lokacijama nije bilo potrebno ažuriranje."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:268
+msgid " locations were skipped due to duplicate name and address information."
+msgstr "lokacije su preskočene zbog dupliranja podataka o nazivu i adresi."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:269
+msgid " locations were updated."
+msgstr "lokacije su ažurirane"
+
+# @ csa-slp-pro
+#: reporting.php:88
+msgid " - Reporting"
+msgstr "- Izveštavanje"
+
+# @ csa-slp-pro
+#: reporting.php:92 reporting.php:189
+msgid "Run Report"
+msgstr "Pokreni izveštaj"
+
+# @ csa-slp-pro
+#: reporting.php:116 reporting.php:129 reporting.php:150 reporting.php:167
+#: reporting.php:182
+msgid "Report Parameters"
+msgstr "Parametri izveštaja"
+
+# @ csa-slp-pro
+#: reporting.php:117
+msgid "Use these settings to select which data to report on."
+msgstr "Koristite ove postavke da biste odabrali podatke uključene u izveštaj."
+
+# @ csa-slp-pro
+#: reporting.php:130
+msgid "Start Date: "
+msgstr "Početni datum:"
+
+# @ csa-slp-pro
+#: reporting.php:151
+msgid "End Date: "
+msgstr "Završni datum:"
+
+# @ csa-slp-pro
+#: reporting.php:168
+msgid "How many detail records? "
+msgstr "Koliko ima zapisa o detaljima?"
+
+# @ csa-slp-pro
+#: reporting.php:174
+msgid ""
+"Determines how many detail records are reported. More records take longer to "
+"report. (Default: 10, recommended maximum: 500)"
+msgstr ""
+"Određuje koliko se detalja zapisa nalazi u izveštaju. Za više zapisa "
+"potrebno je više vremena (Podrazumevana vrednost: 10; preporučena vrednost - "
+"maksimalno 500)"
+
+# @ csa-slp-pro
+#: reporting.php:263
+#, php-format
+msgid "Total searches: <strong>%s</strong>"
+msgstr "Ukupna pretraga: <strong>%s</strong>"
+
+# @ csa-slp-pro
+#: reporting.php:264
+#, php-format
+msgid "Total results: <strong>%s</strong>"
+msgstr "Ukupni rezultati: <strong>%s</strong>"
+
+# @ csa-slp-pro
+#: reporting.php:300
+#, php-format
+msgid "Top %s Addresses Searched"
+msgstr "Najviše %s pretraženih adresa"
+
+# @ csa-slp-pro
+#: reporting.php:302
+msgid "Address"
+msgstr "Adresa"
+
+# @ csa-slp-pro
+#: reporting.php:303 reporting.php:354
+msgid "Total"
+msgstr "Ukupno"
+
+# @ csa-slp-pro
+#: reporting.php:312
+msgid "topsearches"
+msgstr "najveća pretraga"
+
+# @ csa-slp-pro
+#: reporting.php:347
+#, php-format
+msgid "Top %s Results Returned"
+msgstr "Najviše %s  vraćenih rezultata"
+
+# @ csa-slp-pro
+#: reporting.php:349
+msgid "Store"
+msgstr "Prodavnica"
+
+# @ csa-slp-pro
+#: reporting.php:350
+msgid "City"
+msgstr "Grad"
+
+# @ csa-slp-pro
+#: reporting.php:351
+msgid "State"
+msgstr "Država"
+
+# @ csa-slp-pro
+#: reporting.php:352
+msgid "Zip"
+msgstr "Poštanski kod"
+
+# @ csa-slp-pro
+#: reporting.php:353 slp-pro.php:934 slp-pro.php:1017
+msgid "Tags"
+msgstr "Oznake"
+
+# @ csa-slp-pro
+#: reporting.php:367
+msgid "topresults"
+msgstr "najvažniji rezultati"
+
+# @ csa-slp-pro
+#: reporting.php:373
+msgid "Export To CSV"
+msgstr "Izvezi u CSV"
+
+# @ csa-slp-pro
+#: reporting.php:375
+msgid "Export all records"
+msgstr "Izvezi sve zapise"
+
+# @ csa-slp-pro
+#: reporting.php:379
+msgid "Top Searches"
+msgstr "Vrh pretrage"
+
+# @ csa-slp-pro
+#: reporting.php:380
+msgid "Top Results"
+msgstr "Vrh rezultata"
+
+# @ csa-slp-pro
+#: reporting.php:392
+msgid "Search Report"
+msgstr "Izveštaj o pretrazi"
+
+# @ csa-slp-pro
+#: reporting.php:433
+msgid "No data recorded yet. "
+msgstr "Još nema zabeleženih podataka."
+
+# @ csa-slp-pro
+#: reporting.php:434
+msgid ""
+"Chart will be available after a Store Locator Plus search has been performed."
+msgstr "Karta će biti raspoloživa kad Store Locator Plus završi pretragu."
+
+# @ csa-slp-pro
+#. translators: plugin header field 'Name'
+#: slp-pro.php:0
+msgid "Store Locator Plus : Pro Pack"
+msgstr "Store Locator Plus : Pro Pack"
+
+# @ csa-slp-pro
+#. translators: plugin header field 'PluginURI'
+#: slp-pro.php:0
+msgid "http://www.charlestonsw.com/product/store-locator-plus/"
+msgstr "http://www.charlestonsw.com/product/store-locator-plus/"
+
+# @ csa-slp-pro
+#. translators: plugin header field 'Description'
+#: slp-pro.php:0
+msgid ""
+"A premium add-on pack for Store Locator Plus that provides more admin power "
+"tools for wrangling locations."
+msgstr ""
+"Premium paket dodataka za Store Locator Plus koji pruža više moćnih, "
+"administratorskih alata za pretragu lokacija"
+
+# @ csa-slp-pro
+#. translators: plugin header field 'Author'
+#: slp-pro.php:0
+msgid "Charleston Software Associates"
+msgstr "Charleston Software Associates"
+
+# @ csa-slp-pro
+#. translators: plugin header field 'AuthorURI'
+#: slp-pro.php:0
+msgid "http://charlestonsw.com/"
+msgstr "http://charlestonsw.com/"
+
+# @ csa-slp-pro
+#: slp-pro.php:245
+msgid "Pro Pack"
+msgstr "Pro Paket"
+
+# @ csa-slp-pro
+#: slp-pro.php:391
+msgid "Show Tags In Output"
+msgstr "Prikaži oznake u izlazu"
+
+# @ csa-slp-pro
+#: slp-pro.php:392
+msgid ""
+"How should tags be output in the results below the map and the info bubble?"
+msgstr ""
+"Kako treba da izgledaju oznake u sledećim rezultatima ispod mape, a kako "
+"balončić sa podacima? "
+
+# @ csa-slp-pro
+#: slp-pro.php:402
+msgid "Use Email Form"
+msgstr "Koristite obrazac mail-a"
+
+# @ csa-slp-pro
+#: slp-pro.php:403
+msgid "Use email form instead of mailto: link when showing email addresses."
+msgstr ""
+"Koristite obrazac mail-a umesto obrazac mailto: stavite link kad prikazujete "
+"mail adrese. "
+
+# @ csa-slp-pro
+#: slp-pro.php:625
+msgid "Reports"
+msgstr "Izveštaji"
+
+# @ csa-slp-pro
+#: slp-pro.php:762
+msgid "Tags (separate with commas)"
+msgstr "Oznake (odvojene zarezima)"
+
+# @ csa-slp-pro
+#: slp-pro.php:836
+msgid "Search Form Tag Input"
+msgstr "Pretraži ulaz oznaka formulara"
+
+# @ csa-slp-pro
+#: slp-pro.php:837
+msgid ""
+"Select the type of tag input that you would like to see on the search form."
+msgstr ""
+"Odaberite vrstu ulaza oznake koju biste hteli da vidite u obrascu pretrage"
+
+# @ csa-slp-pro
+#: slp-pro.php:843
+msgid "None"
+msgstr "Nijedna"
+
+# @ csa-slp-pro
+#: slp-pro.php:847
+msgid "Hidden"
+msgstr "Skrivena"
+
+# @ csa-slp-pro
+#: slp-pro.php:851
+msgid "Drop Down"
+msgstr "U opadajućem meniju"
+
+# @ csa-slp-pro
+#: slp-pro.php:855
+msgid "Radio Button"
+msgstr "Radio taster"
+
+# @ csa-slp-pro
+#: slp-pro.php:859
+msgid "Text Input"
+msgstr "Tekstualni ulaz"
+
+# @ csa-slp-pro
+#: slp-pro.php:867
+msgid "Tags Label"
+msgstr "Oznake"
+
+# @ csa-slp-pro
+#: slp-pro.php:868
+msgid "Search form label to prefix the tag selector."
+msgstr "Pretražite formular oznaka da biste odabrali prefiks oznake"
+
+# @ csa-slp-pro
+#: slp-pro.php:872
+msgid "Default Tag Selections"
+msgstr "Odabir podrazumevanih oznaka"
+
+# @ csa-slp-pro
+#: slp-pro.php:873
+msgid ""
+"For Hidden or Text tag input enter a default value to be used in the field, "
+"if any. "
+msgstr ""
+"Za skrivenu ili uvezenu tekstualnu oznaku unesite podrazumevanu vrednost "
+"koja će se koristiti u polju, ako je ima."
+
+# @ csa-slp-pro
+#: slp-pro.php:874
+msgid ""
+"For Drop Down tag input enter a comma (,) separated list of tags to show in "
+"the search pulldown, mark the default selection with parenthesis (). "
+msgstr ""
+"Za uvoz oznaka u opadajućim oznakama, unesite listu oznaka (,) odvojenih "
+"zarezima koje će se prikazati u padajućoj pretrazi. Obeležite podrazumevani "
+"izbor zagradama ()."
+
+# @ csa-slp-pro
+#: slp-pro.php:875
+msgid ""
+"This is a default setting that can be overriden on each page within the "
+"shortcode."
+msgstr ""
+"Ova standardna postavka može se ponišiti na svakoj stranici u shortcode-u."
+
+# @ csa-slp-pro
+#: slp-pro.php:879
+msgid "Add \"any\" To Drop Down"
+msgstr "Dodajte \"bilo koji\" padajućoj listi"
+
+# @ csa-slp-pro
+#: slp-pro.php:880
+msgid ""
+"Add an \"any\" selection on the tag drop down list thus allowing the user to "
+"show all locations in the area, not just those matching a selected tag."
+msgstr ""
+"Dodajte \"bilo koji\"padajućoj listi omogućavajući tako korisniku da prikaže "
+"sve lokacije određene oblasti, a ne samo one koje se poklapaju sa odabranom "
+"oznakom."
+
+# @ csa-slp-pro
+#: slp-pro.php:884
+msgid "\"Any\" Tag Text"
+msgstr "\"Bilo koji\" tekstualna oznaka "
+
+# @ csa-slp-pro
+#: slp-pro.php:885
+msgid "What should the \"any\" tag say? "
+msgstr "Šta treba da poruči oznaka \"Bilo koji\"?"
+
+# @ csa-slp-pro
+#: slp-pro.php:886
+msgid "The first entry on the search by tag pulldown."
+msgstr "Prvi unos pretrage prema padajućoj listi oznaka."
+
+# @ csa-slp-pro
+#: slp-pro.php:890
+msgid "Tag Autosubmit"
+msgstr "Automatski podnesi oznaku"
+
+# @ csa-slp-pro
+#: slp-pro.php:891
+msgid ""
+"Force the form to auto-submit when the tag is selected with a radio button."
+msgstr ""
+"Neka se formular automatski podnese kad odaberete oznaku na radio tasteru."
+
+# @ csa-slp-pro
+#: slp-pro.php:950
+msgid "Geocode"
+msgstr "Geocode"
+
+# @ csa-slp-pro
+#: slp-pro.php:954
+msgid "Tag"
+msgstr "Oznaka"
+
+# @ csa-slp-pro
+#: slp-pro.php:958
+msgid "Enter your comma-separated tags:"
+msgstr "Unesite svoje oznake odvojene zarezima"
+
+# @ csa-slp-pro
+#: slp-pro.php:963
+msgid "Remove Tags"
+msgstr "Ukloni oznake"
+
+# @ csa-slp-pro
+#: slp-pro.php:981
+msgid "Show Uncoded"
+msgstr "Prikaži nekodirane"
+
+# @ csa-slp-pro
+#: slp-pro.php:999 slp-pro.php:1091
+msgid "Export"
+msgstr "Izvezi"
+
+# @ csa-slp-pro
+#: slp-pro.php:1060 slp-pro.php:1069
+msgid "Locations"
+msgstr "Lokacije"
+
+# @ csa-slp-pro
+#: slp-pro.php:1071
+msgid "Highlight Uncoded Locations"
+msgstr "Obeleži nekodirane lokacije"
+
+# @ csa-slp-pro
+#: slp-pro.php:1076
+msgid "Highlight the uncoded locations in the Manage Locations panel."
+msgstr "Obeleži nekodirane lokacije na panelu “Upravljaj lokacijama”"
+
+# @ csa-slp-pro
+#: slp-pro.php:1110 slp-pro.php:1118
+msgid "JavaScript"
+msgstr "JavaScript"
+
+# @ csa-slp-pro
+#: slp-pro.php:1120
+msgid "Use location sensor"
+msgstr "Koristi senzor za lokacije"
+
+# @ csa-slp-pro
+#: slp-pro.php:1124
+msgid ""
+"This turns on the location sensor (GPS) to set the default search address. "
+msgstr ""
+"Ovako se uključuje senzor lokacija (GPS) za određivanje podrazumevanih "
+"adresa pretrage"
+
+# @ csa-slp-pro
+#: slp-pro.php:1125
+msgid ""
+"This can be slow to load and customers are prompted whether or not to allow "
+"location sensing."
+msgstr ""
+"Može biti sporo za učitavanje i klijenti biraju da li će dozvoliti ili "
+"zabraniti detekciju lokacije. "
+
+# @ csa-slp-pro
+#: slp-pro.php:1151
+msgid "Locator Layout"
+msgstr "Izgled lokatora"
+
+# @ csa-slp-pro
+#: slp-pro.php:1152
+msgid ""
+"Enter your custom page layout for the Store Locator Plus page. Set it to "
+"blank to reset to the default layout."
+msgstr ""
+"Unesite željeni izgled prilagođene stranice za Locator Plus. Podesite na "
+"prazno polje ako želite da vratite podrazumevani izgled."
+
+# @ csa-slp-pro
+#: slp-pro.php:1171
+msgid "Any"
+msgstr "Bilo koji"
+
+# @ csa-slp-pro
+#: slp-pro.php:1445 slp-pro.php:1451
+msgid "Cheatin' huh!"
+msgstr "Cheatin' huh!"
+
+# @ csa-slp-pro
+#: slp-pro.php:1738
+msgid "Look and Feel"
+msgstr "Vidi i oseti"
+
+# @ csa-slp-pro
+#: slp-pro.php:1743
+msgid "CSS Manipulation"
+msgstr "CSS upravljanje"
+
+# @ csa-slp-pro
+#: slp-pro.php:1744
+msgid "Custom CSS"
+msgstr "Custom CSS"
+
+# @ csa-slp-pro
+#: slp-pro.php:1748
+msgid ""
+"Enter your custom CSS, preferably for SLPLUS styling only but it can be used "
+"for any page element as this will go in your page header."
+msgstr ""
+"Unesite svoj prilagođeni CSS, da biste promenili kako izgleda SLPLUS, ali "
+"možete ga koristiti za bilo koji element stranice jer će se pojavljivati u "
+"zaglavlju vaše stranice."
+
+# @ csa-slp-pro
+#: slp-pro.php:1755
+msgid "Reporting"
+msgstr "Izveštavanje"
+
+# @ csa-slp-pro
+#: slp-pro.php:1759
+msgid "Report Settings"
+msgstr "Postavke izveštaja"
+
+# @ csa-slp-pro
+#: slp-pro.php:1760
+msgid "Enable Reporting"
+msgstr "Aktiviraj izveštavanje"
+
+# @ csa-slp-pro
+#: slp-pro.php:1764
+msgid ""
+"Enables tracking of searches and returned results.  The added overhead can "
+"increase how long it takes to return location search results."
+msgstr ""
+"Aktivira praćenje pretrage i rezultata pretrage. Preveliki broj može "
+"povećati vremenski interval dobijanja rezultata pretrage."
+
+# @ csa-slp-pro
+#: slp-pro.php:1775
+msgid "Tools"
+msgstr "Alati"
+
+# @ csa-slp-pro
+#: slp-pro.php:1782
+msgid "Where is..."
+msgstr "Gde je..."
+
+# @ csa-slp-pro
+#: slp-pro.php:1787
+msgid "locate"
+msgstr "lociraj"
+
+# @ csa-slp-pro
+#: slp-pro.php:1792
+msgid "Enter an address and click locate to find the lat/long."
+msgstr ""
+"Unesite adresu i kliknite na “lociraj” da biste odredili širinu/dužinu."
+
+# @ csa-slp-pro
+#: slp-pro.php:1797
+msgid "Helpful Tools"
+msgstr "Korisni alati"
+
+# @ csa-slp-pro
+#. translators: plugin header field 'Version'
+#: slp-pro.php:0
+msgid "4.1.00"
+msgstr "4.1.00"

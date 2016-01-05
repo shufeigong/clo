@@ -1,0 +1,286 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Store Locator Plus : Enhanced Map v4.2.01\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-11-18 09:47+0100\n"
+"Last-Translator: Piani Sweden AB <info@piani.se>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.6.10\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"Language: sv_SE\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ csa-slp-em
+#: include/class.admin.php:66 include/class.admin.php:106
+#: include/class.admin.php:197 slp-enhanced-map.php:79
+msgid "Enhanced Map"
+msgstr ""
+
+# @ csa-slp-em
+#: include/class.admin.php:74
+msgid "Map Marker"
+msgstr "Kartmarkör"
+
+# @ csa-slp-em
+#: include/class.admin.php:109
+msgid "Hide Immediate Home Marker"
+msgstr "Dölj hem-markören vid start"
+
+# @ csa-slp-em
+#: include/class.admin.php:110
+msgid ""
+"Do not include the home map marker for the initial map loading with "
+"immediately show locations enabled."
+msgstr ""
+"Visa inte hem-markören när kartan laddas första gången och \"Visa platser "
+"vid start\" är aktiverat."
+
+# @ csa-slp-em
+#: include/class.admin.php:117
+msgid "Hide The Map"
+msgstr "Göm kartan"
+
+# @ csa-slp-em
+#: include/class.admin.php:118
+msgid "Do not show the map on the page."
+msgstr "Visa inte kartan på sidan."
+
+# @ csa-slp-em
+#: include/class.admin.php:122
+msgid "Add Map Toggle On UI"
+msgstr "Lägg till \"Kartvisning på\" UI"
+
+# @ csa-slp-em
+#: include/class.admin.php:123
+msgid "Add a map on/off toggle to the user interface."
+msgstr "Lägg till funktion för \"Kartvisning på/av\"."
+
+# @ csa-slp-em
+#: include/class.admin.php:127
+msgid "Toggle Label"
+msgstr "Växla etikett"
+
+# @ csa-slp-em
+#: include/class.admin.php:128
+msgid "The text that appears before the display map on/off toggle."
+msgstr "Texten som visas innan funktionen för \"Kartvisning på/av\"."
+
+# @ csa-slp-em
+#: include/class.admin.php:130 include/class.userinterface.php:66
+msgid "Map"
+msgstr "Karta"
+
+# @ csa-slp-em
+#: include/class.admin.php:137
+msgid "Set what to display when the page loads, the options are:"
+msgstr "Ställ in vad som ska visas när sidan laddas, alternativen är"
+
+# @ csa-slp-em
+#: include/class.admin.php:138
+msgid "Show Map - Display a map."
+msgstr "Visa karta - Visa en karta."
+
+# @ csa-slp-em
+#: include/class.admin.php:139
+msgid "Hide Until Search - Display nothing."
+msgstr "Dölj till efter sökning - Visa ingenting."
+
+# @ csa-slp-em
+#: include/class.admin.php:140
+msgid "Image Until Search - Display the image set by Starting Image."
+msgstr "Visa bild innan söking - Visa bilden \"Startbild\"."
+
+# @ csa-slp-em
+#: include/class.admin.php:145
+msgid "Show Map"
+msgstr "Visa karta"
+
+# @ csa-slp-em
+#: include/class.admin.php:146
+msgid "Hide Until Search"
+msgstr "Dölj till efter sökning"
+
+# @ csa-slp-em
+#: include/class.admin.php:147
+msgid "Image Until Search"
+msgstr "Visa bild fram till sökning"
+
+# @ csa-slp-em
+#: include/class.admin.php:151
+msgid "Starting Image"
+msgstr "Startbild"
+
+# @ csa-slp-em
+#: include/class.admin.php:152
+msgid ""
+"If set, this image will be displayed until a search is performed.  Enter the "
+"full URL for the image."
+msgstr ""
+"Denna bild kommer att visat fram till en sökning görs. Ange fullständiga URL "
+"till bilden."
+
+# @ csa-slp-em
+#: include/class.admin.php:157
+msgid "Map Layout"
+msgstr "Kartlayout"
+
+# @ csa-slp-em
+#: include/class.admin.php:158
+msgid "Enter your custom map area layout for the Store Locator Plus page. "
+msgstr "Välj din egen kartalayout för Store Locator Plus sidan. "
+
+# @ csa-slp-em
+#: include/class.admin.php:159
+msgid ""
+"Must have the [slp_mapcontent] shortcode to where you want Google to put the "
+"map. "
+msgstr ""
+"Måste ha [slp_mapcontent] kortkod där du vill att Google ska visa på kartan. "
+
+# @ csa-slp-em
+#: include/class.admin.php:160
+msgid "[slp_maptagline] puts the Store Locator Plus tagline in place. "
+msgstr "[slp_maptagline] sätter Store Locator Plus kartkant på plats. "
+
+# @ csa-slp-em
+#: include/class.admin.php:161 include/class.admin.php:180
+msgid "Set it to blank to reset to the default layout."
+msgstr "Välj blankt för att återställa till standardlayout."
+
+# @ csa-slp-em
+#: include/class.admin.php:169
+msgid "Hide Info Bubble"
+msgstr "Använd inte bubblor"
+
+# @ csa-slp-em
+#: include/class.admin.php:170
+msgid "Disable the on-map info bubble."
+msgstr "Stäng av platsernas informations-bubblor på kartan."
+
+# @ csa-slp-em
+#: include/class.admin.php:178
+msgid "Bubble Layout"
+msgstr "Bubbellayout"
+
+# @ csa-slp-em
+#: include/class.admin.php:179
+msgid "Enter your custom info bubble layout. "
+msgstr "Skriv in den egen bubbellayout. "
+
+# @ csa-slp-em
+#: include/class.admin.php:201
+msgid "Do Not Auto-zoom"
+msgstr "Autozooma inte"
+
+# @ csa-slp-em
+#: include/class.admin.php:202
+msgid ""
+"Use only the \"zoom level\" setting when rendering the initial map for "
+"immediately show locations. "
+msgstr ""
+"Använd endast  \"zoomnivå\" inställningen när kartan genereras för att visa "
+"platser direkt. "
+
+# @ csa-slp-em
+#: include/class.admin.php:203
+msgid "Do not automatically zoom the map to show all iniital locations."
+msgstr "Zooma inte kartan automatiskt för att visa alla platser."
+
+# @ csa-slp-em
+#: include/class.admin.php:211
+msgid "Show Map Inset Box"
+msgstr "Visa Kart Insetrutan"
+
+# @ csa-slp-em
+#: include/class.admin.php:212
+msgid "When checked the map inset is shown."
+msgstr "När denna är vald visas Kart Inset."
+
+# @ csa-slp-em
+#: include/class.admin.php:217
+msgid "Disable Scroll Wheel"
+msgstr "Stäng av scrollfunktionen"
+
+# @ csa-slp-em
+#: include/class.admin.php:218
+msgid "Disable the scrollwheel zoom on the maps interface."
+msgstr "Stäng av scrollfunktionen för zoom på kartan"
+
+# @ csa-slp-em
+#: include/class.admin.php:222
+msgid "Hide map 3d control"
+msgstr "Dölj 3D kartkontrollen"
+
+# @ csa-slp-em
+#: include/class.admin.php:223
+msgid "Turn the large map 3D control off."
+msgstr "Stäng av den stora 3D kartfunktionen."
+
+# @ csa-slp-em
+#: include/class.admin.php:227
+msgid "Hide map scale"
+msgstr "Dölj kartskalning"
+
+# @ csa-slp-em
+#: include/class.admin.php:228
+msgid "Turn the map scale off."
+msgstr "Stäng av kartskalning."
+
+# @ csa-slp-em
+#: include/class.admin.php:232
+msgid "Hide map type"
+msgstr "Göm karttyp"
+
+# @ csa-slp-em
+#: include/class.admin.php:233
+msgid "Turn the map type selector off."
+msgstr "Stäng av valet av karttyp."
+
+# @ csa-slp-em
+#. translators: plugin header field 'Name'
+#: slp-enhanced-map.php:0
+msgid "Store Locator Plus : Enhanced Map"
+msgstr ""
+
+# @ csa-slp-em
+#. translators: plugin header field 'PluginURI'
+#: slp-enhanced-map.php:0
+msgid "http://www.storelocatorplus.com/product/slp4-enhanced-map/"
+msgstr ""
+
+# @ csa-slp-em
+#. translators: plugin header field 'Description'
+#: slp-enhanced-map.php:0
+msgid ""
+"A premium add-on pack for Store Locator Plus that adds enhanced map UI to "
+"the plugin."
+msgstr ""
+"Ett premie tilläggspaket för Store Locator Plus som lägger till förbättrade "
+"kartfunktioner i panelen."
+
+# @ csa-slp-em
+#. translators: plugin header field 'Author'
+#: slp-enhanced-map.php:0
+msgid "Charleston Software Associates"
+msgstr ""
+
+# @ csa-slp-em
+#. translators: plugin header field 'AuthorURI'
+#: slp-enhanced-map.php:0
+msgid "http://charlestonsw.com/"
+msgstr ""
+
+# @ csa-slp-em
+#. translators: plugin header field 'Version'
+#: slp-enhanced-map.php:0
+msgid "4.2.01"
+msgstr ""

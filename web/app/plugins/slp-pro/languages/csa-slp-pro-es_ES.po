@@ -1,0 +1,725 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Store Locator Plus : Pro Pack v4.1.00\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-07-31 10:34+0100\n"
+"Last-Translator: jelena kovacevic <jecajeca260@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"Language: de_DE\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ csa-slp-pro
+#: include/class.csvexport.locations.php:69
+msgid "Bulk Export"
+msgstr "Bulk Export (Exportación por Lote)"
+
+# @ csa-slp-pro
+#: include/class.csvexport.locations.php:73
+msgid "Export the location data to a CSV file."
+msgstr "Exportar los datos de localización a un archivo CSV."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:104
+msgid "CSV Records has too many fields."
+msgstr "Registros CSV tiene demasiados campos."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:105
+#, php-format
+msgid "Got %d expected less than %d."
+msgstr "Tiene %d se esperaba menos de %d."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:118 slp-pro.php:998
+msgid "Import"
+msgstr "Importar"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:119
+msgid "Bulk Upload"
+msgstr "Subir por Lotes"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:141
+msgid "Upload Locations"
+msgstr "Subir Ubicaciones"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:154
+#, php-format
+msgid "See the %s for more details on the import format."
+msgstr "Ver el % s para más detalles sobre el formato de importación."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:156
+msgid "online documentation"
+msgstr "Documentación en línea"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:171
+msgid "Skip First Line"
+msgstr "Saltar Primera Línea"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:172
+msgid "Skip the first line of the import file."
+msgstr "Saltar la primera línea del archivo de importación."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:184
+msgid "First Line Has Field Name"
+msgstr "La primera línea tiene Nombre de campo"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:187
+msgid "Check this if the first line contains the field names."
+msgstr "Marque esto si la primera línea contiene los nombres de campo."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:188
+#, php-format
+msgid "Text must match the <a href=\"%s\">approved field name list</a>."
+msgstr ""
+"El texto debe coincidir con el <a href=\"%s\"> Lista aprobada de nombres de "
+"campo</a>."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:201
+msgid "Skip Geocoding"
+msgstr "Saltar geocodificación"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:203
+msgid ""
+"Do not check with the Geocoding service to get latitude/longitude.  "
+"Locations without a latitude/longitude will NOT appear on map base searches."
+msgstr ""
+"No marque con el servicio de geocodificación para obtener la latitud / "
+"longitud. Zonas sin una latitud / longitud no aparecerán en búsquedas base "
+"en mapas."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:216
+msgid "Duplicates Handling"
+msgstr "Manejo de Duplicados"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:218
+msgid "How should duplicates be handled? "
+msgstr "¿Cómo deben ser manejados los duplicados?"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:219
+msgid ""
+"Duplicates are records that match on name and complete address with country. "
+msgstr ""
+"Duplicados son registros que coinciden con el nombre y la dirección completa "
+"con el país."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:220
+msgid "Add (default) will add new records when duplicates are encountered. "
+msgstr ""
+"Añadir (por defecto) añadirá nuevos registros cuando se encuentran "
+"duplicados."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:221
+msgid "Skip will not process duplicate records. "
+msgstr "Saltar no procesará registros duplicados."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:222
+msgid "Update will update duplicate records. "
+msgstr "Update actualizará los registros duplicados."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:223
+msgid ""
+"To update name and address fields the CSV must have the ID column with the "
+"ID of the existing location."
+msgstr ""
+"Para actualizar los campos del nombre y dirección la CSV debe tener la "
+"columna de la identificación con el ID de la ubicación existente."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:228
+msgid "Add"
+msgstr "Añadir"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:232
+msgid "Skip"
+msgstr "Saltar"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:236
+msgid "Update"
+msgstr "Actualizar"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:265
+msgid " new locations added."
+msgstr "Nuevas ubicaciones agregadas."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:266
+msgid " pre-existing locations skipped."
+msgstr "Ubicaciones preexistentes omitidas."
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:267
+msgid " locations did not need to be updated."
+msgstr "Las ubicaciones no necesitaban actualizarse"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:268
+msgid " locations were skipped due to duplicate name and address information."
+msgstr ""
+"Las ubicaciones fueron omitidas debido a la duplicación de nombres y "
+"direcciones"
+
+# @ csa-slp-pro
+#: include/class.csvimport.locations.php:269
+msgid " locations were updated."
+msgstr "Las ubicaciones se han actualizado"
+
+# @ csa-slp-pro
+#: reporting.php:88
+msgid " - Reporting"
+msgstr "Informando"
+
+# @ csa-slp-pro
+#: reporting.php:92 reporting.php:189
+msgid "Run Report"
+msgstr "Ejecutar Informe"
+
+# @ csa-slp-pro
+#: reporting.php:116 reporting.php:129 reporting.php:150 reporting.php:167
+#: reporting.php:182
+msgid "Report Parameters"
+msgstr "Parámetros del informe"
+
+# @ csa-slp-pro
+#: reporting.php:117
+msgid "Use these settings to select which data to report on."
+msgstr "Use esta configuración para seleccionar los datos para informar"
+
+# @ csa-slp-pro
+#: reporting.php:130
+msgid "Start Date: "
+msgstr "Fecha de inicio:"
+
+# @ csa-slp-pro
+#: reporting.php:151
+msgid "End Date: "
+msgstr "Fecha de finalización:"
+
+# @ csa-slp-pro
+#: reporting.php:168
+msgid "How many detail records? "
+msgstr "¿Cuántos registros de detalle?"
+
+# @ csa-slp-pro
+#: reporting.php:174
+msgid ""
+"Determines how many detail records are reported. More records take longer to "
+"report. (Default: 10, recommended maximum: 500)"
+msgstr ""
+"Determina cuántos registros de detalles se reportan. Más registros tardan "
+"más para informar.(por defecto: 10, máximo recomendado: 500)"
+
+# @ csa-slp-pro
+#: reporting.php:263
+#, php-format
+msgid "Total searches: <strong>%s</strong>"
+msgstr "Total de búsquedas: <strong>%s </strong>"
+
+# @ csa-slp-pro
+#: reporting.php:264
+#, php-format
+msgid "Total results: <strong>%s</strong>"
+msgstr "Resultados totales: <strong>%s </strong>"
+
+# @ csa-slp-pro
+#: reporting.php:300
+#, php-format
+msgid "Top %s Addresses Searched"
+msgstr "Direcciones Top %s Buscadas"
+
+# @ csa-slp-pro
+#: reporting.php:302
+msgid "Address"
+msgstr "Dirección"
+
+# @ csa-slp-pro
+#: reporting.php:303 reporting.php:354
+msgid "Total"
+msgstr "Total"
+
+# @ csa-slp-pro
+#: reporting.php:312
+msgid "topsearches"
+msgstr "Topsearches"
+
+# @ csa-slp-pro
+#: reporting.php:347
+#, php-format
+msgid "Top %s Results Returned"
+msgstr "Resultados Top%s Obtenidos"
+
+# @ csa-slp-pro
+#: reporting.php:349
+msgid "Store"
+msgstr "Tienda"
+
+# @ csa-slp-pro
+#: reporting.php:350
+msgid "City"
+msgstr "Ciudad"
+
+# @ csa-slp-pro
+#: reporting.php:351
+msgid "State"
+msgstr "Estado"
+
+# @ csa-slp-pro
+#: reporting.php:352
+msgid "Zip"
+msgstr "C.P."
+
+# @ csa-slp-pro
+#: reporting.php:353 slp-pro.php:934 slp-pro.php:1017
+msgid "Tags"
+msgstr "Etiquetas"
+
+# @ csa-slp-pro
+#: reporting.php:367
+msgid "topresults"
+msgstr "Topresults"
+
+# @ csa-slp-pro
+#: reporting.php:373
+msgid "Export To CSV"
+msgstr "Exportar a CSV"
+
+# @ csa-slp-pro
+#: reporting.php:375
+msgid "Export all records"
+msgstr "Exportar todos los registros"
+
+# @ csa-slp-pro
+#: reporting.php:379
+msgid "Top Searches"
+msgstr "Búsquedas Top"
+
+# @ csa-slp-pro
+#: reporting.php:380
+msgid "Top Results"
+msgstr "Resultados Top"
+
+# @ csa-slp-pro
+#: reporting.php:392
+msgid "Search Report"
+msgstr "Buscar Informe"
+
+# @ csa-slp-pro
+#: reporting.php:433
+msgid "No data recorded yet. "
+msgstr "No hay datos registrados aún."
+
+# @ csa-slp-pro
+#: reporting.php:434
+msgid ""
+"Chart will be available after a Store Locator Plus search has been performed."
+msgstr ""
+"Gráfica estará disponible después de realizar una búsqueda de Puntos de "
+"venta Plus"
+
+# @ csa-slp-pro
+#. translators: plugin header field 'Name'
+#: slp-pro.php:0
+msgid "Store Locator Plus : Pro Pack"
+msgstr "Localizador de Puntos de venta Plus: Pro ​​Pack"
+
+# @ csa-slp-pro
+#. translators: plugin header field 'PluginURI'
+#: slp-pro.php:0
+msgid "http://www.charlestonsw.com/product/store-locator-plus/"
+msgstr "http://www.charlestonsw.com/product/store-locator-plus/"
+
+# @ csa-slp-pro
+#. translators: plugin header field 'Description'
+#: slp-pro.php:0
+msgid ""
+"A premium add-on pack for Store Locator Plus that provides more admin power "
+"tools for wrangling locations."
+msgstr ""
+"Un añadido Premium Pack para Store Locator Plus que proporciona más "
+"herramientas de administración de energía para las ubicaciones de disputas."
+
+# @ csa-slp-pro
+#. translators: plugin header field 'Author'
+#: slp-pro.php:0
+msgid "Charleston Software Associates"
+msgstr "Charleston Software Associates"
+
+# @ csa-slp-pro
+#. translators: plugin header field 'AuthorURI'
+#: slp-pro.php:0
+msgid "http://charlestonsw.com/"
+msgstr "http://charlestonsw.com/"
+
+# @ csa-slp-pro
+#: slp-pro.php:245
+msgid "Pro Pack"
+msgstr "Pro Pack"
+
+# @ csa-slp-pro
+#: slp-pro.php:391
+msgid "Show Tags In Output"
+msgstr "Mostrar Etiquetas En La Salida"
+
+# @ csa-slp-pro
+#: slp-pro.php:392
+msgid ""
+"How should tags be output in the results below the map and the info bubble?"
+msgstr ""
+"¿Cómo deben ser las etiquetas de salida en los resultados por debajo del "
+"mapa y la información de la burbuja?"
+
+# @ csa-slp-pro
+#: slp-pro.php:402
+msgid "Use Email Form"
+msgstr "Use el Formulario E-mail"
+
+# @ csa-slp-pro
+#: slp-pro.php:403
+msgid "Use email form instead of mailto: link when showing email addresses."
+msgstr ""
+"Usar formulario de correo electrónico en lugar de un enlace mailto: cuando "
+"se muestran las direcciones de correo electrónico."
+
+# @ csa-slp-pro
+#: slp-pro.php:625
+msgid "Reports"
+msgstr "Informes"
+
+# @ csa-slp-pro
+#: slp-pro.php:762
+msgid "Tags (separate with commas)"
+msgstr "Etiquetas (separadas por comas)"
+
+# @ csa-slp-pro
+#: slp-pro.php:836
+msgid "Search Form Tag Input"
+msgstr "Formulario de búsqueda de etiqueta de entrada"
+
+# @ csa-slp-pro
+#: slp-pro.php:837
+msgid ""
+"Select the type of tag input that you would like to see on the search form."
+msgstr ""
+"Seleccione el tipo de entrada de etiqueta la cual le gustaría ver en el "
+"formulario de búsqueda.."
+
+# @ csa-slp-pro
+#: slp-pro.php:843
+msgid "None"
+msgstr "Ninguno"
+
+# @ csa-slp-pro
+#: slp-pro.php:847
+msgid "Hidden"
+msgstr "Oculto"
+
+# @ csa-slp-pro
+#: slp-pro.php:851
+msgid "Drop Down"
+msgstr "Desplegable"
+
+# @ csa-slp-pro
+#: slp-pro.php:855
+msgid "Radio Button"
+msgstr "Botón de Radio"
+
+# @ csa-slp-pro
+#: slp-pro.php:859
+msgid "Text Input"
+msgstr "Texto de entrada"
+
+# @ csa-slp-pro
+#: slp-pro.php:867
+msgid "Tags Label"
+msgstr "Etiqueta de Etiquetas"
+
+# @ csa-slp-pro
+#: slp-pro.php:868
+msgid "Search form label to prefix the tag selector."
+msgstr ""
+"Etiqueta de Formulario de búsqueda de para prefijar el selector de etiquetas."
+
+# @ csa-slp-pro
+#: slp-pro.php:872
+msgid "Default Tag Selections"
+msgstr "Selecciones Etiqueta predeterminadas"
+
+# @ csa-slp-pro
+#: slp-pro.php:873
+msgid ""
+"For Hidden or Text tag input enter a default value to be used in the field, "
+"if any. "
+msgstr ""
+"Para entrada de etiqueta Oculta o de Texto introduzca un valor por defecto "
+"que se utilizará en el campo, si los hay."
+
+# @ csa-slp-pro
+#: slp-pro.php:874
+msgid ""
+"For Drop Down tag input enter a comma (,) separated list of tags to show in "
+"the search pulldown, mark the default selection with parenthesis (). "
+msgstr ""
+"Para entrada de etiqueta Desplegable añada una lista de etiquetas separadas "
+"por coma (,)  que mostrar en la lista desplegable de búsqueda, marque la "
+"opción predeterminada con paréntesis ()."
+
+# @ csa-slp-pro
+#: slp-pro.php:875
+msgid ""
+"This is a default setting that can be overriden on each page within the "
+"shortcode."
+msgstr ""
+"Se trata de un valor predeterminado que puede ser sobreescrito en cada "
+"página dentro del código corto."
+
+# @ csa-slp-pro
+#: slp-pro.php:879
+msgid "Add \"any\" To Drop Down"
+msgstr "Añadir \"cualquiera\" Al Desplegable"
+
+# @ csa-slp-pro
+#: slp-pro.php:880
+msgid ""
+"Add an \"any\" selection on the tag drop down list thus allowing the user to "
+"show all locations in the area, not just those matching a selected tag."
+msgstr ""
+"Añadir una selección \"cualquiera\" en la lista de etiquetas desplegables "
+"permitiendo así al usuario mostrar todos los lugares de la zona, no sólo las "
+"que corresponden a una etiqueta seleccionada."
+
+# @ csa-slp-pro
+#: slp-pro.php:884
+msgid "\"Any\" Tag Text"
+msgstr "Texto de Etiqueta \"Cualquiera\""
+
+# @ csa-slp-pro
+#: slp-pro.php:885
+msgid "What should the \"any\" tag say? "
+msgstr "¿Qué debe decir la etiqueta \"cualquiera\"?"
+
+# @ csa-slp-pro
+#: slp-pro.php:886
+msgid "The first entry on the search by tag pulldown."
+msgstr "La primera entrada en la búsqueda por la etiqueta desplegable"
+
+# @ csa-slp-pro
+#: slp-pro.php:890
+msgid "Tag Autosubmit"
+msgstr "Auto enviar Etiqueta"
+
+# @ csa-slp-pro
+#: slp-pro.php:891
+msgid ""
+"Force the form to auto-submit when the tag is selected with a radio button."
+msgstr ""
+"Forzar la forma de auto-enviar cuando la etiqueta se selecciona con un botón "
+"de radio"
+
+# @ csa-slp-pro
+#: slp-pro.php:950
+msgid "Geocode"
+msgstr "Geocode"
+
+# @ csa-slp-pro
+#: slp-pro.php:954
+msgid "Tag"
+msgstr "Etiqueta"
+
+# @ csa-slp-pro
+#: slp-pro.php:958
+msgid "Enter your comma-separated tags:"
+msgstr "Introduzca sus etiquetas separadas por comas:"
+
+# @ csa-slp-pro
+#: slp-pro.php:963
+msgid "Remove Tags"
+msgstr "Eliminar Etiquetas"
+
+# @ csa-slp-pro
+#: slp-pro.php:981
+msgid "Show Uncoded"
+msgstr "Mostrar no codificadas"
+
+# @ csa-slp-pro
+#: slp-pro.php:999 slp-pro.php:1091
+msgid "Export"
+msgstr "de exportación"
+
+# @ csa-slp-pro
+#: slp-pro.php:1060 slp-pro.php:1069
+msgid "Locations"
+msgstr "Ubicaciones"
+
+# @ csa-slp-pro
+#: slp-pro.php:1071
+msgid "Highlight Uncoded Locations"
+msgstr "Resaltar Ubicaciones no codificadas"
+
+# @ csa-slp-pro
+#: slp-pro.php:1076
+msgid "Highlight the uncoded locations in the Manage Locations panel."
+msgstr ""
+"Resaltar los lugares no codificados en el panel Administrar Ubicaciones."
+
+# @ csa-slp-pro
+#: slp-pro.php:1110 slp-pro.php:1118
+msgid "JavaScript"
+msgstr "JavaScript"
+
+# @ csa-slp-pro
+#: slp-pro.php:1120
+msgid "Use location sensor"
+msgstr "Usar sensor de localización"
+
+# @ csa-slp-pro
+#: slp-pro.php:1124
+msgid ""
+"This turns on the location sensor (GPS) to set the default search address. "
+msgstr ""
+"Esto activa el sensor de posición (GPS) para establecer la dirección de "
+"búsqueda predeterminada.."
+
+# @ csa-slp-pro
+#: slp-pro.php:1125
+msgid ""
+"This can be slow to load and customers are prompted whether or not to allow "
+"location sensing."
+msgstr ""
+"Esto puede ser lento para cargar y a los clientes se le pregunta si desea "
+"permitir o no la detección de ubicación."
+
+# @ csa-slp-pro
+#: slp-pro.php:1151
+msgid "Locator Layout"
+msgstr "Diseño del Localizador"
+
+# @ csa-slp-pro
+#: slp-pro.php:1152
+msgid ""
+"Enter your custom page layout for the Store Locator Plus page. Set it to "
+"blank to reset to the default layout."
+msgstr ""
+"Ingrese su diseño de página personalizado para la página Store Locator Plus. "
+"Póngalo en blanco para restablecer el diseño predeterminado."
+
+# @ csa-slp-pro
+#: slp-pro.php:1171
+msgid "Any"
+msgstr "Cualquiera"
+
+# @ csa-slp-pro
+#: slp-pro.php:1445 slp-pro.php:1451
+msgid "Cheatin' huh!"
+msgstr "¡Haciendo trampa, eh!"
+
+# @ csa-slp-pro
+#: slp-pro.php:1738
+msgid "Look and Feel"
+msgstr "Mire y Sienta"
+
+# @ csa-slp-pro
+#: slp-pro.php:1743
+msgid "CSS Manipulation"
+msgstr "Manipulación CSS"
+
+# @ csa-slp-pro
+#: slp-pro.php:1744
+msgid "Custom CSS"
+msgstr "CSS personalizado"
+
+# @ csa-slp-pro
+#: slp-pro.php:1748
+msgid ""
+"Enter your custom CSS, preferably for SLPLUS styling only but it can be used "
+"for any page element as this will go in your page header."
+msgstr ""
+"Ingrese su CSS personalizado, preferiblemente sólo por estilo SLPLUS pero "
+"puede ser utilizado para cualquier elemento de la página, ya que esto va a "
+"ir en su encabezado de página ."
+
+# @ csa-slp-pro
+#: slp-pro.php:1755
+msgid "Reporting"
+msgstr "Informes"
+
+# @ csa-slp-pro
+#: slp-pro.php:1759
+msgid "Report Settings"
+msgstr "Ajustes Informe"
+
+# @ csa-slp-pro
+#: slp-pro.php:1760
+msgid "Enable Reporting"
+msgstr "Habilitar Informes"
+
+# @ csa-slp-pro
+#: slp-pro.php:1764
+msgid ""
+"Enables tracking of searches and returned results.  The added overhead can "
+"increase how long it takes to return location search results."
+msgstr ""
+"Permite el seguimiento de las búsquedas y resultados devueltos. La "
+"sobrecarga adicional puede aumentar el tiempo que tarda en devolver los "
+"resultados de búsqueda de ubicación."
+
+# @ csa-slp-pro
+#: slp-pro.php:1775
+msgid "Tools"
+msgstr "Herramientas"
+
+# @ csa-slp-pro
+#: slp-pro.php:1782
+msgid "Where is..."
+msgstr "Donde está..."
+
+# @ csa-slp-pro
+#: slp-pro.php:1787
+msgid "locate"
+msgstr "localizar"
+
+# @ csa-slp-pro
+#: slp-pro.php:1792
+msgid "Enter an address and click locate to find the lat/long."
+msgstr "Escriba una dirección y haga clic en Buscar para encontrar lat/long."
+
+# @ csa-slp-pro
+#: slp-pro.php:1797
+msgid "Helpful Tools"
+msgstr "Herramientas útiles"
+
+# @ csa-slp-pro
+#. translators: plugin header field 'Version'
+#: slp-pro.php:0
+msgid "4.1.00"
+msgstr "4.1.00"

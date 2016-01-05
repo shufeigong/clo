@@ -1,0 +1,364 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Store Locator Plus : Enhanced Results v4.3.00-RC-2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-08-23 13:38+0100\n"
+"PO-Revision-Date: 2015-08-05 11:18:34+0000\n"
+"Last-Translator: De B.A.A.T. <De_BAAT@de-baat.nl>\n"
+"Language-Team: De B.A.A.T. <de_baat@de-baat.nl>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: slp-enhanced-results.php:105
+#@ csa-slp-er
+msgid "Enhanced Results"
+msgstr "Uitgebreide Resultaten"
+
+#: include/class.admin.php:114
+#@ csa-slp-er
+msgid "No Results Message"
+msgstr "Niets Gevonden Bericht"
+
+#: include/class.admin.php:115
+#@ csa-slp-er
+msgid "No results found message that appears under the map."
+msgstr "Geen resultaten gevonden bericht wat onder de kaart getoond wordt."
+
+#: include/class.admin.experience.php:255
+#@ csa-slp-er
+msgid "Disable Initial Directory"
+msgstr "Schakel Initieel Directory Uit"
+
+#: include/class.admin.experience.php:258
+#@ csa-slp-er
+msgid "Do not display the listings under the map when \"immediately show locations\" is checked."
+msgstr "Toon de lijsten onder de kaart niet als \"toon meteen locaties\" is aangevinkt."
+
+#: include/class.admin.experience.php:47
+#@ csa-slp-er
+msgid "Use tel URI"
+msgstr "Gebruik tel URI "
+
+#: include/class.admin.experience.php:49
+#@ csa-slp-er
+msgid "When checked, wraps the phone number in the results in a tel: href tag."
+msgstr "Als aangevinkt, pakt het telefoonnummer in de resultaten in in een tel: href tag."
+
+#: include/class.admin.experience.php:59
+#@ csa-slp-er
+msgid "Hide Distance"
+msgstr "Verberg Afstand"
+
+#: include/class.admin.experience.php:61
+#@ csa-slp-er
+msgid "Do not show the distance to the location in the results table."
+msgstr "Toon de afstand tot de locatie niet in de resultaten tabel."
+
+#: include/class.admin.experience.php:71
+#@ csa-slp-er
+msgid "Show Country"
+msgstr "Toon Land"
+
+#: include/class.admin.experience.php:73
+#@ csa-slp-er
+msgid "Display the country in the results table address."
+msgstr "Toon het land bij het adres in de resultaten tabel."
+
+#: include/class.admin.experience.php:83
+#@ csa-slp-er
+msgid "Show Hours"
+msgstr "Toon Uren"
+
+#: include/class.admin.experience.php:85
+#@ csa-slp-er
+msgid "Display the hours in the results table under the Directions link."
+msgstr "Toon de uren in de resultaten tabel onder de Routebeschrijving link."
+
+#: include/class.admin.experience.php:130
+#@ csa-slp-er
+msgid "Results Layout"
+msgstr "Resultaten Layout"
+
+#: include/class.admin.experience.php:132
+#@ csa-slp-er
+msgid "Enter your custom results area layout for the location results. "
+msgstr "Geef je persoonlijke resultaten gebied layout voor de locatie resultaten. "
+
+#: include/class.admin.experience.php:135
+#, php-format
+#@ csa-slp-er
+msgid "Uses HTML plus %s shortcodes."
+msgstr "Gebruikt HTML plus %s shortcodes."
+
+#: include/class.admin.experience.php:137
+#@ csa-slp-er
+msgid "Set it to blank to reset to the default layout. "
+msgstr "Maak het veld leeg om te resetten naar de standaard layout. "
+
+#: include/class.admin.experience.php:138
+#@ csa-slp-er
+msgid "Overrides all other results settings."
+msgstr "Overruled alle andere resultaten instellingen."
+
+#. translators: plugin header field 'Name'
+#: slp-enhanced-results.php:0
+#@ csa-slp-er
+msgid "Store Locator Plus : Enhanced Results"
+msgstr "Store Locator Plus : Enhanced Results"
+
+#. translators: plugin header field 'Description'
+#: slp-enhanced-results.php:0
+#@ csa-slp-er
+msgid "A premium add-on pack for Store Locator Plus that adds enhanced search results to the plugin."
+msgstr "Een premium add-on pakket voor Store Locator Plus die uitgebreide zoekresultaten toevoegt aan de plug-in."
+
+#: include/class.activation.php:101
+#@ csa-slp-er
+msgid "Featured"
+msgstr "Uitgelicht"
+
+#: include/class.activation.php:102
+#@ csa-slp-er
+msgid "Rank"
+msgstr "Rang"
+
+#: include/class.admin.experience.php:174
+#@ csa-slp-er
+msgid "Featured, Rank, Closest"
+msgstr "Uitgelicht, Rang, Dichtstbijzijnd"
+
+#: include/class.admin.experience.php:178
+#@ csa-slp-er
+msgid "Featured, Rank, A..Z"
+msgstr "Uitgelicht, Rang, A..Z"
+
+#: include/class.admin.experience.php:182
+#@ csa-slp-er
+msgid "Featured Then Closest"
+msgstr "Uitgelicht dan Dichtstbijzijnd"
+
+#: include/class.admin.experience.php:186
+#@ csa-slp-er
+msgid "Featured Then A..Z"
+msgstr "Uitgelicht dan A..Z"
+
+#: include/class.admin.experience.php:190
+#@ csa-slp-er
+msgid "Rank Then Closest"
+msgstr "Rang dan Dichtstbijzijnd"
+
+#: include/class.admin.experience.php:194
+#@ csa-slp-er
+msgid "Rank Then A..Z"
+msgstr "Rang dan A..Z"
+
+#: include/class.admin.experience.php:198
+#@ csa-slp-er
+msgid "Closest..Furthest"
+msgstr "Dichtstbijzijnd..Verstweg"
+
+#: include/class.admin.experience.php:202
+#@ csa-slp-er
+msgid "Name A..Z"
+msgstr "Naam A..Z"
+
+#: include/class.admin.experience.php:206
+#@ csa-slp-er
+msgid "Random"
+msgstr "Willekeurig"
+
+#: include/class.admin.experience.php:223
+#@ csa-slp-er
+msgid "Set if the featured location should be showed:"
+msgstr "Zet of de uitgelichte locatie getoond moet worden:"
+
+#: include/class.admin.experience.php:225
+#@ csa-slp-er
+msgid "Always Show - Always show featured locations."
+msgstr "Toon Altijd - Toon de uitgelichte locaties altijd."
+
+#: include/class.admin.experience.php:229
+#@ csa-slp-er
+msgid "Show If In Radius"
+msgstr "Toon Als In Radius"
+
+#: include/class.admin.experience.php:230
+#@ csa-slp-er
+msgid "Always Show"
+msgstr "Toon Altijd"
+
+#: include/class.admin.php:231
+#@ csa-slp-er
+msgid "Feature Location"
+msgstr "Uitgelichte Locatie"
+
+#: include/class.admin.php:235
+#@ csa-slp-er
+msgid "Stop Featuring Location"
+msgstr "Stop Uitlichten Locatie"
+
+#. translators: plugin header field 'PluginURI'
+#: slp-enhanced-results.php:0
+#@ csa-slp-er
+msgid "http://www.storelocatorplus.com/product/slp4-enhanced-results/"
+msgstr "http://www.storelocatorplus.com/product/slp4-enhanced-results/"
+
+#: include/class.admin.experience.php:106
+#@ csa-slp-er
+msgid "Email Label with Email Link"
+msgstr "Email Label met Email Link"
+
+#: include/class.admin.experience.php:110
+#@ csa-slp-er
+msgid "Email Address with Email Link"
+msgstr "Email Adres met Email Link"
+
+#: include/class.admin.experience.php:114
+#@ csa-slp-er
+msgid "Popup Form Linked To Email"
+msgstr "Popup Formulier Linked Aan Email"
+
+#: include/class.admin.php:124
+#@ csa-slp-er
+msgid "Popup Email Title"
+msgstr "Popup Email Titel"
+
+#: include/class.admin.php:125
+#@ csa-slp-er
+msgid "The title on the popup email dialogue form."
+msgstr "De titel op het popup email dialoog formulier."
+
+#: include/class.admin.php:134
+#@ csa-slp-er
+msgid "Popup From Placeholder"
+msgstr "Popup Van Placeholder"
+
+#: include/class.admin.php:135
+#@ csa-slp-er
+msgid "The placeholder for the from field on the popup email dialogue form."
+msgstr "De placeholder voor het van veld op het popup email dialoog formulier."
+
+#: include/class.admin.php:144
+#@ csa-slp-er
+msgid "Popup Subject Placeholder"
+msgstr "Popup Onderwerp Placeholder"
+
+#: include/class.admin.php:145
+#@ csa-slp-er
+msgid "The placeholder for the subject field on the popup email dialogue form."
+msgstr "De placeholder voor het onderwerp veld op het popup email dialoog formulier."
+
+#: include/class.admin.php:154
+#@ csa-slp-er
+msgid "Popup Message Placeholder"
+msgstr "Popup Bericht Placeholder"
+
+#: include/class.admin.php:155
+#@ csa-slp-er
+msgid "The placeholder for the message box on the popup email dialogue form."
+msgstr "De placeholder voor het bericht veld op het popup email dialoog formulier."
+
+#: include/class.admin.experience.php:224
+#@ csa-slp-er
+msgid "Show If In Radius - Only when the location are in radius."
+msgstr "Toon Als In Bereik - Alleen als de locatie binnen bereik is."
+
+#: include/class.ajax.php:263
+#@ csa-slp-er
+msgid "email sent to "
+msgstr "email gestuurd naar "
+
+#: slp-enhanced-results.php:172
+#@ csa-slp-er
+msgid "Send An Email"
+msgstr "Stuur Een Email"
+
+#: slp-enhanced-results.php:173
+#@ csa-slp-er
+msgid "Your email address."
+msgstr "Je emailadres."
+
+#: slp-enhanced-results.php:174
+#@ csa-slp-er
+msgid "Email subject line."
+msgstr "Email onderwerpregel."
+
+#: slp-enhanced-results.php:175
+#@ csa-slp-er
+msgid "What do you want to say?"
+msgstr "Wat wil je zeggen?"
+
+#: include/class.admin.experience.php:38
+#@ csa-slp-er
+msgid "Appearance"
+msgstr "Uiterlijk"
+
+#: include/class.admin.experience.php:96
+#@ csa-slp-er
+msgid "Email Format"
+msgstr "Email Formaat"
+
+#: include/class.admin.experience.php:99
+#@ csa-slp-er
+msgid "How email will be displayed and function in the results list."
+msgstr "Hoe email wordt getoond en functioneert in de resultaat lijst."
+
+#: include/class.admin.experience.php:155
+#@ csa-slp-er
+msgid "Functionality"
+msgstr "Functionaliteit"
+
+#: include/class.admin.experience.php:164
+#@ csa-slp-er
+msgid "Order Results By"
+msgstr "Sorteer Resultaten Op"
+
+#: include/class.admin.experience.php:167
+#@ csa-slp-er
+msgid "Select a sort order for the results.  Default is Closest..Furthest."
+msgstr "Selecteer een sorteer volgorde voor de resultaten. Default is Dichtstbijzijnd..Verstweg"
+
+#: include/class.admin.experience.php:220
+#@ csa-slp-er
+msgid "Featured Locations"
+msgstr "Uitgelichte Locaties"
+
+#: include/class.admin.experience.php:246
+#@ csa-slp-er
+msgid "At Startup"
+msgstr "Bij Opstarten"
+
+#: include/class.admin.php:117
+#@ csa-slp-er
+msgid "No results found."
+msgstr "Geen resultaten gevonden."
+
+#. translators: plugin header field 'Author'
+#: slp-enhanced-results.php:0
+#@ csa-slp-er
+msgid "Store Locator Plus"
+msgstr "Store Locator Plus"
+
+#. translators: plugin header field 'AuthorURI'
+#: slp-enhanced-results.php:0
+#@ csa-slp-er
+msgid "http://storelocatorplus.com/"
+msgstr "http://storelocatorplus.com/"
+
+#. translators: plugin header field 'Version'
+#: slp-enhanced-results.php:0
+#@ csa-slp-er
+msgid "4.3.00-RC-2"
+msgstr "4.3.00"
+

@@ -1,0 +1,146 @@
+# Copyright (C) 2013 Store Locator Plus : Enhanced Search
+# This file is distributed under the same license as the Store Locator Plus : Enhanced Search package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Store Locator Plus : Enhanced Search 0.5\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/slp-enhanced-search\n"
+"POT-Creation-Date: 2013-03-25 22:27:22+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: slp-enhanced-search.php:79
+msgid ""
+"You have %s version %s. You need version %s or greater for this version of %"
+"s."
+msgstr ""
+
+#: slp-enhanced-search.php:80
+msgid "Store Locator Plus"
+msgstr ""
+
+#: slp-enhanced-search.php:81
+msgid "Enhanced Search"
+msgstr ""
+
+#: slp-enhanced-search.php:222
+msgid "Address"
+msgstr ""
+
+#: slp-enhanced-search.php:223
+msgid "Instructions to place in the address input."
+msgstr ""
+
+#: slp-enhanced-search.php:227
+msgid "Name"
+msgstr ""
+
+#: slp-enhanced-search.php:228
+msgid "Instructions to place in the name input."
+msgstr ""
+
+#: slp-enhanced-search.php:236
+msgid "Placeholders"
+msgstr ""
+
+#: slp-enhanced-search.php:237
+msgid ""
+"Placeholders are text instructions that appear inside an input box before "
+"data is entered."
+msgstr ""
+
+#: slp-enhanced-search.php:390
+msgid "Hide Search Form"
+msgstr ""
+
+#: slp-enhanced-search.php:391
+msgid ""
+"Hide the user input on the search page, regardless of the SLP theme used."
+msgstr ""
+
+#: slp-enhanced-search.php:396
+msgid "Allow Address In URL"
+msgstr ""
+
+#: slp-enhanced-search.php:397
+msgid "If checked an address can be pre-loaded via a URL string ?address=blah."
+msgstr ""
+
+#: slp-enhanced-search.php:410
+msgid "Show Radio Buttons"
+msgstr ""
+
+#: slp-enhanced-search.php:411
+msgid ""
+"Show radio buttons instead of the pulldown for the tag selection interface."
+msgstr ""
+
+#: slp-enhanced-search.php:415
+msgid "Tag Autosubmit"
+msgstr ""
+
+#: slp-enhanced-search.php:416
+msgid ""
+"Force the form to auto-submit when the tag is selected with a radio button."
+msgstr ""
+
+#: slp-enhanced-search.php:430
+msgid "City First Entry"
+msgstr ""
+
+#: slp-enhanced-search.php:431
+msgid "The first entry on the search by city pulldown. (a Pro Pack Option)"
+msgstr ""
+
+#: slp-enhanced-search.php:433
+msgid "--Search By City--"
+msgstr ""
+
+#: slp-enhanced-search.php:437
+msgid "State First Entry"
+msgstr ""
+
+#: slp-enhanced-search.php:438
+msgid "The first entry on the search by state pulldown. (a Pro Pack Option)"
+msgstr ""
+
+#: slp-enhanced-search.php:440
+msgid "--Search By State--"
+msgstr ""
+
+#: slp-enhanced-search.php:444
+msgid "Country First Entry"
+msgstr ""
+
+#: slp-enhanced-search.php:445
+msgid "The first entry on the search by country pulldown (a Pro Pack Option)."
+msgstr ""
+
+#: slp-enhanced-search.php:447
+msgid "--Search By Country--"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Store Locator Plus : Enhanced Search"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.charlestonsw.com/product/store-locator-plus-enhanced-search/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"A premium add-on pack for Store Locator Plus that adds enhanced search "
+"features to the plugin."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Charleston Software Associates"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://charlestonsw.com/"
+msgstr ""

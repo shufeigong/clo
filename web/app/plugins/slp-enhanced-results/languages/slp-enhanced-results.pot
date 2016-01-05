@@ -1,0 +1,104 @@
+# Copyright (C) 2013 Store Locator Plus : Enhanced Results
+# This file is distributed under the same license as the Store Locator Plus : Enhanced Results package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Store Locator Plus : Enhanced Results 0.7\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/slp-enhanced-results\n"
+"POT-Creation-Date: 2013-03-22 04:19:05+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: slp-enhanced-results.php:177
+msgid "Enhanced Results"
+msgstr ""
+
+#: slp-enhanced-results.php:179
+msgid "Image URL (shown with location)"
+msgstr ""
+
+#: slp-enhanced-results.php:255
+msgid "Use tel URI"
+msgstr ""
+
+#: slp-enhanced-results.php:256
+msgid "When checked, wraps the phone number in the results in a tel: href tag."
+msgstr ""
+
+#: slp-enhanced-results.php:260
+msgid "Hide Distance"
+msgstr ""
+
+#: slp-enhanced-results.php:261
+msgid "Do not show the distance to the location in the results table."
+msgstr ""
+
+#: slp-enhanced-results.php:265
+msgid "Show Country"
+msgstr ""
+
+#: slp-enhanced-results.php:266
+msgid "Display the country in the results table address."
+msgstr ""
+
+#: slp-enhanced-results.php:270
+msgid "Show Hours"
+msgstr ""
+
+#: slp-enhanced-results.php:271
+msgid "Display the hours in the results table under the Directions link."
+msgstr ""
+
+#: slp-enhanced-results.php:277
+msgid "Results Format"
+msgstr ""
+
+#: slp-enhanced-results.php:278
+msgid "The format of the results under the map."
+msgstr ""
+
+#: slp-enhanced-results.php:282
+msgid "Uses HTML plus Enhanced Results shortcodes."
+msgstr ""
+
+#: slp-enhanced-results.php:285
+msgid "Overrides all other results settings."
+msgstr ""
+
+#: slp-enhanced-results.php:322
+msgid "Distance"
+msgstr ""
+
+#: slp-enhanced-results.php:323
+msgid "Name"
+msgstr ""
+
+#: slp-enhanced-results.php:328
+msgid "Order Results By: "
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Store Locator Plus : Enhanced Results"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid ""
+"http://www.charlestonsw.com/product/store-locator-plus-enhanced-results/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"A premium add-on pack for Store Locator Plus that adds enhanced search "
+"results to the plugin."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Charleston Software Associates"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://charlestonsw.com/"
+msgstr ""

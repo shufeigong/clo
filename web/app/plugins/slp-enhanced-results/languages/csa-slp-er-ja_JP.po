@@ -1,0 +1,119 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Store Locator Plus : Enhanced Results v4.0.004\n"
+"POT-Creation-Date: 2013-10-02 15:02+0900\n"
+"PO-Revision-Date: 2013-10-05 17:44+0900\n"
+"Last-Translator: Karen Ellrick <osakawebbie@gmail.com>\n"
+"Language-Team: Karen Ellrick <osakawebbie@gmail.com>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: slp-enhanced-results.php:143 slp-enhanced-results.php:445
+msgid "Enhanced Results"
+msgstr "Enhanced Results（拡張結果）"
+
+#: slp-enhanced-results.php:285
+msgid "No Results Message"
+msgstr "「結果はない」メッセージ"
+
+#: slp-enhanced-results.php:286
+msgid "No results found message that appears under the map."
+msgstr "検索の結果はない場合、地図の下に表示されるメッセージ"
+
+#: slp-enhanced-results.php:288
+msgid "Results not found."
+msgstr "検索の結果はありません。"
+
+#: slp-enhanced-results.php:382 slp-enhanced-results.php:401
+msgid "Image"
+msgstr "画像"
+
+#: slp-enhanced-results.php:405
+msgid "View"
+msgstr "表示"
+
+#: slp-enhanced-results.php:448
+msgid "Disable Initial Directory"
+msgstr "最初のリストを隠す"
+
+#: slp-enhanced-results.php:449
+msgid ""
+"Do not display the listings under the map when \"immediately show locations"
+"\" is checked."
+msgstr ""
+"「最初にロケーションを表示」が設定されている場合、地図の下にロケーション情報"
+"のリストを表示しない。"
+
+#: slp-enhanced-results.php:453
+msgid "Use tel URI"
+msgstr "「tel」リンクを使う"
+
+#: slp-enhanced-results.php:454
+msgid "When checked, wraps the phone number in the results in a tel: href tag."
+msgstr "結果にある電話番号を「href=tel:...」タグに囲みます。"
+
+#: slp-enhanced-results.php:458
+msgid "Hide Distance"
+msgstr "距離を隠す"
+
+#: slp-enhanced-results.php:459
+msgid "Do not show the distance to the location in the results table."
+msgstr "結果のテーブルに、ロケーションまでの距離を表示しない。"
+
+#: slp-enhanced-results.php:463
+msgid "Show Country"
+msgstr "国名を表示する"
+
+#: slp-enhanced-results.php:464
+msgid "Display the country in the results table address."
+msgstr "結果のテーブルにある住所に国名を含みます。"
+
+#: slp-enhanced-results.php:468
+msgid "Show Hours"
+msgstr "営業時間を表示する"
+
+#: slp-enhanced-results.php:469
+msgid "Display the hours in the results table under the Directions link."
+msgstr "結果のテーブルに、ルートのリンクの下に営業時間を表示します。"
+
+#: slp-enhanced-results.php:474
+msgid "Results Layout"
+msgstr "結果表示のレイアウト"
+
+#: slp-enhanced-results.php:475
+msgid "Enter your custom results area layout for the location results. "
+msgstr "検索のロケーション結果のレイアウトを変更できます。"
+
+#: slp-enhanced-results.php:478
+#, php-format
+msgid "Uses HTML plus %s shortcodes."
+msgstr "HTMLと %s ショートコードが使えます。"
+
+#: slp-enhanced-results.php:480
+msgid "Set it to blank to reset to the default layout. "
+msgstr "最初の設定に戻るには、空白にしてください。"
+
+#: slp-enhanced-results.php:481
+msgid "Overrides all other results settings."
+msgstr "他の結果設定より優先です。"
+
+#: slp-enhanced-results.php:509
+msgid "Distance"
+msgstr "距離"
+
+#: slp-enhanced-results.php:510
+msgid "Name"
+msgstr "名前"
+
+#: slp-enhanced-results.php:515
+msgid "Order Results By: "
+msgstr "結果の順："

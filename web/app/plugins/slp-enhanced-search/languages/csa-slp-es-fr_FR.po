@@ -1,0 +1,381 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Store Locator Plus : Enhanced Search v4.0.007\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-08-23 13:46+0100\n"
+"PO-Revision-Date: 2013-09-11 12:33+0100\n"
+"Last-Translator: Francois Serrault <f.serrault@gmail.com>\n"
+"Language-Team: De B.A.A.T. <de_baat@de-baat.nl>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:149 slp-enhanced-search.php:850
+#: slp-enhanced-search.php:980
+msgid "Enhanced Search"
+msgstr "Recherche avancée"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:282 slp-enhanced-search.php:1013
+msgid "--Search By City--"
+msgstr "--Recherche par ville--"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:357 slp-enhanced-search.php:1031
+msgid "--Search By State--"
+msgstr "--Recherche par Région--"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:448
+msgid "Program Interface"
+msgstr "Interface du programme"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:463
+msgid "Allow Address In URL"
+msgstr "Autoriser les adresses dans l'URL"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:465
+msgid "If checked an address can be pre-loaded via a URL string ?address=blah."
+msgstr ""
+"Si coché une adresse peut-être préchargée via une URL du type ?address=blah."
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:467
+msgid ""
+"This will disable the Pro Pack location sensor whenever the address is used "
+"in the URL."
+msgstr ""
+"Désactive le module localisation du Pack Pro chaque fois que l'adresse est "
+"dans l'URL. "
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:482
+msgid "Address"
+msgstr "Adresse"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:483
+msgid "Instructions to place in the address input."
+msgstr "Instructions à mettre dans le champs de saisie adresse."
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:487 slp-enhanced-search.php:992
+msgid "Name"
+msgstr "Nom"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:488
+msgid "Instructions to place in the name input."
+msgstr "Instructions à mettre dans le champs de saisie Nom."
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:497
+msgid "Search Placeholders"
+msgstr "Chercher dans Espaces réservés"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:498
+msgid ""
+"Placeholders are text instructions that appear inside an input box before "
+"data is entered."
+msgstr ""
+"Espaces réservés : textes explicatifs qui apparaissent dans un champs de "
+"texte avant une saisie."
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:666
+msgid "Name of Store"
+msgstr "Nom du Point de Vente "
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:715 slp-enhanced-search.php:1049
+msgid "--Search By Country--"
+msgstr "--Recherche par Pays--"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:854
+msgid "Hide Search Form"
+msgstr "Cacher formulaire de recherche"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:855
+msgid ""
+"Hide the user input on the search page, regardless of the SLP theme used."
+msgstr ""
+"Cacher le champs de saisie utilisateur sur la page de recherche, "
+"indépendamment du thème SLP utilisé."
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:860
+msgid "Hide Radius Selections"
+msgstr "Cacher Sélection rayon"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:861
+msgid "Hide the radius selection drop down."
+msgstr "Cacher le menu Sélection rayon"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:866
+msgid "Show Search By Name"
+msgstr "Afficher Recherche par Nom"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:867
+msgid "Shows the name search entry box to the user."
+msgstr "Afficher le champs Recherche par Nom à l'utilisateur. "
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:872
+msgid "Show City Selector"
+msgstr "Afficher Choix de la Ville"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:873
+msgid "Show the city selector on the search form."
+msgstr "Afficher le champs Choix de la Ville à l'utilisateur."
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:874 slp-enhanced-search.php:883
+#: slp-enhanced-search.php:892
+#, php-format
+msgid "View the <a href=\"%s\" target=\"csa\">documentation</a> for more info."
+msgstr ""
+"Voir la <a href=\"%s\" target=\"csa\">documentation</a> pour plus d'info."
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:881
+msgid "Show Country Selector"
+msgstr "Afficher Choix du Pays"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:882
+msgid "Show the country selector on the search form."
+msgstr "Afficher le champs Choix du Pays à l'utilisateur."
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:890
+msgid "Show State Selector"
+msgstr "Afficher Choix de la Région"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:891
+msgid "Show the state selector on the search form."
+msgstr "Afficher le champs Choix de la Région à l'utilisateur."
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:922
+msgid "Search Layout"
+msgstr "Rendu Recherche"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:923
+msgid "Enter your custom search form layout. "
+msgstr "Entrez votre propre rendu recherche."
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:926
+#, php-format
+msgid "Uses HTML plus %s shortcodes."
+msgstr "Utilisez les raccourcis HTML plus %s."
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:928
+msgid "Set it to blank to reset to the default layout. "
+msgstr "Le mettre sur vide pour remettre à zéro le rendu."
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:929
+msgid "Overrides all other search form settings."
+msgstr "Remplacer tous les paramètres de recherche."
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:960
+msgid "Show Radio Buttons"
+msgstr "Afficher les boutons radio"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:961
+msgid ""
+"Show radio buttons instead of the pulldown for the tag selection interface."
+msgstr ""
+"Afficher des boutons radio à la place des menus déroulants pour le chois de "
+"l'interface."
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:965
+msgid "Tag Autosubmit"
+msgstr "Balise soumettre automatiquement"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:966
+msgid ""
+"Force the form to auto-submit when the tag is selected with a radio button."
+msgstr ""
+"Forcer l'auto-submit du formulaire quand la balise est sélectionner avec des "
+"boutons radio. "
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:984
+msgid "Find Button"
+msgstr "Trouver bouton"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:985
+msgid "The label on the find button, if text mode is selected."
+msgstr "Texte sur le bouton trouver, si le mode texte est sélectionné."
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:987
+msgid "Find Locations"
+msgstr "Trouver Points de Vente"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:993
+msgid "The label that precedes the name input box."
+msgstr "Texte qui précède le nom du champs."
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:1002
+msgid "City Selector Label"
+msgstr "Texte du choix de Ville"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:1003
+msgid "The label that precedes the city selector."
+msgstr "Texte qui précède le choix de Ville"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:1010
+msgid "City Selector First Entry"
+msgstr "Premier choix liste Ville"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:1011
+msgid "The first entry on the search by city selector."
+msgstr "Le premier choix sur la recherche par ville."
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:1020
+msgid "State Selector Label"
+msgstr "Texte du choix de Région"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:1021
+msgid "The label that precedes the state selector."
+msgstr "Texte qui précède le choix de Région"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:1028
+msgid "State Selector First Entry"
+msgstr "Premier choix liste Région"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:1029
+msgid "The first entry on the search by state selector."
+msgstr "Le premier choix sur la recherche par région."
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:1038
+msgid "Country Selector Label"
+msgstr "Texte choix du Pays"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:1039
+msgid "The label that precedes the country selector."
+msgstr "Texte qui précède le choix du Pays"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:1046
+msgid "Country Selector First Entry"
+msgstr "Premier choix liste Pays"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:1047
+msgid "The first entry on the search by country selector."
+msgstr "Le premier choix sur la recherche par pays."
+
+# @ csa-slp-es
+#. translators: plugin header field 'Name'
+#: slp-enhanced-search.php:0
+msgid "Store Locator Plus : Enhanced Search"
+msgstr "Store Locator Plus : Recherche avancée"
+
+# @ csa-slp-es
+#. translators: plugin header field 'PluginURI'
+#: slp-enhanced-search.php:0
+msgid "http://www.charlestonsw.com/product/store-locator-plus-enhanced-search/"
+msgstr ""
+"http://www.charlestonsw.com/product/store-locator-plus-enhanced-search/"
+
+# @ csa-slp-es
+#. translators: plugin header field 'Description'
+#: slp-enhanced-search.php:0
+msgid ""
+"A premium add-on pack for Store Locator Plus that adds enhanced search "
+"features to the plugin."
+msgstr ""
+"Un pack premium pour Store Locator Plus qui ajoute un plugin de recherche "
+"avancé."
+
+# @ csa-slp-es
+#. translators: plugin header field 'Author'
+#: slp-enhanced-search.php:0
+msgid "Charleston Software Associates"
+msgstr "Charleston Software Associates"
+
+# @ csa-slp-es
+#. translators: plugin header field 'AuthorURI'
+#: slp-enhanced-search.php:0
+msgid "http://charlestonsw.com/"
+msgstr "http://charlestonsw.com/"
+
+# @ csa-slp-es
+#. translators: plugin header field 'Version'
+#: slp-enhanced-search.php:0
+msgid "4.0.007"
+msgstr "4.0.007"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:901
+msgid "Search Address Nearest"
+msgstr "Rechercher adresse proche de"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:903
+msgid ""
+"Worldwide is the default search, letting Google make the best guess which "
+"addres the user wants."
+msgstr ""
+"Par défaut recherche dans le monde entier, laissant Google choissir la "
+"meilleure adresse."
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:904
+msgid ""
+"Current Map will find the best matching address nearest the current area "
+"shown on the map."
+msgstr ""
+"La carte actuelle va trouver la meilleure adresse la plus proche de la vue "
+"carte affichée."
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:907
+msgid "Worldwide"
+msgstr "Monde entier"
+
+# @ csa-slp-es
+#: slp-enhanced-search.php:912
+msgid "Current Map"
+msgstr "Carte en cours"

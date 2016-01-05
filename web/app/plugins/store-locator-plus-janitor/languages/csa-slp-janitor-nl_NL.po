@@ -1,0 +1,345 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Store Locator Plus : Janitor v4.3.00-alpha-02\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2015-08-05 11:49:14+0000\n"
+"Last-Translator: De B.A.A.T. <De_BAAT@de-baat.nl>\n"
+"Language-Team: De B.A.A.T. <www.de-baat.nl>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: NETHERLANDS\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: include/class.admin.php:272
+#@ csa-slp-janitor
+msgid "No locations were found with encoded HTML strings in their description."
+msgstr "Er zijn geen locaties gevonden met HTML gecodeerde strings in de omschrijving."
+
+#: include/class.admin.php:274
+#@ csa-slp-janitor
+msgid "The following locations had HTML encoded strings stored in the database:"
+msgstr "De volgende locaties hadden HTML gecodeerde strings in de database:"
+
+#: include/class.admin.php:381
+#@ csa-slp-janitor
+msgid "Locations"
+msgstr "Locaties"
+
+#: include/class.admin.php:386
+#@ csa-slp-janitor
+msgid "Clear All"
+msgstr "Verwijder Alles"
+
+#: include/class.admin.php:453
+#@ csa-slp-janitor
+msgid "About"
+msgstr "Over"
+
+#: include/class.admin.php:395
+#@ csa-slp-janitor
+msgid "Clearing ALL locations is a destructive process that cannot be undone. "
+msgstr "ALLE locaties verwijderen is een desctructief proces dat niet ongedaan gemaakt kan worden. "
+
+#: include/class.admin.php:396
+#: include/class.admin.php:424
+#: include/class.admin.php:459
+#@ csa-slp-janitor
+msgid "Make sure you have a full backup of your site before proceeding. "
+msgstr "Zorg dat u een volledige back-up van uw site heeft voordat u doorgaat. "
+
+#: include/class.admin.php:400
+#: include/class.admin.php:428
+#@ csa-slp-janitor
+msgid "Clear ALL of the locations of Store Locator Plus?"
+msgstr "Verwijder ALLE locaties van Store Locator Plus?"
+
+#: include/class.admin.php:443
+#@ csa-slp-janitor
+msgid "Settings"
+msgstr "Instellingen"
+
+#: include/class.admin.php:448
+#@ csa-slp-janitor
+msgid "Reset"
+msgstr "Reset"
+
+#: include/class.admin.php:457
+#@ csa-slp-janitor
+msgid "Clearing settings is a destructive process that cannot be undone. "
+msgstr "Instellingen verwijderen is een desctructief proces dat niet ongedaan gemaakt kan worden. "
+
+#: include/class.admin.php:458
+#@ csa-slp-janitor
+msgid "Locations will not be deleted. "
+msgstr "Locaties zullen niet verwijderd worden. "
+
+#: include/class.admin.php:463
+#@ csa-slp-janitor
+msgid "Reset ALL of the options listed below to blank?"
+msgstr "Reset ALLE opties hieronder naar leeg?"
+
+#: include/class.admin.php:471
+#@ csa-slp-janitor
+msgid "Reset SLP Options"
+msgstr "Reset SLP Opties"
+
+#: include/class.admin.php:477
+#@ csa-slp-janitor
+msgid "Inspect"
+msgstr "Inspecteer"
+
+#: include/class.admin.php:482
+#@ csa-slp-janitor
+msgid "Current Settings"
+msgstr "Huidige Instellingen"
+
+#: include/class.admin.php:486
+#@ csa-slp-janitor
+msgid "Current settings for SLP related options are noted below. "
+msgstr "Huidige instellingen voor SLP gerelateerde opties worden hieronder getoond. "
+
+#: include/class.admin.php:517
+#@ csa-slp-janitor
+msgid "Tools"
+msgstr "Tools"
+
+#: include/class.admin.php:522
+#@ csa-slp-janitor
+msgid "Descriptions"
+msgstr "Omschrijvingen"
+
+#: include/class.admin.php:531
+#@ csa-slp-janitor
+msgid "A bug in older versions of Store Locator Plus was storing HTML in encoded format. "
+msgstr "Een bug in oudere versies van Store Locator Plus sloeg HTML gecodeerd op. "
+
+#: include/class.admin.php:532
+#@ csa-slp-janitor
+msgid "Click the button below to convert HTML codes such as &lt; back to the standard < format. "
+msgstr "Klik op de button hieronder om HTML code zoals &lt; om te zetten naar het standaard < formaat. "
+
+#: include/class.admin.php:533
+#@ csa-slp-janitor
+msgid "This should only need to be done once. "
+msgstr "Dit zou slechts eenmaal gedaan hoeven te worden. "
+
+#: include/class.admin.php:534
+#@ csa-slp-janitor
+msgid "The process is not reversible, so make sure you have backed up your data first. "
+msgstr "Het proces is niet omkeerbaar, zo zorg dat u eerst een back-up maakt van de data. "
+
+#: include/class.admin.php:540
+#@ csa-slp-janitor
+msgid "Are you sure you convert all encoded HTML to standard HTML in the location descriptions?"
+msgstr "Weet u zeker dat u alle gecodeerde HTML in de locatie omschrijvingen wilt converteren naar standaard HTML?"
+
+#: include/class.admin.php:548
+#@ csa-slp-janitor
+msgid "Fix Description HTML"
+msgstr "Fix HTML Omschrijving"
+
+#: include/class.admin.php:562
+#@ csa-slp-janitor
+msgid "Use these button to manage the metadata records in the slp_extendo_meta table. "
+msgstr "Gebruik deze button om de metadata records in de slp_extendo_meta tabel te beheren. "
+
+#: include/class.admin.php:563
+#@ csa-slp-janitor
+msgid "Rebuild Extended Data Tables will attempt to rebuild the extended data table without being destructive. "
+msgstr "Rebuild Extended Data Tables poogt de uitgebreide data tabellen opnieuw te bouwen zonder destructief te zijn. "
+
+#: include/class.admin.php:564
+#@ csa-slp-janitor
+msgid "Delete Extended Data Tables info will clear out all of the extended location data and data fields. "
+msgstr "Verwijder Extended Data Tables zal alle uitgebreide locatie data en data velden verwijderen. "
+
+#: include/class.admin.php:565
+#@ csa-slp-janitor
+msgid "Using the Delete option will require you to deactivate any extended data add-on packs and install a newer version to get field data back."
+msgstr "Voor het gebruik van de Verwijder optie moet u elke extended data add-on uitschakelen en een nieuwere versie installeren om de veld data terug te krijgen."
+
+#: include/class.admin.php:571
+#@ csa-slp-janitor
+msgid "Are you sure you want to rebuild the extended data info?"
+msgstr "Weet u zeker dat u de uitgebreide data informatie wilt herbouwen?"
+
+#: include/class.admin.php:579
+#@ csa-slp-janitor
+msgid "Rebuild Extended Data Tables"
+msgstr "Rebuild Extended Data Tables"
+
+#: include/class.admin.php:586
+#@ csa-slp-janitor
+msgid "Are you sure you want to delete all extended data info?"
+msgstr "Weet u zeker dat u alle uitgebreide data informatie wilt verwijderen?"
+
+#: include/class.admin.php:594
+#@ csa-slp-janitor
+msgid "Delete Extended Data Tables"
+msgstr "Verwijder Extended Data Tables"
+
+#: include/class.admin.php:609
+#@ csa-slp-janitor
+msgid "Use this button to clear out the Tagalong categories table. "
+msgstr "Gebruik deze button om de Tagalong categoriën tabel leeg te maken. "
+
+#: include/class.admin.php:610
+#@ csa-slp-janitor
+msgid "The table is a helper table to speed up linking locations to categories. "
+msgstr "De tabel is een hulp tabel om het linken van locaties aan categoriën te versnellen. "
+
+#: include/class.admin.php:616
+#@ csa-slp-janitor
+msgid "Are you sure you want to delete the Tagalong category helper table?"
+msgstr "Weet u zeker dat u de Tagalong categorie hulp tabel wilt verwijderen?"
+
+#: include/class.admin.php:624
+#@ csa-slp-janitor
+msgid "Delete Tagalong Category Helper Data"
+msgstr "Verwijder Tagalong Categorie Hulp Data"
+
+#: include/class.admin.php:630
+#@ csa-slp-janitor
+msgid "Attempt to re-attach Tagalong categories?"
+msgstr "Probeer de Tagalong categoriën opnieuw te linken?"
+
+#: include/class.admin.php:638
+#@ csa-slp-janitor
+msgid "Rebuild Tagalong Category Helper Data"
+msgstr "Rebuild Tagalong Categorie Hulp Data"
+
+#: include/class.admin.php:645
+#@ csa-slp-janitor
+msgid "Results"
+msgstr "Resultaten"
+
+#: include/class.admin.php:646
+#@ csa-slp-janitor
+msgid "Info"
+msgstr "Informatie"
+
+#: include/class.admin.php:698
+#, php-format
+#@ csa-slp-janitor
+msgid "SLP option %s has been deleted."
+msgstr "SLP optie %s is verwijderd."
+
+#: include/class.admin.php:688
+#, php-format
+#@ csa-slp-janitor
+msgid "SLP serialized option %s[%s] has been deleted."
+msgstr "SLP serialized optie %s[%s] is verwijderd."
+
+#: include/class.admin.php:855
+#@ csa-slp-janitor
+msgid "No locations were found."
+msgstr "Geen locaties gevonden."
+
+#: include/class.admin.php:857
+#@ csa-slp-janitor
+msgid " locations has been deleted."
+msgstr " locaties zijn verwijderd."
+
+#: include/class.admin.php:915
+#@ csa-slp-janitor
+msgid "Reset extended data options."
+msgstr "Reset uitgebreide data opties."
+
+#: include/class.admin.php:927
+#@ csa-slp-janitor
+msgid "Tagalong helper data has been cleared."
+msgstr "Tagalong hulp data is leeg gemaakt."
+
+#: include/class.admin.php:965
+#, php-format
+#@ csa-slp-janitor
+msgid "%s category assignments have been made to %s locations."
+msgstr "%s categorie toewijzingen zijn gemaakt op %s locaties."
+
+#. translators: plugin header field 'Name'
+#: slp-janitor.php:0
+#@ csa-slp-janitor
+msgid "Store Locator Plus : Janitor"
+msgstr "Store Locator Plus : Janitor"
+
+#. translators: plugin header field 'PluginURI'
+#: slp-janitor.php:0
+#@ csa-slp-janitor
+msgid "http://www.storelocatorplus.com/products/store-locator-plus-janitor/"
+msgstr "http://www.storelocatorplus.com/products/store-locator-plus-janitor/"
+
+#. translators: plugin header field 'Description'
+#: slp-janitor.php:0
+#@ csa-slp-janitor
+msgid "A free add-on to assist in clean up of settings for the Store Locator Plus plugin."
+msgstr "Een gratis add-on om het opschonen van Store Locator Plus plug-in instellingen te ondersteunen."
+
+#: slp-janitor.php:71
+#@ csa-slp-janitor
+msgid "Janitor"
+msgstr "Janitor"
+
+#: include/class.admin.php:391
+#: include/class.admin.php:408
+#@ csa-slp-janitor
+msgid "Clear Locations"
+msgstr "Verwijder Locaties"
+
+#: include/class.admin.php:417
+#@ csa-slp-janitor
+msgid "Drop Locations"
+msgstr "Drop Locaties"
+
+#: include/class.admin.php:421
+#@ csa-slp-janitor
+msgid "Drop Locations Table is faster but will not reset Store Pages, Tagalong and some other add-on pack data. "
+msgstr "Drop Locaties Tabel is sneller maar zal de Store Pages, Tagalong en sommige andere add-on gegevens niet resetten. "
+
+#: include/class.admin.php:422
+#@ csa-slp-janitor
+msgid "Use this for clearing locations from the base plugin, Pro Pack, the Enhanced add-ons and the Extender add-ons. "
+msgstr "Gebruik dit om de locaties te verwijderen van de basis plugin, Pro Pack, de Enhanced add-ons en de Extender add-ons. "
+
+#: include/class.admin.php:423
+#@ csa-slp-janitor
+msgid "Drop Locations Table is a destructive process that cannot be undone. "
+msgstr "Drop Locaties Tabel is een destructief proces dat niet ongedaan gemaakt kan worden. "
+
+#: include/class.admin.php:436
+#@ csa-slp-janitor
+msgid "Drop Locations Table"
+msgstr "Drop Locaties Tabel"
+
+#: include/class.admin.php:770
+#@ csa-slp-janitor
+msgid "defunct"
+msgstr "verouderd"
+
+#. translators: plugin header field 'Author'
+#: slp-janitor.php:0
+#@ csa-slp-janitor
+msgid "Store Locator Plus"
+msgstr "Store Locator Plus"
+
+#. translators: plugin header field 'AuthorURI'
+#: slp-janitor.php:0
+#@ csa-slp-janitor
+msgid "http://www.storelocatorplus.com/"
+msgstr "http://www.storelocatorplus.com/"
+
+#. translators: plugin header field 'Version'
+#: slp-janitor.php:0
+#@ csa-slp-janitor
+msgid "4.3.00-alpha-02"
+msgstr "4.3.00-alpha-02"
+

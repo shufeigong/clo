@@ -1,0 +1,105 @@
+/** file: pro_admin.css
+ ** Sass Source: ./assets/stylesheets/pro_admin.scss
+ **
+ ** Sass Stylesheet for Pro Pack.
+ **/
+div.section_description {
+  padding: 6px; }
+
+/*
+ * Manage Locations
+ */
+#wpcsl-option-current_locations .tablenav .location_filters {
+  clear: both;
+  display: block;
+  background-color: lightyellow;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 1px 1px rgba 0, 0, 0, 0.04;
+  padding: 3px;
+  margin-bottom: 1px; }
+  #wpcsl-option-current_locations .tablenav .location_filters .location_filter_label {
+    font-weight: bold; }
+
+/* 
+ * Location Import 
+ */
+div.slp_bulk_upload_div {
+  background-color: #F8F7DE;
+  border: 1px solid #F6E39A;
+  margin: 6px; }
+
+input#bulk_file {
+  width: 70%; }
+
+/* Location Export */
+div.filter_box {
+  padding-left: 12px;
+  margin-top: -10px; }
+
+div#csa-slp-pro-location-filters select {
+  clear: both;
+  float: none;
+  height: auto; }
+
+div#csa-slp-pro-location-filters label {
+  width: 65px; }
+
+div#export_button_wrapper {
+  margin-top: 12px;
+  text-align: center; }
+
+/* Reporting */
+div#rb_details table {
+  margin-left: 3px;
+  margin-bottom: 3px; }
+
+div#rb_details th.header {
+  font-weight: bold; }
+
+div#rb_details td {
+  padding: 3px; }
+
+div#rb_details .alignright {
+  float: none; }
+
+div#rb_details .form_entry {
+  padding-left: 3px; }
+
+div#rb_details .form_entry .button-secondary {
+  margin-top: 3px; }
+
+/*----------------------------------
+ *
+ * A div that looks like a button.
+ */
+.like-a-button {
+  background: #FFF;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#DDDDDD');
+  background: -webkit-gradient(linear, left top, left bottom, from(white), to(#dddddd));
+  background: -moz-linear-gradient(top, white, #dddddd);
+  text-decoration: none;
+  border: 1px solid #BBBBBB;
+  border-radius: 3px 3px 3px 3px;
+  margin: 6px;
+  padding: 3px;
+  text-align: center;
+  width: 150px;
+  cursor: pointer;
+  color: #5F5E5E;
+  display: block;
+  /* Corners */
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -khtml-border-radius: 6px;
+  /* Shadow */
+  -moz-box-shadow: 0px 1px 3px #AAA;
+  -webkit-box-shadow: 0px 1px 3px #AAA;
+  box-shadow: 0px 1px 3px #AAA; }
+  .like-a-button A {
+    text-decoration: none; }
+  .like-a-button :hover {
+    background: #DDD;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DDDDDD', endColorstr='#FFFFFF');
+    background: -webkit-gradient(linear, left top, left bottom, from(#dddddd), to(white));
+    background: -moz-linear-gradient(top, #dddddd, white); }

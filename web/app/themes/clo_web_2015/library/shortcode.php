@@ -765,6 +765,30 @@ function sitemapShortcodeHandler()
 
 add_shortcode('sitemap', 'sitemapShortcodeHandler');
 
+////////locationMap shortcode//////////////////
 
+function locationMapShortcodeHandler($atts)
+{
+	$atts =
+	shortcode_atts(
+			[
+					'title'      => 'My LocationMap',
+					'lang'       => 'en',
+			],
+			$atts
+	);
+	
+	$title     = $atts['title'];
+	$output = "";
+	if($atts['lang']=='en'): ////////////////////////english locationmap/////
+	   $output.='<a href="#" onclick="return false;" class="location_map">'.$title.'</a>';
+	
+	elseif($atts['lang']=='fr'): ////////////////////////french locationmap/////
+	   $output.='<a href="#" onclick="return false;" class="location_mapfr">'.$title.'</a>';
+	
+	endif;
+	return $output;
+}
 
+add_shortcode('location_map', 'locationMapShortcodeHandler');
 ?>

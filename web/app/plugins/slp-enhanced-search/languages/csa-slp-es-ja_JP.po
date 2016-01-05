@@ -1,0 +1,271 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Store Locator Plus : Enhanced Search v4.0.007\n"
+"POT-Creation-Date: 2013-10-02 16:43+0900\n"
+"PO-Revision-Date: 2013-10-07 19:18+0900\n"
+"Last-Translator: Karen Ellrick <osakawebbie@gmail.com>\n"
+"Language-Team: Karen Ellrick <osakawebbie@gmail.com>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: slp-enhanced-search.php:151
+msgid "Enhanced Search"
+msgstr "Enhanced Search（拡張検索）"
+
+#: slp-enhanced-search.php:284 slp-enhanced-search.php:1007
+msgid "--Search By City--"
+msgstr "～市/郡を選ぶ～"
+
+#: slp-enhanced-search.php:359 slp-enhanced-search.php:1025
+msgid "--Search By State--"
+msgstr "～都道府県を選ぶ～"
+
+#: slp-enhanced-search.php:450
+msgid "Program Interface"
+msgstr "プログラムのインターフェース"
+
+#: slp-enhanced-search.php:465
+msgid "Allow Address In URL"
+msgstr "URLに住所を含むのは可能"
+
+#: slp-enhanced-search.php:467
+msgid "If checked an address can be pre-loaded via a URL string ?address=blah."
+msgstr ""
+"設定されたら、URLによって住所は自動的に入れられる。例：?address=なになに"
+
+#: slp-enhanced-search.php:469
+msgid ""
+"This will disable the Pro Pack location sensor whenever the address is used "
+"in the URL."
+msgstr ""
+"住所はURLに入っている場合、Pro Packのロケーションセンサーは無効になります。"
+
+#: slp-enhanced-search.php:483
+msgid "Address"
+msgstr "住所"
+
+#: slp-enhanced-search.php:484
+msgid "Instructions to place in the address input."
+msgstr "住所入力に表示される説明"
+
+#: slp-enhanced-search.php:488 slp-enhanced-search.php:986
+msgid "Name"
+msgstr "名前"
+
+#: slp-enhanced-search.php:489
+msgid "Instructions to place in the name input."
+msgstr "名前入力に表示される説明"
+
+#: slp-enhanced-search.php:498
+msgid "Search Placeholders"
+msgstr "検索プレースホルダー"
+
+#: slp-enhanced-search.php:499
+msgid ""
+"Placeholders are text instructions that appear inside an input box before "
+"data is entered."
+msgstr ""
+"プレースホルダーは、データはまだない時に入力フィールドに表示されるテキストの"
+"説明です。"
+
+#: slp-enhanced-search.php:673
+msgid "Name of Store"
+msgstr "ストアの名前"
+
+#: slp-enhanced-search.php:722 slp-enhanced-search.php:1043
+msgid "--Search By Country--"
+msgstr "～国を選ぶ～"
+
+#: slp-enhanced-search.php:848
+msgid "Hide Search Form"
+msgstr "検索フォームを隠す"
+
+#: slp-enhanced-search.php:849
+msgid ""
+"Hide the user input on the search page, regardless of the SLP theme used."
+msgstr "使用しているテーマをかからわず、検索ページにユーザ入力を表示しません。"
+
+#: slp-enhanced-search.php:854
+msgid "Hide Radius Selections"
+msgstr "距離選択を隠す"
+
+#: slp-enhanced-search.php:855
+msgid "Hide the radius selection drop down."
+msgstr "距離のプルダウンを表示しません。"
+
+#: slp-enhanced-search.php:860
+msgid "Show Search By Name"
+msgstr "「名前で検索」を表示"
+
+#: slp-enhanced-search.php:861
+msgid "Shows the name search entry box to the user."
+msgstr "検索フォームに、名前を入力できるフィールドを表示します。"
+
+#: slp-enhanced-search.php:866
+msgid "Show City Selector"
+msgstr "市/郡の選択を表示"
+
+#: slp-enhanced-search.php:867
+msgid "Show the city selector on the search form."
+msgstr "検索フォームに、市/郡のプルダウンを表示します。"
+
+#: slp-enhanced-search.php:868 slp-enhanced-search.php:877
+#: slp-enhanced-search.php:886
+#, php-format
+msgid "View the <a href=\"%s\" target=\"csa\">documentation</a> for more info."
+msgstr ""
+"詳細は、<a href=\"%s\" target=\"csa\">ドキュメンテーション</a>をご覧くださ"
+"い。"
+
+#: slp-enhanced-search.php:875
+msgid "Show Country Selector"
+msgstr "国の選択を表示"
+
+#: slp-enhanced-search.php:876
+msgid "Show the country selector on the search form."
+msgstr "検索フォームに、国のプルダウンを表示します。"
+
+#: slp-enhanced-search.php:884
+msgid "Show State Selector"
+msgstr "都道府県の選択を表示"
+
+#: slp-enhanced-search.php:885
+msgid "Show the state selector on the search form."
+msgstr "検索フォームに、都道府県のプルダウンを表示します。"
+
+#: slp-enhanced-search.php:895
+msgid "Search Address Nearest"
+msgstr "近接さを決定するための範囲"
+
+#: slp-enhanced-search.php:897
+msgid ""
+"Worldwide is the default search, letting Google make the best guess which "
+"addres the user wants."
+msgstr "「世界中」なら、住所の順番はGoogleに任せます。"
+
+#: slp-enhanced-search.php:898
+msgid ""
+"Current Map will find the best matching address nearest the current area "
+"shown on the map."
+msgstr "「現在の地図」なら、今表示される地図に近いアドレスを探します。"
+
+#: slp-enhanced-search.php:901
+msgid "Worldwide"
+msgstr "世界中"
+
+#: slp-enhanced-search.php:906
+msgid "Current Map"
+msgstr "現在の地図"
+
+#: slp-enhanced-search.php:916
+msgid "Search Layout"
+msgstr "検索フォームのレイアウト"
+
+#: slp-enhanced-search.php:917
+msgid "Enter your custom search form layout. "
+msgstr "検索フォームのレイアウトを好みに変更できます。"
+
+#: slp-enhanced-search.php:920
+#, php-format
+msgid "Uses HTML plus %s shortcodes."
+msgstr "HTMLと %s ショートコードが使えます。"
+
+#: slp-enhanced-search.php:922
+msgid "Set it to blank to reset to the default layout. "
+msgstr "最初の設定に戻るには、空白にしてください。"
+
+#: slp-enhanced-search.php:923
+msgid "Overrides all other search form settings."
+msgstr "他の結果設定より優先です。"
+
+#: slp-enhanced-search.php:954
+msgid "Show Radio Buttons"
+msgstr "ラジオボタンを表示"
+
+#: slp-enhanced-search.php:955
+msgid ""
+"Show radio buttons instead of the pulldown for the tag selection interface."
+msgstr "タグ選択のために、プルダウンの代わりにラジオボタンを使用します。"
+
+#: slp-enhanced-search.php:959
+msgid "Tag Autosubmit"
+msgstr "タグの自動送信"
+
+#: slp-enhanced-search.php:960
+msgid ""
+"Force the form to auto-submit when the tag is selected with a radio button."
+msgstr ""
+"ラジオボタンでタグが選択されたら、自動的にフォームが送信されるようにします。"
+
+#: slp-enhanced-search.php:978
+msgid "Find Button"
+msgstr "検索ボタン"
+
+#: slp-enhanced-search.php:979
+msgid "The label on the find button, if text mode is selected."
+msgstr "検索ボタンに表示されるテキスト（テキストモードの場合）"
+
+#: slp-enhanced-search.php:981
+msgid "Find Locations"
+msgstr "ロケーションを検索"
+
+#: slp-enhanced-search.php:987
+msgid "The label that precedes the name input box."
+msgstr "名前入力フィールドの前に表示されるラベル"
+
+#: slp-enhanced-search.php:996
+msgid "City Selector Label"
+msgstr "市/郡の選択のラベル"
+
+#: slp-enhanced-search.php:997
+msgid "The label that precedes the city selector."
+msgstr "市/郡の選択のプルダウンの前に表示されるラベル"
+
+#: slp-enhanced-search.php:1004
+msgid "City Selector First Entry"
+msgstr "市/郡の選択にある最初テキスト"
+
+#: slp-enhanced-search.php:1005
+msgid "The first entry on the search by city selector."
+msgstr "市/郡の選択のプルダウンに、最初に表示されるのテキスト"
+
+#: slp-enhanced-search.php:1014
+msgid "State Selector Label"
+msgstr "都道府県の選択のラベル"
+
+#: slp-enhanced-search.php:1015
+msgid "The label that precedes the state selector."
+msgstr "都道府県の選択のプルダウンの前に表示されるラベル"
+
+#: slp-enhanced-search.php:1022
+msgid "State Selector First Entry"
+msgstr "都道府県の選択にある最初テキスト"
+
+#: slp-enhanced-search.php:1023
+msgid "The first entry on the search by state selector."
+msgstr "都道府県の選択のプルダウンに、最初に表示されるのテキスト"
+
+#: slp-enhanced-search.php:1032
+msgid "Country Selector Label"
+msgstr "国の選択のラベル"
+
+#: slp-enhanced-search.php:1033
+msgid "The label that precedes the country selector."
+msgstr "国の選択のプルダウンの前に表示されるラベル"
+
+#: slp-enhanced-search.php:1040
+msgid "Country Selector First Entry"
+msgstr "国の選択にある最初テキスト"
+
+#: slp-enhanced-search.php:1041
+msgid "The first entry on the search by country selector."
+msgstr "国の選択のプルダウンに、最初に表示されるのテキスト"

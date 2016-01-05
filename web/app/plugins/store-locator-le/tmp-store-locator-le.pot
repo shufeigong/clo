@@ -1,0 +1,2181 @@
+# Copyright (C) 2015 Store Locator Plus
+# This file is distributed under the same license as the Store Locator Plus package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Store Locator Plus 4.3.24\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/store-locator-le\n"
+"POT-Creation-Date: 2015-12-02 21:08:53+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: include/base_class.addon.php:395
+msgid "%s has been deactivated."
+msgstr ""
+
+#: include/base_class.addon.php:399
+msgid "You have %s version %s."
+msgstr ""
+
+#: include/base_class.addon.php:402
+msgid "You need version %s or greater for this version of %s."
+msgstr ""
+
+#: include/base_class.addon.php:405
+msgid "Please install an older version of %s or upgrade."
+msgstr ""
+
+#: include/base_class.addon.php:408
+msgid ""
+"Upgrading major versions of %s requires paid upgrades to all related add-on "
+"packs."
+msgstr ""
+
+#: include/class.actions.php:80
+msgid "SLP Hints"
+msgstr ""
+
+#: include/class.actions.php:84
+msgid ""
+"Check the <a href=\"%s\" target=\"slp\">Store Locator Plus documentation</a> "
+"online.<br/>"
+msgstr ""
+
+#: include/class.actions.php:88
+msgid ""
+"View the <a href=\"%s\" target=\"csa\">[slplus] shortcode documentation</a>."
+msgstr ""
+
+#: include/class.actions.php:132
+msgid "Info"
+msgstr ""
+
+#: include/class.actions.php:138 include/class.actions.php:168
+msgid "Locations"
+msgstr ""
+
+#: include/class.actions.php:144
+msgid "Experience"
+msgstr ""
+
+#: include/class.actions.php:150
+msgid "General"
+msgstr ""
+
+#: include/class.actions.php:251
+msgid "Store Pages"
+msgstr ""
+
+#: include/class.actions.php:252
+msgid "Store Page"
+msgstr ""
+
+#: include/class.actions.php:253
+msgid "Add New Store Page"
+msgstr ""
+
+#: include/class.actions.php:282
+msgid "Store Locator Plus location pages."
+msgstr ""
+
+#: include/class.actions.php:301
+msgid "Categories"
+msgstr ""
+
+#: include/class.actions.php:302
+msgid "Store Categories"
+msgstr ""
+
+#: include/class.addon.manager.php:193
+msgid "Enhanced Map"
+msgstr ""
+
+#: include/class.addon.manager.php:194
+msgid "Enhanced Results"
+msgstr ""
+
+#: include/class.addon.manager.php:195
+msgid "Enhanced Search"
+msgstr ""
+
+#: include/class.addon.manager.php:196
+msgid "Premier"
+msgstr ""
+
+#: include/class.addon.manager.php:197
+msgid "Pro Pack"
+msgstr ""
+
+#: include/class.addon.manager.php:198
+msgid "Tagalong"
+msgstr ""
+
+#: include/class.adminui.experience.php:36
+msgid "English"
+msgstr ""
+
+#: include/class.adminui.experience.php:37
+msgid "Arabic"
+msgstr ""
+
+#: include/class.adminui.experience.php:38
+msgid "Basque"
+msgstr ""
+
+#: include/class.adminui.experience.php:39
+msgid "Bulgarian"
+msgstr ""
+
+#: include/class.adminui.experience.php:40
+msgid "Bengali"
+msgstr ""
+
+#: include/class.adminui.experience.php:41
+msgid "Catalan"
+msgstr ""
+
+#: include/class.adminui.experience.php:42
+msgid "Czech"
+msgstr ""
+
+#: include/class.adminui.experience.php:43
+msgid "Danish"
+msgstr ""
+
+#: include/class.adminui.experience.php:44
+msgid "German"
+msgstr ""
+
+#: include/class.adminui.experience.php:45
+msgid "Greek"
+msgstr ""
+
+#: include/class.adminui.experience.php:46
+msgid "English (Australian)"
+msgstr ""
+
+#: include/class.adminui.experience.php:47
+msgid "English (Great Britain)"
+msgstr ""
+
+#: include/class.adminui.experience.php:48
+msgid "Spanish"
+msgstr ""
+
+#: include/class.adminui.experience.php:49
+msgid "Farsi"
+msgstr ""
+
+#: include/class.adminui.experience.php:50
+msgid "Finnish"
+msgstr ""
+
+#: include/class.adminui.experience.php:51
+msgid "Filipino"
+msgstr ""
+
+#: include/class.adminui.experience.php:52
+msgid "French"
+msgstr ""
+
+#: include/class.adminui.experience.php:53
+msgid "Galician"
+msgstr ""
+
+#: include/class.adminui.experience.php:54
+msgid "Gujarati"
+msgstr ""
+
+#: include/class.adminui.experience.php:55
+msgid "Hindi"
+msgstr ""
+
+#: include/class.adminui.experience.php:56
+msgid "Croatian"
+msgstr ""
+
+#: include/class.adminui.experience.php:57
+msgid "Hungarian"
+msgstr ""
+
+#: include/class.adminui.experience.php:58
+msgid "Indonesian"
+msgstr ""
+
+#: include/class.adminui.experience.php:59
+msgid "Italian"
+msgstr ""
+
+#: include/class.adminui.experience.php:60
+msgid "Hebrew"
+msgstr ""
+
+#: include/class.adminui.experience.php:61
+msgid "Japanese"
+msgstr ""
+
+#: include/class.adminui.experience.php:62
+msgid "Kannada"
+msgstr ""
+
+#: include/class.adminui.experience.php:63
+msgid "Korean"
+msgstr ""
+
+#: include/class.adminui.experience.php:64
+msgid "Lithuanian"
+msgstr ""
+
+#: include/class.adminui.experience.php:65
+msgid "Latvian"
+msgstr ""
+
+#: include/class.adminui.experience.php:66
+msgid "Malayalam"
+msgstr ""
+
+#: include/class.adminui.experience.php:67
+msgid "Marathi"
+msgstr ""
+
+#: include/class.adminui.experience.php:68
+msgid "Dutch"
+msgstr ""
+
+#: include/class.adminui.experience.php:69
+msgid "Norwegian"
+msgstr ""
+
+#: include/class.adminui.experience.php:70
+msgid "Polish"
+msgstr ""
+
+#: include/class.adminui.experience.php:71
+msgid "Portuguese"
+msgstr ""
+
+#: include/class.adminui.experience.php:72
+msgid "Portuguese (Brazil)"
+msgstr ""
+
+#: include/class.adminui.experience.php:73
+msgid "Portuguese (Portugal)"
+msgstr ""
+
+#: include/class.adminui.experience.php:74
+msgid "Romanian"
+msgstr ""
+
+#: include/class.adminui.experience.php:75
+msgid "Russian"
+msgstr ""
+
+#: include/class.adminui.experience.php:76
+msgid "Slovak"
+msgstr ""
+
+#: include/class.adminui.experience.php:77
+msgid "Slovenian"
+msgstr ""
+
+#: include/class.adminui.experience.php:78
+msgid "Serbian"
+msgstr ""
+
+#: include/class.adminui.experience.php:79
+msgid "Swedish"
+msgstr ""
+
+#: include/class.adminui.experience.php:80
+msgid "Tagalog"
+msgstr ""
+
+#: include/class.adminui.experience.php:81
+msgid "Tamil"
+msgstr ""
+
+#: include/class.adminui.experience.php:82
+msgid "Telugu"
+msgstr ""
+
+#: include/class.adminui.experience.php:83
+msgid "Thai"
+msgstr ""
+
+#: include/class.adminui.experience.php:84
+msgid "Turkish"
+msgstr ""
+
+#: include/class.adminui.experience.php:85
+msgid "Ukrainian"
+msgstr ""
+
+#: include/class.adminui.experience.php:86
+msgid "Vietnamese"
+msgstr ""
+
+#: include/class.adminui.experience.php:87
+msgid "Chinese (Simplified)"
+msgstr ""
+
+#: include/class.adminui.experience.php:88
+msgid "Chinese (Traditional)"
+msgstr ""
+
+#: include/class.adminui.experience.php:98
+#: include/class.adminui.locations.php:1814
+msgid "View"
+msgstr ""
+
+#: include/class.adminui.experience.php:115
+#: include/class.adminui.experience.php:487
+msgid "Appearance"
+msgstr ""
+
+#: include/class.adminui.experience.php:125
+msgid "Map Height"
+msgstr ""
+
+#: include/class.adminui.experience.php:127
+msgid "The initial map height in pixels or percent of initial page height. "
+msgstr ""
+
+#: include/class.adminui.experience.php:128
+msgid ""
+"Can also use rules like auto and inherit if Height Units is set to blank "
+msgstr ""
+
+#: include/class.adminui.experience.php:139
+msgid "Height Units"
+msgstr ""
+
+#: include/class.adminui.experience.php:152
+#: include/class.adminui.experience.php:189
+msgid "Is the width a percentage of page width or absolute pixel size? "
+msgstr ""
+
+#: include/class.adminui.experience.php:153
+msgid ""
+"Select blank to use CSS rules like auto or inherit in the Map Height setting."
+msgstr ""
+
+#: include/class.adminui.experience.php:163
+msgid "Map Width"
+msgstr ""
+
+#: include/class.adminui.experience.php:165
+msgid "The initial map width in pixels or percent of initial page width. "
+msgstr ""
+
+#: include/class.adminui.experience.php:166
+msgid ""
+"Can also use rules like auto and inherit if Width Units is set to blank "
+msgstr ""
+
+#: include/class.adminui.experience.php:176
+msgid "Width Units"
+msgstr ""
+
+#: include/class.adminui.experience.php:190
+msgid ""
+"Select blank to use CSS rules like auto or inherit in the Map Width setting."
+msgstr ""
+
+#: include/class.adminui.experience.php:200
+msgid "Map Type"
+msgstr ""
+
+#: include/class.adminui.experience.php:210
+msgid "What style map do you want to use? "
+msgstr ""
+
+#: include/class.adminui.experience.php:218
+msgid "Remove Credits"
+msgstr ""
+
+#: include/class.adminui.experience.php:224
+msgid "Remove the search provided by tagline under the map."
+msgstr ""
+
+#: include/class.adminui.experience.php:236
+#: include/class.adminui.experience.php:505
+msgid "Functionality"
+msgstr ""
+
+#: include/class.adminui.experience.php:249
+msgid "Map Domain"
+msgstr ""
+
+#: include/class.adminui.experience.php:251
+msgid ""
+"Select the Google maps API url to be used by default for location queries."
+msgstr ""
+
+#: include/class.adminui.experience.php:253
+msgid "Country code is used by %s to influence address guesses."
+msgstr ""
+
+#: include/class.adminui.experience.php:275
+msgid "Map Language"
+msgstr ""
+
+#: include/class.adminui.experience.php:277
+msgid ""
+"Select the language to be used when sending and receiving data from the "
+"Google Maps API."
+msgstr ""
+
+#: include/class.adminui.experience.php:291
+msgid "Zoom Level"
+msgstr ""
+
+#: include/class.adminui.experience.php:293
+msgid ""
+"Initial zoom level of the map if \"immediately show locations\" is NOT "
+"selected or if only a single location is found."
+msgstr ""
+
+#: include/class.adminui.experience.php:294
+msgid "0 = world view, 19 = house view."
+msgstr ""
+
+#: include/class.adminui.experience.php:332
+msgid "Zoom Adjustment"
+msgstr ""
+
+#: include/class.adminui.experience.php:334
+msgid ""
+"Changes how tight auto-zoom bounds the locations shown.  Lower numbers are "
+"closer to the locations."
+msgstr ""
+
+#: include/class.adminui.experience.php:385
+msgid "Markers"
+msgstr ""
+
+#: include/class.adminui.experience.php:393
+msgid "Home Marker"
+msgstr ""
+
+#: include/class.adminui.experience.php:402
+msgid "Destination Marker"
+msgstr ""
+
+#: include/class.adminui.experience.php:411
+msgid "Saved markers live here: "
+msgstr ""
+
+#: include/class.adminui.experience.php:430
+#: include/class.adminui.experience.php:688
+msgid "At Startup"
+msgstr ""
+
+#: include/class.adminui.experience.php:433
+msgid "Center Map At"
+msgstr ""
+
+#: include/class.adminui.experience.php:435
+msgid "Enter an address to serve as the initial focus for the map. "
+msgstr ""
+
+#: include/class.adminui.experience.php:436
+msgid "Set to blank to reset this to the center of your Map Domain country. "
+msgstr ""
+
+#: include/class.adminui.experience.php:437
+msgid "Default is the center of the country. "
+msgstr ""
+
+#: include/class.adminui.experience.php:439
+msgid ""
+"%s add-on must be installed to set per-page with center_map_at=\"address\" "
+"shortcode. "
+msgstr ""
+
+#: include/class.adminui.experience.php:442
+msgid ""
+"Force JavaScript setting must be off when using the shortcode attribute. "
+msgstr ""
+
+#: include/class.adminui.experience.php:452
+msgid "Center Latitude Fallback"
+msgstr ""
+
+#: include/class.adminui.experience.php:454
+#: include/class.adminui.experience.php:468
+msgid "Where to center the map when Google geocoding is offline. "
+msgstr ""
+
+#: include/class.adminui.experience.php:455
+#: include/class.adminui.experience.php:469
+msgid ""
+"Set to blank and save settings to reset to the center of the default country "
+"if Center Map At is Blank. "
+msgstr ""
+
+#: include/class.adminui.experience.php:456
+#: include/class.adminui.experience.php:470
+msgid ""
+"If Center Map At has an address and this is set to blank, that address will "
+"be re-geocoded and stored here."
+msgstr ""
+
+#: include/class.adminui.experience.php:466
+msgid "Center Longitude Fallback"
+msgstr ""
+
+#: include/class.adminui.experience.php:491
+msgid "Add on packs like %s will add appearance control settings here."
+msgstr ""
+
+#: include/class.adminui.experience.php:508
+msgid "Show Locations At Startup"
+msgstr ""
+
+#: include/class.adminui.experience.php:511
+msgid ""
+"Display locations as soon as map loads, based on map center and default "
+"radius. "
+msgstr ""
+
+#: include/class.adminui.experience.php:512
+msgid "The settings in the startup section here impact how this mode works. "
+msgstr ""
+
+#: include/class.adminui.experience.php:514
+msgid ""
+"%s provides the [slplus immediately_show_locations=\"true|false\"] attribute "
+"option."
+msgstr ""
+
+#: include/class.adminui.experience.php:532
+msgid "Labels"
+msgstr ""
+
+#: include/class.adminui.experience.php:536
+msgid "Website URL"
+msgstr ""
+
+#: include/class.adminui.experience.php:538
+msgid "Search results text for the website link."
+msgstr ""
+
+#: include/class.adminui.experience.php:539
+#: include/class.adminui.experience.php:567
+#: include/class.adminui.experience.php:582
+#: include/class.adminui.experience.php:612
+#: include/class.adminui.experience.php:627
+#: include/class.adminui.experience.php:640
+msgid "Changes the Locations tab field label on the admin interface. "
+msgstr ""
+
+#: include/class.adminui.experience.php:550
+msgid "Instructions"
+msgstr ""
+
+#: include/class.adminui.experience.php:552
+msgid ""
+"Search results instructions shown if immediately show locations is not "
+"selected."
+msgstr ""
+
+#: include/class.adminui.experience.php:564
+#: include/class.option.manager.php:54
+msgid "Hours"
+msgstr ""
+
+#: include/class.adminui.experience.php:566
+msgid "What to put in search results for hours."
+msgstr ""
+
+#: include/class.adminui.experience.php:579
+#: include/class.option.manager.php:50
+msgid "Email"
+msgstr ""
+
+#: include/class.adminui.experience.php:581
+msgid "What to put on the search results in place of an email address. "
+msgstr ""
+
+#: include/class.adminui.experience.php:594
+#: include/class.option.manager.php:42
+msgid "Directions"
+msgstr ""
+
+#: include/class.adminui.experience.php:596
+msgid "What to put on the search results for the directions link. "
+msgstr ""
+
+#: include/class.adminui.experience.php:609
+#: include/class.option.manager.php:62
+msgid "Phone"
+msgstr ""
+
+#: include/class.adminui.experience.php:611
+msgid ""
+"What to put on the search results preceding the phone number on search "
+"results. "
+msgstr ""
+
+#: include/class.adminui.experience.php:624
+#: include/class.option.manager.php:46
+msgid "Fax"
+msgstr ""
+
+#: include/class.adminui.experience.php:626
+msgid "What to put on the search results preceding the fax number. "
+msgstr ""
+
+#: include/class.adminui.experience.php:638
+#: include/class.adminui.locations.php:965 include/class.option.manager.php:58
+msgid "Image"
+msgstr ""
+
+#: include/class.adminui.experience.php:666
+msgid "After Search"
+msgstr ""
+
+#: include/class.adminui.experience.php:669
+msgid "Max Search Results"
+msgstr ""
+
+#: include/class.adminui.experience.php:671
+msgid "How many locations does a search return? Default is 25."
+msgstr ""
+
+#: include/class.adminui.experience.php:691
+msgid "Number To Show Initially"
+msgstr ""
+
+#: include/class.adminui.experience.php:694
+msgid ""
+"How many locations should be shown when Immediately Show Locations is "
+"checked. "
+msgstr ""
+
+#: include/class.adminui.experience.php:695
+msgid "Recommended maximum is 50."
+msgstr ""
+
+#: include/class.adminui.experience.php:706
+msgid "Radius To Search Initially"
+msgstr ""
+
+#: include/class.adminui.experience.php:709
+msgid ""
+"What should immediately show locations use as the default search radius? "
+"Leave empty to use map radius default or set to a large number like 25000 to "
+"search everywhere."
+msgstr ""
+
+#: include/class.adminui.experience.php:711
+msgid ""
+"Can be set with <a href=\"%s\" target=\"csa\">shortcode attribute "
+"initial_radius</a> if Force Load JavaScript is turned off."
+msgstr ""
+
+#: include/class.adminui.experience.php:733
+msgid " - User Experience"
+msgstr ""
+
+#: include/class.adminui.experience.php:735
+msgid "Save Settings"
+msgstr ""
+
+#: include/class.adminui.experience.php:797
+msgid "Auto set height unit to blank when height is 'auto'"
+msgstr ""
+
+#: include/class.adminui.experience.php:802
+msgid "Auto set width unit to blank when width is 'auto'"
+msgstr ""
+
+#: include/class.adminui.experience.php:938
+msgid "Map"
+msgstr ""
+
+#: include/class.adminui.experience.php:1032
+msgid "Your home marker %s cannot be located, please select a new one."
+msgstr ""
+
+#: include/class.adminui.experience.php:1041
+msgid "Your destination marker %s cannot be located, please select a new one."
+msgstr ""
+
+#: include/class.adminui.experience.php:1081
+msgid "Successful Update"
+msgstr ""
+
+#: include/class.adminui.experience.php:1099
+msgid "Results"
+msgstr ""
+
+#: include/class.adminui.experience.php:1152
+#: include/class.adminui.locations.php:1975
+msgid "Search"
+msgstr ""
+
+#: include/class.adminui.experience.php:1168
+msgid "Radii Options"
+msgstr ""
+
+#: include/class.adminui.experience.php:1169
+msgid ""
+"Separate each number with a comma \",\". Put parenthesis \"( )\" around the "
+"default."
+msgstr ""
+
+#: include/class.adminui.experience.php:1175
+msgid "Distance Unit"
+msgstr ""
+
+#: include/class.adminui.experience.php:1180
+msgid "Kilometers"
+msgstr ""
+
+#: include/class.adminui.experience.php:1180 include/class.ajax.php:240
+msgid "km"
+msgstr ""
+
+#: include/class.adminui.experience.php:1181
+msgid "Miles"
+msgstr ""
+
+#: include/class.adminui.experience.php:1181
+msgid "miles"
+msgstr ""
+
+#: include/class.adminui.experience.php:1197
+msgid "Search Features"
+msgstr ""
+
+#: include/class.adminui.experience.php:1216
+#: include/class.adminui.locations.php:316
+#: include/class.adminui.locations.php:603 include/class.ui.php:210
+msgid "Address"
+msgstr ""
+
+#: include/class.adminui.experience.php:1217
+msgid "Search form address label."
+msgstr ""
+
+#: include/class.adminui.experience.php:1219
+msgid "Address / Zip"
+msgstr ""
+
+#: include/class.adminui.experience.php:1226
+msgid "Radius"
+msgstr ""
+
+#: include/class.adminui.experience.php:1227
+msgid "Search form radius label."
+msgstr ""
+
+#: include/class.adminui.experience.php:1229 include/class.ui.php:233
+msgid "Within"
+msgstr ""
+
+#: include/class.adminui.experience.php:1237
+msgid "Search Labels"
+msgstr ""
+
+#: include/class.adminui.experience.php:1255
+#: include/class.themes.admin.php:101
+msgid "Add On Packs"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:37
+msgid "Premier Members"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:41
+msgid ""
+"These settings enable <a href=\"%s\" target=\"slp\">Premier Membership</a> "
+"features within the plugin. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:44
+msgid ""
+"This includes updating the Premier Plugin to the latest release when an "
+"update is available. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:45
+msgid ""
+"Premier Members also get priority support and access to real-time product "
+"update information. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:53
+msgid "User ID"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:58
+msgid "Your StoreLocatorPlus.com Premium Membership user ID."
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:66
+msgid "Subscription ID"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:71
+msgid "Your StoreLocatorPlus.com Premium Membership subscriptions ID."
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:84
+msgid "General Settings"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:152
+msgid "Admin"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:155
+msgid "Add On Packs "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:157
+msgid "SLP Plugin Updates"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:159
+msgid "Which build target do you want to update your  plugins to? "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:160
+msgid "Leave this as production unless you really know what you are doing! "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:189
+#: include/class.adminui.generalsettings.php:386
+msgid "Server"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:192
+msgid "Geocoding"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:197
+msgid "Server-To-Server Speed"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:209
+msgid ""
+"How fast is your server when communicating with other servers like Google? "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:210
+msgid ""
+"Set this to slow if you get frequent geocoding errors but geocoding works "
+"sometimes. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:211
+msgid ""
+"Set this to fast if you never have geocoding errors and are bulk loading "
+"more than 100 locations at a time. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:218
+msgid "Geocode Retries"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:237
+msgid ""
+"How many times should we try to set the latitude/longitude for a new "
+"address? "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:238
+msgid "Higher numbers mean slower bulk uploads. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:239
+msgid ""
+"Lower numbers make it more likely the location will not be set during bulk "
+"uploads. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:240
+#: include/class.adminui.generalsettings.php:256
+msgid "Bulk import or re-geocoding is a %s feature."
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:248
+msgid "Maximum Retry Delay"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:253
+msgid "Maximum time to wait between retries, in seconds. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:254
+msgid "Use multiples of 1. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:255
+msgid "Recommended value is 5. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:262
+msgid "Google Business License"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:267
+msgid "Google Client ID"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:272
+msgid "If you have a Google Maps for Work client ID, enter it here. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:273
+msgid "All Google API requests will go through your account at Google. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:274
+msgid "You will receive higher quotas and faster maps I/O performance. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:281
+msgid "Google Private Key"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:286
+msgid "Your Google private key (Crypto Key) for signing Geocoding requests. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:287
+msgid ""
+"Do NOT share this with anyone and take extra measures to keep it private. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:293
+msgid "Google Developers Console"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:298
+msgid "Google API Server Key"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:303
+msgid ""
+"If you have created a Google JavaScript For Maps API Server Key, enter it "
+"here. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:304
+msgid ""
+"You will not gain performance benefits from using a Google API Server Key. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:305
+msgid ""
+"You do have the option to setup pay-as-you-go at Google and get higher "
+"geocoding quotas. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:318
+msgid "User Interface"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:321
+msgid "JavaScript"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:330
+msgid "These settings change how JavaScript behaves on your site. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:334
+msgid "You have <a href=\"%s\" target=\"csa\">Force Load JavaScript</a> ON. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:337
+msgid ""
+"Themes that follow WordPress best practices and employ wp_footer() properly "
+"do not need this. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:338
+msgid ""
+"Leaving it on slows down your site and disables a lot of extra features with "
+"the plugin and add-on packs. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:350
+msgid "Force Load JavaScript"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:354
+msgid ""
+"Force the JavaScript for Store Locator Plus to load on every page with early "
+"loading. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:355
+msgid ""
+"This can slow down your site, but is compatible with more themes and "
+"plugins. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:356
+msgid ""
+"If you need to do this to make SLP work you should ask your theme author to "
+"add proper wp_footer() support to their code. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:362
+msgid "Map Interface"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:367
+msgid "Turn Off SLP Maps"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:387
+msgid "Web App Settings"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:392
+msgid "PHP Time Limit"
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:397
+msgid "Maximum execution time, in seconds, for PHP processing. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:398
+msgid "Affects all CSV imports for add-ons and Janitor delete all locations. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:399
+msgid "SLP Default 600. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:400
+msgid ""
+"On most servers you will need to edit this setting in the php.ini file. "
+msgstr ""
+
+#: include/class.adminui.generalsettings.php:401
+msgid "Your server default %s. "
+msgstr ""
+
+#: include/class.adminui.info.php:47
+msgid " Info"
+msgstr ""
+
+#: include/class.adminui.info.php:93
+msgid "UPDATE HERE"
+msgstr ""
+
+#: include/class.adminui.info.php:123 include/class.adminui.info.php:307
+msgid "Plugin Environment"
+msgstr ""
+
+#: include/class.adminui.info.php:125
+msgid " Version"
+msgstr ""
+
+#: include/class.adminui.info.php:128
+msgid "This Info Cached"
+msgstr ""
+
+#: include/class.adminui.info.php:129
+msgid "WordPress Version"
+msgstr ""
+
+#: include/class.adminui.info.php:130
+msgid "Site URL"
+msgstr ""
+
+#: include/class.adminui.info.php:132
+msgid "MySQL Version"
+msgstr ""
+
+#: include/class.adminui.info.php:133
+msgid "PHP Version"
+msgstr ""
+
+#: include/class.adminui.info.php:137
+msgid "PHP Limit"
+msgstr ""
+
+#: include/class.adminui.info.php:142
+msgid "WordPress General Limit"
+msgstr ""
+
+#: include/class.adminui.info.php:147
+msgid "WordPress Admin Limit"
+msgstr ""
+
+#: include/class.adminui.info.php:152
+msgid "PHP Peak RAM"
+msgstr ""
+
+#: include/class.adminui.info.php:156
+msgid "PHP Post Max Size"
+msgstr ""
+
+#: include/class.adminui.info.php:160
+msgid "PHP Modules"
+msgstr ""
+
+#: include/class.adminui.info.php:187
+msgid "Add A Location"
+msgstr ""
+
+#: include/class.adminui.info.php:192
+msgid "Add a location or two via the <a href=\"%s\">Add Location form</a>."
+msgstr ""
+
+#: include/class.adminui.info.php:196
+msgid ""
+"You will find this link, and other Store Locator Plus links, in the left "
+"sidebar under the Store Locator Plus entry. "
+msgstr ""
+
+#: include/class.adminui.info.php:199
+msgid ""
+"If you have many locations to add, check out the %s and the bulk import "
+"options."
+msgstr ""
+
+#: include/class.adminui.info.php:205
+msgid "Create A Page"
+msgstr ""
+
+#: include/class.adminui.info.php:209
+msgid ""
+"Go to the sidebar and select \"Add New\" under the pages section.  You will "
+"be creating a standard WordPress page. "
+msgstr ""
+
+#: include/class.adminui.info.php:212
+msgid ""
+"On that page add the [SLPLUS] <a href=\"%s\" target=\"slplus\">shortcode</"
+"a>.  When a visitor goes to that page it will show a default search form and "
+"a Google Map."
+msgstr ""
+
+#: include/class.adminui.info.php:216
+msgid ""
+"When someone searches for a zip code that is close enough to a location you "
+"entered it will show those locations on the map. "
+msgstr ""
+
+#: include/class.adminui.info.php:220
+msgid "Tweak The Settings"
+msgstr ""
+
+#: include/class.adminui.info.php:225
+msgid ""
+"You can modify basic settings such as the options shown on the radius pull "
+"down list on the <a href=\"%s\">Experience</a> page. "
+msgstr ""
+
+#: include/class.adminui.info.php:230
+msgid ""
+"Even more settings are available via <a href=\"%s\" target=\"slplus\">the "
+"premium add-on packs</a>. "
+msgstr ""
+
+#: include/class.adminui.info.php:236
+msgid "More Help?"
+msgstr ""
+
+#: include/class.adminui.info.php:241
+msgid ""
+"Check out the <a href=\"%s\" target=\"slplus\">online documentation and "
+"support forums</a>."
+msgstr ""
+
+#: include/class.adminui.info.php:281
+msgid "Navigation"
+msgstr ""
+
+#: include/class.adminui.info.php:293
+msgid "How to Use"
+msgstr ""
+
+#: include/class.adminui.info.php:300
+msgid "Plugin News"
+msgstr ""
+
+#: include/class.adminui.locations.php:225
+msgid " - Locations"
+msgstr ""
+
+#: include/class.adminui.locations.php:264
+#: include/class.adminui.locations.php:773
+msgid "Adding a new location."
+msgstr ""
+
+#: include/class.adminui.locations.php:269
+#: include/class.adminui.locations.php:781
+msgid "Linked to %s page # %d"
+msgstr ""
+
+#: include/class.adminui.locations.php:279
+#: include/class.adminui.locations.php:791
+msgid "Original latitude %f , longitude %f."
+msgstr ""
+
+#: include/class.adminui.locations.php:287
+#: include/class.adminui.locations.php:799
+msgid "Editing location #%d %s %s"
+msgstr ""
+
+#: include/class.adminui.locations.php:297
+#: include/class.adminui.locations.php:298
+#: include/class.adminui.locations.php:810
+#: include/class.adminui.locations.php:811
+msgid "Latitude/Longitude lookup."
+msgstr ""
+
+#: include/class.adminui.locations.php:299
+#: include/class.adminui.locations.php:812
+msgid ""
+"The LatLong.net website can help you locate an exact latitude/longitude."
+msgstr ""
+
+#: include/class.adminui.locations.php:314
+msgid "Actions"
+msgstr ""
+
+#: include/class.adminui.locations.php:315
+#: include/class.adminui.locations.php:1034
+msgid "Name"
+msgstr ""
+
+#: include/class.adminui.locations.php:317
+msgid "Address 2"
+msgstr ""
+
+#: include/class.adminui.locations.php:318
+#: include/class.adminui.locations.php:1049
+msgid "City"
+msgstr ""
+
+#: include/class.adminui.locations.php:319
+#: include/class.adminui.locations.php:1054
+msgid "State"
+msgstr ""
+
+#: include/class.adminui.locations.php:320
+msgid "Zip"
+msgstr ""
+
+#: include/class.adminui.locations.php:321
+#: include/class.adminui.locations.php:1064
+msgid "Country"
+msgstr ""
+
+#: include/class.adminui.locations.php:322
+#: include/class.adminui.locations.php:1153
+msgid "Description"
+msgstr ""
+
+#: include/class.adminui.locations.php:420
+msgid ""
+"It appears you tried to upload %d MiB of data but the PHP post_max_size is "
+"%d MiB."
+msgstr ""
+
+#: include/class.adminui.locations.php:425
+msgid "Try increasing the post_max_size setting in your php.ini file."
+msgstr ""
+
+#: include/class.adminui.locations.php:663
+msgid "Extended Data "
+msgstr ""
+
+#: include/class.adminui.locations.php:737
+msgid "private"
+msgstr ""
+
+#: include/class.adminui.locations.php:754
+msgid "Edit"
+msgstr ""
+
+#: include/class.adminui.locations.php:762
+#: include/class.adminui.locations.php:1116
+msgid "Add"
+msgstr ""
+
+#: include/class.adminui.locations.php:856
+msgid "Details"
+msgstr ""
+
+#: include/class.adminui.locations.php:974
+#: include/class.adminui.locations.php:975
+msgid " image "
+msgstr ""
+
+#: include/class.adminui.locations.php:1011
+msgid "Inactive. Geocode to activate."
+msgstr ""
+
+#: include/class.adminui.locations.php:1039
+msgid "Street - Line 1"
+msgstr ""
+
+#: include/class.adminui.locations.php:1044
+msgid "Street - Line 2"
+msgstr ""
+
+#: include/class.adminui.locations.php:1059
+msgid "ZIP / Postal Code"
+msgstr ""
+
+#: include/class.adminui.locations.php:1069
+msgid "Latitude (N/S)"
+msgstr ""
+
+#: include/class.adminui.locations.php:1072
+msgid "Leave blank to have Google look up the latitude."
+msgstr ""
+
+#: include/class.adminui.locations.php:1076
+msgid "Longitude (E/W)"
+msgstr ""
+
+#: include/class.adminui.locations.php:1079
+msgid "Leave blank to have Google look up the longitude."
+msgstr ""
+
+#: include/class.adminui.locations.php:1084
+msgid "Private Entry"
+msgstr ""
+
+#: include/class.adminui.locations.php:1085
+msgid "If checked the listing will not show up in location search results."
+msgstr ""
+
+#: include/class.adminui.locations.php:1110
+msgid "Add Location"
+msgstr ""
+
+#: include/class.adminui.locations.php:1111
+msgid "Update Location"
+msgstr ""
+
+#: include/class.adminui.locations.php:1117
+msgid "Update"
+msgstr ""
+
+#: include/class.adminui.locations.php:1134
+msgid "Cancel"
+msgstr ""
+
+#: include/class.adminui.locations.php:1189
+msgid "Image URL"
+msgstr ""
+
+#: include/class.adminui.locations.php:1258
+msgid "added successfully"
+msgstr ""
+
+#: include/class.adminui.locations.php:1265
+msgid "Location not added."
+msgstr ""
+
+#: include/class.adminui.locations.php:1266
+msgid "The add location form on your server is not rendering properly."
+msgstr ""
+
+#: include/class.adminui.locations.php:1383
+#: include/class.adminui.locations.php:1384
+msgid "edit"
+msgstr ""
+
+#: include/class.adminui.locations.php:1391
+#: include/class.adminui.locations.php:1392
+msgid "delete"
+msgstr ""
+
+#: include/class.adminui.locations.php:1395
+msgid "Delete %s?"
+msgstr ""
+
+#: include/class.adminui.locations.php:1421
+msgid "Bulk Actions"
+msgstr ""
+
+#: include/class.adminui.locations.php:1426
+msgid "Delete Permanently"
+msgstr ""
+
+#: include/class.adminui.locations.php:1452
+msgid "Options"
+msgstr ""
+
+#: include/class.adminui.locations.php:1463
+msgid "Are you sure you want to "
+msgstr ""
+
+#: include/class.adminui.locations.php:1473 include/class.helper.php:193
+msgid "Apply"
+msgstr ""
+
+#: include/class.adminui.locations.php:1494
+msgid "Show All"
+msgstr ""
+
+#: include/class.adminui.locations.php:1521
+msgid "Filter Locations By"
+msgstr ""
+
+#: include/class.adminui.locations.php:1537
+msgid "Filter"
+msgstr ""
+
+#: include/class.adminui.locations.php:1555
+msgid "%d locations"
+msgstr ""
+
+#: include/class.adminui.locations.php:1575
+msgid "Display"
+msgstr ""
+
+#: include/class.adminui.locations.php:1601
+msgid "for your search of"
+msgstr ""
+
+#: include/class.adminui.locations.php:1603
+msgid "Clear&nbsp;Results"
+msgstr ""
+
+#: include/class.adminui.locations.php:1676
+msgid "locations"
+msgstr ""
+
+#: include/class.adminui.locations.php:1694
+msgid "Manage"
+msgstr ""
+
+#: include/class.adminui.locations.php:1712
+msgid "No locations have been created yet."
+msgstr ""
+
+#: include/class.adminui.locations.php:1739
+msgid "Location search or filter returned no matches."
+msgstr ""
+
+#: include/class.adminui.locations.php:1946
+msgid "Drag colum here to hide it."
+msgstr ""
+
+#: include/class.adminui.locations.php:2062
+msgid "Hidden Fields: "
+msgstr ""
+
+#: include/class.adminui.locations.php:2065
+msgid "Click to restore %s."
+msgstr ""
+
+#: include/class.adminui.php:324
+msgid "Could not read icon directory %s"
+msgstr ""
+
+#: include/class.adminui.php:424
+msgid ""
+"If you like <strong>Store Locator Plus</strong> please leave me a <a target="
+"\"_blank\" href=\"%s\" title=\"Rate Store Locator Plus on WordPress\">★★★★★</"
+"a> rating "
+msgstr ""
+
+#: include/class.adminui.php:428
+msgid ""
+"on <a target=\"_blank\" href=\"%s\" title=\"Rate Store Locator Plus on "
+"WordPress\">WordPress.org</a>. "
+msgstr ""
+
+#: include/class.adminui.php:432
+msgid "A huge thank you from Lance and his fellow code geeks!"
+msgstr ""
+
+#: include/class.ajax.php:398
+msgid "renderJSON_Response did not get an array()"
+msgstr ""
+
+#: include/class.country.manager.php:57
+msgid "United States"
+msgstr ""
+
+#: include/class.country.manager.php:66
+msgid "Algeria"
+msgstr ""
+
+#: include/class.country.manager.php:73
+msgid "American Samoa"
+msgstr ""
+
+#: include/class.country.manager.php:80
+msgid "Andorra"
+msgstr ""
+
+#: include/class.country.manager.php:87
+msgid "Angola"
+msgstr ""
+
+#: include/class.country.manager.php:97
+msgid "Antigua and Barbuda"
+msgstr ""
+
+#: include/class.country.manager.php:104
+msgid "Argentina"
+msgstr ""
+
+#: include/class.country.manager.php:111
+msgid "Australia"
+msgstr ""
+
+#: include/class.country.manager.php:121
+msgid "Austria"
+msgstr ""
+
+#: include/class.country.manager.php:128
+msgid "Bahamas"
+msgstr ""
+
+#: include/class.country.manager.php:135
+msgid "Bahrain"
+msgstr ""
+
+#: include/class.country.manager.php:142
+msgid "Bandladesh"
+msgstr ""
+
+#: include/class.country.manager.php:149
+msgid "Belgium"
+msgstr ""
+
+#: include/class.country.manager.php:156
+msgid "Belize"
+msgstr ""
+
+#: include/class.country.manager.php:163
+msgid "Benin"
+msgstr ""
+
+#: include/class.country.manager.php:170
+msgid "Bolivia"
+msgstr ""
+
+#: include/class.country.manager.php:177
+msgid "Botswana"
+msgstr ""
+
+#: include/class.country.manager.php:184
+msgid "Brazil"
+msgstr ""
+
+#: include/class.country.manager.php:191
+msgid "Bulgaria"
+msgstr ""
+
+#: include/class.country.manager.php:198
+msgid "Burundi"
+msgstr ""
+
+#: include/class.country.manager.php:205
+msgid "Cameroon"
+msgstr ""
+
+#: include/class.country.manager.php:212
+msgid "Canada"
+msgstr ""
+
+#: include/class.country.manager.php:219
+msgid "Central African Republic"
+msgstr ""
+
+#: include/class.country.manager.php:226
+msgid "Chile"
+msgstr ""
+
+#: include/class.country.manager.php:233
+msgid "China"
+msgstr ""
+
+#: include/class.country.manager.php:240
+msgid "Congo"
+msgstr ""
+
+#: include/class.country.manager.php:247
+msgid "Czech Republic"
+msgstr ""
+
+#: include/class.country.manager.php:254
+msgid "Democratic Republic of Congo"
+msgstr ""
+
+#: include/class.country.manager.php:261
+msgid "Denmark"
+msgstr ""
+
+#: include/class.country.manager.php:268
+msgid "Djibouti"
+msgstr ""
+
+#: include/class.country.manager.php:275
+msgid "Ecuador"
+msgstr ""
+
+#: include/class.country.manager.php:282
+msgid "Estonia"
+msgstr ""
+
+#: include/class.country.manager.php:289
+msgid "Ethiopia"
+msgstr ""
+
+#: include/class.country.manager.php:296
+msgid "Finland"
+msgstr ""
+
+#: include/class.country.manager.php:303
+msgid "France"
+msgstr ""
+
+#: include/class.country.manager.php:310
+msgid "Gabon"
+msgstr ""
+
+#: include/class.country.manager.php:317
+msgid "Gambia"
+msgstr ""
+
+#: include/class.country.manager.php:324
+msgid "Germany"
+msgstr ""
+
+#: include/class.country.manager.php:334
+msgid "Ghana"
+msgstr ""
+
+#: include/class.country.manager.php:341
+msgid "Greece"
+msgstr ""
+
+#: include/class.country.manager.php:348
+msgid "Guatemala"
+msgstr ""
+
+#: include/class.country.manager.php:355
+msgid "Guyana"
+msgstr ""
+
+#: include/class.country.manager.php:362
+msgid "Hong Kong"
+msgstr ""
+
+#: include/class.country.manager.php:369
+msgid "Hungary"
+msgstr ""
+
+#: include/class.country.manager.php:376
+msgid "India"
+msgstr ""
+
+#: include/class.country.manager.php:383
+msgid "Indonesia"
+msgstr ""
+
+#: include/class.country.manager.php:390
+msgid "Israel"
+msgstr ""
+
+#: include/class.country.manager.php:397
+msgid "Italy"
+msgstr ""
+
+#: include/class.country.manager.php:404
+msgid "Japan"
+msgstr ""
+
+#: include/class.country.manager.php:411
+msgid "Kenya"
+msgstr ""
+
+#: include/class.country.manager.php:418
+msgid "Lesotho"
+msgstr ""
+
+#: include/class.country.manager.php:425
+msgid "Liechtenstein"
+msgstr ""
+
+#: include/class.country.manager.php:432
+msgid "Lithuania"
+msgstr ""
+
+#: include/class.country.manager.php:439
+msgid "Macedonia"
+msgstr ""
+
+#: include/class.country.manager.php:446
+msgid "Madagascar"
+msgstr ""
+
+#: include/class.country.manager.php:453
+msgid "Malawi"
+msgstr ""
+
+#: include/class.country.manager.php:460
+msgid "Malaysia"
+msgstr ""
+
+#: include/class.country.manager.php:467
+msgid "Mauritius"
+msgstr ""
+
+#: include/class.country.manager.php:474
+msgid "Mexico"
+msgstr ""
+
+#: include/class.country.manager.php:481
+msgid "Mozambique"
+msgstr ""
+
+#: include/class.country.manager.php:488
+msgid "Namibia"
+msgstr ""
+
+#: include/class.country.manager.php:495
+msgid "Netherlands"
+msgstr ""
+
+#: include/class.country.manager.php:505
+msgid "New Zealand"
+msgstr ""
+
+#: include/class.country.manager.php:512
+msgid "Nigeria"
+msgstr ""
+
+#: include/class.country.manager.php:519
+msgid "Norway"
+msgstr ""
+
+#: include/class.country.manager.php:526
+msgid "Paraguay"
+msgstr ""
+
+#: include/class.country.manager.php:533
+msgid "Peru"
+msgstr ""
+
+#: include/class.country.manager.php:540
+msgid "Philippines"
+msgstr ""
+
+#: include/class.country.manager.php:547
+msgid "Poland"
+msgstr ""
+
+#: include/class.country.manager.php:554
+msgid "Portugal"
+msgstr ""
+
+#: include/class.country.manager.php:561
+msgid "Republic of Ireland"
+msgstr ""
+
+#: include/class.country.manager.php:568
+msgid "Romania"
+msgstr ""
+
+#: include/class.country.manager.php:575
+msgid "Russia"
+msgstr ""
+
+#: include/class.country.manager.php:582
+msgid "Rwanda"
+msgstr ""
+
+#: include/class.country.manager.php:589
+msgid "Sao Tome and Principe"
+msgstr ""
+
+#: include/class.country.manager.php:596
+msgid "Senegal"
+msgstr ""
+
+#: include/class.country.manager.php:603
+msgid "Seychelles"
+msgstr ""
+
+#: include/class.country.manager.php:610
+msgid "Sierra Leone"
+msgstr ""
+
+#: include/class.country.manager.php:617
+msgid "Singapore"
+msgstr ""
+
+#: include/class.country.manager.php:624
+msgid "South Africa"
+msgstr ""
+
+#: include/class.country.manager.php:631
+msgid "South Korea"
+msgstr ""
+
+#: include/class.country.manager.php:638
+msgid "Spain"
+msgstr ""
+
+#: include/class.country.manager.php:645
+msgid "Sri Lanka"
+msgstr ""
+
+#: include/class.country.manager.php:652
+msgid "Sweden"
+msgstr ""
+
+#: include/class.country.manager.php:661
+msgid "Switzerland"
+msgstr ""
+
+#: include/class.country.manager.php:668
+msgid "Taiwan"
+msgstr ""
+
+#: include/class.country.manager.php:675
+msgid "Tanzania"
+msgstr ""
+
+#: include/class.country.manager.php:682
+msgid "Thailand"
+msgstr ""
+
+#: include/class.country.manager.php:689
+msgid "Togo"
+msgstr ""
+
+#: include/class.country.manager.php:696
+msgid "Uganda"
+msgstr ""
+
+#: include/class.country.manager.php:703
+msgid "United Arab Emirates"
+msgstr ""
+
+#: include/class.country.manager.php:710
+msgid "United Kingdom"
+msgstr ""
+
+#: include/class.country.manager.php:717
+msgid "Uruguay"
+msgstr ""
+
+#: include/class.country.manager.php:724
+msgid "Venezuela"
+msgstr ""
+
+#: include/class.country.manager.php:731
+msgid "Zambia"
+msgstr ""
+
+#: include/class.country.manager.php:738
+msgid "Zimbabwe"
+msgstr ""
+
+#: include/class.csvimport.php:232
+msgid "Import file name not set."
+msgstr ""
+
+#: include/class.csvimport.php:241
+msgid "Import file exceeds the upload_max_filesize in php.ini."
+msgstr ""
+
+#: include/class.csvimport.php:245
+msgid "Import file was only partially loaded."
+msgstr ""
+
+#: include/class.csvimport.php:249
+msgid "Import file seems to have gone missing."
+msgstr ""
+
+#: include/class.csvimport.php:253
+msgid "Import file is empty."
+msgstr ""
+
+#: include/class.csvimport.php:265
+msgid "Uploaded file needs to be in CSV format."
+msgstr ""
+
+#: include/class.csvimport.php:266
+msgid "Type was %s."
+msgstr ""
+
+#: include/class.csvimport.php:287
+msgid "WordPress upload directory %s is missing, check directory permissions."
+msgstr ""
+
+#: include/class.csvimport.php:315
+msgid "Imported CSV file could not be renamed."
+msgstr ""
+
+#: include/class.csvimport.php:316
+msgid "Possibly out of disk space while trying to rename to %s"
+msgstr ""
+
+#: include/class.csvimport.php:324
+msgid "Uploaded CSV file could not be moved."
+msgstr ""
+
+#: include/class.csvimport.php:325
+msgid "Check folder permissions for %s"
+msgstr ""
+
+#: include/class.csvimport.php:350
+msgid "Could not open CSV file for processing."
+msgstr ""
+
+#: include/class.csvimport.php:457
+msgid "%d data lines read from the CSV file."
+msgstr ""
+
+#: include/class.location.php:176
+msgid "draft"
+msgstr ""
+
+#: include/class.location.php:464
+msgid "Could not create or update the custom page for this location."
+msgstr ""
+
+#: include/class.location.php:546
+msgid "Address %s (%d in current series) hit the Google query limit.\n"
+msgstr ""
+
+#: include/class.location.php:574
+msgid ""
+"Waited up to %4.2f seconds between request, total wait for this location was "
+"%4.2f seconds."
+msgstr ""
+
+#: include/class.location.php:580
+msgid "%d total attempts for this location."
+msgstr ""
+
+#: include/class.location.php:590 include/class.location.php:603
+msgid "Address #%d : %s <font color=red>failed to geocode</font>."
+msgstr ""
+
+#: include/class.location.php:594
+msgid "Unknown Address! Received status %s."
+msgstr ""
+
+#: include/class.location.php:607
+msgid "Received status %s."
+msgstr ""
+
+#: include/class.location.php:610
+msgid "Received data %s."
+msgstr ""
+
+#: include/class.location.php:621
+msgid "Geocode service non-responsive"
+msgstr ""
+
+#: include/class.location.php:629
+msgid "Address is blank."
+msgstr ""
+
+#: include/class.location.php:639
+msgid "Read <a href=\"%s\">this</a> if you are having geocoding issues."
+msgstr ""
+
+#: include/class.location.php:655
+msgid ""
+"Google thinks %s is at <a href=\"%s\" target=\"_blank\">lat: %s long %s</a>"
+msgstr ""
+
+#: include/class.location.php:936
+msgid "Could not add %s as a new location"
+msgstr ""
+
+#: include/class.notifications.php:100
+msgid "needs attention"
+msgstr ""
+
+#: include/class.notifications.php:139
+msgid "wants you to know"
+msgstr ""
+
+#: include/class.option.manager.php:34
+msgid "Enter an address or zip code and click the find locations button."
+msgstr ""
+
+#: include/class.option.manager.php:38
+msgid "Store Locator Plus did not send back a valid JSONP response."
+msgstr ""
+
+#: include/class.option.manager.php:67
+msgid "Website"
+msgstr ""
+
+#: include/class.settings.php:38
+msgid "Save Changes"
+msgstr ""
+
+#. #-#-#-#-#  tmp-store-locator-le.pot (Store Locator Plus 4.3.24)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#. #-#-#-#-#  tmp-store-locator-le.pot (Store Locator Plus 4.3.24)  #-#-#-#-#
+#. Author of the plugin/theme
+#: include/class.settings.php:39 include/class.ui.php:449
+#: store-locator-le.php:48
+msgid "Store Locator Plus"
+msgstr ""
+
+#: include/class.settings.php:127
+msgid "Setting "
+msgstr ""
+
+#: include/class.settings.php:384
+msgid "Click to toggle"
+msgstr ""
+
+#: include/class.settings.php:736
+msgid "ON"
+msgstr ""
+
+#: include/class.settings.php:737
+msgid "OFF"
+msgstr ""
+
+#: include/class.slplus.php:554 include/class.slplus.php:555
+msgid "Documentation"
+msgstr ""
+
+#: include/class.slplus.php:556 include/class.slplus.php:557
+msgid "Buy Upgrades"
+msgstr ""
+
+#: include/class.slplus.php:559
+msgid "Settings"
+msgstr ""
+
+#: include/class.slplus.php:700
+msgid "The %s method is no longer available. "
+msgstr ""
+
+#: include/class.slplus.php:703
+msgid "It is likely that one of your add-on packs is out of date. "
+msgstr ""
+
+#: include/class.themes.admin.php:35
+msgid "About This Style"
+msgstr ""
+
+#: include/class.themes.admin.php:37
+msgid "No description has been set for this style."
+msgstr ""
+
+#: include/class.themes.admin.php:56
+msgid "Learn more about changing the Store Locator Plus interface via the "
+msgstr ""
+
+#: include/class.themes.admin.php:60
+msgid "Plugin Styles documentation."
+msgstr ""
+
+#: include/class.themes.admin.php:102
+msgid "This plugin style will make use of the following add-on packs. "
+msgstr ""
+
+#: include/class.themes.admin.php:103
+msgid ""
+"Layouts for active add-on packs will be changed when you change the style "
+"and click save settings. "
+msgstr ""
+
+#: include/class.themes.admin.php:104
+msgid "Greyed-out entries are not installed or activated. "
+msgstr ""
+
+#: include/class.themes.admin.php:182
+msgid "The styles directory:<br/>%s<br/>is missing. "
+msgstr ""
+
+#: include/class.themes.admin.php:183
+msgid "Create it to enable styles and get rid of this message."
+msgstr ""
+
+#: include/class.themes.admin.php:255
+msgid "Plugin Style"
+msgstr ""
+
+#: include/class.themes.admin.php:257
+msgid ""
+"Select a plugin style to change the CSS styling and layout of the slplus "
+"shortcode elements."
+msgstr ""
+
+#: include/class.themes.admin.php:265
+msgid "How should the plugin UI elements look?  "
+msgstr ""
+
+#: include/class.themes.admin.php:267
+msgid ""
+"Learn more in the <a href=\"%s\" target=\"slp\">online documentation</a>."
+msgstr ""
+
+#: include/class.themes.admin.php:320
+msgid "Locator Layout"
+msgstr ""
+
+#: include/class.themes.admin.php:326
+msgid "Bubble Layout"
+msgstr ""
+
+#: include/class.themes.admin.php:332
+msgid "Results Layout"
+msgstr ""
+
+#: include/class.themes.admin.php:338
+msgid "Search Layout"
+msgstr ""
+
+#: include/class.themes.admin.php:344
+msgid "Results Header"
+msgstr ""
+
+#: include/class.ui.php:265
+msgid "Find Locations"
+msgstr ""
+
+#: include/class.ui.php:330
+msgid "search provided by %s"
+msgstr ""
+
+#: include/class.ui.php:449
+msgid "%s is not ready"
+msgstr ""
+
+#: store-locator-le.php:41
+msgid ""
+"Store Locator Plus requires WordPress 3.8 to function properly. Please "
+"upgrade WordPress or deactivate Store Locator Plus."
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.storelocatorplus.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Add a location finder or directory to your site in minutes. Extensive "
+"premium add-on library available!"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.storelocatorplus.com"
+msgstr ""

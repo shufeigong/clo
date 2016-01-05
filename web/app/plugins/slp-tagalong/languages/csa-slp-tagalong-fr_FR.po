@@ -1,0 +1,386 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Store Locator Plus : Tagalong v4.0.007\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-08-23 14:27+0100\n"
+"PO-Revision-Date: 2013-09-11 15:32+0100\n"
+"Last-Translator: Francois Serrault <f.serrault@gmail.com>\n"
+"Language-Team: De B.A.A.T. <de_baat@de-baat.nl>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ csa-slp-es
+#: slp-tagalong.php:222
+#, php-format
+msgid ""
+"You have %s version %s. You need version %s or greater for this version of "
+"%s."
+msgstr ""
+"Vous avez %s version %s. Vous devez avoir la version %s ou ultérieure pour "
+"utiuliser cette version de %s."
+
+# @ csa-slp-tagalong
+#: slp-tagalong.php:223
+msgid "Store Locator Plus"
+msgstr "Store Locator Plus"
+
+# @ csa-slp-tagalong
+#: slp-tagalong.php:226 slp-tagalong.php:417
+msgid "Tagalong"
+msgstr "Tagalong"
+
+# @ default
+#: slp-tagalong.php:627
+msgid "Add Media"
+msgstr "Ajouter un média"
+
+# @ default
+#: slp-tagalong.php:630
+msgid "Upload/Insert"
+msgstr "Envoyer/Insérer"
+
+# @ csa-slp-pro
+#: slp-tagalong.php:1127
+msgid "Categorize"
+msgstr "Catégoriser"
+
+# @ csa-slp-tagalong
+#: slp-tagalong.php:1172 slp-tagalong.php:1293
+msgid "Categories"
+msgstr "Catégories"
+
+# @ csa-slp-tagalong
+#: slp-tagalong.php:1373
+msgid "Could not store tagalong data for this location."
+msgstr "Ne peut stocker le tagalong pour ce Point de Vente."
+
+# @ csa-slp-tagalong
+#: slp-tagalong.php:1574
+msgid " Extended Data"
+msgstr "Données étendues"
+
+# @ csa-slp-tagalong
+#: slp-tagalong.php:1582
+msgid ""
+"This graphic appears as the icon or icon array in the result listing or map "
+"info bubble."
+msgstr ""
+"Cette image apparaît comme icône dans la liste de résultat ou sur une info-"
+"bulle."
+
+# @ csa-slp-tagalong
+#: slp-tagalong.php:1595
+msgid "This is the graphic used as the map marker on the map."
+msgstr "Ceci est l'image utilisée comme icône de carte."
+
+# @ csa-slp-tagalong
+#: slp-tagalong.php:1722
+msgid "Tagalong settings saved."
+msgstr "Paramètres tagalong sauvegardés."
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:71
+msgid "Tagalong Settings"
+msgstr "Paramètres Tagalong"
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:75
+msgid "Search"
+msgstr "Rechercher"
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:80
+msgid "Show Categories On Search"
+msgstr "Afficher les catégories sur Rechercher"
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:113
+msgid "Hide Unpublished Categories"
+msgstr "Cacher les catégories non publiées"
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:115
+msgid ""
+"Only works if Store Pages is installed.  Hide the empty categories from the "
+"category selector. Store Pages in draft mode are considered \"empty\"."
+msgstr ""
+"Fonctionne seulement si le sauvegarder Pages est installé. Cacher les "
+"catégories vides de la liste de catégories. Sauvegarder Pages en mode "
+"brouillon sont considérés comme \" vide\"."
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:124
+msgid "Any Category Label"
+msgstr "Toute catégorie"
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:126
+msgid ""
+"If set, prepends this text to select \"any category\" as an option to the "
+"selector. Set to blank to not provide the any selection."
+msgstr ""
+"Si défini, prepends ce texte à sélectionner \"toute catégorie \" comme une "
+"option pour le menu déroulant. Laisser vide pour aucune sélection."
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:134
+msgid "Category Select Label"
+msgstr "Texte Liste Catégorie"
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:136
+msgid "The label for the category selector."
+msgstr "Texte pour la liste déroulante catégorie."
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:141
+msgid "Map"
+msgstr "Carte"
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:148
+msgid "Use Default Markers"
+msgstr "Utiliser les marqueyrs par défaut"
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:150
+msgid ""
+"Do not use custom tagalong destination markers on map, use default Map "
+"Settings markers."
+msgstr ""
+"Ne pas utiliser de marqueur tagalong personnalisé sur la carte, utilisez les "
+"marqueurs Carte par défaut."
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:155
+msgid "Results"
+msgstr "Résultats"
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:162
+msgid "Show Icon Array"
+msgstr "Montrer icône"
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:164
+msgid ""
+"When enabled an array of icons will be created in the below map results and "
+"info bubble."
+msgstr ""
+"Si activé une liste d'icônes sera créée dans sous les résultats de la carte "
+"et dans les info-bulles."
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:174
+msgid "Order By Category Count"
+msgstr "Trier par numéro de Catégorie"
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:176
+msgid ""
+"When enabled the results will be ordered by those with the most categories "
+"assigned appearing first."
+msgstr ""
+"Si activé, les résultats seront triés par ceux qui ont le plus de catégories "
+"assignées en premier."
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:183
+msgid "View"
+msgstr "Voir"
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:190
+msgid "Show Text Under Legend"
+msgstr "Afficher texte sous légende"
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:192
+msgid "When enabled text will appear under each Tagalong icon in the legend."
+msgstr ""
+"Si activé, le texte s'affiche sous chaque icône Tagalong dans la légende."
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:196
+msgid ""
+"Add legend to the output with the [tagalong legend] shortcode via the Pro "
+"pack view setting."
+msgstr ""
+"Ajouter la légende au résultat avec le raccourci [tagalong legend] via le "
+"paramètre d'affichage du pack Pro."
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:205
+msgid "Store Categories"
+msgstr "Catégories Point de Vente"
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:210
+msgid "Manage"
+msgstr "Gérer"
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:219
+#, php-format
+msgid "The <a href=\"%s\">Category Manager</a>"
+msgstr "<a href=\"%s\">Gestion Catégories</a>"
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:222
+msgid " provides a full management interface for Store Categories."
+msgstr ""
+" offre une interface une gestion complète pour les Catégories de Point de "
+"Vente. "
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:227
+msgid "List"
+msgstr "Liste"
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:232
+msgid ""
+"This category list is based on the custom stores taxonomy setup by Store "
+"Locator Plus."
+msgstr ""
+"Cette liste de catégories est basée sur la configuration de magasins "
+"taxonomie personnalisée par Sotre Locator Plus."
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:234
+msgid "It is the same taxonomy used by the Store Pages add-on."
+msgstr "C'est la même taxonomie utilisée par l'add-on Pages Point de Vente."
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:240
+msgid ""
+"Clicking on a link will bring you to the most recently touched Store Page."
+msgstr ""
+"Cliquer sur un lien vous amènera à la page Point de Vente récemment modifiée."
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:242
+msgid ""
+"Depending on your theme, you may have an older/newer posts button on the "
+"bottom of each page to navigate the matching pages."
+msgstr ""
+"En fonction de votre thème, vous pouvez avoir un bouton messages anciens/"
+"récents sur le bas de chaque page pour naviguer sur les pages "
+"correspondantes."
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:246
+#, php-format
+msgid ""
+"The links will show a list of stores in that category if <a href=\"%s\" "
+"target=\"CSA\">Store Pages</a>, a separate add-on pack, is installed."
+msgstr ""
+"Les liens vont montrer une liste de Points de Vente dans cette catégorie si "
+"<a href=\"%s\" target=\"CSA\"> Pages du Point de Vente </ a>, une extension "
+"séparée, est installé."
+
+# @ default
+#: include/class.categorywalker.list.php:48
+#, php-format
+msgid "View all posts filed under %s (id %d)"
+msgstr "Voir tous les articles classés sous %s (id %d)"
+
+# @ default
+#: include/class.categorywalker.list.php:63
+#, php-format
+msgid "Feed for all posts filed under %s"
+msgstr "Flux pour tous les articles classés sous %s"
+
+# @ csa-slp-tagalong
+#. translators: plugin header field 'Name'
+#: slp-tagalong.php:0
+msgid "Store Locator Plus : Tagalong"
+msgstr "Store Locator Plus : Tagalong"
+
+# @ csa-slp-tagalong
+#. translators: plugin header field 'PluginURI'
+#: slp-tagalong.php:0
+msgid "http://www.charlestonsw.com/product/store-locator-plus-tagalong/"
+msgstr "http://www.charlestonsw.com/product/store-locator-plus-tagalong/"
+
+# @ csa-slp-tagalong
+#. translators: plugin header field 'Description'
+#: slp-tagalong.php:0
+msgid ""
+"A premium add-on pack for Store Locator Plus that adds advanced location "
+"tagging features."
+msgstr ""
+"Un pack premium pour Store Locator Plus qui ajoute un plugin de localisation "
+"avancé."
+
+# @ csa-slp-tagalong
+#. translators: plugin header field 'Author'
+#: slp-tagalong.php:0
+msgid "Charleston Software Associates"
+msgstr "Charleston Software Associates"
+
+# @ csa-slp-tagalong
+#. translators: plugin header field 'AuthorURI'
+#: slp-tagalong.php:0
+msgid "http://charlestonsw.com/"
+msgstr "http://charlestonsw.com/"
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:85
+msgid "No"
+msgstr "non"
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:90
+msgid "Single"
+msgstr "Seul"
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:95
+msgid "Cascading"
+msgstr "En cascade"
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:101
+msgid "How to show the category selector on the search form."
+msgstr ""
+"Comment afficher le menu déroulant de catégorie dans le formulaire de "
+"recherche."
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:102
+msgid "No will not show the category selector."
+msgstr "Non ne pas afficher le menu déroulant de catégorie."
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:103
+msgid ""
+"Single shows the category selector as a single drop down with indents if "
+"there are parent/children relations."
+msgstr ""
+"Seul montre le menu déroulant de catégorie comme un seulchoix vers le bas "
+"avec tirets s'il y a parents/enfants."
+
+# @ csa-slp-tagalong
+#: include/class.adminpanel.php:104
+msgid ""
+"Cascading shows a single drop down showing parents then children drop downs "
+"on an as-needed basis."
+msgstr ""
+"En cascade montre un seul choix montrant les parents puis les enfants sur "
+"une base ponctuelle."
+
+# @ csa-slp-tagalong
+#. translators: plugin header field 'Version'
+#: slp-tagalong.php:0
+msgid "4.0.007"
+msgstr "4.0.007"

@@ -90,7 +90,7 @@ class imgHandlerClass{
 	function createAlbumTrigger()
 	{
 		$output="";
-		$output.='<div class="albumTrigger"><a class="album_show" albumid="'.$this->albumId.'">';
+		$output.='<div class="albumTrigger"><a href="#" onclick="return false;" class="album_show" albumid="'.$this->albumId.'">';
 		$output.='<div class="content-video-box" style="background-image: url('.$this->imgObjectArray[0]->imgUrl.'); background-size:cover; background-position:center; background-repeat:no-repeat;"></div>';
 		$output.='<div class="content-video-title">'.$this->albumName.'</div>';
 		$output.='</a></div>';

@@ -1,0 +1,592 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Store Locator Plus : Pro Pack v4.0.006\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/store-locator-le\n"
+"POT-Creation-Date: 2013-06-17 15:52+0100\n"
+"PO-Revision-Date: 2013-09-11 14:56+0100\n"
+"Last-Translator: Francois Serrault <f.serrault@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: .\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+# @ csa-slp-pro
+#: reporting.php:302
+msgid "Address"
+msgstr "Adresse"
+
+# @ csa-slp-pro
+#: reporting.php:350
+msgid "City"
+msgstr "Ville"
+
+# @ csa-slp-pro
+#: reporting.php:351
+msgid "State"
+msgstr "Région"
+
+# @ csa-slp-pro
+#: reporting.php:352
+msgid "Zip"
+msgstr "Code Postal"
+
+# @ csa-slp-pro
+#. translators: plugin header field 'Author'
+#: slp-pro.php:0
+msgid "Charleston Software Associates"
+msgstr "Charleston Software Associates"
+
+# @ csa-slp-pro
+#: reporting.php:116 reporting.php:129 reporting.php:150 reporting.php:167
+#: reporting.php:182
+msgid "Report Parameters"
+msgstr "Rapport Paramètres"
+
+# @ csa-slp-pro
+#: reporting.php:117
+msgid "Use these settings to select which data to report on."
+msgstr ""
+"Utiliser ces paramètres pour sélectionner quelles données mettre sur le "
+"rapport."
+
+# @ csa-slp-pro
+#: reporting.php:130
+msgid "Start Date: "
+msgstr "Date de début:"
+
+# @ csa-slp-pro
+#: reporting.php:151
+msgid "End Date: "
+msgstr "Date de fin: "
+
+# @ csa-slp-pro
+#: reporting.php:168
+msgid "How many detail records? "
+msgstr "Combien de détails enregistrer ?"
+
+# @ csa-slp-pro
+#: reporting.php:174
+msgid ""
+"Determines how many detail records are reported. More records take longer to "
+"report. (Default: 10, recommended maximum: 500)"
+msgstr ""
+"Détermine comebin de détails enregistrer sont reportés. Plus "
+"d'enregistrement demande plus de temps. (Par défaut:10, maximum recommandé: "
+"500)"
+
+# @ csa-slp-pro
+#: reporting.php:92 reporting.php:189
+msgid "Run Report"
+msgstr "Démarrer Rapport"
+
+# @ csa-slp-pro
+#: reporting.php:263
+#, php-format
+msgid "Total searches: <strong>%s</strong>"
+msgstr "Recherches totales: <strong>%s</strong> "
+
+# @ csa-slp-pro
+#: reporting.php:264
+#, php-format
+msgid "Total results: <strong>%s</strong>"
+msgstr "Résultats totaux: <strong>%s</strong> "
+
+# @ csa-slp-pro
+#: reporting.php:300
+#, php-format
+msgid "Top %s Addresses Searched"
+msgstr "Adresses les plus recherchées %s"
+
+# @ csa-slp-pro
+#: reporting.php:303 reporting.php:354
+msgid "Total"
+msgstr "Total"
+
+# @ csa-slp-pro
+#: reporting.php:312
+msgid "topsearches"
+msgstr "Meilleurs recherches"
+
+# @ csa-slp-pro
+#: reporting.php:347
+#, php-format
+msgid "Top %s Results Returned"
+msgstr "Meilleurs %s Résultats Retournés"
+
+# @ csa-slp-pro
+#: reporting.php:349
+msgid "Store"
+msgstr "Point de Vente"
+
+# @ csa-slp-pro
+#: reporting.php:353 slp-pro.php:608 slp-pro.php:729 slp-pro.php:829
+msgid "Tags"
+msgstr "Balises"
+
+# @ csa-slp-pro
+#: reporting.php:367
+msgid "topresults"
+msgstr "Meilleurs résultats"
+
+# @ csa-slp-pro
+#: reporting.php:373
+msgid "Export To CSV"
+msgstr "Exporter en CSV"
+
+# @ csa-slp-pro
+#: reporting.php:375
+msgid "Export all records"
+msgstr "Exporter tous les enregistrements"
+
+# @ csa-slp-pro
+#: reporting.php:379
+msgid "Top Searches"
+msgstr "Meilleures Recherches"
+
+# @ csa-slp-pro
+#: reporting.php:380
+msgid "Top Results"
+msgstr "Meilleurs Résultats"
+
+# @ csa-slp-pro
+#. translators: plugin header field 'Name'
+#: slp-pro.php:0
+msgid "Store Locator Plus : Pro Pack"
+msgstr "Store Locator Plus : Pro Pack"
+
+# @ csa-slp-pro
+#. translators: plugin header field 'PluginURI'
+#: slp-pro.php:0
+msgid "http://www.charlestonsw.com/product/store-locator-plus/"
+msgstr "http://www.charlestonsw.com/product/store-locator-plus/"
+
+# @ csa-slp-pro
+#. translators: plugin header field 'Description'
+#: slp-pro.php:0
+msgid ""
+"A premium add-on pack for Store Locator Plus that provides more admin power "
+"tools for wrangling locations."
+msgstr ""
+"Un pack premium pour Store Locator Plus qui ajoute un plugin "
+"d'administration plus avancé pour les Points de Vente"
+
+# @ csa-slp-pro
+#. translators: plugin header field 'AuthorURI'
+#: slp-pro.php:0
+msgid "http://charlestonsw.com/"
+msgstr "http://charlestonsw.com/"
+
+# @ csa-slp-pro
+#: slp-pro.php:175 slp-pro.php:285 slp-pro.php:409 slp-pro.php:544
+msgid "Pro Pack"
+msgstr "Pro Pack"
+
+# @ csa-slp-pro
+#: slp-pro.php:288
+msgid "Show Tags In Output"
+msgstr "Voir les sorties de balises "
+
+# @ csa-slp-pro
+#: slp-pro.php:289
+msgid "Show the tags in the location output table and bubble."
+msgstr ""
+"Voir les balises dans la table de sortie du Point de Vente et la bulle."
+
+# @ csa-slp-pro
+#: slp-pro.php:294
+msgid "Use Email Form"
+msgstr "Utilier le formulaire email."
+
+# @ csa-slp-pro
+#: slp-pro.php:295
+msgid "Use email form instead of mailto: link when showing email addresses."
+msgstr ""
+"Utiliser le formaulaire email à la place du lien mailto: quand les adresses "
+"mails sont affichées."
+
+# @ csa-slp-pro
+#: slp-pro.php:873
+msgid "Use location sensor"
+msgstr "Utiliser le détecteur de localisation."
+
+# @ csa-slp-pro
+#: slp-pro.php:415
+msgid "Reports"
+msgstr "rapports"
+
+# @ csa-slp-pro
+#: include/class.csvimport.php:90
+msgid "Bulk Upload"
+msgstr "Envoie en masse"
+
+# @ csa-slp-pro
+#: include/class.csvimport.php:93
+#, php-format
+msgid "See the %s for more details on the import format."
+msgstr "Voir le %s pour plus de détails sur le format d'importation."
+
+# @ csa-slp-pro
+#: include/class.csvimport.php:95
+msgid "online documentation"
+msgstr "Documentation en ligne"
+
+# @ csa-slp-pro
+#: include/class.csvimport.php:103
+msgid "Skip First Line"
+msgstr "Passer la première ligne"
+
+# @ csa-slp-pro
+#: include/class.csvimport.php:104
+msgid "Skip the first line of the import file."
+msgstr "Passer la première ligne du fichier importé."
+
+# @ csa-slp-pro
+#: include/class.csvimport.php:119
+msgid "Skip Duplicates"
+msgstr "Passer les doublons"
+
+# @ csa-slp-pro
+#: include/class.csvimport.php:120
+msgid ""
+"Checks the name, street, city, state, zip, and country for duplicate "
+"entries.  Skips if already in database.  Takes longer to load locations."
+msgstr ""
+"Vérifier le nom, adresse, ville, région, code postal et pays pour les "
+"doublons. Passer si déjà existant dans la base. Prend plus de temps pour "
+"charger les Points de Vente."
+
+# @ csa-slp-pro
+#: include/class.csvimport.php:126
+msgid "Upload Locations"
+msgstr "Envoyer Points de Vente"
+
+# @ csa-slp-pro
+#: include/class.csvimport.php:273
+#, php-format
+msgid "Got %d expected less than %d."
+msgstr "Ai %d, attend moins de %d"
+
+# @ csa-slp-pro
+#: include/class.csvimport.php:290
+msgid "locations processed."
+msgstr "Points de Vente traités"
+
+# @ csa-slp-pro
+#: include/class.csvimport.php:296
+msgid "duplicates not added."
+msgstr "doublons non ajoutés."
+
+# @ csa-slp-pro
+#: include/class.csvimport.php:172
+msgid "Uploaded file needs to be in CSV format."
+msgstr "Les fichiers envoyés doivent être au format CSV."
+
+# @ csa-slp-pro
+#: slp-pro.php:547
+msgid "Tags (separate with commas)"
+msgstr "Balises (séparez par des virgules)"
+
+# @ csa-slp-pro
+#: slp-pro.php:599
+msgid "Pro Pack Tags"
+msgstr "Balises Pro Pack"
+
+# @ csa-slp-pro
+#: slp-pro.php:603
+msgid "Tag Input"
+msgstr "Balise entrée"
+
+# @ csa-slp-pro
+#: slp-pro.php:604
+msgid "Show the tag entry box on the search form."
+msgstr "Afficher la balise d'entrée sur le formulaire de recherche."
+
+# @ csa-slp-pro
+#: slp-pro.php:609
+msgid "Search form label to prefix the tag selector."
+msgstr "Chercher le texte qui précède la balise."
+
+# @ csa-slp-pro
+#: slp-pro.php:613
+msgid "Preselected Tag Searches"
+msgstr "Chercher balises présélectionnées."
+
+# @ csa-slp-pro
+#: slp-pro.php:614
+msgid ""
+"Enter a comma (,) separated list of tags to show in the search pulldown, "
+"mark the default selection with parenthesis '( )'. This is a default setting "
+"that can be overriden on each page within the shortcode."
+msgstr ""
+"Entrez une virgule (,) pour séparer la liste de balises pour montrer dans le "
+"menu déroulant de recherche, cochez la sélection par défaut avec entre "
+"parenthèses '()'. Il s'agit d'un réglage par défaut qui peut être réécrit "
+"sur chaque page du shortcode."
+
+# @ csa-slp-pro
+#: slp-pro.php:618
+msgid "Add \"any\" to tags pulldown"
+msgstr "Ajouter \"tout\" à la liste déroulante. "
+
+# @ csa-slp-pro
+#: slp-pro.php:619
+msgid ""
+"Add an \"any\" selection on the tag pulldown list thus allowing the user to "
+"show all locations in the area, not just those matching a selected tag."
+msgstr ""
+"Ajouter un \"tout\" sélectionné sur la liste déroulante permettant ainsi à "
+"l'utilisateur d'afficher tous les emplacements dans la région, et pas "
+"seulement ceux correspondant à une balise sélectionnée."
+
+# @ csa-slp-pro
+#: slp-pro.php:623
+msgid "Tags First Entry"
+msgstr "Première entrée Balises"
+
+# @ csa-slp-pro
+#: slp-pro.php:624
+msgid "The first entry on the search by tag pulldown."
+msgstr "LA première entrée sur la recherche par liste déroulante."
+
+# @ csa-slp-pro
+#: slp-pro.php:1077
+msgid "Cheatin' huh+"
+msgstr "Astuce +"
+
+# @ csa-slp-pro
+#: slp-pro.php:1083
+msgid "Cheatin' huh!"
+msgstr "Astuce !"
+
+# @ csa-slp-pro
+#: slp-pro.php:776
+msgid "Show Uncoded"
+msgstr "Montrer les non codés"
+
+# @ csa-slp-pro
+#: slp-pro.php:1254
+msgid ""
+"Enables tracking of searches and returned results.  The added overhead can "
+"increase how long it takes to return location search results."
+msgstr ""
+"Activer le suivi sur les recherches et les résultats de recherche. Cela peut "
+"augmenter le temps de réponse sur la recherche de Point de Vente."
+
+# @ csa-slp-pro
+#: slp-pro.php:1233
+msgid "Custom CSS"
+msgstr "CSS personnalisé."
+
+# @ csa-slp-pro
+#: slp-pro.php:1237
+msgid ""
+"Enter your custom CSS, preferably for SLPLUS styling only but it can be used "
+"for any page element as this will go in your page header."
+msgstr ""
+"Saisissez votre CSS personnalisé, de préférence seulement pour les styles "
+"SLPLUS, mais cela peut être utilisé pour toute page qui inclue notre header."
+
+# @ csa-slp-pro
+#: include/class.csvimport.php:109
+msgid "First Line Has Field Name"
+msgstr "La première ligne a un champs nommé"
+
+# @ csa-slp-pro
+#: include/class.csvimport.php:110
+msgid "Check this if the first line contains the field names."
+msgstr "Cochez si la première ligne contient un nom."
+
+# @ csa-slp-pro
+#: include/class.csvimport.php:111
+#, php-format
+msgid "Text must match the <a href=\"%s\">approved field name list</a>."
+msgstr ""
+"Les texte doit corresponcre à <a href=\"%s\">la liste de champs approuvée</"
+"a>."
+
+# @ csa-slp-pro
+#: include/class.csvimport.php:156
+msgid "Import file name not set."
+msgstr "Nom du fichier importé non défini."
+
+# @ csa-slp-pro
+#: include/class.csvimport.php:163
+msgid "Import file was empty."
+msgstr "Fichier importé vide."
+
+# @ csa-slp-pro
+#: include/class.csvimport.php:173
+#, php-format
+msgid "Type was %s."
+msgstr "Type %s."
+
+# @ csa-slp-pro
+#: include/class.csvimport.php:191
+msgid "Could not open CSV file for processing."
+msgstr "Ne peut pas ouvrir le CSV pour traitement."
+
+# @ csa-slp-pro
+#: include/class.csvimport.php:272
+msgid "CSV Records has too many fields."
+msgstr "Trop de champs dans le fichier CSV."
+
+# @ csa-slp-pro
+#: reporting.php:392
+msgid "Search Report"
+msgstr "Rapport de recherche"
+
+# @ csa-slp-pro
+#: slp-pro.php:745
+msgid "Geocode"
+msgstr "Géocode"
+
+# @ csa-slp-pro
+#: slp-pro.php:749
+msgid "Tag"
+msgstr "Balise"
+
+# @ csa-slp-pro
+#: slp-pro.php:753
+msgid "Enter your comma-separated tags:"
+msgstr "Saisissez vos balise séparées par une virgule:"
+
+# @ csa-slp-pro
+#: slp-pro.php:758
+msgid "Remove Tags"
+msgstr "Supprimer balises"
+
+# @ csa-slp-pro
+#: slp-pro.php:810
+msgid "Import"
+msgstr "Importer"
+
+# @ csa-slp-pro
+#: slp-pro.php:877
+msgid ""
+"This turns on the location sensor (GPS) to set the default search address. "
+msgstr ""
+"Ceci active le capteur de localisation (GPS) pour définir l'adresse de "
+"recherche par défaut."
+
+# @ csa-slp-pro
+#: slp-pro.php:878
+msgid ""
+"This can be slow to load and customers are prompted whether or not to allow "
+"location sensing."
+msgstr ""
+"Cela peut être lent à charger et les clients sont invités ou non à permettre "
+"leur localisation."
+
+# @ csa-slp-pro
+#: slp-pro.php:904
+msgid "Locator Layout"
+msgstr "Emplacement localisateur"
+
+# @ csa-slp-pro
+#: slp-pro.php:905
+msgid ""
+"Enter your custom page layout for the Store Locator Plus page. Set it to "
+"blank to reset to the default layout."
+msgstr ""
+"Entrez votre mise en page personnalisée de la page Store Locator Plus. "
+"Laissez vide pour rétablir la configuration par défaut."
+
+# @ csa-slp-pro
+#: slp-pro.php:1227
+msgid "Look and Feel"
+msgstr "Aspect et convivialité"
+
+# @ csa-slp-pro
+#: slp-pro.php:1244
+msgid "Reporting"
+msgstr "Rapport"
+
+# @ csa-slp-pro
+#: slp-pro.php:1249
+msgid "Report Settings"
+msgstr "Paramètre Rapport"
+
+# @ csa-slp-pro
+#: slp-pro.php:1250
+msgid "Enable Reporting"
+msgstr "Activer Rapport"
+
+# @ csa-slp-pro
+#: slp-pro.php:1261
+msgid "Tools"
+msgstr "Outils"
+
+# @ csa-slp-pro
+#: slp-pro.php:1268
+msgid "Where is..."
+msgstr "Ou est…"
+
+# @ csa-slp-pro
+#: slp-pro.php:1273
+msgid "locate"
+msgstr "localiser"
+
+# @ csa-slp-pro
+#: slp-pro.php:1278
+msgid "Enter an address and click locate to find the lat/long."
+msgstr ""
+"Saisissez une adresse et cliquer sur trouver pour avoir la latitude et la "
+"longitude"
+
+# @ csa-slp-pro
+#: include/class.csvexport.locations.php:68
+msgid "Bulk Export"
+msgstr "Export en masse"
+
+# @ csa-slp-pro
+#: include/class.csvexport.locations.php:72
+msgid "Export the location data to a CSV file."
+msgstr "Exporter les Points de Vente en CSV."
+
+# @ csa-slp-pro
+#: include/class.csvexport.locations.php:76
+msgid "Export Locations"
+msgstr "Exporter Points de Vente"
+
+# @ csa-slp-pro
+#: reporting.php:88
+msgid " - Reporting"
+msgstr " - Rapport"
+
+# @ csa-slp-pro
+#: reporting.php:102 slp-pro.php:1214
+msgid "Navigation"
+msgstr "Navigation"
+
+# @ csa-slp-pro
+#: reporting.php:433
+msgid ""
+"No data recorded yet.  Chart will be available after a Store Locator Plus "
+"search has been performed."
+msgstr ""
+"Aucune donnée enregistrée pour le moment. Le graphique sera disponible quand "
+"une recherche aura été effecutée."
+
+# @ csa-slp-pro
+#. translators: plugin header field 'Version'
+#: slp-pro.php:0
+msgid "4.0.006"
+msgstr "4.0.006"
+
+# @ csa-slp-pro
+#: slp-pro.php:811
+msgid "Export"
+msgstr "Exporter"
+
+# @ csa-slp-pro
+#: slp-pro.php:1232
+msgid "CSS Manipulation"
+msgstr "Modifier CSS"

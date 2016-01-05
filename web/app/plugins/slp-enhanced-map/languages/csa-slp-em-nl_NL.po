@@ -1,0 +1,304 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Store Locator Plus : Enhanced Map v4.3.00-RC-1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-08-23 13:37+0100\n"
+"PO-Revision-Date: 2015-08-05 11:13:57+0000\n"
+"Last-Translator: De B.A.A.T. <De_BAAT@de-baat.nl>\n"
+"Language-Team: De B.A.A.T. <de_baat@de-baat.nl>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: include/class.admin.php:81
+#: slp-enhanced-map.php:83
+#@ csa-slp-em
+msgid "Enhanced Map"
+msgstr "Uitgebreide Kaart"
+
+#: include/class.admin.experience.php:236
+#@ csa-slp-em
+msgid "Do Not Auto-zoom"
+msgstr "Doe Niet Automatisch Zoomen"
+
+#: include/class.admin.experience.php:238
+#@ csa-slp-em
+msgid "Use only the \"zoom level\" setting when rendering the initial map for immediately show locations. "
+msgstr "Gebruik de \"zoom level\" instelling alleen als de begin kaart meteen de locaties toont. "
+
+#: include/class.admin.experience.php:239
+#@ csa-slp-em
+msgid "Do not automatically zoom the map to show all iniital locations."
+msgstr "Zoom de kaart niet automatisch om alle begin locaties te tonen."
+
+#: include/class.admin.experience.php:73
+#@ csa-slp-em
+msgid "Show Map Inset Box"
+msgstr "Toon Kaart Inset Box"
+
+#: include/class.admin.experience.php:74
+#@ csa-slp-em
+msgid "When checked the map inset is shown."
+msgstr "Wanneer aangevinkt wordt de kaart inset getoond."
+
+#: include/class.admin.experience.php:202
+#@ csa-slp-em
+msgid "Disable Scroll Wheel"
+msgstr "Schakel Scroll Wiel Uit"
+
+#: include/class.admin.experience.php:203
+#@ csa-slp-em
+msgid "Disable the scrollwheel zoom on the maps interface."
+msgstr "Schakel het scrollwiel zoomen in de kaarten interface uit."
+
+#: include/class.admin.experience.php:79
+#@ csa-slp-em
+msgid "Hide map 3d control"
+msgstr "Verberg 3D kaart controle"
+
+#: include/class.admin.experience.php:80
+#@ csa-slp-em
+msgid "Turn the large map 3D control off."
+msgstr "Zet de grote kaart 3D controle uit."
+
+#: include/class.admin.experience.php:84
+#@ csa-slp-em
+msgid "Hide map scale"
+msgstr "Verberg kaart schaal"
+
+#: include/class.admin.experience.php:85
+#@ csa-slp-em
+msgid "Turn the map scale off."
+msgstr "Zet de kaart schaal uit."
+
+#: include/class.admin.experience.php:89
+#@ csa-slp-em
+msgid "Hide map type"
+msgstr "Verberg kaart type"
+
+#: include/class.admin.experience.php:90
+#@ csa-slp-em
+msgid "Turn the map type selector off."
+msgstr "Zet de kaart type selecteerder uit."
+
+#: include/class.admin.experience.php:109
+#: include/class.userinterface.php:63
+#@ csa-slp-em
+msgid "Map"
+msgstr "Kaart"
+
+#: include/class.admin.php:89
+#@ csa-slp-em
+msgid "Map Marker"
+msgstr "Kaart Marker"
+
+#: include/class.admin.experience.php:226
+#@ csa-slp-em
+msgid "Do not include the home map marker for the initial map loading with immediately show locations enabled."
+msgstr "Gebruik de begin kaart marker niet voor de initiële kaart als onmiddelijk toon locaties geselecteerd is."
+
+#: include/class.admin.experience.php:58
+#@ csa-slp-em
+msgid "Hide The Map"
+msgstr "Verberg De Kaart"
+
+#: include/class.admin.experience.php:45
+#@ csa-slp-em
+msgid "Add Map Toggle On UI"
+msgstr "Voeg Kaart Schakelaar Toe Aan UI"
+
+#: include/class.admin.experience.php:47
+#@ csa-slp-em
+msgid "Add a map on/off toggle to the user interface."
+msgstr "Voeg een kaart aan/uit schakelaar toe aan de gebruikersinterface."
+
+#: include/class.admin.experience.php:106
+#@ csa-slp-em
+msgid "Toggle Label"
+msgstr "Schakel Label"
+
+#: include/class.admin.experience.php:107
+#@ csa-slp-em
+msgid "The text that appears before the display map on/off toggle."
+msgstr "De tekst die getoond wordt voor het tonen van de kaart aan/uit schakelaar."
+
+#: include/class.admin.experience.php:276
+#@ csa-slp-em
+msgid "Starting Image"
+msgstr "Start Afbeelding"
+
+#: include/class.admin.experience.php:278
+#@ csa-slp-em
+msgid "If set, this image will be displayed until a search is performed.  Enter the full URL for the image."
+msgstr "Als deze afbeelding gedefinieerd is, zal deze worden weer gegeven tot dat er een zoekopdracht is uitgevoerd. Geef de volledige URL voor de afbeelding. "
+
+#: include/class.admin.experience.php:126
+#@ csa-slp-em
+msgid "Map Layout"
+msgstr "Kaart Layout"
+
+#: include/class.admin.experience.php:146
+#@ csa-slp-em
+msgid "Bubble Layout"
+msgstr "Ballon Layout"
+
+#. translators: plugin header field 'Name'
+#: slp-enhanced-map.php:0
+#@ csa-slp-em
+msgid "Store Locator Plus : Enhanced Map"
+msgstr "Store Locator Plus : Enhanced Map"
+
+#. translators: plugin header field 'Description'
+#: slp-enhanced-map.php:0
+#@ csa-slp-em
+msgid "A premium add-on pack for Store Locator Plus that adds enhanced map UI to the plugin."
+msgstr "Een premium add-on pakket voor Store Locator Plus die een uitgebreide kaart UI toevoegt aan de plug-in."
+
+#: include/class.admin.experience.php:128
+#: include/class.admin.experience.php:148
+#@ csa-slp-em
+msgid "Enter your custom info bubble layout. "
+msgstr "Geef uw persoonlijke info ballon layout. "
+
+#: include/class.admin.experience.php:256
+#@ csa-slp-em
+msgid "Image Until Search - Display the image set by Starting Image."
+msgstr "Plaatje Tot Zoek - Toon het plaatje zoals geconfigureerd bij Start Plaatje."
+
+#: include/class.admin.experience.php:263
+#@ csa-slp-em
+msgid "Show Map"
+msgstr "Toon Kaart"
+
+#: include/class.admin.experience.php:264
+#@ csa-slp-em
+msgid "Hide Until Search"
+msgstr "Verberg Tot Zoek"
+
+#: include/class.admin.experience.php:265
+#@ csa-slp-em
+msgid "Image Until Search"
+msgstr "Plaatje Tot Zoek"
+
+#: include/class.admin.experience.php:94
+#@ csa-slp-em
+msgid "Hide Info Bubble"
+msgstr "Verberg Info Ballon"
+
+#: include/class.admin.experience.php:95
+#@ csa-slp-em
+msgid "Disable the on-map info bubble."
+msgstr "Schakel de info ballon op de kaart uit."
+
+#. translators: plugin header field 'PluginURI'
+#: slp-enhanced-map.php:0
+#@ csa-slp-em
+msgid "http://www.storelocatorplus.com/product/slp4-enhanced-map/"
+msgstr "http://www.storelocatorplus.com/product/slp4-enhanced-map/"
+
+#: include/class.admin.experience.php:34
+#@ csa-slp-em
+msgid "Appearance"
+msgstr "Uiterlijk"
+
+#: include/class.admin.experience.php:60
+#@ csa-slp-em
+msgid "Do not show the map on the user interface."
+msgstr "Toon de kaart niet op de gebruikers interface."
+
+#: include/class.admin.experience.php:131
+#, php-format
+#@ csa-slp-em
+msgid "Uses HTML and %s shortcodes."
+msgstr "Gebruikt HTML en %s shortcodes."
+
+#: include/class.admin.experience.php:133
+#: include/class.admin.experience.php:153
+#@ csa-slp-em
+msgid "Set it to blank to reset to the default layout. "
+msgstr "Laat leeg om te resetten naar de default layout. "
+
+#: include/class.admin.experience.php:151
+#, php-format
+#@ csa-slp-em
+msgid "Uses HTML plus %s shortcodes."
+msgstr "Gebruikt HTML en %s shortcodes."
+
+#: include/class.admin.experience.php:165
+#@ csa-slp-em
+msgid "Map Style"
+msgstr "Kaart Stijl"
+
+#: include/class.admin.experience.php:167
+#@ csa-slp-em
+msgid "Enter the JSON-style map style rules. "
+msgstr "Geef de JSON-style kaart stijl regels. "
+
+#: include/class.admin.experience.php:168
+#@ csa-slp-em
+msgid "See places like <a href=\"https://snazzymaps.com/\">Snazzy Maps</a>."
+msgstr "Zie plaatsen zoals <a href=\"https://snazzymaps.com/\">Snazzy Maps</a>."
+
+#: include/class.admin.experience.php:184
+#@ csa-slp-em
+msgid "Functionality"
+msgstr "Functionaliteit"
+
+#: include/class.admin.experience.php:214
+#@ csa-slp-em
+msgid "At Startup"
+msgstr "Bij Opstarten"
+
+#: include/class.admin.experience.php:225
+#@ csa-slp-em
+msgid "Hide Home Marker"
+msgstr "Verberg Home Marker"
+
+#: include/class.admin.experience.php:250
+#@ csa-slp-em
+msgid "Map Display"
+msgstr "Kaart Weergave"
+
+#: include/class.admin.experience.php:253
+#@ csa-slp-em
+msgid "Set what to display when the page loads. "
+msgstr "Stel in wat weer te geven als de pagina laadt. "
+
+#: include/class.admin.experience.php:254
+#@ csa-slp-em
+msgid "Show Map - Display a map. "
+msgstr "Toon Kaart - Toon een kaart. "
+
+#: include/class.admin.experience.php:255
+#@ csa-slp-em
+msgid "Hide Until Search - Display nothing until an address is searched. "
+msgstr "Verberg Tot Zoeken - Toon niets totdat gezocht is op een adres. "
+
+#. translators: plugin header field 'Author'
+#: slp-enhanced-map.php:0
+#@ csa-slp-em
+msgid "Store Locator Plus"
+msgstr "Store Locator Plus"
+
+#. translators: plugin header field 'AuthorURI'
+#: slp-enhanced-map.php:0
+#@ csa-slp-em
+msgid "http://storelocatorplus.com/"
+msgstr "http://storelocatorplus.com/"
+
+#. translators: plugin header field 'Version'
+#: slp-enhanced-map.php:0
+#@ csa-slp-em
+msgid "4.3.00-RC-1"
+msgstr "4.3.00"
+

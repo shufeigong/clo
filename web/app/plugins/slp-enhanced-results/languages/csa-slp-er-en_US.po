@@ -1,0 +1,226 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Store Locator Plus : Enhanced Results v4.1.00\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-01-29 15:20:58+0000\n"
+"Last-Translator: admin <lance@charlestonsw.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-Country: UNITED STATES\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: include/class.activation.php:113
+#@ csa-slp-er
+msgid "Featured"
+msgstr ""
+
+#: include/class.activation.php:114
+#@ csa-slp-er
+msgid "Rank"
+msgstr ""
+
+#: include/class.admin.php:93
+#@ csa-slp-er
+msgid "Featured, Rank, Closest"
+msgstr ""
+
+#: include/class.admin.php:94
+#@ csa-slp-er
+msgid "Featured, Rank, A..Z"
+msgstr ""
+
+#: include/class.admin.php:100
+#@ csa-slp-er
+msgid "Featured Then Closest"
+msgstr ""
+
+#: include/class.admin.php:101
+#@ csa-slp-er
+msgid "Featured Then A..Z"
+msgstr ""
+
+#: include/class.admin.php:107
+#@ csa-slp-er
+msgid "Rank Then Closest"
+msgstr ""
+
+#: include/class.admin.php:108
+#@ csa-slp-er
+msgid "Rank Then A..Z"
+msgstr ""
+
+#: include/class.admin.php:111
+#@ csa-slp-er
+msgid "Closest..Furthest"
+msgstr ""
+
+#: include/class.admin.php:112
+#@ csa-slp-er
+msgid "Name A..Z"
+msgstr ""
+
+#: include/class.admin.php:114
+#@ csa-slp-er
+msgid "Random"
+msgstr ""
+
+#: include/class.admin.php:119
+#@ csa-slp-er
+msgid "Order Results By: "
+msgstr ""
+
+#: include/class.admin.php:149
+#: include/class.admin.php:170
+#@ csa-slp-er
+msgid "Image"
+msgstr ""
+
+#: include/class.admin.php:153
+#@ csa-slp-er
+msgid "View"
+msgstr ""
+
+#: include/class.admin.php:186
+#@ csa-slp-er
+msgid "No Results Message"
+msgstr ""
+
+#: include/class.admin.php:187
+#@ csa-slp-er
+msgid "No results found message that appears under the map."
+msgstr ""
+
+#: include/class.admin.php:189
+#@ csa-slp-er
+msgid "Results not found."
+msgstr ""
+
+#: include/class.admin.php:205
+#: slp-enhanced-results.php:178
+#@ csa-slp-er
+msgid "Enhanced Results"
+msgstr ""
+
+#: include/class.admin.php:208
+#@ csa-slp-er
+msgid "Disable Initial Directory"
+msgstr ""
+
+#: include/class.admin.php:209
+#@ csa-slp-er
+msgid "Do not display the listings under the map when \"immediately show locations\" is checked."
+msgstr ""
+
+#: include/class.admin.php:213
+#@ csa-slp-er
+msgid "Use tel URI"
+msgstr ""
+
+#: include/class.admin.php:214
+#@ csa-slp-er
+msgid "When checked, wraps the phone number in the results in a tel: href tag."
+msgstr ""
+
+#: include/class.admin.php:220
+#@ csa-slp-er
+msgid "Hide Distance"
+msgstr ""
+
+#: include/class.admin.php:221
+#@ csa-slp-er
+msgid "Do not show the distance to the location in the results table."
+msgstr ""
+
+#: include/class.admin.php:225
+#@ csa-slp-er
+msgid "Show Country"
+msgstr ""
+
+#: include/class.admin.php:226
+#@ csa-slp-er
+msgid "Display the country in the results table address."
+msgstr ""
+
+#: include/class.admin.php:232
+#@ csa-slp-er
+msgid "Show Hours"
+msgstr ""
+
+#: include/class.admin.php:233
+#@ csa-slp-er
+msgid "Display the hours in the results table under the Directions link."
+msgstr ""
+
+#: include/class.admin.php:240
+#@ csa-slp-er
+msgid "Results Layout"
+msgstr ""
+
+#: include/class.admin.php:241
+#@ csa-slp-er
+msgid "Enter your custom results area layout for the location results. "
+msgstr ""
+
+#: include/class.admin.php:244
+#, php-format
+#@ csa-slp-er
+msgid "Uses HTML plus %s shortcodes."
+msgstr ""
+
+#: include/class.admin.php:246
+#@ csa-slp-er
+msgid "Set it to blank to reset to the default layout. "
+msgstr ""
+
+#: include/class.admin.php:247
+#@ csa-slp-er
+msgid "Overrides all other results settings."
+msgstr ""
+
+#. translators: plugin header field 'Name'
+#: slp-enhanced-results.php:0
+#@ csa-slp-er
+msgid "Store Locator Plus : Enhanced Results"
+msgstr ""
+
+#. translators: plugin header field 'PluginURI'
+#: slp-enhanced-results.php:0
+#@ csa-slp-er
+msgid "http://www.charlestonsw.com/product/store-locator-plus-enhanced-results/"
+msgstr ""
+
+#. translators: plugin header field 'Description'
+#: slp-enhanced-results.php:0
+#@ csa-slp-er
+msgid "A premium add-on pack for Store Locator Plus that adds enhanced search results to the plugin."
+msgstr ""
+
+#. translators: plugin header field 'Author'
+#: slp-enhanced-results.php:0
+#@ csa-slp-er
+msgid "Charleston Software Associates"
+msgstr ""
+
+#. translators: plugin header field 'AuthorURI'
+#: slp-enhanced-results.php:0
+#@ csa-slp-er
+msgid "http://charlestonsw.com/"
+msgstr ""
+
+#. translators: plugin header field 'Version'
+#: slp-enhanced-results.php:0
+#@ csa-slp-er
+msgid "4.1.00"
+msgstr ""
+

@@ -1,0 +1,128 @@
+/**
+ * Tagalong Custom Admin CSS
+ *
+ * SCSS Source: ./assets/stylesheets/admin.scss
+ */
+/* Popup Categorization Selector */
+div#slp_tagalong_selector div#slp_tagalong_fields li {
+  padding: 3px 0px 0px 0px;
+  margin: 0px; }
+
+div#slp_tagalong_selector div#slp_tagalong_fields ul {
+  text-align: left; }
+
+div#slp_tagalong_selector div#slp_tagalong_fields ul.children {
+  margin: 0px;
+  padding-left: 14px; }
+
+/* Category list items */
+span.catname {
+  display: inline-block;
+  margin-right: 10px;
+  min-width: 150px;
+  text-align: right; }
+
+/* Category edit form */
+/* Category add form */
+div#medium-icon_icon_row.slp_icon_row,
+div#map-marker_icon_row.slp_icon_row {
+  margin: 6px 3px 24px 3px;
+  width: 100%; }
+
+/* Inline manage location category editor */
+td#slp_manual_update_table_right_cell {
+  min-width: 400px;
+  position: relative;
+  display: block; }
+
+div#slp_edit_right_column {
+  min-width: 200px;
+  min-height: 300px;
+  float: left; }
+
+/* Manage Location Display */
+div.tagalong_entry {
+  margin-bottom: 6px;
+  margin-right: 8px;
+  text-align: center; }
+
+span.tagalong_entry_name {
+  width: 100%;
+  display: block; }
+
+img.slp_map_marker {
+  vertical-align: text-top; }
+
+/* Text formatting */
+p.lvl1 {
+  margin-left: 18px; }
+
+p.footernote {
+  font-style: italic;
+  color: #666666; }
+
+/* Edit Page Categories LI */
+div#slp_tagalong_fields ul {
+  clear: both;
+  float: none;
+  width: 100%; }
+
+div#slp_tagalong_fields li {
+  clear: both;
+  float: none;
+  display: 100%;
+  line-height: 1em; }
+
+div#slp_tagalong_fields label {
+  clear: both;
+  float: none;
+  text-align: left;
+  margin: 0px; }
+
+div#slp_tagalong_fields ul.children {
+  margin-left: 20px;
+  padding-bottom: 6px;
+  padding-top: 6px; }
+
+/**
+ * Tagalong Tab / Store Categories Panel / Category List
+ **/
+#wpcsl-option-store_categories #wpcsl_settings_group-list ul.children {
+  padding: 3px 0px 3px 24px; }
+
+/** Manage Locations Page **/
+.slp_manage_locations_cell.categories span.legend_text {
+  display: block; }
+
+/**
+ * edit-tags.php (category editor)
+ **/
+div#tagalong_extended_data .form-field {
+  display: block; }
+  div#tagalong_extended_data .form-field.icon_setting {
+    display: inline-block; }
+    div#tagalong_extended_data .form-field.icon_setting LABEL,
+    div#tagalong_extended_data .form-field.icon_setting INPUT {
+      display: inline-block; }
+    div#tagalong_extended_data .form-field.icon_setting .slp_tagalog_category_image {
+      background-color: #FFFFFF;
+      border: 1px solid #444444;
+      padding: 0.5em;
+      text-align: center;
+      width: 3em; }
+  div#tagalong_extended_data .form-field.short_field INPUT {
+    max-width: 3em; }
+div#tagalong_extended_data .slp_icon_row {
+  max-height: 12em;
+  overflow: auto; }
+  div#tagalong_extended_data .slp_icon_row .slp_icon_selector_box {
+    display: inline-block;
+    margin: 3px;
+    border: 1px solid transparent;
+    float: left;
+    min-height: 48px;
+    min-width: 48px;
+    text-align: center; }
+    div#tagalong_extended_data .slp_icon_row .slp_icon_selector_box:hover {
+      background-color: #FFFFDD;
+      border: 1px solid #AAAAAA; }
