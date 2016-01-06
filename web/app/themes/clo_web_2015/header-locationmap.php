@@ -52,15 +52,4 @@ if ($userAgent['browser'] == 'MSIE' && (int)$userAgent['version'] < 11) {
 <?php do_action('foundationpress_after_header'); ?>
 <div class="row">
 
-     <?php if(is_user_logged_in()):?>
-    <div class="row header login">
-     <?php else:?>
-    <div class="row header non-login">
-     <?php endif;?>
 
-	        
-       
-       
-<?php //$userAgent = parse_user_agent(); echo $userAgent['browser'].'////'.$userAgent['version'][0];?>
-             
-    </div>
