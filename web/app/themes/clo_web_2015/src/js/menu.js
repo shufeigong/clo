@@ -436,7 +436,7 @@ function init() {
 
 $(document).ready(function () {
     init();
-    $("#skiplinks").children("a").click(function(){return false;});
+    $("#skiplinks").children("a").click(function(){if($(this).html()=="Skip to content"){return false;}});
     
     window.onload = externallinks;
 
