@@ -436,7 +436,12 @@ function init() {
 
 $(document).ready(function () {
     init();
-    $("#skiplinks").children("a").click(function(){if($(this).html()=="Skip to content"){return false;}});
+    $("#skiplinks").children("a").click(function(e){
+    	                                   if($(this).html()=="Skip to content"||$(this).html()=="Aller au contenu"){return false;}
+                                           e.preventDefault();
+                                           if($(".menu-main-menu-container").length>0){location.href="/site-map";}else{location.href="/fr-site-map";}
+                                            
+                                         });
     
     window.onload = externallinks;
 
