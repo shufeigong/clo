@@ -83,6 +83,14 @@ div.entry-content div#sl_div #map IMG {
  * Search Form
  * Base + Widget Pack
  *---------------------*/
+.map-en .fr-find{
+	display:none;
+} 
+
+.map-fr .en-find{
+	display:none;
+} 
+ 
 div#sl_arrow_container {
     width: 100%;
     display: block;
@@ -176,6 +184,23 @@ input#slpw_addressSubmit
 /*---------------------
  * Results
  *---------------------*/
+.map-en .fr-res{
+	display:none;
+} 
+ 
+.map-fr .en-res{
+	display:none;
+} 
+
+.map-en .fr-no{
+	display:none;
+} 
+ 
+.map-fr .en-no{
+	display:none;
+} 
+
+ 
 .resultwithin{
 	color: #58595B;
     font-family: TradeGothic,Arial,sans-serif;

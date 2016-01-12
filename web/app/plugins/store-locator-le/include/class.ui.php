@@ -67,13 +67,22 @@ class SLPlus_UI {
         //
         if ($default     !==''){ $default     = esc_html($default);     }
         if ($placeholder !==''){ $placeholder = esc_html($placeholder); }
-
+        if(ICL_LANGUAGE_CODE=='en'):
         $content =
             ($hidden?'':"<div id='$divID' class='search_item'>") .
                 (($hidden || ($label === '')) ? '' : "<label for='$fldID'>$label</label>") .
                 "<input type='".($hidden?'hidden':'text')."' id='$fldID' name='$fldID' placeholder='Enter a Town, City, or Postal Code' size='50' value='$default' />" .
             ($hidden?'':"</div>")
             ;
+        elseif(ICL_LANGUAGE_CODE=='fr'):
+        $content =
+        ($hidden?'':"<div id='$divID' class='search_item'>") .
+        (($hidden || ($label === '')) ? '' : "<label for='$fldID'>$label</label>") .
+        "<input type='".($hidden?'hidden':'text')."' id='$fldID' name='$fldID' placeholder='Enter a Town, City, or Postal Code French Version' size='50' value='$default' />" .
+        ($hidden?'':"</div>")
+        ;
+        
+        endif;
         return $content;
     }
 

@@ -10,11 +10,16 @@ get_header('locationmap');  //wp_nav_menu?>
         <?php while (have_posts()) : the_post(); ?>
             <article2 <?php post_class() ?> id="post-<?php the_ID(); ?>">
                 <?php do_action('foundationpress_page_before_entry_content'); ?>
-                
-                <div class="entry-content2">
+                <?php if(ICL_LANGUAGE_CODE=='en'): ?>
+                <div class="entry-content2 map-en">
+                    <?php the_content();?>          
+                </div>
+                <?php elseif(ICL_LANGUAGE_CODE=='fr'): ?>
+                <div class="entry-content2 map-fr">
                     <?php the_content();?>          
                 </div>
                 
+                <?php endif;?>   
             </article2>
         <?php endwhile; ?>
         <?php do_action('foundationpress_after_content'); ?>

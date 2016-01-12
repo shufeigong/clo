@@ -597,6 +597,12 @@ function locationMap(){
 	    var myWindow = window.open(url, "MsgWindow", "width=650, height=800, scrollbars=yes");
 	});
 	
+	$('.location_mapfr').click(function(e) {
+	    e.preventDefault(); 
+	    var url= "/locationmapfr"; //
+	    var myWindow = window.open(url, "MsgWindow", "width=650, height=800, scrollbars=yes");
+	});
+	
 }
 function mapToggle(thislocation){
 	$(thislocation).parents(".results_row_left_column").next().slideToggle();
