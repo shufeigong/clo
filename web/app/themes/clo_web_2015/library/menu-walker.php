@@ -142,6 +142,15 @@ if (!class_exists('Foundationpress_Top_Bar_Walker')) :
 			$attributes .= !empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
 			$attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
 			$attributes .= 'onclick="return false"';
+			
+			if($depth == 0){
+				if(ICL_LANGUAGE_CODE=='en'){$attributes.= 'otherurl="'.get_url_for_language( esc_attr($item->url), 'fr' ).'"';}
+				elseif (ICL_LANGUAGE_CODE=='fr'){$attributes.= 'otherurl="'.get_url_for_language( esc_attr($item->url), 'en' ).'"';}
+			}else{
+				if(ICL_LANGUAGE_CODE=='en'){$attributes.= 'otherurl="'.explode('?',explode('/',get_url_for_language( esc_attr($item->url), 'fr' ))[3])[0].'"';}
+				elseif (ICL_LANGUAGE_CODE=='fr'){$attributes.= 'otherurl="'.explode('?',explode('/',get_url_for_language( esc_attr($item->url), 'en' ))[3])[0].'"';}
+			}
+			
 			//htmlentities($text, ENT_COMPAT, 'UTF-8')
 
 			//$attributes .= ! empty( $item->title)  ? ' id="'   . strtr(esc_attr( strtolower(preg_replace("/\s|　/","",$item->title))  ), $unwanted_array) .'"' : '';
@@ -181,7 +190,7 @@ if (!class_exists('Foundationpress_Top_Bar_Walker')) :
 
 			// build html
 			$output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
-
+            if($depth == 0):
 			$output .= '<div class="image-link ' . strtolower(str_replace(' ', '-', apply_filters('the_title', $item->title, $item->ID))) . '">';
 
 			$imgid = strtolower(str_replace(' ', '', apply_filters('the_title', $item->title, $item->ID)));
@@ -483,6 +492,7 @@ if (!class_exists('Foundationpress_Top_Bar_Walker')) :
 			//$output.='<div class="contentdiv"><div class="breaddiv"></div><div class="textdiv"></div></div>';
 			$output.='<div class="menudiv"><ul></ul></div></div>';
 			$_SESSION['order']++;
+			endif;
 		}
 	}
 

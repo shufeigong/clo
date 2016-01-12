@@ -208,11 +208,11 @@ function displayMenu(itemId, menuUrl) {
                 if (response.items[i].parent == itemJsonId) {
                     if (response.items[i].children.length > 0) {
                         output
-                            += '<li style="line-height:1; margin-bottom:15px;"><a href="#" onclick="signclick(this); return false;" class="submenu" style="width:10%;float:left;">[+]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', '+response.items[i].ID+'); return false;"  id="' + response.items[i].ID + '" class="submenu" style="width:90%;display:inline-block;" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title.toUpperCase() + '</a></li>';
+                            += '<li style="line-height:1; margin-bottom:15px;"><a href="#" onclick="signclick(this); return false;" class="submenu" style="width:10%;float:left;">[+]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', '+response.items[i].ID+'); return false;"  id="' + response.items[i].ID + '" class="submenu" style="width:90%;display:inline-block;" slug="'+response.items[i].url.split('/')[3].split('?')[0]+'">' + response.items[i].title.toUpperCase() + '</a></li>';
                     }
                     else {
                         output
-                            += '<li style="margin-left:10%;line-height:1;margin-bottom:15px;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', '+response.items[i].ID+'); return false;"  id="' + response.items[i].ID + '" class="submenu" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title.toUpperCase() + '</a></li>';
+                            += '<li style="margin-left:10%;line-height:1;margin-bottom:15px;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', '+response.items[i].ID+'); return false;"  id="' + response.items[i].ID + '" class="submenu" slug="'+response.items[i].url.split('/')[3].split('?')[0]+'">' + response.items[i].title.toUpperCase() + '</a></li>';
                     }
                 }
             }
@@ -223,10 +223,10 @@ function displayMenu(itemId, menuUrl) {
                 if (response.items[i].parent != itemJsonId && response.items[i].parent != 0) //it means this submenu is first submenus' child or grandchild
                 {
                     if (response.items[i].children.length > 0) {
-                        $('#' + response.items[i].parent).parent().append('<ul style="margin-top:15px;" slug="0"><li style="line-height:1;"><a href="#" onclick="signclick(this); return false;" class="submenu" style="width:10%;float:left;">[+]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', '+response.items[i].ID+'); return false;" id="' + response.items[i].ID + '" class="submenu" style="width:90%;display:inline-block;text-transform:capitalize;" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title+ '</a></li></ul>');
+                        $('#' + response.items[i].parent).parent().append('<ul style="margin-top:15px;" slug="0"><li style="line-height:1;"><a href="#" onclick="signclick(this); return false;" class="submenu" style="width:10%;float:left;">[+]</a><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', '+response.items[i].ID+'); return false;" id="' + response.items[i].ID + '" class="submenu" style="width:90%;display:inline-block;text-transform:capitalize;" slug="'+response.items[i].url.split('/')[3].split('?')[0]+'">' + response.items[i].title+ '</a></li></ul>');
                     }
                     else {
-                        $('#' + response.items[i].parent).parent().append('<ul style="margin-top:15px;" slug="0"><li style="margin-left:10%;line-height:1;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', '+response.items[i].ID+'); return false;"  id="' + response.items[i].ID + '" class="submenu"  style="text-transform:capitalize;" slug="'+response.items[i].url.split('/')[3]+'">' + response.items[i].title + '</a></li></ul>');
+                        $('#' + response.items[i].parent).parent().append('<ul style="margin-top:15px;" slug="0"><li style="margin-left:10%;line-height:1;"><a href="#" onclick="change(' + response.items[i].object_id + ',\'' + itemId + '\', '+response.items[i].ID+'); return false;"  id="' + response.items[i].ID + '" class="submenu"  style="text-transform:capitalize;" slug="'+response.items[i].url.split('/')[3].split('?')[0]+'">' + response.items[i].title + '</a></li></ul>');
                     }
                 }
             }
@@ -307,6 +307,11 @@ function change(objectId, itemId, thisid) {
             campaignMonitor();
             album();
             locationMap();
+            
+            var newurl=$(".menu-item-language a").attr("href")+"#"+$("#"+$("#"+thisid).attr("slug")).attr("otherurl");
+            $(".menu-item-language a").attr("href", newurl);
+            
+            
         })
         .fail(function () {
         alert("error");
@@ -353,7 +358,7 @@ function itemClick(itemId) {
     grabSubMenu(itemId);   //grab submenu according to itemId
     grabPage(itemId);   //grab page according to itemId
     
-    
+    $(".menu-item-language a").attr("href", $("#"+itemId).attr("otherurl"));
 
 }
 function pageRefresh(itemId) {

@@ -84,7 +84,7 @@ if ( ! function_exists( 'mainMenu' ) ) {
 			'link_before'     => '',
 			'link_after'      => '',
 			'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-			'depth'           => 1,
+			'depth'           => 0,
 			'walker'          => new Main_Nav_walker()
 		));
 	}

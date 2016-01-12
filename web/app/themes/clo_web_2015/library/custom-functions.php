@@ -324,5 +324,20 @@ function admin_bar_fix() {
 }
 add_action('wp_head', 'admin_bar_fix', 5);
 
-
+function get_url_for_language( $original_url, $language )
+{
+	$post_id = url_to_postid( $original_url );
+	$lang_post_id = icl_object_id( $post_id , 'page', true, $language );
+	 
+	$url = "";
+	if($lang_post_id != 0) {
+		$url = get_permalink( $lang_post_id );
+	}else {
+		// No page found, it's most likely the homepage
+		global $sitepress;
+		$url = $sitepress->language_url( $language );
+	}
+	 
+	return $url;
+}
 ?>
