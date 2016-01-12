@@ -144,6 +144,7 @@ div#slpw_searchform     LABEL
     padding-right: 6px;
     text-align: right;
     width: 90px;
+    display:none;
 }
 form#searchForm         INPUT,
 div#slpw_searchform     INPUT
