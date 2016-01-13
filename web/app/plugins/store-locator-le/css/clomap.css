@@ -201,6 +201,14 @@ input#slpw_addressSubmit
 	display:none;
 } 
 
+.map-en .fr-mapins{
+	display:none;
+}
+
+.map-fr .en-mapins{
+	display:none;
+}
+
  
 .resultwithin{
 	color: #58595B;
