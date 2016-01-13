@@ -38,7 +38,10 @@ function pageLoad(linkSplit, basicItems) {
                     $("#" + linkSplit[1]).nextAll(".overarea").slideDown("normal",changeHeight(linkSplit[1])); //get submenu down 
                     $("#" + linkSplit[1]).parents('ul').find('li.selected').removeClass('selected');
                     $("#" + linkSplit[1]).parent().addClass('selected');
-
+                    
+                    var newurl=$(".menu-item-language:last a").attr("href").split("#")[0]+"#"+$(location.hash).attr("otherurl");
+                    if($(location.hash).length>0){$(".menu-item-language:last a").attr("href", newurl);}
+                    
 
                     var idt;
                     var n = 0;
@@ -308,8 +311,8 @@ function change(objectId, itemId, thisid) {
             album();
             locationMap();
             /////
-            var newurl=$(".menu-item-language a").attr("href").split("#")[0]+"#"+$("#"+$("#"+thisid).attr("slug")).attr("otherurl");
-            $(".menu-item-language a").attr("href", newurl);
+            var newurl=$(".menu-item-language:last a").attr("href").split("#")[0]+"#"+$("#"+$("#"+thisid).attr("slug")).attr("otherurl");
+            $(".menu-item-language:last a").attr("href", newurl);
             
             
         })
@@ -358,7 +361,7 @@ function itemClick(itemId) {
     grabSubMenu(itemId);   //grab submenu according to itemId
     grabPage(itemId);   //grab page according to itemId
     
-    $(".menu-item-language a").attr("href", $("#"+itemId).attr("otherurl"));
+    $(".menu-item-language:last a").attr("href", $("#"+itemId).attr("otherurl"));
 
 }
 function pageRefresh(itemId) {
