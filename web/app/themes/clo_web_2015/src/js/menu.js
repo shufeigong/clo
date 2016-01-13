@@ -307,8 +307,8 @@ function change(objectId, itemId, thisid) {
             campaignMonitor();
             album();
             locationMap();
-            
-            var newurl=$(".menu-item-language a").attr("href")+"#"+$("#"+$("#"+thisid).attr("slug")).attr("otherurl");
+            /////
+            var newurl=$(".menu-item-language a").attr("href").split("#")[0]+"#"+$("#"+$("#"+thisid).attr("slug")).attr("otherurl");
             $(".menu-item-language a").attr("href", newurl);
             
             
