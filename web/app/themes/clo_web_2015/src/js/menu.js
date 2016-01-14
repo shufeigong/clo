@@ -619,6 +619,10 @@ function mapToggle(thislocation){
 	else{$(thislocation).html("[+]");}
 }
 
+$("#addressSubmit").click(function(){
+	$("#sl_before").css("display","inline");
+});
+
 
 /////////externalliks for social list////////
 function externallinks() { 

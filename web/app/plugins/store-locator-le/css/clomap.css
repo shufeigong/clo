@@ -209,6 +209,9 @@ input#slpw_addressSubmit
 	display:none;
 }
 
+#sl_before{
+	display:none;
+}
  
 .resultwithin{
 	color: #58595B;
