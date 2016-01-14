@@ -207,11 +207,22 @@ function createVideoPost($post, $color){
 
 ///function for creating no video animated block
 function createNoVideoPost($post, $color){
+	
+	$has_img=preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+	$first_img = $matches [1] [0];
+	if($has_img==0){
 	$output= '<li><a href="' . get_permalink($post->ID) . '" tabindex="-1"><div class="news-item no-video" style="background:'.$color.';">
                         <div class="arrow"></div>';
+	     $title_limit=20; $content_limit=77;     
 	
-	if(mb_strlen($post->post_title)>20){
-		$post->post_title = strtoupper(mb_substr($post->post_title,0,20,"UTF8")).'...';
+	}else{
+	$output= '<li><a href="' . get_permalink($post->ID) . '" tabindex="-1"><div class="news-item has-video" style="background:'.$color.';">
+                        <div class="arrow"></div>';
+	     $title_limit=15; $content_limit=70;
+	}
+	
+	if(mb_strlen($post->post_title)>$title_limit){
+		$post->post_title = strtoupper(mb_substr($post->post_title,0,$title_limit,"UTF8")).'...';
 	}else{
 		$post->post_title = strtoupper($post->post_title);
 	}
@@ -227,10 +238,12 @@ function createNoVideoPost($post, $color){
 	
 	$post->post_content = strip_tags($post->post_content);
 	
-	if(mb_strlen($post->post_content)>77){
-		$post->post_content = mb_substr($post->post_content,0,77,"UTF8")."...";
+	if(mb_strlen($post->post_content)>$content_limit){
+		$post->post_content = mb_substr($post->post_content,0,$content_limit,"UTF8")."...";
 	}
-		$output.='<p class="post-content">' . $post->post_content.'</p>
+	
+	if($has_img==0){
+	$output.='<p class="post-content">' . $post->post_content.'</p>
 					    </div>';
 		//$output.='<div class="video-box" style=" width:1px;visibility:hidden;background-size:100% 100%; background-repeat:no-repeat;"></div>';//end of video box
 		
@@ -243,6 +256,16 @@ function createNoVideoPost($post, $color){
 	$output .= '<div class="clearfix"></div>
                         </div>
                        </a></li>';//end of news itemreturn $output;
+	}else{
+		$output .= '<p class="post-content">' . $post->post_content.'</p>
+					    </div>';//end of content-box
+		
+		$output.='<div class="video-box" style="background-image: url('.$first_img.'); background-size:cover; background-repeat:no-repeat;"><div class="play-button" style="visibility:hidden;"><span class="arrow"></span></div></div>';//end of video box
+		
+		$output .= '<div class="clearfix"></div>
+                        </div>
+                       </a></li>';//end of news item
+	}
 	return $output;
 }
 
