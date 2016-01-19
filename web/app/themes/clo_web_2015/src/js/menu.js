@@ -348,9 +348,10 @@ function contentToggle(id) {
 
 function itemClick(itemId) {
     $(".entry-title").slideUp();
+    $(".entry-content p,.entry-content2 p,.entry-content2 form").slideUp();
     $(".entry-content,.entry-content2,.entry-content2 form").slideUp();
-    $(".news-content").slideUp();
-    
+    $(".news-content").css("display","none");
+    $(".entry-content,.entry-content2,.entry-content2 form").css({"margin":"0px", "min-height":"0"});
     $("#" + itemId).parent().siblings().children(".overarea").slideUp();    //close all other pages
     //$("#" + itemId).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
     //$("#" + itemId).parent().siblings().children(".menudiv").slideUp();      //close all other pages' submenu
