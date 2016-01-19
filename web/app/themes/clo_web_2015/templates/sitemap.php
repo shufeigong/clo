@@ -12,7 +12,7 @@ get_header();  //wp_nav_menu?>
                 <?php do_action('foundationpress_page_before_entry_content'); ?>
               
               
-                <div class="entry-content2">
+                <div class="entry-content2" style="display:none;">
                     <?php the_content();?>
                     <?php get_template_part('parts/sitemap');?>
                 </div>

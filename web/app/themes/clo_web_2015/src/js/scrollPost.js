@@ -2,13 +2,15 @@ $(document).ready(function () {
     // Check if current page is home
     var isHome = $('body').hasClass('home');
     if (isHome) {
-    	$("#rollArea").jCarouselLite({
+         $("#rollArea2").jCarouselLite({
     		vertical: true,
     		hoverPause:true,
     		visible: 2,
     		auto:500,
     		speed:1500
     	});
+    	
+    	
 
     }
 });
@@ -52,8 +54,8 @@ $(document).ready(function () {
 	        div.css("visibility", "visible");
 
 	        li.css({overflow: "hidden", float: o.vertical ? "none" : "left"});
-	        ul.css({margin: "0", padding: "0", position: "relative", "list-style-type": "none", "z-index": "1"});
-	        div.css({overflow: "hidden", position: "relative", "z-index": "2", left: "0px"});
+	        ul.css({margin: "0", padding: "0", position: "relative", "list-style-type": "none", "z-index": "0"});
+	        div.css({overflow: "hidden", position: "relative", "z-index": "1", left: "0px"});
 
 	        var liSize = o.vertical ? height(li) : width(li);   // Full li size(incl margin)-Used for animation
 	        var ulSize = liSize * itemLength;                   // size of full ul(total length, not just for the visible items)

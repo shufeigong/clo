@@ -134,8 +134,23 @@ if (!class_exists('Foundationpress_Top_Bar_Walker')) :
 			//var_dump( $item );
 			//echo '</pre>';
 			// build html
-			$output .= $indent . '<li class="' . $depth_class_names . ' ' . $class_names . ' clearfix">';
-
+			if($_SESSION['order']==1){
+				if(is_front_page()){
+					$output .= $indent . '<li class="menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page clearfix"><div class="entry-content home" style="display:none;"></div>
+							<div class="news-content" style="visibility:hidden;">
+                  <div id="rollArea" style=" position:relative; overflow:hidden;">
+                     <ul id="rollPost">'.
+                       get_field('input_box').
+                     '</ul>
+                  </div>  
+                 </div></li><li class="' . $depth_class_names . ' ' . $class_names . ' clearfix">';
+				}else{
+					$output .= $indent . '<li class="menu-item-depth-0 menu-item menu-item-type-post_type menu-item-object-page clearfix"><div class="entry-content" style="display:none;"></div></li><li class="' . $depth_class_names . ' ' . $class_names . ' clearfix">';
+				}
+			
+			}else{
+				$output .= $indent . '<li class="' . $depth_class_names . ' ' . $class_names . ' clearfix">';
+			}
 			// link attributes
 			//$attributes = !empty($item->attr_title) ? ' title="' . esc_attr($item->attr_title) . '"' : '';
 			$attributes = !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';

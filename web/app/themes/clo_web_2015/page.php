@@ -20,16 +20,16 @@ get_header();  //wp_nav_menu?>
                 <?php do_action('foundationpress_page_before_entry_content'); ?>
               
               
-                <div class="entry-content <?php echo is_front_page() ? 'home' : '';?>">
-                    <?php //the_content();?>
+                <div class="entry-content-mobile <?php echo is_front_page() ? 'home' : '';?>">
+                    <?php the_content();?>
                 </div>
                 
                 <?php get_template_part('parts/social-list');?>
                 
                 <?php if(is_front_page()) :?>
-                 <div class="news-content" style="visibility: hidden;">
-                  <div id="rollArea" style=" position:relative; overflow:hidden;">
-                     <ul id="rollPost">
+                 <div class="news-content-mobile">
+                  <div id="rollArea2" style=" position:relative; overflow:hidden;">
+                     <ul id="rollPost2">
                        <?php echo get_field('input_box');?>
                      </ul>
                   </div>  

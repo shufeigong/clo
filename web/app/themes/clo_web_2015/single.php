@@ -18,7 +18,7 @@ get_header(); ?>
 		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			
 			<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
-			<div class="entry-content">
+			<div class="entry-content" style="display:none;">
             
 	            <header>
 					<h1 class="entry-title"><?php the_title(); ?></h1>
