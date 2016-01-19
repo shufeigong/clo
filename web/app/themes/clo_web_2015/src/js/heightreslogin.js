@@ -12,7 +12,7 @@ function changeHeight(itemId)
 	backOver(itemId);
 	if(($(".header").height()+minHeight+menuHeight)<=$(window).height())
 		{			
-		    if($(".header").height()+menuHeight+parseInt($("#" + itemId).nextAll(".overarea").css("height"))>$(window).height())
+		    if($(".header").height()+menuHeight+parseInt($("#" + itemId).nextAll(".overarea").css("height"))+20>$(window).height())
 		    	{
 		    	   //alert(parseInt($("#" + itemId).nextAll(".overarea").css("height")));
 		    	   //backOver();
