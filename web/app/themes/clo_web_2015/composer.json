@@ -7,6 +7,7 @@
         }
     ],
     "require": {
-        "codeception/codeception": "*"
+        "codeception/codeception": "*",
+        "donatj/phpuseragentparser": "^0.5.0"
     }
 }
