@@ -11,7 +11,7 @@ namespace Roots\Soil\CleanUp;
  * Remove inline CSS used by posts with galleries
  * Remove self-closing tag and change ''s to "'s on rel_canonical()
  *
- * You can enable/disable this feature in functions.php (or lib/config.php if you're using Sage):
+ * You can enable/disable this feature in functions.php (or lib/setup.php if you're using Sage):
  * add_theme_support('soil-clean-up');
  */
 function head_cleanup() {
@@ -31,6 +31,9 @@ function head_cleanup() {
   remove_action('admin_print_scripts', 'print_emoji_detection_script');
   remove_action('wp_print_styles', 'print_emoji_styles');
   remove_action('admin_print_styles', 'print_emoji_styles');
+  remove_action('wp_head', 'wp_oembed_add_discovery_links');
+  remove_action('wp_head', 'wp_oembed_add_host_js');
+  remove_action('wp_head', 'rest_output_link_wp_head', 10, 0);
   remove_filter('the_content_feed', 'wp_staticize_emoji');
   remove_filter('comment_text_rss', 'wp_staticize_emoji');
   remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
@@ -99,6 +102,9 @@ add_filter('language_attributes', __NAMESPACE__ . '\\language_attributes');
  */
 function clean_style_tag($input) {
   preg_match_all("!<link rel='stylesheet'\s?(id='[^']+')?\s+href='(.*)' type='text/css' media='(.*)' />!", $input, $matches);
+  if (empty($matches[2])) {
+    return $input;
+  }
   // Only display media if it is meaningful
   $media = $matches[3][0] !== '' && $matches[3][0] !== 'all' ? ' media="' . $matches[3][0] . '"' : '';
   return '<link rel="stylesheet" href="' . $matches[2][0] . '"' . $media . '>' . "\n";
@@ -118,12 +124,11 @@ add_filter('script_loader_tag', __NAMESPACE__ . '\\clean_script_tag');
  * Add and remove body_class() classes
  */
 function body_class($classes) {
-  // Add post/page slug if not present and template slug
+  // Add post/page slug if not present
   if (is_single() || is_page() && !is_front_page()) {
     if (!in_array(basename(get_permalink()), $classes)) {
       $classes[] = basename(get_permalink());
     }
-    $classes[] = str_replace('.php', '', basename(get_page_template()));
   }
 
   // Remove unnecessary classes

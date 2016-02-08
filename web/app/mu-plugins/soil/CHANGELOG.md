@@ -1,3 +1,28 @@
+### 3.6.2: December 24th, 2015
+* Add missing oEmbed cleanup ([#134](https://github.com/roots/soil/issues/134))
+
+### 3.6.1: December 24th, 2015
+* Remove `wp-embed.js` and `wp-json` from head ([#129](https://github.com/roots/soil/issues/129))
+
+### 3.6.0: November 18th, 2015
+* Add priority for loading modules (compatibility with Sage 8.3.0+)
+* Add core `menu-item-has-children` class on parent nav elements ([#127](https://github.com/roots/soil/issues/127))
+* Update sitemap conditional ([#126](https://github.com/roots/soil/issues/126))
+
+### 3.5.0: September 24th, 2015
+* Disable nice search on advanced queries ([#115](https://github.com/roots/soil/issues/115))
+* Add `.menu-item` class to all items in walker ([#112](https://github.com/roots/soil/issues/112))
+* Support placeholder links ([#108](https://github.com/roots/soil/issues/108))
+* Add filter `soil/relative-url-filters` ([#104](https://github.com/roots/soil/issues/104))
+* Fix warnings when input is empty in `clean_style_tag` ([#102](https://github.com/roots/soil/issues/102))
+* Fix Disable Asset Ver when loaded asset is false ([#99](https://github.com/roots/soil/issues/99))
+* Remove `is_element_empty()` ([#95](https://github.com/roots/soil/issues/95))
+* Refactored `root_relative_url()` ([#94](https://github.com/roots/soil/issues/94))
+* Properly make URLs relative when using multisite with domain mapping ([#91](https://github.com/roots/soil/issues/91))
+* Remove page template slug from body class ([#90](https://github.com/roots/soil/issues/90))
+* Check for protocol relative URLs we can drop the domain from ([#89](https://github.com/roots/soil/issues/89))
+* Don't use GA logger in prod env ([#87](https://github.com/roots/soil/issues/87))
+
 ### 3.4.0: April 29th, 2015
 * Remove inline CSS used by posts with galleries ([#85](https://github.com/roots/soil/issues/85))
 * Remove inline CSS and JS from WP emoji support ([#84](https://github.com/roots/soil/issues/84))

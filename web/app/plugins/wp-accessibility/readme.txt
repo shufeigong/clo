@@ -1,10 +1,11 @@
 === WP Accessibility ===
 Contributors: joedolson
-Donate link: http://www.joedolson.com/donate.php
+Donate link: http://www.joedolson.com/donate/
 Tags: title, accessibility, accessible, navigation, wcag, a11y, section508, focus, alt text, labels, aria
 Requires at least: 3.4.2
-Tested up to: 4.3.0
-Stable tag: 1.4.3
+Tested up to: 4.4.0
+Stable tag: 1.4.6
+Text Domain: wp-accessibility
 License: GPLv2 or later
 
 WP Accessibility fixes common accessibility issues in your WordPress site.
@@ -62,7 +63,23 @@ Visit the [WP Accessibility translations site](http://translate.joedolson.com/pr
 
 = Future =
 
-* Note: WP A11y recent posts widget will be removed in 1.5.0
+= 1.5.0 =
+
+* Updated toolbar fonts
+* Updated toolbar to use <button> instead of <a>
+* Improved fontsize increase default CSS. Most themes will still benefit from custom styles.
+* Added option to place toolbar on right side of screen.
+* Update load method for text domain
+* WP A11y recent posts widget removed.
+
+= 1.4.6 =
+
+* Bug fix: Don't create a duplicate ID when multiple longdesc attributes used on one page
+
+= 1.4.5 =
+
+* Add languages: Hungarian, English (Australian)
+* Bug fix: Retain intended image when adding alt attribute missing warning.
 
 = 1.4.4 =
 
@@ -234,7 +251,7 @@ Visit the [WP Accessibility translations site](http://translate.joedolson.com/pr
 = 1.2.1 =
 
 * Disabled grayscale toggle in Accessibility toolbar by default due to poor browser support and low functional value. (Can still be enabled by user.)
-* Removed php notice in title-free recent posts widget
+* Removed php notice in title- recent posts widget
 * Updated German and added Polish translations
 
 = 1.2.0 =
@@ -287,4 +304,4 @@ Even if WP Accessibility is running correctly, not all accessibility testing too
 
 == Upgrade Notice ==
 
-* 1.3.11 - Aware of accessibility-ready themes; notice about Access Monitor; bug fix
+* 1.4.6 - Bug fix for duplicate IDs in longdesc implementation
