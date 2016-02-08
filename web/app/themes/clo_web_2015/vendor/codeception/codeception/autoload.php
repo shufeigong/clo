@@ -6,6 +6,7 @@ if (file_exists(__DIR__.'/vendor/autoload.php')) {
     require_once __DIR__ . '/../../autoload.php';
 }
 
+// @codingStandardsIgnoreStart
 // loading WebDriver aliases
 if (!class_exists('RemoteWebDriver') and class_exists('Facebook\WebDriver\Remote\RemoteWebDriver')) {
     class RemoteWebDriver extends \Facebook\WebDriver\Remote\RemoteWebDriver {};
@@ -27,12 +28,21 @@ if (!class_exists('RemoteWebDriver') and class_exists('Facebook\WebDriver\Remote
     interface WebDriverElement extends Facebook\WebDriver\WebDriverElement {};
 }
 
+@include_once __DIR__ . DIRECTORY_SEPARATOR . 'symfony-shim.php';
+// compat
+if (PHP_MAJOR_VERSION < 7) {
+    interface Throwable {};
+    class ParseError extends \Exception {}
+}
+// @codingStandardsIgnoreEnd
+
 if (!function_exists('json_last_error_msg')) {
     /**
      * Copied from http://php.net/manual/en/function.json-last-error-msg.php#117393
      * @return string
      */
-    function json_last_error_msg() {
+    function json_last_error_msg()
+    {
         static $errors = array(
             JSON_ERROR_NONE => 'No error',
             JSON_ERROR_DEPTH => 'Maximum stack depth exceeded',

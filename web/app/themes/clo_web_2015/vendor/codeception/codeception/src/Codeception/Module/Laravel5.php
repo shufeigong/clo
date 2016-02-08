@@ -7,9 +7,9 @@ use Codeception\Lib\Connector\Laravel5 as LaravelConnector;
 use Codeception\Lib\Framework;
 use Codeception\Lib\Interfaces\ActiveRecord;
 use Codeception\Lib\Interfaces\PartedModule;
-use Codeception\Lib\Interfaces\SupportsDomainRouting;
 use Codeception\Lib\ModuleContainer;
 use Codeception\Subscriber\ErrorHandler;
+use Codeception\Util\ReflectionHelper;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\Facade;
 
@@ -67,7 +67,7 @@ use Illuminate\Support\Facades\Facade;
  *
  *
  */
-class Laravel5 extends Framework implements ActiveRecord, PartedModule, SupportsDomainRouting
+class Laravel5 extends Framework implements ActiveRecord, PartedModule
 {
 
     /**
@@ -110,6 +110,9 @@ class Laravel5 extends Framework implements ActiveRecord, PartedModule, Supports
         parent::__construct($container);
     }
 
+    /**
+     * @return array
+     */
     public function _parts()
     {
         return ['orm'];
@@ -123,7 +126,6 @@ class Laravel5 extends Framework implements ActiveRecord, PartedModule, Supports
         $this->checkBootstrapFileExists();
         $this->registerAutoloaders();
         $this->revertErrorHandler();
-        $this->client = new LaravelConnector($this);
     }
 
     /**
@@ -133,20 +135,11 @@ class Laravel5 extends Framework implements ActiveRecord, PartedModule, Supports
      */
     public function _before(\Codeception\TestCase $test)
     {
+        $this->client = new LaravelConnector($this);
+
         if ($this->app['db'] && $this->config['cleanup']) {
             $this->app['db']->beginTransaction();
         }
-
-        if ($this->app['auth']) {
-            $this->app['auth']->logout();
-        }
-
-        if ($this->app['session']) {
-            // Destroy existing sessions of previous tests
-            $this->app['session']->migrate(true);
-        }
-
-        $this->client->clearTriggeredEvents();
     }
 
     /**
@@ -159,18 +152,23 @@ class Laravel5 extends Framework implements ActiveRecord, PartedModule, Supports
         if ($this->app['db'] && $this->config['cleanup']) {
             $this->app['db']->rollback();
         }
-    }
 
-    /**
-     * After step hook.
-     *
-     * @param \Codeception\Step $step
-     */
-    public function _afterStep(\Codeception\Step $step)
-    {
-        parent::_afterStep($step);
+        if ($this->app['auth']) {
+            $this->app['auth']->logout();
+        }
 
-        Facade::clearResolvedInstances();
+        if ($this->app['session']) {
+            $this->app['session']->flush();
+        }
+
+        if ($this->app['cache']) {
+            $this->app['cache']->flush();
+        }
+
+        // disconnect from DB to prevent "Too many connections" issue
+        if ($this->app['db']) {
+            $this->app['db']->disconnect();
+        }
     }
 
     /**
@@ -199,8 +197,6 @@ class Laravel5 extends Framework implements ActiveRecord, PartedModule, Supports
 
         \Illuminate\Support\ClassLoader::register();
     }
-
-
 
     /**
      * Revert back to the Codeception error handler,
@@ -241,21 +237,7 @@ class Laravel5 extends Framework implements ActiveRecord, PartedModule, Supports
      */
     public function disableMiddleware()
     {
-        $this->config['disable_middleware'] = true;
-    }
-
-    /**
-     * Enable middleware for the next requests.
-     *
-     * ``` php
-     * <?php
-     * $I->enableMiddleware();
-     * ?>
-     * ```
-     */
-    public function enableMiddleware()
-    {
-        $this->config['disable_middleware'] = false;
+        $this->client->disableMiddleware();
     }
 
     /**
@@ -269,21 +251,7 @@ class Laravel5 extends Framework implements ActiveRecord, PartedModule, Supports
      */
     public function disableEvents()
     {
-        $this->config['disable_events'] = true;
-    }
-
-    /**
-     * Enable events for the next requests.
-     *
-     * ``` php
-     * <?php
-     * $I->enableEvents();
-     * ?>
-     * ```
-     */
-    public function enableEvents()
-    {
-        $this->config['disable_events'] = false;
+        $this->client->disableEvents();
     }
 
     /**
@@ -381,7 +349,7 @@ class Laravel5 extends Framework implements ActiveRecord, PartedModule, Supports
         $currentRouteName = $currentRoute ? $currentRoute->getName() : '';
 
         if ($currentRouteName != $routeName) {
-            $message = empty($currentRouteName) ? "Current route has no name" : "Current route is \"$currentRoute\"";
+            $message = empty($currentRouteName) ? "Current route has no name" : "Current route is \"$currentRouteName\"";
             $this->fail($message);
         }
     }
@@ -659,7 +627,8 @@ class Laravel5 extends Framework implements ActiveRecord, PartedModule, Supports
     public function amLoggedAs($user, $driver = null)
     {
         if ($user instanceof Authenticatable) {
-            return $this->app['auth']->driver($driver)->setUser($user);
+            $this->app['auth']->driver($driver)->setUser($user);
+            return;
         }
 
         if (! $this->app['auth']->driver($driver)->attempt($user)) {
@@ -823,7 +792,7 @@ class Laravel5 extends Framework implements ActiveRecord, PartedModule, Supports
         return $query->first();
     }
 
-    /**
+    /*
      * Use Laravel's model factory to create a model.
      * Can only be used with Laravel 5.1 and later.
      *
@@ -921,5 +890,49 @@ class Laravel5 extends Framework implements ActiveRecord, PartedModule, Supports
         }
 
         return factory($model, $name, $times);
+    }
+
+    /**
+     * Returns a list of recognized domain names.
+     * This elements of this list are regular expressions.
+     *
+     * @return array
+     */
+    protected function getInternalDomains()
+    {
+        $internalDomains = [$this->getApplicationDomainRegex()];
+
+        foreach ($this->app['routes'] as $route) {
+            if (!is_null($route->domain())) {
+                $internalDomains[] = $this->getDomainRegex($route);
+            }
+        }
+
+        return array_unique($internalDomains);
+    }
+
+    /**
+     * @return string
+     */
+    private function getApplicationDomainRegex()
+    {
+        $server = ReflectionHelper::readPrivateProperty($this->client, 'server');
+        $domain = $server['HTTP_HOST'];
+
+        return '/^' . str_replace('.', '\.', $domain) . '$/';
+    }
+
+    /**
+     * Get the regex for matching the domain part of this route.
+     *
+     * @param \Illuminate\Routing\Route $route
+     * @return string
+     */
+    private function getDomainRegex($route)
+    {
+        ReflectionHelper::invokePrivateMethod($route, 'compileRoute');
+        $compiledRoute = ReflectionHelper::readPrivateProperty($route, 'compiled');
+
+        return $compiledRoute->getHostRegex();
     }
 }
