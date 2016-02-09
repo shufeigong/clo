@@ -34,224 +34,94 @@ if (! class_exists('SLP_BaseClass_Addon')) {
      * @package StoreLocatorPlus\BaseClass\Addon
      * @author Lance Cleveland <lance@charlestonsw.com>
      * @copyright 2014-2015 Charleston Software Associates, LLC
+     *
+     * @property        SLP_BaseClass_Addon             $addon
+     * @property        SLP_BaseClass_Admin             $admin                      The admin object.
+     * @property        SLP_BaseClass_AJAX              $ajax                       The AJAX object.
+     * @property        string                          $activation_class_name      The name of the activation class for this add on.
+     * @property        string                          $admin_class_name           The name of the admin class for this add on.
+     * @property        array                           $admin_menu_entries         array of menu entries, should be in a key=>value array where key = the menu text and value = the function or PHP file to execute.
+     * @property        string                          $ajax_class_name            The name of the AJAX class for this add on.
+     * @property        string                          $dir                        The directory the add-on pack resides in.
+     * @property        string                          $file                       The add on loader file.
+     * @property        SLP_Addon_MetaData              $meta
+     * @property        string                          $min_slp_version            Minimum version of SLP required to run this add-on pack in x.y.zz format.
+     * @property        string                          $name                       Text name for this add on pack.
+     * @property        string                          $option_name                The name of the wp_option to store serialized add-on pack settings.
+     * @property        array                           $option_defaults            The default values for options.   Set this in init_options for any gettext elements.  $option_defaults['setting'] = __('string to translate', 'textdomain');
+     * @property        mixed[]                         $options                    Settable options for this plugin. (Does NOT go into main plugin JavaScript)
+     * @property        array                           $options_defaults           Default options.
+     * @property        string                          $short_slug                 The short slug name.
+     * @property        string                          $slug                       The slug for this plugin, usually matches the plugin subdirectory name.
+     * @property        string                          $url                        The url for this plugin admin features.
+     * @property        string                          $userinterface_class_name   The name of the user class for this add on.
+     * @property        SLP_BaseClass_UserInterface     $userinterface
+     * @property        SLP_BaseClass_Widget            $widget                     The Widget object.
+     * @property        string                          $widget_class_name          The name of the widget class for this add on.
+     * @property        string                          $version                    Current version of this add-on pack in x.y.zz format.
+     *
+     * TODO: remove this when all references to the metadata have been removed (CO,CEX,ELM,GFI,GFL,LEX,REX,SME,TAG,UML,WIDG)
+     * @property    mixed[]                         $metadata                   WordPress data about this plugin read from the php headstone.
      */
     class SLP_BaseClass_Addon extends SLPlus_BaseClass_Object {
-
-        //-------------------------------------
-        // Properties
-        //-------------------------------------
+        protected   $addon;
+        public      $admin;
+        public      $ajax;
+        public      $activation_class_name;
+        protected   $admin_class_name;
+	    public      $admin_menu_entries;
+        protected   $ajax_class_name;
+        public      $dir;
+	    public      $file;
+	    public      $meta;
+        public      $metadata;
+        protected   $min_slp_version;
+        public      $name;
+        public      $option_name;
+        public      $option_defaults = array();
+        public      $options = array( 'installed_version' => '' );
+        public      $options_defaults = array();
+	    public      $short_slug;
+        public      $slug;
+        public      $url;
+        protected   $userinterface_class_name;
+        public      $userinterface;
+        public      $widget;
+        public      $widget_class_name;
+        public      $version;
 
         /**
-         * This addon pack.
-         *
-         * @var mixed $addon
+         * Run these things during invocation. (called from base object in __construct)
          */
-        protected $addon;
-        
-        /**
-         * The admin object.
-         * 
-         * @var \SLP_BaseClass_Admin
-         */
-        public $admin;
+        protected function initialize() {
 
-        /**
-         * The ajax object.
-         *
-         * @var
-         */
-        public $ajax;
-        
-        /**
-         * The name of the activation class for this add on.
-         * 
-         * If empty there is not activation (upgrade an install) for the add on pack.
-         * 
-         * @var string
-         */
-        public $activation_class_name;
-        
-        /**
-         * The name of the admin class for this add on.
-         * 
-         * If empty the admin interface is not activated.
-         * 
-         * @var string
-         */
-        protected $admin_class_name;
+            // Calculate file if not specified
+            //
+            if ( is_null( $this->file ) ) {
+                $matches = array();
+                preg_match( '/^.*?\/(.*?)\.php/', $this->slug , $matches );
+                $slug_base = ! empty($matches) ? $matches[1] : $this->slug;
+                $this->file = str_replace( $slug_base .'/' , '' , $this->dir) . $this->slug;
 
-	    /**
-	     * SLP Menu Entries
-	     *
-	     * Should be in a key=>value array where key = the menu text and value = the function or PHP file to execute.
-	     *
-	     * @var mixed[] array of menu entries.
-	     */
-	    public $admin_menu_entries;
+            // If file was specified, check to set slug, url, dir if necessary
+            //
+            } else {
+                if ( ! isset( $this->dir  ) ) { $this->dir  = plugin_dir_path( $this->file ); }
+                if ( ! isset( $this->slug ) ) { $this->slug = plugin_basename( $this->file ); }
+                if ( ! isset( $this->url  ) ) { $this->url  = plugins_url( '', $this->file ); }
+            }
 
-        /**
-         * The name of the AJAX class for this add on.
-         *
-         * If empty the AJAX processing interface is not activated.
-         *
-         * @var string
-         */
-        protected $ajax_class_name;
-        
-        /**
-         * The directory the add-on pack resides in.
-         * 
-         * @var string
-         */
-        public $dir;
+            $this->short_slug = $this->get_short_slug();
 
-	    /**
-	     * The add on loader file.
-	     *
-	     * @var string
-	     */
-	    public $file;
+            // Widgets
+            // This needs to run before slp_init because it requires widgets_init
+            // widgets_init runs on WP init at level 1
+            // slp_init_complete runs on WP init at level 11
+            //
+            if ( ! empty( $this->widget_class_name ) ) {
+                $this->create_object_widget();
+            }
 
-	    /**
-	     * @var SLP_Addon_MetaData
-	     */
-	    public $meta;
-        
-        /**
-         * WordPress data about this plugin read from the php headstone.
-         *
-         * TODO: remove this when all references to the metadata have been removed (CO,CEX,ELM,GFI,GFL,LEX,REX,SME,TAG,UML,WIDG)
-         *
-         * @var mixed[]
-         */
-        public $metadata;
-        
-        /**
-         * Minimum version of SLP required to run this add-on pack in x.y.zz format.
-         * 
-         * @var string
-         */
-        protected $min_slp_version;
-        
-        /**
-         * Text name for this add on pack.
-         * 
-         * @var string
-         */
-        public $name;       
-                
-        /**
-         * The name of the wp_option to store serialized add-on pack settings.
-         * 
-         * @var string
-         */
-        public $option_name;
-
-        /**
-         * The default values for options.
-         *
-         * Set this in init_options for any gettext elements.
-         *
-         * $option_defaults['setting'] = __('string to translate', 'textdomain');
-         *
-         * @var array
-         */
-        public $option_defaults = array();
-
-        /**
-         * Settable options for this plugin. (Does NOT go into main plugin JavaScript)
-         *
-         * @var mixed[]
-         */        
-        public $options = array(
-            'installed_version'             => ''           ,
-        );
-
-        /**
-         * Default options.
-         *
-         * @var array
-         */
-        public $options_defaults = array(
-
-        );
-
-	    /**
-	     * The short slug name.
-	     *
-	     * @var string
-	     */
-	    public $short_slug;
-
-        /**
-         * The slug for this plugin, usually matches the plugin subdirectory name.
-         * 
-         * @var string
-         */
-        public $slug;
-
-        /**
-         * The url for this plugin admin features.
-         * 
-         * @var string
-         */
-        public $url;
-                
-        /**
-         * The name of the user class for this add on.
-         * 
-         * If empty the user interface is not activated.
-         * 
-         * @var string
-         */
-        protected $userinterface_class_name;     
-        
-        /**
-         * The user interface object.
-         * 
-         * @var \SLP_BaseClass_UserInterface
-         */        
-        public $userinterface;
-        
-        /**
-         * Current version of this add-on pack in x.y.zz format.
-         * 
-         * @var string
-         */
-        public $version;
-
-        //-------------------------------------
-        // Methods
-        //-------------------------------------
-
-        /**
-         * Instantiate the admin panel object.
-         *
-         * @param mixed[] $options
-         *      @type boolean 'uses_slp' true if $this->slplus is to be set.
-         *      @type string 'file' set to the php loader (main add-on) file path with __FILE__
-         */
-        function __construct( $options = array() ) {
-	        parent::__construct( $options );
-
-	        // Calculate file if not specified
-	        //
-	        if ( is_null( $this->file ) ) {
-		        $matches = array();
-		        preg_match( '/^.*?\/(.*?)\.php/', $this->slug , $matches );
-		        $slug_base = ! empty($matches) ? $matches[1] : $this->slug;
-		        $this->file = str_replace( $slug_base .'/' , '' , $this->dir) . $this->slug;
-
-		    // If file was specified, check to set slug, url, dir if necessary
-		    //
-	        } else {
-		        if ( ! isset( $this->dir  ) ) { $this->dir  = plugin_dir_path( $this->file ); }
-		        if ( ! isset( $this->slug ) ) { $this->slug = plugin_basename( $this->file ); }
-		        if ( ! isset( $this->url  ) ) { $this->url  = plugins_url( '', $this->file ); }
-	        }
-
-	        $this->short_slug = $this->get_short_slug();
-                
             // When SLP finished initializing do this
             //
             add_action('slp_init_complete', array($this, 'slp_init'));
@@ -306,6 +176,7 @@ if (! class_exists('SLP_BaseClass_Addon')) {
             if ( defined('DOING_AJAX') && DOING_AJAX && ! empty( $this->ajax_class_name ) ) {
                 $this->createobject_AJAX();
             }
+
         }
 
         /**
@@ -346,12 +217,53 @@ if (! class_exists('SLP_BaseClass_Addon')) {
         function createobject_Admin() {
             if ( !isset( $this->admin ) ) {
                 require_once($this->dir . 'include/class.admin.php');
-                $this->admin = new $this->admin_class_name(
+                $this->admin = new $this->admin_class_name( array( 'addon' => $this ) );
+            }
+        }
+
+        /**
+         * Create the AJAX procssing object and attach to this->ajax
+         */
+        function createobject_AJAX() {
+            if ( !isset( $this->ajax ) ) {
+                require_once($this->dir . 'include/class.ajax.php');
+                $this->ajax = new $this->ajax_class_name( array( 'addon' => $this ) );
+            }
+        }
+
+        /**
+         * Create the metadata object and store in $this->metadata.
+         */
+        private function create_object_meta() {
+            if ( !isset( $this->meta ) ) {
+                require_once( SLPLUS_PLUGINDIR . 'include/class.addon.metadata.php');
+                $this->meta = new SLP_Addon_MetaData( array( 'addon' => $this ) );
+            }
+        }
+
+        /**
+         * Create the user interface object and attach to this->UserInterface
+         */
+        function createobject_UserInterface() {
+            if ( !isset( $this->userinterface ) ) {
+                require_once($this->dir . 'include/class.userinterface.php');
+                $this->userinterface = new $this->userinterface_class_name(
                     array(
                         'addon'     => $this,
                         'slplus'    => $this->slplus,
                     )
                 );
+            }
+        }
+
+
+        /**
+         * Create and attach the widget object as needed.
+         */
+        private function create_object_widget() {
+            if ( ! isset( $this->widget ) ) {
+                require_once( $this->dir . 'include/class.widget.php' );
+                $this->widget = new $this->widget_class_name( array( 'addon' => $this ) );
             }
         }
 
@@ -418,46 +330,6 @@ if (! class_exists('SLP_BaseClass_Addon')) {
 
 	    }
 
-        /**
-         * Create the AJAX procssing object and attach to this->ajax
-         */
-        function createobject_AJAX() {
-            if ( !isset( $this->ajax ) ) {
-                require_once($this->dir . 'include/class.ajax.php');
-                $this->ajax = new $this->ajax_class_name( array( 'addon'     => $this ) );
-            }
-        }
-
-	    /**
-	     * Create the metadata object and store in $this->metadata.
-	     */
-	    private function createobject_MetaData() {
-		    if ( !isset( $this->meta ) ) {
-			    require_once( SLPLUS_PLUGINDIR . 'include/class.addon.metadata.php');
-			    $this->meta = new SLP_Addon_MetaData(
-				    array(
-					    'addon'     => $this,
-					    'slplus'    => $this->slplus,
-				    )
-			    );
-		    }
-	    }
-
-	    /**
-         * Create the user interface object and attach to this->UserInterface
-         */
-        function createobject_UserInterface() {
-            if ( !isset( $this->userinterface ) ) {
-                require_once($this->dir . 'include/class.userinterface.php');
-                $this->userinterface = new $this->userinterface_class_name(
-                    array(
-                        'addon'     => $this,
-                        'slplus'    => $this->slplus,
-                    )
-                );
-            }
-        }
-
 	    /**
 	     * Get the add on metadata property as specified.
 	     *
@@ -466,7 +338,7 @@ if (! class_exists('SLP_BaseClass_Addon')) {
 	     * @return string
 	     */
 	    public function get_meta( $property ) {
-		    $this->createobject_MetaData();
+		    $this->create_object_meta();
 		    return $this->meta->get_meta( $property );
 	    }
 

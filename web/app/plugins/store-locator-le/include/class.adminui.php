@@ -7,22 +7,24 @@ if ( ! class_exists('SLPlus_AdminUI') ) {
 	 *
 	 * @package StoreLocatorPlus\AdminUI
 	 * @author Lance Cleveland <lance@charlestonsw.com>
-	 * @copyright 2012-2015 Charleston Software Associates, LLC
+	 * @copyright 2012-2016 Charleston Software Associates, LLC
 	 *
-	 * @property-read   boolean     $already_enqueue    True if admin stylesheet enqueued.
-	 * @property-read   boolean     $isOurAdminPage     True if we are on an admin page for the plugin.
-	 * @property       string[]     $admin_slugs        The registered admin page hooks for the plugin.
-	 * @property SLPlus_AdminUI_UserExperience $Experience
-	 * @property SLPlus_AdminUI_GeneralSettings $GeneralSettings
-	 * @property-read SLPlus_AdminUI_Info $Info The Info object.
-	 * @property SLPlus_AdminUI_Locations $ManageLocations
-	 * @property SLPlus_AdminUI_UserExperience $MapSettings
-	 * @property string $styleHandle
+	 * @property-read   boolean     					$already_enqueue    True if admin stylesheet enqueued.
+	 * @property-read	SLP_Admin_Helper				$helper
+	 * @property-read   boolean     					$isOurAdminPage     True if we are on an admin page for the plugin.
+	 * @property       	string[]    					$admin_slugs        The registered admin page hooks for the plugin.
+	 * @property 		SLPlus_AdminUI_UserExperience 	$Experience
+	 * @property-read 	SLPlus_AdminUI_GeneralSettings 	$GeneralSettings
+	 * @property-read 	SLPlus_AdminUI_Info 			$Info 				The Info object.
+	 * @property 		SLPlus_AdminUI_Locations 		$ManageLocations
+	 * @property 		SLPlus_AdminUI_UserExperience 	$MapSettings
+	 * @property 		string 							$styleHandle
 	 */
 	class SLPlus_AdminUI extends SLPlus_BaseClass_Object {
 		private $already_enqueued   = false;
+		private	$helper;
 		public 	$Experience;
-		public 	$GeneralSettings;
+		private $GeneralSettings;
 		private $Info;
 		private $is_our_admin_page  = false;
 	    public 	$ManageLocations;
@@ -30,29 +32,6 @@ if ( ! class_exists('SLPlus_AdminUI') ) {
 		public  $slp_admin_slugs    = array();
 	    public 	$styleHandle;
 
-	    /**
-	     * Invoke the AdminUI class.
-		 *
-		 * @param	array	$options
-	     *
-	     */
-	    function __construct( $options = array() ) {
-		    add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_stylesheet' ) );
-
-		    parent::__construct( $options );
-
-	        $this->styleHandle = $this->slplus->styleHandle;
-			$this->add_janitor_hooks();
-
-            // Called after admin_menu and admin_init when the current screen info is available.
-            //
-            add_action( 'current_screen' , array ( $this , 'setup_admin_screen' ) );
-
-		    /**
-		     * HOOK: slp_admin_init_complete
-		     */
-		    do_action( 'slp_admin_init_complete' );
-	    }
 
 		/**
 		 * Add filters to save/restore important settings for the Janitor reset.
@@ -66,6 +45,24 @@ if ( ! class_exists('SLPlus_AdminUI') ) {
 			add_action( 'slp_janitor_restore_important_setting' , array( $this , 'restore_janitor_important_fields' ) , 5 , 2 );
 		}
 
+	    /**
+	     * Invoke the AdminUI class.
+	     */
+	    function initialize( ) {
+			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_stylesheet' ) );
+
+	        $this->styleHandle = $this->slplus->styleHandle;
+			$this->add_janitor_hooks();
+
+            // Called after admin_menu and admin_init when the current screen info is available.
+            //
+            add_action( 'current_screen' , array ( $this , 'setup_admin_screen' ) );
+
+		    /**
+		     * HOOK: slp_admin_init_complete
+		     */
+		    do_action( 'slp_admin_init_complete' );
+	    }
 
 		/**
 		 * Sets $this->isOurAdminPage true if we are on a SLP managed admin page.  Returns true/false accordingly.
@@ -242,6 +239,16 @@ if ( ! class_exists('SLPlus_AdminUI') ) {
         }
 
 		/**
+		 * Create helper object.
+		 */
+		private function create_object_helper() {
+			if ( ! isset( $this->helper ) ) {
+				require_once(SLPLUS_PLUGINDIR . 'include/class.admin.helper.php');
+				$this->helper = new SLP_Admin_Helper();
+			}
+		}
+
+		/**
 		 * Create Info object.
 		 */
 		private function create_object_Info() {
@@ -269,102 +276,8 @@ if ( ! class_exists('SLPlus_AdminUI') ) {
 	     * @return string
 	     */
 	     function CreateIconSelector($inputFieldID = null, $inputImageID = null) {
-	        if (($inputFieldID == null) || ($inputImageID == null)) { return ''; }
-
-
-	        $htmlStr = '';
-	        $files=array();
-	        $fqURL=array();
-
-
-	        // If we already got a list of icons and URLS, just use those
-	        //
-	        if (
-	            isset($this->slplus->data['iconselector_files']) &&
-	            isset($this->slplus->data['iconselector_urls'] )
-	           ) {
-	            $files = $this->slplus->data['iconselector_files'];
-	            $fqURL = $this->slplus->data['iconselector_urls'];
-
-	        // If not, build the icon info but remember it for later
-	        // this helps cut down looping directory info twice (time consuming)
-	        // for things like home and end icon processing.
-	        //
-	        } else {
-
-	            // Load the file list from our directories
-	            //
-	            // using the same array for all allows us to collapse files by
-	            // same name, last directory in is highest precedence.
-	            $iconAssets = apply_filters('slp_icon_directories',
-	                    array(
-	                            array('dir'=>SLPLUS_UPLOADDIR.'saved-icons/',
-	                                  'url'=>SLPLUS_UPLOADURL.'saved-icons/'
-	                                 ),
-	                            array('dir'=>SLPLUS_ICONDIR,
-	                                  'url'=>SLPLUS_ICONURL
-	                                 )
-	                        )
-	                    );
-	            $fqURLIndex = 0;
-	            foreach ($iconAssets as $icon) {
-	                if (is_dir($icon['dir'])) {
-	                    if ($iconDir=opendir($icon['dir'])) {
-	                        $fqURL[] = $icon['url'];
-	                        while ($filename = readdir($iconDir)) {
-	                            if (strpos($filename,'.')===0) { continue; }
-	                            $files[$filename] = $fqURLIndex;
-	                        };
-	                        closedir($iconDir);
-	                        $fqURLIndex++;
-	                    } else {
-	                        $this->slplus->notifications->add_notice(
-	                                9,
-	                                sprintf(
-	                                        __('Could not read icon directory %s','store-locator-le'),
-	                                        $icon['dir']
-	                                        )
-	                                );
-	                         $this->slplus->notifications->display();
-	                    }
-	               }
-	            }
-	            ksort($files);
-	            $this->slplus->data['iconselector_files'] = $files;
-	            $this->slplus->data['iconselector_urls']  = $fqURL;
-	        }
-
-	        // Build our icon array now that we have a full file list.
-	        //
-	        foreach ($files as $filename => $fqURLIndex) {
-	            if (
-	                (preg_match('/\.(png|gif|jpg)/i', $filename) > 0) &&
-	                (preg_match('/shadow\.(png|gif|jpg)/i', $filename) <= 0)
-	                ) {
-	                $htmlStr .=
-	                    "<div class='slp_icon_selector_box'>".
-	                        "<img
-	                         	 data-filename='$filename'
-	                        	 class='slp_icon_selector'
-	                             src='".$fqURL[$fqURLIndex].$filename."'
-	                             onclick='".
-	                                "document.getElementById(\"".$inputFieldID."\").value=this.src;".
-	                                "document.getElementById(\"".$inputImageID."\").src=this.src;".
-	                             "'>".
-	                     "</div>"
-	                     ;
-	            }
-	        }
-
-	        // Wrap it in a div
-	        //
-	        if ($htmlStr != '') {
-	            $htmlStr = '<div id="'.$inputFieldID.'_icon_row" class="slp_icon_row">'.$htmlStr.'</div>';
-
-	        }
-
-
-	        return $htmlStr;
+			 $this->create_object_helper();
+			 return $this->helper->create_string_icon_selector( $inputFieldID , $inputImageID );
 	     }
 
 		/**
@@ -439,6 +352,7 @@ if ( ! class_exists('SLPlus_AdminUI') ) {
 		 *
 		 */
 		function renderPage_GeneralSettings() {
+			$this->create_object_General();
 			$this->GeneralSettings->render_adminpage();
 			$this->render_rate_box();
 		}
@@ -531,7 +445,7 @@ if ( ! class_exists('SLPlus_AdminUI') ) {
 
 	        // Checkbox Pre-processor
 	        //
-	        if ( $cbOptionArray !== null ){
+	        if ( ! is_null( $cbOptionArray ) && ! empty( $cbOptionArray ) ) {
 	            foreach ( $cbOptionArray as $cbname ) {
 	                if ( ! isset( $optionValue[$cbname] ) ) {
 	                    $optionValue[$cbname] = '0';

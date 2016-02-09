@@ -1,0 +1,29 @@
+/** label: Basic Test
+ ** description: Basic Test is a super-simple layout test with no special CSS formatting.
+ ** add-ons: slp-pro,slp-enhanced-map,slp-enhanced-results,slp-enhanced-search,slp-tagalong,slp-premier
+ ** Pro Pack Locator Layout: <div id="sl_div">Location Search:<br/>[slp_search]<br/>Map:</br>[slp_map]<br/>Results:<br/>[slp_results]</div>
+ ** Enhanced Map Bubble Layout: Info Bubble<br/>[slp_location name  suffix  br][slp_location city suffix  comma][slp_location state suffix space]</div>
+ ** Enhanced Results Results Layout: Location # [slp_location id]<br/>[slp_location name]<hr/>
+ ** Enhanced Search Search Layout: [slp_search_element input_with_label="address"]<br/>[slp_search_element button="submit"]
+ ** Results Header:
+ **/
+div#map img {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  max-width: none;
+  opacity: 1.0; }
+
+/* Fix IE11 Rules from Bad WP Themes */
+div#map div {
+  overflow: visible; }
+
+/* Fix IE10 Rules */
+div#map .gm-style-cc > div {
+  word-wrap: normal; }
+
+/* Hide the default Google bubble shadow */
+div#map img[src='http://maps.gstatic.com/mapfiles/iws3.png'] {
+  display: none; }
+
+/*# sourceMappingURL=basic_test.css.map */

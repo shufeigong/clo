@@ -5,12 +5,12 @@ if ( ! class_exists('SLPlus_Data_Extension') ) {
 	/**
 	 * The extended data interface helper.  Managed the extended data columns when needed.
 	 *
-	 * @property        SLPlus_Data             $database
-	 * @property        metatable['records'][]  $active_columns     The active extended data columns (does not include inactive addon packs)
-	 *
 	 * @package StoreLocatorPlus\Data\Extension
 	 * @author Lance Cleveland <lance@charlestonsw.com>
-	 * @copyright 2014 Charleston Software Associates, LLC
+	 * @copyright 2014 - 2016 Charleston Software Associates, LLC
+	 *
+	 * @property        SLPlus_Data             $database
+	 * @property        metatable['records'][]  $active_columns     The active extended data columns (does not include inactive addon packs)
 	 *
 	 */
 	class SLPlus_Data_Extension extends SLPlus_BaseClass_Object  {
@@ -51,13 +51,9 @@ if ( ! class_exists('SLPlus_Data_Extension') ) {
 	    public $plugintable;
 
 		/**
-		 * @param array $options
+		 * Things we do when be build this.
 		 */
-	    function __construct( $options = array() ) {
-		    parent::__construct( $options );
-
-	        // Set the plugin details table properties
-	        //
+	    function initialize( ) {
 	        $this->metatable['name'] = $this->slplus->db->prefix . 'slp_extendo_meta';
 	        $this->metatable['records'] = array();
 	        $this->plugintable['name'] = $this->slplus->db->prefix . 'slp_extendo';
@@ -77,10 +73,14 @@ if ( ! class_exists('SLPlus_Data_Extension') ) {
 	     * - 'immediate' = default, run create table command when adding the field
 	     * - 'wait' = do not run the create table command when adding this field
 	     *
-	     * @param string  $label    Plain text field label for this field.
-	     * @param string  $type     The data type for this field.
-	     * @param array $options Options field contains serialized data for this field.
-	     * @param string  $mode     'wait' or 'immediate' determines if we call the update table structure as soon as this is called.
+	     * @param string  	$label    	Plain text field label for this field.
+	     * @param string  	$type     	The data type for this field.
+	     * @param array 	$options 	Options field contains serialized data for this field.
+		 * 						@key	string	'slug'				Unique field slug
+		 * 						@key	string	'addon'				Slug for the add-on object (short slug i.e. 'slp-experience')
+		 * 						@key	string	'display_type' 		Display helper used to help with admin and UI rendering.
+		 *
+	     * @param string  	$mode     'wait' or 'immediate' determines if we call the update table structure as soon as this is called.
 	     *
 	     * @return string the slug of the field that was added.
 	     */
@@ -241,7 +241,7 @@ if ( ! class_exists('SLPlus_Data_Extension') ) {
 		 *
 		 * @return stdClass[] columns for active plugins.
 		 */
-		function get_active_cols() {
+		public function get_active_cols() {
 			if ( !isset ( $this->active_columns ) ) {
 				$this->set_cols();
 				$active_cols = array();
@@ -256,7 +256,8 @@ if ( ! class_exists('SLPlus_Data_Extension') ) {
 						) {
 						continue;
 					}
-					$active_cols[] = $field_meta;
+					$active_cols[$slug] = $field_meta;
+					$active_cols[$slug]->option_values = $field_options;
 				}
 				$this->active_columns = $active_cols;
 			}
@@ -297,6 +298,36 @@ if ( ! class_exists('SLPlus_Data_Extension') ) {
 
 	        return $cols[0];
 	    }
+
+		/**
+		 * Get the options set for an extended data field.
+		 *
+		 * @param 	string 	$slug			the field slug
+		 * @param 	string 	$option_name	the option name
+		 *
+		 * @return	mixed					the value of that option
+		 */
+		function get_option( $slug , $option_name ) {
+			$this->get_active_cols();
+			if ( ! isset( $this->active_columns[$slug] ) ) { return null; }
+
+			$this->set_options( $slug );
+			if ( ! isset( $this->active_columns[$slug]->option_values[$option_name] ) ) { return null; }
+
+			return $this->active_columns[$slug]->option_values[$option_name];
+		}
+
+		/**
+		 * Set the option-values for a field by breaking apart the serialized options part of the meta.
+		 *
+		 * @param $slug
+		 */
+		public function set_options( $slug ) {
+			if ( ! isset( $this->active_columns[$slug] 				) ) { return; }
+			if ( isset( $this->active_columns[$slug]->option_values ) ) { return; }
+			if ( ! isset( $this->active_columns[$slug]->options 	) ) { return; }
+			$this->active_columns[$slug]->option_values = maybe_unserialize( $this->active_columns[$slug]->options );
+		}
 
 	    /**
 	     * Tell people if the extended data contains a field identified by slug.

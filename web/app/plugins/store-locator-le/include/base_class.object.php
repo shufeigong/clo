@@ -1,24 +1,18 @@
 <?php
-
 if ( ! class_exists('SLPlus_BaseClass_Object') ) {
 
 	/**
 	 * Class SLPlus_BaseClass_Object
 	 *
-	 * @package StoreLocatorPlus\BaseClass\Addon
+	 * @package StoreLocatorPlus\BaseClass\Object
 	 * @author Lance Cleveland <lance@charlestonsw.com>
 	 * @copyright 2014-2015 Charleston Software Associates, LLC
+	 *
+	 * @property		SLPlus		$slplus
+	 * @property		boolean		$uses_slplus		Set to true (default) if the object needs access to the SLPlus plugin object.
 	 */
 	class SLPlus_BaseClass_Object {
-
-		/**
-		 * @var SLPlus
-		 */
 		protected $slplus;
-
-		/**
-		 * @var boolean set to true if this object uses the slplus base object
-		 */
 		protected $uses_slplus = true;
 
 		/**
@@ -38,6 +32,15 @@ if ( ! class_exists('SLPlus_BaseClass_Object') ) {
 				global $slplus_plugin;
 				$this->slplus = $slplus_plugin;
 			}
+
+			$this->initialize();
+		}
+
+		/**
+		 * Do these things when this object is invoked.
+		 */
+		protected function initialize() {
+			// Override with anything you want to run when your extension is invoked.
 		}
 	}
 
