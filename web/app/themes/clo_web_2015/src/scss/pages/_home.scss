@@ -181,6 +181,7 @@
                     @include font-size(1.2);
                     margin-top  : 8px;
                     margin-bottom:8px;
+                    &.no_ex{margin-top :30px;}
                 }
                 .button_title{
                      font-family : "Arial", "sans-serif";
@@ -456,6 +457,7 @@
                     @include font-size(1.2);
                     margin-top  : 8px;
                     margin-bottom:8px;
+                    &.no_ex{margin-top :30px;}
                 }
                 .button_title{
                      font-family : "Arial", "sans-serif";
@@ -695,6 +697,7 @@
                     @include font-size(1.2);
                     margin-top  : 8px;
                     margin-bottom:8px;
+                    &.no_ex{margin-top :30px;}
                 }
                 .button_title{
                      font-family : "Arial", "sans-serif";

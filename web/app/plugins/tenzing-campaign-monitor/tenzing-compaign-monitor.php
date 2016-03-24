@@ -452,6 +452,8 @@ function campaign_Monitor_CreateHTML($atts)
 					'number_posts' => -1,
 					'template'       =>'list',
 					'is_pop_up_window' => 'true',
+					'start_date'       =>'',
+					'end_date'         =>''
 			],
 			$atts
 	);
@@ -469,10 +471,24 @@ function campaign_Monitor_CreateHTML($atts)
 	$number_posts = $atts['number_posts'];
 	$template     = $atts['template'];
 	$is_pop_up_window = $atts['is_pop_up_window'];
+	$startDate = $atts['start_date'];
+	$endDate  = $atts['end_date'];
 	
 	$output="";
 	
 	$campaignItemArray=campaign_Monitor_GetData($order);
+	
+	if($startDate!=''&&$endDate!=''){
+		$startPoint = strtotime($startDate);
+		$endPoint = strtotime("+1 day".$endDate);
+		
+		foreach($campaignItemArray as $key=>$campaignItem):
+			if(strtotime($campaignItem->getItemDate())<$startPoint || strtotime($campaignItem->getItemDate())>=$endPoint){
+			 unset($campaignItemArray[$key]);
+		    }
+		endforeach;
+	}
+	
 	
 	if(count($campaignItemArray)>0){
 	    $campaignHandlerObject=new campaignHandlerClass($campaignItemArray);

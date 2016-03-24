@@ -14,8 +14,8 @@
 }
 
 @media screen and (min-width : 1000px) {
-    .social-list{top:200px; right:4%;}
-   
+    .social-list{right:-2%;position:absolute; float:right;}
+    
 }
 
 @media screen and (min-width : 641px) and (max-width : 999px) { 

@@ -78,7 +78,7 @@ class SLPlus_UI {
         $content =
         ($hidden?'':"<div id='$divID' class='search_item'>") .
         (($hidden || ($label === '')) ? '' : "<label for='$fldID'>$label</label>") .
-        "<input type='".($hidden?'hidden':'text')."' id='$fldID' name='$fldID' placeholder='Enter a Town, City, or Postal Code French Version' size='50' value='$default' />" .
+        "<input type='".($hidden?'hidden':'text')."' id='$fldID' name='$fldID' placeholder='Enter a Town, City, or Postal Code' size='50' value='$default' />" .
         ($hidden?'':"</div>")
         ;
         
