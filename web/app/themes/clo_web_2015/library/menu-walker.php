@@ -497,7 +497,7 @@ if (!class_exists('Foundationpress_Top_Bar_Walker')) :
 			}
 			else {
 				//			$output .= '<img src="/app/themes/clo_web_2015/src/img/default.svg" alt="' . apply_filters('the_title', $item->title, $item->ID) .'"/>';
-				$output .= '<svg style="position: absolute; bottom: 0;z-index:10;" class="Layer_default" xmlns="http://www.w3.org/2000/svg" viewBox="0 12 783 18"><style>#Layer_6 .st0{fill:#82BC00;}</style><path class="st0" d="M-11.7 26.9H798V30H-11.7z"/></svg>';
+				$output .= '<svg style="position: absolute; bottom: 0;z-index:10;" class="Layer_default" xmlns="http://www.w3.org/2000/svg" viewBox="0 12 783 18"><style>.st0{fill:#82BC00;}</style><path class="st0" d="M-11.7 26.9H798V30H-11.7z"/></svg>';
 			}
 			//$output .= '<img src="/app/themes/clo_web_2015/src/img/'.strtolower(str_replace(' ', '', apply_filters('the_title', $item->title, $item->ID))) . '.svg" alt="' . apply_filters('the_title', $item->title, $item->ID) .'"/>';
 
