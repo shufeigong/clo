@@ -197,6 +197,7 @@ function do_this_seconds(){
 }
 
 add_action('tenzing_cam_cron', 'do_this_seconds');
+add_action('update_wpml_config_index', 'do_this_seconds');
 
 
 function campaign_Monitor_LoadData()
