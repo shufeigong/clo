@@ -228,8 +228,8 @@ function createVideoPostNoEx($post, $color){
 	strtotime($post->incsub_event_end == '' ? $post->due_date : $post->incsub_event_end)
 	);*/
 
-	if(mb_strlen($post->post_title)>15){
-		$post->post_title = strtoupper(mb_substr($post->post_title,0,15,"UTF8")).'...';
+	if(mb_strlen($post->post_title)>64){
+		$post->post_title = strtoupper(mb_substr($post->post_title,0,64,"UTF8")).'...';
 	}else{
 		$post->post_title = strtoupper($post->post_title);
 	}
@@ -327,15 +327,21 @@ function createNoVideoPostNoEx($post, $color){
 		$title_limit=15; $content_limit=70;
 	}
 
-	if(mb_strlen($post->post_title)>$title_limit){
-		$post->post_title = strtoupper(mb_substr($post->post_title,0,$title_limit,"UTF8")).'...';
-	}else{
-		$post->post_title = strtoupper($post->post_title);
-	}
+	
 
 	if($has_img==0){
+		if(mb_strlen($post->post_title)>$title_limit){
+			$post->post_title = strtoupper(mb_substr($post->post_title,0,$title_limit,"UTF8")).'...';
+		}else{
+			$post->post_title = strtoupper($post->post_title);
+		}
 		$output.='<div class="content-box"><h2 class="post_title">' . $post->post_title . '</h2>';
 	}else{
+		if(mb_strlen($post->post_title)>64){
+			$post->post_title = strtoupper(mb_substr($post->post_title,0,64,"UTF8")).'...';
+		}else{
+			$post->post_title = strtoupper($post->post_title);
+		}
 		$output.='<div class="content-box"><h2 class="post_title no_ex">' . $post->post_title . '</h2>';
 	}
 	
