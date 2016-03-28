@@ -538,7 +538,26 @@ function postlistShortcodeHandler($atts)
 			
 			endforeach;
 		}
-		
+		if($startDate!='' && $endDate==''){
+			$startPoint = strtotime($startDate);
+			//$endPoint = strtotime("+1 day".$endDate);
+			foreach($results as $key=>$post):
+			if(strtotime($post->post_date)<$startPoint){
+				unset($results[$key]);
+			}
+				
+			endforeach;
+		}
+		if($startDate=='' && $endDate!=''){
+			//$startPoint = strtotime($startDate);
+			$endPoint = strtotime("+1 day".$endDate);
+			foreach($results as $key=>$post):
+			if(strtotime($post->post_date)>=$endPoint){
+				unset($results[$key]);
+			}
+			
+			endforeach;
+		}
 		
 		$colors=array("#DCE9F7","#B5D3EF","#EFF5DC","#DDEBB9");
 		
@@ -732,6 +751,28 @@ function postlistShortcodeHandler($atts)
 				
 			endforeach;
 		}
+		
+		if($startDate!='' && $endDate==''){
+			$startPoint = strtotime($startDate);
+			//$endPoint = strtotime("+1 day".$endDate);
+			foreach($results as $key=>$post):
+			if(strtotime($post->post_date)<$startPoint){
+				unset($results[$key]);
+			}
+		
+			endforeach;
+		}
+		if($startDate=='' && $endDate!=''){
+			//$startPoint = strtotime($startDate);
+			$endPoint = strtotime("+1 day".$endDate);
+			foreach($results as $key=>$post):
+			if(strtotime($post->post_date)>=$endPoint){
+				unset($results[$key]);
+			}
+				
+			endforeach;
+		}
+		
 		
 		$colors=array("#DCE9F7","#B5D3EF","#EFF5DC","#DDEBB9");
 		
