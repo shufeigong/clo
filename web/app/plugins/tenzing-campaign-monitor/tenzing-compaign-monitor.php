@@ -13,8 +13,7 @@ Author: Shufei Gong
 License: GPLv2
 */
 
-//date_default_timezone_set('America/Toronto');
-define('DISABLE_WP_CRON', false);
+
 
 /* 注册激活插件时要调用的函数 */
 register_activation_hook( __FILE__, 'tz_campaign_monitor_install');
