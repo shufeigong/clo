@@ -13,6 +13,9 @@ Author: Shufei Gong
 License: GPLv2
 */
 
+//date_default_timezone_set('America/Toronto');
+define('DISABLE_WP_CRON', false);
+
 /* 注册激活插件时要调用的函数 */
 register_activation_hook( __FILE__, 'tz_campaign_monitor_install');
 
@@ -42,13 +45,13 @@ function tz_campaign_monitor_install()
 	
 		wp_insert_post( $cm_post );
 	}
-	
+
 }
 
 
 
 add_action('init', function() {
-
+   
 	register_post_type( 'campaign',
 			array(
 					'labels' => array(
@@ -73,6 +76,7 @@ add_action('init', function() {
 					'has_archive' => true
 			)
 	);
+	
 
 });
 
@@ -188,13 +192,12 @@ function display_cm_html_page() {
 }  
 
 
-
-
-if (!wp_next_scheduled('wpjam_daily_function_hook')) {
-	wp_schedule_event( time(), 'daily', 'wpjam_daily_function_hook' );
+function do_this_seconds(){
+	campaign_Monitor_LoadData();
 }
 
-add_action( 'wpjam_daily_function_hook', 'campaign_Monitor_LoadData');
+add_action('tenzing_cam_cron', 'do_this_seconds');
+
 
 function campaign_Monitor_LoadData()
 {
