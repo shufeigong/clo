@@ -24,9 +24,9 @@ do_action( 'foundationpress_before_searchform' ); ?>
 
         <?php do_action('foundationpress_searchform_after_search_button'); ?>
         
-        <a class="columns large-3 medium-3 small-3 access-logo">
+        <a class="columns large-3 medium-3 small-3 access-logo" href="http://www.essentialaccessibility.com/download" target="_blank">
            <div class="access-logo-text"><span class="access-logo-space">kkkkkkkk</span>ESSENTIAL ACCESSIBILITY APP</div>
-           <div class="access-logo-img">img</div>
+           <div class="access-logo-img"></div>
         </a>
     </form>
     

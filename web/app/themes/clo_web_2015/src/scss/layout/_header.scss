@@ -132,7 +132,9 @@
          width:32%;
          text-indent : -99999px;
       }//end of access-logo-img
-      
+      &:hover{
+         .access-logo-text{color:#231F20;text-decoration: underline;}
+      }//end of hover
  }//end of access-logo
 
 
