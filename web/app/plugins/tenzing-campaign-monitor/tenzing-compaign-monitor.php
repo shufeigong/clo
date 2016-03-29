@@ -13,7 +13,7 @@ Author: Shufei Gong
 License: GPLv2
 */
 
-
+date_default_timezone_set('America/Toronto');
 
 /* 注册激活插件时要调用的函数 */
 register_activation_hook( __FILE__, 'tz_campaign_monitor_install');
@@ -191,20 +191,20 @@ function display_cm_html_page() {
 }  
 
 
-function do_this_seconds(){
-	campaign_Monitor_LoadData();
-}
+//function do_this_seconds(){
+//	campaign_Monitor_LoadData();
+//}
 
-add_action('tenzing_cam_cron', 'do_this_seconds');
-add_action('update_wpml_config_index', 'do_this_seconds');
+//add_action('tenzing_cam_cron', 'do_this_seconds');
+//add_action('update_wpml_config_index', 'do_this_seconds');
 
 
 function campaign_Monitor_LoadData()
 {
 	if(get_option( 'cm_actid' ) !== false){
-		$cm_actid = get_option( 'cm_actid' );
-		$str=file_get_contents($cm_actid);
-		file_put_contents(plugin_dir_path(__FILE__).'cm.txt', $str);
+		//$cm_actid = get_option( 'cm_actid' );
+		//$str=file_get_contents($cm_actid);
+		//file_put_contents(plugin_dir_path(__FILE__).'cm.txt', $str);
 		
 		//delete all cm posts
 		$args = ['post_type'      => 'campaign', /* Change with your custom post type name */
@@ -377,8 +377,11 @@ class campaignHandlerClass{   //define campaignHandlerClass to display one item 
 
 function campaign_Monitor_GetData($order)
 {
-	if(file_exists(plugin_dir_path(__FILE__).'cm.txt')){
-		$file=file_get_contents(plugin_dir_path(__FILE__).'cm.txt');
+	if(get_option( 'cm_actid' ) !== false){
+		$cm_actid = get_option( 'cm_actid' );
+		$file=file_get_contents($cm_actid);
+		//$file=file_get_contents(plugin_dir_path(__FILE__).'cm.txt');
+		
 		$file=str_replace(array("document.write('<ul>')","document.write('<li>","document.write('</ul>')"),"",$file);
 	
 		$filelines = explode("</li>')", $file);
@@ -492,6 +495,27 @@ function campaign_Monitor_CreateHTML($atts)
 		endforeach;
 	}
 	
+	if($startDate!=''&&$endDate==''){
+		$startPoint = strtotime($startDate);
+		//$endPoint = strtotime("+1 day".$endDate);
+	
+		foreach($campaignItemArray as $key=>$campaignItem):
+		if(strtotime($campaignItem->getItemDate())<$startPoint){
+			unset($campaignItemArray[$key]);
+		}
+		endforeach;
+	}
+	
+	if($startDate==''&&$endDate!=''){
+		//$startPoint = strtotime($startDate);
+		$endPoint = strtotime("+1 day".$endDate);
+	
+		foreach($campaignItemArray as $key=>$campaignItem):
+		if(strtotime($campaignItem->getItemDate())>=$endPoint){
+			unset($campaignItemArray[$key]);
+		}
+		endforeach;
+	}
 	
 	if(count($campaignItemArray)>0){
 	    $campaignHandlerObject=new campaignHandlerClass($campaignItemArray);
