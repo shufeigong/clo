@@ -7,8 +7,12 @@
      
      ul{
          list-style-type:none;
-         li{
+         .social-list-li{
+            border:solid 1px #fff;
             margin-bottom:5px;
+            
+          &:hover{border:solid 1px $color-header;} 
+            
          }
      }
 }
