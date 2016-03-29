@@ -18,8 +18,12 @@
     
 }
 
-@media screen and (min-width : 641px) and (max-width : 999px) { 
+@media screen and (min-width : 691px) and (max-width : 999px) { 
     .social-list{top:200px; right:0%;}
+}
+
+@media screen and (min-width : 641px) and (max-width : 690px) { 
+    .social-list{top:200px; right:0%; width:15px;}
 }
 
 @media screen and (max-width : 640px) {
