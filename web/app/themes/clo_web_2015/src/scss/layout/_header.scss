@@ -28,6 +28,39 @@
         display : none;
     }
 
+
+ .access-logo{
+       float: right; 
+       width: 167px; 
+       height: 25px; 
+       //border:solid 1px #333;
+       margin-top:10px;
+       padding:0;
+       .access-logo-text{
+          //border:solid 1px red;
+          font-family:$font-site-bold;
+          color:#005889;
+          @include font-size(1.1);
+          width:63%;
+          line-height:1;
+          float:left;
+          .access-logo-space{visibility:hidden;}
+       }//end of access-logo-text
+
+      .access-logo-img{
+         //border:solid 1px blue;
+         background  : url(../img/accessibility_logo.svg) no-repeat;
+         height:25px;
+         display:inline-block;
+         width:32%;
+         text-indent : -99999px;
+      }//end of access-logo-img
+      
+      &:hover{
+         .access-logo-text{color:#231F20;text-decoration: underline;}
+      }//end of hover
+ }//end of access-logo
+
 }
 
 @media screen and (min-width : 641px) and (max-width : 999px) {
@@ -72,6 +105,36 @@
     .mbx-dh, .mbl-img {
         display : none;
     }
+   
+    .access-logo{
+       float: right; 
+       width: 167px; 
+       height: 25px; 
+       //border:solid 1px #333;
+       margin-top:10px;
+       padding:0;
+       .access-logo-text{
+          //border:solid 1px red;
+          font-family:$font-site-bold;
+          color:#005889;
+          @include font-size(1.1);
+          width:63%;
+          line-height:1;
+          float:left;
+          .access-logo-space{visibility:hidden;}
+       }//end of access-logo-text
+
+      .access-logo-img{
+         //border:solid 1px blue;
+         background  : url(../img/accessibility_logo.svg) no-repeat;
+         height:25px;
+         display:inline-block;
+         width:32%;
+         text-indent : -99999px;
+      }//end of access-logo-img
+      
+ }//end of access-logo
+
 
 }
 
