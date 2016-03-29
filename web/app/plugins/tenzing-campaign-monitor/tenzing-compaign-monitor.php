@@ -207,7 +207,7 @@ function campaign_Monitor_LoadData()
 		//file_put_contents(plugin_dir_path(__FILE__).'cm.txt', $str);
 		
 		//delete all cm posts
-		$args = ['post_type'      => 'campaign', /* Change with your custom post type name */
+		/*$args = ['post_type'      => 'campaign', 
 				'posts_per_page' => -1,
 		];
 		$results = get_posts($args);
@@ -215,10 +215,11 @@ function campaign_Monitor_LoadData()
 		wp_delete_post( $post->ID, true );
 		endforeach;
 		wp_reset_postdata();
+		*/
 		
 		
-		$campaignItemArray=campaign_Monitor_GetData('DESC');
-		
+		//$campaignItemArray=campaign_Monitor_GetData('DESC');
+		/*
 		foreach($campaignItemArray as $campaignItemObject)
 		{
 			$cm_post = array(
@@ -228,7 +229,7 @@ function campaign_Monitor_LoadData()
 			        );
 		
 			wp_insert_post( $cm_post );
-		}
+		}*/
 		
 	}
 	
