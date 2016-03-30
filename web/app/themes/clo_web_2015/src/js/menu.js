@@ -431,7 +431,7 @@ function change(objectId, itemId, thisid) {
             //$("#" + itemId).nextAll(".contentdiv").html("<br/>");
             $("#" + itemId).nextAll(".overarea").slideUp("normal", function(){
             	$(this).children(".contentdiv").html(content).parent(".overarea").delay(100).slideDown("normal", changeHeight(itemId));
-            });
+            
             ///$("#" + itemId).nextAll(".overarea").slideDown("normal", changeHeight(itemId));//get content down
             
             //var bread="";
@@ -466,7 +466,7 @@ function change(objectId, itemId, thisid) {
             /////
             var newurl=$(".menu-item-language:last a").attr("href").split("#")[0]+"#"+$("#"+$("#"+thisid).attr("slug")).attr("otherurl");
             $(".menu-item-language:last a").attr("href", newurl);
-            
+            });
             
         })
         .fail(function () {
