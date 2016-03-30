@@ -133,25 +133,26 @@ function pageLoad(linkSplit, basicItems) {
 }
 
 function grabPage(pageId) {
+
     if(itemFlagArr[pageId]==false){
+    	
     $.get("/wp-json/pages/" + pageId, function (response) {
     })
         .always(function(response) {
             var content = response.content;
+            
             itemFlagArr[pageId]=content;
             //$("#" + pageId).nextAll(".overarea").children(".contentdiv").html("<br/>");
             //$("#" + pageId).nextAll(".contentdiv").children(".breaddiv").html('<div class="basic"><a href="#" onclick="itemClick(\''+pageId+'\'); return false;" class="breaditem" >'+response.title+'</a></div><div class="rest"></div>');//create the first level breadcrumb menu
             //$("#" + pageId).nextAll(".contentdiv").children(".textdiv").html(content);
-
-            $("#" + pageId).nextAll(".overarea").children(".contentdiv").html(content);
+            
+            $("#" + pageId).nextAll(".overarea").children(".contentdiv").html(content).parent(".overarea").delay(300).slideDown("normal", changeHeight(pageId));
             $(".entry-content-mobile").html(content);
-            if ($(window).width() > 640) {
-                //$("#" + pageId).nextAll(".contentdiv").slideDown("normal", changeHeight(pageId));
-            	$("#" + pageId).nextAll(".overarea").slideDown("normal", changeHeight(pageId));
-            }
-            else {
-                //$("#" + pageId).nextAll(".contentdiv").slideDown();
-            }
+            
+            //$("#" + pageId).nextAll(".contentdiv").slideDown("normal", changeHeight(pageId));
+            
+            ////$("#" + pageId).nextAll(".overarea").slideDown("normal", changeHeight(pageId));
+           
 
             //$("#" + pageId).nextAll(".menudiv").slideDown(); //get submenu down
 
@@ -547,15 +548,8 @@ function createMenu(menuUrl) {
                     var id = response.items[i].url.split('/')[3].split('?')[0];
                     basicItems.push(id);
                     itemFlagArr[id]=false;
-                    
-                    $("#" + id).bind({
-                        mouseenter: function () {
-                        }, mouseleave: function () {
-                        }
-                    }).bind("click", function () {
+                    $("#" + id).bind("click", function () {
                         itemClick(this.id);
-                    }).bind("mousedown", function () {
-                    }).bind("mouseup", function () {
                     });
                 }
             }
