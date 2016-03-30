@@ -430,7 +430,7 @@ function change(objectId, itemId, thisid) {
 
             //$("#" + itemId).nextAll(".contentdiv").html("<br/>");
             $("#" + itemId).nextAll(".overarea").slideUp("normal", function(){
-            	$(this).children(".contentdiv").html(content).parent(".overarea").slideDown("normal", changeHeight(itemId));
+            	$(this).children(".contentdiv").html(content).parent(".overarea").delay(100).slideDown("normal", changeHeight(itemId));
             });
             ///$("#" + itemId).nextAll(".overarea").slideDown("normal", changeHeight(itemId));//get content down
             
