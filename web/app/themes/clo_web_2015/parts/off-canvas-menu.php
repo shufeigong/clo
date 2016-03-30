@@ -11,4 +11,9 @@
     <?php mainMenuMobile();?>
     <hr/>
     <?php utilityMenuMobile()?>
+    
+    <a class="columns large-3 medium-3 small-3 access-logo" href="http://www.essentialaccessibility.com/download" target="_blank">
+      <div class="access-logo-img"></div>     
+      <div class="access-logo-text">ESSENTIAL ACCESSIBILITY</div>
+    </a>
 </aside>
