@@ -131,7 +131,7 @@ function pageLoad(linkSplit, basicItems) {
         }else{$(".entry-content").slideDown();}
     }
 }
-
+var lastopen;
 function grabPage(pageId) {
 
     if(itemFlagArr[pageId]==false){
@@ -145,7 +145,7 @@ function grabPage(pageId) {
             //$("#" + pageId).nextAll(".overarea").children(".contentdiv").html("<br/>");
             //$("#" + pageId).nextAll(".contentdiv").children(".breaddiv").html('<div class="basic"><a href="#" onclick="itemClick(\''+pageId+'\'); return false;" class="breaditem" >'+response.title+'</a></div><div class="rest"></div>');//create the first level breadcrumb menu
             //$("#" + pageId).nextAll(".contentdiv").children(".textdiv").html(content);
-            
+            lastopen=pageId;
             $("#" + pageId).nextAll(".overarea").children(".contentdiv").html(content).parent(".overarea").delay(300).slideDown("normal", changeHeight(pageId));
             $(".entry-content-mobile").html(content);
             
@@ -186,10 +186,11 @@ function grabPage(pageId) {
          //$("#" + pageId).nextAll(".overarea").children(".contentdiv").html("<br/>");
          //$("#" + pageId).nextAll(".contentdiv").children(".breaddiv").html('<div class="basic"><a href="#" onclick="itemClick(\''+pageId+'\'); return false;" class="breaditem" >'+response.title+'</a></div><div class="rest"></div>');//create the first level breadcrumb menu
          //$("#" + pageId).nextAll(".contentdiv").children(".textdiv").html(content);
-         if($("#"+pageId).parent("li").hasClass("selected")==false){
+         if(lastopen!=pageId){
+         lastopen=pageId;	 
          $("#" + pageId).nextAll(".overarea").children(".contentdiv").html(itemFlagArr[pageId]);
          $(".entry-content-mobile").html(itemFlagArr[pageId]);
-       
+         
              //$("#" + pageId).nextAll(".contentdiv").slideDown("normal", changeHeight(pageId));
          $("#" + pageId).nextAll(".overarea").slideUp().delay(300).slideDown("normal", changeHeight(pageId));
          
