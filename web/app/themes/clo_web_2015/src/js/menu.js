@@ -429,8 +429,8 @@ function change(objectId, itemId, thisid) {
             var content = response.content;
 
             //$("#" + itemId).nextAll(".contentdiv").html("<br/>");
-            $("#" + itemId).nextAll(".overarea").children(".contentdiv").html(content);
-            $("#" + itemId).nextAll(".overarea").slideDown("normal", changeHeight(itemId));//get content down
+            $("#" + itemId).nextAll(".overarea").children(".contentdiv").html(content).parent(".overarea").slideUp().slideDown("normal", changeHeight(itemId));
+            ///$("#" + itemId).nextAll(".overarea").slideDown("normal", changeHeight(itemId));//get content down
             //var bread="";
             //var parentItems = new Array();
             //var parentClicks = new Array();
