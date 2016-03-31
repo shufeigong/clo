@@ -7,19 +7,27 @@
      
      ul{
          list-style-type:none;
-         li{
+         .social-list-li{
+            border:solid 1px #fff;
             margin-bottom:5px;
+            
+          &:hover{border:solid 1px $color-header;} 
+            
          }
      }
 }
 
 @media screen and (min-width : 1000px) {
-    .social-list{top:200px; right:4%;}
-   
+    .social-list{right:1.5%;position:absolute; float:right;}
+    
 }
 
-@media screen and (min-width : 641px) and (max-width : 999px) { 
-    .social-list{top:200px; right:2%;}
+@media screen and (min-width : 691px) and (max-width : 999px) { 
+    .social-list{top:200px; right:0%;}
+}
+
+@media screen and (min-width : 641px) and (max-width : 690px) { 
+    .social-list{top:200px; right:0%;}
 }
 
 @media screen and (max-width : 640px) {

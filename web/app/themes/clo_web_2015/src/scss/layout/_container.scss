@@ -27,11 +27,11 @@
 .row .row {
     margin : 0;
 }
-
-.menu-main-menu-container, .menu-main-menu-french-container {
-    padding-right : 6%;
+@media screen and (min-width : 1000px) {
+	.menu-main-menu-container, .menu-main-menu-french-container {
+	    padding-right : 6%;
+	}
 }
-
 html {
 //overflow: -moz-scrollbars-vertical; 
 //overflow-y: scroll;

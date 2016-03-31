@@ -131,27 +131,28 @@ function pageLoad(linkSplit, basicItems) {
         }else{$(".entry-content").slideDown();}
     }
 }
-
+var lastopen;
 function grabPage(pageId) {
+
     if(itemFlagArr[pageId]==false){
+    	
     $.get("/wp-json/pages/" + pageId, function (response) {
     })
         .always(function(response) {
             var content = response.content;
+            
             itemFlagArr[pageId]=content;
             //$("#" + pageId).nextAll(".overarea").children(".contentdiv").html("<br/>");
             //$("#" + pageId).nextAll(".contentdiv").children(".breaddiv").html('<div class="basic"><a href="#" onclick="itemClick(\''+pageId+'\'); return false;" class="breaditem" >'+response.title+'</a></div><div class="rest"></div>');//create the first level breadcrumb menu
             //$("#" + pageId).nextAll(".contentdiv").children(".textdiv").html(content);
-
-            $("#" + pageId).nextAll(".overarea").children(".contentdiv").html(content);
+            lastopen=pageId;
+            $("#" + pageId).nextAll(".overarea").children(".contentdiv").html(content).parent(".overarea").delay(300).slideDown("normal", changeHeight(pageId));
             $(".entry-content-mobile").html(content);
-            if ($(window).width() > 640) {
-                //$("#" + pageId).nextAll(".contentdiv").slideDown("normal", changeHeight(pageId));
-            	$("#" + pageId).nextAll(".overarea").slideDown("normal", changeHeight(pageId));
-            }
-            else {
-                //$("#" + pageId).nextAll(".contentdiv").slideDown();
-            }
+            
+            //$("#" + pageId).nextAll(".contentdiv").slideDown("normal", changeHeight(pageId));
+            
+            ////$("#" + pageId).nextAll(".overarea").slideDown("normal", changeHeight(pageId));
+           
 
             //$("#" + pageId).nextAll(".menudiv").slideDown(); //get submenu down
 
@@ -185,16 +186,15 @@ function grabPage(pageId) {
          //$("#" + pageId).nextAll(".overarea").children(".contentdiv").html("<br/>");
          //$("#" + pageId).nextAll(".contentdiv").children(".breaddiv").html('<div class="basic"><a href="#" onclick="itemClick(\''+pageId+'\'); return false;" class="breaditem" >'+response.title+'</a></div><div class="rest"></div>');//create the first level breadcrumb menu
          //$("#" + pageId).nextAll(".contentdiv").children(".textdiv").html(content);
-
+         if(lastopen!=pageId){
+         lastopen=pageId;	 
          $("#" + pageId).nextAll(".overarea").children(".contentdiv").html(itemFlagArr[pageId]);
          $(".entry-content-mobile").html(itemFlagArr[pageId]);
-         if ($(window).width() > 640) {
+         
              //$("#" + pageId).nextAll(".contentdiv").slideDown("normal", changeHeight(pageId));
-         	$("#" + pageId).nextAll(".overarea").slideUp().delay(300).slideDown("normal", changeHeight(pageId));
-         }
-         else {
-             //$("#" + pageId).nextAll(".contentdiv").slideDown();
-         }
+         $("#" + pageId).nextAll(".overarea").slideUp().delay(300).slideDown("normal", changeHeight(pageId));
+         
+         
 
          //$("#" + pageId).nextAll(".menudiv").slideDown(); //get submenu down
 
@@ -217,7 +217,7 @@ function grabPage(pageId) {
          if($(".btn_show").length>0){timeline()};
          campaignMonitor();
          album();
-         locationMap();
+         locationMap();}
     }
 }
 
@@ -428,8 +428,11 @@ function change(objectId, itemId, thisid) {
             var content = response.content;
 
             //$("#" + itemId).nextAll(".contentdiv").html("<br/>");
-            $("#" + itemId).nextAll(".overarea").children(".contentdiv").html(content);
-            $("#" + itemId).nextAll(".overarea").slideDown("normal", changeHeight(itemId));//get content down
+            $("#" + itemId).nextAll(".overarea").slideUp("normal", function(){
+            	$(this).children(".contentdiv").html(content).parent(".overarea").delay(100).slideDown("normal", changeHeight(itemId));
+            
+            ///$("#" + itemId).nextAll(".overarea").slideDown("normal", changeHeight(itemId));//get content down
+            
             //var bread="";
             //var parentItems = new Array();
             //var parentClicks = new Array();
@@ -462,7 +465,7 @@ function change(objectId, itemId, thisid) {
             /////
             var newurl=$(".menu-item-language:last a").attr("href").split("#")[0]+"#"+$("#"+$("#"+thisid).attr("slug")).attr("otherurl");
             $(".menu-item-language:last a").attr("href", newurl);
-            
+            });
             
         })
         .fail(function () {
@@ -547,15 +550,8 @@ function createMenu(menuUrl) {
                     var id = response.items[i].url.split('/')[3].split('?')[0];
                     basicItems.push(id);
                     itemFlagArr[id]=false;
-                    
-                    $("#" + id).bind({
-                        mouseenter: function () {
-                        }, mouseleave: function () {
-                        }
-                    }).bind("click", function () {
+                    $("#" + id).bind("click", function () {
                         itemClick(this.id);
-                    }).bind("mousedown", function () {
-                    }).bind("mouseup", function () {
                     });
                 }
             }

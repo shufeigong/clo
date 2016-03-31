@@ -495,7 +495,8 @@ function postlistShortcodeHandler($atts)
 				'number_posts' => -1,
 				'template'       =>'block',
             	'lang'           =>'en',
-                
+                'start_date'     =>'',
+            	'end_date'      =>''  	
             ],
             $atts
         );
@@ -511,6 +512,8 @@ function postlistShortcodeHandler($atts)
 		$order        = $atts['order'];
 		$postsPerPage = $atts['number_posts']==-1? -1: $atts['number_posts'];
 		$template     = $atts['template'];
+		$startDate    = $atts['start_date'];
+		$endDate      = $atts['end_date'];
 		
 		$args = [
 				'post_type'      => $postType, /* Change with your custom post type name */
@@ -524,6 +527,37 @@ function postlistShortcodeHandler($atts)
 		
 		
 		$results = get_posts($args);
+		
+		if($startDate!='' && $endDate!=''){
+			$startPoint = strtotime($startDate);
+			$endPoint = strtotime("+1 day".$endDate);
+			foreach($results as $key=>$post):
+			  if(strtotime($post->post_date)<$startPoint||strtotime($post->post_date)>=$endPoint){
+			  	  unset($results[$key]);
+			  }
+			
+			endforeach;
+		}
+		if($startDate!='' && $endDate==''){
+			$startPoint = strtotime($startDate);
+			//$endPoint = strtotime("+1 day".$endDate);
+			foreach($results as $key=>$post):
+			if(strtotime($post->post_date)<$startPoint){
+				unset($results[$key]);
+			}
+				
+			endforeach;
+		}
+		if($startDate=='' && $endDate!=''){
+			//$startPoint = strtotime($startDate);
+			$endPoint = strtotime("+1 day".$endDate);
+			foreach($results as $key=>$post):
+			if(strtotime($post->post_date)>=$endPoint){
+				unset($results[$key]);
+			}
+			
+			endforeach;
+		}
 		
 		$colors=array("#DCE9F7","#B5D3EF","#EFF5DC","#DDEBB9");
 		
@@ -578,7 +612,56 @@ function postlistShortcodeHandler($atts)
 			endforeach;
 			wp_reset_postdata();
 		
-		}else if(count($results) > 0 && $template=="video-gallery"){ //for video-gallery in web pages   
+		}else if(count($results) > 0 && $template=="thumbnail_no_excerpt"){
+			foreach ($results as $post) : setup_postdata($post);
+			//DCE9F7 0075C9 EFF5DC 82BC00
+			if($post->post_type=="news"||$post->post_type=="blog"||$post->post_type=="page"){    // for animated block news and blog
+				if(isHomepageNews($post)&&isVideoNews($post)&&!isButtonPosts($post))
+				{
+					if(find_video($post->post_content)!=null){
+						$output.=createVideoPostNoEx($post, $colors[$key%4]);$key++;
+					}
+					else{
+						$output.=createNoVideoPostNoEx($post, $colors[$key%4]); $key++;
+					}
+					 
+				}
+				else if(isHomepageNews($post)&&!isVideoNews($post)&&!isButtonPosts($post)){
+					 
+					$output.=createNoVideoPostNoEx($post, $colors[$key%4]); $key++;
+				}
+				else if(isHomepageNews($post)&&isButtonPosts($post))
+				{
+					$output.=createButtonPost($post, $colors[$key%4]); $key++;
+				}
+			}
+			else if($post->post_type=="incsub_event")    // for animated block event
+			{
+				if(isHomepageEvents($post)&&isVideoEvents($post)&&!isButtonEvents($post))
+				{
+					if(find_video($post->post_content)!=null){
+						$output.=createVideoPostNoEx($post, $colors[$key%4]);$key++;
+					}
+					else{
+						$output.=createNoVideoPostNoEx($post, $colors[$key%4]); $key++;
+					}
+			
+				}
+				else if(isHomepageEvents($post)&&!isVideoEvents($post)&&!isButtonEvents($post)){
+			
+					$output.=createNoVideoPostNoEx($post, $colors[$key%4]); $key++;
+				}
+				else if(isHomepageEvents($post)&&isButtonEvents($post)){
+					$output.=createButtonPost($post, $colors[$key%4]); $key++;
+				}
+			}
+			 
+			
+			endforeach;
+			wp_reset_postdata();
+			
+		}
+		else if(count($results) > 0 && $template=="video_gallery"){ //for video-gallery in web pages   
 			$output.='<ul class="content-videolist">';
 			foreach ($results as $post) : setup_postdata($post);
 			
@@ -617,6 +700,15 @@ function postlistShortcodeHandler($atts)
 			
 			wp_reset_postdata();
 			$output.='</ul>';
+		}else if(count($results) > 0 && $template=="list_with_date"){
+			$output.='<div class="cm"><ul>';
+				
+			foreach ($results as $post) : setup_postdata($post);
+			$output.='<li><span class="date">'.date("d M Y",strtotime($post->post_date)).'</span><span class="title"><a href="' . get_permalink($post->ID) . '">'.$post->post_title.'</a></span></li>';
+			endforeach;
+				
+			wp_reset_postdata();
+			$output.='</ul></div>';
 		}
 		else{
 			$output .= '<div id="events-wrap" class="block-wrap events-wrap">';
@@ -648,6 +740,39 @@ function postlistShortcodeHandler($atts)
 		
 		
 		$results = get_posts($args);
+		
+		if($startDate!='' && $endDate!=''){
+			$startPoint = strtotime($startDate);
+			$endPoint = strtotime("+1 day".$endDate);
+			foreach($results as $key=>$post):
+			if(strtotime($post->post_date)<$startPoint||strtotime($post->post_date)>=$endPoint){
+				unset($results[$key]);
+			}
+				
+			endforeach;
+		}
+		
+		if($startDate!='' && $endDate==''){
+			$startPoint = strtotime($startDate);
+			//$endPoint = strtotime("+1 day".$endDate);
+			foreach($results as $key=>$post):
+			if(strtotime($post->post_date)<$startPoint){
+				unset($results[$key]);
+			}
+		
+			endforeach;
+		}
+		if($startDate=='' && $endDate!=''){
+			//$startPoint = strtotime($startDate);
+			$endPoint = strtotime("+1 day".$endDate);
+			foreach($results as $key=>$post):
+			if(strtotime($post->post_date)>=$endPoint){
+				unset($results[$key]);
+			}
+				
+			endforeach;
+		}
+		
 		
 		$colors=array("#DCE9F7","#B5D3EF","#EFF5DC","#DDEBB9");
 		
@@ -701,7 +826,55 @@ function postlistShortcodeHandler($atts)
 			endforeach;
 			wp_reset_postdata();
 		
-		}else if(count($results) > 0 && $template=="video-gallery"){ //for video-gallery in web pages
+		}else if(count($results) > 0 && $template=="thumbnail_no_excerpt"){
+			foreach ($results as $post) : setup_postdata($post);
+			//DCE9F7 0075C9 EFF5DC 82BC00
+			if($post->post_type=="news"||$post->post_type=="blog"||$post->post_type=="page"){    // for animated block news and blog
+				if(isHomepagefrNews($post)&&isVideofrNews($post)&&!isButtonfrPosts($post))
+				{
+					if(find_video($post->post_content)!=null){
+						$output.=createVideoPostNoEx($post, $colors[$key%4]);$key++;
+					}
+					else{
+						$output.=createNoVideoPostNoEx($post, $colors[$key%4]); $key++;
+					}
+			
+				}
+				else if(isHomepagefrNews($post)&&!isVideofrNews($post)&&!isButtonfrPosts($post)){
+			
+					$output.=createNoVideoPostNoEx($post, $colors[$key%4]); $key++;
+				}
+				else if(isHomepagefrNews($post)&&isButtonfrPosts($post))
+				{
+					$output.=createButtonPost($post, $colors[$key%4]); $key++;
+				}
+			}
+			else if($post->post_type=="incsub_event")    // for animated block event
+			{
+				if(isHomepagefrEvents($post)&&isVideofrEvents($post)&&!isButtonfrEvents($post))
+				{
+					if(find_video($post->post_content)!=null){
+						$output.=createVideoPostNoEx($post, $colors[$key%4]);$key++;
+					}
+					else{
+						$output.=createNoVideoPostNoEx($post, $colors[$key%4]); $key++;
+					}
+						
+				}
+				else if(isHomepagefrEvents($post)&&!isVideofrEvents($post)&&!isButtonfrEvents($post)){
+						
+					$output.=createNoVideoPostNoEx($post, $colors[$key%4]); $key++;
+				}
+				else if(isHomepagefrEvents($post)&&isButtonfrEvents($post)){
+					$output.=createButtonPost($post, $colors[$key%4]); $key++;
+				}
+			}
+			
+				
+			endforeach;
+			wp_reset_postdata();
+		}
+		else if(count($results) > 0 && $template=="video_gallery"){ //for video-gallery in web pages
 			$output.='<ul class="content-videolist">';
 			foreach ($results as $post) : setup_postdata($post);
 				
@@ -740,6 +913,15 @@ function postlistShortcodeHandler($atts)
 				
 			wp_reset_postdata();
 			$output.='</ul>';
+		}else if(count($results) > 0 && $template=="list_with_date"){
+			$output.='<div class="cm"><ul>';
+			
+			foreach ($results as $post) : setup_postdata($post);
+			$output.='<li><span class="date">'.date("d M Y",strtotime($post->post_date)).'</span><span class="title"><a href="' . get_permalink($post->ID) . '">'.$post->post_title.'</a></span></li>';
+			endforeach;
+			
+			wp_reset_postdata();
+			$output.='</ul></div>';
 		}
 		else{
 			$output .= '<div id="events-wrap" class="block-wrap events-wrap">';

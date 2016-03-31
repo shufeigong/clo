@@ -410,7 +410,7 @@
 
     .blueline {
         display       : none;
-        border-bottom : 4px solid #0075C9;
+        border-bottom : 3px solid #0075C9;
         height        : 0;
         margin        : 0;
         width         : 88%;
@@ -441,7 +441,7 @@
             //border:solid 1px #333;
             margin-top    : 2%;
             margin-bottom : 1%;
-            margin-left   : 12%;
+            margin-left   : 95px;
             width         : 87%;
             //height:350px;
             //overflow-y:scroll;
@@ -466,7 +466,7 @@
             //border:solid 1px #333;
             margin-top    : 2%;
             margin-bottom : 1%;
-            margin-left   : 20%;
+            margin-left   : 150px;
             width         : 78%;
             //height:350px;
             //overflow-y:scroll;
@@ -481,6 +481,13 @@
         padding-left : 11px;
 
     }
+    .menu-main-menu-container{
+       padding-right : 7%;
+     }
+    .menu-main-menu-french-container{
+     padding-right : 9%;
+   }
+    
 
     ul.menu {
         //border:solid 1px red;
@@ -786,7 +793,7 @@
 
     hr {
         height     : 1px;
-        border-top : 4px solid red;
+        //border-top : 4px solid red;
     }
 
     .blueline {
@@ -802,7 +809,7 @@
     }
     .blueline {
         display       : none;
-        border-bottom : 4px solid #0075C9;
+        border-bottom : 3px solid #0075C9;
         height        : 0;
         margin        : 0;
         width         : 88%;
@@ -1132,6 +1139,42 @@
         border-top : 1px solid #CCE0F3;
         margin-top : 0;
     }
+    .access-logo{
+       //float: right; 
+       width: 167px; 
+       //height: 25px; 
+       //border:solid 1px #333;
+       //margin-top:10px;
+       margin-left:15px;
+       padding:0;
+       .access-logo-text{
+          //border:solid 1px red;
+          margin-left:5px;
+          font-family:$font-site-bold;
+          color:#005889;
+          @include font-size(1.1);
+          width:63%;
+          line-height:1;
+           display:inline-block;
+          .access-logo-space{visibility:hidden;}
+       }//end of access-logo-text
+
+      .access-logo-img{
+         //border:solid 1px blue;
+         background  : url(../img/access_logo_mobile.svg) no-repeat;
+         height:25px;
+         float:left;
+         width:32%;
+         text-indent : -99999px;
+      }//end of access-logo-img
+      
+      &:hover{
+         .access-logo-text{color:#231F20;text-decoration: underline;}
+      }//end of hover
+ }//end of access-logo
+    
+    
+    
 
 }
 
