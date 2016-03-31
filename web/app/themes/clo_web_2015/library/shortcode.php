@@ -494,6 +494,7 @@ function postlistShortcodeHandler($atts)
 				'order'          => 'DESC',
 				'number_posts' => -1,
 				'template'       =>'block',
+            	'speed'          =>1500,	
             	'lang'           =>'en',
                 'start_date'     =>'',
             	'end_date'      =>''  	
@@ -512,6 +513,7 @@ function postlistShortcodeHandler($atts)
 		$order        = $atts['order'];
 		$postsPerPage = $atts['number_posts']==-1? -1: $atts['number_posts'];
 		$template     = $atts['template'];
+		$speed        =$atts['speed'];
 		$startDate    = $atts['start_date'];
 		$endDate      = $atts['end_date'];
 		
@@ -611,6 +613,7 @@ function postlistShortcodeHandler($atts)
 		
 			endforeach;
 			wp_reset_postdata();
+			$output.='<myspeed id="myspeed" speed="'.$speed.'"/>';
 		
 		}else if(count($results) > 0 && $template=="thumbnail_no_excerpt"){
 			foreach ($results as $post) : setup_postdata($post);
@@ -659,6 +662,7 @@ function postlistShortcodeHandler($atts)
 			
 			endforeach;
 			wp_reset_postdata();
+			$output.='<myspeed id="myspeed" speed="'.$speed.'"/>';
 			
 		}
 		else if(count($results) > 0 && $template=="video_gallery"){ //for video-gallery in web pages   
@@ -727,6 +731,9 @@ function postlistShortcodeHandler($atts)
 		$order        = $atts['order'];
 		$postsPerPage = $atts['number_posts']==-1? -1: $atts['number_posts'];
 		$template     = $atts['template'];
+		$speed        =$atts['speed'];
+		$startDate    = $atts['start_date'];
+		$endDate      = $atts['end_date'];
 		
 		$args = [
 				'post_type'      => $postType, /* Change with your custom post type name */
@@ -825,6 +832,7 @@ function postlistShortcodeHandler($atts)
 		
 			endforeach;
 			wp_reset_postdata();
+			$output.='<myspeed id="myspeed" speed="'.$speed.'"/>';
 		
 		}else if(count($results) > 0 && $template=="thumbnail_no_excerpt"){
 			foreach ($results as $post) : setup_postdata($post);
@@ -873,6 +881,7 @@ function postlistShortcodeHandler($atts)
 				
 			endforeach;
 			wp_reset_postdata();
+			$output.='<myspeed id="myspeed" speed="'.$speed.'"/>';
 		}
 		else if(count($results) > 0 && $template=="video_gallery"){ //for video-gallery in web pages
 			$output.='<ul class="content-videolist">';

@@ -93,7 +93,7 @@ function pageLoad(linkSplit, basicItems) {
                             		hoverPause:true,
                             		visible: 2,
                             		auto:500,
-                            		speed:1500
+                            		speed:parseInt($("#myspeed").attr("speed"))
                             	});
                             });
                             
@@ -117,7 +117,7 @@ function pageLoad(linkSplit, basicItems) {
                         		hoverPause:true,
                         		visible: 2,
                         		auto:500,
-                        		speed:1500
+                        		speed:parseInt($("#myspeed").attr("speed"))
                         	});
                         });
 
@@ -597,6 +597,7 @@ function init() {
 }
 
 $(document).ready(function () {
+	//parseInt($("#myspeed").attr("speed"));
     init();
     $("#skiplinks").children("a").click(function(e){
     	                                   if($(this).html()=="Skip to content"||$(this).html()=="Aller au contenu"){return false;}
