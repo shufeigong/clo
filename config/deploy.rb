@@ -71,10 +71,30 @@ namespace :deploy do
   end
 end
 
+namespace :deploy do
+  desc 'Install composer packages in root'
+  task :install_env_packages do
+    on roles(:web), in: :sequence, wait: 5 do
+      execute "cd '#{release_path}'; composer install --no-dev --prefer-dist --no-interaction --quiet --optimize-autoloader"
+    end
+  end
+end
+
+namespace :deploy do
+  desc 'Install composer packages in the theme'
+  task :install_theme_packages do
+    on roles(:web), in: :sequence, wait: 5 do
+      execute "cd '#{release_path}/wp-content/themes/clo_web_2015'; composer install --no-dev --prefer-dist --no-interaction --quiet --optimize-autoloader"
+    end
+  end
+end
+
 # The above update_option_paths task is not run by default
 # Note that you need to have WP-CLI installed on your server
 # Uncomment the following line to run it on deploys if needed
 # after 'deploy:publishing', 'deploy:update_option_paths'
 
 after 'deploy:updated', 'deploy:sync'
+after 'deploy:updated', 'deploy:install_env_packages'
+after 'deploy:updated', 'deploy:install_theme_packages'
 after 'deploy:finished', 'deploy:sync_again'
