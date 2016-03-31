@@ -20,8 +20,6 @@ function changeHeight(itemId)
 		    else{
 		    	  //backOver();
 		    	}
-		    
-		
 		}
 		    
 	
