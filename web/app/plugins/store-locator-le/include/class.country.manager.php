@@ -300,11 +300,9 @@ if ( ! class_exists('SLP_Country_Manager') ) {
 			$this->countries[ $new_country->slug ] = $new_country;
 
 			$new_country = new SLP_Country( array(
-				'name'          	=> __('France'                         ,'store-locator-le'),
-				'google_domain' 	=> 'maps.google.fr',
-				'cctld'         	=> 'fr',
-				'map_center_lat'	=> '42.227638',
-				'map_center_lng' 	=> '2.213749'
+				'name'          => __('France'                         ,'store-locator-le'),
+				'google_domain' => 'maps.google.fr',
+				'cctld'         => 'fr',
 			) );
 			$this->countries[ $new_country->slug ] = $new_country;
 

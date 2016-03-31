@@ -7,24 +7,33 @@ if (! class_exists('SLPlus_AdminUI_GeneralSettings')) {
 	 *
 	 * @package   StoreLocatorPlus\AdminUI\Info
 	 * @author    Lance Cleveland <lance@charlestonsw.com>
-	 * @copyright 2013 - 2016 Charleston Software Associates, LLC
-	 *
-	 * text-domain: store-locator-le
-	 *
-	 * @property 		SLPlus_AdminUI	$adminui
-	 * @property-read	boolean			$cache_expired
-	 * @property-read   SLPlus_Settings	$settings
+	 * @copyright 2013 - 2015 Charleston Software Associates, LLC
 	 *
 	 */
 	class SLPlus_AdminUI_Info extends SLPlus_BaseClass_Object {
-		public 	$adminui;
+
+		/**
+		 * @var SLPlus_AdminUI
+		 */
+		public $adminui;
+
+		/**
+		 * @var boolean
+		 */
 		private $cache_expired = true;
+
+		/**
+		 * @var \wpCSL_settings__slplus $settings
+		 */
 		private $settings;
 
 		/**
-		 * Things we do at startup.
+		 * Build the info object.
+		 *
+		 * @param $options
 		 */
-		function initialize() {
+		function __construct( $options = array() ) {
+			parent::__construct( $options );
 			$this->create_object_settings();
 		}
 
@@ -102,14 +111,18 @@ if (! class_exists('SLPlus_AdminUI_GeneralSettings')) {
 
 			}
 
+			// PHP Module Info
+			//
+			$php_modules = get_loaded_extensions();
+			natcasesort( $php_modules );
+
 			/** @var wpdb $wpdb */
 			global $wpdb;
 			$my_metadata = get_plugin_data( SLPLUS_FILE );
-                        
-			$html =
-				'<div class="left_side">' .
-					'<div class="content_pad">'.
-					$this->create_EnvDiv( $my_metadata['Name'] , $my_metadata['Version'] ) .
+			$this->settings->add_section( array(
+				'name'        => __( 'Plugin Environment' , 'store-locator-le' ),
+				'description' =>
+					$this->create_EnvDiv( $my_metadata['Name'] . __( ' Version' , 'store-locator-le' ), $my_metadata['Version'] ) .
 					$addonStr .
 					'<br/>' .
 					$this->create_EnvDiv( __( 'This Info Cached' , 'store-locator-le' ) , $this->slplus->options_nojs['broadcast_timestamp'] ) .
@@ -143,23 +156,9 @@ if (! class_exists('SLPlus_AdminUI_GeneralSettings')) {
 						__( 'PHP Post Max Size', 'store-locator-le' ) ,
 						ini_get( 'post_max_size' )
 					) .
-					'</div>' .
-				'</div>' .
-				'<div class="right_side">' .
-					'<div class="content_pad">'.
-					$this->create_string_news_feed() .
-					$this->create_string_social_outlets() .
-					'</div>' .
-				'</div>'
-				;
 
-			return $html;                        
-                        
-                        
-			$this->settings->add_section( array(
-				'name'        => __( 'Plugin Environment' , 'store-locator-le' ),
-				'description' => $html
-
+					$this->create_EnvDiv( __( 'PHP Modules', 'store-locator-le' ) ,
+						'<pre>' . print_r( $php_modules, true ) . '</pre>' )
 			) );
 		}
 
@@ -176,162 +175,6 @@ if (! class_exists('SLPlus_AdminUI_GeneralSettings')) {
 		}
 
 		/**
-		 * The how to add location text.
-		 */
-		private function create_string_how_to_add_location() {
-			return
-			'<h4>' . __( 'Add A Location', 'store-locator-le' ) . '</h4>' .
-
-			'<p>' .
-
-			sprintf(
-				__( 'Add a location or two via the <a href="%s">Add Location form</a>.', 'store-locator-le' ),
-				admin_url() . 'admin.php?page=slp_manage_locations'
-			) .
-
-			__( 'You will find this link, and other Store Locator Plus links, in the left sidebar under the Store Locator Plus entry. ', 'store-locator-le' ) .
-
-			sprintf(
-				__( 'If you have many locations to add, check out the %s and the bulk import options.', 'store-locator-le' ),
-				$this->slplus->get_product_url( 'slp-pro' )
-			) .
-
-			'</p>'
-			;
-		}
-
-		/**
-		 * The how to create a locations page info.
-		 *
-		 * @return string
-		 */
-		private function create_string_how_to_create_page() {
-			return
-			'<h4>' . __( 'Create A Page', 'store-locator-le' ) . '</h4>' .
-
-			'<p>' .
-
-			__( 'Go to the sidebar and select "Add New" under the pages section.  You will be creating a standard WordPress page. ', 'store-locator-le' ) .
-
-			sprintf(
-				__( 'On that page add the [SLPLUS] <a href="%s" target="slplus">shortcode</a>.  When a visitor goes to that page it will show a default search form and a Google Map.', 'store-locator-le' ),
-				$this->slplus->support_url . 'getting-started/shortcodes/'
-			) .
-
-			__( 'When someone searches for a zip code that is close enough to a location you entered it will show those locations on the map. ', 'store-locator-le' ) .
-
-			'</p>'
-			;
-		}
-
-		/**
-		 * The text for the news feed from SLP.
-		 */
-		private function create_string_news_feed() {
-			$rss = fetch_feed('https://www.storelocatorplus.com/feed/');
-
-			$item_quantity = 0;
-
-			if (!is_wp_error($rss)) {
-				$item_quantity = $rss->get_item_quantity(5);
-				$rss_items = $rss->get_items(0, $item_quantity);
-			}
-
-			if ( $item_quantity == 0 ) {
-				$news =
-					'<p>' . $this->slplus->text_manager->get_admin_text( 'plugin_created_by' 	) . '</p>' .
-					'<p>' . $this->slplus->text_manager->get_admin_text( 'improve_or_customize' ) . '</p>'
-					;
-
-			} else {
-				$news = '';
-				foreach ( $rss_items as $item ) {
-					$title = esc_html( $item->get_title() );
-					$news.=
-						sprintf( '<li class="news_feed_item"><a href="%s" title="%s" alt="%s" target="slp">%s</a>%s</li>',
-							esc_url( $item->get_permalink() ),
-							$title ,
-							$title ,
-							$title ,
-							$item->get_date('j F Y | g:i a')
-						);
-				}
-				$news = '<ul class="news_feed_list">' . $news . '</ul>';
-			}
-
-			$html =
-				'<h2>' . __( 'News' , 'store-locator-le' ) . '</h2>' .
-				$news
-				;
-
-			return $html;
-		}
-
-		/**
-		 * Create the social media icon array.
-		 */
-		private function create_string_social_outlets() {
-			$html =
-				$this->slplus->create_web_link( 'documentation_icon' , '', $this->get_sprite_48('documentation')    , $this->slplus->slp_store_url . 'support/documentation/' 	, __('Documentation'		,'store-locator-le')) .
-				$this->slplus->create_web_link( 'twitter_icon' 		 , '', $this->get_sprite_48('twitter')   		, 'https://twitter.com/locatorplus/' 						, __('SLP at Twitter'	 	,'store-locator-le')) .
-				$this->slplus->create_web_link( 'youtube_icon' 		 , '', $this->get_sprite_48('youtube')   		, 'https://www.youtube.com/channel/UCJIMv63upz-qIaB5EcursyQ', __('SLP YouTube Channel'	,'store-locator-le')) .
-				$this->slplus->create_web_link( 'rss_icon' 	   		 , '', $this->get_sprite_48('rss')   	   		, $this->slplus->slp_store_url . 'feed/' 					, __('RSS Feed'			 	,'store-locator-le'))
-				;
-
-			return
-				'<h2>' . __( 'More Info', 'store-locator-le' ) . '</h2>' .
-				$html;
-		}
-
-		/**
-		 * Generate a sprite output.
-		 *
-		 * @param $what
-		 * @return string
-		 */
-		private function get_sprite_48( $what ) {
-			return "<div class='sprite_48 {$what}'></div>";
-		}
-
-		/**
-		 * How to tweak settings text.
-		 *
-		 * @return string
-		 */
-		private function create_string_how_to_tweak_settings() {
-			return
-			'<h4>' . __( 'Tweak The Settings', 'store-locator-le' ) . '</h4>' .
-
-			'<p>' .
-
-			sprintf(
-				__( 'You can modify basic settings such as the options shown on the radius pull down list on the <a href="%s">Experience</a> page. ', 'store-locator-le' ),
-				admin_url() . 'admin.php?page=slp_experience'
-			) .
-
-			sprintf(
-				__( 'Even more settings are available via <a href="%s" target="slplus">the premium add-on packs</a>. ', 'store-locator-le' ),
-				$this->slplus->slp_store_url
-			) .
-
-			'</p>'
-			;
-		}
-
-		/**
-		 * Create the YouTube iFrame and div.
-		 *
-		 * @return string
-		 */
-		private function create_string_how_to_video() {
-			return
-
-				'<div style="text-align:center; margin: 0px auto;">'.
-				'<iframe width="560" height="315" src="https://www.youtube.com/embed/cSybeFLIkM0?list=PLP4RKgpdF-0eahOHMUuLqTfg8EjCQ58Wp" frameborder="0" allowfullscreen></iframe>' .
-				'</div>';
-		}
-
-		/**
 		 * Render the How To Use text.
 		 *
 		 * @return string
@@ -339,25 +182,92 @@ if (! class_exists('SLPlus_AdminUI_GeneralSettings')) {
 		private function createstring_HowToUse() {
 			$this->slplus->createobject_AddOnManager();
 
-			$html =
-				'<div class="left_side">' .
-					'<div class="content_pad">'.
-					$this->create_string_how_to_add_location() .
-					$this->create_string_how_to_create_page() .
-					$this->create_string_how_to_tweak_settings() .
-					$this->create_string_how_to_video() .
-					apply_filters( 'slp_how_to_use' , '' ) .
-					'</div>' .
-				'</div>' .
-				'<div class="right_side">' .
-					'<div class="content_pad">'.
-					$this->create_string_news_feed() .
-					$this->create_string_social_outlets() .
-					'</div>' .
-				'</div>'
-				;
+			return
 
-			return $html;
+				'<h4>' . __( 'Add A Location', 'store-locator-le' ) . '</h4>' .
+
+				'<p style="padding-left: 30px;">' .
+
+				sprintf(
+					__( 'Add a location or two via the <a href="%s">Add Location form</a>.', 'store-locator-le' ),
+					admin_url() . 'admin.php?page=slp_manage_locations'
+				) .
+
+				__( 'You will find this link, and other Store Locator Plus links, in the left sidebar under the Store Locator Plus entry. ', 'store-locator-le' ) .
+
+				sprintf(
+					__( 'If you have many locations to add, check out the %s and the bulk import options.', 'store-locator-le' ),
+					$this->slplus->add_ons->get_product_url( 'slp-pro' )
+				) .
+
+				'</p>' .
+
+				'<h4>' . __( 'Create A Page', 'store-locator-le' ) . '</h4>' .
+
+				'<p style="padding-left: 30px;">' .
+
+				__( 'Go to the sidebar and select "Add New" under the pages section.  You will be creating a standard WordPress page. ', 'store-locator-le' ) .
+
+				sprintf(
+					__( 'On that page add the [SLPLUS] <a href="%s" target="slplus">shortcode</a>.  When a visitor goes to that page it will show a default search form and a Google Map.', 'store-locator-le' ),
+					$this->slplus->support_url . 'getting-started/shortcodes/'
+				) .
+
+				__( 'When someone searches for a zip code that is close enough to a location you entered it will show those locations on the map. ', 'store-locator-le' ) .
+
+				'</p>' .
+
+				'<h4>' . __( 'Tweak The Settings', 'store-locator-le' ) . '</h4>' .
+
+				'<p style="padding-left: 30px;">' .
+
+				sprintf(
+					__( 'You can modify basic settings such as the options shown on the radius pull down list on the <a href="%s">Experience</a> page. ', 'store-locator-le' ),
+					admin_url() . 'admin.php?page=slp_experience'
+				) .
+
+				sprintf(
+					__( 'Even more settings are available via <a href="%s" target="slplus">the premium add-on packs</a>. ', 'store-locator-le' ),
+					$this->slplus->slp_store_url
+				) .
+
+				'</p>' .
+
+				'<h4>' . __( 'More Help?', 'store-locator-le' ) . '</h4>' .
+
+				'<p style="padding-left: 30px;">' .
+
+				sprintf(
+					__( 'Check out the <a href="%s" target="slplus">online documentation and support forums</a>.', 'store-locator-le' ),
+					$this->slplus->support_url
+				) .
+
+				'</p>'
+
+				.
+
+			    apply_filters( 'slp_how_to_use' , '' )
+				;
+		}
+
+
+		/**
+		 * Set the default HTML string if the server if offline.
+		 *
+		 * @return string
+		 */
+		private function default_broadcast() {
+			return
+				'
+	                        <div class="csa-infobox">
+	                         <h4>This plugin has been brought to you by <a href="http://www.charlestonsw.com"
+	                                target="_new">Charleston Software Associates</a></h4>
+	                         <p>If there is anything I can do to improve my work or if you wish to hire me to customize
+	                            this plugin please
+	                            <a href="http://www.storelocatorplus.com/mindset/contact-us/" target="slplus">contact us</a>.
+	                         </p>
+	                         </div>
+	                         ';
 		}
 
 		/**
@@ -387,6 +297,13 @@ if (! class_exists('SLPlus_AdminUI_GeneralSettings')) {
 			);
 
 			$this->settings->add_section( array(
+					'name'        => __( 'Plugin News', 'store-locator-le' ),
+					'div_id'      => 'plugin_news',
+					'description' => $this->get_broadcast(),
+				)
+			);
+
+			$this->settings->add_section( array(
 					'name'        => __( 'Plugin Environment', 'store-locator-le' ),
 					'div_id'      => 'plugin_environment',
 					'description' => $this->create_EnvironmentPanel(),
@@ -402,6 +319,32 @@ if (! class_exists('SLPlus_AdminUI_GeneralSettings')) {
 				$this->update_cache_timestamp();
 			}
 
+		}
+
+
+		/**
+		 * Get the news broadcast from the remote server.
+		 *
+		 * @return string the HTML for the news panel
+		 */
+		private function get_broadcast() {
+
+			// Fetch broadcast every 30 seconds.
+			if ( ! $this->cache_expired ) {
+				return get_option('slplus_broadcast');
+			}
+
+			$response = wp_remote_get( 'http://www.storelocatorplus.com/signage/index.php?sku=SLP4', array( 'timeout' => 30 ) );
+
+			// Cache valid response and return it.
+			//
+			if ( is_array( $response ) ) {
+				$broadcast_content = $response['body'];
+				update_option( 'slplus_broadcast' , $broadcast_content );
+				return $broadcast_content;
+			}
+
+			return $this->default_broadcast();
 		}
 
 		/**
@@ -456,5 +399,8 @@ if (! class_exists('SLPlus_AdminUI_GeneralSettings')) {
 			$this->slplus->options_nojs['broadcast_timestamp'] = time();
 			update_option(SLPLUS_PREFIX . '-options_nojs', $this->slplus->options_nojs);
 		}
+
+
 	}
 }
+// Dad. Explorer. Rum Lover. Code Geek. Not necessarily in that order.

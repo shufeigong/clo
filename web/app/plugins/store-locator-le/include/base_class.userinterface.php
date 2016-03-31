@@ -10,24 +10,62 @@ if (! class_exists('SLP_BaseClass_UI')) {
      *
      * @package StoreLocatorPlus\BaseClass\UI
      * @author Lance Cleveland <lance@charlestonsw.com>
-     * @copyright 2013 - 2016 Charleston Software Associates, LLC
-     * 
-     * @property    SLP_BaseClass_Addon     $addon
-     * @property    SLPlus                  $slplus
-     * @property    string[]                $js_requirements    An array of the JavaScript hooks that are needed by the userinterface.js script.
-     *              userinterface.js is only loaded if the file exists in the include directory.
-     * @property    string[]                $js_settings        JavaScript settings that are to be localized as a <slug>_settings JS variable.
+     * @copyright 2013 - 2014 Charleston Software Associates, LLC
      */
-    class SLP_BaseClass_UI extends SLPlus_BaseClass_Object {
+    class SLP_BaseClass_UI {
+
+        //-------------------------------------
+        // Properties
+        //-------------------------------------
+
+        /**
+         * This addon pack.
+         *
+         * @var \SLP_BaseClass_Addon $addon
+         */
         protected $addon;
+
+        /**
+         * An array of the JavaScript hooks that are needed by the userinterface.js script.
+         * userinterface.js is only loaded if the file exists in the include directory.
+         *
+         * @var string[]
+         */
         protected $js_requirements = array();
+
+        /**
+         * JavaScript settings that are to be localized as a <slug>_settings JS variable.
+         *
+         * @var string[]
+         */
         protected $js_settings = array();
+
+        /**
+         * The base SLPlus object.
+         *
+         * @var \SLPlus $slplus
+         */
         protected $slplus;
+
+        //-------------------------------------
+        // Methods : activity
+        //-------------------------------------
 
         /**
          * Instantiate the admin panel object.
+         *
+         * @param mixed[] $params
          */
-        function initialize() {
+        function __construct($params) {
+            // Set properties based on constructor params,
+            // if the property named in the params array is well defined.
+            //
+            if ($params !== null) {
+                foreach ($params as $property=>$value) {
+                    if (property_exists($this,$property)) { $this->$property = $value; }
+                }
+            }
+            
             $this->do_ui_startup();
             $this->add_hooks_and_filters();
         }

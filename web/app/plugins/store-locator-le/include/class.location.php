@@ -40,7 +40,7 @@
  *
  * DESERIALIZED DATA:
  * @property        mixed[] $settings               The deserialized option_value field
- * @property        mixed[] $attributes             The deserialized option_value field. This can be augmented by multiple add-on packs.
+ * @property-read   mixed[] $attributes             The deserialized option_value field. This can be augmented by multiple add-on packs.
  *                                                  Tagalong adds:
  *                                                   array[] ['store_categories']
  *                                                        int[] ['stores']
@@ -112,9 +112,9 @@ class SLPlus_Location {
     private $option_value;
     private $lastupdated;
 
-    public $exdata             = array();
+    private $exdata             = array();
 
-    public  $attributes;
+    private $attributes;
     private $count              = 0;
     public $dataChanged         = true;
     private $db;
@@ -391,8 +391,12 @@ class SLPlus_Location {
 
         // Write to disk
         //
-        if ( $this->dataChanged ) {
-            $this->MakePersistent();
+        if ( $this->slplus->currentLocation->dataChanged ) {
+            $this->slplus->currentLocation->MakePersistent();
+            if ( count( $this->slplus->currentLocation->exdata ) > 0 ) {
+                $this->slplus->database->extension->update_data( $this->slplus->currentLocation->id , $this->slplus->currentLocation->exdata );
+                $this->slplus->database->reset_extended_data_flag();
+            }
 
         // Set not updated return code.
         //
@@ -490,12 +494,12 @@ class SLPlus_Location {
         //
         if ($address === null) {
             $address =
-                $this->address  . ' ' .
-                $this->address2 . ' ' .
-                $this->city     . ' ' .
-                $this->state    . ' ' .
-                $this->zip      . ' ' .
-                $this->country
+                $this->slplus->currentLocation->address  . ' ' .
+                $this->slplus->currentLocation->address2 . ' ' .
+                $this->slplus->currentLocation->city     . ' ' .
+                $this->slplus->currentLocation->state    . ' ' .
+                $this->slplus->currentLocation->zip      . ' ' .
+                $this->slplus->currentLocation->country
             ;
         }
         $address = trim( $address );
@@ -530,7 +534,7 @@ class SLPlus_Location {
                     // Update the lat/long if it has changed.
                     //
                     case 'OK':
-                        $this->set_LatLong($json->results[0]->geometry->location->lat, $json->results[0]->geometry->location->lng);
+                        $this->slplus->currentLocation->set_LatLong($json->results[0]->geometry->location->lat, $json->results[0]->geometry->location->lng);
                         $this->delay = SLPlus_Location::StartingDelay;
                         break;
 
@@ -560,7 +564,7 @@ class SLPlus_Location {
                             if ($json !== null) {
                                 $json = json_decode($json);
                                 if ($json->{'status'} === 'OK') {
-                                    $this->set_LatLong($json->results[0]->geometry->location->lat, $json->results[0]->geometry->location->lng);
+                                    $this->slplus->currentLocation->set_LatLong($json->results[0]->geometry->location->lat, $json->results[0]->geometry->location->lng);
                                 }
                             } else {
                                 break;
@@ -584,7 +588,7 @@ class SLPlus_Location {
                     //
                     case 'ZERO_RESULTS':
                         $errorMessage .= sprintf(__("Address #%d : %s <font color=red>failed to geocode</font>.", 'store-locator-le'),
-                                $this->id,
+                                $this->slplus->currentLocation->id,
                                 $address
                             ) . "<br />\n";
                         $errorMessage .= sprintf(__("Unknown Address! Received status %s.", 'store-locator-le'), $json->{'status'}) . "\n<br>";
@@ -597,7 +601,7 @@ class SLPlus_Location {
                     default:
                         $errorMessage .=
                             sprintf(__("Address #%d : %s <font color=red>failed to geocode</font>.", 'store-locator-le'),
-                                $this->id,
+                                $this->slplus->currentLocation->id,
                                 $address) .
                             "<br/>\n" .
                             sprintf(__("Received status %s.", 'store-locator-le'),
@@ -633,7 +637,7 @@ class SLPlus_Location {
                     '<strong>'.
                     sprintf(
                         __('Read <a href="%s">this</a> if you are having geocoding issues.','store-locator-le'),
-                        'https://www.storelocatorplus.com/support/documentation/store-locator-plus/troubleshooting/geocoding-errors/'
+                        'http://www.storelocatorplus.com/support/documentation/store-locator-plus/troubleshooting/geocoding-errors/'
                     ).
                     "</strong><br/>\n" .
                     $errorMessage
@@ -652,9 +656,9 @@ class SLPlus_Location {
                     $address,
                     sprintf('https://%s/?q=%s,%s',
                         $this->slplus->options['map_domain'],
-                        $this->latitude,
-                        $this->longitude),
-                    $this->latitude, $this->longitude
+                        $this->slplus->currentLocation->latitude,
+                        $this->slplus->currentLocation->longitude),
+                    $this->slplus->currentLocation->latitude, $this->slplus->currentLocation->longitude
                 )
             );
         }
@@ -697,44 +701,6 @@ class SLPlus_Location {
     }
 
     /**
-     * Send back a formatted name including the store, city, and state space separated by default.
-     *
-     * Use the slp_formatted_location_name_elements filter to change which elements are returned.
-     * Use the slp_formatted_location_name filter to change the final string.
-     *
-     * @return mixed|null|void
-     */
-    public function get_formatted_name() {
-
-        /**
-         * FILTER: slp_formatted_location_name_elements
-         *
-         * @params string[]     and array of the property names we want to use to build the string.
-         *
-         * @return string[]     modified list of property names
-         */
-        $name_parts = apply_filters( 'slp_formatted_location_name_elements' , array( 'store' , 'city' , 'state' , 'country' ) );
-
-        // Get the valid non-empty properties.
-        //
-        $valid_parts = array();
-        foreach ( $name_parts as $property ) {
-            if ( property_exists( $this , $property ) && ( ! empty ( $this->$property ) ) ) {
-                $valid_parts[] = $this->$property;
-            }
-        }
-
-        /**
-         * FILTER: slp_formatted_location_name
-         *
-         * @params  string  the formatted name
-         *
-         * @return  string  the modified name
-         */
-        return apply_filters( 'slp_formatted_location_name' , join( ' ' , $valid_parts ) );
-    }
-
-    /**
      * Get the latitude/longitude for a given address.
      *
      * Google Server-Side API geocoding is documented here:
@@ -773,18 +739,6 @@ class SLPlus_Location {
     }
 
     /**
-     * Set the current location to the given location ID and return the SLPlus_Location object.
-     *
-     * @param $location_id
-     *
-     * @return SLPLus_location
-     */
-    public function get_location( $location_id ) {
-        $this->set_PropertiesViaDB( $location_id );
-        return $this;
-    }
-
-    /**
      * Return the values for each of the persistent properties of this location.
      *
      * @param string $property name of the persistent property to get, defaults to 'all' = array of all properties
@@ -804,7 +758,6 @@ class SLPlus_Location {
         }
         $this->pageData = null;
         $this->attributes = null;
-        // TODO: set exdata to array()?
     }
 
     /**
@@ -912,6 +865,7 @@ class SLPlus_Location {
         return $this->pageData;
     }
 
+
     /**
      * Sign a URL with a given crypto key.
      *
@@ -992,27 +946,12 @@ class SLPlus_Location {
 
         }
 
-        $this->make_extended_data_persistent();
-
         // Reset the data changed flag, used to manage MakePersistent calls.
         // Stops MakePersistent from writing data to disk if it has not changed.
         //
-        $this->dataChanged = false;
+        $this->slplus->currentLocation->dataChanged = false;
 
         return $dataWritten;
-    }
-
-    /**
-     * Make extended data persistent.
-     */
-    public function make_extended_data_persistent() {
-        if ( ! $this->slplus->database->is_Extended()   ) { return; }
-        if ( empty( $this->exdata )                     ) { return; }
-        if ( ! $this->dataChanged                       ) { return; }
-        
-        $this->slplus->database->extension->update_data($this->id, $this->exdata);
-
-        $this->slplus->database->reset_extended_data_flag();
     }
 
     /**
@@ -1113,7 +1052,7 @@ class SLPlus_Location {
                     $ssd_value = stripslashes_deep($value);
                     if ($this->$property != $ssd_value) {
                         $this->$property = $ssd_value;
-                        $this->dataChanged = true;
+                        $this->slplus->currentLocation->dataChanged = true;
                     }
                 }
             }
@@ -1160,7 +1099,7 @@ class SLPlus_Location {
         // Reset the data changed flag, used to manage MakePersistent calls.
         // Stops MakePersistent from writing data to disk if it has not changed.
         //
-        $this->dataChanged = false;
+        $this->slplus->currentLocation->dataChanged = false;
 
         return $this;
     }

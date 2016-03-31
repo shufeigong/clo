@@ -4,26 +4,11 @@ if (! class_exists('SLP_Helper')) {
 	/**
 	 * Helper, non-critical methods to make WordPress plugins easier to manage.
 	 *
-	 * TODO: Separate ADMIN helpers (put in Settings class??)
-	 * Ubiquitious (stay here): createstring_DropDownMenu, create_string_wp_setting_error_box
-	 * ADMIN: all others
-	 *
-	 *
 	 * @package StoreLocatorPlus\Helper
 	 * @author Lance Cleveland <lance@charlestonsw.com>
-	 * @copyright 2014-2016 Charleston Software Associates, LLC
+	 * @copyright 2014-2015 Charleston Software Associates, LLC
 	 */
 	class SLP_Helper extends SLPlus_BaseClass_Object {
-
-		/**
-		 * Add a notification to the WP admin pages.
-		 *
-		 * @param $text
-		 */
-		function add_wp_admin_notification( $text, $class = 'error' ) {
-			if ( empty( $text ) ) { return; }
-			add_action( 'admin_notices', create_function( '',  "echo '<div class=\"{$class}\"><p>{$text}</p></div>';" ) );
-		}
 
 		/**
 		 * Force the checkbox post on or off even if not sent in from form post.
@@ -32,110 +17,6 @@ if (! class_exists('SLP_Helper')) {
 		 */
 		function create_checkbox_post( $checkbox_name ) {
 			$_POST[$checkbox_name] = ( isset( $_POST[$checkbox_name] ) && ! empty( $_POST[$checkbox_name] ) ) ? 1 : 0 ;
-		}
-
-		/**
-		 * Return the icon selector HTML for the icon images in saved markers and default icon directories.
-		 *
-		 * @param string|null $field_id
-		 * @param string|null $image_id
-		 * @return string
-		 */
-		function create_string_icon_selector($field_id = null, $image_id = null) {
-			if (($field_id == null) || ($image_id == null)) { return ''; }
-
-			$htmlStr = '';
-			$files=array();
-			$fqURL=array();
-
-			// If we already got a list of icons and URLS, just use those
-			//
-			if (
-				isset($this->slplus->data['iconselector_files']) &&
-				isset($this->slplus->data['iconselector_urls'] )
-			) {
-				$files = $this->slplus->data['iconselector_files'];
-				$fqURL = $this->slplus->data['iconselector_urls'];
-
-				// If not, build the icon info but remember it for later
-				// this helps cut down looping directory info twice (time consuming)
-				// for things like home and end icon processing.
-				//
-			} else {
-
-				// Load the file list from our directories
-				//
-				// using the same array for all allows us to collapse files by
-				// same name, last directory in is highest precedence.
-				$iconAssets = apply_filters('slp_icon_directories',
-					array(
-						array('dir'=>SLPLUS_UPLOADDIR.'saved-icons/',
-							'url'=>SLPLUS_UPLOADURL.'saved-icons/'
-						),
-						array('dir'=>SLPLUS_ICONDIR,
-							'url'=>SLPLUS_ICONURL
-						)
-					)
-				);
-				$fqURLIndex = 0;
-				foreach ($iconAssets as $icon) {
-					if (is_dir($icon['dir'])) {
-						if ($iconDir=opendir($icon['dir'])) {
-							$fqURL[] = $icon['url'];
-							while ($filename = readdir($iconDir)) {
-								if (strpos($filename,'.')===0) { continue; }
-								$files[$filename] = $fqURLIndex;
-							};
-							closedir($iconDir);
-							$fqURLIndex++;
-						} else {
-							$this->slplus->notifications->add_notice(
-								9,
-								sprintf(
-									__('Could not read icon directory %s','store-locator-le'),
-									$icon['dir']
-								)
-							);
-							$this->slplus->notifications->display();
-						}
-					}
-				}
-				ksort($files);
-				$this->slplus->data['iconselector_files'] = $files;
-				$this->slplus->data['iconselector_urls']  = $fqURL;
-			}
-
-			// Build our icon array now that we have a full file list.
-			//
-			foreach ($files as $filename => $fqURLIndex) {
-				if (
-					(preg_match('/\.(png|gif|jpg)/i', $filename) > 0) &&
-					(preg_match('/shadow\.(png|gif|jpg)/i', $filename) <= 0)
-				) {
-					$htmlStr .=
-						"<div class='slp_icon_selector_box'>".
-						"<img
-	                         	 data-filename='$filename'
-	                        	 class='slp_icon_selector'
-	                             src='".$fqURL[$fqURLIndex].$filename."'
-	                             onclick='".
-						"document.getElementById(\"".$field_id."\").value=this.src;".
-						"document.getElementById(\"".$image_id."\").src=this.src;".
-						"'>".
-						"</div>"
-					;
-				}
-			}
-
-			// Wrap it in a div
-			//
-			if ($htmlStr != '') {
-				$htmlStr = '<div id="'.$field_id.'_icon_row" class="slp_icon_row">'.$htmlStr.'</div>';
-
-			}
-
-
-			return $htmlStr;
 		}
 
 		/**
@@ -149,8 +30,6 @@ if (! class_exists('SLP_Helper')) {
 		 * @return string
 		 */
 		function create_string_wp_setting_error_box( $message, $message_detail = '' ) {
-			if ( empty( $message ) && empty( $message_detail ) ) { return ''; }
-
 			if ( ! empty( $message ) ) {
                 if ( is_array( $message ) ) { $message = '<pre>' . print_r($message,true) . '</pre>'; }
 				$message .= '<br/>';
@@ -184,8 +63,6 @@ if (! class_exists('SLP_Helper')) {
 
 		/**
 		 * Create the bulk actions block for the top-of-table navigation.
-                 * 
-                 * TODO: Remove after  (ES, PRO) are updated.
 		 *
 		 * $params is a named array:
 		 *
@@ -350,25 +227,19 @@ if (! class_exists('SLP_Helper')) {
 		 * @param string $msg     - the message to dislpay
 		 *
 		 * @return string - the HTML
-                 * 
-                 * TODO: Remove when the following legacy interfaces are replaced (ER, ES, EM are legacy/unsupported over time)
-                 * adminui.expereince.CreateInputDiv (ER, ES, EM, PRO)
-                 * direct call from ES (ES)
-                 * this.createstring_DropDownDiv (ES, PRO)
-                 * this.createstring_CheckboxDiv (EM, ES, ELM, PRO, SME, slp adminui.locations) 
 		 */
 		function CreateHelpDiv( $divname, $msg ) {
 			$jqDivName    = str_replace( ']', '\\\\]', str_replace( '[', '\\\\[', $divname ) );
 			$moreInfoText = esc_html( $msg );
 
 			return
-				// "<a class='dashicons dashicons-editor-help slp-no-box-shadow' " .
-				// "onclick=\"jQuery('div#" . SLPLUS_PREFIX . "-help{$jqDivName}').toggle('slow');\" " .
-				// "href=\"javascript:;\" " .
-				// "alt='{$moreInfoText}' title='{$moreInfoText}'" .
-				// '>' .
-				// "</a>" .
-				"<div id='" . SLPLUS_PREFIX . "-help{$divname}' class='input_note wpcsl_helptext''>" .
+				"<a class='dashicons dashicons-editor-help slp-no-box-shadow' " .
+				"onclick=\"jQuery('div#" . SLPLUS_PREFIX . "-help{$jqDivName}').toggle('slow');\" " .
+				"href=\"javascript:;\" " .
+				"alt='{$moreInfoText}' title='{$moreInfoText}'" .
+				'>' .
+				"</a>" .
+				"<div id='" . SLPLUS_PREFIX . "-help{$divname}' class='input_note wpcsl_helptext' style='display: none;'>" .
 				$msg .
 				"</div>";
 
@@ -393,9 +264,6 @@ if (! class_exists('SLP_Helper')) {
 
 		/**
 		 * Generate the HTML for a checkbox settings interface element.
-                 * 
-                 * TODO: Remove after these are updated (EM, ES, ELM, PRO, SME, slp adminui.locations) 
-                 *
 		 *
 		 * @param string  $boxname     - the name of the checkbox (db option name)
 		 * @param string  $label       - default '', the label to go in front of the checkbox

@@ -15,7 +15,6 @@
  */
 class SLPlus_Activation {
     public  $db_version_on_start = '';
-    public $disabled_experience = false;
 	private $slplus;
 	private $Upgrade;
 
@@ -308,12 +307,12 @@ class SLPlus_Activation {
         $this->install_main_table();
         $this->install_ExtendedDataTables();
         $this->add_splus_roles_and_caps();
-        $this->disable_experience_4_4_02();
 
         // Always update these options
         //
         update_option(SLPLUS_PREFIX . '-db_version'             , SLPLUS_VERSION);
         update_option(SLPLUS_PREFIX . '-installed_base_version' , SLPLUS_VERSION);
+        update_option(SLPLUS_PREFIX . '-theme_lastupdated'      , '2006-10-05'  );
 
         // Fresh install.
         //
@@ -323,26 +322,6 @@ class SLPlus_Activation {
             update_option( SLPLUS_PREFIX . '-options'     , $this->slplus->options );               // Save default options
         }
     }
-
-    /**
-     * Disable experience 4.4.02 during update.
-     */
-    private function disable_experience_4_4_02() {
-        $exp_options = get_option( 'slp-experience' , array() );
-
-        $exp_version = isset( $exp_options['installed_version'] ) ? $exp_options['installed_version'] : null;
-
-        if ( is_null( $exp_version ) ) { return; }
-        if ( version_compare( $exp_version , '4.4.02' , '>' ) ) { return; }
-
-        include_once(ABSPATH . 'wp-admin/includes/plugin.php');
-        if (is_plugin_active('slp-experience/slp-experience.php')) {
-            deactivate_plugins('slp-experience/slp-experience.php');
-        }
-        delete_plugins( array('slp-experience/slp-experience.php') );
-        $this->disabled_experience = true;
-    }
-
 
     /**
      * Updates specific to 3.8.6
@@ -387,3 +366,4 @@ class SLPlus_Activation {
 	
 }
 
+// Dad. Explorer. Rum Lover. Code Geek. Not necessarily in that order.

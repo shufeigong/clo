@@ -12,17 +12,22 @@
  * @copyright 2012-2015 Charleston Software Associates, LLC
  *
  */
-class PluginTheme extends SLPlus_BaseClass_Object {
+class PluginTheme extends SLPlus_BaseClass_Object
+{
     public $admin;
-    public $css_dir;
+    public $css_dir = 'css/';
     private $css_url;
 
     /**
-     * Set some of the defaults.
+     * Theme constructor.
+     *
+     * @param mixed[] $options named array of properties
      */
-    public function initialize() {
-        $this->css_url = SLPLUS_PLUGINURL . '/css/';
-        $this->css_dir = SLPLUS_PLUGINDIR . 'css/';
+    function __construct($options = array()) {
+        parent::__construct($options);
+
+        $this->css_url = SLPLUS_PLUGINURL . '/' . $this->css_dir;
+        $this->css_dir = SLPLUS_PLUGINDIR . $this->css_dir;
     }
 
     /**
@@ -47,10 +52,9 @@ class PluginTheme extends SLPlus_BaseClass_Object {
       * @param boolean $preRendering
       */
     function assign_user_stylesheet($themeFile = '',$preRendering = false) {
-
         // If themefile not passed, fetch from db
         //
-        if ( empty( $themeFile ) ) {
+        if ($themeFile == '') {
             $themeFile = $this->options_nojs['theme'] . '.css';
 
         } else {

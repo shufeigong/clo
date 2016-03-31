@@ -92,10 +92,9 @@
          * Set the theme options.
          */
         set_ThemeOptions: function() {
-            jQuery('.theme_details.active > .theme_option_value').each(
+            jQuery('.theme_details.active > .theme_option > .theme_option_value').each(
                     function(index) {
-                        var field_name = $(this).attr('settings_field');
-                        jQuery('[name="' + field_name + '"]').val($(this).text());
+                        jQuery('[name="' + $(this).attr('settings_field') + '"]').val($(this).text());
                     }
             );
             return false;
@@ -337,7 +336,7 @@
         
         // Info Page , Highlight Plugin News
         //
-        $('#wpcsl-option-how_to_use_sidemenu').click();
+        $('#wpcsl-option-plugin_news_sidemenu').click();
     });
 
 })(jQuery);

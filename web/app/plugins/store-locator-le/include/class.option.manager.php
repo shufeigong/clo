@@ -29,12 +29,58 @@ class SLP_Option_Manager extends SLPlus_BaseClass_Object {
      * @return string
      */
     private function get_string_default( $key ) {
-        $this->slplus->create_object_text_manager();
-        $text_to_return = $this->slplus->text_manager->get_option_default( $key );
-        if ( empty( $text_to_return ) ) {
-            $text_to_return = apply_filters('slp_string_default', '', $key);
+        switch ( $key ) {
+            case 'instructions':
+                $default = __( 'Enter an address or zip code and click the find locations button.' , 'store-locator-le' );
+                break;
+
+            case 'invalid_query_message':
+                $default = __('Store Locator Plus did not send back a valid JSONP response.', 'store-locator-le');
+                break;
+
+            case 'label_directions':
+                $default = __( 'Directions'   , 'store-locator-le' );
+                break;
+
+            case 'label_fax':
+                $default = __( 'Fax'   , 'store-locator-le' );
+                break;
+
+            case 'label_email':
+                $default = __( 'Email'   , 'store-locator-le' );
+                break;
+
+            case 'label_hours':
+                $default =__( 'Hours', 'store-locator-le' );
+                break;
+
+            case 'label_image':
+                $default =__( 'Image', 'store-locator-le' );
+                break;
+
+            case 'label_phone':
+                $default = __( 'Phone'   , 'store-locator-le' );
+                break;
+
+
+            case 'label_website':
+                $default = __( 'Website' , 'store-locator-le' );
+                break;
+
+            default:
+                /**
+                 * FILTER: slp_string_default
+                 *
+                 * @params string value
+                 * @params string key
+                 *
+                 * @return string the gettext default string for this key
+                 */
+                $default = apply_filters( 'slp_string_default' , '' , $key );
+                break;
         }
-        return $text_to_return;
+
+        return $default;
     }
 
     /**
@@ -79,6 +125,13 @@ class SLP_Option_Manager extends SLPlus_BaseClass_Object {
         load_plugin_textdomain( 'store-locator-le', false, plugin_basename( dirname( SLPLUS_PLUGINDIR . 'store-locator-le.php' ) ) . '/languages' );
         $this->option_slug        = SLPLUS_PREFIX . '-options';
         $this->option_nojs_slug   = SLPLUS_PREFIX   . '-options_nojs';
+
+        // FILTER: slp_set_options_needing_translation
+        // gets the options_needing translation array used by the set_ValidOptions and set_ValidOptionsNoJS
+        // methods that interface with WPML
+        // return a modified array of options setting names
+        //
+        $this->slplus->text_string_options = apply_filters('slp_set_options_needing_translation', $this->slplus->text_string_options);
         $this->set_text_string_defaults();
 
         // Set options defaults to values set in property definition above.

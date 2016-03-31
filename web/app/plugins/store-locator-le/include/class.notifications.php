@@ -6,10 +6,8 @@
  *
  * @author Lance Cleveland <lance@charlestonsw.com>
  * @copyright 2013 - 2015 Charleston Software Associates
- * @package SLPlus/Notifications
+ * @package wpCSL/Notifications
  *
- *
- * TODO: Deprecate this  whole thing.   Use the HELPER add_wp_admin_notification method.
  */
 class wpCSL_notifications__slplus {
 

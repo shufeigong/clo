@@ -6,28 +6,60 @@
  * @package StoreLocatorPlus\UI
  * @author Lance Cleveland <lance@charlestonsw.com>
  * @copyright 2012-2015 Charleston Software Associates, LLC
- *
- * @property-read   SLP_RadiusSelector  $legacy_radius_selector     Keeps the legacy code for building the radii drop down and related legacy options out of the mainline code.
- * @property        string              $name                       Name of this module.
- * @property        string[]            $options                    Options for the UI class, needed of registered modules.
- * @property        string[]            $radius_selector_radii      A string array of each radius in the slplus->options['radii'] setting.
  */
-class SLPlus_UI extends SLPlus_BaseClass_Object {
-    private $legacy_radius_selector;
-    public $name;
-    public $options = array( 'installed_version' => SLPLUS_VERSION );
-    public $radius_selector_radii;
+class SLPlus_UI {
 
-    // Run during invocation.
-    //
-    function initialize() {
+    //-------------------------------------
+    // Properties
+    //-------------------------------------
+
+    /**
+     * Name of this module.
+     *
+     * @var string $name
+     */
+    public $name;
+
+    /**
+     * Options for the UI class.  Needed for any registered module.
+     *
+     * @var string[]
+     */
+    public $options = array(
+        'installed_version' => SLPLUS_VERSION
+    );
+    
+    /**
+     * @var \SLPlus
+     */
+    private $slplus;
+
+    //----------------------------------
+    // Methods
+    //----------------------------------
+
+    /**
+     * Instantiate the UI Class.
+     *
+     * @param mixed[] $params
+     */
+    function __construct($params = null) {
         $this->name = 'UI';
+
+        // Do the setting override or initial settings.
+        //
+        if ($params != null) {
+            foreach ($params as $name => $sl_value) {
+                $this->$name = $sl_value;
+            }
+        }
     }
 
     /**
      * Create a search form input div.
      */
     function createstring_InputDiv($fldID=null,$label='',$placeholder='',$hidden=false,$divID=null,$default='') {
+        $this->slplus->debugMP('slp.main','msg',__FUNCTION__,"field ID: {$fldID} label {$label}");
         if ($fldID === null) { return; }
         if ($divID === null) { $divID = $fldID; }
 
@@ -35,13 +67,22 @@ class SLPlus_UI extends SLPlus_BaseClass_Object {
         //
         if ($default     !==''){ $default     = esc_html($default);     }
         if ($placeholder !==''){ $placeholder = esc_html($placeholder); }
-
+        if(ICL_LANGUAGE_CODE=='en'):
         $content =
             ($hidden?'':"<div id='$divID' class='search_item'>") .
                 (($hidden || ($label === '')) ? '' : "<label for='$fldID'>$label</label>") .
-                "<input type='".($hidden?'hidden':'text')."' id='$fldID' name='$fldID' placeholder='$placeholder' size='50' value='$default' />" .
+                "<input type='".($hidden?'hidden':'text')."' id='$fldID' name='$fldID' placeholder='Enter a Town, City, or Postal Code' size='50' value='$default' />" .
             ($hidden?'':"</div>")
             ;
+        elseif(ICL_LANGUAGE_CODE=='fr'):
+        $content =
+        ($hidden?'':"<div id='$divID' class='search_item'>") .
+        (($hidden || ($label === '')) ? '' : "<label for='$fldID'>$label</label>") .
+        "<input type='".($hidden?'hidden':'text')."' id='$fldID' name='$fldID' placeholder='Enter a Town, City, or Postal Code' size='50' value='$default' />" .
+        ($hidden?'':"</div>")
+        ;
+        
+        endif;
         return $content;
     }
 
@@ -49,6 +90,7 @@ class SLPlus_UI extends SLPlus_BaseClass_Object {
      * Output the search form based on the search results layout.
      */
     function createstring_SearchForm() {
+        $this->slplus->debugMP('slp.main','msg',get_class().'::'.__FUNCTION__);
         if ( $this->slplus->is_CheckTrue( $this->slplus->options['hide_search_form'] ) ) { return ''; }
         
         // Register our custom shortcodes
@@ -185,74 +227,32 @@ class SLPlus_UI extends SLPlus_BaseClass_Object {
     /**
      * Create the default search radius div.
      */
-    public function create_string_radius_selector_div() {
-        $HTML =
-            "<div id='addy_in_radius'>".
+    private function create_DefaultSearchDiv_Radius() {
+        // This is the old-school/bad way of doing this,
+        // this option is only set with the ES plugin... this should
+        // never have lived here, but for legacy support needs to remain (for now)
+        //
+        // TODO: deprecate this which will break very old versions of SLP:ES (pre 4.2)
+        // move this using the slp_change_ui_radius_selector filter.
+        //
+        if ( ! $this->slplus->is_CheckTrue( get_option(SLPLUS_PREFIX.'_hide_radius_selections',0 ) ) ) {
+            $HTML =
+                "<div id='addy_in_radius'>".
                 "<label for='radiusSelect'>".
                 $this->slplus->WPML->get_text('sl_radius_label', get_option('sl_radius_label',__('Within','store-locator-le'))).
                 '</label>'.
-                 $this->create_string_radius_selector() .
-            "</div>"
-        ;
+                "<select id='radiusSelect'>".$this->slplus->data['radius_options'].'</select>'.
+                "</div>"
+            ;
+        } else {
+            $HTML = $this->slplus->data['radius_options'];
+        }
 
-        /**
-         * FILTER: slp_change_ui_radius_selector
-         *
-         * Augment the HTML for the radius selector.
-         *
-         * @params string $HTML the current HTML
-         * @return string       the modified HTML
-         */
+        // FILTER: slp_change_ui_radius_selector
+        //
         return apply_filters( 'slp_change_ui_radius_selector' , $HTML ) ;
     }
 
-    /**
-     * Build the radius selector string.
-     *
-     * @return string
-     */
-    public function create_string_radius_selector() {
-        return "<select id='radiusSelect'>". $this->create_string_radius_selector_options() . '</select>';
-    }
-
-    /**
-     * Create the options HTML for the radius select string.
-     * @return string
-     */
-    public function create_string_radius_selector_options() {
-        $options_html = '';
-        $default_radius = $this->find_default_radius();
-        $this->set_radius_selector_radii();
-        foreach ( $this->radius_selector_radii as $radius ) {
-            $selected = ( $radius === $default_radius ) ? " selected='selected' " : '';
-            $options_html .= "<option value='$radius' $selected>$radius ".$this->slplus->options['distance_unit']."</option>";
-        }
-        return $options_html;
-    }
-
-    /**
-     * Find the default radius in the radii string.
-     *
-     * It is wrappped with () or the first/only entry in a comma-separated list.
-     *
-     * @return string
-     */
-    public function find_default_radius() {
-        preg_match( '/\((.*?)\)/' , $this->slplus->options['radii'] , $selectedRadius );
-        if ( isset( $selectedRadius[1] ) ) { return preg_replace( '/[^0-9\.]/', '' , $selectedRadius[1] ); }
-        $this->set_radius_selector_radii();
-        return $this->radius_selector_radii[0];
-    }
-
-    /**
-     * Set the radius_selector_radii array.
-     */
-    private function set_radius_selector_radii() {
-        if ( ! isset( $this->radius_selector_radii ) ) {
-            $radii = explode( "," ,  preg_replace( '/[^0-9\.\,]/' , '', $this->slplus->options['radii'] )  );
-            $this->radius_selector_radii = is_array( $radii ) ? $radii : (array) $radii;
-        }
-    }
 
     /**
      * Create the default search submit div.
@@ -260,15 +260,20 @@ class SLPlus_UI extends SLPlus_BaseClass_Object {
      * If we are not hiding the submit button.
      */
     private function create_DefaultSearchDiv_Submit() {
+        $this->slplus->debugMP('msg',__FUNCTION__);
         if (get_option(SLPLUS_PREFIX.'_disable_search') == 0) {
-            $button_style = 'type="submit" class="slp_ui_button"';
+        	
+        	$src=get_stylesheet_directory_uri().'/dist/img/search_icon.svg';
+            $button_style = 'type="image" class="slp_ui_button" src="'.$src.'"';
+
+            // TODO: find_button_label get_option should move to Enhanced Search
             return
                 "<div id='radius_in_submit'>".
                     "<input $button_style " .
                         "value='".
                             $this->slplus->WPML->get_text(
                                 'find_button_label',
-                                $this->get_find_button_text() ,
+                                get_option(SLPLUS_PREFIX.'_find_button_label', __( 'Find Locations' , 'store-locator-le' ) ),
                                 'store-locator-le'
                             ) .
                         "' ".
@@ -278,26 +283,6 @@ class SLPlus_UI extends SLPlus_BaseClass_Object {
         }
 
         return '';
-    }
-
-    /**
-     * Retrive the proper find button default text.
-     */
-    private function get_find_button_text() {
-        $this->slplus->create_object_text_manager();
-        $find_label = $this->slplus->text_manager->get_option_default( 'label_for_find_button' );
-
-        if ( $this->slplus->is_AddonActive( 'slp-enhanced-search' ) ) {
-            $find_label = get_option(SLPLUS_PREFIX . '_find_button_label', $find_label);
-        }
-
-        /**
-         * FILTER: slp_find_button_text
-         *
-         * @param   string      current_setting     The current find button text.
-         * @return  string                          The revised find button text.
-         */
-        return apply_filters( 'slp_find_button_text' , $find_label );
     }
 
     /**
@@ -318,7 +303,7 @@ class SLPlus_UI extends SLPlus_BaseClass_Object {
                         "<td id='search_form_table_cell' valign='top'>".
                             "<div id='address_search'>".
             $this->createstring_DefaultSearchDiv_Address() .
-            $this->create_string_radius_selector_div()  .
+            $this->create_DefaultSearchDiv_Radius()  .
             $this->create_DefaultSearchDiv_Submit()  .
             '</div></td></tr></tbody></table></form>'
             ;
@@ -400,7 +385,7 @@ class SLPlus_UI extends SLPlus_BaseClass_Object {
                 case 'dropdown_with_label':
                     switch ($value) {
                         case 'radius':
-                            return $this->create_string_radius_selector_div();
+                            return $this->create_DefaultSearchDiv_Radius();
                             break;
 
                         default:
@@ -526,12 +511,7 @@ class SLPlus_UI extends SLPlus_BaseClass_Object {
             wp_enqueue_script( 'csl_script' );
             $this->setup_stylesheet_for_slplus( $attributes['theme'] );
         }
-
-         // Only need this for legacy Widget Pack / Enhanced Search
-         //
-         if ( $this->slplus->is_AddonActive( 'slp-widget' ) || $this->slplus->is_AddonActive( 'slp-enhanced-search' ) ) {
-             $this->set_RadiusOptions();
-         }
+        $this->set_RadiusOptions();
 
         // Map Actions
         //
@@ -563,6 +543,7 @@ class SLPlus_UI extends SLPlus_BaseClass_Object {
         
         // FILTER: slp_layout
         //
+        $this->slplus->debugMP('slp.main','pr','',$this->slplus->options);
         $HTML = do_shortcode(apply_filters('slp_layout',$this->slplus->defaults['layout']));
         
         // Remove Shortcodes Not Used Outside Of Here
@@ -638,74 +619,59 @@ class SLPlus_UI extends SLPlus_BaseClass_Object {
         //
         $this->slplus->options['map_center'] = $this->set_MapCenter();
 
+	    // Environment
+	    //
+	    $this->slplus->createobject_AddOnManager();
+	    $environment['addons'] = $this->slplus->add_ons->get_versions();
+        $environment['slp'] = SLPLUS_VERSION;
+
+        add_filter( 'slp_js_options'    , array( $this , 'add_to_js_options') );
+
         // Lets get some variables into our script.
         // "Higher Level" JS Options are those noted below.
         //
-        // TODO: What are these?  Can they move?
+        // TODO: ALL of these options should go inside the options property other than plugin_url, core_url, and environment.
         //
         $scriptData = array(
+            'plugin_url'        => SLPLUS_PLUGINURL,
+            'disable_scroll'    => (get_option(SLPLUS_PREFIX.'_disable_scrollwheel')==1),
+            'map_3dcontrol'     => (get_option(SLPLUS_PREFIX.'_disable_largemapcontrol3d')==0),
             'map_home_sizew'    => $this->slplus->data['home_size'][0],
             'map_home_sizeh'    => $this->slplus->data['home_size'][1],
             'map_end_sizew'     => $this->slplus->data['end_size'][0],
             'map_end_sizeh'     => $this->slplus->data['end_size'][1],
-            );
-        
-        $this->slplus->options['results_layout'] = $this->set_ResultsLayout( false , true );
+            'map_scalectrl'     => (get_option(SLPLUS_PREFIX.'_disable_scalecontrol'  )==0),
+            'map_typectrl'      => (get_option(SLPLUS_PREFIX.'_disable_maptypecontrol')==0),
+            'msg_noresults'     => $this->slplus->get_item('message_noresultsfound','No results found.','_'),
+            'results_string'    => $this->set_ResultsLayout( false ),
+            'overview_ctrl'     => get_option('sl_map_overview_control',0),
 
-        /**
-         * FILTER: slp_js_options
-         * 
-         * Extend the options available in the slp.js file in the options attribute.
-         * 
-         * @param   array $options  The current settings (options) saved by the user for the plugin.
-         * @return  array           A modified or extended options array.
-         */
-        add_filter( 'slp_js_options' , array( $this , 'add_to_js_options') );
-        $scriptData['options'       ] = apply_filters( 'slp_js_options'     , $this->slplus->options);
+	        'environment'       => apply_filters( 'slp_js_environment' , $environment ) ,
+
+            // FILTER: slp_js_options
+            'options'           => apply_filters('slp_js_options',$this->slplus->options)
+            );
 
         remove_shortcode('slp_location');
 
-        // Set the environment data
+        // AJAX URL Stuff
         //
-        $this->slplus->createobject_AddOnManager();
-        $environment['addons'] = $this->slplus->add_ons->get_versions();
-        $environment['slp'] = SLPLUS_VERSION;
-
-        /**
-         * FILTER: slp_js_environment
-         */
-        $scriptData['environment'   ] = apply_filters( 'slp_js_environment' , $environment          ) ;
-
-        // AJAX and URL Data
-        //
-        $scriptData['plugin_url'    ] = SLPLUS_PLUGINURL;
-        $scriptData['ajaxurl'       ] = admin_url('admin-ajax.php');
-        $scriptData['nonce'         ] = wp_create_nonce('em');
+        $scriptData['ajaxurl']  = admin_url('admin-ajax.php');
+        $scriptData['nonce']    = wp_create_nonce('em');
 
         wp_localize_script('csl_script' ,'slplus'   , $scriptData);
 
     }
-    
+
     /**
      * Show force load option in JS options.
      */
     function add_to_js_options( $options ) {
-
-        $additional_options =
-            array(
-                'force_load_js' => $this->slplus->options_nojs['force_load_js'],
-                'map_region'    => $this->slplus->CountryManager->countries[ $this->slplus->options_nojs['default_country'] ]->cctld
+        return
+            array_merge(
+                $options,
+                array( 'force_load_js' => $this->slplus->options_nojs['force_load_js'] )
             );
-
-        // ONLY do this if EM is enabled (Experience will use the 'map_options' pub/sub in slp.js and userinterface.js
-        //
-        if ( $this->slplus->is_AddonActive( 'slp-enhanced-map' ) ) {
-            $additional_options[ 'map_options_scrollwheel'   ] = ( get_option( SLPLUS_PREFIX.'_disable_scrollwheel'       )==0);
-            $additional_options[ 'map_options_scaleControl'  ] = ( get_option( SLPLUS_PREFIX.'_disable_scalecontrol'      )==0);
-            $additional_options[ 'map_options_mapTypeControl'] = ( get_option( SLPLUS_PREFIX.'_disable_maptypecontrol'    )==0);
-        }
-        
-        return array_merge( $options, $additional_options );
     }
 
 	/**
@@ -714,6 +680,7 @@ class SLPlus_UI extends SLPlus_BaseClass_Object {
 	 * Uses data['sl_map_home_icon'] by default.
 	 */
 	function handleIconAttributes( $data_element, $attribute_element ) {
+		$this->slplus->debugMP('slp.main','pr',get_class().'::'.__FUNCTION__ . ' Checking attribute[' . $attribute_element . '] with data:',$this->slplus->data);
 
 		// Check Settings for $attribute_element
 		//
@@ -761,6 +728,33 @@ class SLPlus_UI extends SLPlus_BaseClass_Object {
     }
 
     /**
+     * Set the plugin data radius options.
+     */
+    function set_RadiusOptions() {
+        $radiusSelections = get_option('sl_map_radii','1,5,10,(25),50,100,200,500');
+
+        // Hide Radius, set the only (or default) radius
+        if ( $this->slplus->is_CheckTrue( get_option(SLPLUS_PREFIX.'_hide_radius_selections',0 ) ) ) {
+            preg_match('/\((.*?)\)/', $radiusSelections, $selectedRadius);
+            $selectedRadius = preg_replace('/[^0-9]/', '', (isset($selectedRadius[1])?$selectedRadius[1]:$radiusSelections));
+            if (empty($selectedRadius) || ($selectedRadius <= 0)) { $selectedRadius = '2500'; }
+            $this->slplus->data['radius_options'] =
+                    "<input type='hidden' id='radiusSelect' name='radiusSelect' value='$selectedRadius'>";
+
+        // Build Pulldown
+        } else {
+            $radiusSelectionArray  = explode(",",$radiusSelections);
+            $this->slplus->data['radius_options'] = '';
+            foreach ($radiusSelectionArray as $radius) {
+                $selected=(preg_match('/\(.*\)/', $radius))? " selected='selected' " : "" ;
+                $radius=preg_replace('/[^0-9\.]/', '', $radius);
+                $this->slplus->data['radius_options'].=
+                        "<option value='$radius' $selected>$radius ".$this->slplus->options['distance_unit']."</option>";
+            }
+        }
+    }
+
+    /**
      * Set the results layout string.
      *
      * @param bool $add_shortcode set to false if doing your own slp_location shortcode handling.
@@ -773,15 +767,6 @@ class SLPlus_UI extends SLPlus_BaseClass_Object {
             add_shortcode('slp_location',array($this,'process_slp_location_Shortcode'));
         }
 
-        /**
-         * FILTER: slp_javascript_results_string
-         * 
-         * Sets or modifies the default results layout string.
-         * 
-         * @param   string  $default_layout     The default layout from slplus->defaults['resultslayout']
-         * 
-         * @return  string                      The modified default layout.
-         */
         $results_layout = apply_filters('slp_javascript_results_string',$this->slplus->defaults['resultslayout']);
 
         if ( ! $raw ) {
@@ -799,20 +784,7 @@ class SLPlus_UI extends SLPlus_BaseClass_Object {
             remove_shortcode('slp_location');
         }
 
-        add_shortcode( 'slp_addon' , array( $this, 'remove_slp_addon_shortcodes' ) );
-        $results_layout = do_shortcode( $results_layout );
-        remove_shortcode( 'slp_addon' );
-        
         return $results_layout;
-    }
-    
-    /**
-     * Remove the [slp_addon ...] shortcodes from results layout.
-     * 
-     * @return string
-     */
-    function remove_slp_addon_shortcodes() {
-        return '';
     }
 
     /**
@@ -942,21 +914,6 @@ class SLPlus_UI extends SLPlus_BaseClass_Object {
      // DEPRECATED
      //------------------------------------------------------------------------
 
-    /**
-     * Set the plugin data radius options.  Deprecated.
-     *
-     * Kept here for legacy support of Widgets and Enhanced Search
-     *
-     * @deprecated 4.4
-     */
-    function set_RadiusOptions() {
-        if ( ! isset( $this->legacy_radius_selector ) ) {
-            require_once( 'legacy/class.radius_selector.php' );
-            $this->legacy_radius_selector = new SLP_RadiusSelector();
-        }
-        $this->legacy_radius_selector->create_html();
-    }
-
      /**
       * Do not use, deprecated.
       *
@@ -1001,4 +958,5 @@ class SLPlus_UI extends SLPlus_BaseClass_Object {
 	function ShortcodeOrSettingEnabled( $a = null, $b = null, $c = null, $d = null, $e = null, $f = null ) {
 		$this->slplus->helper->create_string_wp_setting_error_box( $this->slplus->createstring_Deprecated( __FUNCTION__ ) );
 	}
+
 }

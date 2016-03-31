@@ -263,9 +263,13 @@ var slp_Map = function (aMapCanvas) {
 
     //slplus options
     this.usingSensor = false;
+    this.disableScroll = null;
     this.mapHomeIconUrl = null;
     this.mapEndIconUrl = null;
+    this.mapScaleControl = null;
     this.mapType = null;
+    this.mapTypeControl = null;
+    this.overviewControl = null;
 
     //gmap set variables
     this.options = null;
@@ -298,8 +302,12 @@ var slp_Map = function (aMapCanvas) {
 
         if (typeof slplus !== 'undefined') {
             this.mapType = slplus.options.map_type;
+            this.disableScroll = !!slplus.disable_scroll;
             this.mapHomeIconUrl = slplus.options.map_home_icon;
             this.mapEndIconUrl = slplus.options.map_end_icon;
+            this.mapScaleControl = !!slplus.map_scalectrl;
+            this.mapTypeControl = !!slplus.map_typectrl;
+            this.overviewControl = !!(parseInt(slplus.overview_ctrl));
 
             // Setup address
             // Use the entry form value if set, otherwise use the country
@@ -331,20 +339,19 @@ var slp_Map = function (aMapCanvas) {
         if (this.gmap === null) {
             this.options = {
                 center: center,
+
+                mapTypeControl: this.mapTypeControl,
                 mapTypeId: this.mapType,
+
+                overviewMapControl: this.overviewControl,
+                overviewMapControlOptions: {opened: this.overviewControl},
+
+                scaleControl: this.mapScaleControl,
+                scrollwheel: !this.disableScroll,
+
                 minZoom: 1,
                 zoom: parseInt(slplus.options.zoom_level),
             };
-
-            // TODO: Remove this when legacy Enhanced Maps support is no longer needed/desired.
-            //
-            if ( typeof slplus.options.map_options_scrollwheel    !== 'undefined' ) { this.options['scrollwheel']    = slplus.options.map_options_scrollwheel;    }
-            if ( typeof slplus.options.map_options_mapTypeControl !== 'undefined' ) { this.options['mapTypeControl'] = slplus.options.map_options_mapTypeControl; }
-            if ( typeof slplus.options.map_options_scaleControl   !== 'undefined' ) {
-                this.options['scaleControl']   = slplus.options.map_options_scaleControl;
-            } else {
-                this.options['scaleControl']   = true;
-            }
 
             if ( slplus.options.google_map_style ) {
                 jQuery.extend( this.options , { styles: JSON.parse( slplus.options.google_map_style) } );
@@ -505,7 +512,7 @@ var slp_Map = function (aMapCanvas) {
         var markerCount = (markerListNatural) ? markerListNatural.length : 0;
         if (markerCount === 0) {
             if ( this.homePoint ) { this.gmap.panTo(this.homePoint); }
-            document.getElementById('map_sidebar').innerHTML = '<div class="no_results_found"><h2>' + slplus.options.message_no_results + '</h2></div>';
+            document.getElementById('map_sidebar').innerHTML = '<div class="no_results_found"><h2>' + slplus.msg_noresults + '</h2></div>';
 
             // Results Processing
             //
@@ -616,16 +623,7 @@ var slp_Map = function (aMapCanvas) {
      * @param marker    the marker on the map where the bubble will be anchored
      */
     this.show_map_bubble = function (infoData, marker) {
-        this.options = {
-            show_bubble: slplus.options.hide_bubble !== '1'
-        };
-
-        // FILTER: map_options
-        // Manipulate the Google map options and SLP info bubble option.
-        //
-        slp_Filter( 'map_options' ).publish( this.options );
-
-        if ( this.options.show_bubble ) {
+        if ( slplus.options.hide_bubble !== '1' ) {
             this.infowindow.setContent(this.createMarkerContent(infoData));
             this.infowindow.open(this.gmap, marker.__gmarker);
         }
@@ -644,7 +642,6 @@ var slp_Map = function (aMapCanvas) {
          */
         var geocoder_request = new Object();
         geocoder_request['address'] = _this.address;
-        geocoder_request['region']  = ( typeof slplus.options.map_region !== 'undefined' ) ? slplus.options.map_region : 'us';
 
         // TODO: (ES) move this into the observer pattern
         //
@@ -873,17 +870,6 @@ var slp_Map = function (aMapCanvas) {
         if ( valid_response ) {
             cslmap.latest_response = response;
             cslmap.clearMarkers();
-            
-            /**
-             * FILTER: locations_found
-             * 
-             * Manipulate the marker list returned from the backend.
-             * 
-             * @param   object   response.response   a list of map markers in an ordinal array (pass by reference)
-             * @return  object                       the modified array
-             */
-            slp_Filter( 'locations_found' ).publish( response.response );
-        
             cslmap.putMarkers( response.response );
 
             /**
@@ -912,8 +898,6 @@ var slp_Map = function (aMapCanvas) {
      * parameters:
      *        none
      * returns: none
-     * 
-     * TODO: This appears to be defunct, no longer called/used.
      */
     this.tagFilter = function () {
 
@@ -1011,7 +995,28 @@ var slp_Map = function (aMapCanvas) {
          * Create and entry in the results table for this location.
          */
         var inner_html = {
-            'content': slplus.options.results_layout.replace_shortcodes(aMarker),
+            'content': slplus.results_string.replace_placeholders(
+                    aMarker.name,
+                    parseFloat(aMarker.distance).toFixed(1),
+                    slplus.distance_unit,
+                    aMarker.address,
+                    aMarker.address2,
+                    aMarker.city_state_zip,
+                    aMarker.phone_with_label,
+                    aMarker.fax_with_label,
+                    aMarker.web_link,
+                    aMarker.email_link,
+                    slplus.options.map_domain,
+                    aMarker.search_address,
+                    aMarker.location_address,
+                    slplus.options['label_directions'],
+                    aMarker.pro_tags,
+                    aMarker.id,
+                    aMarker.country,
+                    aMarker.hours_sanitized,
+                    aMarker
+                    ).
+                    replace_shortcodes(aMarker),
 
             'finished': false
         };
@@ -1063,7 +1068,7 @@ slp.topics = {};
 /**
  * Set various functions and methods to help manage the map.
  *
- * @returns {undefined}
+ * @returns {undefined}s
  */
 slp.setup_helpers=  function() {
 
@@ -1116,18 +1121,16 @@ slp.setup_helpers=  function() {
                                 var dot_notation_regex = /(\w+)/gi;
                                 var data_parts = attribute.match( dot_notation_regex );
                                 var marker_array_name = data_parts[0];
-                                if ( ! thisMarker[marker_array_name] ) { return ''; }
                                 var marker_array_field = data_parts[1];
                                 value = thisMarker[marker_array_name][marker_array_field];
-                                if ( ! value ) { return ''; }
-                                field_name = marker_array_name + '_' + marker_array_field;                                
+                                field_name = marker_array_name + '_' + marker_array_field;
 
                             // Output NOTHING if attribute is empty
                             //
                             } else {
                                 return '';
                             }
-                            
+
                             var output = value.shortcode_modifier( { 'modifier': modifier, 'modarg': modarg , 'field_name': field_name , 'marker': thisMarker } );
                             if ( modifier2 ) {
                                 output = output.shortcode_modifier( { 'modifier': modifier2, 'modarg': modarg2 , 'field_name': field_name, 'marker': thisMarker  } );
@@ -1176,10 +1179,6 @@ slp.setup_helpers=  function() {
                             }
                             return output;
 
-                        // SLP_ADDON gets stripped out
-                        case 'slp_addon':
-                            return '';
-
                         // Unknown Shortcode
                         //
                         default:
@@ -1216,8 +1215,7 @@ slp.setup_helpers=  function() {
 
             // Modifier Processing
             //
-            if ( modifier ) {
-                switch (modifier) {
+            switch (modifier) {
 
                 // MODIFIER: ifset
                 // if the marker attribute specified by modarg is empty, don't output anything.
@@ -1322,7 +1320,6 @@ slp.setup_helpers=  function() {
                 default:
                     break;
             }
-            }
 
             var newOutput =
                 (raw_output) ?
@@ -1331,6 +1328,49 @@ slp.setup_helpers=  function() {
 
             return prefix + newOutput + suffix;
         }
+
+        /**
+         * String Formatting, JavaScript sprintf
+         *
+         * The original shortcode replacement for results using {#} placeholders.
+         *
+         * @returns {String.prototype@call;replace}
+         */
+        String.prototype.replace_placeholders = function () {
+            var args = arguments;
+            return this.replace(
+                /{(\d+)(\.(\w+)\.?(\w+)?)?}/g,
+                function (match, number, dotsubname, subname, subsubname) {
+
+                    // aMarker[#] is defined
+                    return typeof args[number] !== 'undefined'
+
+                        // aMarker[#] is not a complex object - just return the value of that field number
+                        //
+                        ? typeof args[number] !== 'object'
+                        ? args[number]
+
+                        // aMarker[#] is a complex oject,
+                        // check aMarker[#][subname] to see if it is an object, if not just return the value we find there
+                        //
+                        : typeof args[number][subname] !== 'object'
+                        ? typeof args[number][subname] !== 'undefined' ? args[number][subname] : ''
+
+                        // aMarker[#][subname] is a complex oject,
+                        // check aMarker[#][subname][subsubname] to see if it is an object, if not just return the value we find there
+                        //
+                        : (args[number][subname] !== null)
+                        ? typeof args[number][subname][subsubname] !== 'undefined' ? args[number][subname][subsubname] : ''
+
+                        // Ran out of possibilities, just return an empty string.
+                        //
+                        : ''
+
+                        // aMarker[#] not defined, return blank
+                        : ''
+                        ;
+                });
+        };
     };
 
 /**
@@ -1398,7 +1438,8 @@ slp.setup_map = function () {
         // If the page uses [slplus id="<location_id>"]
         // use that location ID lat/long as the center of the map.
         //
-        // TODO: since this is already a lat/long, this should call LoadMarkers() directly and bypass the GeoCoder.
+        // TODO: since this is already a lat/long, this should NOT run geocoding services.  It will be a LOT faster that way.
+        // TODO: will need to split apart doGeocode() to be geocoding only, and have a separate "draw map" function.
         //
         if (slplus.options.id_addr != null) {
             cslmap.address = slplus.options.id_addr;
@@ -1421,6 +1462,9 @@ slp.setup_map = function () {
  * @param callback
  */
 slp.send_ajax = function (action, callback) {
+    if (window.location.protocol !== slplus.ajaxurl.substring(0, slplus.ajaxurl.indexOf(':') + 1)) {
+        slplus.ajaxurl = slplus.ajaxurl.replace(slplus.ajaxurl.substring(0, slplus.ajaxurl.indexOf(':') + 1), window.location.protocol);
+    }
     jQuery.post(
         slplus.ajaxurl,
         action,
@@ -1447,11 +1491,6 @@ slp.send_ajax = function (action, callback) {
  */
 jQuery(document).ready(
     function () {
-        if ( typeof slplus !== 'undefined' ) {
-            if (window.location.protocol !== slplus.ajaxurl.substring(0, slplus.ajaxurl.indexOf(':') + 1)) {
-                slplus.ajaxurl = slplus.ajaxurl.replace(slplus.ajaxurl.substring(0, slplus.ajaxurl.indexOf(':') + 1), window.location.protocol);
-            }
-        }
 
         // Regular Expression Test Patterns
         //
