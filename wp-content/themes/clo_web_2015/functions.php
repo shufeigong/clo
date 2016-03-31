@@ -1,19 +1,5 @@
 <?php
-/**
- * Author: Ole Fredrik Lie
- * URL: http://olefredrik.com
- *
- * FoundationPress functions and definitions
- *
- * Set up the theme and provides some helper functions, which are used in the
- * theme as custom template tags. Others are attached to action and filter
- * hooks in WordPress to change core functionality.
- *
- * @link https://codex.wordpress.org/Theme_Development
- * @package WordPress
- * @subpackage FoundationPress
- * @since FoundationPress 1.0.0
- */
+require_once(__DIR__ . '/vendor/autoload.php');
 
 /** Register all navigation menus */
 require_once('library/navigation.php');
@@ -38,11 +24,3 @@ function remove_default_post_type()
 {
     remove_menu_page('edit.php');
 }
-
-add_filter(
-    'json_prepare_post',
-    function ($data, $post, $context) {
-//        $data['content'] = $post['post_content'];
-        return $data;
-    }, 10, 3
-);
