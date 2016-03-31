@@ -538,6 +538,3 @@ function get_posts_with_fallback(array $args)
 
     return $posts;
 }
-
-
-?>

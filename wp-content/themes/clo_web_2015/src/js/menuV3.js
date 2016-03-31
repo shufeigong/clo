@@ -1,5 +1,4 @@
 function pageLoad(linkSplit, basicItems) {
-  console.log(linkSplit);
   if (linkSplit != '') {
     if ($.inArray(linkSplit[1], basicItems) != -1 && (location.hash == '' || location.hash == '#main-content')) {//basic item, hash is empty or main-content
       if ($(window).width() < 641) {
@@ -60,7 +59,10 @@ function pageLoad(linkSplit, basicItems) {
           alert("error");
         });
     }
-    else if (linkSplit[1] != '' && $.inArray(linkSplit[1], basicItems) == -1 && location.hash == '' && $("article").hasClass("page")) {//utility menu item or other pages, but exclude post type
+    /**
+     * utility menu item or other pages, but exclude post type
+     */
+    else if (linkSplit[1] != '' && $.inArray(linkSplit[1], basicItems) == -1 && location.hash == '' && $("article").hasClass("page")) {
       $.get("/wp-json/wp/v2/pages/?slug=" + linkSplit[1], function(response) {
         })
         .done(function(response) {
@@ -82,7 +84,10 @@ function pageLoad(linkSplit, basicItems) {
           locationMap();
         });
     }
-    else if (linkSplit[1] == '') {//home page, no /
+    /**
+     * For home page english
+     */
+    else if (linkSplit[1] == '') {
       if ($(".menu-main-menu-container").length > 0) {
         $.get("/wp-json/wp/v2/pages/?slug=home", function(response) {
           })
@@ -111,8 +116,10 @@ function pageLoad(linkSplit, basicItems) {
           });
       }
       else {
-        //accueil
-        $.get("/wp-json/wp/v2/pages/?slug=accueil", function(response) {
+        /**
+         * For french home page menu move
+         */
+        $.get("/wp-json/wp/v2/pages/?slug=accueil&lang=fr", function(response) {
           })
           .done(function(response) {
             var content = response[0].content.rendered;
@@ -221,8 +228,9 @@ function grabPage(pageId) {
 }
 
 function grabSubMenu(itemId) {
+  var url = window.icl_lang == 'en' ? '/wp-json/wp-api-menus/v2/menus' : '/wp-json/wp-api-menus/v2/menus?lang=fr';
   if (menuContainer == false) {
-    $.get("/wp-json/wp-api-menus/v2/menus", function(response) {
+    $.get(url, function(response) {
       })
       .done(function(response) {
         menuContainer = response;
@@ -445,7 +453,6 @@ function contentToggle(id) {
   else {
     id.text = "[ + ]";
   }
-
 }
 
 function itemClick(itemId) {
@@ -464,7 +471,6 @@ function itemClick(itemId) {
   grabPage(itemId);     //grab page according to itemId
 
   $(".menu-item-language:last a").attr("href", $("#" + itemId).attr("otherurl"));
-
 }
 
 function pageRefresh(itemId) {
@@ -486,31 +492,24 @@ function createMenu(menuUrl) {
   $.get(menuUrl, function(response) {
     })
     .done(function(response) {
-
+      console.log(response);
       for (var i = 0; i < response.items.length; i++) {
+        // Top level menu
         if (response.items[i].parent == 0) {
           var id = response.items[i].url.split('/')[3].split('?')[0];
           basicItems.push(id);
           itemFlagArr[id] = false;
 
-          $("#" + id).bind({
-              mouseenter: function() {
-              },
-              mouseleave: function() {
-              }
-            })
+          $("#" + id)
             .bind("click", {
               id: id
             }, function(e) {
               itemClick(e.data.id);
-            })
-            .bind("mousedown", function() {
-            })
-            .bind("mouseup", function() {
             });
         }
       }
 
+      console.log(linkSplit);
       pageLoad(linkSplit, basicItems);
       window.addEventListener('popstate', function(e) {
         var linkSplit = location.pathname.split('/');
@@ -526,20 +525,35 @@ function createMenu(menuUrl) {
     });
 }
 
+function replaceLangParameter(url) {
+  var result = '';
+  if(window.icl_lang == 'fr') {
+    result = url.replace('?lang=fr', '');
+    result += '?lang=fr';
+  } else {
+    result = url;
+  }
+
+  return result;
+
+}
+
 function bindEvent() {
-  $.get("/wp-json/wp-api-menus/v2/menus", function(response) {
+  var url = window.icl_lang == 'en' ? '/wp-json/wp-api-menus/v2/menus' : '/wp-json/wp-api-menus/v2/menus?lang=fr';
+  $.get(url, function(response) {
     })
     .done(function(response) {
       for (var i = 0; i < response.length; i++) {
-        if (response[i].slug == 'main-menu' && $(".menu-main-menu-container").length > 0) {
-          createMenu(response[i].meta.links.self);
+        //if (response[i].slug == 'main-menu' && $(".menu-main-menu-container").length > 0) {
+          createMenu(replaceLangParameter(response[i].meta.links.self));
           break;
-        }
-
-        if (response[i].slug == 'main-menu-french' && $(".menu-main-menu-french-container").length > 0) {
-          createMenu(response[i].meta.links.self + '?lang=fr');
-          break;
-        }
+          //break;
+        //}
+        //
+        //if (response[i].slug == 'main-menu-french' && $(".menu-main-menu-french-container").length > 0) {
+        //  createMenu(response[i].meta.links.self + '?lang=fr');
+        //  break;
+        //}
       }
     })
     .fail(function() {
@@ -553,6 +567,7 @@ function init() {
 
 $(document).ready(function() {
   init();
+
   $("#skiplinks").children("a").click(function(e) {
     if ($(this).html() == "Skip to content" || $(this).html() == "Aller au contenu") {
       return false;
@@ -731,7 +746,6 @@ function locationMap() {
     var url = "/locationmapfr"; //
     var myWindow = window.open(url, "MsgWindow", "width=650, height=800, scrollbars=yes");
   });
-
 }
 
 function mapToggle(thislocation) {

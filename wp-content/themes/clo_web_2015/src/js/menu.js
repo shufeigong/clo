@@ -1,4 +1,5 @@
 function pageLoad(linkSplit, basicItems) {
+
     if (linkSplit != '') {
         if ($.inArray(linkSplit[1], basicItems) != -1 && (location.hash == ''||location.hash=='#main-content')) {//basic item, hash is empty or main-content
         	
@@ -593,6 +594,7 @@ function timeline()
 function album()
 {
 	$.album_bind({ showbtnid: "album_show"});
+	//$(".imgShow").imagefill();
 }
 
 
