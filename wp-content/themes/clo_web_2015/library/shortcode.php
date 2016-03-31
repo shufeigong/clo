@@ -560,6 +560,12 @@ function postlistShortcodeHandler($atts)
         if (count($results) > 0 && $template == "block") {// for animated block
 
             foreach ($results as $post) : setup_postdata($post);
+                $postIdFr = icl_object_id($post->ID, $post->post_type, false, 'fr');
+
+                if ($post->ID == $postIdFr) {
+                    continue;
+                }
+
                 //DCE9F7 0075C9 EFF5DC 82BC00
                 if ($post->post_type == "news" || $post->post_type == "blog" || $post->post_type == "page") {    // for animated block news and blog
                     if (isHomepageNews($post) && isVideoNews($post) && !isButtonPosts($post)) {
@@ -768,6 +774,12 @@ function postlistShortcodeHandler($atts)
         if (count($results) > 0 && $template == "block") {// for animated block
 
             foreach ($results as $post) : setup_postdata($post);
+                $postIdEn = icl_object_id($post->ID, $post->post_type, false, 'en');
+
+                if ($post->ID == $postIdEn) {
+                    continue;
+                }
+
                 //DCE9F7 0075C9 EFF5DC 82BC00
                 if ($post->post_type == "news" || $post->post_type == "blog" || $post->post_type == "page") {             // for animated block news and blog
                     if (isHomepagefrNews($post) && isVideofrNews($post) && !isButtonfrPosts($post)) {

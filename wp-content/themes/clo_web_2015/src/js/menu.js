@@ -1,5 +1,4 @@
 function pageLoad(linkSplit, basicItems) {
-	
     if (linkSplit != '') {
         if ($.inArray(linkSplit[1], basicItems) != -1 && (location.hash == ''||location.hash=='#main-content')) {//basic item, hash is empty or main-content
         	
@@ -12,10 +11,9 @@ function pageLoad(linkSplit, basicItems) {
         	
         	pageRefresh(linkSplit[1]);
         }
-        else if ($.inArray(linkSplit[1], basicItems) != -1 && location.hash != ''&& location.hash!='#main-content') {//not basic item, is subitem in side menu
+        //not basic item, is subitem in side menu
+        else if ($.inArray(linkSplit[1], basicItems) != -1 && location.hash != ''&& location.hash!='#main-content') {
         	
-        	//$("#" + linkSplit[1]).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
-            //$("#" + linkSplit[1]).parent().siblings().children(".menudiv").slideUp();       //close all other pages' submenu
         	$("#" + linkSplit[1]).parent().siblings().children(".overarea").slideUp();
         	grabSubMenu(linkSplit[1]);
         	
@@ -24,18 +22,12 @@ function pageLoad(linkSplit, basicItems) {
                 .always(function(response) {
                     var content = response.content;
 
-                    //$("#" + linkSplit[1]).nextAll(".contentdiv").children(".textdiv").html(content);
-
-                    //$("#" + linkSplit[1]).nextAll(".contentdiv").html("<br/>");
                     $("#" + linkSplit[1]).nextAll(".overarea").children(".contentdiv").html(content);
 
                     $(".entry-content-mobile").html(content);
 
-
-                    //$("#" + linkSplit[1]).nextAll(".contentdiv").slideDown("normal",changeHeight(linkSplit[1]));  //get content down
-                    //$("#" + linkSplit[1]).nextAll(".menudiv").slideDown(); //get submenu down
-
-                    $("#" + linkSplit[1]).nextAll(".overarea").slideDown("normal",changeHeight(linkSplit[1])); //get submenu down 
+                  //get submenu down
+                    $("#" + linkSplit[1]).nextAll(".overarea").slideDown("normal",changeHeight(linkSplit[1]));
                     $("#" + linkSplit[1]).parents('ul').find('li.selected').removeClass('selected');
                     $("#" + linkSplit[1]).parent().addClass('selected');
                     
@@ -142,20 +134,10 @@ function grabPage(pageId) {
             var content = response.content;
             
             itemFlagArr[pageId]=content;
-            //$("#" + pageId).nextAll(".overarea").children(".contentdiv").html("<br/>");
-            //$("#" + pageId).nextAll(".contentdiv").children(".breaddiv").html('<div class="basic"><a href="#" onclick="itemClick(\''+pageId+'\'); return false;" class="breaditem" >'+response.title+'</a></div><div class="rest"></div>');//create the first level breadcrumb menu
-            //$("#" + pageId).nextAll(".contentdiv").children(".textdiv").html(content);
             lastopen=pageId;
             $("#" + pageId).nextAll(".overarea").children(".contentdiv").html(content).parent(".overarea").delay(300).slideDown("normal", changeHeight(pageId));
             $(".entry-content-mobile").html(content);
             
-            //$("#" + pageId).nextAll(".contentdiv").slideDown("normal", changeHeight(pageId));
-            
-            ////$("#" + pageId).nextAll(".overarea").slideDown("normal", changeHeight(pageId));
-           
-
-            //$("#" + pageId).nextAll(".menudiv").slideDown(); //get submenu down
-
             $("#" + pageId).parents('ul').find('li.selected').removeClass('selected');
             $("#" + pageId).parent().addClass('selected');
 
@@ -181,22 +163,12 @@ function grabPage(pageId) {
         alert("error");
     });
     }else{
-    	 //var content = response.content;
-         //itemFlagArr[pageId]=content;
-         //$("#" + pageId).nextAll(".overarea").children(".contentdiv").html("<br/>");
-         //$("#" + pageId).nextAll(".contentdiv").children(".breaddiv").html('<div class="basic"><a href="#" onclick="itemClick(\''+pageId+'\'); return false;" class="breaditem" >'+response.title+'</a></div><div class="rest"></div>');//create the first level breadcrumb menu
-         //$("#" + pageId).nextAll(".contentdiv").children(".textdiv").html(content);
          if(lastopen!=pageId){
          lastopen=pageId;	 
          $("#" + pageId).nextAll(".overarea").children(".contentdiv").html(itemFlagArr[pageId]);
          $(".entry-content-mobile").html(itemFlagArr[pageId]);
          
-             //$("#" + pageId).nextAll(".contentdiv").slideDown("normal", changeHeight(pageId));
          $("#" + pageId).nextAll(".overarea").slideUp().delay(300).slideDown("normal", changeHeight(pageId));
-         
-         
-
-         //$("#" + pageId).nextAll(".menudiv").slideDown(); //get submenu down
 
          $("#" + pageId).parents('ul').find('li.selected').removeClass('selected');
          $("#" + pageId).parent().addClass('selected');
@@ -320,26 +292,8 @@ function displayMenu(itemId, menuUrl) {
 	                $("[slug="+location.hash.substr(1)+"]").parents("ul[slug]").each(function(){
 	                    $(this).parent("li").children("a:first").html("[–]");});
 	
-	                ///////create breadcrumb
-	                //$("#" + itemId).nextAll(".contentdiv").children(".breaddiv").html('<div class="basic"><a href="#" onclick="itemClick(\''+itemId+'\'); return false;" class="breaditem">'+$("#"+itemId).html()+'</a></div><div class="rest"></div>');//create the first level basic layer breadcrumb menu
-	                //var bread="";//create rest
-	                //var parentItems = new Array();
-	                //var parentClicks = new Array();
-	
-	                //$("[slug="+location.hash.substr(1)+"]").parentsUntil(".menudiv","li").each(function(){parentClicks.push($(this).children("a[slug]").attr("onclick"));});//record ancestor's onclick events
-	                //$("[slug="+location.hash.substr(1)+"]").parentsUntil(".menudiv","li").each(function(){parentItems.push($(this).children("a[slug]").html());}); //record ancestor's text
-	
-	                //for(var i=parentItems.length-1; i>=0; i--)
-	                //	bread+='><a href="#" onclick="'+parentClicks[i]+'" class="breaditem">'+parentItems[i]+'</a>';
-	
-	                //$("#" + itemId).nextAll(".contentdiv").children(".breaddiv").children(".rest").html(bread);
-	                /////////////
-	
-	
-	
 	            }
 	
-	            // alert($(itemId).nextAll("menudiv").children("ul").children("li").children("ul").attr("slug"));
 	        })
 	        .fail(function () {
 	        alert("error");
@@ -400,23 +354,6 @@ function displayMenu(itemId, menuUrl) {
              $("[slug="+location.hash.substr(1)+"]").parents("ul[slug]").each(function(){
                  $(this).parent("li").children("a:first").html("[–]");});
 
-             ///////create breadcrumb
-             //$("#" + itemId).nextAll(".contentdiv").children(".breaddiv").html('<div class="basic"><a href="#" onclick="itemClick(\''+itemId+'\'); return false;" class="breaditem">'+$("#"+itemId).html()+'</a></div><div class="rest"></div>');//create the first level basic layer breadcrumb menu
-             //var bread="";//create rest
-             //var parentItems = new Array();
-             //var parentClicks = new Array();
-
-             //$("[slug="+location.hash.substr(1)+"]").parentsUntil(".menudiv","li").each(function(){parentClicks.push($(this).children("a[slug]").attr("onclick"));});//record ancestor's onclick events
-             //$("[slug="+location.hash.substr(1)+"]").parentsUntil(".menudiv","li").each(function(){parentItems.push($(this).children("a[slug]").html());}); //record ancestor's text
-
-             //for(var i=parentItems.length-1; i>=0; i--)
-             //	bread+='><a href="#" onclick="'+parentClicks[i]+'" class="breaditem">'+parentItems[i]+'</a>';
-
-             //$("#" + itemId).nextAll(".contentdiv").children(".breaddiv").children(".rest").html(bread);
-             /////////////
-
-
-
          }
     }
 }
@@ -427,26 +364,9 @@ function change(objectId, itemId, thisid) {
         .done(function(response) {
             var content = response.content;
 
-            //$("#" + itemId).nextAll(".contentdiv").html("<br/>");
             $("#" + itemId).nextAll(".overarea").slideUp("normal", function(){
             	$(this).children(".contentdiv").html(content).parent(".overarea").delay(100).slideDown("normal", changeHeight(itemId));
             
-            ///$("#" + itemId).nextAll(".overarea").slideDown("normal", changeHeight(itemId));//get content down
-            
-            //var bread="";
-            //var parentItems = new Array();
-            //var parentClicks = new Array();
-
-            //$("#"+thisid).parentsUntil(".menudiv","li").each(function(){parentClicks.push($(this).children("a[slug]").attr("onclick"));});
-            //$("#"+thisid).parentsUntil(".menudiv","li").each(function(){parentItems.push($(this).children("a[slug]").html());});
-
-            //for(var i=parentItems.length-1; i>=0; i--)
-            //	bread+='><a href="#" onclick="'+parentClicks[i]+'" class="breaditem">'+parentItems[i]+'</a>';
-
-            //$("#" + itemId).nextAll(".contentdiv").children(".breaddiv").children(".rest").html(bread);
-
-            //$("#" + itemId).nextAll(".contentdiv").children(".textdiv").html(content);
-
             $("#"+thisid).prev().html("[–]");
 
             $(".menudiv").find("a").css("color","");
@@ -506,9 +426,6 @@ function itemClick(itemId) {
     $(".entry-content,.entry-content2,.entry-content2 form").css({"margin":"0px", "min-height":"0"});
     $("#" + itemId).parent().siblings().children(".overarea").slideUp();    //close all other pages
     
-    //$("#" + itemId).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
-    //$("#" + itemId).parent().siblings().children(".menudiv").slideUp();      //close all other pages' submenu
-
     //////////clear previous mass///////////
     window.history.pushState(null, null, "/" + itemId + "/");
  
@@ -521,11 +438,6 @@ function itemClick(itemId) {
 
 }
 function pageRefresh(itemId) {
-   // if ($(window).width() > 641) {
-   //     $(".entry-title").css("display","none");
-   //     $(".entry-content").css("display","none");
-   //     $(".news-content").css("display","none");
-   // }
 
     $("#" + itemId).parent().siblings().children(".contentdiv").slideUp();    //close all other pages
     $("#" + itemId).parent().siblings().children(".menudiv").slideUp();       //close all other pages' submenu
@@ -681,20 +593,17 @@ function timeline()
 function album()
 {
 	$.album_bind({ showbtnid: "album_show"});
-	//$(".imgShow").imagefill();
 }
 
 
 function gridClick(thisGrid)
 {
-	//$('.imgShow').imagefill(); 
 	var newSrc=$(thisGrid).children().attr("src");
 	var newAlt=$(thisGrid).children().attr("alt");
 	var newCap=$(thisGrid).children().attr("cap");
 	$(thisGrid).parents("table").find("td").each(function(){$(this).removeClass("tdSelected")});
 	$(thisGrid).parent().addClass("tdSelected");
 	$(thisGrid).parents(".albumGrid").nextAll(".imgShowBox").children(".imgShow").children().attr({"src":newSrc, "alt":newAlt});
-	//$(thisGrid).parents(".albumGrid").nextAll(".imgShowBox").children(".imgShow").imagefill();
 	$(thisGrid).parents(".albumGrid").nextAll(".imgShowBox").children(".imgCaption").html(newCap);
 }
 
