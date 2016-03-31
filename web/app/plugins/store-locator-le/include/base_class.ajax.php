@@ -7,66 +7,36 @@ if (! class_exists('SLP_BaseClass_AJAX')) {
      * Add on packs should include and extend this class.
      *
      * This allows the main plugin to only include this file in AJAX mode.
+	 *
+	 * @package StoreLocatorPlus\BaseClass\AJAX
+	 * @author Lance Cleveland <lance@charlestonsw.com>
+	 * @copyright 2014 - 2016 Charleston Software Associates, LLC
      *
-     * @property-read   array                       $query_params
-     * @property        string[]                    $query_params_valid     Array of valid AJAX query parameters
-     *
-     * @package StoreLocatorPlus\BaseClass\AJAX
-     * @author Lance Cleveland <lance@charlestonsw.com>
-     * @copyright 2014 - 2015 Charleston Software Associates, LLC
+	 * @property		SLP_BaseClass_Addon 	$addon						This addon pack.
+	 * @property 		array 					$formdata					Form data that comes into the AJAX request in the formdata variable.
+	 * @property 		array 					$formdata_defaults			The formdata default values.
+	 * @property-read 	bool 					$formdata_set				Has the formdata been set already?
+     * @property-read   array                   $query_params
+     * @property        string[]                $query_params_valid     	Array of valid AJAX query parameters
+	 * @property-read 	string 					$short_action 				The shortened (csl_ajax prefix dropped) AJAX action.
+	 * @property		string[]				$valid_actions				What AJAX actions are valid for this add on to process?
+	 * 					Override in the extended class if not serving the default SLP actions:
+	 * 						csl_ajax_onload
+	 * 						csl_ajax_search
+	 *
      */
     class SLP_BaseClass_AJAX extends SLPlus_BaseClass_Object {
-	    public    $query_params         = array();
-	    protected $query_params_valid   = array();
-
-        /**
-         * This addon pack.
-         *
-         * @var \SLP_BaseClass_Addon $addon
-         */
-        protected $addon;
-
-        /**
-         * Form data that comes into the AJAX request in the formdata variable.
-         *
-         * @var mixed[] $formdata
-         */
-        protected $formdata = array();
-
-        /**
-         * @var bool has the formdata been set already?
-         */
-        private $formdata_set = false;
-
-        /**
-         * The formdata default values.
-         *
-         * @var mixed[] $formdata_defaults
-         */
-        protected $formdata_defaults = array();
-
-	    /**
-	     * @var string $short_action the shortened (csl_ajax prefix dropped) AJAX action.
-	     */
-	    private $short_action;
-
-	    /**
-	     * What AJAX actions are valid for this add on to process?
-	     *
-	     * Override in the extended class if not serving the default SLP actions:
-	     * * csl_ajax_onload
-	     * * csl_ajax_search
-	     *
-	     * @var array
-	     */
-	    protected $valid_actions = array(
+        protected 	$addon;
+        protected 	$formdata 				= array();
+		protected 	$formdata_defaults 		= array();
+		private 	$formdata_set		 	= false;
+		public    	$query_params         	= array();
+		protected 	$query_params_valid   	= array();
+	    private 	$short_action;
+	    protected 	$valid_actions = array(
 		    'csl_ajax_onload',
 		    'csl_ajax_search'
 	    );
-
-        //-------------------------------------
-        // Methods : activity
-        //-------------------------------------
 
         /**
          * Instantiate the admin panel object.
@@ -76,10 +46,9 @@ if (! class_exists('SLP_BaseClass_AJAX')) {
          * - sets Query Params (formdata)
          * - Calls process_{short_action} if method exists.
          *
-         * @param mixed[] $options
          */
-        function __construct( $options = array() ) {
-	        parent::__construct( $options );
+        function initialize() {
+			if ( ! isset( $_REQUEST['action'] ) ) { return; }
 	        $this->short_action = str_replace('csl_ajax_','', $_REQUEST['action'] );
             $this->do_ajax_startup();
         }
@@ -112,6 +81,8 @@ if (! class_exists('SLP_BaseClass_AJAX')) {
 
 	    /**
 	     * Return true if the AJAX action is one we process.
+		 *
+		 * TODO: add a "source" parameter as well and set to "slp" then check that to make sure we only process SLP requests
 	     */
 	    function is_valid_ajax_action() {
 		    if ( ! isset( $_REQUEST['action'] ) ) { return false; }
@@ -121,6 +92,48 @@ if (! class_exists('SLP_BaseClass_AJAX')) {
 		    }
 		    return false;
 	    }
+
+		/**
+		 * Output a JSON response based on the incoming data and die.
+		 *
+		 * Used for AJAX processing in WordPress where a remote listener expects JSON data.
+		 *
+		 * @param mixed[] $data named array of keys and values to turn into JSON data
+		 * @return null dies on execution
+		 */
+		function send_JSON_response($data) {
+
+			// What do you mean we didn't get an array?
+			//
+			if (!is_array($data)) {
+				$data = array(
+					'success'       => false,
+					'count'         => 0,
+					'message'       => __('renderJSON_Response did not get an array()','store-locator-le')
+				);
+			}
+
+			// Add our SLP Version and DB Query to the output
+			//
+			$data = array_merge(
+				array(
+					'success'       => true,
+				),
+				$data
+			);
+
+			// Tell them what is coming...
+			//
+			header( "Content-Type: application/json" );
+
+			// Go forth and spew data
+			//
+			echo json_encode($data);
+
+			// Then die.
+			//
+			wp_die();
+		}
 
         /**
          * Set incoming query and request parameters into object properties.

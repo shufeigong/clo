@@ -9,57 +9,18 @@ if (! class_exists('SLP_BaseClass_Activation')) {
      * This allows the main plugin to only include this file during activation.
      *
      * @package StoreLocatorPlus\BaseClass\Activation
-     * @author Lance Cleveland <lance@charlestonsw.com>
-     * @copyright 2014 Charleston Software Associates, LLC
+     * @author Lance Cleveland <support@storelocatorplus.com>
+     * @copyright 2014 - 2015 Charleston Software Associates, LLC
+     *
+     * @property    SLP_BaseClass_Addon     $addon
+     * @property    array                   $legacy_options     Set this if you are converting legacy options.
+     *                                                              @see SLPLUS class.activation.upgrade for examples.
+     * @property    string                  $updating_from      The version of this add-on that was installed previously.
      */
-    class SLP_BaseClass_Activation {
-
-        //-------------------------------------
-        // Properties
-        //-------------------------------------
-
-        /**
-         * This addon pack.
-         *
-         * @var \SLP_BaseClass_Addon $addon
-         */
+    class SLP_BaseClass_Activation extends SLPlus_BaseClass_Object {
         protected $addon;
-
-	    /**
-	     * Set this if you are converting legacy options.
-	     *
-	     * @see SLPLUS class.activation.upgrade for examples.
-	     *
-	     * @var array
-	     */
 	    protected $legacy_options;
-
-        /**
-         * The base SLPlus object.
-         *
-         * @var \SLPlus $slplus
-         */
-        protected $slplus;
-
-        //-------------------------------------
-        // Methods : activity
-        //-------------------------------------
-
-        /**
-         * Instantiate the admin panel object.
-         *
-         * @param mixed[] $params
-         */
-        function __construct($params) {
-            // Set properties based on constructor params,
-            // if the property named in the params array is well defined.
-            //
-            if ($params !== null) {
-                foreach ($params as $property=>$value) {
-                    if (property_exists($this,$property)) { $this->$property = $value; }
-                }
-            }
-        }
+        protected $updating_from;
 
 	    /**
 	     * Convert the legacy settings to the new serialized settings.
@@ -69,37 +30,51 @@ if (! class_exists('SLP_BaseClass_Activation')) {
 			if ( ! isset( $this->legacy_options ) ) { return; }
 
 		    foreach ( $this->legacy_options as $legacy_option => $new_option_meta ) {
+                $since_version = isset( $new_option_meta[ 'since' ] ) ? $new_option_meta[ 'since' ] : null;
 
-			    // Get the legacy option
-			    //
-			    $option_value = get_option( $legacy_option , null );
+                // Run the conversion if the current addon version is less then the since version (changed in version) for this option.
+                //
+                $current_installed_version = isset( $this->addon->options['installed_version'] ) ? $this->addon->options['installed_version'] : '0';
+                if ( is_null( $since_version ) || ( version_compare( $current_installed_version , $since_version , '<=' ) ) ) {
 
-			    // No legacy option?  Is there a default?
-			    if ( is_null( $option_value ) && isset( $new_option_meta[ 'default' ] ) )  {
-				    $option_value = $new_option_meta[ 'default' ];
-			    }
+                    // Get the legacy option
+                    //
+                    $option_value = get_option($legacy_option, null);
 
-			    // If there was a legacy option or a default setting override.
-			    // Set that in the new serialized option string.
-			    // Otherwise leave it at the default setup in the SLPlus class.
-			    //
-			    if ( ! is_null( $option_value ) ) {
+                    // No legacy option?  Is there a default?
+                    if (is_null($option_value) && isset($new_option_meta['default'])) {
+                        $option_value = $new_option_meta['default'];
+                    }
 
-				    // Callback processing
-				    //
-				    if ( isset( $new_option_meta[ 'callback' ] ) ) {
-					    $option_value = call_user_func_array( $new_option_meta[ 'callback' ] , array( $option_value ) );
-				    }
+                    // If there was a legacy option or a default setting override.
+                    // Set that in the new serialized option string.
+                    // Otherwise leave it at the default setup in the SLPlus class.
+                    //
+                    if (!is_null($option_value)) {
 
-				    $this->addon->options[ $new_option_meta['key'] ] = $option_value;
+                        // Callback processing
+                        //
+                        if (isset($new_option_meta['callback'])) {
+                            $option_value = call_user_func_array($new_option_meta['callback'], array($option_value));
+                        }
 
-				    // Delete the legacy option
-				    //
-				    delete_option( $legacy_option );
-			    }
+                        $this->addon->options[$new_option_meta['key']] = $option_value;
+
+                        // Delete the legacy option
+                        //
+                        delete_option($legacy_option);
+                    }
+                }
 		    }
 
 	    }
+
+        /**
+         * Things we do at startup.
+         */
+        function intialize() {
+            $this->updating_from = $this->addon->options['installed_version'];
+        }
 
         /**
          * Do this whenever the activation class is instantiated.
@@ -115,7 +90,7 @@ if (! class_exists('SLP_BaseClass_Activation')) {
          * Set your $legacy_options.
          *
          */
-        function update() {
+        public function update() {
             $this->convert_legacy_settings();
         }
     }

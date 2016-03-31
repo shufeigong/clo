@@ -1,18 +1,18 @@
 <?php
 /*
 Plugin Name: Store Locator Plus
-Plugin URI: http://www.storelocatorplus.com/
-Description: Add a location finder or directory to your site in minutes. Extensive premium add-on library available!
+Plugin URI: https://www.storelocatorplus.com/
+Description: Add a location finder or directory to your site in minutes. Extensive add-on library available!
 Author: Store Locator Plus
-Author URI: http://www.storelocatorplus.com
+Author URI: https://www.storelocatorplus.com
 License: GPL3
-Tested up to: 4.4
-Version: 4.3.24
+Tested up to: 4.4.2
+Version: 4.4.18
 
 Text Domain: store-locator-le
 Domain Path: /languages/
 
-Copyright 2012 - 2015  Charleston Software Associates (info@storelocatorplus.com)
+Copyright 2012 - 2016  Charleston Software Associates (info@storelocatorplus.com)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -29,22 +29,66 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 */
+if ( defined( 'SLPLUS_VERSION'   ) === false ) { define( 'SLPLUS_VERSION'    , '4.4.18'                             ); } // Current plugin version.
+
+$min_wp_version  = '3.8';
+$min_php_version = '5.2.4';
+$slp_plugin_name = __( 'Store Locator Plus' , 'store-locator-le' );
 
 // Check WP Version
 //
 global $wp_version;
-if ( version_compare( $wp_version, '3.8', '<' ) ) {
-	add_action(
-		'admin_notices',
-		create_function(
-			'',
-			"echo '<div class=\"error\"><p>".__('Store Locator Plus requires WordPress 3.8 to function properly. Please upgrade WordPress or deactivate Store Locator Plus.', 'store-locator-le') ."</p></div>';"
-		)
-	);
-	return;
+if ( version_compare( $wp_version, $min_wp_version, '<' ) ) {
+    add_action(
+        'admin_notices',
+        create_function(
+            '',
+            "echo '<div class=\"error\"><p>".
+            sprintf(
+                __( '%s requires PHP %s to function properly. ' , 'store-locator-le' ) ,
+                $slp_plugin_name,
+                $min_php_version
+            ).
+            __( 'This plugin has been deactivated.'                                     , 'store-locator-le' ) .
+            __( 'Please upgrade PHP.'                                                   , 'store-locator-le' ) .
+            "</p></div>';"
+        )
+    );
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+    deactivate_plugins( plugin_basename( __FILE__ ) );
+    return;
 }
 
-if ( defined( 'SLPLUS_VERSION'   ) === false ) { define( 'SLPLUS_VERSION'    , '4.3.24'                             ); } // Current plugin version.
+
+// Check PHP Version
+//
+// min: 5.2 path_info() with path_parts['filename']  @see  http://php.net/manual/en/function.pathinfo.php
+//
+if ( version_compare( PHP_VERSION , $min_php_version , '<' ) ) {
+    add_action(
+        'admin_notices',
+        create_function(
+            '',
+            "echo '<div class=\"error\"><p>".
+            sprintf(
+                __( '%s requires PHP %s to function properly. ' , 'store-locator-le' ) ,
+                $slp_plugin_name,
+                $min_php_version
+            ).
+            __( 'This plugin has been deactivated.'                                     , 'store-locator-le' ) .
+            __( 'Please upgrade PHP.'                                                   , 'store-locator-le' ) .
+            "</p></div>';"
+        )
+    );
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+    deactivate_plugins( plugin_basename( __FILE__ ) );
+    return;
+}
+
+//====================================================================
+// Main Plugin Configuration
+//====================================================================
+
 if ( defined( 'SLPLUS_NAME'      ) === false ) { define( 'SLPLUS_NAME'       , __('Store Locator Plus','store-locator-le')); } // Plugin name via gettext.
 if ( defined( 'SLPLUS_PREFIX'    ) === false ) { define( 'SLPLUS_PREFIX'     , 'csl-slplus'                         ); } // The shorthand prefix to various option settings, etc.
 if ( defined( 'SLP_ADMIN_PAGEPRE') === false ) { define( 'SLP_ADMIN_PAGEPRE' , 'store-locator-plus_page_'           ); } // Admin Page Slug Prefix
@@ -93,16 +137,15 @@ if ( defined('SLPLUS_PLUGINDIR') && ! is_a( $slplus_plugin , 'SLPlus' ) ) {
 	$slplus_plugin->initialize();
 }
 
-//====================================================================
-// Add Required Libraries
-//====================================================================
-
-
 // Errors?
 //
 if ($error != '') {
     $slplus_plugin->notifications->add_notice(4,$error);
 }
+
+//====================================================================
+// Add Required Libraries
+//====================================================================
 
 // General WP Action Interface
 //

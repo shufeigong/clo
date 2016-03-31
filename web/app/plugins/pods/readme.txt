@@ -3,8 +3,8 @@ Contributors: sc0ttkclark, pglewis, Shelob9, jimtrue, jamesgol, clubduece, dan.s
 Donate link: http://podsfoundation.org/donate/
 Tags: pods, custom post types, custom taxonomies, user fields, custom fields, cck, cms, content types, database, framework, drupal, post types, avatars, comment fields, media fields
 Requires at least: 3.8
-Tested up to: 4.3
-Stable tag: 2.5.4
+Tested up to: 4.4
+Stable tag: 2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,7 +20,7 @@ Check out http://pods.io/ for our User Guide, Forums, and other resources to hel
 = Content types that evolve with your needs =
 Create any type of content that you want -- small or large -- we've got you covered. Every content type created with Pods gets all the love it needs to grow up big and strong. You'll get an easy to use interface that lets you manage custom fields and how your content type will function.
 
-We now give you the power you've never before had with a single plugin because we've reimagined how to manage content types from the ground up.
+We now give you the power you've never before had with a single plugin because we've re-imagined how to manage content types from the ground up.
 
 = Create new content types =
 With Pods, you can create entirely new content types:
@@ -150,10 +150,52 @@ Pods really wouldn't be where it is without all of the contributions both financ
 
 == Translations ==
 
-Many thanks go out to the fine folks who have helped us translate Pods into other languages other than English! Join us in further translating the Pods interface at: http://wp-translate.org/projects/pods
- Join us in further translating the Pods interface at: http://wp-translate.org/projects/pods
+Many thanks go out to the fine folks who have helped us translate Pods into other languages other than English!
+
+Join us in further translating the Pods interface at: http://wp-translate.org/projects/pods
 
 == Changelog ==
+
+= 2.6 - December 9th, 2015 =
+* Added: Support for Term Meta in WP 4.4 - Now create meta-based taxonomies and Pods just magically works! (#3169,#3163) [@sc0ttkclark]
+* Added: Add REST API Support to Post Types, Taxonomies, Users. Read the update in https://github.com/pods-framework/pods/pull/3184 for step by step details. (#3184,#3182) [@Shelob9]
+* Added: Added compatibility with the latest Polylang version, using $polylang-model to get the current language and version. (#3223) [@JoryHogeveen]
+* Added: Inline hook docs in PodsAdmin class (#3180,#3179) [@Shelob9]
+* Added: Fixes to REST API Admin Tab (thanks @nicdford) to display always but also explain why it won't work if not able to work. (#3246,#3259) [@Shelob9,@nicdford]
+* Added: PHPunit support for clover-coverage FN (#3176) [@Ramoonus]
+* Added: Travis do not allow PHP7 to fail (#3235) [@Ramoonus]
+* Added: Tests for Mariadb and mysql 5.6+7 with PHP 5.6 Travis (#3212,#3208) [@Ramoonus]
+* Added: Nonce and text translation to delete link in pod edit sidebar. Fixes issue where attempted to delete pod from edit page results in fatal error. (#3203,#3194) [@cpruitt]
+* Added: Use phpcs standard wordpress in scrutinizer (#3166) [@Ramoonus]
+* Added: phpunit support for clover-coverage (#3161) [@Ramoonus]
+* Added: Travis allow PHP7 to fail (#3153) [@Ramoonus]
+* Added: Travis include WordPress 4.3 in test matrix (#3152) [@Ramoonus]
+* Added: Travis cache composer (#3151) [@Ramoonus]
+* Added: Grunt ignore dockunit.json (#3150) [@Ramoonus]
+* Updated: Dockunit - replace PHP 7 rc1 with rc4 (#3201) [@Ramoonus]
+* Updated: Improve Contributing guidelines correcting wrong pull location and fixing correct release branch. (#3149,#3147) [@quasel]
+* Fixed: Scheduled post preview message/URL. When a post was scheduled, the status message displayed at the top of the edit post page was malformed where the string placeholders were numbered. (#3234) [@sparkdevelopment]
+* Fixed: Merged #3205 to fix install-wp-tests.sh (#3211,#3205) [@Ramoonus]
+* Fixed: Add pods_auto_template_name filter, by context to change auto template (#3199,#3200,#3198) [@Shelob9]
+* Fixed: Revert scrutinizer less is more (#3172,#3170) [@sc0ttkclark,@Ramoonus]
+* Fixed: Remove limit of 5 in get_template_titles Auto Template (#3157,#3160) [@jimtrue]
+* Fixed: Related_act.permalink calls to fix permalink/slug traversal in ACTs and related taxonomies (#3156,#3155,#2779) [@sc0ttkclark]
+* Fixed: Added option to deselect Auto Template for Archive views. There needed an 'empty' selection to correct issue where Template error wouldn't go away. (#3148,#3146,#3142,#3247) [@Sgillessen]
+* Fixed: Added Dockunit Badge (#3145) [@tlovett1]
+* Removed: Double exclude path in scrutinizer (#3228) [@Ramoonus]
+* Removed: Readme removed code coverage badge (#3220) [@Ramoonus]
+* Removed: Dump composer in Scrutinizer (#3204,#3167) [@Ramoonus]
+* Removed: Composer remove coveralls. Was not being used and needs phpunit support. Could also be replaced by php codesniffer or scrutinizer. (#3174) [@Ramoonus]
+
+= 2.5.5 - September 16th, 2015 =
+* Added: Unit testing for PHPUnit 4.8 support. (#3090, #3069) Kudos to @Ramoonus
+* Fixed: Drop External code coverage - timeout in Scrutinizer.  (#3091) Kudos to @Ramoonus
+* Fixed: Changed Content property to fix spacing issues with AutoComplete Field where the formatted selection fields have awkward spacing between the selection box and the selection list. (#3098, #3097, #3099) Kudos to @nicdford
+* Fixed: Issue where [each] tag traversal did not work with Taxonomy in Pods Templates. Related notes regarding pod->object_fields for taxonomy added for 3.0 notes. (#3106, #3018, #3107, #3111) Major thanks to @pglewis
+* Fixed: `permalink` field traversal has only been working for post types, not for related taxonomies. (#2779, #3114, #3115) Kudos to @pglewis
+* Added: Support for CPT UI 1.0.x in CPT UI migration component by adding support for multiple possible option names for post types and taxonomies. (#3112, #3109, #3113, #3116, #3117) Kudos to @pglewis
+* Added: Merged Auto Template into Pods Template Component.  (#3125, #3105) Major thanks to @Shelob9 both for the original plugin and for incorporating this into Pods Templates.
+* Added: License.txt changes to sync with GPL v2 (#3130, #3133) Kudos to @Ramoonus
 
 = 2.5.4 - August 10th, 2015 =
 * Added: Support for Compare ALL with meta_query syntax. Kudos to @pcfreak30. (#3037, #3038)

@@ -2,13 +2,14 @@
 /*
 Plugin Name: WP Accessibility
 Plugin URI: http://www.joedolson.com/wp-accessibility/
-Description: Provides options to improve accessibility in your WordPress site, including removing title attributes.
-Version: 1.4.4
+Description: Helps improve accessibility in your WordPress site, like removing title attributes.
+Version: 1.5.0
 Author: Joe Dolson
 Text Domain: wp-accessibility
+Domain Path: /lang
 Author URI: http://www.joedolson.com/
 
-    Copyright 2012-2015 Joe Dolson (joe@joedolson.com)
+    Copyright 2012-2016 Joe Dolson (joe@joedolson.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -26,7 +27,12 @@ Author URI: http://www.joedolson.com/
 */
 
 register_activation_hook( __FILE__, 'wpa_install' );
-load_plugin_textdomain( 'wp-accessibility', false, dirname( plugin_basename( __FILE__ ) ) . '/lang' );
+
+// Enable internationalisation
+add_action( 'plugins_loaded', 'wpa_load_textdomain' );
+function wpa_load_textdomain() {
+	load_plugin_textdomain( 'wp-accessibility', false, dirname( plugin_basename( __FILE__ ) ) . '/lang' );
+}
 
 // ADMIN MENU
 add_action( 'admin_menu', 'add_wpa_admin_menu' );
@@ -37,7 +43,7 @@ function add_wpa_admin_menu() {
 
 // ACTIVATION
 function wpa_install() {
-	$wpa_version = '1.4.4';
+	$wpa_version = '1.5.0';
 	if ( get_option( 'wpa_installed' ) != 'true' ) {
 		add_option( 'rta_from_nav_menu', 'on' );
 		add_option( 'rta_from_page_lists', 'on' );
@@ -141,7 +147,7 @@ function wpa_register_scripts() {
 }
 
 add_action( 'wp_footer', 'wpa_jquery_asl', 100 );
-add_action( 'wp_enqueue_scripts', 'wpa_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'wpacc_enqueue_scripts' );
 add_action( 'wp_head', 'wpa_css' );
 add_action( 'wp_enqueue_scripts', 'wpa_core_scripts' );
 add_action( 'wp_enqueue_scripts', 'wpa_stylesheet' );
@@ -150,7 +156,7 @@ function wpa_core_scripts() {
 	wp_enqueue_script( 'jquery' );
 }
 
-function wpa_enqueue_scripts() {
+function wpacc_enqueue_scripts() {
 	if ( get_option( 'asl_enable' ) == 'on' ) {
 		wp_enqueue_script( 'skiplinks.webkit' );
 	}
@@ -254,22 +260,24 @@ function wpa_toolbar_js() {
 	$grayscale        = __( 'Toggle Grayscale', 'wp-accessibility' );
 	$fontsize         = __( 'Toggle Font size', 'wp-accessibility' );
 	$enable_grayscale = ( get_option( 'wpa_toolbar_gs' ) == 'on' ) ? true : false;
-	$location         = apply_filters( 'wpa_move_toolbar', 'body' );
+	$default          = ( get_option( 'wpa_toolbar_default' ) != '' ) ? get_option( 'wpa_toolbar_default' ) : 'body';
+	$location         = apply_filters( 'wpa_move_toolbar', $default );
 	$is_rtl           = ( is_rtl() ) ? ' rtl' : ' ltr';
+	$is_right         = ( get_option( 'wpa_toolbar_right' ) == 'on' ) ? ' right' : '';
 	echo
 	"
 <script type='text/javascript'>
 //<![CDATA[
 (function( $ ) { 'use strict';
 	var insert_a11y_toolbar = '<!-- a11y toolbar -->';
-	insert_a11y_toolbar += '<div class=\"a11y-toolbar$is_rtl\">';
+	insert_a11y_toolbar += '<div class=\"a11y-toolbar$is_rtl$is_right\">';
 	insert_a11y_toolbar += '<ul>';
-	insert_a11y_toolbar += '<li><a href=\"#\" role=\"button\" class=\"a11y-toggle-contrast toggle-contrast\" id=\"is_normal_contrast\" title=\"$contrast\"><span class=\"offscreen\">$contrast</span><span class=\"aticon aticon-adjust\" aria-hidden=\"true\"></span></a></li>';";
+	insert_a11y_toolbar += '<li><button type=\"button\" class=\"a11y-toggle-contrast toggle-contrast\" id=\"is_normal_contrast\"><span class=\"offscreen\">$contrast</span><span class=\"aticon aticon-adjust\" aria-hidden=\"true\"></span></button></li>';";
 	if ( get_option( 'wpa_toolbar' ) == 'on' && $enable_grayscale ) {
-		echo "insert_a11y_toolbar += '<li><a href=\"#\" role=\"button\" class=\"a11y-toggle-grayscale toggle-grayscale\" id=\"is_normal_color\" title=\"$grayscale\"><span class=\"offscreen\">$grayscale</span><span class=\"aticon aticon-tint\" aria-hidden=\"true\"></span></a></li>';";
+		echo "insert_a11y_toolbar += '<li><button type=\"button\" class=\"a11y-toggle-grayscale toggle-grayscale\" id=\"is_normal_color\"><span class=\"offscreen\">$grayscale</span><span class=\"aticon aticon-tint\" aria-hidden=\"true\"></span></button></li>';";
 	}
 	echo "
-	insert_a11y_toolbar += '<li><a href=\"#\" role=\"button\" class=\"a11y-toggle-fontsize toggle-fontsize\" id=\"is_normal_fontsize\" title=\"$fontsize\"><span class=\"offscreen\">$fontsize</span><span class=\"aticon aticon-font\" aria-hidden=\"true\"></span></a></li>';
+	insert_a11y_toolbar += '<li><button type=\"button\" class=\"a11y-toggle-fontsize toggle-fontsize\" id=\"is_normal_fontsize\"><span class=\"offscreen\">$fontsize</span><span class=\"aticon aticon-font\" aria-hidden=\"true\"></span></button></li>';
 	insert_a11y_toolbar += '</ul>';
 	insert_a11y_toolbar += '</div>';
 	insert_a11y_toolbar += '<!-- // a11y toolbar -->';
@@ -620,6 +628,8 @@ function wpa_update_settings() {
 			$wpa_toolbar_size            = ( isset( $_POST['wpa_toolbar_size'] ) ) ? $_POST['wpa_toolbar_size'] : '';
 			$wpa_widget_toolbar          = ( isset( $_POST['wpa_widget_toolbar'] ) ) ? 'on' : '';
 			$wpa_toolbar_gs              = ( isset( $_POST['wpa_toolbar_gs'] ) ) ? 'on' : '';
+			$wpa_toolbar_default         = ( isset( $_POST['wpa_toolbar_default'] ) ) ? $_POST['wpa_toolbar_default'] : '';
+			$wpa_toolbar_right           = ( isset( $_POST['wpa_toolbar_right'] ) ) ? 'on' : '';
 			$wpa_admin_css               = ( isset( $_POST['wpa_admin_css'] ) ) ? 'on' : '';
 			$wpa_row_actions             = ( isset( $_POST['wpa_row_actions'] ) ) ? 'on' : '';
 			$wpa_diagnostics             = ( isset( $_POST['wpa_diagnostics'] ) ) ? 'on' : '';
@@ -639,6 +649,8 @@ function wpa_update_settings() {
 			update_option( 'wpa_toolbar_size', $wpa_toolbar_size );
 			update_option( 'wpa_widget_toolbar', $wpa_widget_toolbar );
 			update_option( 'wpa_toolbar_gs', $wpa_toolbar_gs );
+			update_option( 'wpa_toolbar_default', $wpa_toolbar_default );
+			update_option( 'wpa_toolbar_right', $wpa_toolbar_right );
 			update_option( 'wpa_focus_color', $wpa_focus_color );
 			update_option( 'wpa_continue', $wpa_continue );
 			update_option( 'wpa_admin_css', $wpa_admin_css );
@@ -1007,12 +1019,35 @@ function wpa_admin_menu() {
 									} ?>/> <label
 										for="wpa_image_titles"><?php _e( 'Remove title attribute from images inserted into post content and featured images.', 'wp-accessibility' ); ?></label>
 								</li>
+								<li><input type="checkbox" id="wpa_diagnostics"
+								           name="wpa_diagnostics" <?php if ( get_option( 'wpa_diagnostics' ) == "on" ) {
+										echo 'checked="checked" ';
+									} ?>/> <label
+										for="wpa_diagnostics"><?php _e( 'Enable diagnostic CSS', 'wp-accessibility' ); ?></label>
+								</li>
+								<li><input type="checkbox" id="wpa_focus"
+								           name="wpa_focus" <?php if ( get_option( 'wpa_focus' ) == "on" ) {
+										echo 'checked="checked" ';
+									} ?>/> <label
+										for="wpa_focus"><?php _e( 'Add outline to elements on keyboard focus', 'wp-accessibility' ); ?></label>
+									<label
+										for="wpa_focus_color"><?php _e( 'Outline color (hexadecimal, optional)', 'wp-accessibility' ); ?></label><input
+										type="text" id="wpa_focus_color" name="wpa_focus_color"
+										value="#<?php esc_attr_e( get_option( 'wpa_focus_color' ) ); ?>"/></li>
+							</ul>
+						</fieldset>
+	<fieldset>
+								<legend><?php _e( 'Accessibility Toolbar Settings', 'wp-accessibility' ); ?></legend>
+							<ul>
 								<li><input type="checkbox" id="wpa_toolbar"
 								           name="wpa_toolbar" <?php if ( get_option( 'wpa_toolbar' ) == "on" ) {
 										echo 'checked="checked" ';
 									} ?>/> <label
 										for="wpa_toolbar"><?php _e( 'Add Accessibility toolbar with fontsize adjustment and contrast toggle', 'wp-accessibility' ); ?></label>
 								</li>
+								<li>
+									<label for="wpa_toolbar_default"><?php _e( 'Toolbar location (ID attribute)', 'wp-accessibility' ); ?></label> <input type="text" id="wpa_toolbar_default" name="wpa_toolbar_default" value="<?php esc_attr_e( get_option( 'wpa_toolbar_default' ) ); ?>" />
+								</li>								
 								<?php
 								$size = get_option( 'wpa_toolbar_size' );
 								?>
@@ -1042,23 +1077,14 @@ function wpa_admin_menu() {
 									} ?>/> <label
 										for="wpa_toolbar_gs"><?php _e( 'Include grayscale toggle with Accessibility toolbar', 'wp-accessibility' ); ?></label>
 								</li>
-								<li><input type="checkbox" id="wpa_diagnostics"
-								           name="wpa_diagnostics" <?php if ( get_option( 'wpa_diagnostics' ) == "on" ) {
+								<li><input type="checkbox" id="wpa_toolbar_right"
+								           name="wpa_toolbar_right" <?php if ( get_option( 'wpa_toolbar_right' ) == "on" ) {
 										echo 'checked="checked" ';
 									} ?>/> <label
-										for="wpa_diagnostics"><?php _e( 'Enable diagnostic CSS', 'wp-accessibility' ); ?></label>
+										for="wpa_toolbar_right"><?php _e( 'Place toolbar on right side of screen.', 'wp-accessibility' ); ?></label>
 								</li>
-								<li><input type="checkbox" id="wpa_focus"
-								           name="wpa_focus" <?php if ( get_option( 'wpa_focus' ) == "on" ) {
-										echo 'checked="checked" ';
-									} ?>/> <label
-										for="wpa_focus"><?php _e( 'Add outline to elements on keyboard focus', 'wp-accessibility' ); ?></label>
-									<label
-										for="wpa_focus_color"><?php _e( 'Outline color (hexadecimal, optional)', 'wp-accessibility' ); ?></label><input
-										type="text" id="wpa_focus_color" name="wpa_focus_color"
-										value="#<?php esc_attr_e( get_option( 'wpa_focus_color' ) ); ?>"/></li>
 							</ul>
-						</fieldset>
+							</fieldset>						
 						<p>
 							<input type="hidden" name="_wpnonce" value="<?php echo wp_create_nonce( 'wpa-nonce' ); ?>"/>
 							<input type="hidden" name="action" value="misc"/>
@@ -1174,10 +1200,10 @@ function wpa_admin_menu() {
 								}
 							}(document, "script", "twitter-wjs");</script>
 					</p>
-					<p><?php _e( "If you've found WP Accessibility useful, then please consider <a href='http://wordpress.org/extend/plugins/wp-accessibility/'>rating it five stars</a>, <a href='http://www.joedolson.com/donate.php'>making a donation</a>, or <a href='http://translate.joedolson.com/projects/wp-accessibility'>helping with translation</a>.", 'wp-accessibility' ); ?></p>
+					<p><?php _e( "If you've found WP Accessibility useful, then please consider <a href='http://wordpress.org/extend/plugins/wp-accessibility/'>rating it five stars</a>, <a href='http://www.joedolson.com/donate/'>making a donation</a>, or <a href='http://translate.joedolson.com/projects/wp-accessibility'>helping with translation</a>.", 'wp-accessibility' ); ?></p>
 
 					<div>
-						<p><?php _e( '<a href="http://www.joedolson.com/donate.php">Make a donation today!</a> Your donation counts - donate $5, $20, or $100 and help me keep this plug-in running!', 'wp-to-twitter' ); ?></p>
+						<p><?php _e( '<a href="http://www.joedolson.com/donate/">Make a donation today!</a> Your donation counts - donate $5, $20, or $100 and help me keep this plug-in running!', 'wp-to-twitter' ); ?></p>
 
 						<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 							<div>
@@ -1314,104 +1340,10 @@ function wpa_remove_title_attributes( $output ) {
 	return $output;
 }
 
-// The built-in Recent Posts widget hard-coded title attributes until 3.8.
-class WP_Widget_Recent_Posts_No_Title_Attributes extends WP_Widget {
 
-	function __construct() {
-		parent::__construct( false, $name = __( 'WP A11Y: Recent Posts', 'wp-accessibility' ) );
-	}
-
-	function widget( $args, $instance ) {
-		$cache = wp_cache_get( 'widget_recent_posts', 'widget' );
-
-		if ( ! is_array( $cache ) ) {
-			$cache = array();
-		}
-
-		if ( isset( $cache[ $args['widget_id'] ] ) ) {
-			echo $cache[ $args['widget_id'] ];
-
-			return;
-		}
-
-		ob_start();
-		extract( $args );
-
-		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'Recent Posts' ) : $instance['title'], $instance, $args );
-		if ( ! $number = (int) $instance['number'] ) {
-			$number = 5;
-		}
-
-		$r = new WP_Query( array( 'showposts'           => $number,
-		                          'nopaging'            => 0,
-		                          'post_status'         => 'publish',
-		                          'ignore_sticky_posts' => 1
-			) );
-		if ( $r->have_posts() ) :
-			?>
-			<?php echo $before_widget; ?>
-			<?php if ( $title ) {
-			echo $before_title . $title . $after_title;
-		} ?>
-			<?php echo wpa_deprecated_warning( 'recent_posts' ); ?>
-			<ul>
-				<?php while ( $r->have_posts() ) : $r->the_post(); ?>
-					<li><a href="<?php the_permalink() ?>"><?php if ( get_the_title() ) {
-								the_title();
-							} else {
-								the_ID();
-							} ?> </a></li>
-				<?php endwhile; ?>
-			</ul>
-			<?php echo $after_widget; ?>
-			<?php
-			wp_reset_query();  // Restore global post data stomped by the_post().
-		endif;
-
-		$cache[ $args['widget_id'] ] = ob_get_flush();
-		wp_cache_add( 'widget_recent_posts', $cache, 'widget' );
-	}
-
-	function update( $new_instance, $old_instance ) {
-		$instance           = $old_instance;
-		$instance['title']  = strip_tags( $new_instance['title'] );
-		$instance['number'] = abs( (int) $new_instance['number'] );
-		$this->flush_widget_cache();
-
-		$alloptions = wp_cache_get( 'alloptions', 'options' );
-		if ( isset( $alloptions['widget_recent_entries'] ) ) {
-			delete_option( 'widget_recent_entries' );
-		}
-
-		return $instance;
-	}
-
-	function flush_widget_cache() {
-		wp_cache_delete( 'widget_recent_posts', 'widget' );
-	}
-
-	function form( $instance ) {
-		$title = ( isset( $instance['title'] ) ) ? esc_attr( $instance['title'] ) : '';
-		if ( ! isset( $instance['number'] ) || $number != (int) $instance['number'] ) {
-			$number = 5;
-		}
-		?>
-		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
-			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>"
-			       name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php esc_attr_e( $title ); ?>"/>
-		</p>
-
-		<p><label
-				for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to show:' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'number' ); ?>"
-			       name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php esc_attr_e( $number ); ?>"
-			       size="3"/></p>
-	<?php
-	}
-}
-
-add_action( 'widgets_init', create_function( '', 'return register_widget("WP_Widget_Recent_Posts_No_Title_Attributes");' ) );
-
+/**
+ * Reuse this function next time I deprecate a feature.
+ 
 function wpa_deprecated_warning( $context ) {
 	if ( is_user_logged_in() && current_user_can( 'manage_options' ) ) {
 		switch ( $context ) {
@@ -1424,6 +1356,7 @@ function wpa_deprecated_warning( $context ) {
 
 	return;
 }
+*/
 
 function wpa_get_support_form() {
 	global $current_user, $wpa_version;
@@ -1512,7 +1445,7 @@ $plugins_string
 			if ( $has_donated == 'Donor' ) {
 				echo "<div class='message updated'><p>" . __( 'Thank you for supporting the continuing development of this plug-in! I\'ll get back to you as soon as I can.', 'wp-accessibility' ) . "</p></div>";
 			} else {
-				echo "<div class='message updated'><p>" . __( 'I cannot provide free support, but will treat your request as a bug report, and will incorporate any permanent solutions I discover into the plug-in.', 'wp-accessibility' ) . "</p></div>";
+				echo "<div class='message updated'><p>" . __( 'I cannot provide  support, but will treat your request as a bug report, and will incorporate any permanent solutions I discover into the plug-in.', 'wp-accessibility' ) . "</p></div>";
 			}
 		}
 	}
@@ -1534,7 +1467,7 @@ $plugins_string
 		<input type='checkbox' name='has_read_faq' id='has_read_faq' value='on' /> <label for='has_read_faq'>" . sprintf( __( 'I have read <a href="%1$s">the FAQ for this plug-in</a> <span>(required)</span>', 'wp-accessibility' ), 'http://www.joedolson.com/wp-accessibility/faqs/' ) . "</label>
         </p>
         <p>
-        <input type='checkbox' name='has_donated' id='has_donated' value='on' /> <label for='has_donated'>" . sprintf( __( 'I have <a href="%1$s">made a donation to help support this plug-in</a>', 'wp-accessibility' ), 'http://www.joedolson.com/donate.php' ) . "</label>
+        <input type='checkbox' name='has_donated' id='has_donated' value='on' /> <label for='has_donated'>" . sprintf( __( 'I <a href="%1$s">made a donation to help support this plug-in</a>', 'wp-accessibility' ), 'http://www.joedolson.com/donate/' ) . "</label>
         </p>
         <p>
         <label for='support_request'>" . __( 'Support Request:', 'wp-accessibility' ) . "</label><br /><textarea name='support_request' required aria-required='true' id='support_request' cols='80' rows='10'>" . stripslashes( $request ) . "</textarea>
@@ -1783,7 +1716,7 @@ function wpa_alt_attribute( $html, $id, $caption, $title, $align, $url, $size, $
 		}
 	}
 	if ( $warning ) {
-		return "<img class='wpa-image-missing-alt size-" . esc_attr( $size ) . ' ' . esc_attr( $align ) . "' src='" . plugins_url( "imgs/$image", __FILE__ ) . "' alt='" . esc_attr( $warning ) . "' />";
+		return $html . "<img class='wpa-image-missing-alt size-" . esc_attr( $size ) . ' ' . esc_attr( $align ) . "' src='" . plugins_url( "imgs/$image", __FILE__ ) . "' alt='" . esc_attr( $warning ) . "' />";
 	}
 	return $html;
 }

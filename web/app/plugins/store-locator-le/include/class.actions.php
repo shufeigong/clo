@@ -9,19 +9,14 @@ if ( ! class_exists('SLPlus_Actions') ) {
 	 *
 	 * @package   StoreLocatorPlus\Actions
 	 * @author    Lance Cleveland <lance@charlestonsw.com>
-	 * @copyright 2012-2015 Charleston Software Associates, LLC
+	 * @copyright 2012-2016 Charleston Software Associates, LLC
 	 */
 	class SLPlus_Actions extends SLPlus_BaseClass_Object {
 
 		/**
-		 * @param array $options
+		 * Things to do at startup.
 		 */
-		function __construct( $options = array() ) {
-
-			parent::__construct( $options );
-
-			// In order called
-			//
+		function initialize( ) {
 			add_action('init'               , array($this,'init'                    ) , 11  );
 
 			add_action( "load-post.php"     , array( $this, 'action_AddToPageHelp'  ) , 20  );
@@ -32,10 +27,6 @@ if ( ! class_exists('SLPlus_Actions') ) {
 			add_action('wp_footer'          , array($this,'wp_footer'               )       ); // UI
 
 			add_action('shutdown'           , array($this,'shutdown'                )       ); // BOTH
-
-			add_action('dmp_addpanel'       , array($this,'create_DMPPanels'        )       );
-
-
 		}
 
 		/**
@@ -199,25 +190,6 @@ if ( ! class_exists('SLPlus_Actions') ) {
 			// Remove the duplicate menu entry
 			//
 			remove_submenu_page( SLPLUS_PREFIX, SLPLUS_PREFIX );
-		}
-
-
-		/**
-		 * Create a Map Settings Debug My Plugin panel.
-		 *
-		 * @return null
-		 */
-		function create_DMPPanels() {
-			if ( ! isset( $GLOBALS['DebugMyPlugin'] ) ) {
-				return;
-			}
-			if ( class_exists( 'DMPPanelSLPMain' ) == false ) {
-				require_once( SLPLUS_PLUGINDIR . 'include/class.dmppanels.php' );
-			}
-			$GLOBALS['DebugMyPlugin']->panels['slp.main']        = new DMPPanelSLPMain();
-			$GLOBALS['DebugMyPlugin']->panels['slp.location']    = new DMPPanelSLPMapLocation();
-			$GLOBALS['DebugMyPlugin']->panels['slp.mapsettings'] = new DMPPanelSLPMapSettings();
-			$GLOBALS['DebugMyPlugin']->panels['slp.managelocs']  = new DMPPanelSLPManageLocations();
 		}
 
 		/**

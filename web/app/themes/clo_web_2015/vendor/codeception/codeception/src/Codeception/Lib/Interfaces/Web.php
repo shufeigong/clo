@@ -443,7 +443,6 @@ interface Web
      *
      * @param null $uri
      *
-     * @internal param $url
      * @return mixed
      */
     public function grabFromCurrentUrl($uri = null);
@@ -754,7 +753,7 @@ interface Web
      *
      * @param $cssOrXpath
      * @param $attribute
-     * @internal param $element
+     *
      * @return mixed
      */
     public function grabAttributeFrom($cssOrXpath, $attribute);
@@ -926,7 +925,7 @@ interface Web
 
     /**
      * Sets a cookie with the given name and value.
-     * You can set additional cookie params like `domain`, `path`, `expire`, `secure` in array passed as last argument.
+     * You can set additional cookie params like `domain`, `path`, `expires`, `secure` in array passed as last argument.
      *
      * ``` php
      * <?php

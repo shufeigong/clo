@@ -34,15 +34,11 @@ if (! class_exists('SLPlus_AdminUI_GeneralSettings')) {
 				array(
 					'section'     => $section_name,
 					'group'       => $group_name,
-					'label'       => __('Premier Members' , 'store-locator-le'),
+					'label'       => $this->slplus->text_manager->get_admin_text( 'premium_members' ),
 					'type'        => 'subheader',
 					'description' =>
-						sprintf(
-							__( 'These settings enable <a href="%s" target="slp">Premier Membership</a> features within the plugin. ', 'store-locator-le' ),
-							$this->slplus->slp_store_url . 'product/premier-subscription'
-						) .
-						__( 'This includes updating the Premier Plugin to the latest release when an update is available. ', 'store-locator-le' ) .
-						__( 'Premier Members also get priority support and access to real-time product update information. ', 'store-locator-le' )
+						$this->slplus->text_manager->get_admin_text( 'premium_member_updates' ) . '<br/>' .
+						$this->slplus->text_manager->get_admin_text( 'premium_member_support' )
 				)
 			);
 
@@ -50,12 +46,11 @@ if (! class_exists('SLPlus_AdminUI_GeneralSettings')) {
 				array(
 					'section'     => $section_name,
 					'group'       => $group_name,
-					'label'       => __( 'User ID', 'store-locator-le' ),
+					'label'       => $this->slplus->text_manager->get_admin_text( 'premium_user_id_label' ),
 					'setting'     => 'premium_user_id',
 					'value'       => $this->slplus->options_nojs['premium_user_id'],
 					'use_prefix'  => false,
-					'description' =>
-						__( 'Your StoreLocatorPlus.com Premium Membership user ID.', 'store-locator-le' )
+					'description' => $this->slplus->text_manager->get_admin_text( 'premium_user_id_help' )
 				)
 			);
 
@@ -63,12 +58,11 @@ if (! class_exists('SLPlus_AdminUI_GeneralSettings')) {
 				array(
 					'section'     => $section_name,
 					'group'       => $group_name,
-					'label'       => __( 'Subscription ID', 'store-locator-le' ),
+					'label'       => $this->slplus->text_manager->get_admin_text( 'premium_subscription_id_label' ),
 					'setting'     => 'premium_subscription_id',
 					'value'       => $this->slplus->options_nojs['premium_subscription_id'],
 					'use_prefix'  => false,
-					'description' =>
-						__( 'Your StoreLocatorPlus.com Premium Membership subscriptions ID.', 'store-locator-le' )
+					'description' => $this->slplus->text_manager->get_admin_text( 'premium_subscription_id_help' )
 				)
 			);
 
@@ -237,7 +231,7 @@ if (! class_exists('SLPlus_AdminUI_GeneralSettings')) {
 						__( 'How many times should we try to set the latitude/longitude for a new address? ', 'store-locator-le' ) .
 						__( 'Higher numbers mean slower bulk uploads. ', 'store-locator-le' ) .
 						__( 'Lower numbers make it more likely the location will not be set during bulk uploads. ', 'store-locator-le' ) .
-						sprintf( __( 'Bulk import or re-geocoding is a %s feature.', 'store-locator-le' ), $this->slplus->add_ons->get_product_url( 'slp-pro' ) )
+						sprintf( __( 'Bulk import or re-geocoding is a %s feature.', 'store-locator-le' ), $this->slplus->get_product_url( 'slp-pro' ) )
 				)
 			);
 
@@ -253,7 +247,7 @@ if (! class_exists('SLPlus_AdminUI_GeneralSettings')) {
 						__( 'Maximum time to wait between retries, in seconds. ', 'store-locator-le' ) .
 						__( 'Use multiples of 1. ', 'store-locator-le' ) .
 						__( 'Recommended value is 5. ', 'store-locator-le' ) .
-						sprintf( __( 'Bulk import or re-geocoding is a %s feature.', 'store-locator-le' ), $this->slplus->add_ons->get_product_url( 'slp-pro' ) )
+						sprintf( __( 'Bulk import or re-geocoding is a %s feature.', 'store-locator-le' ), $this->slplus->get_product_url( 'slp-pro' ) )
 				)
 			);
 

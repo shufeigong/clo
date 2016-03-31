@@ -1,11 +1,12 @@
 === Access Monitor ===
 Contributors: joedolson
 Donate link: http://www.joedolson.com/donate/
-Tags: a11y, accessibility, wcag, wave, section508
-Requires at least: 3.9.2
-Tested up to: 4.2
+Tags: a11y, accessibility, wcag, section508, tenon
+Requires at least: 4.0
+Tested up to: 4.4.1
 License: GPLv2 or later
-Stable tag: 1.0.3
+Text domain: access-monitor
+Stable tag: 1.1.2
 
 Test your WordPress site for accessibility compliance. Run on-demand tests or schedule a weekly accessibility check.
 
@@ -23,7 +24,7 @@ You can make a plan to check for new issues every day, or every week - but how a
 
 Access Monitor does two great things to help you test your site for accessibility. 
 
-<strong>First</strong>, it gives you the freedom of automation - schedule a weekly or monthly report, and you'll get notified each time that report is run. It'll test a specific set of pages, and return a list of definite accessibility issues, if you have any. 
+<strong>First</strong>, it gives you the dom of automation - schedule a weekly or monthly report, and you'll get notified each time that report is run. It'll test a specific set of pages, and return a list of definite accessibility issues, if you have any. 
 
 <strong>Second</strong>, it only reports accessibility issues that are machine-testable. It's not going to raise a bunch of red flags because the tests weren't able to tell whether a particular issue is a problem. You won't find yourself logging in to look at a report that's showing 30 new accessibility issues, but 27 of them are issues you've already checked manually and know aren't really problems. 
 
@@ -33,7 +34,7 @@ It's true that a perfect score from Access Monitor doesn't mean that your web si
 
 = Learn about Tenon and Automated Accessibility =
 
-Go to <a href="http://tenon.io">Tenon.io to run a test of your site</a> or <a href="http://tenon.io/documentation/">read the Tenon.io documentation</a>. Check out Karl Groves' article series <a href="http://www.karlgroves.com/2014/02/13/everything-you-know-about-accessibility-testing-is-wrong-part-1/">Everything You Know About Accessibility Testing is Wrong</a>. <a href="http://tenon.io/register.php">Get a free Tenon.io API key</a>, then install <a href="https://wordpress.org/plugins/access-monitor">Access Monitor</a> and try it out.
+Go to <a href="http://tenon.io">Tenon.io to run a test of your site</a> or <a href="http://tenon.io/documentation/">read the Tenon.io documentation</a>. Check out Karl Groves' article series <a href="http://www.karlgroves.com/2014/02/13/everything-you-know-about-accessibility-testing-is-wrong-part-1/">Everything You Know About Accessibility Testing is Wrong</a>. <a href="http://tenon.io/register.php">Get a  Tenon.io API key</a>, then install <a href="https://wordpress.org/plugins/access-monitor">Access Monitor</a> and try it out.
 
 Keep up with <a href="https://github.com/joedolson/access-monitor">Access Monitor development on GitHub</a>.
 
@@ -42,7 +43,8 @@ Keep up with <a href="https://github.com/joedolson/access-monitor">Access Monito
 Access Monitor allows you to run a one-time test or schedule a test to be run on a weekly or monthly basis. All tests run through this system are saved for later review and comparison so you can track the performance of a page or a test over time.
 
 * Duplicate issues are filtered out from the display. If an accessibility issue appears on multiple pages, it will only be shown the first time it's identified.
-* You can re-run any test from the Accessibility Reports screen at any time. Re-running a test will create a new test on the same pages and using the same test parameters.
+* Re-run any test from the Accessibility Reports screen at any time. Re-running a test will create a new test on the same pages and using the same test parameters.
+* Apply rules that will test posts before you publish them and reject their publication if they don't meet your criteria
 
 = Testing the WordPress Admin =
 
@@ -50,7 +52,6 @@ You can test the page you're viewing using a link in the admin bar labeled 'A11y
 
 * In the admin, the entirety of the WordPress admin HTML is only tested on the Dashboard. On other admin pages, only the code inside the wpbody-content container is passed to Tenon.
 * On the front-end, only Pages and individual posts or custom post type pages can be tested. Archive pages are not currently passed to Tenon.
-
 
 Available languages (in order of completeness):
 Dutch
@@ -65,8 +66,6 @@ Translating my plug-ins is always appreciated. Visit <a href="http://translate.j
 
 = Future =
 
-* AJAXIFY all the things ... that should be ajaxified.
-* Add processing indicator (aria-live, visible)
 * Add clientScriptErrors data to resultset.
 * Add filters and filters and filters. 
 	- Prep for pre-process post tests
@@ -76,12 +75,35 @@ Translating my plug-ins is always appreciated. Visit <a href="http://translate.j
 * Add CTA to contact me about how to fix issues.
 * [Note:] Issues data: will be adding content field
 
+= 1.1.3 =
+
+* Bug fix: Missing 'type' parameter in AJAX query caused page tests to fail due to URL length
+* Bug fix: Removed URL from label
+
+= 1.1.2 =
+
+* Bug fix: Missing single quote on Plugins page broke layout.
+* Bug fix: Text domain was not loaded.
+
+= 1.1.1 =
+
+* Improvement: Create custom container for post testing if no container assigned.
+* Bug fix: PHP notice for am_post_types
+* Add settings link to Plugins page
+* Add dismissable marketing panel for Tenon.io
+
+= 1.1.0 =
+
+* Feature: Reject publication of posts if they don't meet configured accessibility requirements
+* Feature: Inspect post content of any published or draft page on the fly.
+* Feature: checkbox for Admins to override accessibility test results
+* Feature: checkbox for non-admins to request admin review of accessibility
+
 = 1.0.4 =
 
 * Simpler CSS on front-end.
 * Bug fix: Conflict with Press This
 * Bug Fix: REF URL (no longer in result)
-* Updated language: Portuguese (Brazil)
 * Added Language: Portuguese (Brazil)
 	
 = 1.0.3 =
@@ -132,7 +154,8 @@ No tool can pick up every Accessibility issue - but Access Monitor can help you 
 2. Accessibility Reports list
 3. Set up an Accessibility Report
 4. Accessibility Report
+5. Settings for testing post accessibility
 
 == Upgrade Notice ==
 
-* 1.0.0 Nothing to say yet.
+* 1.0.4 Couple bug fixes, corrected bad links, added Portuguese.
