@@ -26,7 +26,6 @@ function foundationpress_scripts()
         }
     }
 
-
     // Since IE9 doesn't support pushState, we need a polyfill for that
     if ($userAgent['browser'] == 'MSIE' && $userAgent['version'] == 9) {
         wp_enqueue_script('ie-history', get_stylesheet_directory_uri() . '/src/js/vendor/history.js');
@@ -37,7 +36,6 @@ function foundationpress_scripts()
 
     // Fastclick removes the 300ms delay on click events in mobile environments. Must be placed in header. (Not required).
     wp_register_script('fastclick', get_template_directory_uri() . '/js/vendor/fastclick.js', array(), '1.0.0', true);
-
 
     // CDN hosted jQuery placed in the header, as some plugins require that jQuery is loaded in the header.
     wp_register_script('jquery', '//cdn.jsdelivr.net/jquery/2.1.1/jquery.min.js', array(), '2.1.1', true);
@@ -57,8 +55,6 @@ function foundationpress_scripts()
 //    wp_enqueue_script('foundation');
 
     wp_enqueue_script('foundation', get_stylesheet_directory_uri() . '/dist/js/foundation.js', array(), '5.5.2', true);
-
-    wp_enqueue_script('slick', get_stylesheet_directory_uri() . '/src/js/vendor/slick.min.js', array('jquery'), '1.0.0', true);
 
     wp_enqueue_script('vendor', get_stylesheet_directory_uri() . '/dist/js/vendor.js', array(), '1.0.0', true);
     if (!is_user_logged_in()) {
