@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // Check if current page is home
-    var isHome = $('body').hasClass('home');
+  /*  var isHome = $('body').hasClass('home');
     if (isHome) {
          $("#rollArea2").jCarouselLite({
     		vertical: true,
@@ -12,7 +12,7 @@ $(document).ready(function () {
     	
     	
 
-    }
+    }*/
 });
 
 
