@@ -2,6 +2,7 @@ function pageLoad(linkSplit, basicItems) {
   if (linkSplit != '') {
     if ($.inArray(linkSplit[1], basicItems) != -1 && (location.hash == '' || location.hash == '#main-content')) {//basic item, hash is empty or main-content
       if ($(window).width() < 641) {
+        var url = window.lang == 'en' ? "/wp-json/wp/v2/pages/?slug=" + linkSplit[1] : "/wp-json/wp/v2/pages/?slug=" + linkSplit[1] + '&lang=fr';
         $.get("/wp-json/wp/v2/pages/?slug=" + linkSplit[1], function(response) {
           var content = response[0].content.rendered;
           $(".entry-content").html(content);
@@ -152,7 +153,8 @@ function pageLoad(linkSplit, basicItems) {
 
 function grabPage(pageId) {
   if (itemFlagArr[pageId] == false) {
-    $.get("/wp-json/wp/v2/pages/?slug=" + pageId, function(response) {
+    var url = window.lang == 'en' ? "/wp-json/wp/v2/pages/?slug=" + pageId : "/wp-json/wp/v2/pages/?slug=" + pageId + '&lang=fr';
+    $.get(url, function(response) {
       })
       .done(function(response) {
         var content = response[0].content.rendered;
