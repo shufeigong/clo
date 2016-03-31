@@ -507,4 +507,37 @@ function get_url_for_language($original_url, $language)
     return $url;
 }
 
+function get_posts_with_fallback(array $args)
+{
+    if (!isset($args['post_type'])) {
+        throw new \InvalidArgumentException('You must provide a post type to filter by.');
+    }
+
+    global $sitepress;
+
+    // Store current language
+    $currentLang = $sitepress->get_current_language();
+    // Switch to English
+    $sitepress->switch_lang('en');
+
+    // Build an array of translated posts
+    $posts = array_map(
+        function ($post) use ($args) {
+            $translatedPostId = icl_object_id($post->ID, $args['post_type'], false, ICL_LANGUAGE_CODE);
+            if (!is_null($translatedPostId)) {
+                return get_post($translatedPostId);
+            }
+
+            return $post;
+        },
+        get_posts($args)
+    );
+
+    // Switch back to previous language
+    $sitepress->switch_lang($currentLang);
+
+    return $posts;
+}
+
+
 ?>
