@@ -14,19 +14,19 @@ function foundationpress_scripts()
     if ($userAgent['browser'] == 'MSIE'||$userAgent['browser'] == 'Edge') {//style sheet support MSIE
         wp_enqueue_style('ie-stylesheet', get_stylesheet_directory_uri() . '/dist/css/iestyle.css');
     }
-    
+
     if ($userAgent['browser'] == 'Firefox') {//style sheet support Firefox
-    	wp_enqueue_style('firefox-stylesheet', get_stylesheet_directory_uri() . '/dist/css/firefoxstyle.css');
-    }
-    
-    if ($userAgent['browser'] == 'Safari') {//style sheet support safari
-    	wp_enqueue_style('safari-stylesheet', get_stylesheet_directory_uri() . '/dist/css/safaristyle.css');
-    	if((int)$userAgent['version'][0] < 9){
-    		wp_enqueue_style('safari9-stylesheet', get_stylesheet_directory_uri() . '/dist/css/safari9style.css');
-    	}
+        wp_enqueue_style('firefox-stylesheet', get_stylesheet_directory_uri() . '/dist/css/firefoxstyle.css');
     }
 
-    
+    if ($userAgent['browser'] == 'Safari') {//style sheet support safari
+        wp_enqueue_style('safari-stylesheet', get_stylesheet_directory_uri() . '/dist/css/safaristyle.css');
+        if((int)$userAgent['version'][0] < 9){
+            wp_enqueue_style('safari9-stylesheet', get_stylesheet_directory_uri() . '/dist/css/safari9style.css');
+        }
+    }
+
+
     // Since IE9 doesn't support pushState, we need a polyfill for that
     if ($userAgent['browser'] == 'MSIE' && $userAgent['version'] == 9) {
         wp_enqueue_script('ie-history', get_stylesheet_directory_uri() . '/src/js/vendor/history.js');
@@ -58,6 +58,7 @@ function foundationpress_scripts()
 
     wp_enqueue_script('foundation', get_stylesheet_directory_uri() . '/dist/js/foundation.js', array(), '5.5.2', true);
 
+    wp_enqueue_script('slick', get_stylesheet_directory_uri() . '/src/js/vendor/slick.min.js', array('jquery'), '1.0.0', true);
 
     wp_enqueue_script('vendor', get_stylesheet_directory_uri() . '/dist/js/vendor.js', array(), '1.0.0', true);
     if (!is_user_logged_in()) {
@@ -78,7 +79,8 @@ function foundationpress_scripts()
         );
     }
 
-    wp_enqueue_script('myAppMenu', get_stylesheet_directory_uri() . '/src/js/menu.js', array('jquery'), '1.0.0', true);
+    wp_enqueue_script( 'bundle', get_stylesheet_directory_uri() . '/dist/js/app.bundle.js', array('jquery'), '1.0.0', true );
+    wp_enqueue_script('myAppMenu', get_stylesheet_directory_uri() . '/src/js/menuV2.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script(
         'myMobileMenu',
         get_stylesheet_directory_uri() . '/src/js/mobileMenu.js',
@@ -87,7 +89,7 @@ function foundationpress_scripts()
         true
     );
 
-        wp_enqueue_script( 'bundle', get_stylesheet_directory_uri() . '/dist/js/app.bundle.js', array('jquery'), '1.0.0', true );
+
 }
 
 add_action('wp_enqueue_scripts', 'foundationpress_scripts');
