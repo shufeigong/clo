@@ -42,8 +42,8 @@ div#sl_rightcol {
     width: 100%;
 }
 
-html #wpadminbar{
-   display:none;	
+.page-template-locationmap #wpadminbar{
+   display:none;
 }
 /*---------------------
  * Map
