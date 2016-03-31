@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "42aa058cfa0e547c77c6abda8123f834",
-    "content-hash": "e4c68e0ad1e4ee3caaf8d42154859782",
+    "hash": "d5910eda0f0e403002a354ef91f0ba5f",
     "packages": [
         {
             "name": "composer/installers",
@@ -106,41 +105,55 @@
             "time": "2015-10-29 23:28:48"
         },
         {
-            "name": "johnpbloch/wordpress",
-            "version": "4.4.1",
+            "name": "donatj/phpuseragentparser",
+            "version": "v0.5.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "85d6a8c16c7e8bb369e7530d3676d16618f68e24"
+                "url": "https://github.com/donatj/PhpUserAgent.git",
+                "reference": "1acea75664179c8f0dcd57ced7e75a01af86bfa8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/85d6a8c16c7e8bb369e7530d3676d16618f68e24",
-                "reference": "85d6a8c16c7e8bb369e7530d3676d16618f68e24",
+                "url": "https://api.github.com/repos/donatj/PhpUserAgent/zipball/1acea75664179c8f0dcd57ced7e75a01af86bfa8",
+                "reference": "1acea75664179c8f0dcd57ced7e75a01af86bfa8",
                 "shasum": ""
             },
             "require": {
-                "johnpbloch/wordpress-core-installer": "~0.2",
-                "php": ">=5.3.2"
+                "php": ">=5.3.0"
             },
-            "type": "wordpress-core",
+            "require-dev": {
+                "camspiers/json-pretty": "0.1.*",
+                "donatj/drop": "*",
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "Source/UserAgentParser.php"
+                ]
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-2.0+"
+                "MIT"
             ],
             "authors": [
                 {
-                    "name": "WordPress Community",
-                    "homepage": "http://wordpress.org/about/"
+                    "name": "Jesse G. Donat",
+                    "email": "donatj@gmail.com",
+                    "homepage": "http://donatstudios.com",
+                    "role": "Developer"
                 }
             ],
-            "description": "WordPress is web software you can use to create a beautiful website or blog.",
-            "homepage": "http://wordpress.org/",
+            "description": "Simple, streamlined PHP user-agent parser",
+            "homepage": "http://donatstudios.com/PHP-Parser-HTTP_USER_AGENT",
             "keywords": [
-                "blog",
-                "cms"
+                "browser",
+                "browser detection",
+                "parser",
+                "user agent",
+                "useragent"
             ],
-            "time": "2016-01-06 18:46:15"
+            "time": "2015-09-22 21:04:13"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -189,90 +202,6 @@
                 "wordpress"
             ],
             "time": "2015-06-11 15:15:30"
-        },
-        {
-            "name": "roots/soil",
-            "version": "3.6.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/roots/soil.git",
-                "reference": "8b534d4b271033d22b8fa0d055c740f7f9c4ca58"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/roots/soil/zipball/8b534d4b271033d22b8fa0d055c740f7f9c4ca58",
-                "reference": "8b534d4b271033d22b8fa0d055c740f7f9c4ca58",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "~1.0",
-                "php": ">=5.4.0"
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Scott Walkinshaw",
-                    "email": "scott.walkinshaw@gmail.com",
-                    "homepage": "https://github.com/swalkinshaw"
-                },
-                {
-                    "name": "Ben Word",
-                    "email": "ben@benword.com",
-                    "homepage": "https://github.com/retlehs"
-                }
-            ],
-            "description": "A WordPress plugin which contains a collection of modules to apply theme-agnostic front-end modifications",
-            "homepage": "https://roots.io/plugins/soil/",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2015-12-24 19:42:34"
-        },
-        {
-            "name": "roots/wp-h5bp-htaccess",
-            "version": "2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/roots/wp-h5bp-htaccess.git",
-                "reference": "0df13d083b2d579f13f9aa3d639ed59c746d6a91"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/roots/wp-h5bp-htaccess/zipball/0df13d083b2d579f13f9aa3d639ed59c746d6a91",
-                "reference": "0df13d083b2d579f13f9aa3d639ed59c746d6a91",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "~1.0.12",
-                "php": ">=5.4.0"
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Scott Walkinshaw",
-                    "email": "scott.walkinshaw@gmail.com",
-                    "homepage": "https://github.com/swalkinshaw"
-                },
-                {
-                    "name": "Ben Word",
-                    "email": "ben@benword.com",
-                    "homepage": "https://github.com/retlehs"
-                }
-            ],
-            "description": "HTML5 Boilerplate's .htaccess for WordPress",
-            "homepage": "http://roots.io/plugins/html5-boilerplate-htaccess/",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2015-04-28 16:34:17"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -343,7 +272,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/ab94426d127ad9e95433778a3a451fe9d18f3d6b",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/71b6534179d2381dc9a768369e5dafb8929fba34",
                 "reference": "ab94426d127ad9e95433778a3a451fe9d18f3d6b",
                 "shasum": ""
             },
@@ -398,33 +327,33 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v1.0.9",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "56c252d48dce336da97926591aed71805203815b"
+                "reference": "9caf304153dc2288e4970caec6f1f3b3bc205412"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/56c252d48dce336da97926591aed71805203815b",
-                "reference": "56c252d48dce336da97926591aed71805203815b",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/9caf304153dc2288e4970caec6f1f3b3bc205412",
+                "reference": "9caf304153dc2288e4970caec6f1f3b3bc205412",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "php": ">=5.3.9"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "^4.8|^5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "2.2-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Dotenv": "src/"
+                "psr-4": {
+                    "Dotenv\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -445,167 +374,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2014-10-16 14:50:21"
-        },
-        {
-            "name": "wpackagist-plugin/access-monitor",
-            "version": "1.1.3",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/access-monitor/",
-                "reference": "tags/1.1.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/access-monitor.1.1.3.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/access-monitor/"
-        },
-        {
-            "name": "wpackagist-plugin/google-sitemap-generator",
-            "version": "4.0.8",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/google-sitemap-generator/",
-                "reference": "tags/4.0.8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-sitemap-generator.4.0.8.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/google-sitemap-generator/"
-        },
-        {
-            "name": "wpackagist-plugin/pods",
-            "version": "2.6",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/pods/",
-                "reference": "tags/2.6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/pods.2.6.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/pods/"
-        },
-        {
-            "name": "wpackagist-plugin/tinymce-advanced",
-            "version": "4.2.8",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/tinymce-advanced/",
-                "reference": "tags/4.2.8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/tinymce-advanced.4.2.8.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/tinymce-advanced/"
-        },
-        {
-            "name": "wpackagist-plugin/wp-accessibility",
-            "version": "1.5.0",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/wp-accessibility/",
-                "reference": "tags/1.5.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-accessibility.1.5.0.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wp-accessibility/"
-        },
-        {
-            "name": "wpackagist-plugin/wp-better-emails",
-            "version": "0.2.8",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/wp-better-emails/",
-                "reference": "tags/0.2.8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-better-emails.0.2.8.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wp-better-emails/"
-        },
-        {
-            "name": "wpackagist-plugin/wp-super-cache",
-            "version": "1.4.7",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/wp-super-cache/",
-                "reference": "tags/1.4.7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-super-cache.1.4.7.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wp-super-cache/"
-        },
-        {
-            "name": "wpackagist-plugin/wpmandrill",
-            "version": "1.33",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/wpmandrill/",
-                "reference": "tags/1.33"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wpmandrill.1.33.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wpmandrill/"
+            "time": "2015-12-29 15:10:30"
         },
         {
             "name": "xrstf/composer-php52",
@@ -759,57 +528,6 @@
                 "wordpress"
             ],
             "time": "2015-03-16 11:51:33"
-        },
-        {
-            "name": "yoast/wordpress-seo",
-            "version": "2.3.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Yoast/wordpress-seo.git",
-                "reference": "d57354a7c2d0874a4eb0b42fc61148fd19d42c60"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Yoast/wordpress-seo/zipball/d57354a7c2d0874a4eb0b42fc61148fd19d42c60",
-                "reference": "d57354a7c2d0874a4eb0b42fc61148fd19d42c60",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "~1.0",
-                "xrstf/composer-php52": "^1.0.17",
-                "yoast/api-libs": "^2.0",
-                "yoast/i18n-module": "^1.0",
-                "yoast/license-manager": "^1.2"
-            },
-            "require-dev": {
-                "yoast/yoastcs": "dev-master"
-            },
-            "type": "wordpress-plugin",
-            "autoload": {
-                "classmap": [
-                    "admin/",
-                    "frontend/",
-                    "inc/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Team Yoast",
-                    "email": "support@yoast.com",
-                    "homepage": "https://yoast.com"
-                }
-            ],
-            "description": "Improve your WordPress SEO: Write better content and have a fully optimized WordPress site using the Yoast SEO plugin.",
-            "homepage": "https://yoast.com/wordpress/plugins/seo/",
-            "keywords": [
-                "seo",
-                "wordpress"
-            ],
-            "time": "2015-09-16 10:01:14"
         }
     ],
     "packages-dev": [],
@@ -818,8 +536,6 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {
-        "php": ">=5.4"
-    },
+    "platform": [],
     "platform-dev": []
 }
