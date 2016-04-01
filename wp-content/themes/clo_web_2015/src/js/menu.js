@@ -89,7 +89,7 @@ function pageLoad(linkSplit, basicItems) {
                     .always(function(response) {
                             var content =response[0].content.rendered;
                             $(".entry-content").html(content).slideDown("normal", function(){
-                            	$("#rollArea").jCarouselLite({
+                            	$("#rollArea,#rollArea2").jCarouselLite({
                             		vertical: true,
                             		hoverPause:true,
                             		visible: 2,
