@@ -15,7 +15,7 @@ set :deploy_to, -> { "/var/www/html/production/#{fetch(:application)}" }
 set :log_level, :info
 
 # Put all shared files/directories here (e.g. uploads that need to go on the NFS drive)
-set :linked_files, fetch(:linked_files, []).push('.env', 'wp-content/wp-cache-config.php', 'web/.htaccess')
+set :linked_files, fetch(:linked_files, []).push('.env', 'wp-content/wp-cache-config.php')
 set :linked_dirs, fetch(:linked_dirs, []).push('wp-content/uploads','wp-content/cache')
 
 namespace :deploy do
