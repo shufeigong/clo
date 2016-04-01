@@ -417,9 +417,11 @@ function contentToggle(id) {
         $(id).parent().next().slideToggle();
         if (id.text == "[ + ]") {
             id.text = "[ - ]";
+            $(id).css("font-size","17.5px");
         }
         else {
             id.text = "[ + ]";
+            $(id).css("font-size","15px");
         }
    
 }
