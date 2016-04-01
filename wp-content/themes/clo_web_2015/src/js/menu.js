@@ -262,7 +262,7 @@ function displayMenu(itemId, menuUrl) {
 	                    }
 	                    else {
 	                        output
-	                            += '<li style="margin-left:10%;line-height:1;margin-bottom:15px;"><a href="#" onclick="change(' + response[i].object_id + ',\'' + itemId + '\', '+response[i].id+'); return false;"  id="' + response[i].id + '" class="submenu" slug="'+response.items[i].url.split('/')[3].split('?')[0]+'">' + response[i].title.toUpperCase() + '</a></li>';
+	                            += '<li style="margin-left:10%;line-height:1;margin-bottom:15px;"><a href="#" onclick="change(' + response[i].object_id + ',\'' + itemId + '\', '+response[i].id+'); return false;"  id="' + response[i].id + '" class="submenu" slug="'+response[i].url.split('/')[3].split('?')[0]+'">' + response[i].title.toUpperCase() + '</a></li>';
 	                    }
 	                }
 	            }
