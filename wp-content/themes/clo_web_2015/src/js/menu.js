@@ -1,3 +1,5 @@
+
+
 function pageLoad(linkSplit, basicItems) {
 
     if (linkSplit != '') {
@@ -92,7 +94,7 @@ function pageLoad(linkSplit, basicItems) {
                             		hoverPause:true,
                             		visible: 2,
                             		auto:500,
-                            		speed:1500
+                            		speed:parseInt($("#myspeed").attr("speed"))
                             	});
                             });
                             
