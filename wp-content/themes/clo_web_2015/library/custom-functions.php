@@ -225,7 +225,7 @@ function createVideoPost($post, $color)
     return $output;
 }
 
-function createVideoPostNoEx($post, $color)
+function createVideoPost4title($post, $color)
 {
     $videoInfo = find_video($post->post_content);
 
@@ -237,16 +237,6 @@ function createVideoPostNoEx($post, $color)
     }
 
     $output = '<li><a href="#" class="slvj-link-lightbox" data-videoid="' . $videoId . '" data-videosite="' . $videoProvider . '" tabindex="-1"><div class="news-item has-video" style="background:' . $color . ';"><div class="arrow"></div>';
-
-    /*$st_time   = date(
-     'D M d',
-     strtotime($post->incsub_event_start == '' ? $post->due_date : $post->incsub_event_start)
-    );
-
-    $en_time   = date(
-    'D M d',
-    strtotime($post->incsub_event_end == '' ? $post->due_date : $post->incsub_event_end)
-    );*/
 
     if (mb_strlen($post->post_title) > 64) {
         $post->post_title = strtoupper(mb_substr($post->post_title, 0, 64, "UTF8")) . '...';
@@ -267,8 +257,63 @@ function createVideoPostNoEx($post, $color)
     return $output;
 }
 
+function createVideoPost2title2excerpt($post, $color){
+	$videoInfo = find_video($post->post_content);
 
-///function for creating no video animated block
+    foreach ($videoInfo as $video) {
+        $videoId = $video["id"];
+        $videoProvider = $video['provider'];
+        //$outputvideo.= '<div style="background-image: url('.get_video_thumbnail($post->ID).'); background-size:contain; background-repeat:no-repeat;"><div class="play-button"><span class="arrow"></span></div></div>';
+        break;
+    }
+
+    $output = '<li><a href="#" class="slvj-link-lightbox" data-videoid="' . $videoId . '" data-videosite="' . $videoProvider . '" tabindex="-1"><div class="news-item has-video" style="background:' . $color . ';"><div class="arrow"></div>';
+
+    /*$st_time   = date(
+     'D M d',
+     strtotime($post->incsub_event_start == '' ? $post->due_date : $post->incsub_event_start)
+    );
+
+    $en_time   = date(
+    'D M d',
+    strtotime($post->incsub_event_end == '' ? $post->due_date : $post->incsub_event_end)
+    );*/
+
+    if (mb_strlen($post->post_title) > 25) {
+        $post->post_title = strtoupper(mb_substr($post->post_title, 0, 25, "UTF8")) . '...';
+    } else {
+        $post->post_title = strtoupper($post->post_title);
+    }
+
+    $output .= '<div class="content-box"><h2 class="post_title no_ex">' . $post->post_title . '</h2>';
+
+    $urls = grab_url($post->post_content);
+
+    foreach ($urls as $url) {
+        $post->post_content = str_replace($url, '', $post->post_content);
+    }
+
+    $post->post_content = strip_tags($post->post_content);
+
+    if (mb_strlen($post->post_content) > 30) {
+        $post->post_content = mb_substr($post->post_content, 0, 30, "UTF8") . "...";
+    }
+
+
+    $output .= '<p class="post-content">' . $post->post_content . '</p>
+					    </div>';//end of content-box
+
+    $output .= '<div class="video-box" style="background-image: url(' . get_video_thumbnail($post->ID) . '); background-size:cover; background-repeat:no-repeat;"><div class="play-button"><span class="arrow"></span></div></div>';//end of video box
+
+    $output .= '<div class="clearfix"></div>
+                        </div>
+                       </a></li>';//end of news item
+    return $output;
+}
+
+
+
+///////////////function for creating no video animated block
 function createNoVideoPost($post, $color)
 {
 
@@ -277,14 +322,14 @@ function createNoVideoPost($post, $color)
     if ($has_img == 0) {
         $output = '<li><a href="' . get_permalink($post->ID) . '" tabindex="-1"><div class="news-item no-video" style="background:' . $color . ';">
                         <div class="arrow"></div>';
-        $title_limit = 20;
-        $content_limit = 77;
+        $title_limit = 25;
+        $content_limit = 100;
 
     } else {
         $output = '<li><a href="' . get_permalink($post->ID) . '" tabindex="-1"><div class="news-item has-video" style="background:' . $color . ';">
                         <div class="arrow"></div>';
         $title_limit = 15;
-        $content_limit = 70;
+        $content_limit = 60;
     }
 
     if (mb_strlen($post->post_title) > $title_limit) {
@@ -334,7 +379,7 @@ function createNoVideoPost($post, $color)
     return $output;
 }
 
-function createNoVideoPostNoEx($post, $color)
+function createNoVideoPost4title($post, $color)
 {
 
     $has_img = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
@@ -342,14 +387,14 @@ function createNoVideoPostNoEx($post, $color)
     if ($has_img == 0) {
         $output = '<li><a href="' . get_permalink($post->ID) . '" tabindex="-1"><div class="news-item no-video" style="background:' . $color . ';">
                         <div class="arrow"></div>';
-        $title_limit = 20;
-        $content_limit = 77;
+        $title_limit = 80;
+        //$content_limit = 77;
 
     } else {
         $output = '<li><a href="' . get_permalink($post->ID) . '" tabindex="-1"><div class="news-item has-video" style="background:' . $color . ';">
                         <div class="arrow"></div>';
-        $title_limit = 15;
-        $content_limit = 70;
+        $title_limit = 60;
+        //$content_limit = 70;
     }
 
 
@@ -361,8 +406,8 @@ function createNoVideoPostNoEx($post, $color)
         }
         $output .= '<div class="content-box"><h2 class="post_title">' . $post->post_title . '</h2>';
     } else {
-        if (mb_strlen($post->post_title) > 64) {
-            $post->post_title = strtoupper(mb_substr($post->post_title, 0, 64, "UTF8")) . '...';
+        if (mb_strlen($post->post_title) > $title_limit) {
+            $post->post_title = strtoupper(mb_substr($post->post_title, 0, $title_limit, "UTF8")) . '...';
         } else {
             $post->post_title = strtoupper($post->post_title);
         }
@@ -370,20 +415,20 @@ function createNoVideoPostNoEx($post, $color)
     }
 
 
-    $urls = grab_url($post->post_content);
+   // $urls = grab_url($post->post_content);
 
-    foreach ($urls as $url) {
-        $post->post_content = str_replace($url, '', $post->post_content);
-    }
+  //  foreach ($urls as $url) {
+  //      $post->post_content = str_replace($url, '', $post->post_content);
+  //  }
 
-    $post->post_content = strip_tags($post->post_content);
+//    $post->post_content = strip_tags($post->post_content);
 
-    if (mb_strlen($post->post_content) > $content_limit) {
-        $post->post_content = mb_substr($post->post_content, 0, $content_limit, "UTF8") . "...";
-    }
+  //  if (mb_strlen($post->post_content) > $content_limit) {
+  //      $post->post_content = mb_substr($post->post_content, 0, $content_limit, "UTF8") . "...";
+  //  }
 
     if ($has_img == 0) {
-        $output .= '<p class="post-content">' . $post->post_content . '</p>
+        $output .= '<p class="post-content"></p>
 					    </div>';
         //$output.='<div class="video-box" style=" width:1px;visibility:hidden;background-size:100% 100%; background-repeat:no-repeat;"></div>';//end of video box
 
@@ -409,7 +454,79 @@ function createNoVideoPostNoEx($post, $color)
     return $output;
 }
 
-///function for creating button animated block
+function createNoVideoPost2title2excerpt($post, $color){
+	$has_img = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+	$first_img = $matches [1] [0];
+	if ($has_img == 0) {
+		$output = '<li><a href="' . get_permalink($post->ID) . '" tabindex="-1"><div class="news-item no-video" style="background:' . $color . ';">
+                        <div class="arrow"></div>';
+		$title_limit = 45;
+		$content_limit = 50;
+	
+	} else {
+		$output = '<li><a href="' . get_permalink($post->ID) . '" tabindex="-1"><div class="news-item has-video" style="background:' . $color . ';">
+                        <div class="arrow"></div>';
+		$title_limit = 25;
+		$content_limit = 30;
+	}
+	
+	
+	if ($has_img == 0) {
+		if (mb_strlen($post->post_title) > $title_limit) {
+			$post->post_title = strtoupper(mb_substr($post->post_title, 0, $title_limit, "UTF8")) . '...';
+		} else {
+			$post->post_title = strtoupper($post->post_title);
+		}
+		$output .= '<div class="content-box"><h2 class="post_title">' . $post->post_title . '</h2>';
+	} else {
+		if (mb_strlen($post->post_title) > $title_limit) {
+			$post->post_title = strtoupper(mb_substr($post->post_title, 0, $title_limit, "UTF8")) . '...';
+		} else {
+			$post->post_title = strtoupper($post->post_title);
+		}
+		$output .= '<div class="content-box"><h2 class="post_title no_ex">' . $post->post_title . '</h2>';
+	}
+	
+	
+	 $urls = grab_url($post->post_content);
+	
+	  foreach ($urls as $url) {
+	      $post->post_content = str_replace($url, '', $post->post_content);
+	  }
+	
+	    $post->post_content = strip_tags($post->post_content);
+	
+     if (mb_strlen($post->post_content) > $content_limit) {
+	      $post->post_content = mb_substr($post->post_content, 0, $content_limit, "UTF8") . "...";
+	  }
+	
+	if ($has_img == 0) {
+		$output .= '<p class="post-content">'.$post->post_content.'</p>
+					    </div>';
+		//$output.='<div class="video-box" style=" width:1px;visibility:hidden;background-size:100% 100%; background-repeat:no-repeat;"></div>';//end of video box
+	
+	
+		//$output.=mb_strlen($post->post_content);
+	
+	
+		//$output.='<div class="video-box" style="background-size:100% 100%; background-repeat:no-repeat;visibility:hidden;"></div>';//end of video box
+	
+		$output .= '<div class="clearfix"></div>
+                        </div>
+                       </a></li>';//end of news itemreturn $output;
+	} else {
+		$output .= '<p class="post-content">'.$post->post_content.'</p>
+					    </div>';//end of content-box
+	
+		$output .= '<div class="video-box" style="background-image: url(' . $first_img . '); background-size:cover; background-repeat:no-repeat;"><div class="play-button" style="visibility:hidden;"><span class="arrow"></span></div></div>';//end of video box
+	
+		$output .= '<div class="clearfix"></div>
+                        </div>
+                       </a></li>';//end of news item
+	}
+	return $output;
+}
+////////////////function for creating button animated block
 function createButtonPost($post, $color)
 {
     $output = '<li><a href="' . get_permalink($post->ID) . '" tabindex="-1"><div class="news-item no-video" style="background:' . $color . ';">

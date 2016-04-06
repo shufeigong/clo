@@ -487,7 +487,7 @@ function postlistShortcodeHandler($atts)
             'orderby' => 'date',
             'order' => 'DESC',
             'number_posts' => -1,
-            'template' => 'block',
+            'template' => 'block_2title2excerpt',
             'speed' => 1500,
             'lang' => 'en',
             'start_date' => '',
@@ -557,7 +557,7 @@ function postlistShortcodeHandler($atts)
 
         $output = '';
         $key = 0;
-        if (count($results) > 0 && $template == "block") {// for animated block
+        if (count($results) > 0 && $template == "block_1title3excerpt") {// for animated block
 
             foreach ($results as $post) : setup_postdata($post);
                 $postIdFr = icl_object_id($post->ID, $post->post_type, false, 'fr');
@@ -611,7 +611,7 @@ function postlistShortcodeHandler($atts)
             wp_reset_postdata();
             $output .= '<myspeed id="myspeed" speed="' . $speed . '"/>';
 
-        } else if (count($results) > 0 && $template == "thumbnail_no_excerpt") {
+        } else if (count($results) > 0 && $template == "block_4title") {
             foreach ($results as $post) : setup_postdata($post);
                 //DCE9F7 0075C9 EFF5DC 82BC00
             $postIdFr = icl_object_id($post->ID, $post->post_type, false, 'fr');
@@ -620,20 +620,19 @@ function postlistShortcodeHandler($atts)
             	continue;
             }    
             
-            
                 if ($post->post_type == "news" || $post->post_type == "blog" || $post->post_type == "page") {    // for animated block news and blog
                     if (isHomepageNews($post) && isVideoNews($post) && !isButtonPosts($post)) {
                         if (find_video($post->post_content) != null) {
-                            $output .= createVideoPostNoEx($post, $colors[$key % 4]);
+                            $output .= createVideoPost4title($post, $colors[$key % 4]);
                             $key++;
                         } else {
-                            $output .= createNoVideoPostNoEx($post, $colors[$key % 4]);
+                            $output .= createNoVideoPost4title($post, $colors[$key % 4]);
                             $key++;
                         }
 
                     } else if (isHomepageNews($post) && !isVideoNews($post) && !isButtonPosts($post)) {
 
-                        $output .= createNoVideoPostNoEx($post, $colors[$key % 4]);
+                        $output .= createNoVideoPost4title($post, $colors[$key % 4]);
                         $key++;
                     } else if (isHomepageNews($post) && isButtonPosts($post)) {
                         $output .= createButtonPost($post, $colors[$key % 4]);
@@ -643,16 +642,16 @@ function postlistShortcodeHandler($atts)
                 {
                     if (isHomepageEvents($post) && isVideoEvents($post) && !isButtonEvents($post)) {
                         if (find_video($post->post_content) != null) {
-                            $output .= createVideoPostNoEx($post, $colors[$key % 4]);
+                            $output .= createVideoPost4title($post, $colors[$key % 4]);
                             $key++;
                         } else {
-                            $output .= createNoVideoPostNoEx($post, $colors[$key % 4]);
+                            $output .= createNoVideoPost4title($post, $colors[$key % 4]);
                             $key++;
                         }
 
                     } else if (isHomepageEvents($post) && !isVideoEvents($post) && !isButtonEvents($post)) {
 
-                        $output .= createNoVideoPostNoEx($post, $colors[$key % 4]);
+                        $output .= createNoVideoPost4title($post, $colors[$key % 4]);
                         $key++;
                     } else if (isHomepageEvents($post) && isButtonEvents($post)) {
                         $output .= createButtonPost($post, $colors[$key % 4]);
@@ -665,7 +664,62 @@ function postlistShortcodeHandler($atts)
             wp_reset_postdata();
             $output .= '<myspeed id="myspeed" speed="' . $speed . '"/>';
 
-        } else if (count($results) > 0 && $template == "video_gallery") { //for video-gallery in web pages
+        }else if(count($results) > 0 && $template == "block_2title2excerpt"){
+        	foreach ($results as $post) : setup_postdata($post);
+        	//DCE9F7 0075C9 EFF5DC 82BC00
+        	$postIdFr = icl_object_id($post->ID, $post->post_type, false, 'fr');
+        	
+        	if ($post->ID == $postIdFr) {
+        		continue;
+        	}
+        	
+        	if ($post->post_type == "news" || $post->post_type == "blog" || $post->post_type == "page") {    // for animated block news and blog
+        		if (isHomepageNews($post) && isVideoNews($post) && !isButtonPosts($post)) {
+        			if (find_video($post->post_content) != null) {
+        				$output .= createVideoPost2title2excerpt($post, $colors[$key % 4]);
+        				$key++;
+        			} else {
+        				$output .= createNoVideoPost2title2excerpt($post, $colors[$key % 4]);
+        				$key++;
+        			}
+        	
+        		} else if (isHomepageNews($post) && !isVideoNews($post) && !isButtonPosts($post)) {
+        	
+        			$output .= createNoVideoPost2title2excerpt($post, $colors[$key % 4]);
+        			$key++;
+        		} else if (isHomepageNews($post) && isButtonPosts($post)) {
+        			$output .= createButtonPost($post, $colors[$key % 4]);
+        			$key++;
+        		}
+        	} else if ($post->post_type == "incsub_event")    // for animated block event
+        	{
+        		if (isHomepageEvents($post) && isVideoEvents($post) && !isButtonEvents($post)) {
+        			if (find_video($post->post_content) != null) {
+        				$output .= createVideoPost2title2excerpt($post, $colors[$key % 4]);
+        				$key++;
+        			} else {
+        				$output .= createNoVideoPost2title2excerpt($post, $colors[$key % 4]);
+        				$key++;
+        			}
+        	
+        		} else if (isHomepageEvents($post) && !isVideoEvents($post) && !isButtonEvents($post)) {
+        	
+        			$output .= createNoVideoPost2title2excerpt($post, $colors[$key % 4]);
+        			$key++;
+        		} else if (isHomepageEvents($post) && isButtonEvents($post)) {
+        			$output .= createButtonPost($post, $colors[$key % 4]);
+        			$key++;
+        		}
+        	}
+        	
+        	
+        	endforeach;
+        	wp_reset_postdata();
+        	$output .= '<myspeed id="myspeed" speed="' . $speed . '"/>';
+        	
+        	
+        }
+        else if (count($results) > 0 && $template == "video_gallery") { //for video-gallery in web pages
             $output .= '<ul class="content-videolist">';
             foreach ($results as $post) : setup_postdata($post);
 
@@ -778,7 +832,7 @@ function postlistShortcodeHandler($atts)
 
         $output = '';
         $key = 0;
-        if (count($results) > 0 && $template == "block") {// for animated block
+        if (count($results) > 0 && $template == "block_1title3excerpt") {// for animated block
 
             foreach ($results as $post) : setup_postdata($post);
                 $postIdEn = icl_object_id($post->ID, $post->post_type, false, 'en');
@@ -832,7 +886,7 @@ function postlistShortcodeHandler($atts)
             wp_reset_postdata();
             $output .= '<myspeed id="myspeed" speed="' . $speed . '"/>';
 
-        } else if (count($results) > 0 && $template == "thumbnail_no_excerpt") {
+        } else if (count($results) > 0 && $template == "block_4title") {
             foreach ($results as $post) : setup_postdata($post);
             
             $postIdEn = icl_object_id($post->ID, $post->post_type, false, 'en');
@@ -845,16 +899,16 @@ function postlistShortcodeHandler($atts)
                 if ($post->post_type == "news" || $post->post_type == "blog" || $post->post_type == "page") {    // for animated block news and blog
                     if (isHomepagefrNews($post) && isVideofrNews($post) && !isButtonfrPosts($post)) {
                         if (find_video($post->post_content) != null) {
-                            $output .= createVideoPostNoEx($post, $colors[$key % 4]);
+                            $output .= createVideoPost4title($post, $colors[$key % 4]);
                             $key++;
                         } else {
-                            $output .= createNoVideoPostNoEx($post, $colors[$key % 4]);
+                            $output .= createNoVideoPost4title($post, $colors[$key % 4]);
                             $key++;
                         }
 
                     } else if (isHomepagefrNews($post) && !isVideofrNews($post) && !isButtonfrPosts($post)) {
 
-                        $output .= createNoVideoPostNoEx($post, $colors[$key % 4]);
+                        $output .= createNoVideoPost4title($post, $colors[$key % 4]);
                         $key++;
                     } else if (isHomepagefrNews($post) && isButtonfrPosts($post)) {
                         $output .= createButtonPost($post, $colors[$key % 4]);
@@ -864,16 +918,16 @@ function postlistShortcodeHandler($atts)
                 {
                     if (isHomepagefrEvents($post) && isVideofrEvents($post) && !isButtonfrEvents($post)) {
                         if (find_video($post->post_content) != null) {
-                            $output .= createVideoPostNoEx($post, $colors[$key % 4]);
+                            $output .= createVideoPost4title($post, $colors[$key % 4]);
                             $key++;
                         } else {
-                            $output .= createNoVideoPostNoEx($post, $colors[$key % 4]);
+                            $output .= createNoVideoPost4title($post, $colors[$key % 4]);
                             $key++;
                         }
 
                     } else if (isHomepagefrEvents($post) && !isVideofrEvents($post) && !isButtonfrEvents($post)) {
 
-                        $output .= createNoVideoPostNoEx($post, $colors[$key % 4]);
+                        $output .= createNoVideoPost4title($post, $colors[$key % 4]);
                         $key++;
                     } else if (isHomepagefrEvents($post) && isButtonfrEvents($post)) {
                         $output .= createButtonPost($post, $colors[$key % 4]);
@@ -885,7 +939,61 @@ function postlistShortcodeHandler($atts)
             endforeach;
             wp_reset_postdata();
             $output .= '<myspeed id="myspeed" speed="' . $speed . '"/>';
-        } else if (count($results) > 0 && $template == "video_gallery") { //for video-gallery in web pages
+        }else if(count($results) > 0 && $template == "block_2title2excerpt"){
+        	foreach ($results as $post) : setup_postdata($post);
+        	
+        	$postIdEn = icl_object_id($post->ID, $post->post_type, false, 'en');
+        	
+        	if ($post->ID == $postIdEn) {
+        		continue;
+        	}
+        	
+        	//DCE9F7 0075C9 EFF5DC 82BC00
+        	if ($post->post_type == "news" || $post->post_type == "blog" || $post->post_type == "page") {    // for animated block news and blog
+        		if (isHomepagefrNews($post) && isVideofrNews($post) && !isButtonfrPosts($post)) {
+        			if (find_video($post->post_content) != null) {
+        				$output .= createVideoPost2title2excerpt($post, $colors[$key % 4]);
+        				$key++;
+        			} else {
+        				$output .= createNoVideoPost2title2excerpt($post, $colors[$key % 4]);
+        				$key++;
+        			}
+        	
+        		} else if (isHomepagefrNews($post) && !isVideofrNews($post) && !isButtonfrPosts($post)) {
+        	
+        			$output .= createNoVideoPost2title2excerpt($post, $colors[$key % 4]);
+        			$key++;
+        		} else if (isHomepagefrNews($post) && isButtonfrPosts($post)) {
+        			$output .= createButtonPost($post, $colors[$key % 4]);
+        			$key++;
+        		}
+        	} else if ($post->post_type == "incsub_event")    // for animated block event
+        	{
+        		if (isHomepagefrEvents($post) && isVideofrEvents($post) && !isButtonfrEvents($post)) {
+        			if (find_video($post->post_content) != null) {
+        				$output .= createVideoPost2title2excerpt($post, $colors[$key % 4]);
+        				$key++;
+        			} else {
+        				$output .= createNoVideoPost2title2excerpt($post, $colors[$key % 4]);
+        				$key++;
+        			}
+        	
+        		} else if (isHomepagefrEvents($post) && !isVideofrEvents($post) && !isButtonfrEvents($post)) {
+        	
+        			$output .= createNoVideoPost2title2excerpt($post, $colors[$key % 4]);
+        			$key++;
+        		} else if (isHomepagefrEvents($post) && isButtonfrEvents($post)) {
+        			$output .= createButtonPost($post, $colors[$key % 4]);
+        			$key++;
+        		}
+        	}
+        	
+        	
+        	endforeach;
+        	wp_reset_postdata();
+        	$output .= '<myspeed id="myspeed" speed="' . $speed . '"/>';
+        }
+        else if (count($results) > 0 && $template == "video_gallery") { //for video-gallery in web pages
             $output .= '<ul class="content-videolist">';
             foreach ($results as $post) : setup_postdata($post);
 
