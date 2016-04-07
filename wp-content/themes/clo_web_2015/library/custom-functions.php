@@ -337,8 +337,13 @@ function createNoVideoPost($post, $color)
     } else {
         $post->post_title = strtoupper($post->post_title);
     }
-
-    $output .= '<div class="content-box"><h2 class="post_title title1">' . $post->post_title . '</h2>';
+    
+    if ($has_img == 0) {
+    	$output .= '<div class="content-box"><h2 class="post_title title1">' . $post->post_title . '</h2>';
+    }else{
+    	$output .= '<div class="content-box"><h2 class="post_title no_ex title1">' . $post->post_title . '</h2>';
+    }
+    
 
     $urls = grab_url($post->post_content);
 
