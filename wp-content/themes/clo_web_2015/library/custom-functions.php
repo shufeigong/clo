@@ -193,13 +193,13 @@ function createVideoPost($post, $color)
     strtotime($post->incsub_event_end == '' ? $post->due_date : $post->incsub_event_end)
     );*/
 
-    if (mb_strlen($post->post_title) > 15) {
-        $post->post_title = strtoupper(mb_substr($post->post_title, 0, 15, "UTF8")) . '...';
+    if (mb_strlen($post->post_title) > 115) {
+        $post->post_title = strtoupper(mb_substr($post->post_title, 0, 115, "UTF8")) . '...';
     } else {
         $post->post_title = strtoupper($post->post_title);
     }
 
-    $output .= '<div class="content-box"><h2 class="post_title">' . $post->post_title . '</h2>';
+    $output .= '<div class="content-box"><h2 class="post_title title1">' . $post->post_title . '</h2>';
 
     $urls = grab_url($post->post_content);
 
@@ -209,12 +209,12 @@ function createVideoPost($post, $color)
 
     $post->post_content = strip_tags($post->post_content);
 
-    if (mb_strlen($post->post_content) > 70) {
-        $post->post_content = mb_substr($post->post_content, 0, 70, "UTF8") . "...";
+    if (mb_strlen($post->post_content) > 170) {
+        $post->post_content = mb_substr($post->post_content, 0, 170, "UTF8") . "...";
     }
 
 
-    $output .= '<p class="post-content">' . $post->post_content . '</p>
+    $output .= '<p class="post-content excerpt3">' . $post->post_content . '</p>
 					    </div>';//end of content-box
 
     $output .= '<div class="video-box" style="background-image: url(' . get_video_thumbnail($post->ID) . '); background-size:cover; background-repeat:no-repeat;"><div class="play-button"><span class="arrow"></span></div></div>';//end of video box
@@ -238,13 +238,13 @@ function createVideoPost4title($post, $color)
 
     $output = '<li><a href="#" class="slvj-link-lightbox" data-videoid="' . $videoId . '" data-videosite="' . $videoProvider . '" tabindex="-1"><div class="news-item has-video" style="background:' . $color . ';"><div class="arrow"></div>';
 
-    if (mb_strlen($post->post_title) > 64) {
-        $post->post_title = strtoupper(mb_substr($post->post_title, 0, 64, "UTF8")) . '...';
+    if (mb_strlen($post->post_title) > 164) {
+        $post->post_title = strtoupper(mb_substr($post->post_title, 0, 164, "UTF8")) . '...';
     } else {
         $post->post_title = strtoupper($post->post_title);
     }
 
-    $output .= '<div class="content-box"><h2 class="post_title no_ex">' . $post->post_title . '</h2>';
+    $output .= '<div class="content-box"><h2 class="post_title no_ex title4">' . $post->post_title . '</h2>';
 
     $output .= '<p class="post-content"></p>
 					    </div>';//end of content-box
@@ -279,13 +279,13 @@ function createVideoPost2title2excerpt($post, $color){
     strtotime($post->incsub_event_end == '' ? $post->due_date : $post->incsub_event_end)
     );*/
 
-    if (mb_strlen($post->post_title) > 25) {
-        $post->post_title = strtoupper(mb_substr($post->post_title, 0, 25, "UTF8")) . '...';
+    if (mb_strlen($post->post_title) > 125) {
+        $post->post_title = strtoupper(mb_substr($post->post_title, 0, 125, "UTF8")) . '...';
     } else {
         $post->post_title = strtoupper($post->post_title);
     }
 
-    $output .= '<div class="content-box"><h2 class="post_title no_ex">' . $post->post_title . '</h2>';
+    $output .= '<div class="content-box"><h2 class="post_title no_ex title2">' . $post->post_title . '</h2>';
 
     $urls = grab_url($post->post_content);
 
@@ -295,12 +295,12 @@ function createVideoPost2title2excerpt($post, $color){
 
     $post->post_content = strip_tags($post->post_content);
 
-    if (mb_strlen($post->post_content) > 30) {
-        $post->post_content = mb_substr($post->post_content, 0, 30, "UTF8") . "...";
+    if (mb_strlen($post->post_content) > 130) {
+        $post->post_content = mb_substr($post->post_content, 0, 130, "UTF8") . "...";
     }
 
 
-    $output .= '<p class="post-content">' . $post->post_content . '</p>
+    $output .= '<p class="post-content excerpt2">' . $post->post_content . '</p>
 					    </div>';//end of content-box
 
     $output .= '<div class="video-box" style="background-image: url(' . get_video_thumbnail($post->ID) . '); background-size:cover; background-repeat:no-repeat;"><div class="play-button"><span class="arrow"></span></div></div>';//end of video box
@@ -322,14 +322,14 @@ function createNoVideoPost($post, $color)
     if ($has_img == 0) {
         $output = '<li><a href="' . get_permalink($post->ID) . '" tabindex="-1"><div class="news-item no-video" style="background:' . $color . ';">
                         <div class="arrow"></div>';
-        $title_limit = 25;
-        $content_limit = 100;
+        $title_limit = 125;
+        $content_limit = 200;
 
     } else {
         $output = '<li><a href="' . get_permalink($post->ID) . '" tabindex="-1"><div class="news-item has-video" style="background:' . $color . ';">
                         <div class="arrow"></div>';
-        $title_limit = 15;
-        $content_limit = 60;
+        $title_limit = 115;
+        $content_limit = 160;
     }
 
     if (mb_strlen($post->post_title) > $title_limit) {
@@ -338,7 +338,7 @@ function createNoVideoPost($post, $color)
         $post->post_title = strtoupper($post->post_title);
     }
 
-    $output .= '<div class="content-box"><h2 class="post_title">' . $post->post_title . '</h2>';
+    $output .= '<div class="content-box"><h2 class="post_title title1">' . $post->post_title . '</h2>';
 
     $urls = grab_url($post->post_content);
 
@@ -353,7 +353,7 @@ function createNoVideoPost($post, $color)
     }
 
     if ($has_img == 0) {
-        $output .= '<p class="post-content">' . $post->post_content . '</p>
+        $output .= '<p class="post-content excerpt3">' . $post->post_content . '</p>
 					    </div>';
         //$output.='<div class="video-box" style=" width:1px;visibility:hidden;background-size:100% 100%; background-repeat:no-repeat;"></div>';//end of video box
 
@@ -367,7 +367,7 @@ function createNoVideoPost($post, $color)
                         </div>
                        </a></li>';//end of news itemreturn $output;
     } else {
-        $output .= '<p class="post-content">' . $post->post_content . '</p>
+        $output .= '<p class="post-content excerpt3">' . $post->post_content . '</p>
 					    </div>';//end of content-box
 
         $output .= '<div class="video-box" style="background-image: url(' . $first_img . '); background-size:cover; background-repeat:no-repeat;"><div class="play-button" style="visibility:hidden;"><span class="arrow"></span></div></div>';//end of video box
@@ -387,13 +387,13 @@ function createNoVideoPost4title($post, $color)
     if ($has_img == 0) {
         $output = '<li><a href="' . get_permalink($post->ID) . '" tabindex="-1"><div class="news-item no-video" style="background:' . $color . ';">
                         <div class="arrow"></div>';
-        $title_limit = 80;
+        $title_limit = 180;
         //$content_limit = 77;
 
     } else {
         $output = '<li><a href="' . get_permalink($post->ID) . '" tabindex="-1"><div class="news-item has-video" style="background:' . $color . ';">
                         <div class="arrow"></div>';
-        $title_limit = 60;
+        $title_limit = 160;
         //$content_limit = 70;
     }
 
@@ -404,14 +404,14 @@ function createNoVideoPost4title($post, $color)
         } else {
             $post->post_title = strtoupper($post->post_title);
         }
-        $output .= '<div class="content-box"><h2 class="post_title">' . $post->post_title . '</h2>';
+        $output .= '<div class="content-box"><h2 class="post_title title4">' . $post->post_title . '</h2>';
     } else {
         if (mb_strlen($post->post_title) > $title_limit) {
             $post->post_title = strtoupper(mb_substr($post->post_title, 0, $title_limit, "UTF8")) . '...';
         } else {
             $post->post_title = strtoupper($post->post_title);
         }
-        $output .= '<div class="content-box"><h2 class="post_title no_ex">' . $post->post_title . '</h2>';
+        $output .= '<div class="content-box"><h2 class="post_title no_ex title4">' . $post->post_title . '</h2>';
     }
 
 
@@ -460,14 +460,14 @@ function createNoVideoPost2title2excerpt($post, $color){
 	if ($has_img == 0) {
 		$output = '<li><a href="' . get_permalink($post->ID) . '" tabindex="-1"><div class="news-item no-video" style="background:' . $color . ';">
                         <div class="arrow"></div>';
-		$title_limit = 45;
-		$content_limit = 50;
+		$title_limit = 145;
+		$content_limit = 150;
 	
 	} else {
 		$output = '<li><a href="' . get_permalink($post->ID) . '" tabindex="-1"><div class="news-item has-video" style="background:' . $color . ';">
                         <div class="arrow"></div>';
-		$title_limit = 25;
-		$content_limit = 30;
+		$title_limit = 125;
+		$content_limit = 130;
 	}
 	
 	
@@ -477,14 +477,14 @@ function createNoVideoPost2title2excerpt($post, $color){
 		} else {
 			$post->post_title = strtoupper($post->post_title);
 		}
-		$output .= '<div class="content-box"><h2 class="post_title">' . $post->post_title . '</h2>';
+		$output .= '<div class="content-box"><h2 class="post_title title2">' . $post->post_title . '</h2>';
 	} else {
 		if (mb_strlen($post->post_title) > $title_limit) {
 			$post->post_title = strtoupper(mb_substr($post->post_title, 0, $title_limit, "UTF8")) . '...';
 		} else {
 			$post->post_title = strtoupper($post->post_title);
 		}
-		$output .= '<div class="content-box"><h2 class="post_title no_ex">' . $post->post_title . '</h2>';
+		$output .= '<div class="content-box"><h2 class="post_title no_ex title2">' . $post->post_title . '</h2>';
 	}
 	
 	
@@ -501,7 +501,7 @@ function createNoVideoPost2title2excerpt($post, $color){
 	  }
 	
 	if ($has_img == 0) {
-		$output .= '<p class="post-content">'.$post->post_content.'</p>
+		$output .= '<p class="post-content excerpt2">'.$post->post_content.'</p>
 					    </div>';
 		//$output.='<div class="video-box" style=" width:1px;visibility:hidden;background-size:100% 100%; background-repeat:no-repeat;"></div>';//end of video box
 	
@@ -515,7 +515,7 @@ function createNoVideoPost2title2excerpt($post, $color){
                         </div>
                        </a></li>';//end of news itemreturn $output;
 	} else {
-		$output .= '<p class="post-content">'.$post->post_content.'</p>
+		$output .= '<p class="post-content excerpt2">'.$post->post_content.'</p>
 					    </div>';//end of content-box
 	
 		$output .= '<div class="video-box" style="background-image: url(' . $first_img . '); background-size:cover; background-repeat:no-repeat;"><div class="play-button" style="visibility:hidden;"><span class="arrow"></span></div></div>';//end of video box
