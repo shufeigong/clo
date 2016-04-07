@@ -185,7 +185,7 @@
                     
                     overflow:hidden;
                     position:relative;
-                    text-align: justify;
+                    //text-align: justify;
                     //margin-right: -1em;
                     padding-right: 1em;
                     &.title4{height:64px;}
@@ -491,7 +491,7 @@
                     
                     overflow:hidden;
                     position:relative;
-                    text-align: justify;
+                    //text-align: justify;
                     //margin-right: -1em;
                     padding-right: 1em;
                     &.title4{height:64px;}
@@ -564,6 +564,8 @@
                         text-align: justify;
                         //margin-right: -1em;
                         padding-right: 1em;
+                        &.excerpt3{height:45px;}
+                        &.excerpt2{height:30px;}
                         &:before{content: '...';position: absolute;right: 0;bottom: 0;}
                         &:after{content: '';position: absolute;right: 0;width: 1em;height: 1em;margin-top: 0.2em;}
                     }
