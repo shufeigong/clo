@@ -89,13 +89,13 @@ function pageLoad(linkSplit, basicItems) {
                     .always(function(response) {
                             var content =response[0].content.rendered;
                             $(".entry-content").html(content).slideDown("normal", function(){
-                            	/*$("#rollArea,#rollArea2").jCarouselLite({
+                            	$("#rollArea,#rollArea2").jCarouselLite({
                             		vertical: true,
                             		hoverPause:true,
                             		visible: 2,
                             		auto:parseInt($("#myduration").attr("delay_dur")),
                             		speed:parseInt($("#myduration").attr("animation_dur"))
-                            	});*/
+                            	});
                             	$("#rollArea li").css("width","auto");
                             });
                             
