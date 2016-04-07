@@ -93,8 +93,8 @@ function pageLoad(linkSplit, basicItems) {
                             		vertical: true,
                             		hoverPause:true,
                             		visible: 2,
-                            		auto:500,
-                            		speed:parseInt($("#myspeed").attr("speed"))
+                            		auto:parseInt($("#myduration").attr("delay_dur")),
+                            		speed:parseInt($("#myduration").attr("animation_dur"))
                             	});
                             });
                             

@@ -488,7 +488,8 @@ function postlistShortcodeHandler($atts)
             'order' => 'DESC',
             'number_posts' => -1,
             'template' => 'block_2title2excerpt',
-            'speed' => 1500,
+            'animation_duration' => 1500,
+        	'delay_duration' => 500,	
             'lang' => 'en',
             'start_date' => '',
             'end_date' => ''
@@ -507,7 +508,8 @@ function postlistShortcodeHandler($atts)
         $order = $atts['order'];
         $postsPerPage = $atts['number_posts'] == -1 ? -1 : $atts['number_posts'];
         $template = $atts['template'];
-        $speed = $atts['speed'];
+        $animation_duration = $atts['animation_duration'];
+        $delay_duration = $atts['delay_duration'];
         $startDate = $atts['start_date'];
         $endDate = $atts['end_date'];
 
@@ -609,7 +611,7 @@ function postlistShortcodeHandler($atts)
 
             endforeach;
             wp_reset_postdata();
-            $output .= '<myspeed id="myspeed" speed="' . $speed . '"/>';
+            $output .= '<myduration id="myduration" animation_dur="' . $animation_duration . '" delay_dur="'.$delay_duration.'"></myduration>';
 
         } else if (count($results) > 0 && $template == "block_4title") {
             foreach ($results as $post) : setup_postdata($post);
@@ -662,7 +664,7 @@ function postlistShortcodeHandler($atts)
 
             endforeach;
             wp_reset_postdata();
-            $output .= '<myspeed id="myspeed" speed="' . $speed . '"/>';
+            $output .= '<myduration id="myduration" animation_dur="' . $animation_duration . '" delay_dur="'.$delay_duration.'"></myduration>';
 
         }else if(count($results) > 0 && $template == "block_2title2excerpt"){
         	foreach ($results as $post) : setup_postdata($post);
@@ -715,7 +717,7 @@ function postlistShortcodeHandler($atts)
         	
         	endforeach;
         	wp_reset_postdata();
-        	$output .= '<myspeed id="myspeed" speed="' . $speed . '"/>';
+        	$output .= '<myduration id="myduration" animation_dur="' . $animation_duration . '" delay_dur="'.$delay_duration.'"></myduration>';
         	
         	
         }
@@ -780,7 +782,8 @@ function postlistShortcodeHandler($atts)
         $order = $atts['order'];
         $postsPerPage = $atts['number_posts'] == -1 ? -1 : $atts['number_posts'];
         $template = $atts['template'];
-        $speed = $atts['speed'];
+        $animation_duration = $atts['animation_duration'];
+        $delay_duration = $atts['delay_duration'];
         $startDate = $atts['start_date'];
         $endDate = $atts['end_date'];
 
@@ -884,7 +887,7 @@ function postlistShortcodeHandler($atts)
 
             endforeach;
             wp_reset_postdata();
-            $output .= '<myspeed id="myspeed" speed="' . $speed . '"/>';
+            $output .= '<myduration id="myduration" animation_dur="' . $animation_duration . '" delay_dur="'.$delay_duration.'"></myduration>';
 
         } else if (count($results) > 0 && $template == "block_4title") {
             foreach ($results as $post) : setup_postdata($post);
@@ -938,7 +941,7 @@ function postlistShortcodeHandler($atts)
 
             endforeach;
             wp_reset_postdata();
-            $output .= '<myspeed id="myspeed" speed="' . $speed . '"/>';
+            $output .= '<myduration id="myduration" animation_dur="' . $animation_duration . '" delay_dur="'.$delay_duration.'"></myduration>';
         }else if(count($results) > 0 && $template == "block_2title2excerpt"){
         	foreach ($results as $post) : setup_postdata($post);
         	
@@ -991,7 +994,7 @@ function postlistShortcodeHandler($atts)
         	
         	endforeach;
         	wp_reset_postdata();
-        	$output .= '<myspeed id="myspeed" speed="' . $speed . '"/>';
+        	$output .= '<myduration id="myduration" animation_dur="' . $animation_duration . '" delay_dur="'.$delay_duration.'"></myduration>';
         }
         else if (count($results) > 0 && $template == "video_gallery") { //for video-gallery in web pages
             $output .= '<ul class="content-videolist">';
