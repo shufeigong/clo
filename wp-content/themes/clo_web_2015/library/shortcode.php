@@ -487,7 +487,7 @@ function postlistShortcodeHandler($atts)
             'orderby' => 'date',
             'order' => 'DESC',
             'number_posts' => -1,
-            'template' => 'block_2title2excerpt',
+            'template' => 'list',
             'animation_duration' => 1500,
         	'delay_duration' => 500,	
             'lang' => 'en',
