@@ -536,7 +536,7 @@ function bindEvent() {
 
 function init() {
 	$('.post_title').dotdotdot({watch: 'window'});
-	$('.post-content').dotdotdot({watch: 'window', wrap:'letter'});
+	$('.post-content').dotdotdot({watch: 'window'});
     bindEvent();
 }
 
