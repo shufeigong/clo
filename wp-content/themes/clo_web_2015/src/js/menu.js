@@ -96,7 +96,11 @@ function pageLoad(linkSplit, basicItems) {
                             		auto:parseInt($("#myduration").attr("delay_dur")),
                             		speed:parseInt($("#myduration").attr("animation_dur"))
                             	});
+                            	//post-content
+                            	//entry-content home
+                            	
                             	$("#rollArea li").css("width","auto");
+                            	
                             });
                             
                             $('.slvj-link-lightbox').simpleLightboxVideo();
@@ -531,11 +535,12 @@ function bindEvent() {
 }
 
 function init() {
+	$('.post_title').dotdotdot({watch: 'window'});
+	$('.post-content').dotdotdot({watch: 'window'});
     bindEvent();
 }
 
 $(document).ready(function () {
-	//parseInt($("#myspeed").attr("speed"));
     init();
     $("#skiplinks").children("a").click(function(e){
     	                                   if($(this).html()=="Skip to content"||$(this).html()=="Aller au contenu"){return false;}

@@ -10,7 +10,7 @@ module.exports = {
     devtool: 'eval',
     entry: {
         app: './src/js/app.js',
-        vendor: ["resizeEnd", "lightBox", "artwl", "album", "imagesloaded", "imagefill", "TweenMax"]
+        vendor: ["resizeEnd", "lightBox", "artwl", "album", "imagesloaded", "imagefill", "TweenMax", "dotdotdot"]
     },
     output: {
         path: path.resolve(__dirname, "dist/js"),
@@ -37,8 +37,10 @@ module.exports = {
             "imagesloaded": "./src/js/vendor/imagesloaded.js",
             "imagefill": "./src/js/vendor/jquery-imagefill.js",
             "TweenMax": './bower_components/gsap/src/minified/TweenMax.min.js',
+            "dotdotdot":"./src/js/vendor/jquery.dotdotdot.js",
             "fetch": './bower_components//fetch/fetch.js',
             "es6-promise": './bower_components/es6-promise/promise.min.js'
+            	
         }
     },
     plugins: [
