@@ -1,0 +1,21 @@
+.eab-event{
+   //border:solid 1px #333;
+ .eab-event-body{
+  //border:solid 1px red;
+  @include font-size(1.4);
+  font-style:normal;
+  @media screen and (min-width : 641px) {
+     @include font-size(1.5);
+  
+  }
+   .wpmudevevents-date{background:none;margin:0;padding:0;
+      .eab-date_format-date{font-style:normal;}
+      .eab-date_format-time{font-style:normal;}
+   }//end of .wpmudevevents-date
+   .wpmudevevents-location{background:none;padding:0;}
+   .wpmudevevents-price{background:none;}
+   .wpmudevevents-buttons{display:none;}
+   .wpmudevevents-viewevent{background:none;border:none;}
+   
+  }//end of .eab-event-body 
+}//end of .eab-event
