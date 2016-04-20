@@ -80,8 +80,8 @@ function pageLoad(linkSplit, basicItems) {
                     locationMap();
                 });
         }
-        else if(linkSplit[1]==''){//home page, no /
-            
+        else if(linkSplit[1]=='' && $(".entry-content").hasClass("search-content")==false){//home page, no /
+            //alert($(".entry-content").hasClass("search-content"));
         	var page_url = window.icl_lang == 'en' ? "/wp-json/wp/v2/pages/?slug=home" : "/wp-json/wp/v2/pages/?slug=accueil&lang=fr";
         	
 	        		$.get(page_url, function(response){

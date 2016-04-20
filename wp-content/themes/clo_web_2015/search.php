@@ -14,7 +14,7 @@ get_header(); ?>
 	<div class="mobile-entry-margin" role="main">
 
 		<?php do_action( 'foundationpress_before_content' ); ?>
-	<div class="entry-content" style="margin-bottom:10px;">
+	<div class="entry-content search-content" style="margin-bottom:10px;">
 	         <br/>
 			<h2><?php _e( 'Search Results for', 'foundationpress' ); ?> "<?php echo get_search_query(); ?>"</h2>
 	
