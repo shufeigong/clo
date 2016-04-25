@@ -1,5 +1,6 @@
 .eab-event{
    //border:solid 1px #333;
+   h4{margin:0;}
  .eab-event-body{
   //border:solid 1px red;
   @include font-size(1.4);
@@ -16,6 +17,7 @@
    .wpmudevevents-price{background:none;}
    .wpmudevevents-buttons{display:none;}
    .wpmudevevents-viewevent{background:none;border:none;}
+   hr{margin:0;}
    
   }//end of .eab-event-body 
 }//end of .eab-event
