@@ -764,6 +764,18 @@
                     margin-top  : 8px;
                     margin-bottom:8px;
                     &.no_ex{width :150px;}
+                    
+                    line-height:1.2;
+                    overflow:hidden;
+                    //position:relative;
+                    //text-align: justify;
+                    //margin-right: -1em;
+                    //padding-right: 1em;
+                    &.title4{height:64px;}
+                    &.title2{height:32px;}
+                    &.title1{height:16px;}
+                    //&:before{content: '...';position: absolute;right: 0;bottom: 0;}
+                    //&:after{content: '';position: absolute;right: 0;width: 1em;height: 1em;margin-top: 0.2em;}
                 }
                 .button_title{
                      font-family : "Arial", "sans-serif";
@@ -824,6 +836,17 @@
                         width          : 90%;
                         display        : inline-block;
                         vertical-align : top;
+                        
+                        overflow:hidden;
+                        line-height:1.2;
+                        //position:relative;
+                        //text-align: justify;
+                        //margin-right: -1em;
+                        //padding-right: 1em;
+                        &.excerpt3{height:45px;}
+                        &.excerpt2{height:30px;}
+                        //&:before{content: '...';position: absolute;right: 0;bottom: 0;}
+                        //&:after{content: '';position: absolute;right: 0;width: 1em;height: 1em;margin-top: 0.2em;}
                     }
                 }
             }
@@ -836,6 +859,17 @@
                         width          : 143px;
                         display        : inline-block;
                         vertical-align : top;
+                        
+                        overflow:hidden;
+                        line-height:1.2;
+                        //position:relative;
+                        //text-align: justify;
+                        //margin-right: -1em;
+                       // padding-right: 1em;
+                        &.excerpt3{height:45px;}
+                        &.excerpt2{height:30px;}
+                        //&:before{content: '...';position: absolute;right: 0;bottom: 0;}
+                        //&:after{content: '';position: absolute;right: 0;width: 1em;height: 1em;margin-top: 0.2em;}
                     }
                 }
 
