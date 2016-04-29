@@ -96,8 +96,8 @@ function pageLoad(linkSplit, basicItems) {
                             		auto:parseInt($("#myduration").attr("delay_dur")),
                             		speed:parseInt($("#myduration").attr("animation_dur"))
                             	});
-                            	$('.post_title').dotdotdot({watch: 'window'});
-                            	$('.post-content').dotdotdot({watch: 'window', wrap:'letter'});
+                            	//$('.post_title').dotdotdot({watch: 'window'});
+                            	//$('.post-content').dotdotdot({watch: 'window', wrap:'letter'});
                             	
                             	$("#rollArea li").css("width","auto");
                             	
