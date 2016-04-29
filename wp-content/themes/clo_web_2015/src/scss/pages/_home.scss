@@ -182,8 +182,8 @@
                     margin-top  : 8px;
                     margin-bottom:8px;
                     &.no_ex{width:150px;}
-                    
-                    //overflow:hidden;
+                    line-height:1;
+                    overflow:hidden;
                     //position:relative;
                     //text-align: justify;
                     //margin-right: -1em;
@@ -253,7 +253,8 @@
                         width          : 90%;
                         display        : inline-block;
                         vertical-align : top;
-                        //overflow:hidden;
+                        line-height:1;
+                        overflow:hidden;
                         //position:relative;
                         //text-align: justify;
                         //margin-right: -1em;
@@ -278,7 +279,8 @@
                         width          : 143px;         
                         display        : inline-block;
                         vertical-align : top;
-                        //overflow:hidden;
+                        line-height:1;
+                        overflow:hidden;
                         //position:relative;
                         //text-align: justify;
                         //margin-right: -1em;
